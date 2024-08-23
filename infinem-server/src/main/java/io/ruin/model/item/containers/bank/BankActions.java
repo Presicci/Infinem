@@ -19,6 +19,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.actions.impl.BloodyTokens;
 import io.ruin.model.item.actions.impl.PlatinumToken;
+import io.ruin.model.item.actions.impl.tradepost.TradePost;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
@@ -41,7 +42,7 @@ public class BankActions {
             NPCDefinition.forEach(def -> {
                 if(NPCAction.register(def.id, "bank", (p, n) -> p.getBank().open())) {
                     NPCAction.register(def.id, "talk-to", BankActions::talk);
-                    NPCAction.register(def.id, "collect", (p, n) -> CollectionBox.open(p));
+                    NPCAction.register(def.id, "collect", (p, n) -> TradePost.openCoffer(p));
                     bankerIds.add(def.id);
                 }
             });
@@ -111,7 +112,7 @@ public class BankActions {
             if(objDef.hasOption("bank") || objDef.name.toLowerCase().contains("bank")) {
                 if(ObjectAction.register(objDef.id, "use", (p, obj) -> p.getBank().open()) || ObjectAction.register(objDef.id, "bank", (p, obj) -> p.getBank().open())) {
                     objDef.bank = true;
-                    ObjectAction.register(objDef.id, "collect", (p, obj) -> CollectionBox.open(p));
+                    ObjectAction.register(objDef.id, "collect", (p, obj) -> TradePost.openCoffer(p));
                     ItemObjectAction.register(objDef.id, (p, item, obj) -> itemOnBank(p, item));
                 }
             }
