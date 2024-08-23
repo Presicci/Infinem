@@ -18,7 +18,7 @@ public enum Currency {
     SURVIVAL_TOKENS(new ItemCurrencyHandler(ItemID.SURVIVAL_TOKEN)),
     GOLDEN_NUGGETS(new ItemCurrencyHandler(ItemID.GOLDEN_NUGGET, true)),
     WARRIOR_GUILD_TOKEN(new ItemCurrencyHandler(ItemID.WARRIOR_GUILD_TOKEN)),
-    VOTE_TICKETS(new ItemCurrencyHandler(ItemID.VOTE_TICKETS)),
+    VOTE_TICKETS(new ItemCurrencyHandler(32029)),
     UNIDENTIFIED_MINERALS(new ItemCurrencyHandler(ItemID.UNIDENTIFIED_MINERALS, true)),
     STARDUST(new ItemCurrencyHandler(25527, true)),
     PIECES_OF_EIGHT(new ItemCurrencyHandler(Items.PIECES_OF_EIGHT)),
