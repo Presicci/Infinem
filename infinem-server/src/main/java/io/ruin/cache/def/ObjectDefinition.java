@@ -158,12 +158,7 @@ public class ObjectDefinition {
                 break;
             decode(in, opcode);
         }
-        if (id == ObjectID.GRAND_EXCHANGE_BOOTH) {
-            name = "Trading Post";
-            options[0] = "Open";
-            options[1] = "Coffer";
-            options[2] = "Guide";
-        } else if (id == 50001) {
+        if (id == 50001) {
             //custom home altar
             options[0] = "Pray-at";
             options[1] = "Spellbook";
