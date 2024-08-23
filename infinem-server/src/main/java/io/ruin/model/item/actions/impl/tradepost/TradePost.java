@@ -209,6 +209,7 @@ public class TradePost {
         return World.getPlayerStream()
                 .flatMap(player -> player.getTradePost().tradePostOffers.stream())
                 .filter(offer -> {
+                    if (offer.getUsername().equalsIgnoreCase(player.getName())) return false;
                     if (searchText == null) {
                         return true;
                     }
