@@ -262,6 +262,15 @@ public class WorldDecoder extends MessageDecoder<World> {
             }
             ClanChat cc = player.getClanChat();
             cc.update(true);
+            return;
+        }
+        if (opcode == 19) {
+            int userId = in.readInt();
+            String username = in.readString();
+            Player player = Server.getPlayer(userId);
+            if (player == null) return;
+            player.rename(username);
+            return;
         }
     }
 
@@ -278,6 +287,7 @@ public class WorldDecoder extends MessageDecoder<World> {
             case 2: {
                 return 4;
             }
+            case 19:
             case 3: {
                 return -4;
             }

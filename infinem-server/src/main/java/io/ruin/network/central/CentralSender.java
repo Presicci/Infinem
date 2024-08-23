@@ -44,6 +44,13 @@ public class CentralSender {
         write(out);
     }
 
+    public static void sendUsernameUpdate(int userId, String username) {
+        OutBuffer out = new OutBuffer(7 + Protocol.strLen(username)).sendVarIntPacket(19)
+                .addInt(userId)
+                .addString(username);
+        write(out);
+    }
+
     public static void sendSave(int userId, int attempt, String json) {
         OutBuffer out = new OutBuffer(8 + Protocol.strLen(json)).sendVarIntPacket(3)
                 .addInt(userId)

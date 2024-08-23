@@ -174,6 +174,14 @@ public class SocialList extends SocialContainer {
         return loaded;
     }
 
+    public static File getSaveFile(String username) throws IOException {
+        File folder = social_folder;
+        if(!social_folder.exists() && !social_folder.mkdirs()) {
+            throw new IOException("social directory could not be created!");
+        }
+        return new File(social_folder, username + ".json");
+    }
+
     private static void save(SocialList list) {
         try {
             String json = JsonUtils.GSON_EXPOSE.toJson(list);

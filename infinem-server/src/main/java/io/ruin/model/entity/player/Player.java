@@ -9,6 +9,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.model.inter.handlers.NotificationInterface;
 import io.ruin.model.skills.slayer.PartnerSlayer;
+import io.ruin.network.central.CentralSender;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.InterfaceDefinition;
 import io.ruin.cache.def.VarpDefinition;
@@ -157,6 +158,8 @@ public class Player extends PlayerAttributes {
 
     public void setName(String name) {
         this.name = name;
+        // Send updated name to central server
+        CentralSender.sendUsernameUpdate(userId, name);
         getAppearance().update();
     }
 

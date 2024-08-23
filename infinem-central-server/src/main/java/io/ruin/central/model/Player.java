@@ -20,7 +20,7 @@ import java.util.List;
 public class Player {
 
     public final int userId;
-    public final String name;
+    public String name;
     public final World world;
     public final boolean admin;
     public final SocialList socialList;
@@ -138,6 +138,23 @@ public class Player {
         catch (IOException e) {
             Server.logError(e.getMessage());
             return false;
+        }
+    }
+
+    public void rename(String newUsername) {
+        try {
+            // Rename save file
+            File saveFile = getSaveFile(name, world);
+            File newSaveFile = getSaveFile(newUsername, world);
+            saveFile.renameTo(newSaveFile);
+            // Rename social save file
+            File socialFile = SocialList.getSaveFile(name);
+            File newSocialFile = SocialList.getSaveFile(newUsername);
+            socialFile.renameTo(newSocialFile);
+        } catch (IOException e) {
+            Server.logError("Failed to rename save for " + name + " to " + newUsername);
+        } finally {
+            name = newUsername;
         }
     }
 

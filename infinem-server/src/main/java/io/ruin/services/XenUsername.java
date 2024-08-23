@@ -15,11 +15,25 @@ public class XenUsername {
     public static void requestNameChange(Player player, String usernameRequested) {
         player.dialogue(new MessageDialogue("Processing your request, please wait...").hideContinue());
         CompletableFuture.runAsync(() -> { // PostWorker uses blocking I/O and this method is called from the main thread, so we should run it on another thread
+            if (usernameRequested.length() < 3) {
+                player.dialogue(new MessageDialogue("1 and 2 character names are locked behind a shop purchase.<br>If you've purchased one of these names, contact a staff member."));
+                return;
+            }
+            if (usernameRequested.length() > 12) {
+                player.dialogue(new MessageDialogue("The username you requested is too long. Please try again."));
+                return;
+            }
+            if (usernameRequested.equalsIgnoreCase(player.getName())) {
+                player.dialogue(new MessageDialogue("The username you requested is already your username."));
+                return;
+            }
+            // check if forum acc is linked, if not, just rename character
             HashMap<Object, Object> map = new HashMap<Object, Object>();
-            map.put("id", player.getUserId());
             map.put("name", player.getName());
             map.put("name_requested", usernameRequested);
             String result = XenPost.post("change_name", map);
+            System.out.println(player.getName());
+            System.out.println(result);
             Server.worker.execute(() -> { //we have our result (blocking part is done), so lets pass this back to the main thread so we can tell the player what happened
                 if (!player.isOnline()) { // the player may have logged out while we were running our request
                     return;
@@ -30,28 +44,17 @@ public class XenUsername {
                 }
                 if (!result.startsWith("Success")) {
                     switch (result) {
-                        case "Username is being held": {
-                            player.dialogue(new MessageDialogue("The username you requested is currently being held by another user. Please try again."));
-                            return;
-                        }
-                        case "Username is already registered": {
+                        case "USERNAME_TAKEN": {
                             player.dialogue(new MessageDialogue("The username you requested is already in use. Please try again."));
                             return;
                         }
-                        case "Username too long": {
-                            player.dialogue(new MessageDialogue("The username you requested is too long. Please try again."));
-                            return;
-                        }
-                        case "Username contained disallowed words" : {
+                        case "USERNAME_DISALLOWED" : {
                             player.dialogue(new MessageDialogue("The username you requested contains banned words. Please try again."));
                             return;
                         }
-                        case "Username contains incorrect characters": {
+                        case "INVALID_EMOJIS":
+                        case "INVALID_CHARS": {
                             player.dialogue(new MessageDialogue("The username you requested contains incorrect characters. Please try again."));
-                            return;
-                        }
-                        case "Username must be unique": {
-                            player.dialogue(new MessageDialogue("The username you requested must be unique. Please try again."));
                             return;
                         }
                     }
@@ -62,6 +65,7 @@ public class XenUsername {
                 Item credits = player.getInventory().findItem(13190);
                 if(credits == null || credits.getAmount() < 50) {
                     player.sendMessage("You don't have enough credits to complete this transaction.");
+                    player.unlock();
                     return;
                 }
                 player.getInventory().remove(13190, 50);
