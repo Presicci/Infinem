@@ -525,24 +525,25 @@ public class TradePost {
         }
         long coffer = player.getTradePost().coffer;
 
+        if (coffer == 0) {
+            player.sendMessage("Your coffer is empty.");
+            return;
+        }
         player.integerInput("How much would you like to withdraw from coffer: " + formatPrice(coffer), amount -> {
-
             if (amount < 1) {
-                player.sendMessage("You can't with 0 of an item idiot.");
                 return;
             }
-
             if (coffer < amount) {
-                player.sendMessage("You do not have this much in your coffer!");
+                amount = (int) coffer;
+            }
+            int inventoryAmount = player.getInventory().getAmount(COINS_995);
+            if (inventoryAmount + amount == Integer.MAX_VALUE) {
+                amount = Integer.MAX_VALUE - inventoryAmount;
+            }
+            if (amount == 0) {
+                player.sendMessage("You can't withdraw any coins.");
                 return;
             }
-
-            long inventoryAmount = player.getInventory().getAmount(COINS_995);
-            if (inventoryAmount + amount >= Integer.MAX_VALUE) {
-                player.sendMessage("Please bank the coins in your inventory before doing this!");
-                return;
-            }
-
             player.getInventory().add(new Item(COINS_995, amount));
             player.getTradePost().coffer -= amount;
         });
