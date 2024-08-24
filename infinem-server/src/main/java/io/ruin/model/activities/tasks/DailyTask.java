@@ -104,7 +104,7 @@ public enum DailyTask {
     }
 
     public static void checkNPCKill(Player player, NPC npc) {
-        for (int i = 0; i < player.dailyTasks.length; i++) {
+        /*for (int i = 0; i < player.dailyTasks.length; i++) {
             DailyTask dailyTask = player.dailyTasks[i];
             int progress = dailyTask.getListener().onNPCKill(player, npc);
             if (progress <= 0)
@@ -115,11 +115,11 @@ public enum DailyTask {
                 dailyTask.complete(player);
             }
             //update(player, i);
-        }
+        }*/
     }
 
     public static void checkPlayerKill(Player player, Player killed) {
-        for (int i = 0; i < player.dailyTasks.length; i++) {
+        /*for (int i = 0; i < player.dailyTasks.length; i++) {
             DailyTask dailyTask = player.dailyTasks[i];
             int progress = dailyTask.getListener().onPlayerKill(player, killed);
             if (progress <= 0)
@@ -130,7 +130,7 @@ public enum DailyTask {
                 dailyTask.complete(player);
             }
             //update(player, i);
-        }
+        }*/
     }
 
     private void complete(Player player) {
