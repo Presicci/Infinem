@@ -5,6 +5,7 @@ import io.ruin.Server;
 import io.ruin.api.utils.Random;
 import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
 import io.ruin.model.item.Items;
+import io.ruin.model.skills.magic.spells.modern.WindStrike;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
@@ -329,7 +330,7 @@ public class PlayerCombat extends Combat {
         if (weaponDef.id == 28557) {
             player.animate(1167);
             player.graphics(99, 92, 0);
-            FireSpell spell = new FireStrike();
+            WindStrike spell = new WindStrike();
             spell.setRunes(null);
             spell.cast(player, target);
             updateLastAttack(4);
