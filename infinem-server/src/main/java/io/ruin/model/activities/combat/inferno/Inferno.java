@@ -645,16 +645,20 @@ public class Inferno {
         GameObject.forObj(30352, 2493, 5124, 0, obj -> obj.walkTo = new Position(2496, 5115, 0));
         ObjectAction.register(30352, actions -> {
             actions[1] = (player, obj) -> {
-                player.dialogue(new OptionsDialogue(
-                        new Option("Enter the Inferno", () -> join(player, getStartingWave(player), false)),
-                        new Option("Practice a specific wave", () -> player.integerInput("Enter the wave you'd like to practice: (1-69)", wave -> {
-                            if(wave < 0 || wave > 69) {
-                                player.retryIntegerInput("Invalid wave, enter the wave you'd like to practice: (1-69)");
-                                return;
-                            }
-                            join(player, wave, true);
-                        })),
-                        new Option("Cancel")));
+                if (player.hasAttribute("INFERNO_OPEN")) {
+                    player.dialogue(new OptionsDialogue(
+                            new Option("Enter the Inferno", () -> join(player, getStartingWave(player), false)),
+                            new Option("Practice a specific wave", () -> player.integerInput("Enter the wave you'd like to practice: (1-69)", wave -> {
+                                if(wave < 0 || wave > 69) {
+                                    player.retryIntegerInput("Invalid wave, enter the wave you'd like to practice: (1-69)");
+                                    return;
+                                }
+                                join(player, wave, true);
+                            })),
+                            new Option("Cancel")));
+                } else {
+                    player.dialogue(new NPCDialogue(7690, "Bring me a fire cape, then you can enter The Inferno."));
+                }
             };
         });
 
