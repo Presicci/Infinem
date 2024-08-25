@@ -631,6 +631,10 @@ public class DevicePcmPlayerProvider implements class45 {
 									var9 = 321;
 									if (var5 == 1 && var67 >= var56 - 75 && var67 <= var56 + 75 && var55 >= var9 - 20 && var55 <= var9 + 20) {
 										Login.Login_username = Login.Login_username.trim();
+										if (true) {
+											Interpreter.openURL("https://www.infinem.net/forums/app.php/user/forgot_password", true, false);
+											return;
+										}
 										if (Login.Login_username.length() == 0) {
 											PlatformInfo.setLoginResponseString("Please enter your username.", "If you created your account after November", "2010, this will be the creation email address.");
 										} else {
