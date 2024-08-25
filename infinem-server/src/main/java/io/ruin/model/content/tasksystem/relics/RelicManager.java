@@ -1,10 +1,7 @@
 package io.ruin.model.content.tasksystem.relics;
 
-import com.google.gson.annotations.Expose;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
-
-import java.util.Arrays;
 
 
 /**
@@ -89,6 +86,7 @@ public class RelicManager {
         }
         // Check point requirement
         config.set(player, relic.getConfigValue());
+        player.getTaskManager().doLookupByUUID(1006);
         return true;
     }
 
