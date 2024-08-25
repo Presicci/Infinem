@@ -36,7 +36,8 @@ import net.runelite.client.ui.overlay.OverlayManager;
 @PluginDescriptor(
 	name = "Player Outline",
 	description = "A simple plugin that outlines the player allowing you to see the player behind objects.",
-	tags = "highlight, player, outline, color"
+	tags = "highlight, player, outline, color",
+	enabledByDefault = false
 )
 public class PlayerOutlinePlugin extends Plugin
 {
