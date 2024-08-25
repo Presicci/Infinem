@@ -138,7 +138,7 @@ public class Bestiary {
                 }
             }
         }
-        sb.deleteCharAt(sb.length() - 1);   // Trim trailing |
+        if (sb.length() > 1) sb.deleteCharAt(sb.length() - 1);   // Trim trailing |
         return sb.toString();
     }
 
