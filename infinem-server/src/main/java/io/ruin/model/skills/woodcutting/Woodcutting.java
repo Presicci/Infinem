@@ -76,11 +76,7 @@ public class Woodcutting {
             player.privateSound(2277);
             return;
         }
-        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
-            player.sendMessage("Your inventory and bank are too full to hold any more logs.");
-            player.privateSound(2277);
-            return;
-        } else if (player.getInventory().isFull()) {
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) &&player.getInventory().isFull()) {
             player.sendMessage("Your inventory is too full to hold any more logs.");
             player.privateSound(2277);
             return;
@@ -101,12 +97,7 @@ public class Woodcutting {
                     player.sendMessage("baseChance=" + treeData.baseChance + ", chance=" + NumberUtils.formatTwoPlaces(chance) + ", xp/tick=" + NumberUtils.formatNumber((long) xpPerTick) + "");
                     player.sendMessage("logsPerHour=" + NumberUtils.formatTwoPlaces(logsPerHour) + ", xpPerHour=" + NumberUtils.formatNumber((long) xpPerHour));
                 }
-                if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
-                    player.sendMessage("Your inventory and bank are too full to hold any more logs.");
-                    player.privateSound(2277);
-                    player.resetAnimation();
-                    return;
-                } else if (player.getInventory().isFull()) {
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull()) {
                     player.sendMessage("Your inventory is too full to hold any more logs.");
                     player.privateSound(2277);
                     player.resetAnimation();
@@ -133,9 +124,13 @@ public class Woodcutting {
                     } else {
                         if (treeData == Tree.SULLIUSCEP) {
                             Item loot = SULLIUSCEP_LOOT.rollItem();
-                            if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
-                                player.getBank().add(loot.getId(), loot.getAmount());
-                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
+                            if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                                if (player.getBank().hasRoomFor(loot.getId())) {
+                                    player.getBank().add(loot.getId(), loot.getAmount());
+                                    player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
+                                } else {
+                                    player.getInventory().addOrDrop(loot.getId(), loot.getAmount());
+                                }
                             } else {
                                 player.sendFilteredMessage("You get " + loot.getDef().descriptiveName + ".");
                                 player.getInventory().add(loot);
@@ -144,9 +139,13 @@ public class Woodcutting {
                                 player.getTaskManager().doLookupByUUID(352);    // Chop a Sulliuscep Cap
                         } else if (treeData != Tree.CRYSTAL) {
                             if (treeData == Tree.REGULAR && KandarinHeadgear.hasEquipped(player)) amount += 1;
-                            if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
-                                player.getBank().add(treeData.log, amount);
-                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
+                            if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                                if (player.getBank().hasRoomFor(treeData.log)) {
+                                    player.getBank().add(treeData.log, amount);
+                                    player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
+                                } else {
+                                    player.getInventory().addOrDrop(treeData.log, amount);
+                                }
                             } else {
                                 player.sendFilteredMessage("You get some " + treeData.treeName + ".");
                                 player.getInventory().add(treeData.log, amount);

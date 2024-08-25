@@ -148,10 +148,7 @@ public class FishingSpot {
             return;
         }
 
-        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
-            player.sendMessage("Your inventory and bank are too full to hold any fish.");
-            return;
-        } else if (player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
             player.sendMessage("Your inventory is too full to hold any fish.");
             return;
         }
@@ -219,9 +216,13 @@ public class FishingSpot {
                             player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
                             player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(c.id) / 2, true);
                             player.sendMessage("Your infernal harpoon incinerates the " + c.name() + ".");
-                        } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(c.id)) {
-                            player.getBank().add(c.id, amount);
-                            player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
+                        } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                            if (player.getBank().hasRoomFor(c.id)) {
+                                player.getBank().add(c.id, amount);
+                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
+                            } else {
+                                player.getInventory().addOrDrop(c.id, amount);
+                            }
                             player.getStats().addXp(StatType.Fishing, (c.xp * anglerBonus(player)) * (npc.getId() == MINNOWS ? 1 : 2), true);
                         } else {
                             player.getInventory().addOrDrop(c.id, amount);
@@ -253,11 +254,7 @@ public class FishingSpot {
                     if (Random.rollDie(c.petOdds - (player.getStats().get(StatType.Fishing).currentLevel * 25)))
                         Pet.HERON.unlock(player);
 
-                    if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
-                        player.sendMessage("Your inventory and bank are too full to hold any fish.");
-                        player.resetAnimation();
-                        return;
-                    } else if (player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
+                    if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
                         player.sendMessage("Your inventory is too full to hold any more fish.");
                         player.resetAnimation();
                         return;

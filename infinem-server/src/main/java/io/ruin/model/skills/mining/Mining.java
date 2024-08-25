@@ -82,11 +82,7 @@ public class Mining {
                     player.resetAnimation();
                     return;
                 }
-                if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
-                    player.resetAnimation();
-                    player.privateSound(2277);
-                    player.sendMessage("Your inventory and bank are too full to hold any more " + rockData.rockName + ".");
-                } else if (player.getInventory().isFull()) {
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull()) {
                     player.resetAnimation();
                     player.privateSound(2277);
                     player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
@@ -120,9 +116,13 @@ public class Mining {
                         gem = GEM_TABLE.rollItem();
 
                         player.collectResource(gem);
-                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(gem)) {
-                            player.getBank().add(gem.getId(), gem.getAmount());
-                            player.sendFilteredMessage("Your Relic banks the " + gem.getDef().name + " you would have gained, giving you a total of " + player.getBank().getAmount(gem.getId()) + ".");
+                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                            if (player.getBank().hasRoomFor(gem)) {
+                                player.getBank().add(gem.getId(), gem.getAmount());
+                                player.sendFilteredMessage("Your Relic banks the " + gem.getDef().name + " you would have gained, giving you a total of " + player.getBank().getAmount(gem.getId()) + ".");
+                            } else {
+                                player.getInventory().addOrDrop(gem.getId(), gem.getAmount());
+                            }
                         } else {
                             player.getInventory().add(gem);
                         }
@@ -145,8 +145,12 @@ public class Mining {
                             InfernalTools.INFERNAL_PICKAXE.removeCharge(player);
                             player.sendMessage("Your infernal pickaxe incinerates the " + ItemDefinition.get(id).name + ".");
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
-                            player.getBank().add(id, amount);
-                            player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
+                            if (player.getBank().hasRoomFor(id)) {
+                                player.getBank().add(id, amount);
+                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
+                            } else {
+                                player.getInventory().addOrDrop(id, amount);
+                            }
                         } else {
                             player.getInventory().add(id, amount);
                         }
