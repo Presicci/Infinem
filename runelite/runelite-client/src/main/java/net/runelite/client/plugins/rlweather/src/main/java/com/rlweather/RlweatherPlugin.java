@@ -23,7 +23,8 @@ import java.util.Random;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Weather"
+	name = "Weather",
+	enabledByDefault = false
 )
 public class RlweatherPlugin extends Plugin
 {
