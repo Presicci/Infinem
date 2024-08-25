@@ -332,6 +332,7 @@ public class PlayerCombat extends Combat {
             player.graphics(99, 92, 0);
             WindStrike spell = new WindStrike();
             spell.setRunes(null);
+            spell.setBaseXp(0);
             spell.cast(player, target);
             updateLastAttack(4);
         }
