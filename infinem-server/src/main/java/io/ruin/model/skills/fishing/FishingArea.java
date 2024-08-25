@@ -23,8 +23,6 @@ public enum FishingArea {
             new Position(3240, 3147, 0),
             new Position(3240, 3146, 0),
             new Position(3242, 3143, 0),
-            new Position(3240, 3141, 0),
-            new Position(3239, 3141, 0),
             new Position(3238, 3141, 0)
     ),
     LUMBRIDGE_RIVER(
