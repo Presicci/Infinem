@@ -1601,7 +1601,7 @@ public class Player extends PlayerAttributes {
         } else if (++idleTicks >= 1000 && !isIdle) {            // After 10 minutes, set to idle
             isIdle = true;
             if (getCombat().getTarget() != null)
-                sendMessage("You are now idle and enemies will no longer be aggressive. Move to reset.");
+                player.dialogue(new MessageDialogue("You are now idle and enemies will no longer be aggressive. Move to reset.").keepOpenWhenHit());
         } else if (idleTicks >= 3000 && !player.isStaff()) {    // After 30 minutes, log player out
             //attemptIdleLogout();
         }
