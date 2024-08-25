@@ -56,7 +56,8 @@ import java.awt.image.BufferedImage;
 @PluginDescriptor(
 		name = "Skills generator",
 		description = "A plug-in that gives you tasks to do. An excellent plug-in when you have nothing to do.",
-		tags = {"whattodo", "idk", "bored","Generator","generator","skills","boredom", "SKILLING", "PVM","PKING","training","tasks"}
+		tags = {"whattodo", "idk", "bored","Generator","generator","skills","boredom", "SKILLING", "PVM","PKING","training","tasks"},
+		enabledByDefault = false
 )
 public class  BoredPlugin extends Plugin {
 	public static Image ICON;

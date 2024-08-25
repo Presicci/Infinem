@@ -62,7 +62,8 @@ import net.runelite.client.util.Text;
 @PluginDescriptor(
 	name = "Diary Requirements",
 	description = "Display level requirements in Achievement Diary interface",
-	tags = {"achievements", "tasks"}
+	tags = {"achievements", "tasks"},
+	enabledByDefault = false
 )
 public class DiaryRequirementsPlugin extends Plugin
 {

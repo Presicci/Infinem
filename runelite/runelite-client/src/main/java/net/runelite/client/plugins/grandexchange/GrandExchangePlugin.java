@@ -112,7 +112,8 @@ import org.apache.commons.text.similarity.FuzzyScore;
 @PluginDescriptor(
 	name = "Grand Exchange",
 	description = "Provide additional and/or easier access to Grand Exchange information",
-	tags = {"external", "integration", "notifications", "panel", "prices", "trade"}
+	tags = {"external", "integration", "notifications", "panel", "prices", "trade"},
+	enabledByDefault = false
 )
 @Slf4j
 public class GrandExchangePlugin extends Plugin

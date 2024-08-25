@@ -19,7 +19,8 @@ import java.util.Random;
 
 @Slf4j
 @PluginDescriptor(
-	name = "8ball"
+	name = "8ball",
+	enabledByDefault = false
 )
 public class eightBallPlugin extends Plugin
 {

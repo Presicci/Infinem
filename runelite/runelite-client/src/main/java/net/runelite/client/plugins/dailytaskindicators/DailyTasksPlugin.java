@@ -48,7 +48,8 @@ import net.runelite.client.plugins.PluginDescriptor;
 
 @PluginDescriptor(
 	name = "Daily Task Indicator",
-	description = "Show chat notifications for daily tasks upon login"
+	description = "Show chat notifications for daily tasks upon login",
+	enabledByDefault = false
 )
 public class DailyTasksPlugin extends Plugin
 {

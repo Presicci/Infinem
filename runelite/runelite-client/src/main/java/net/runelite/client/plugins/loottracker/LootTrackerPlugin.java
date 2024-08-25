@@ -121,8 +121,7 @@ import org.apache.commons.text.WordUtils;
 @PluginDescriptor(
 	name = "Loot Tracker",
 	description = "Tracks loot from monsters and minigames",
-	tags = {"drops"},
-	enabledByDefault = false
+	tags = {"drops"}
 )
 @Slf4j
 public class LootTrackerPlugin extends Plugin

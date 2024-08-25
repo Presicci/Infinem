@@ -74,7 +74,8 @@ import net.runelite.client.util.ImageUtil;
 @PluginDescriptor(
 	name = "Kourend Library",
 	description = "Show where the books are found in the Kourend Library",
-	tags = {"arceuus", "magic", "runecrafting", "overlay", "panel"}
+	tags = {"arceuus", "magic", "runecrafting", "overlay", "panel"},
+	enabledByDefault = false
 )
 @Slf4j
 public class KourendLibraryPlugin extends Plugin

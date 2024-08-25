@@ -77,8 +77,7 @@ import net.runelite.client.ui.overlay.OverlayMenuEntry;
 @PluginDescriptor(
 	name = "Mining",
 	description = "Show mining statistics and ore respawn timers",
-	tags = {"overlay", "skilling", "timers"},
-	enabledByDefault = false
+	tags = {"overlay", "skilling", "timers"}
 )
 @PluginDependency(XpTrackerPlugin.class)
 public class MiningPlugin extends Plugin

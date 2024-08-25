@@ -59,7 +59,8 @@ import net.runelite.client.util.ImageUtil;
 @PluginDescriptor(
 	name = "Screen Markers",
 	description = "Enable drawing of screen markers on top of the client",
-	tags = {"boxes", "overlay", "panel"}
+	tags = {"boxes", "overlay", "panel"},
+	enabledByDefault = false
 )
 public class ScreenMarkerPlugin extends Plugin
 {

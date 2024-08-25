@@ -30,7 +30,8 @@ import java.io.File;
 import java.util.concurrent.ScheduledExecutorService;
 
 @PluginDescriptor(
-	name = "Resource packs"
+	name = "Resource packs",
+	enabledByDefault = false
 )
 public class ResourcePacksPlugin extends Plugin
 {

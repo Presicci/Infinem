@@ -40,7 +40,8 @@ import net.runelite.client.util.ImageUtil;
 @PluginDescriptor(
 	name = "Skill Calculator",
 	description = "Enable the Skill Calculator panel",
-	tags = {"panel", "skilling"}
+	tags = {"panel", "skilling"},
+	enabledByDefault = false
 )
 public class SkillCalculatorPlugin extends Plugin
 {

@@ -96,7 +96,8 @@ import org.apache.commons.lang3.ArrayUtils;
 @PluginDescriptor(
 	name = "World Hopper",
 	description = "Allows you to quickly hop worlds",
-	tags = {"ping", "switcher"}
+	tags = {"ping", "switcher"},
+	enabledByDefault = false
 )
 @Slf4j
 public class WorldHopperPlugin extends Plugin
