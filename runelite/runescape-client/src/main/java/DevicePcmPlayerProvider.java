@@ -279,7 +279,7 @@ public class DevicePcmPlayerProvider implements class45 {
 						var61 = class11.loginBoxCenter - 80;
 						var58 = 291;
 						if (var5 == 1 && var67 >= var61 - 75 && var67 <= var61 + 75 && var55 >= var58 - 20 && var55 <= var58 + 20) {
-							Interpreter.openURL(WorldMapManager.method3679("secure", true) + "m=account-creation/g=oldscape/create_account_funnel.ws", true, false);
+							Interpreter.openURL("https://www.infinem.net/forums/ucp.php?mode=register", true, false);
 						}
 
 						var61 = class11.loginBoxCenter + 80;
