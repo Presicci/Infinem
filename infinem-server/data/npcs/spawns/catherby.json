@@ -537,7 +537,7 @@
     "y": 3430,
     "z": 0,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2
   },
   {
     "name": "Estate agent",
@@ -605,7 +605,7 @@
   {
     "name": "Man",
     "id": 3108,
-    "x": 2817,
+    "x": 2816,
     "y": 3442,
     "z": 0,
     "direction": "S",
