@@ -816,7 +816,7 @@ public class DevicePcmPlayerProvider implements class45 {
 									if (PcmPlayer.field287 != null) {
 										var35 = PcmPlayer.field287.highX / 2;
 										if (var5 == 1 && var67 >= PcmPlayer.field287.lowX - var35 && var67 <= var35 + PcmPlayer.field287.lowX && var55 >= var58 - 15 && var55 < var58) {
-											Interpreter.openURL(WorldMapManager.method3679("secure", true) + "m=weblogin/g=oldscape/cant_log_in", true, false);
+											Interpreter.openURL("https://www.infinem.net/forums/app.php/user/forgot_password", true, false);
 										}
 									}
 
