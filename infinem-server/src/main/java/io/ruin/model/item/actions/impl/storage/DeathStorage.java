@@ -208,9 +208,12 @@ public class DeathStorage extends ItemContainer {
     private Item getUnlockCost() {
         long cost = 0;
         if (player.getStats().totalLevel < 250) {
-            cost = 1000;
+            cost = 0;
         } else {
             cost = (int) (getContainerWorth() * 0.05f);
+        }
+        if (cost < 25000) {
+            cost = 0;
         }
         if (cost > 10000000) {
             cost = 10000000;
@@ -220,7 +223,7 @@ public class DeathStorage extends ItemContainer {
     }
 
     public static float getDonatorCostMultiplier(Player player) {
-        return player.isDiamond() ? 0.5f : player.isRuby() ? 0.75f : player.isEmerald() ? 0.8f : player.isSapphire() ? 0.9f : 1f;
+        return player.isOnyx() ? 0.7f : player.isDragonStone() ? 0.75f : player.isDiamond() ? 0.8f : player.isRuby() ? 0.85f : player.isEmerald() ? 0.9f : player.isSapphire() ? 0.95f : 1f;
     }
 
     public void reset() {
