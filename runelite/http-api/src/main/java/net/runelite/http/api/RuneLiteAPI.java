@@ -90,17 +90,35 @@ public class RuneLiteAPI
 
 		CLIENT = new OkHttpClient.Builder()
 			.pingInterval(30, TimeUnit.SECONDS)
+			.addInterceptor(chain ->
+			{
+				Request request = chain.request();
+				if (request.header("User-Agent") != null)
+				{
+					return chain.proceed(request);
+				}
+
+				Request userAgentRequest = request
+						.newBuilder()
+						.header("User-Agent", userAgent)
+						.build();
+				return chain.proceed(userAgentRequest);
+			})
 			.addNetworkInterceptor(new Interceptor()
 			{
 
 				@Override
 				public Response intercept(Chain chain) throws IOException
 				{
-					Request userAgentRequest = chain.request()
-						.newBuilder()
-						.header("User-Agent", userAgent)
-						.build();
-					return chain.proceed(userAgentRequest);
+					Response res = chain.proceed(chain.request());
+					if (res.code() >= 400 && "GET".equals(res.request().method()))
+					{
+						// if the request 404'd we don't want to cache it because its probably temporary
+						res = res.newBuilder()
+								.header("Cache-Control", "no-store")
+								.build();
+					}
+					return res;
 				}
 			})
 			.build();
