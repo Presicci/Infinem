@@ -1603,7 +1603,7 @@ public class Player extends PlayerAttributes {
             if (getCombat().getTarget() != null)
                 sendMessage("You are now idle and enemies will no longer be aggressive. Move to reset.");
         } else if (idleTicks >= 3000 && !player.isStaff()) {    // After 30 minutes, log player out
-            attemptIdleLogout();
+            //attemptIdleLogout();
         }
         for (Item item : equipment.getItems()) {
             if (item != null && item.getDef() != null)
