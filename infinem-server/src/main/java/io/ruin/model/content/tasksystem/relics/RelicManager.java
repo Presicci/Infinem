@@ -87,6 +87,14 @@ public class RelicManager {
         // Check point requirement
         config.set(player, relic.getConfigValue());
         player.getTaskManager().doLookupByUUID(1006);
+        player.resetActions(false, true, false);
+        player.lock();
+        player.startEvent(e -> {
+            player.animate(9208);
+            player.graphics(2021);
+            e.delay(11);
+            player.unlock();
+        });
         return true;
     }
 
