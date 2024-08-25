@@ -134,7 +134,6 @@ public class Woodcutting {
                         if (treeData == Tree.SULLIUSCEP) {
                             Item loot = SULLIUSCEP_LOOT.rollItem();
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
-                                amount *= 2;
                                 player.getBank().add(loot.getId(), loot.getAmount());
                                 player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
                             } else {
@@ -146,7 +145,6 @@ public class Woodcutting {
                         } else if (treeData != Tree.CRYSTAL) {
                             if (treeData == Tree.REGULAR && KandarinHeadgear.hasEquipped(player)) amount += 1;
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
-                                amount *= 2;
                                 player.getBank().add(treeData.log, amount);
                                 player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
                             } else {

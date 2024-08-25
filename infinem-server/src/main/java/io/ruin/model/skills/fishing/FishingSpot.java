@@ -220,7 +220,6 @@ public class FishingSpot {
                             player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(c.id) / 2, true);
                             player.sendMessage("Your infernal harpoon incinerates the " + c.name() + ".");
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(c.id)) {
-                            amount *= 2;
                             player.getBank().add(c.id, amount);
                             player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
                             player.getStats().addXp(StatType.Fishing, (c.xp * anglerBonus(player)) * (npc.getId() == MINNOWS ? 1 : 2), true);

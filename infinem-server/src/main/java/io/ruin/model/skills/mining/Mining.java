@@ -121,7 +121,7 @@ public class Mining {
 
                         player.collectResource(gem);
                         if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(gem)) {
-                            player.getBank().add(gem.getId(), gem.getAmount() * 2);
+                            player.getBank().add(gem.getId(), gem.getAmount());
                             player.sendFilteredMessage("Your Relic banks the " + gem.getDef().name + " you would have gained, giving you a total of " + player.getBank().getAmount(gem.getId()) + ".");
                         } else {
                             player.getInventory().add(gem);
@@ -145,7 +145,7 @@ public class Mining {
                             InfernalTools.INFERNAL_PICKAXE.removeCharge(player);
                             player.sendMessage("Your infernal pickaxe incinerates the " + ItemDefinition.get(id).name + ".");
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
-                            player.getBank().add(id, amount*2);
+                            player.getBank().add(id, amount);
                             player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
                         } else {
                             player.getInventory().add(id, amount);
