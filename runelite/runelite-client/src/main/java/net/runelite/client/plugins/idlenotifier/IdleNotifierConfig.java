@@ -74,7 +74,7 @@ public interface IdleNotifierConfig extends Config
 	)
 	default boolean logoutIdle()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
