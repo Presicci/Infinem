@@ -39,6 +39,7 @@ public class DropViewer {
         }
         player.getPacketSender().sendAccessMask(Interface.DROP_VIEWER, 24, 0, 1000, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         DropViewerSearch.sendEntries(player);
+        player.getTaskManager().doLookupByUUID(1007);   // Open the Drop Viewer
     }
 
     private static void displayDropsWithConditionals(Player player, int id, String name) {
