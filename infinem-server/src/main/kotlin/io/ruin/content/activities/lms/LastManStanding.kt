@@ -29,7 +29,7 @@ object LastManStanding {
     const val LOOT_CRATE_ID = 29081
 
     init {
-        whenRegionEntered(13617) {
+        /*whenRegionEntered(13617) {
             it.openPrimaryOverlay(333)
         }
         whenRegionExit(13617) { player, _ ->
@@ -79,7 +79,7 @@ object LastManStanding {
                 }
                 player.climbLadder(gameObject, down)
             }
-        }
+        }*/
     }
 
     val ARENA_SPAWNS = arrayOf(
