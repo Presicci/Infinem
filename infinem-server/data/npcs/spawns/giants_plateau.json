@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Hill Giant",
+    "id": 10374,
+    "x": 3381,
+    "y": 3147,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hill Giant",
+    "id": 10375,
+    "x": 3380,
+    "y": 3152,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hill Giant",
+    "id": 10375,
+    "x": 3376,
+    "y": 3150,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hill Giant",
+    "id": 10376,
+    "x": 3372,
+    "y": 3152,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 10374,
+    "x": 3373,
+    "y": 3148,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hill Giant",
+    "id": 10375,
+    "x": 3375,
+    "y": 3144,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hill Giant",
+    "id": 10376,
+    "x": 3379,
+    "y": 3144,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
