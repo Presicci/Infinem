@@ -160,6 +160,7 @@ public class Bestiary {
         player.getPacketSender().sendString(1010, 7, StringUtils.capitalizeFirst(entryName));
         player.getPacketSender().sendClientScript(10070, "is", getKillCount(entryName), currentEntry.generateRewardString());
         player.getPacketSender().sendAccessMask(1010, 3, 0, 100, AccessMasks.ClickOp1);
+        player.getTaskManager().doLookupByUUID(1008);   // View a Bestiary Entry's Rewards
     }
 
     static {
