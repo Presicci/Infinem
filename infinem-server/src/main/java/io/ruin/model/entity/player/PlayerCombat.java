@@ -330,7 +330,7 @@ public class PlayerCombat extends Combat {
         if (weaponDef.id == 28557) {
             player.animate(1167);
             player.graphics(99, 92, 0);
-            WindStrike spell = new WindStrike();
+            TargetSpell spell = new WindStrike();
             spell.setRunes(null);
             spell.setBaseXp(0);
             spell.cast(player, target);
