@@ -151,8 +151,6 @@ public class Bestiary {
             // ??? handling
             return;
         }
-        System.out.println(Arrays.toString(orderedEntries.toArray(new String[0])));
-        System.out.println("Slot: " + slot + ", index:" + index);
         String entryName = orderedEntries.toArray(new String[0])[index];
         currentEntry = getBestiaryEntry(entryName);
         displayedPerks = currentEntry.getSortedPerks();
