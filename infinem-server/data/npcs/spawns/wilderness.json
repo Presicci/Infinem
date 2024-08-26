@@ -3756,7 +3756,7 @@
     "name": "Callisto",
     "id": 6609,
     "x": 3291,
-    "y": 3847,
+    "y": 3843,
     "z": 0,
     "direction": "ne",
     "walkRange": 8
@@ -3800,8 +3800,8 @@
   {
     "name": "Vet\u0027ion",
     "id": 6611,
-    "x": 3224,
-    "y": 3790,
+    "x": 3229,
+    "y": 3787,
     "z": 0,
     "direction": "S",
     "walkRange": 10
