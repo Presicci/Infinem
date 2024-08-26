@@ -1,0 +1,20 @@
+[
+  {
+    "itemName": "Logs",
+    "amount": 0,
+    "id": 1511,
+    "x": 3411,
+    "y": 3183,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bucket",
+    "amount": 0,
+    "id": 1925,
+    "x": 3408,
+    "y": 3177,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
