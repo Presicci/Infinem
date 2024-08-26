@@ -1256,6 +1256,12 @@ public class Config {
         return value;
     }
 
+    public int setBit(Player player, int bit) {
+        int value = get(player) | (1 << bit);
+        set(player, value);
+        return value;
+    }
+
     public int increment(Player player, int amount) {
         int newValue = get(player) + amount;
         set(player, newValue);
