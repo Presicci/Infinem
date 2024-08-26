@@ -327,13 +327,21 @@ public class PlayerCombat extends Combat {
             }
             updateLastAttack(4);
         }
+        // Starter staff
         if (weaponDef.id == 28557) {
+            if (target.player != null) {
+                player.sendMessage(Color.RED.wrap("This staff's spell cannot be used against other players."));
+                return;
+            }
             player.animate(1167);
-            player.graphics(99, 92, 0);
-            TargetSpell spell = new WindStrike();
-            spell.setRunes(null);
-            spell.setBaseXp(0);
-            spell.cast(player, target);
+            player.graphics(90, 92, 0);
+            int duration = new Projectile(91, 43, 31, 51, 56, 10, 16, 64).send(player, target);
+            Hit hit = new Hit(player, AttackStyle.MAGIC, getAttackType()).randDamage(2).clientDelay(duration).setAttackWeapon(weaponDef);
+            int damage = target.hit(hit);
+            if (damage <= 0) {
+                hit.nullify();
+                target.graphics(85, 92, duration);
+            }
             updateLastAttack(4);
         }
         if (weaponDef.id == CorruptedStaff.CHARGED) {
