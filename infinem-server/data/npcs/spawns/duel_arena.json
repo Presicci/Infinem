@@ -2,8 +2,8 @@
   {
     "name": "Sabeil",
     "id": 3347,
-    "x": 3358,
-    "y": 3242,
+    "x": 3365,
+    "y": 3213,
     "z": 0,
     "direction": "S",
     "walkRange": 6
@@ -11,8 +11,8 @@
   {
     "name": "Jeed",
     "id": 3351,
-    "x": 3361,
-    "y": 3239,
+    "x": 3366,
+    "y": 3220,
     "z": 0,
     "direction": "S",
     "walkRange": 8
@@ -20,8 +20,8 @@
   {
     "name": "Captain Daerkin",
     "id": 2570,
-    "x": 3363,
-    "y": 3222,
+    "x": 3355,
+    "y": 3217,
     "z": 0,
     "direction": "S",
     "walkRange": 5
@@ -65,8 +65,8 @@
   {
     "name": "Zahwa",
     "id": 3345,
-    "x": 3373,
-    "y": 3277,
+    "x": 3372,
+    "y": 3275,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -74,8 +74,8 @@
   {
     "name": "Surgeon General Tafani",
     "id": 3343,
-    "x": 3372,
-    "y": 3272,
+    "x": 3371,
+    "y": 3273,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -138,7 +138,7 @@
     "name": "Ima",
     "id": 3346,
     "x": 3330,
-    "y": 3234,
+    "y": 3228,
     "z": 0,
     "direction": "S",
     "walkRange": 8
@@ -146,8 +146,8 @@
   {
     "name": "Jadid",
     "id": 3348,
-    "x": 3359,
-    "y": 3220,
+    "x": 3354,
+    "y": 3221,
     "z": 0,
     "direction": "S",
     "walkRange": 7
