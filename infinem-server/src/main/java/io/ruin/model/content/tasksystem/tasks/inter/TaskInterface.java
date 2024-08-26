@@ -16,6 +16,11 @@ import io.ruin.model.inter.utils.Config;
  */
 public class TaskInterface {
 
+    private static final Config TIER_FILTER = Config.varpbit(10033, true);
+    private static final Config TYPE_FILTER = Config.varpbit(11689, true);
+    private static final Config AREA_FILTER = Config.varpbit(11692, true);
+    private static final Config COMPLETED_FILTER = Config.varpbit(10034, true);
+
     public static void openTaskInterface(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.TASKS);
         int currentPoints = Config.LEAGUE_POINTS.get(player);
@@ -65,6 +70,12 @@ public class TaskInterface {
                 Config.TASK_INTERFACE_SORT.set(player, slot - 1);
                 player.getTaskManager().sendTasksToInterface();
             };
+        }));
+        InterfaceHandler.register(657, (h -> {
+            h.actions[32] = (SlotAction) (player, slot) -> TIER_FILTER.set(player, slot - 1);
+            h.actions[33] = (SlotAction) (player, slot) -> TYPE_FILTER.set(player, slot - 1);
+            h.actions[34] = (SlotAction) (player, slot) -> AREA_FILTER.set(player, slot - 1);
+            h.actions[35] = (SlotAction) (player, slot) -> COMPLETED_FILTER.set(player, slot - 1);
         }));
     }
 }
