@@ -5,6 +5,7 @@ import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.content.tasksystem.tasks.impl.DropAllTask;
+import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.NPCDefinition;
@@ -41,6 +42,53 @@ public class TaskManager {
             Config.varpbit(16009, true)
     };
 
+    private static final Config[] COMPLETED_TASKS = {
+            Config.varp(2616, false),
+            Config.varp(2617, false),
+            Config.varp(2618, false),
+            Config.varp(2619, false),
+            Config.varp(2620, false),
+            Config.varp(2621, false),
+            Config.varp(2622, false),
+            Config.varp(2623, false),
+            Config.varp(2624, false),
+            Config.varp(2625, false),
+            Config.varp(2626, false),
+            Config.varp(2627, false),
+            Config.varp(2628, false),
+            Config.varp(2629, false),
+            Config.varp(2630, false),
+            Config.varp(2631, false),
+            Config.varp(2808, false),
+            Config.varp(2809, false),
+            Config.varp(2810, false),
+            Config.varp(2811, false),
+            Config.varp(2812, false),
+            Config.varp(2813, false),
+            Config.varp(2814, false),
+            Config.varp(2815, false),
+            Config.varp(2816, false),
+            Config.varp(2817, false),
+            Config.varp(2818, false),
+            Config.varp(2819, false),
+            Config.varp(2820, false),
+            Config.varp(2821, false),
+            Config.varp(2822, false),
+            Config.varp(2823, false),
+            Config.varp(2824, false),
+            Config.varp(2825, false),
+            Config.varp(2826, false),
+            Config.varp(2827, false),
+            Config.varp(2828, false),
+            Config.varp(2829, false),
+            Config.varp(2830, false),
+            Config.varp(2831, false),
+            Config.varp(2832, false),
+            Config.varp(2833, false),
+            Config.varp(2834, false),
+            Config.varp(2835, false)
+    };
+
     public TaskManager(Player player) {
         this.player = player;
         this.inProgressTasks = new HashMap<>();
@@ -71,6 +119,18 @@ public class TaskManager {
         player.getPacketSender().sendPopupNotification(0xff981f, "Task Complete!", "Task Completed: " + Color.WHITE.wrap(taskName)
                 + "<br><br>Points Earned: " + Color.WHITE.wrap(pointGain + ""));
         TabTask.refresh(player);
+        completeTaskBit(player, uuid);
+    }
+
+    private static void completeTaskBit(Player player, int taskId) {
+        int bit = taskId % 32;
+        int varpIndex = taskId / 32;
+        COMPLETED_TASKS[varpIndex].setBit(player, bit);
+    }
+
+    static {
+        // Set completed task varps on login
+        LoginListener.register(player -> player.getTaskManager().completeTasks.forEach(taskId -> completeTaskBit(player, taskId)));
     }
 
     public void resetTasks() {
