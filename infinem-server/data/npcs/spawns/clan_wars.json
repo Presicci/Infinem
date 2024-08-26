@@ -32,15 +32,5 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Dr Ford"
-  },
-  {
-    "id": 6590,
-    "x": 3361,
-    "y": 3156,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Sister Scarophia"
   }
 ]
