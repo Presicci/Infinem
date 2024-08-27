@@ -9,6 +9,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
+import io.ruin.model.inter.journal.JournalTab;
 import io.ruin.model.inter.utils.Config;
 
 /**
@@ -24,10 +25,21 @@ public class TaskInterface {
 
     public static void openTaskInterface(Player player) {
         player.openInterface(InterfaceType.MAIN, 657);
+        player.getPacketSender().sendAccessMask(657, 27, 0, 16, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(657, 32, 0, 6, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(657, 33, 0, 25, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(657, 34, 0, 12, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(657, 35, 0, 3, AccessMasks.ClickOp1);
+    }
+
+    private static void navigation(Player player, int slot) {
+        if (slot == 10) {   // Info
+
+        } else if (slot == 14) {
+            JournalTab.setTab(player, JournalTab.Tab.ACHIEVEMENT);
+        } else if (slot == 16) {
+            RelicInterface.open(player);
+        }
     }
 
     /*public static void openTaskInterface(Player player) {
@@ -81,6 +93,7 @@ public class TaskInterface {
             };
         }));*/
         InterfaceHandler.register(657, (h -> {
+            h.actions[27] = (SlotAction) TaskInterface::navigation;;
             h.actions[32] = (SlotAction) (player, slot) -> TIER_FILTER.set(player, slot - 1);
             h.actions[33] = (SlotAction) (player, slot) -> TYPE_FILTER.set(player, slot - 1);
             h.actions[34] = (SlotAction) (player, slot) -> AREA_FILTER.set(player, slot - 1);
