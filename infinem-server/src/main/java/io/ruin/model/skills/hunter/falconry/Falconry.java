@@ -2,6 +2,7 @@ package io.ruin.model.skills.hunter.falconry;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -143,10 +144,18 @@ public class Falconry {
             e.delay(1);
             npc.remove();
             player.getStats().addXp(StatType.Hunter, kebbit.experience, true);
-            player.getInventory().addOrDrop(kebbit.furId, 1);
+            if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
+                player.getInventory().addOrDrop(new Item(kebbit.furId).note().getId(), 1);
+            } else {
+                player.getInventory().addOrDrop(kebbit.furId, 1);
+            }
             Item bone = new Item(Items.BONES, 1);
             if (!player.getBoneCrusher().handleBury(bone)) {
-                player.getInventory().addOrDrop(bone);
+                if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
+                    player.getInventory().addOrDrop(bone.note());
+                } else {
+                    player.getInventory().addOrDrop(bone);
+                }
             }
             if (player.getEquipment().get(Equipment.SLOT_WEAPON).getId() == FALCONERS_GLOVES)
                 player.getEquipment().get(Equipment.SLOT_WEAPON).setId(FALCONERS_GLOVES_BIRD);

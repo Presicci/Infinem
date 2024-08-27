@@ -1,6 +1,7 @@
 package io.ruin.model.skills.hunter.creature.impl;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -83,6 +84,10 @@ public class Bird extends Creature {
         int slots = 4;
         if (player.getInventory().contains(featherId, 1))
             slots--;
+        if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
+            if (player.getInventory().contains(Items.BONES_NOTE)) slots--;
+            if (player.getInventory().contains(Items.RAW_BIRD_MEAT_NOTE)) slots--;
+        }
         return player.getInventory().getFreeSlots() >= slots;
     }
 

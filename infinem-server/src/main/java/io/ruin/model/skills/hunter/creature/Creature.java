@@ -251,10 +251,18 @@ public abstract class Creature {
             }
             if (item.getId() == Items.BONES) {
                 if (!player.getBoneCrusher().handleBury(item)) {
-                    player.getInventory().add(item.getId(), item.getAmount());
+                    if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
+                        player.getInventory().add(item.note().getId(), item.getAmount());
+                    } else {
+                        player.getInventory().add(item.getId(), item.getAmount());
+                    }
                 }
             } else {
-                player.getInventory().add(item.getId(), item.getAmount());
+                if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) && item.getDef().notedId > 0) {
+                    player.getInventory().add(item.note().getId(), item.getAmount());
+                } else {
+                    player.getInventory().add(item.getId(), item.getAmount());
+                }
             }
         });
         player.getInventory().add(getTrapType().getItemId(), 1);
