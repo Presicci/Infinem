@@ -134,8 +134,8 @@ public abstract class Creature {
         ArrayList<Trap> viableTraps = new ArrayList<>();
         for (Player player : npc.localPlayers()) {
             player.traps.forEach(trap -> {
-                if ((trap.getTrapType() instanceof BoxTrap && player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) // Trickster skips the ignore trap chance for box traps
-                        || (Random.get() > ignoreTrapChance(npc, trap)))
+                if ((trap.getTrapType() instanceof BoxTrap && player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) // Trickster skips the ignore trap chance for box traps
+                        || (Random.get() > ignoreTrapChance(npc, trap))
                         && isViableTrap(npc, trap))
                     viableTraps.add(trap);
             });
