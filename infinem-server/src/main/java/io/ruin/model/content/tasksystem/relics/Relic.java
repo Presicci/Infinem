@@ -10,7 +10,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum Relic {
     /**
-    Tier 1 - Experience focus - 5x XP
+    Tier 1 - Experience focus - 7x XP
     Eye of the Artisan: https://oldschool.runescape.wiki/w/Eye_of_the_Artisan
         Receive double the usual amount of experience in Smithing, Cooking, Firemaking, Herblore, Fletching, Crafting and Construction.
         This stacks with any existing experience multipliers.
@@ -21,17 +21,17 @@ public enum Relic {
         Receive double the usual amount of experience in Attack, Strength, Defence, Hitpoints, Magic, Ranged and Prayer.
         This stacks with any existing experience multipliers.
 
-    Tier 2 - Skilling boosts - Drastically reduced run drain 7x XP
+    Tier 2 - Skilling boosts - Drastically reduced run drain 9x XP
     Endless Harvest
     Prouction Master
      ANT
 
-    Tier 3 - Teleports - Unlock dungeon hub - 9x XP
+    Tier 3 - Teleports - Unlock dungeon hub - 11x XP
     Eternal Jeweller
     Fairy's Flight
     Dungeon Hub Premium
 
-    Tier 4 - Combat - 11x XP
+    Tier 4 - Combat - 13x XP
     Global rare monster drop - lets you reset this tier
      Quick Shot
         1 tick faster
@@ -50,7 +50,7 @@ public enum Relic {
         x4 hp regen
         immune to poison/venom/dragonfire/icy breath
 
-    Tier 5 - Skilling - 13x XP
+    Tier 5 - Skilling - 15x XP
      Key Master
         higher chance of key drops
         exclusive key to relic users (skeleton key)
@@ -67,39 +67,31 @@ public enum Relic {
         duplicate pet rolls give a payout
         Payout in the form of what? Clue scroll loot? GP? unique loot table? Rare loot table?
 
-    Tier 6 - Clue vs slayer vs ? - 15x XP
+    Tier 6 - Clue vs slayer vs ? - 17x XP
         Unnatural Selection
         Treasure Seeker
 
-    Tier 7 - Combat - 17x XP
+    Tier 7 - Combat - 19x XP
     Weapon Specialist: https://oldschool.runescape.wiki/w/Weapon_Specialist
         The player's special attack energy regenerates at a rate of 30% every 30 seconds instead of 10%.
         Special attacks that cost more than 20% energy (such as the Bandos godsword) will cost 20% instead.
 
      **/
-    EYE_OF_THE_ARTISAN(1, 1, ""),
-    GIFT_OF_THE_GATHERER(1, 2, ""),
-    WAY_OF_THE_WARRIOR(1, 3, ""),
-    ENDLESS_HARVEST(2, 1,
-            "- Resources gathered from Fishing, Woodcutting and Mining will be multiplied by 2. Experience is granted per resource gathered." +
-            "\n- The resources you gather are sent directly to your Bank if you have space. If not, they will be placed in your Inventory."),
-    PRODUCTION_MASTER(2, 2,
-            "- When doing the following activities, all items will be processed at once, awarding full XP:" +
-            "\n- Smelting ores, smithing bars and making cannonballs" +
-            "\n- Fletching logs and cutting bolt tips" +
-            "\n- Cleaning herbs and making potions" +
-            "\n- Cooking food and making jugs of wine" +
-            "\n- Crafting leather, uncut gems, glass, jewellery, pottery, battlestaves, spinning flax/wool, and weaving"),
-    TRICKSTER(2, 3, ""),
-    FAIRYS_FLIGHT(3, 1, ""),
-    GLOBETROTTER(3, 2, ""),
-    DUNGEON_HUB_PREMIUM(3, 3, "")
+    EYE_OF_THE_ARTISAN(1, 1),
+    GIFT_OF_THE_GATHERER(1, 2),
+    WAY_OF_THE_WARRIOR(1, 3),
+    ENDLESS_HARVEST(2, 1),
+    PRODUCTION_MASTER(2, 2),
+    TRICKSTER(2, 3),
+    FAIRYS_FLIGHT(3, 1),
+    GLOBETROTTER(3, 2),
+    DUNGEON_HUB_PREMIUM(3, 3),
+    POISON_RELIC(4, 1),
+    TANK_RELIC(4, 1)
     ;
 
     @Getter
     private final int tier, configValue;
-    @Getter
-    private final String description;
 
     public static int tiers;
 
