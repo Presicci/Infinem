@@ -98,7 +98,7 @@ public class RelicInterface {
                 Interface.RELICS << 16 | 45,   // widget15 - passive
                 getRelicStatus(player, relic.getRelic()),   // arg16 - 2 if player can take the relic, 0 if cant, 1 if already have relic, 3 if need tier before
                 relicStruct,   // arg17 - relic struct
-                1740   // arg18 - passive effect struct
+                RelicManager.getPassiveStruct(relic.getRelic().getTier())   // arg18 - passive effect struct
         );
         player.putTemporaryAttribute("SEL_RELIC", relic.getRelic());
     }

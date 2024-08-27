@@ -1,6 +1,7 @@
 package io.ruin.model.content.tasksystem.relics;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.cache.def.StructDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 
@@ -132,5 +133,14 @@ public class RelicManager {
                 return index;
         }
         return RELICS.length;
+    }
+
+    public static int getPassiveStruct(int tier) {
+        int structId = tier + 8999;
+        StructDefinition def = StructDefinition.get(structId);
+        if (def.getParams().containsKey(1019)) {
+            return (int) def.getParams().get(1019);
+        }
+        return -1;
     }
 }
