@@ -70,6 +70,10 @@ public class TradePost {
     }
 
     public void openHistory() {
+        if (player.getGameMode().isIronMan()) {
+            player.sendMessage("Your gamemode prevents you from accessing the Grand Exchange!");
+            return;
+        }
         player.openInterface(InterfaceType.MAIN, 383);
         player.getPacketSender().sendClientScript(1644);
         Iterator<ExchangeHistory> iterator = exchangeHistory.descendingIterator();
@@ -610,7 +614,13 @@ public class TradePost {
             };
         });
         InterfaceHandler.register(383, handler -> {
-            handler.actions[2] = (SimpleAction) player -> player.getTradePost().openViewOffers();
+            handler.actions[2] = (SimpleAction) player -> {
+                if (player.getGameMode().isIronMan()) {
+                    player.sendMessage("Your gamemode prevents you from accessing the Grand Exchange!");
+                    return;
+                }
+                player.getTradePost().openViewOffers();
+            };
         });
 
         for(int trader : new int[]{2149, 2148}) {
