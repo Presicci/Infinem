@@ -84,7 +84,7 @@ public enum Relic {
     TRICKSTER(2, 3, 28771),
     FAIRYS_FLIGHT(3, 1, 25102),
     GLOBETROTTER(3, 2, 28765),
-    DUNGEON_HUB_PREMIUM(3, 3),
+    DUNGEON_HUB_PREMIUM(3, 3, 24545),
     POISON_RELIC(4, 1),
     TANK_RELIC(4, 1)
     ;
