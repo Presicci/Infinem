@@ -1,5 +1,6 @@
 package io.ruin.model.content.tasksystem.relics;
 
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 
@@ -88,6 +89,19 @@ public class RelicManager {
         config.set(player, relic.getConfigValue());
         player.getTaskManager().doLookupByUUID(1006);
         player.resetActions(false, true, false);
+        int[] itemIds = relic.getItemIds();
+        if (itemIds != null) {
+            for (int itemId : itemIds) {
+                if (player.getInventory().hasRoomFor(itemId)) {
+                    player.getInventory().add(itemId);
+                } else if (player.getBank().hasRoomFor(itemId)) {
+                    player.getBank().add(itemId);
+                    player.sendMessage("Your inventory is full, so the relic item was sent to your bank: " + ItemDefinition.get(itemId).name);
+                } else {
+                    player.sendMessage("Your inventory and bank are full, see the Infinem guide in Lumbridge to claim your relic item: " + ItemDefinition.get(itemId).name);
+                }
+            }
+        }
         player.lock();
         player.startEvent(e -> {
             player.animate(9208);

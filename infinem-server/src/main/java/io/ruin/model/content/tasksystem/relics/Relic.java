@@ -7,7 +7,6 @@ import lombok.Getter;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/11/2022
  */
-@AllArgsConstructor
 public enum Relic {
     /**
     Tier 1 - Experience focus - 7x XP
@@ -90,8 +89,14 @@ public enum Relic {
     TANK_RELIC(4, 1)
     ;
 
-    @Getter
-    private final int tier, configValue;
+    @Getter private final int tier, configValue;
+    @Getter private final int[] itemIds;
+
+    Relic(int tier, int configValue, int... itemIds) {
+        this.tier = tier;
+        this.configValue = configValue;
+        this.itemIds = itemIds;
+    }
 
     public static int tiers;
 
