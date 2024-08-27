@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -287,7 +288,7 @@ public enum ImplingJar {
             player.sendMessage("You'll need to clear some space in your pack before looting the jar.");
             return;
         }
-        if (Random.rollDie(10, 1)) {
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) && Random.rollDie(10, 1)) {
             item.remove();
             player.sendMessage("You break the jar as you try and open it. You throw the shattered remains away.");
         } else {
