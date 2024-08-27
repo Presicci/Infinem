@@ -193,7 +193,7 @@ public class PlayerMovement extends Movement {
                 runDirection = getRunDirection(diffX, diffY);
                 if(runDirection == -1)
                     walkDirection = getWalkDirection(diffX, diffY);
-                else if(!forceRun)
+                else if(!forceRun && !player.getRelicManager().hasRelicInTier(1))
                     drainEnergy();
                 SagesGreaves.tickGreaves(player);
                 player.movementModeUpdate.set(2);
