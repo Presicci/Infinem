@@ -20,9 +20,7 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.shop.Shop;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class NPCDefinition {
@@ -161,11 +159,13 @@ public class NPCDefinition {
     public HashMap<Object, Object> attributes;
 
     void decode(InBuffer buffer) {
+        List<Integer> processedOpcodes = new ArrayList<>();
         for(;;) {
             int opcode = buffer.readUnsignedByte();
             if(opcode == 0)
                 break;
-            decode(buffer, opcode);
+            processedOpcodes.add(opcode);
+            decode(buffer, opcode, processedOpcodes.toArray(new Integer[0]));
         }
         /**
          * Keep updated with client lol
@@ -378,7 +378,7 @@ public class NPCDefinition {
             custom_values.put("UNDEAD", 1);
     }
 
-    void decode(InBuffer var1, int var2) {
+    void decode(InBuffer var1, int var2, Integer[] opcodes) {
         if(var2 == 1) {
             int var4 = var1.readUnsignedByte();
             models = new int[var4];
@@ -501,7 +501,7 @@ public class NPCDefinition {
                     attributes.put(key, var1.readInt());
             }
         } else {
-            System.err.println("MISSING NPC OPCODE " + var2 + " FOR ID " + id);
+            System.err.println("MISSING NPC OPCODE " + var2 + " FOR ID " + id + " OPCODES: " + Arrays.toString(opcodes));
         }
 
     }
