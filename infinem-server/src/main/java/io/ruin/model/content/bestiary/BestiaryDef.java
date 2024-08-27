@@ -374,7 +374,7 @@ public class BestiaryDef {
     }
 
     static {
-        System.out.println("Loading Bestiary..." + System.currentTimeMillis());
+        System.out.println("Loading Bestiary...");
         NPCDefinition.forEach(e -> {
             if (e.combatInfo == null || e.combatLevel < 1) return;
             String name = e.name.toLowerCase();
@@ -406,6 +406,6 @@ public class BestiaryDef {
             if (e.combatInfo != null)
                 ENTRIES.add(name);
         });
-        System.out.println("Done loading bestiary." + System.currentTimeMillis());
+        System.out.println("Done loading bestiary. " + ENTRIES.size() + " entries loaded.");
     }
 }
