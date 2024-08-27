@@ -51,8 +51,8 @@ public class TradePost {
     }
 
     public void openViewOffers() {
-        //if(player.getBankPin().requiresVerification(p -> openViewOffers()))
-        //    return;
+        if(player.getBankPin().requiresVerification(p -> openViewOffers()))
+            return;
         player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_VIEW);
         player.getPacketSender().sendAccessMask(1005, 19, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         player.closeInterface(InterfaceType.INVENTORY);
@@ -61,8 +61,8 @@ public class TradePost {
     }
 
     public void openMyOffers() {
-        //if(player.getBankPin().requiresVerification(p -> openMyOffers()))
-        //    return;
+        if(player.getBankPin().requiresVerification(p -> openMyOffers()))
+            return;
         player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_MY_OFFERS);
         player.getPacketSender().sendAccessMask(1006, 5, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         changeInventoryAccess();
@@ -74,6 +74,8 @@ public class TradePost {
             player.sendMessage("Your gamemode prevents you from accessing the Grand Exchange!");
             return;
         }
+        if(player.getBankPin().requiresVerification(p -> openHistory()))
+            return;
         player.openInterface(InterfaceType.MAIN, 383);
         player.getPacketSender().sendClientScript(1644);
         Iterator<ExchangeHistory> iterator = exchangeHistory.descendingIterator();
@@ -527,6 +529,8 @@ public class TradePost {
             player.sendMessage("Your gamemode prevents you from accessing the Grand Exchange!");
             return;
         }
+        if(player.getBankPin().requiresVerification(TradePost::openCoffer))
+            return;
         long coffer = player.getTradePost().coffer;
 
         if (coffer == 0) {
