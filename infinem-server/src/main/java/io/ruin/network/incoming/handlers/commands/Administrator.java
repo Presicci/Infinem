@@ -36,12 +36,14 @@ import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.content.transportation.relics.DungeonHub;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.*;
 import io.ruin.model.entity.player.ai.AIPlayer;
 import io.ruin.model.entity.player.ai.scripts.EmoteScript;
+import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -76,6 +78,8 @@ import io.ruin.model.shop.ShopManager;
 import io.ruin.model.skills.construction.*;
 import io.ruin.model.skills.construction.actions.Costume;
 import io.ruin.model.skills.construction.actions.CostumeStorage;
+import io.ruin.model.skills.construction.mahoganyhomes.MahoganyHomes;
+import io.ruin.model.skills.construction.mahoganyhomes.MahoganyHotspot;
 import io.ruin.model.skills.construction.room.impl.PortalNexus;
 import io.ruin.model.skills.farming.farming_contracts.SeedPack;
 import io.ruin.model.skills.farming.patch.Patch;
@@ -90,6 +94,7 @@ import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
+import io.ruin.network.central.CentralSender;
 import io.ruin.network.incoming.handlers.CommandHandler;
 import io.ruin.services.LatestUpdate;
 import io.ruin.services.Punishment;
@@ -961,7 +966,7 @@ public class Administrator {
                 for (Rock rock : Rock.values()) {
                     if (rock.multiOre != null)
                         continue;
-                    double chance = Mining.chance(Mining.getEffectiveLevel(player), rock, pick) / 100;
+                    double chance = Mining.chance(player, Mining.getEffectiveLevel(player), rock) / 100;
                     double oresPerTick = chance / 2;
                     double oresPerHour = oresPerTick * 60 * 100;
                     double xpPerHour = oresPerHour * rock.experience * StatType.Mining.defaultXpMultiplier;
@@ -1210,6 +1215,7 @@ public class Administrator {
             case "v":
             case "varp": {
                 int id = Integer.parseInt(args[0]);
+
                 if(id < 0) {
                     player.sendFilteredMessage("Varp " + id + " does not exist.");
                     return true;
@@ -1251,6 +1257,10 @@ public class Administrator {
             case "vb":
             case "varpbit": {
                 int id = Integer.parseInt(args[0]);
+                if (args.length < 2) {
+                    player.sendMessage("VB " + id + " value: " + Config.varpbit(id, false).get(player));
+                    return true;
+                }
                 int value = Integer.parseInt(args[1]);
                 VarpbitDefinition bit = VarpbitDefinition.get(id);
                 if(bit == null) {
@@ -2434,6 +2444,15 @@ public class Administrator {
                 player.sendMessage(Arrays.toString(obj.modelIds));
                 return true;
             }
+            case "fobjmodel": {
+                int modelId = Integer.parseInt(args[0]);
+                player.sendMessage("Searching for objs that use model: " + modelId);
+                ObjectDefinition.forEach(d -> {
+                    if (d.modelIds == null || d.modelIds.length <= 0) return;
+                    if (Arrays.stream(d.modelIds).anyMatch(mid -> mid == modelId))
+                        player.sendMessage(d.id + ":" + d.name);
+                });
+            }
 
             case "findo":
             case "findobj": {
@@ -2720,7 +2739,6 @@ public class Administrator {
             }
             case "portalnexus": {
                 PortalNexus.sendConfigure(player);
-                player.getPacketSender().sendAccessMask(19, 21, 0, 10, Integer.parseInt(args[0]));
                 return true;
             }
             case "spellbook": {
@@ -2752,6 +2770,16 @@ public class Administrator {
             }
             case "dropviewer": {
                 DropViewer.open(player);
+                return true;
+            }
+            case "decodeint": {
+                if (args.length < 4) {
+                    player.sendMessage("Need 4 bytes as perams");
+                    return false;
+                }
+                byte a = Byte.parseByte(args[0]), b = Byte.parseByte(args[1]), c = Byte.parseByte(args[2]), d = Byte.parseByte(args[3]);
+                int unsignedA = (a & 0xff), unsignedB = (b & 0xff), unsignedC = (c & 0xff), unsignedD = (d & 0xff);
+                player.sendMessage("Int: " + ((unsignedA << 24) + (unsignedB << 16) + (unsignedC << 8) + unsignedD));
                 return true;
             }
             case "decodeshort": {
@@ -2807,6 +2835,10 @@ public class Administrator {
                 Slayer.setTask(player, uuid);
                 Slayer.setTaskAmount(player, amount);
                 Slayer.setBossTask(player, 0);
+                return true;
+            }
+            case "completetask": {
+                Slayer.setTaskAmount(player, 0);
                 return true;
             }
             case "givebosstask": {
@@ -2883,6 +2915,23 @@ public class Administrator {
                 } else {
                     player.sendMessage("Found " + objs.size() + " objects with showid " + showid + ":");
                     for (ObjectDefinition def : objs) {
+                        player.sendMessage(def.id + "");
+                    }
+                }
+                return true;
+            }
+            case "findshowidnpc": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::findshowidnpc [showid]");
+                    return false;
+                }
+                int showid = Integer.parseInt(args[0]);
+                List<NPCDefinition> npcs = NPCDefinition.cached.values().stream().filter(o -> o.showIds != null && o.showIds.length > 0 && Arrays.stream(o.showIds).anyMatch(id -> id == showid)).collect(Collectors.toList());
+                if (npcs.size() <= 0) {
+                    player.sendMessage("No npcs found.");
+                } else {
+                    player.sendMessage("Found " + npcs.size() + " objects with showid " + showid + ":");
+                    for (NPCDefinition def : npcs) {
                         player.sendMessage(def.id + "");
                     }
                 }
@@ -3035,6 +3084,62 @@ public class Administrator {
                         System.out.println(def.id + "-" + def.name + " is missing animations");
                     }
                 });
+                return true;
+            }
+            case "tic": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::testitemcontainer [containerId]");
+                    return false;
+                }
+                player.startEvent(e -> {
+                    int start = Integer.parseInt(args[0]);
+                    for (int index = start; index < start+50; index++) {
+                        player.getPacketSender().sendItems(19, 29, index, new Item(4151, 1));
+                        player.sendMessage("Sending " + index);
+                        e.delay(2);
+                    }
+                });
+                return true;
+            }
+            case "setcarpenterpoints": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::setcarpenterpoints [amt]");
+                    return false;
+                }
+                player.putAttribute(MahoganyHomes.POINTS_KEY, Integer.parseInt(args[0]));
+                return true;
+            }
+            case "resetmh": {
+                for (MahoganyHotspot hotspot : MahoganyHotspot.values()) {
+                    hotspot.getVarbit().set(player, 0);
+                }
+                player.removeAttribute("MH_CONTRACT");
+                player.removeAttribute("MH_DIFF");
+                player.removeAttribute("MH_COMP");
+                return true;
+            }
+            case "hometele": {
+                player.startEvent(e -> {
+                    player.animate(4847);
+                    player.graphics(800);
+                    e.delay(6);
+                    player.animate(4850);
+                    e.delay(4);
+                    player.animate(4853);
+                    player.graphics(802);
+                    e.delay(4);
+                    player.animate(4855);
+                    player.graphics(803);
+                    e.delay(4);
+                    player.animate(4857);
+                    player.graphics(804);
+                    e.delay(3);
+                    player.animate(-1);
+                });
+                return true;
+            }
+            case "oldtasks": {
+                TaskInterface.openOldInterface(player);
                 return true;
             }
         }

@@ -42,7 +42,7 @@ public class TaskInterface {
         }
     }
 
-    /*public static void openTaskInterface(Player player) {
+    public static void openOldInterface(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.TASKS);
         int currentPoints = Config.LEAGUE_POINTS.get(player);
         int pointsForCurrentTier = player.getRelicManager().pointsForCurrentRelic();
@@ -55,10 +55,10 @@ public class TaskInterface {
         player.getPacketSender().sendAccessMask(Interface.TASKS, 46, 0, 12, 2);
         player.getPacketSender().sendAccessMask(Interface.TASKS, 47, 0, 12, 2);
         player.getTaskManager().sendTasksToInterface();
-    }*/
+    }
 
     static {
-        /*InterfaceHandler.register(Interface.TASKS, (h -> {
+        InterfaceHandler.register(Interface.TASKS, (h -> {
             h.actions[9] = (OptionAction) (player, option) -> {
                 if (option == 1) {
                     player.stringInput("Search:", search -> {
@@ -91,7 +91,7 @@ public class TaskInterface {
                 Config.TASK_INTERFACE_SORT.set(player, slot - 1);
                 player.getTaskManager().sendTasksToInterface();
             };
-        }));*/
+        }));
         InterfaceHandler.register(657, (h -> {
             h.actions[27] = (SlotAction) TaskInterface::navigation;;
             h.actions[32] = (SlotAction) (player, slot) -> TIER_FILTER.set(player, slot - 1);
