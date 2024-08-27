@@ -2,6 +2,7 @@ package io.ruin.model.content.tasksystem.tasks.inter;
 
 import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -17,11 +18,19 @@ import io.ruin.model.inter.utils.Config;
 public class TaskInterface {
 
     private static final Config TIER_FILTER = Config.varpbit(10033, true);
-    private static final Config TYPE_FILTER = Config.varpbit(11689, true);
+    private static final Config TYPE_FILTER = Config.varpbit(10037, true);
     private static final Config AREA_FILTER = Config.varpbit(11692, true);
     private static final Config COMPLETED_FILTER = Config.varpbit(10034, true);
 
     public static void openTaskInterface(Player player) {
+        player.openInterface(InterfaceType.MAIN, 657);
+        player.getPacketSender().sendAccessMask(657, 32, 0, 6, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(657, 33, 0, 25, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(657, 34, 0, 12, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(657, 35, 0, 3, AccessMasks.ClickOp1);
+    }
+
+    /*public static void openTaskInterface(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.TASKS);
         int currentPoints = Config.LEAGUE_POINTS.get(player);
         int pointsForCurrentTier = player.getRelicManager().pointsForCurrentRelic();
@@ -34,10 +43,10 @@ public class TaskInterface {
         player.getPacketSender().sendAccessMask(Interface.TASKS, 46, 0, 12, 2);
         player.getPacketSender().sendAccessMask(Interface.TASKS, 47, 0, 12, 2);
         player.getTaskManager().sendTasksToInterface();
-    }
+    }*/
 
     static {
-        InterfaceHandler.register(Interface.TASKS, (h -> {
+        /*InterfaceHandler.register(Interface.TASKS, (h -> {
             h.actions[9] = (OptionAction) (player, option) -> {
                 if (option == 1) {
                     player.stringInput("Search:", search -> {
@@ -70,7 +79,7 @@ public class TaskInterface {
                 Config.TASK_INTERFACE_SORT.set(player, slot - 1);
                 player.getTaskManager().sendTasksToInterface();
             };
-        }));
+        }));*/
         InterfaceHandler.register(657, (h -> {
             h.actions[32] = (SlotAction) (player, slot) -> TIER_FILTER.set(player, slot - 1);
             h.actions[33] = (SlotAction) (player, slot) -> TYPE_FILTER.set(player, slot - 1);
