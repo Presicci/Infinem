@@ -182,6 +182,7 @@ public class Config {
      */
     public static final Config MAP_KEY_OPEN_BY_DEFAULT = varpbit(10294, true).defaultValue(1);
     public static final Config BESTIARY_KC = varpbit(3577, true);
+    public static final Config BESTIARY_NEW_ENTRY = varpbit(4523, true).defaultValue(1);
     public static final Config INFORMATION_BROADCASTS = varpbit(4499, true).defaultValue(1);
     public static final Config SKILLING_BROADCASTS = varpbit(4503, true).defaultValue(1);
     public static final Config DROP_BROADCASTS = varpbit(4507, true).defaultValue(1);

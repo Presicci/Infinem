@@ -44,6 +44,9 @@ public class Bestiary {
     public void incrementKillCount(NPCDefinition def, int amt) {
         String bestiaryName = def.bestiaryEntry;
         if (bestiaryName == null || !BestiaryDef.ENTRIES.contains(bestiaryName)) return;
+        if (!killCounts.containsKey(bestiaryName) && Config.BESTIARY_NEW_ENTRY.get(player) == 1) {
+            player.sendMessage("You have unlocked a new bestiary entry: <col=ff0000> " + bestiaryName + "</col>.");
+        }
         int currentCount = killCounts.getOrDefault(bestiaryName, 0);
         killCounts.remove(bestiaryName);   // Reset order in map, for recent sort
         killCounts.put(bestiaryName, currentCount + amt);

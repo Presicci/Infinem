@@ -142,10 +142,11 @@ public class Settings {
         // Infinem
         MAP_KEY(8, 1, 209, Config.MAP_KEY_OPEN_BY_DEFAULT::toggle),
         BESTIARY_KC(8, 3, 211, Config.BESTIARY_KC::toggle),
-        INFO_BROADCAST(8, 5, 213, Config.INFORMATION_BROADCASTS::toggle),
-        SKILL_BROADCAST(8, 6, 214, Config.SKILLING_BROADCASTS::toggle),
-        DROP_BROADCAST(8, 7, 215, Config.DROP_BROADCASTS::toggle),
-        FRIEND_BROADCAST(8, 8, 216, Config.FRIEND_BROADCASTS::toggle);
+        BESTIARY_NEW_ENTRY(8, 4, 212, Config.BESTIARY_NEW_ENTRY::toggle),
+        INFO_BROADCAST(8, 6, 214, Config.INFORMATION_BROADCASTS::toggle),
+        SKILL_BROADCAST(8, 7, 215, Config.SKILLING_BROADCASTS::toggle),
+        DROP_BROADCAST(8, 8, 216, Config.DROP_BROADCASTS::toggle),
+        FRIEND_BROADCAST(8, 9, 217, Config.FRIEND_BROADCASTS::toggle);
 
         private final int menuIndex, childIndex, searchIndex;
         private final Consumer<Player> consumer;
