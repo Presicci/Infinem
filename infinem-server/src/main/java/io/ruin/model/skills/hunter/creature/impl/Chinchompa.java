@@ -110,14 +110,13 @@ public class Chinchompa extends Creature {
 
     @Override
     protected void addLoot(Player player) {
-        boolean hasTrickster = player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER);
         getLoot().forEach(item -> {
             player.collectResource(item);
             if (player.blackChinchompaBoost.isDelayed()) {
                 boolean extra = Random.rollPercent(20);
                 if (extra) item.incrementAmount(1);
             }
-            player.getInventory().add(item.getId(), hasTrickster ? item.getAmount() * 2 : item.getAmount());
+            player.getInventory().add(item.getId(), item.getAmount());
         });
         player.getInventory().add(getTrapType().getItemId(), 1);
         int petOdds = itemId == 11959 ? 82758 : itemId == 10034 ? 98373 : 131395;    // Pet odds based on type of chin
