@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.content.bestiary.perks.BestiaryPerk;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.InterfaceHandler;
@@ -47,7 +48,10 @@ public class Bestiary {
         killCounts.remove(bestiaryName);   // Reset order in map, for recent sort
         killCounts.put(bestiaryName, currentCount + amt);
         TabBestiary.attemptRefresh(player);
-        Config.BESTIARY_KILLS.increment(player, 1);
+        int bestiaryKills = Config.BESTIARY_KILLS.increment(player, 1);
+        player.getTaskManager().doLookupByCategory(TaskCategory.BESTIARY, bestiaryKills, false);
+        player.getTaskManager().doLookupByCategory(TaskCategory.BESTIARY_ENTRIES, killCounts.size(), false);
+        if (BestiaryDef.isBoss(bestiaryName)) player.getTaskManager().doLookupByCategory(TaskCategory.BESTIARY_BOSS, 1, true);
         if (Config.BESTIARY_KC.get(player) == 1) {
             player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + bestiaryName + "s</col>.");
         }
