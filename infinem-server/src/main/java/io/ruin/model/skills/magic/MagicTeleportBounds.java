@@ -17,7 +17,7 @@ public enum MagicTeleportBounds {
     VARROCK_GE(new Bounds(3163, 3475, 3166, 3478, 0)),
     LUMBRIDGE(new Bounds(3221, 3218, 3224, 3219, 0)),
     FALADOR(new Bounds(2964, 3378, 2966, 3379, 0)),
-    CAMELOT(new Bounds(2756, 3476, 2759, 3480, 0)),
+    CAMELOT(new Bounds(2756, 3476, 2758, 3480, 0)),
     CAMELOT_SEERS(new Bounds(2726, 3485, 2727, 3486, 0)),
     ARDOUGNE(new Bounds(2659, 3304, 2664, 3308, 0)),
     WATCHTOWER(new Bounds(2546, 3112, 2547, 3113, 2)),
