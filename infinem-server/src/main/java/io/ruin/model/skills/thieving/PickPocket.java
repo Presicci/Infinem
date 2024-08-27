@@ -557,7 +557,6 @@ public enum PickPocket {
     }
 
     private static boolean successful(Player player, PickPocket pickpocket) {
-        if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return true; // Trickster cannot fail
         return Random.get(100) <= chance(player, pickpocket.levelReq, pickpocket);
     }
 
@@ -579,6 +578,9 @@ public enum PickPocket {
         } else if (player.getEquipment().hasId(GLOVES_OF_SILENCE))  // Only applies if ardy effect doesn't
             chance *= 1.05;
         if (player.getEquipment().hasAtLeastOneOf(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player)) {
+            chance *= 1.1;
+        }
+        if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
             chance *= 1.1;
         }
         return (int) Math.floor(chance);
