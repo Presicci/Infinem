@@ -441,13 +441,15 @@ public enum PickPocket {
     }
 
     private static void recursiveAttemptPickpocket(Player player, NPC npc, PickPocket pickpocket) {
-        if (!player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return;
         player.unlock();
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return;
+        if (player.getTemporaryAttributeIntOrZero("TRICKSTER_AUTOPICKPOCKET") >= 10) return;
         player.startEvent(e -> {
             e.delay(1);
             TargetRoute.set(player, npc, () -> {
                 player.face(npc);
                 pickpocket(player, npc, pickpocket);
+                player.incrementTemporaryNumericAttribute("TRICKSTER_AUTOPICKPOCKET", 1);
             });
         });
     }

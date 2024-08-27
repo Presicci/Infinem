@@ -10,6 +10,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.map.route.routes.TargetRoute;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.construction.mahoganyhomes.MahoganyClient;
 import io.ruin.model.skills.construction.mahoganyhomes.MahoganyHomes;
 import io.ruin.network.incoming.Incoming;
@@ -25,6 +26,7 @@ public class NPCActionHandler implements Incoming {
     public void handle(Player player, InBuffer in, int opcode) {
         if(player.isLocked())
             return;
+        player.removeTemporaryAttribute("TRICKSTER_AUTOPICKPOCKET");
         int option = OPTIONS[opcode];
         if (option != 6)
             player.resetActions(true, true, true);
