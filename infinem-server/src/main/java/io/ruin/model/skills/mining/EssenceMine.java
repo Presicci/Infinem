@@ -71,7 +71,7 @@ public class EssenceMine {
             player.getMovement().teleport(Random.get(positions));
             player.putAttribute(AttributeKey.ESSENCE_TELEPORT, npcName);
             player.getTaskManager().doLookupByUUID(44, 1);  // Visit the Rune Essence Mine
-            if (npcName.equalsIgnoreCase("CROMPERTY"))
+            if (npcName.equalsIgnoreCase("BRIMSTAIL"))
                 player.getTaskManager().doLookupByUUID(566);    // Brimstail Rune Essence Mine teleport
         });
     }
