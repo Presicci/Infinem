@@ -188,6 +188,10 @@ public class TaskManager {
         });
     }
 
+    public void doLookupByCategoryAndTrigger(TaskCategory category, String trigger, int amount) {
+        doLookupByCategoryAndTrigger(category, trigger, amount, true);
+    }
+
     public void doLookupByCategoryAndTrigger(TaskCategory category, String trigger) {
         doLookupByCategoryAndTrigger(category, trigger, 1, true);
     }
