@@ -17,6 +17,8 @@ public class CoalBag {
         int maxSize = 27;
         if (SmithingSkillCape.wearingSmithingCape(player))
             maxSize += 9;
+        if (player.getTaskManager().hasCompletedTask(1044)) // Smelt 5,000 Bars
+            maxSize += 8;
         return maxSize;
     }
 
