@@ -2706,12 +2706,6 @@ public class Administrator {
                 player.sendMessage("Spawned star at: x:" + pos.getX() + " y:" + pos.getY() + " z:" + pos.getZ());
                 return true;
             }
-            case "stressdb": {
-                ItemDefinition.forEach(def -> {
-                    player.getTaskManager().doSkillItemLookup(def.id);
-                });
-                return true;
-            }
             case "additemset": {
                 player.getTaskManager().doDropGroupLookup(args[0]);
                 return true;
