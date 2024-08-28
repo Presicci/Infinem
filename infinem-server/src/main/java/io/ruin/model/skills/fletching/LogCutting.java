@@ -1,6 +1,8 @@
 package io.ruin.model.skills.fletching;
 
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -100,7 +102,7 @@ public enum LogCutting {
                 logToCut.remove(log.descriptionName.contains("shield") ? 2 : 1);
                 player.getInventory().add(log.item);
                 player.getStats().addXp(StatType.Fletching, log.exp, true);
-                player.getTaskManager().doSkillItemLookup(log.item);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FLETCHLOG, log.item.getDef().name);
                 player.animate(1248);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     player.sendFilteredMessage("You carefully cut the wood into " + log.name + ".");
