@@ -185,7 +185,7 @@ public enum SmithBar {
             2361, 5,
             70, 37.5,
             PlayerCounter.SMELTED_ADAMANT_BARS,
-            Arrays.asList(new Item(449, 1), new Item(453, 3)),
+            Arrays.asList(new Item(449, 1), new Item(453, 6)),
             new SmithItem(70, 62.5, 1211, 1, 1),//Adamant dagger
             new SmithItem(74, 62.5, 1287, 1, 1),//Adamant sword
             new SmithItem(75, 125.0, 1331, 1, 2),//Adamant scimitar
@@ -219,7 +219,7 @@ public enum SmithBar {
             2363, 6,
             85, 50.0,
             PlayerCounter.SMELTED_RUNITE_BARS,
-            Arrays.asList(new Item(451, 1), new Item(453, 4)),
+            Arrays.asList(new Item(451, 1), new Item(453, 8)),
             new SmithItem(85, 75.0, 1213, 1, 1),//Rune dagger
             new SmithItem(89, 75.0, 1289, 1, 1),//Rune sword
             new SmithItem(90, 150.0, 1333, 1, 2),//Rune scimitar
