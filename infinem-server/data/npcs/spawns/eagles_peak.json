@@ -385,6 +385,42 @@
     "npcName": "Dashing kebbit"
   },
   {
+    "name": "Dashing kebbit",
+    "id": 5533,
+    "x": 2369,
+    "y": 3583,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Dashing kebbit",
+    "id": 5533,
+    "x": 2388,
+    "y": 3591,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Dashing kebbit",
+    "id": 5533,
+    "x": 2388,
+    "y": 3596,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Dashing kebbit",
+    "id": 5533,
+    "x": 2382,
+    "y": 3588,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
     "id": 1349,
     "x": 2362,
     "y": 3576,
