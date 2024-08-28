@@ -1,5 +1,7 @@
 package io.ruin.model.skills.hunter.creature.impl;
 
+import io.ruin.cache.def.NPCDefinition;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -71,8 +73,7 @@ public class Salamander extends Creature {
             player.getStats().addXp(StatType.Hunter, getCatchXP(), true);
             if (getCounter() != null)
                 getCounter().increment(player, 1);
-            if (getNpcId() == 2906)
-                player.getTaskManager().doLookupByUUID(718);    // Catch a Swamp Lizard in Morytania
+            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.NETTRAP, NPCDefinition.get(getNpcId()).name);
             trap.getTrapType().onRemove(player, obj);
             if (obj.direction >= 2) {
                 destroyTrap(obj);
