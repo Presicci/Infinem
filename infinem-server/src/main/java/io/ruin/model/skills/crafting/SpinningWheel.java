@@ -1,6 +1,8 @@
 package io.ruin.model.skills.crafting;
 
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -52,7 +54,7 @@ public enum SpinningWheel {
                 player.getInventory().remove(item.before, 1);
                 player.getInventory().add(item.after, 1);
                 player.getStats().addXp(StatType.Crafting, item.exp, true);
-                player.getTaskManager().doSkillItemLookup(item.after);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SPINNING_WHEEL, ItemDefinition.get(item.after).name);
             }
         });
     }
