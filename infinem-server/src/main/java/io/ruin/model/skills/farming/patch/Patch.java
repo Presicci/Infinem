@@ -317,6 +317,7 @@ public abstract class Patch {
             getStatus().produceCount = calculateProduceAmount();
             player.getStats().addXp(StatType.Farming, crop.getPlantXP(), true);
             player.getTaskManager().doLookupByCategory(TaskCategory.PLANT_SEED, 1, true);
+            if (this instanceof AnimaPatch) player.getTaskManager().doLookupByUUID(984);    // Plant an Anima Seed
             getStatus().timePlanted = System.currentTimeMillis();
             send();
         });
