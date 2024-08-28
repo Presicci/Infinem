@@ -150,7 +150,6 @@ public class Woodcutting {
                                 player.sendFilteredMessage("You get some " + treeData.treeName + ".");
                                 player.getInventory().add(treeData.log, amount);
                             }
-                            player.getTaskManager().doLookupByUUID(16, amount);  // Chop Some Logs
                             if (hatchet == Hatchet.STEEL)
                                 player.getTaskManager().doLookupByUUID(17, 1);  // Chop Some Logs With a Steel Axe
                             if (hatchet == Hatchet.RUNE)
