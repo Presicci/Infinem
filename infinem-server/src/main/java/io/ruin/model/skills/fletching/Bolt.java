@@ -78,7 +78,7 @@ public enum Bolt {
             player.sendFilteredMessage("You fletch a bolt.");
         else
             player.sendFilteredMessage("You fletch " + amount + " bolts");
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FLETCH_AMMO, ItemDefinition.get(tipped).name);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FLETCH_AMMO, ItemDefinition.get(tipped).name, amount);
     }
 
     static {
