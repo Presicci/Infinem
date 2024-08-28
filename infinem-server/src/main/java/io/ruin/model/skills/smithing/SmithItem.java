@@ -1,6 +1,8 @@
 package io.ruin.model.skills.smithing;
 
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -56,7 +58,7 @@ public class SmithItem {
                     bar.remove();
                 player.getInventory().add(makeId, makeAmount);
                 player.getStats().addXp(StatType.Smithing, xp, true);
-                player.getTaskManager().doSkillItemLookup(makeId, makeAmount);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SMITH_ITEM, ItemDefinition.get(makeId).name, makeAmount);
                 if (++made >= amount)
                     return;
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
