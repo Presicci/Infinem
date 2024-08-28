@@ -2,6 +2,7 @@ package io.ruin.model.skills.farming.patch.impl;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.HopsCrop;
@@ -134,6 +135,7 @@ public class HopsPatch extends Patch {
             player.getStats().addXp(StatType.Farming, crop.getPlantXP(), true);
             setTimePlanted(System.currentTimeMillis());
             player.sendFilteredMessage("You plant the seed in the patch.");
+            player.getTaskManager().doLookupByCategory(TaskCategory.PLANT_SEED, 1, true);
             send();
         });
     }

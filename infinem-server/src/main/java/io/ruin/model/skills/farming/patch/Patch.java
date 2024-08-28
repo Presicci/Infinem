@@ -6,6 +6,7 @@ import io.ruin.api.utils.TimeUtils;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabStats;
 import io.ruin.model.item.Item;
@@ -315,6 +316,7 @@ public abstract class Patch {
             setPlantedCrop(crop);
             getStatus().produceCount = calculateProduceAmount();
             player.getStats().addXp(StatType.Farming, crop.getPlantXP(), true);
+            player.getTaskManager().doLookupByCategory(TaskCategory.PLANT_SEED, 1, true);
             getStatus().timePlanted = System.currentTimeMillis();
             send();
         });

@@ -166,6 +166,7 @@ public class AllotmentPatch extends Patch {
             setTimePlanted(System.currentTimeMillis());
             player.sendFilteredMessage("You plant the seed in the patch.");
             player.getTaskManager().doLookupByUUID(14, 1);  // Plant Seeds in an Allotment Patch
+            player.getTaskManager().doLookupByCategory(TaskCategory.PLANT_SEED, 1, true);
             send();
         });
     }
