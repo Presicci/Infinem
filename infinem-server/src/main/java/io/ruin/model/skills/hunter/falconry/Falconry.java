@@ -1,6 +1,7 @@
 package io.ruin.model.skills.hunter.falconry;
 
 import io.ruin.api.utils.Random;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
@@ -145,6 +146,7 @@ public class Falconry {
             e.delay(1);
             npc.remove();
             player.getStats().addXp(StatType.Hunter, kebbit.experience, true);
+            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FALCONRY, NPCDefinition.get(kebbit.getNpcId()).name);
             player.getTaskManager().doLookupByCategory(TaskCategory.HUNTER_CATCH, 1, true);
             if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
                 player.getInventory().addOrDrop(new Item(kebbit.furId).note().getId(), 1);
