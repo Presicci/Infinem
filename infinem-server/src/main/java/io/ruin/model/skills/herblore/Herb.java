@@ -2,6 +2,7 @@ package io.ruin.model.skills.herblore;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -67,7 +68,7 @@ public enum Herb {
                         if (invItem != null && invItem.getId() == herbId) {
                             invItem.setId(herb.cleanId);
                             player.getStats().addXp(StatType.Herblore, herb.xp, true);
-                            player.getTaskManager().doSkillItemLookup(herb.cleanId);
+                            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CLEAN_HERB, ItemDefinition.get(herb.cleanId).name);
                         }
                     }
                 } else {
@@ -75,7 +76,7 @@ public enum Herb {
                     player.getStats().addXp(StatType.Herblore, herb.xp, true);
                     player.privateSound(3922);
                     player.sendFilteredMessage("You clean the " + herbName + ".");
-                    player.getTaskManager().doSkillItemLookup(herb.cleanId);
+                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CLEAN_HERB, ItemDefinition.get(herb.cleanId).name);
                 }
             });
             SkillItem skillItem = new SkillItem(herb.unfId).addAction((player, amount, event) -> {
