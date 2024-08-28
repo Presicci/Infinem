@@ -120,7 +120,7 @@ public class SmeltBar {
         player.closeInterface(InterfaceType.CHATBOX);
         if (!player.getStats().check(StatType.Smithing, bar.smeltLevel, "smelt that bar"))
             return;
-        boolean useCoalBag = player.getInventory().hasId(CoalBag.COAL_BAG);
+        boolean useCoalBag = player.getInventory().hasId(CoalBag.COAL_BAG) || player.getInventory().hasId(CoalBag.OPEN_COAL_BAG);
         player.startEvent(event -> {
             int remaining = smeltAmount;
             while (remaining-- > 0) {

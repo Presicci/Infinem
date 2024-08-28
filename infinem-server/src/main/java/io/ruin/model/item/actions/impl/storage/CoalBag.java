@@ -14,6 +14,7 @@ public class CoalBag {
     public static final int COAL = 453;
 
     public static final int COAL_BAG = 12019;
+    public static final int OPEN_COAL_BAG = 24480;
 
     private static int getBagSize(Player player) {
         int maxSize = 27;
@@ -87,7 +88,7 @@ public class CoalBag {
     }
 
     private static int withdrawToBag(Player player, Item item, int amount) {
-        if (!player.getInventory().contains(COAL_BAG, 1))
+        if (!player.getInventory().hasId(COAL_BAG) && !player.getInventory().hasId(OPEN_COAL_BAG))
             return 0;
         int intercept = Math.min(Math.min(getBagSize(player) - player.getAttributeIntOrZero("BAGGED_COAL"), item.getAmount()), amount);
         player.incrementNumericAttribute("BAGGED_COAL", intercept);
@@ -99,7 +100,19 @@ public class CoalBag {
         ItemAction.registerInventory(COAL_BAG, "fill", (player, item) -> fill(player));
         ItemAction.registerInventory(COAL_BAG, "check", (player, item) -> check(player));
         ItemAction.registerInventory(COAL_BAG, "empty", (player, item) -> empty(player));
+        ItemAction.registerInventory(COAL_BAG, "open", (player, item) -> {
+            item.setId(OPEN_COAL_BAG);
+            player.sendFilteredMessage("You open the coal bag.");
+        });
+        ItemAction.registerInventory(OPEN_COAL_BAG, "fill", (player, item) -> fill(player));
+        ItemAction.registerInventory(OPEN_COAL_BAG, "check", (player, item) -> check(player));
+        ItemAction.registerInventory(OPEN_COAL_BAG, "empty", (player, item) -> empty(player));
+        ItemAction.registerInventory(OPEN_COAL_BAG, "close", (player, item) -> {
+            item.setId(COAL_BAG);
+            player.sendFilteredMessage("You close the coal bag.");
+        });
         ItemItemAction.register(Items.COAL, COAL_BAG, (player, coal, secondary) -> add(player, coal));
+        ItemItemAction.register(Items.COAL, OPEN_COAL_BAG, (player, coal, secondary) -> add(player, coal));
         ItemDefinition.get(COAL).bankWithdrawListener = CoalBag::withdrawToBag;
     }
 
