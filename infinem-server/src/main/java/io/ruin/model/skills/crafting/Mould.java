@@ -1,6 +1,8 @@
 package io.ruin.model.skills.crafting;
 
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -100,7 +102,7 @@ public enum Mould {
                 goldBar.remove();
                 player.getInventory().add(mould.jewellery, 1);
                 player.getStats().addXp(StatType.Crafting, mould.exp, true);
-                player.getTaskManager().doSkillItemLookup(mould.jewellery);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MOULD_JEWL, ItemDefinition.get(mould.jewellery).name);
                 event.delay(1);
             }
         });
