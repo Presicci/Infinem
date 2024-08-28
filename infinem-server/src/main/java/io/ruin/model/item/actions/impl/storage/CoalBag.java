@@ -96,6 +96,14 @@ public class CoalBag {
         return intercept;
     }
 
+    public static boolean hasOpenBag(Player player) {
+        return player.getInventory().hasId(OPEN_COAL_BAG);
+    }
+
+    public static boolean hasSpaceInBag(Player player) {
+        return player.getAttributeIntOrZero("BAGGED_COAL") < getBagSize(player);
+    }
+
     static {
         ItemAction.registerInventory(COAL_BAG, "fill", (player, item) -> fill(player));
         ItemAction.registerInventory(COAL_BAG, "check", (player, item) -> check(player));

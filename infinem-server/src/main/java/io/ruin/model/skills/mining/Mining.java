@@ -18,6 +18,7 @@ import io.ruin.model.item.actions.impl.Geode;
 import io.ruin.model.item.actions.impl.chargable.CelestialRing;
 import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
+import io.ruin.model.item.actions.impl.storage.CoalBag;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.containers.Equipment;
@@ -144,6 +145,8 @@ public class Mining {
                             player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_PICKAXE.removeCharge(player);
                             player.sendMessage("Your infernal pickaxe incinerates the " + ItemDefinition.get(id).name + ".");
+                        } else if (rockData == Rock.COAL && CoalBag.hasOpenBag(player) && CoalBag.hasSpaceInBag(player)) {
+                            player.incrementNumericAttribute("BAGGED_COAL", 1);
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
                             if (player.getBank().hasRoomFor(id)) {
                                 player.getBank().add(id, amount);
