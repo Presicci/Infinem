@@ -2,6 +2,7 @@ package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -281,7 +282,7 @@ public class PrifddinasCourse {
             p.resetAnimation();
             AgilityPet.rollForPet(p, 25146);
             p.getStats().addXp(StatType.Agility, 1037.1, true);
-            p.getTaskManager().doLookupByUUID(790, 1);  // Complete the Prifddinas Agility Course
+            p.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.AGILITY_LAP, "prif");
             p.getMovement().restoreEnergy(Random.get(1, 2));
             MarkOfGrace.rollMark(p, 75, MARK_SPAWNS);
             int laps = PlayerCounter.PRIFDDINAS_COURSE.increment(p, 1);
