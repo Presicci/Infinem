@@ -10,6 +10,7 @@ import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.HerbCrop;
 import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
+import io.ruin.model.skills.farming.patch.PatchData;
 import io.ruin.model.stat.StatType;
 
 public class HerbPatch extends Patch {
@@ -60,6 +61,8 @@ public class HerbPatch extends Patch {
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.HARVESTHERB, itemName);
                 getPlantedCrop().getCounter().increment(player, 1);
                 player.getTaskManager().doSkillItemLookup(getPlantedCrop().getProduceId());
+                if (getObjectId() == PatchData.TROLLHEIM_HERB.getObjectId())
+                    player.getTaskManager().doLookupByUUID(445);    // Harvest Any Herb at the Troll Stronghold
                 removeProduce();
                 event.delay(1);
             }
