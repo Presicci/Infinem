@@ -60,7 +60,6 @@ public class HerbPatch extends Patch {
                 player.sendFilteredMessage("You pick a " + itemName + ".");
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.HARVESTHERB, itemName);
                 getPlantedCrop().getCounter().increment(player, 1);
-                player.getTaskManager().doSkillItemLookup(getPlantedCrop().getProduceId());
                 if (getObjectId() == PatchData.TROLLHEIM_HERB.getObjectId())
                     player.getTaskManager().doLookupByUUID(445);    // Harvest Any Herb at the Troll Stronghold
                 removeProduce();
