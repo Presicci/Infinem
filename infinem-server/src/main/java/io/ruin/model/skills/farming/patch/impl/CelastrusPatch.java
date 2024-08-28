@@ -112,11 +112,6 @@ public class CelastrusPatch extends Patch {
     }
 
     @Override
-    public void plant(Item item) {
-        super.plant(item);
-    }
-
-    @Override
     public String getPatchName() {
         return "a celastrus tree";
     }
