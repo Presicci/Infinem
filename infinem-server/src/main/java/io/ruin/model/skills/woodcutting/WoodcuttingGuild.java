@@ -99,6 +99,7 @@ public class WoodcuttingGuild {
                     GameObject southGate = Tile.getObject(28852, 1657, 3504, 0);
                     openGate(player, northGate, southGate, 1658, 3505);
                 }
+                player.getTaskManager().doLookupByUUID(959);    // 	Enter the Woodcutting Guild
             });
         }
 
