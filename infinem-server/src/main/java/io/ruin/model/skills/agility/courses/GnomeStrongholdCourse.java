@@ -1,6 +1,7 @@
 package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -186,7 +187,7 @@ public class GnomeStrongholdCourse {
                     p.getStats().addXp(StatType.Agility, 46.5, true);
                     int laps = PlayerCounter.GNOME_STRONGHOLD_COURSE.increment(p, 1);
                     AgilityPet.rollForPet(p, 35609);
-                    p.getTaskManager().doLookupByUUID(559, 1);  // Complete the Gnome Stronghold Agility Course
+                    p.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.AGILITY_LAP, "gnome");
                     MarkOfGrace.rollMark(p, 1, MARK_SPAWNS);
                     if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                         p.sendFilteredMessage("Your Gnome Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
