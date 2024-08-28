@@ -142,13 +142,13 @@ public class Stat {
     }
 
     public boolean hasVirtualLevel(int virtualLevel) {
-        if (virtualLevel >= LEVEL_EXPERIENCES.length) return false;
-        return experience >= LEVEL_EXPERIENCES[virtualLevel - 1];
+        if (virtualLevel - 2 >= LEVEL_EXPERIENCES.length) return false;
+        return experience >= xpForLevel(virtualLevel);
     }
 
     public static long getVirtualExperience(int virtualLevel) {
-        if (virtualLevel >= LEVEL_EXPERIENCES.length) return 0;
-        return LEVEL_EXPERIENCES[virtualLevel - 1];
+        if (virtualLevel - 2 >= LEVEL_EXPERIENCES.length) return 0;
+        return xpForLevel(virtualLevel);
     }
 
     /**
