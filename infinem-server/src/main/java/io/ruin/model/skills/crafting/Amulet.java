@@ -1,5 +1,7 @@
 package io.ruin.model.skills.crafting;
 
+import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -41,7 +43,7 @@ public enum Amulet {
         wool.remove();
         player.sendFilteredMessage("You put some string on your amulet.");
         player.getStats().addXp(StatType.Crafting, xp, true);
-        player.getTaskManager().doSkillItemLookup(strung);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.STRING_AMMY, ItemDefinition.get(strung).name);
     }
 
     static {
