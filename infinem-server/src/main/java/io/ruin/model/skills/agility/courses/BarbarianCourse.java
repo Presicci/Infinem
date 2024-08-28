@@ -1,6 +1,7 @@
 package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -181,7 +182,7 @@ public class BarbarianCourse {
                 player.getStats().addXp(StatType.Agility, 46.2, true);
                 int laps = PlayerCounter.BARBARIAN_COURSE.increment(player, 1);
                 AgilityPet.rollForPet(player, 44376);
-                player.getTaskManager().doLookupByUUID(571, 1);  // Complete the Barbarian Outpost Agility Course
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.AGILITY_LAP, "barbarian");
                 MarkOfGrace.rollMark(player, 35, MARK_SPAWNS);
                 if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                     player.sendFilteredMessage("Your Barbarian Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
