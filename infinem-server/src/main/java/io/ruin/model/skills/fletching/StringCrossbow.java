@@ -1,5 +1,7 @@
 package io.ruin.model.skills.fletching;
 
+import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -36,6 +38,7 @@ public enum StringCrossbow {
         player.sendMessage("You add a string to the crossbow");
         player.animate(animation);
         player.getStats().addXp(StatType.Fletching, exp, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.STRING_BOW, ItemDefinition.get(strung).name);
     }
 
     private static final int CROSSBOW_STRING = 9438;
