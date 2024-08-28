@@ -44,7 +44,8 @@ public class SmithItem {
         player.startEvent(e -> {
             int made = 0;
             while (true) {
-                ArrayList<Item> bars = player.getInventory().findItems(((SmithBar) player.getTemporaryAttribute("SMITH_BAR")).itemId, barReq);
+                int barId = ((SmithBar) player.getTemporaryAttribute("SMITH_BAR")).itemId;
+                ArrayList<Item> bars = player.getInventory().findItems(barId, barReq);
                 if (bars == null) {
                     if (made == 0)
                         player.sendMessage("You don't have enough bars to make that.");
@@ -59,6 +60,7 @@ public class SmithItem {
                 player.getInventory().add(makeId, makeAmount);
                 player.getStats().addXp(StatType.Smithing, xp, true);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SMITH_ITEM, ItemDefinition.get(makeId).name, makeAmount);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SMITH_BAR, ItemDefinition.get(makeId).name, barReq);
                 if (++made >= amount)
                     return;
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
