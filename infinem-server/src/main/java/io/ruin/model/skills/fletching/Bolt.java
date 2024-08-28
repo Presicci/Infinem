@@ -1,6 +1,7 @@
 package io.ruin.model.skills.fletching;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -77,7 +78,7 @@ public enum Bolt {
             player.sendFilteredMessage("You fletch a bolt.");
         else
             player.sendFilteredMessage("You fletch " + amount + " bolts");
-        player.getTaskManager().doSkillItemLookup(tipped, amount);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FLETCH_AMMO, ItemDefinition.get(tipped).name);
     }
 
     static {

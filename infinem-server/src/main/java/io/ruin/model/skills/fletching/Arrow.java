@@ -1,5 +1,7 @@
 package io.ruin.model.skills.fletching;
 
+import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -41,7 +43,7 @@ public enum Arrow {
         player.animate(8480);
         player.getInventory().add(outcome, amount);
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
-        player.getTaskManager().doSkillItemLookup(outcome, amount);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FLETCH_AMMO, ItemDefinition.get(outcome).name);
         boolean headless = shaft.getId() == 52 && tipItem.getId() == 314;
         if (headless) {
             player.sendFilteredMessage("You attach feathers to " + amount + " arrow shafts.");
