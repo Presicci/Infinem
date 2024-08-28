@@ -171,7 +171,7 @@ public class TaskManager {
     public void doLookupByCategory(TaskCategory category, String trigger, int amount, boolean incremental) {
         //  No tasks left for this category, abort
         if (completedCategories.contains(category.ordinal())) {
-            System.out.println("category complete");
+            System.out.println("category complete " + category);
             return;
         }
         Server.gameDb.execute(connection -> {
