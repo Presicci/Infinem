@@ -99,10 +99,12 @@ public enum LogCutting {
                 if (log.descriptionName.contains("shield") && !player.getInventory().contains(log.logID, 2)) {
                     break;
                 }
-                logToCut.remove(log.descriptionName.contains("shield") ? 2 : 1);
+                int logAmt = log.descriptionName.contains("shield") ? 2 : 1;
+                logToCut.remove(logAmt);
                 player.getInventory().add(log.item);
                 player.getStats().addXp(StatType.Fletching, log.exp, true);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FLETCHLOG, log.item.getDef().name);
+                player.getTaskManager().doLookupByCategory(TaskCategory.FLETCHED_LOGS, logAmt, true);
                 player.animate(1248);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     player.sendFilteredMessage("You carefully cut the wood into " + log.name + ".");
