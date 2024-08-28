@@ -232,7 +232,7 @@ public abstract class Creature {
             player.getTaskManager().doLookupByCategoryAndTrigger(
                     this instanceof Chinchompa ? TaskCategory.BOXTRAP
                             : this instanceof Bird ? TaskCategory.BIRDSNARE
-                            : TaskCategory.NETTRAP, NPCDefinition.get(npcId).name);
+                            : TaskCategory.DEADFALL, NPCDefinition.get(npcId).name);
             if (counter != null)
                 counter.increment(player, 1);
             trap.getTrapType().onRemove(player, obj);
