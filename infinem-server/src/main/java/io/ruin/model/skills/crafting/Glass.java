@@ -1,6 +1,8 @@
 package io.ruin.model.skills.crafting;
 
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -55,7 +57,7 @@ public enum Glass {
                 player.getInventory().remove(MOLTEN_GLASS, 1);
                 player.getInventory().add(glass.itemID, 1);
                 player.getStats().addXp(StatType.Crafting, glass.exp, true);
-                player.getTaskManager().doSkillItemLookup(glass.itemID);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.BLOW_GLASS, ItemDefinition.get(glass.itemID).name);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     event.delay(2);
                 }
