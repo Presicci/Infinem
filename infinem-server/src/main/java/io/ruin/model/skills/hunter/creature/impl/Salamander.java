@@ -74,6 +74,7 @@ public class Salamander extends Creature {
             if (getCounter() != null)
                 getCounter().increment(player, 1);
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.NETTRAP, NPCDefinition.get(getNpcId()).name);
+            player.getTaskManager().doLookupByCategory(TaskCategory.HUNTER_CATCH, 1, true);
             trap.getTrapType().onRemove(player, obj);
             if (obj.direction >= 2) {
                 destroyTrap(obj);

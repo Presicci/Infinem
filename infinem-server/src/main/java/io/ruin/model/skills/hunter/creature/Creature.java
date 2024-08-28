@@ -233,6 +233,7 @@ public abstract class Creature {
                     this instanceof Chinchompa ? TaskCategory.BOXTRAP
                             : this instanceof Bird ? TaskCategory.BIRDSNARE
                             : TaskCategory.DEADFALL, NPCDefinition.get(npcId).name);
+            player.getTaskManager().doLookupByCategory(TaskCategory.HUNTER_CATCH, 1, true);
             if (counter != null)
                 counter.increment(player, 1);
             trap.getTrapType().onRemove(player, obj);

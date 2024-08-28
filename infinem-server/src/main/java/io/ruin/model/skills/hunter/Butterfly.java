@@ -98,6 +98,7 @@ public enum Butterfly {
                 player.getStats().addXp(StatType.Hunter, butterfly.experience, true);
                 PlayerCounter.BUTTERFLIES_CAUGHT.increment(player, 1);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.BUTTERFLY, npc.getDef().name);
+                player.getTaskManager().doLookupByCategory(TaskCategory.HUNTER_CATCH, 1, true);
                 player.unlock();
             } else {
                 event.delay(1);

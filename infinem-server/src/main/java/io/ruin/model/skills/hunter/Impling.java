@@ -140,6 +140,7 @@ public enum Impling {
                 PlayerCounter.IMPLINGS_CAUGHT.increment(player, 1);
                 player.incrementNumericAttribute(isInPuroPuro(npc) ? impling.getPuroCounterKey() : impling.getCounterKey(), 1);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.IMPLING, npc.getDef().name);
+                player.getTaskManager().doLookupByCategory(TaskCategory.HUNTER_CATCH, 1, true);
                 if (isInPuroPuro(npc))
                     player.getTaskManager().doLookupByCategory(TaskCategory.IMPLINGPURO, 1, true);
                 player.unlock();
