@@ -2,7 +2,9 @@ package io.ruin.model.skills.smithing;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemID;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
@@ -164,7 +166,7 @@ public class SmeltBar {
                 if (bar == SmithBar.GOLD && (player.getEquipment().hasId(776) || SmithingSkillCape.wearingSmithingCape(player))) // goldsmith gauntlets
                     xp = 56.2;
                 player.getStats().addXp(StatType.Smithing, xp, true);
-                player.getTaskManager().doSkillItemLookup(bar.itemId);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SMELT_BAR, ItemDefinition.get(bar.itemId).name);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER) && !Random.rollPercent(getExtraBarChance(player, bar))) {
                     event.delay(2);
                 }
