@@ -210,6 +210,7 @@ public class Bank extends ItemContainerG<BankItem> {
                 player.sendMessage("This item cannot be withdrawn as a note.");
         }
         int moved = item.getDef().bankWithdrawListener(player, item, amount);
+        if (moved > 0) item.remove(moved);
         moved += item.move(itemId, amount - moved, player.getInventory());
         if(moved <= 0) {
             player.sendMessage("You don't have enough inventory space.");
