@@ -4,7 +4,9 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.impl.skillcapes.SmithingSkillCape;
 
 public class CoalBag {
@@ -35,6 +37,17 @@ public class CoalBag {
                     break;
             }
         }
+        check(player);
+    }
+
+    private static void add(Player player, Item coal) {
+        int maxSize = getBagSize(player);
+        if(player.getAttributeIntOrZero("BAGGED_COAL") >= maxSize) {
+            player.dialogue(new ItemDialogue().one(COAL_BAG, "The coal bag is full."));
+            return;
+        }
+        coal.remove();
+        player.incrementNumericAttribute("BAGGED_COAL", 1);
         check(player);
     }
 
@@ -86,6 +99,7 @@ public class CoalBag {
         ItemAction.registerInventory(COAL_BAG, "fill", (player, item) -> fill(player));
         ItemAction.registerInventory(COAL_BAG, "check", (player, item) -> check(player));
         ItemAction.registerInventory(COAL_BAG, "empty", (player, item) -> empty(player));
+        ItemItemAction.register(Items.COAL, COAL_BAG, (player, coal, secondary) -> add(player, coal));
         ItemDefinition.get(COAL).bankWithdrawListener = CoalBag::withdrawToBag;
     }
 
