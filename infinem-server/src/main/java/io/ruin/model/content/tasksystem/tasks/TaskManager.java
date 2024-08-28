@@ -269,18 +269,6 @@ public class TaskManager {
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.NPCKILL, NPCDefinition.get(npcId).name.toLowerCase(), 1, true);
     }
 
-    public void doSkillItemLookup(int itemId) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDefinition.get(itemId).name.toLowerCase(), 1, true);
-    }
-
-    public void doSkillItemLookup(int itemId, int amount) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDefinition.get(itemId).name.toLowerCase(), amount, true);
-    }
-
-    public void doSkillItemLookup(Item item) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, item.getDef().name.toLowerCase(), item.getAmount(), true);
-    }
-
     public void doDropLookup(Item item) {
         int uuid = item.getDef().getCustomValueOrDefault("DROP_TASK", 0);
         if (uuid > 0) {
