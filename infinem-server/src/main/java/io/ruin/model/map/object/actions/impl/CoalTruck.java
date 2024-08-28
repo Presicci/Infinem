@@ -5,6 +5,7 @@ import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.item.actions.impl.storage.CoalBag;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 /**
@@ -34,9 +35,17 @@ public class CoalTruck {
                 player.lock();
                 player.animate(832);
                 e.delay(1);
+                int bagAmt = 0;
+                if (CoalBag.hasBag(player)) {
+                    bagAmt = Math.min(Integer.MAX_VALUE - bankAmt, player.getAttributeIntOrZero("BAGGED_COAL"));
+                    if (bagAmt > 0) {
+                        player.incrementNumericAttribute("BAGGED_COAL", -bagAmt);
+                        player.getBank().add(Items.COAL, amt);
+                    }
+                }
                 player.getInventory().remove(Items.COAL, amt);
                 player.getBank().add(Items.COAL, amt);
-                player.dialogue(new ItemDialogue().one(Items.COAL, "You deposit " + amt + " coal.<br>Your bank now has " + (bankAmt + amt) + " coal stored."));
+                player.dialogue(new ItemDialogue().one(Items.COAL, "You deposit " + (amt + bagAmt) + " coal.<br>Your bank now has " + (bankAmt + amt + bagAmt) + " coal stored."));
                 player.getTaskManager().doLookupByUUID(914, 1); // Use a Coal Truck at the Coal Mine
                 player.unlock();
             });

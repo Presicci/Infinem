@@ -96,6 +96,10 @@ public class CoalBag {
         return intercept;
     }
 
+    public static boolean hasBag(Player player) {
+        return player.getInventory().hasId(COAL_BAG) || player.getInventory().hasId(OPEN_COAL_BAG);
+    }
+
     public static boolean hasOpenBag(Player player) {
         return player.getInventory().hasId(OPEN_COAL_BAG);
     }
