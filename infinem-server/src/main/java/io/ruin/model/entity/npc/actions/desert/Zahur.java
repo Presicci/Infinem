@@ -164,7 +164,7 @@ public class Zahur {
         player.getInventory().remove(Items.VIAL_OF_WATER_NOTE, possibleAmt);
         player.getInventory().remove(herbId, possibleAmt);
         player.getInventory().add(unfId, possibleAmt);
-        player.getTaskManager().doLookupByUUID(683, possibleAmt);   // Have Zahur Make 1,000 Unfinished Potions
+        player.getTaskManager().doIncrementalLookupByUUID(683, possibleAmt);   // Have Zahur Make 1,000 Unfinished Potions
         return true;
     }
 

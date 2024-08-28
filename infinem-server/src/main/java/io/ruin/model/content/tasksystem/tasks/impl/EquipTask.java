@@ -76,7 +76,7 @@ public enum EquipTask {
         for (EquipTask task : values()) {
             for (int itemId : task.itemIds) {
                 EquipAction.register(itemId, (player -> {
-                    player.getTaskManager().doLookupByUUID(task.uuid, 1);
+                    player.getTaskManager().doIncrementalLookupByUUID(task.uuid, 1);
                 }));
             }
 

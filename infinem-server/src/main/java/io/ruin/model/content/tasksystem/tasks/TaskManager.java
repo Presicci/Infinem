@@ -233,6 +233,10 @@ public class TaskManager {
         doLookupByUUID(uuid, 1);
     }
 
+    public void doIncrementalLookupByUUID(int uuid, int amount) {
+        doLookupByUUID(uuid, amount, true);
+    }
+
     public void doLookupByUUID(int uuid, int amount) {
         doLookupByUUID(uuid, amount, false);
     }
