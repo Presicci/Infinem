@@ -537,6 +537,7 @@ public enum PickPocket {
                     Pet.ROCKY.unlock(player);
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
                 player.getTaskManager().doLookupByCategory(TaskCategory.PICKPOCKET, npc.getDef().name.toLowerCase());
+                player.getTaskManager().doLookupByCategory(TaskCategory.STEAL, 1, true);
                 if (pickpocket == HAM && !player.getTaskManager().hasCompletedTask(938) && hasHAMSet(player))
                     player.getTaskManager().doLookupByUUID(938);    // Pickpocket a H.A.M. Member as a H.A.M. Member
                 recursiveAttemptPickpocket(player, npc, pickpocket);

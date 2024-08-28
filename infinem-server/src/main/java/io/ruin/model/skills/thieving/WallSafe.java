@@ -3,6 +3,7 @@ package io.ruin.model.skills.thieving;
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
@@ -60,6 +61,7 @@ public class WallSafe {
                     player.getInventory().add(getLoot(player));
                     PlayerCounter.WALL_SAFES_CRACKED.increment(player, 1);
                     player.getTaskManager().doLookupByUUID(920);    // Crack a Wall Safe
+                    player.getTaskManager().doLookupByCategory(TaskCategory.STEAL, 1, true);
                     openSafe(wallSafe);
                     break;
                 }

@@ -311,6 +311,7 @@ public enum Stall {
             Item loot = stall.lootTable.rollItem();
             player.getInventory().add(loot);
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.STALLLOOT, loot.getDef().name, loot.getAmount(), true);
+            player.getTaskManager().doLookupByCategory(TaskCategory.STEAL, 1, true);
             if (player.getPosition().inBounds(HOME))
                 player.edgevilleStallCooldown.delay(3);
             if (Random.rollDie(stall.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))

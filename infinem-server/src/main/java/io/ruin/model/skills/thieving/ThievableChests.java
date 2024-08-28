@@ -352,6 +352,7 @@ public class ThievableChests {
 
     private static void lookupTask(Player player, Chest chest, Item item) {
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.THIEVECHEST, item.getDef().name, item.getAmount(), true);
+        player.getTaskManager().doLookupByCategory(TaskCategory.STEAL, 1, true);
         if (chest == Chest.ISLE_OF_SOULS)
             player.getTaskManager().doLookupByUUID(912, 1); // Steal from the Isle of Souls Dungeon Chest
         if (chest == Chest.ROGUES_CASTLE)
