@@ -1,6 +1,8 @@
 package io.ruin.model.skills.herblore;
 
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -62,7 +64,8 @@ public enum BarbarianMix {
         fish.remove();
         basePotion.setId(vialIds[1]);
         player.getStats().addXp(StatType.Herblore, experience, true);
-        player.getTaskManager().doSkillItemLookup(vialIds[1]);
+        String name = ItemDefinition.get(vialIds[1]).name.toLowerCase();
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.POTION, name.substring(0, name.indexOf("(")), 1, true);
         player.animate(363);
         player.privateSound(2608);
     }
