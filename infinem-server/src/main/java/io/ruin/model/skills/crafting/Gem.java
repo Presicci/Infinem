@@ -1,6 +1,8 @@
 package io.ruin.model.skills.crafting;
 
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -44,7 +46,7 @@ public enum Gem {
         player.privateSound(2586);
         uncutItem.setId(cutId);
         player.getStats().addXp(StatType.Crafting, xp, true);
-        player.getTaskManager().doSkillItemLookup(cutId);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CUT_GEM, ItemDefinition.get(cutId).name);
     }
 
     static {
