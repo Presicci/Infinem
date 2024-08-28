@@ -1,6 +1,7 @@
 package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -207,7 +208,7 @@ public class WildernessCourse {
                 player.getStats().addXp(StatType.Agility, 498.9, true);
                 AgilityPet.rollForPet(player, 34666);
                 int laps = PlayerCounter.WILDERNESS_COURSE.increment(player, 1);
-                player.getTaskManager().doLookupByUUID(848, 1);  // Complete the Wilderness Agility Course
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.AGILITY_LAP, "wilderness");
                 MarkOfGrace.rollMark(player, 52, MARK_SPAWNS);
                 if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                     player.sendFilteredMessage("Your Wilderness Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
