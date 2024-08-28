@@ -181,6 +181,7 @@ public class DraynorCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             int laps = PlayerCounter.DRAYNOR_ROOFTOP.increment(p, 1);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "draynor");
+            p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
             AgilityPet.rollForPet(p, 33005);
             MarkOfGrace.rollMark(p, 10, MARK_SPAWNS);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))

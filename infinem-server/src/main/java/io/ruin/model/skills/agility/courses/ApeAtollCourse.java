@@ -1,6 +1,7 @@
 package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -204,6 +205,7 @@ public class ApeAtollCourse {
                     player.getStats().addXp(StatType.Agility, 200.0, true);
                     AgilityPet.rollForPet(player, 37720);
                     MarkOfGrace.rollMark(player, 48, MARK_SPAWNS);
+                    player.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
                     int laps = PlayerCounter.APE_ATOLL_COURSE.increment(player, 1);
                     if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                         player.sendFilteredMessage("Your Ape Atoll Agility lap count is: " + Color.RED.wrap(laps + "") + ".");

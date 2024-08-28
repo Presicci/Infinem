@@ -166,6 +166,7 @@ public class RellekkaCourse {
             MarkOfGrace.rollMark(p, 80, MARK_SPAWNS);
             AgilityPet.rollForPet(p, 31063);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "rellekka");
+            p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                 p.sendFilteredMessage("Your Rellekka Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
             e.delay(1);

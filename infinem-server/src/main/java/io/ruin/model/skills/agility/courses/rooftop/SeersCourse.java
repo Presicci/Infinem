@@ -152,6 +152,7 @@ public class SeersCourse {
                 AgilityPet.rollForPet(p, 35205);
                 MarkOfGrace.rollMark(p, 60, MARK_SPAWNS);
                 p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "seers");
+                p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
                 if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                     p.sendFilteredMessage("Your Seer's Village Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
                 p.preventSkippingCourse = false;

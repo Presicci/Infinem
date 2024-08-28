@@ -195,6 +195,7 @@ public class ArdougneCourse {
             AgilityPet.rollForPet(p, 34440);
             int laps = PlayerCounter.ARDOUGNE_ROOFTOP.increment(p, 1);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "ardy");
+            p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
             MarkOfGrace.rollMark(p, 90, MARK_SPAWNS);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                 p.sendFilteredMessage("Your Ardougne Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");

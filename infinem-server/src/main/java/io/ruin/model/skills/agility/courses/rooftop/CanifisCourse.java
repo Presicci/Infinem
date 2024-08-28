@@ -227,6 +227,7 @@ public class CanifisCourse {
             player.getMovement().restoreEnergy(Random.get(1, 2));
             int laps = PlayerCounter.CANIFIS_ROOFTOP.increment(player, 1);
             player.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "canifis");
+            player.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
             AgilityPet.rollForPet(player, 36842);
             MarkOfGrace.rollMark(player, 40, MARK_SPAWNS);
             if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))

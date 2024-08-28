@@ -328,6 +328,7 @@ public class FaladorCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             AgilityPet.rollForPet(p, 26806);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "falador");
+            p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
             int laps = PlayerCounter.FALADOR_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 50, MARK_SPAWNS);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))

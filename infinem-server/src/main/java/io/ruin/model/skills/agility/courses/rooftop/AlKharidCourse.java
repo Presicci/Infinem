@@ -241,6 +241,7 @@ public class AlKharidCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             int laps = PlayerCounter.ALKHARID_ROOFTOP.increment(p, 1);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "alkharid");
+            p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
             AgilityPet.rollForPet(p, 26648);
             MarkOfGrace.rollMark(p, 20, MARK_SPAWNS);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
