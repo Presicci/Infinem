@@ -257,7 +257,7 @@ public class Regular {
                 else text.addAll(mods);
                 text.add("");
 
-                text.add("<img=18><col=5bccc4><shad=0000000> Server Supports</col></shad>");
+                text.add("<img=15><col=5bccc4><shad=0000000> Server Supports</col></shad>");
                 if (slaves.size() == 0) text.add("None online!");
                 else text.addAll(slaves);
 
