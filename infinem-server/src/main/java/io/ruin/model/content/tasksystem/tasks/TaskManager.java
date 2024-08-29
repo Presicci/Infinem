@@ -204,7 +204,7 @@ public class TaskManager {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ? AND required_object REGEXP ?");
                 statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
                 String replace = trigger.trim().toLowerCase().replace("_", " ").replace("+", "\\+").replace("(", "\\(").replace(")", "\\)");
-                statement.setString(2, "^" + replace + "$|," + replace + "$|," + replace + ",|^" + replace + ",");
+                statement.setString(2, "^" + replace + "$|," + replace + "$|," + replace + ",|^" + replace + ",|any");
                 rs = statement.executeQuery();
                 checkResults(rs, TaskLookupType.CAT_AND_TRIGGER, category, null, amount, incremental);
             } finally {
@@ -478,5 +478,18 @@ public class TaskManager {
                 });
             }
         });
+    }
+
+    public String generateInProgressString() {
+        if (inProgressTasks.isEmpty()) return "";
+        StringBuilder sb = new StringBuilder();
+        for (int uuid : inProgressTasks.keySet()) {
+            sb.append(uuid);
+            sb.append("|");
+            sb.append(inProgressTasks.get(uuid));
+            sb.append("|");
+        }
+        sb.deleteCharAt(sb.length() - 1);   // Trim trailing |
+        return sb.toString();
     }
 }
