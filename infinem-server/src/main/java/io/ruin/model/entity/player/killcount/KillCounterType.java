@@ -18,7 +18,7 @@ public class KillCounterType {
         this.slayerKillCounter = slayerKillCounter;
     }
 
-    public void increment(Player player) {
+    public int increment(Player player) {
         String key = bossKillCounter == null ? slayerKillCounter.name() : bossKillCounter.name();
         KillCounter kc = player.killCounterMap.get(key);
         if (kc == null) {
@@ -26,6 +26,7 @@ public class KillCounterType {
         }
         kc.increment(player);
         player.killCounterMap.put(key, kc);
+        return kc.getKills();
     }
 
     public int getKills(Player player) {
