@@ -14,6 +14,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainerG;
 import io.ruin.model.item.Items;
 import io.ruin.model.shop.ShopManager;
+import io.ruin.services.Hiscores;
 import io.ruin.utility.Color;
 
 import java.util.ArrayList;
@@ -156,6 +157,7 @@ public class Adam {
         });
         GameMode.changeForumsGroup(player, GameMode.STANDARD.groupId);
         Config.IRONMAN_MODE.set(player, 0);
+        Hiscores.archive(player);
         player.dialogue(new MessageDialogue("You have successfully removed your Ironman restrictions."));
     }
 

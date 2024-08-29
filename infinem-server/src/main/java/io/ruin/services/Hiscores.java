@@ -3,7 +3,6 @@ package io.ruin.services;
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseStatement;
 import io.ruin.api.database.DatabaseUtils;
-import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.player.killcount.BossKillCounter;
@@ -30,7 +29,7 @@ public class Hiscores {
     /**
      * ECO
      */
-    public static void hardcoreDeath(Player player) {
+    public static void archive(Player player) {
         if (OfflineMode.enabled)
             return;
         Server.siteDb.execute(new DatabaseStatement() {
@@ -39,11 +38,11 @@ public class Hiscores {
                 PreparedStatement statement = null;
                 ResultSet resultSet = null;
                 try {
-                    statement = connection.prepareStatement("SELECT * FROM highscores WHERE username = ? LIMIT 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                    statement = connection.prepareStatement("SELECT * FROM highscores WHERE username = ? AND archive = 0 LIMIT 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
                     statement.setString(1, player.getName());
                     resultSet = statement.executeQuery();
                     if (resultSet.next()) {
-                        resultSet.updateInt("archived", 0);
+                        resultSet.updateInt("archive", 1);
                         resultSet.updateRow();
                     }
                 } finally {
@@ -72,7 +71,7 @@ public class Hiscores {
                 PreparedStatement statement = null;
                 ResultSet resultSet = null;
                 try {
-                    statement = connection.prepareStatement("SELECT * FROM highscores WHERE username = ? AND archived = 0 LIMIT 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                    statement = connection.prepareStatement("SELECT * FROM highscores WHERE username = ? AND archive = 0 LIMIT 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
                     statement.setString(1, player.getName());
                     resultSet = statement.executeQuery();
                     if (!resultSet.next()) {

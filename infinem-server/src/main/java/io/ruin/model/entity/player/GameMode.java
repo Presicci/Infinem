@@ -10,8 +10,6 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.utils.Config;
-import io.ruin.model.item.Item;
-import io.ruin.model.item.ItemContainerG;
 import io.ruin.utility.Broadcast;
 
 public enum GameMode {
@@ -49,7 +47,7 @@ public enum GameMode {
         Config.IRONMAN_MODE.set(player, 1);
         changeForumsGroup(player, IRONMAN.groupId);
         player.sendMessage(Color.RED.wrap("You have fallen as a Hardcore Ironman, your Hardcore status has been revoked."));
-        Hiscores.hardcoreDeath(player);
+        Hiscores.archive(player);
         if (player.getStats().totalLevel >= 100) {
             String overall = NumberUtils.formatNumber(player.getStats().totalLevel);
             if (killHit == null) {
