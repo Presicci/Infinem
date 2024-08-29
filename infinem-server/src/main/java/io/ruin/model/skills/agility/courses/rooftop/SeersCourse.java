@@ -41,7 +41,6 @@ public class SeersCourse {
             if (!p.getStats().check(StatType.Agility, 60, "attempt this"))
                 return;
             p.lock(LockType.FULL_DELAY_DAMAGE);
-            p.preventSkippingCourse = true;
             p.animate(737, 15);
             e.delay(2);
             p.getMovement().teleport(2729, 3488, 1);
@@ -51,6 +50,7 @@ public class SeersCourse {
             p.resetAnimation();
             p.getStats().addXp(StatType.Agility, 45, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
+            p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
             e.delay(1);
             TricksterAgility.attemptNext(p, OBSTACLES[0]);
@@ -74,6 +74,7 @@ public class SeersCourse {
             e.delay(1);
             p.getStats().addXp(StatType.Agility, 20, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
+            p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
             e.delay(1);
             TricksterAgility.attemptNext(p, OBSTACLES[1]);
@@ -92,6 +93,8 @@ public class SeersCourse {
             e.delay(1);
             p.getStats().addXp(StatType.Agility, 20, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
+            if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 14928)
+                p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
             e.delay(1);
             TricksterAgility.attemptNext(p, OBSTACLES[2]);
@@ -111,6 +114,8 @@ public class SeersCourse {
             p.getMovement().teleport(p.getAbsX(), 3472, 3);
             p.getStats().addXp(StatType.Agility, 35, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
+            if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 14932)
+                p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
             e.delay(1);
             TricksterAgility.attemptNext(p, OBSTACLES[3]);
@@ -129,6 +134,8 @@ public class SeersCourse {
             p.resetAnimation();
             p.getStats().addXp(StatType.Agility, 15, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
+            if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 14929)
+                p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
             e.delay(1);
             TricksterAgility.attemptNext(p, OBSTACLES[4]);
@@ -145,7 +152,7 @@ public class SeersCourse {
             p.animate(2588);
             e.delay(1);
             p.resetAnimation();
-            if (p.preventSkippingCourse) {
+            if (p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 14930) {
                 p.getStats().addXp(StatType.Agility, 435, true);
                 p.getMovement().restoreEnergy(Random.get(1, 2));
                 int laps = PlayerCounter.SEERS_ROOFTOP.increment(p, 1);
@@ -155,8 +162,8 @@ public class SeersCourse {
                 p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
                 if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                     p.sendFilteredMessage("Your Seer's Village Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
-                p.preventSkippingCourse = false;
             }
+            p.removeAttribute("LAST_AGIL_OBJ");
             p.unlock();
         }));
     }

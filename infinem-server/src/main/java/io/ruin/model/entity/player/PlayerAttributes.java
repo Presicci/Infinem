@@ -662,8 +662,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public int voteMysteryBoxReward;
 
-    @Expose public boolean preventSkippingCourse = false;
-
     // Skill cape dailies
     @Expose public long lastAgilityCapeBoost;
 
