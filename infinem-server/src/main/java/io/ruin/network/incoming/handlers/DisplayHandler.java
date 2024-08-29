@@ -1,5 +1,6 @@
 package io.ruin.network.incoming.handlers;
 
+import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.cache.def.EnumDefinition;
 import io.ruin.model.entity.player.Player;
@@ -11,6 +12,7 @@ import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.IdHolder;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static io.ruin.model.inter.Interface.COMBAT_OPTIONS;
 
@@ -45,10 +47,10 @@ public class DisplayHandler implements Incoming {
         ps.sendClientScript(3998, "i", displayMode - 1);
         switch (displayMode) {
             case 2:
-                Config.SIDE_PANELS.set(p, 0);
+                Config.SIDE_PANELS.setInstant(p, 0);
                 break;
             case 3:
-                Config.SIDE_PANELS.set(p, 1);
+                Config.SIDE_PANELS.setInstant(p, 1);
                 break;
         }
         Map<Integer, Integer> newComponents = getToplevelComponents(p).getValuesAsInts();
@@ -65,7 +67,7 @@ public class DisplayHandler implements Incoming {
         ps.sendAccessMask(Interface.MUSIC_PLAYER, 3, 0, 665, 6);
         ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);
 
-        ps.sendClientScript(3970, "IIi", 46661634, 46661635, 1);
+        ps.sendClientScript(3970, "IIi", 46661634, 46661635, (int) TimeUnit.MILLISECONDS.toMinutes(p.playTime * Server.tickMs()));
 
         if (Config.ASK_TIME_PLAYED.get(p) == 0)
             Config.varpbit(12933, false).set(p, 1); // if 1 then it shows time played.
