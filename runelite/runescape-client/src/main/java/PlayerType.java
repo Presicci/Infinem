@@ -47,25 +47,25 @@ public enum PlayerType implements MouseWheel {
 
 	HARDCORE_GROUP_IRONMAN(7, 42, false, false, true),
 
-	OWNER(100, 1, false, false, true),
+	OWNER(100, 41, false, false, true),
 
-	SUPPORT(9, 15, false, false, true),
+	SUPPORT(9, 42, false, false, true),
 
-	YOUTUBER(10, 50, false, false, true),
+	YOUTUBER(10, 43, false, false, true),
 
-	BRONZE(11, 43, false, false, true),
+	BRONZE(11, 44, false, false, true),
 
-	IRON(12, 44, false, false, true),
+	IRON(12, 45, false, false, true),
 
-	GOLD(13, 45, false, false, true),
+	GOLD(13, 46, false, false, true),
 
-	MITHRIL(14, 46, false, false, true),
+	MITHRIL(14, 47, false, false, true),
 
-	ADAMANT(15, 47, false, false, true),
+	ADAMANT(15, 48, false, false, true),
 
-	RUNE(16, 48, false, false, true),
+	RUNE(16, 49, false, false, true),
 
-	DRAGON(17, 49, false, false, true),
+	DRAGON(17, 50, false, false, true),
 
 	DEVELOPER(99, 1, false, false, true);
 
