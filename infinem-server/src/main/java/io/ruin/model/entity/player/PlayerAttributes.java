@@ -120,8 +120,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public TickDelay potDelay = new TickDelay();
 
-    @Expose public int darkEssFragments;
-
     @Expose public boolean miningGuildMinerals;
 
     public TickDelay emoteDelay = new TickDelay();

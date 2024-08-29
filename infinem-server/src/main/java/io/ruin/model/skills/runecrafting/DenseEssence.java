@@ -28,9 +28,9 @@ public class DenseEssence {
         ItemItemAction.register(DARK_ESSENCE_BLOCK, Tool.CHISEL, (player, darkEssenceBlock, chisel) -> {
             boolean addFragments = false;
             if (!player.getInventory().hasId(DARK_ESSENCE_FRAGMENTS)) {
-                player.darkEssFragments = 0;
+                player.removeAttribute("DARK_ESS_FRAGMENTS");
                 addFragments = true;
-            } else if (player.darkEssFragments >= 111) {
+            } else if (player.getAttributeIntOrZero("DARK_ESS_FRAGMENTS") >= 111) {
                 player.dialogue(new ItemDialogue().one(DARK_ESSENCE_FRAGMENTS, "Your pile of fragments cannot grow any larger."));
                 return;
             }
@@ -39,19 +39,19 @@ public class DenseEssence {
             if (addFragments)
                 player.getInventory().add(DARK_ESSENCE_FRAGMENTS, 1);
             player.getStats().addXp(StatType.Crafting, 8.0, true);
-            player.darkEssFragments += 4;
+            player.incrementNumericAttribute("DARK_ESS_FRAGMENTS", 4);
         });
 
         /**
          * Dark essence fragments item options
          */
         ItemAction.registerInventory(DARK_ESSENCE_FRAGMENTS, actions -> {
-            actions[1] = (player, item) -> player.sendMessage("There are " + player.darkEssFragments + " essence fragements in this pile.");
+            actions[1] = (player, item) -> player.sendMessage("There are " + player.getAttributeIntOrZero("DARK_ESS_FRAGMENTS") + " essence fragements in this pile.");
             actions[5] = (player, item) -> {
                 player.dialogue(
                         new YesNoDialogue("Are you sure you want to do this?", "If you select yes, your dark essence fragments will be destroyed.", item, () -> {
                             item.remove();
-                            player.darkEssFragments = 0;
+                            player.removeAttribute("DARK_ESS_FRAGMENTS");
                         })
                 );
             };

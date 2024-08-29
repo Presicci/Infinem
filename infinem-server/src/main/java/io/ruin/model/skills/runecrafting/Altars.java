@@ -128,8 +128,8 @@ public enum Altars {
             if (altar.essence == Essence.DARK) {
                 Item fragments = player.getInventory().findItem(Essence.DARK.id);
                 if (fragments != null) {
-                    essenceCount = player.darkEssFragments;
-                    player.darkEssFragments = 0;
+                    essenceCount = player.getAttributeIntOrZero("DARK_ESS_FRAGMENTS");
+                    player.removeAttribute("DARK_ESS_FRAGMENTS");
                     fragments.remove();
                 }
             } else {
