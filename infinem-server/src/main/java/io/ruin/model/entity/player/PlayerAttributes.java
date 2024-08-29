@@ -616,12 +616,6 @@ public abstract class PlayerAttributes extends Entity {
     public int idleTicks;
     public boolean isIdle = false;
 
-    /**
-     * Giveaway
-     */
-    @Expose public int giveawayId = -1;
-    @Expose public int giveawayEntries = 0;
-
     public TickDelay specTeleportDelay = new TickDelay();
 
     @Expose public boolean bloodyMerchantTradeWarning = true;

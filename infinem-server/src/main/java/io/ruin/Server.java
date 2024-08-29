@@ -18,7 +18,6 @@ import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
 import io.ruin.data.impl.dialogue.DialogueLoader;
 import io.ruin.model.map.ClipUtils;
-import io.ruin.model.map.object.actions.impl.edgeville.Giveaway;
 import io.ruin.model.shop.ShopManager;
 import io.ruin.network.LoginDecoder;
 import io.ruin.network.central.CentralClient;
@@ -171,7 +170,6 @@ public class Server extends ServerWrapper {
 
             Loggers.clearOnlinePlayers(World.id);
             LatestUpdate.fetch();
-            Giveaway.updateTotalAmount();
             if(!OfflineMode.enabled && !World.isDev()) {
                 //DiscordConnection.setup("NTY4NjgxMjU2NDQzNzA3Mzkz.XLlnsQ.s6HIMbTgRrVsNhclAY1VYJPwGnc");
             }
