@@ -114,7 +114,7 @@ public class StarterGuide {
 	@SneakyThrows
 	private static void ecoTutorial(Player player) {
 		boolean actuallyNew = player.hasAttribute("NEW_PLAYER");
-		player.inTutorial = true;
+		player.putTemporaryAttribute("TUTORIAL", 1);
 		player.startEvent(event -> {
             player.lock(LockType.FULL_ALLOW_LOGOUT);
 			player.getMovement().teleport(3237, 3220, 0);
@@ -166,7 +166,7 @@ public class StarterGuide {
             "Would you like to a run down on how the server works?"),
             new OptionsDialogue("Play the tutorial?", new Option("Yes!", () -> introCutscene(guide, player)), new Option("No, I know what I'm doing!", () -> {
                 player.closeDialogue();
-                player.inTutorial = false;
+                player.removeTemporaryAttribute("TUTORIAL");
                 player.logoutListener = null;
                 player.unlock();
             })));
@@ -222,7 +222,7 @@ public class StarterGuide {
                     "If you have any other questions, there are always helpful users in the help clan chat"));
             e.waitForDialogue(player);
             guide.animate(863);
-            player.inTutorial = false;
+            player.removeTemporaryAttribute("TUTORIAL");
             player.unlock();
             player.clearHintArrow();
         });

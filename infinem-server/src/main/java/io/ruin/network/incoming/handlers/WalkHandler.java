@@ -15,7 +15,7 @@ public class WalkHandler implements Incoming {
     public void handle(Player player, InBuffer in, int opcode) {
         if ((player.isLocked() && !player.getMovement().hasTeleportUpdate()) || player.isStunned()) {
             /* is our player new to the game? */
-            if(player.inTutorial) {
+            if(player.hasTemporaryAttribute("TUTORIAL")) {
                 return;
             }
             /* is our player currently transformed? */ // TODO  Inspect the backlashes but we shouldnt be unmorphing if locked.
