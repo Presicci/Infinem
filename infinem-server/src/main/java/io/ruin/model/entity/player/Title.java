@@ -45,8 +45,8 @@ public class Title {
             prefixTitle(colorAndShadow("bfbfbf", "000000",  "Ultimate Ironman ")).setPredicate(p -> p.getGameMode().isUltimateIronman()).setHidden(),
 
             prefixTitle(color("13a5f9", "Newbie ")).setUnlockDescription(""),
+            prefixTitle(colorAndShadow("b36b00", "000000", "JalYt ")).setPredicate(p -> p.getTaskManager().hasCompletedTask(429)).setUnlockDescription("Equip an Infernal cape"),
             prefixTitle(colorAndShadow("bfbfbf", "000000", "<img=119>Dice Host ")).setPredicate(p -> p.diceHost).setUnlockDescription("Purchase a Dice Bag"),
-            prefixTitle(colorAndShadow("b36b00", "00000", "JalYt ")).setPredicate(p -> KillCounter.getKillCount(p, BossKillCounter.ZUK) > 0).setUnlockDescription("Complete the Inferno minigame"),
             prefixTitle(colorAndShadow("FF2d00", "000000", "Custom Title ")).setPredicate(p -> p.hasCustomTitle).setUnlockDescription("Purchase Custom Title from the Store")
     };
 
