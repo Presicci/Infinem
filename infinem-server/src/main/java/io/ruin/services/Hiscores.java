@@ -212,11 +212,11 @@ public class Hiscores {
 
     private static String getGameMode(Player player) {
         if(player.getGameMode().isUltimateIronman()) {
-            return "Ultimate Iron Man";
+            return "Ultimate Ironman";
         } else if (player.getGameMode().isHardcoreIronman()) {
-            return "Hardcore Iron Man";
+            return "Hardcore Ironman";
         } else if (player.getGameMode().isIronMan()) {
-            return "Iron Man";
+            return "Ironman";
         } else {
             return "Regular";
         }
