@@ -182,7 +182,10 @@ public class Settings {
         KEYBIND_12(3, 23, 104, (player, i) -> keybind(player, i, 11)),
         KEYBIND_13(3, 24, 105, (player, i) -> keybind(player, i, 12)),
         KEYBIND_14(3, 25, 106, (player, i) -> keybind(player, i, 13)),
-        DISPLAY(6, 1, 122, (player, i) -> DisplayHandler.setDisplayMode(player, i + 1)),
+        DISPLAY(6, 1, 122, (player, i) -> {
+            Config.SIDE_PANELS.setInstant(player, i == 2 ? 1 : 0);
+            DisplayHandler.setDisplayMode(player, i + 1);
+        }),
         CHATBOX_SCROLLBAR(6, 24, 145, Config.CHATBOX_SCROLLBAR::set),
         SIDE_PANEL_BORDER(6, 25, 146);
 

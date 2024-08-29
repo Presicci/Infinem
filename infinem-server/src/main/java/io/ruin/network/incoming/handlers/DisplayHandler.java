@@ -37,6 +37,7 @@ public class DisplayHandler implements Incoming {
     public static final int DEFAULT_SCREEN_CHILD_OFFSET = 7;
 
     public static void setDisplayMode(Player p, int displayMode) {
+        if (displayMode == 2 && Config.SIDE_PANELS.get(p) == 1) displayMode = 3;
         if (p.getDisplayMode() == displayMode) return;
         p.setDisplayMode(displayMode);
         PacketSender ps = p.getPacketSender();
@@ -45,14 +46,6 @@ public class DisplayHandler implements Incoming {
 
         ps.sendGameFrame(getGameFrameFor(displayMode));
         ps.sendClientScript(3998, "i", displayMode - 1);
-        switch (displayMode) {
-            case 2:
-                Config.SIDE_PANELS.setInstant(p, 0);
-                break;
-            case 3:
-                Config.SIDE_PANELS.setInstant(p, 1);
-                break;
-        }
         Map<Integer, Integer> newComponents = getToplevelComponents(p).getValuesAsInts();
         moveSubInterfaces(oldComponents, newComponents, p);
         ps.sendAccessMask(Interface.OPTIONS, 39, 0, 21, AccessMasks.ClickOp1);
@@ -74,6 +67,7 @@ public class DisplayHandler implements Incoming {
     }
 
     private static void sendDisplay(Player player, int displayMode) {
+        if (displayMode == 2 && Config.SIDE_PANELS.get(player) == 1) displayMode = 3;
         PacketSender ps = player.getPacketSender();
         ps.sendGameFrame(165);
         ps.sendInterface(162, 165, 1, 1);

@@ -26,7 +26,7 @@ public class TabOptions {
              * Display
              */
             h.actions[82] = (DefaultAction) (p, option, slot, itemId) -> {
-                //System.out.println("CHANGE DISPLAY MODE " + slot);
+                Config.SIDE_PANELS.setInstant(p, slot == 3 ? 1 : 0);
                 DisplayHandler.setDisplayMode(p, slot);
             };
 
