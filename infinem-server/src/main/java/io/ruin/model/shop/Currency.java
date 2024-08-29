@@ -146,30 +146,6 @@ public enum Currency {
             return amount;
         }
     }),
-    SNOWBALL_POINTS(new CurrencyHandler("snowball", "snowballs") {
-        @Override
-        public int getCurrencyCount(Player player) {
-            return player.snowballPoints;
-        }
-
-        @Override
-        public int removeCurrency(Player player, int amount) {
-            if(amount > player.snowballPoints){
-                return 0;
-            }
-            player.snowballPoints -= amount;
-            return amount;
-        }
-        @Override
-        public int addCurrency(Player player, int amount) {
-            if((long) player.snowballPoints + (long) amount > Integer.MAX_VALUE){
-                player.snowballPoints = Integer.MAX_VALUE;
-            } else {
-                player.snowballPoints += amount;
-            }
-            return amount;
-        }
-    }),
     TREASURE_TRAIL_POINTS(new CurrencyHandler("treasure trail points") {
         @Override
         public int getCurrencyCount(Player player) {

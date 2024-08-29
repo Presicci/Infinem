@@ -617,14 +617,6 @@ public abstract class PlayerAttributes extends Entity {
     public boolean isIdle = false;
 
     /**
-     * Christmas 2018
-     */
-    @Expose public boolean gotChristmasPresent = false;
-    @Expose public boolean snowballPeltOption = false;
-    @Expose public int snowballPoints = 0;
-    public TickDelay snowballCooldown = new TickDelay();
-
-    /**
      * Giveaway
      */
     @Expose public int giveawayId = -1;

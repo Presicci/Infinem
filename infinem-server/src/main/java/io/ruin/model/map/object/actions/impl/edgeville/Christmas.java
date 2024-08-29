@@ -45,10 +45,10 @@ public class Christmas {
             player.sendMessage("You need to be a donator to grab a present from the christmas tree!");
             return;
         }
-        if (player.gotChristmasPresent) {
-            player.sendMessage("You've already grabbed your Christmas present!");
-            return;
-        }
+        //if (player.gotChristmasPresent) {
+         //   player.sendMessage("You've already grabbed your Christmas present!");
+        //    return;
+        //}
         if (player.getInventory().isFull()) {
             player.sendMessage("You need at least one inventory slot to grab a Christmas present!");
             return;
@@ -56,7 +56,7 @@ public class Christmas {
 
         player.startEvent(event -> {
             player.lock();
-            player.gotChristmasPresent = true;
+            //player.gotChristmasPresent = true;
             player.animate(832);
             player.getInventory().add(6199, 1);
             player.dialogue(new ItemDialogue().one(6199, "You grab a Mystery Box from the Christmas tree. Merry Christmas and thank you for supporting " + World.type.getWorldName() + "!"));
@@ -87,7 +87,7 @@ public class Christmas {
     public static final Projectile SNOWBALL_PROJ = new Projectile(861, 30, 12, 62, 50, 15, 11, 64);
 
     public static void throwSnow(Player player, Player target) {
-        player.startEvent(event -> {
+        /*player.startEvent(event -> {
             while(player.getEquipment().hasId(SNOWBALL)) {
                 if(target.wildernessLevel > 0) {
                     player.dialogue(new PlayerDialogue("He might kill me if I throw a snowball at him while he's in the wilderness.."));
@@ -111,7 +111,7 @@ public class Christmas {
                 player.unlock();
                 event.delay(5);
             }
-        });
+        });*/
     }
 
     static {
@@ -126,7 +126,6 @@ public class Christmas {
         ItemDefinition.get(SNOWBALL).addOnTickEvent((player, item) -> {
             if (player.wildernessLevel <= 0 && !player.pvpAttackZone && !player.getPosition().inBounds(DuelArena.CUSTOM_EDGE)) {
                 player.setAction(1, PlayerAction.PELT);
-                player.snowballPeltOption = true;
             }
         });
 
@@ -165,13 +164,13 @@ public class Christmas {
             Shop snowballExchange = Shop.builder()
                     .identifier("0afe49e7-a9f4-4297-9aa0-9f7c92090159")
                     .defaultStock(rewards)
-                    .currency(Currency.SNOWBALL_POINTS)
+                    .currency(Currency.COINS)
                     .canSellToStore(false)
                     .generatedByBuilder(true)
                     .build();
 
             ShopManager.registerShop(snowballExchange);
-                    //new Shop("Snowball Point Exchange", ShopCurrency.SNOWBALL_POINTS, true, rewards);
+            //new Shop("Snowball Point Exchange", ShopCurrency.SNOWBALL_POINTS, true, rewards);
 
             ObjectAction.register(SNOWBALL_EXCHANGE, "open", (player, obj) -> snowballExchange.open(player));
             ObjectAction.register(SNOWBALL_EXCHANGE, "information", (player, obj) -> {
@@ -181,7 +180,7 @@ public class Christmas {
                         "spend those points on <col=800000>Christmas apparel</col>! Snowball points have",
                         "been added to your player journal.",
                         "",
-                        "You currently have <col=800000>" + player.snowballPoints + " </col>snowball points.",
+                        "You currently have <col=800000>0 </col>snowball points.",
                         "",
                         "Merry Christmas and thank you for playing " + World.type.getWorldName() + "!");
             });
