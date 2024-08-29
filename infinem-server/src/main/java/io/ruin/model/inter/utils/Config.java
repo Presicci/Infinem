@@ -181,12 +181,12 @@ public class Config {
      * Infinem options
      */
     public static final Config MAP_KEY_OPEN_BY_DEFAULT = varpbit(10294, true).defaultValue(1);
-    public static final Config BESTIARY_KC = varpbit(3577, true);
-    public static final Config BESTIARY_NEW_ENTRY = varpbit(4523, true).defaultValue(1);
-    public static final Config INFORMATION_BROADCASTS = varpbit(4499, true).defaultValue(1);
-    public static final Config SKILLING_BROADCASTS = varpbit(4503, true).defaultValue(1);
-    public static final Config DROP_BROADCASTS = varpbit(4507, true).defaultValue(1);
-    public static final Config FRIEND_BROADCASTS = varpbit(4511, true).defaultValue(1);
+    public static final Config BESTIARY_KC = varpbit(16010, true);
+    public static final Config BESTIARY_NEW_ENTRY = varpbit(16016, true).defaultValue(1);
+    public static final Config INFORMATION_BROADCASTS = varpbit(16011, true).defaultValue(1);
+    public static final Config SKILLING_BROADCASTS = varpbit(16012, true).defaultValue(1);
+    public static final Config DROP_BROADCASTS = varpbit(16013, true).defaultValue(1);
+    public static final Config FRIEND_BROADCASTS = varpbit(16014, true).defaultValue(1);
 
     /**
      * House options
