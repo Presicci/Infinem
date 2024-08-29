@@ -25,11 +25,13 @@ public class Title {
      * Remember to close tags and add spaces where necessary :)
      */
     public static final Title[] PRESET_TITLES = {
+            // Staff
             prefixTitle("<col=0da8af><shad=000000>Owner </col></shad>").setPredicate(p -> p.isGroup(PlayerGroup.OWNER)).setHidden(),
             prefixTitle("<col=ffff00><shad=000000>Admin </col></shad>").setPredicate(p -> p.isGroup(PlayerGroup.ADMINISTRATOR)).setHidden(),
             prefixTitle("<col=a239db><shad=000000><img=31>Developer </shad></col>").setPredicate(p -> p.isGroup(PlayerGroup.ADMINISTRATOR)).setHidden(),
             prefixTitle(colorAndShadow("d6daff", "000000", "Moderator ")).setPredicate(p -> p.isGroup(PlayerGroup.MODERATOR)).setHidden(),
             prefixTitle(colorAndShadow("0033cc", "000000", "Support ")).setPredicate(p -> p.isGroup(PlayerGroup.SUPPORT)).setHidden(),
+            // Donator
             prefixTitle(colorAndShadow("E79B3A", "000000",  "Zenyte ")).setPredicate(p -> p.isGroup(PlayerGroup.ZENYTE)).setHidden(),
             prefixTitle(colorAndShadow("444444", "000000",  "Onyx ")).setPredicate(p -> p.isGroup(PlayerGroup.ONYX)).setHidden(),
             prefixTitle(colorAndShadow("aa00aa", "000000",  "Dragonstone ")).setPredicate(p -> p.isGroup(PlayerGroup.DRAGONSTONE)).setHidden(),
@@ -37,12 +39,12 @@ public class Title {
             prefixTitle(colorAndShadow("ff5555", "000000",  "Ruby ")).setPredicate(p -> p.isGroup(PlayerGroup.RUBY)).setHidden(),
             prefixTitle(colorAndShadow("55ff55", "000000",  "Emerald ")).setPredicate(p -> p.isGroup(PlayerGroup.EMERALD)).setHidden(),
             prefixTitle(colorAndShadow("5555ff", "000000",  "Sapphire ")).setPredicate(p -> p.isGroup(PlayerGroup.SAPPHIRE)).setHidden(),
-
+            // Ironman
             prefixTitle(colorAndShadow("9e9e9e", "000000", "Ironman ")).setPredicate(p -> p.getGameMode() == GameMode.IRONMAN).setHidden(),
             prefixTitle(colorAndShadow("681212", "000000", "Hardcore Ironman ")).setPredicate(p -> p.getGameMode().isHardcoreIronman()).setHidden(),
             prefixTitle(colorAndShadow("bfbfbf", "000000",  "Ultimate Ironman ")).setPredicate(p -> p.getGameMode().isUltimateIronman()).setHidden(),
+
             prefixTitle(color("13a5f9", "Newbie ")).setUnlockDescription(""),
-            prefixTitle(colorAndShadow("c1a900", "000000", "Champion ")).setPredicate(p -> p.tournamentWins > 0).setUnlockDescription("Win a Tournament"),
             prefixTitle(colorAndShadow("bfbfbf", "000000", "<img=119>Dice Host ")).setPredicate(p -> p.diceHost).setUnlockDescription("Purchase a Dice Bag"),
             prefixTitle(colorAndShadow("b36b00", "00000", "JalYt ")).setPredicate(p -> KillCounter.getKillCount(p, BossKillCounter.ZUK) > 0).setUnlockDescription("Complete the Inferno minigame"),
             prefixTitle(colorAndShadow("a01111", "00000", "Slayer Master ")).setPredicate(p-> p.slayerTasksCompleted >= 50).setUnlockDescription("Complete 50 slayer tasks"),
