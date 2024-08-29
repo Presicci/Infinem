@@ -208,16 +208,16 @@ public enum Icon {
     WILDERNESS(46),
     ANNOUNCEMENT(55),
     HCIM_DEATH(10),//32
-    DONATOR(19),//142
+    DONATOR(23),//142
     INFO(15),
-    RED_STAR(30),
-    GOLD_STAR(32),
+    RED_STAR(36),
+    GOLD_STAR(38),
     CROSSED_SWORDS(31),
     SKULL(9),
-    PET(66),
-    SKILL_ICON(208),
-    INVENTORY_BAG(232),
-    SMILY(50)
+    PET(67),
+    SKILL_ICON(209),
+    INVENTORY_BAG(233),
+    SMILY(51)
     ;
 
     public final int imgId;
