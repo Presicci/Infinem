@@ -597,12 +597,6 @@ public abstract class PlayerAttributes extends Entity {
     public TickDelay riskProtectionExpirationDelay = new TickDelay();
 
     /**
-     * Magic skillcape attributes
-     */
-    @Expose public long mageSkillcapeSpecial = System.currentTimeMillis();
-    @Expose public int magicSkillcapeUses = 0;
-
-    /**
      * PvM Instances
      */
     public PVMInstance currentInstance;
@@ -625,11 +619,8 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean broadcastHotspot = true;
     @Expose public boolean broadcastSupplyChest = true;
     @Expose public boolean broadcastBloodyMechant = true;
-    @Expose public boolean broadcastAnnouncements = true;
     @Expose public boolean broadcastTournaments = true;
 
-
-    @Expose public boolean bootsOfLightnessTaken = false;
 
     public TickDelay edgevilleStallCooldown = new TickDelay();
 
