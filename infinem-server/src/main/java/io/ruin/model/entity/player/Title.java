@@ -38,10 +38,6 @@ public class Title {
             prefixTitle(colorAndShadow("55ff55", "000000",  "Emerald ")).setPredicate(p -> p.isGroup(PlayerGroup.EMERALD)).setHidden(),
             prefixTitle(colorAndShadow("5555ff", "000000",  "Sapphire ")).setPredicate(p -> p.isGroup(PlayerGroup.SAPPHIRE)).setHidden(),
 
-            prefixTitle(colorAndShadow("FA3333", "000000", "Hard ")).setPredicate(p -> p.xpMode == XpMode.HARD).setHidden(),
-            prefixTitle(colorAndShadow("C2D61D", "000000", "Regular ")).setPredicate(p -> p.xpMode == XpMode.MEDIUM).setHidden(),
-            prefixTitle(colorAndShadow("3544FD", "000000",  "Easy ")).setPredicate(p -> p.xpMode == XpMode.EASY).setHidden(),
-
             prefixTitle(colorAndShadow("9e9e9e", "000000", "Ironman ")).setPredicate(p -> p.getGameMode() == GameMode.IRONMAN).setHidden(),
             prefixTitle(colorAndShadow("681212", "000000", "Hardcore Ironman ")).setPredicate(p -> p.getGameMode().isHardcoreIronman()).setHidden(),
             prefixTitle(colorAndShadow("bfbfbf", "000000",  "Ultimate Ironman ")).setPredicate(p -> p.getGameMode().isUltimateIronman()).setHidden(),
