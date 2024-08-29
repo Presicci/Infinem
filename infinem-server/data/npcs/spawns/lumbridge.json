@@ -3519,6 +3519,78 @@
     "walkRange": 3
   },
   {
+    "name": "Giant frog",
+    "id": 8700,
+    "x": 3196,
+    "y": 3171,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant frog",
+    "id": 8700,
+    "x": 3196,
+    "y": 3176,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant frog",
+    "id": 8700,
+    "x": 3199,
+    "y": 3178,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant frog",
+    "id": 8700,
+    "x": 3203,
+    "y": 3175,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant frog",
+    "id": 8700,
+    "x": 3192,
+    "y": 3179,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant frog",
+    "id": 8700,
+    "x": 3195,
+    "y": 3191,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant frog",
+    "id": 8700,
+    "x": 3196,
+    "y": 3187,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant frog",
+    "id": 8700,
+    "x": 3199,
+    "y": 3185,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
     "name": "Cow",
     "id": 2791,
     "x": 3200,
