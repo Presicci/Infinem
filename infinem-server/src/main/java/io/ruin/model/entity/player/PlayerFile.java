@@ -47,10 +47,12 @@ public class PlayerFile {
     public static Player load(PlayerLogin login) {
         try {
             Player player;
-            if(login.info.saved == null || login.info.saved.isEmpty())
+            if(login.info.saved == null || login.info.saved.isEmpty()) {
                 player = new Player();
-            else
-                player =  GSON_LOADER.fromJson(login.info.saved, Player.class);
+                player.putAttribute("NEW_PLAYER", 1);
+            } else {
+                player = GSON_LOADER.fromJson(login.info.saved, Player.class);
+            }
             if(player.getPrimaryGroup() == null)
                 player.setGroups(ListUtils.toList(PlayerGroup.REGISTERED.id));
             else
