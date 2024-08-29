@@ -1119,6 +1119,7 @@ public enum ClueType {
                 player.getInventory().addOrDrop(item.getId(), item.getAmount());
                 if (player.getCollectionLog().collect(item) && shared.getLootItems().stream().noneMatch(i -> i.id == item.getId())) {
                     player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CLUEUNIQUE, this.toString());
+                    player.getTaskManager().doDropLookup(item);
                 }
             }
         }
