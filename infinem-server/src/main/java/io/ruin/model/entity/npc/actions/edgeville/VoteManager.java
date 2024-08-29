@@ -52,45 +52,6 @@ public class VoteManager {
                 player.claimedVotes += (claimed + runelocus);
                 player.dialogue(new NPCDialogue(npc, "You've successfully claimed " + (claimed + runelocus) + " vote" + ((claimed + runelocus) > 1 ? "s" : "") + "!"));
                 player.sendFilteredMessage(Color.COOL_BLUE.wrap("You receive " + (claimed * 3) + " vote ticket" + ((claimed + runelocus) > 1 ? "s" : "") + " for voting."));
-                player.voteMysteryBoxReward += (claimed + runelocus);
-                if(player.voteMysteryBoxReward >= 3) {
-                    voteMysteryBoxesClaimed += 1;
-                    player.voteMysteryBoxReward -= 3;
-                    boolean bank;
-                    /*if(bank) {
-                        player.getBank().add(6829, 1);
-                    } else {
-                        player.getInventory().add(6829, 1);
-                    }*/
-                    bank = player.getInventory().isFull();
-                    if(bank) {
-                        player.getBank().add(6758, 1);
-                    } else {
-                        player.getInventory().add(6758, 1);
-                    }
-                    bank = player.getInventory().isFull();
-                    if(bank) {
-                        player.getBank().add(COINS_995, 1000000);
-                    } else {
-                        player.getInventory().add(COINS_995, 1000000);
-                    }
-                    bank = player.getInventory().isFull();
-                    if (bank) {
-                        player.getBank().add(1464, 1);
-                    } else {
-                        player.getInventory().add(1464, 1);
-                    }
-                    player.sendMessage(Color.COOL_BLUE.wrap("You receive double xp scroll, vote lottery ticket and 1m cash for voting on all 3 sites" + (bank ? " which has been deposited into your bank" : "") + "!"));
-                    if (Random.get(1,4) == 4) {
-                        bank = player.getInventory().isFull();
-                        if (bank) {
-                            player.getBank().add(6829, 1);
-                        } else {
-                            player.getInventory().add(6829, 1);
-                        }
-                        player.sendMessage(Color.COOL_BLUE.wrap("You also receive a vote mystery box!" + (bank ? " which has been deposited into your bank" : "") + "!"));
-                    }
-                }
             });
         });
         startEvent(e -> {

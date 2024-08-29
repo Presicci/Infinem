@@ -627,8 +627,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public int claimedVotes;
 
-    @Expose public int voteMysteryBoxReward;
-
     // Skill cape dailies
     @Expose public long lastAgilityCapeBoost;
 
