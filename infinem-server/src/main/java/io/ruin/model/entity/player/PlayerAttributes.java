@@ -65,8 +65,6 @@ public abstract class PlayerAttributes extends Entity {
     public int targetOverlayResetTicks;
 
     public int viewingTheatreSlot;
-    @Expose @Setter @Getter public boolean acceptedTheatreRisk;
-    @Expose @Setter @Getter public boolean acceptedTheatreCrystals;
 
     /**
      * 2FA

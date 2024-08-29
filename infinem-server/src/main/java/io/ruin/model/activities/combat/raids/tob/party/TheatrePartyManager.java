@@ -325,7 +325,7 @@ public final class TheatrePartyManager {
             boolean dialogue = TheatrePartyManager.instance().getPartyForPlayer(player.getUserId()).isPresent();
             if (dialogue) {
                 TheatrePartyManager.instance().getPartyForPlayer(player.getUserId()).ifPresent(party -> {
-                    if (!player.isAcceptedTheatreRisk()) {
+                    if (!player.hasAttribute("TOB_RISK_ACCEPTED")) {
                         player.dialogue(
                             new MessageDialogue("Warning: The Theatre of Blood is dangerous. Once you enter, " +
                                     "you are at risk of death. The only method of escape is to resign or defeat the Theatre." +
@@ -333,7 +333,7 @@ public final class TheatrePartyManager {
                             new MessageDialogue("You will not see the warning again should you accept."),
                             new OptionsDialogue(
                                     new Option("Yes - proceed.", () -> {
-                                        player.setAcceptedTheatreRisk(true);
+                                        player.putAttribute("TOB_RISK_ACCEPTED", 1);
                                         crystals(player, party);
                                     }),
                                     new Option("No - stay out.")
@@ -402,7 +402,7 @@ public final class TheatrePartyManager {
      * @param party
      */
     private static void crystals(Player player, TheatreParty party) {
-        if (!player.isAcceptedTheatreCrystals()) {
+        if (!player.hasAttribute("TOB_CRYSTALS")) {
             player.dialogue(new OptionsDialogue(Color.MAROON.wrap("Only Verzik's crystals can teleport out of the Theatre."),
                     new Option("Go and buy teleport crystals.", () -> {
                         player.startEvent(e -> {
@@ -413,7 +413,7 @@ public final class TheatrePartyManager {
                     }),
                     new Option("Enter the Theatre without any teleport crystals.", () -> enterTheatre(player, party)),
                     new Option("Enter the Theatre, and don't ask this again.", () -> {
-                        player.setAcceptedTheatreCrystals(true);
+                        player.putAttribute("TOB_CRYSTALS", 1);
                         enterTheatre(player, party);
                     })
             ));
