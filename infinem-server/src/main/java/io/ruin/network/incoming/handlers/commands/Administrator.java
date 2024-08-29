@@ -815,7 +815,7 @@ public class Administrator {
             }
 
             case "tutorial": {
-                player.newPlayer = true;
+                player.putAttribute("NEW_PLAYER", 1);
                 return true;
             }
 

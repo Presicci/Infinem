@@ -46,7 +46,7 @@ public class StarterGuide {
 
 
 		LoginListener.register(player -> {
-            if (player.newPlayer) {
+            if (player.hasAttribute("NEW_PLAYER")) {
                 XpCounter.select(player, 1);
                 CentralClient.sendClanRequest(player.getUserId(), "Help");
                 tutorial(player);
@@ -113,7 +113,7 @@ public class StarterGuide {
 
 	@SneakyThrows
 	private static void ecoTutorial(Player player) {
-		boolean actuallyNew = player.newPlayer;
+		boolean actuallyNew = player.hasAttribute("NEW_PLAYER");
 		player.inTutorial = true;
 		player.startEvent(event -> {
             player.lock(LockType.FULL_ALLOW_LOGOUT);
@@ -127,7 +127,6 @@ public class StarterGuide {
 			NPC guide = NPCLocator.GUIDE;
 			player.getPacketSender().sendHintIcon(guide);
 			player.face(guide);
-			boolean startTutorial = false;
 			if (actuallyNew) {
 			    event.waitForDialogue(player);
                 player.dialogue(
@@ -154,30 +153,24 @@ public class StarterGuide {
                             @Override
                             public void open(Player player) {
                                 giveEcoStarter(player);
-                                player.newPlayer = false;
+                                player.removeAttribute("NEW_PLAYER");
                                 super.open(player);
                             }
                         });
                 event.waitForDialogue(player);
                 player.getPacketSender().resetHintIcon(true);
                 Broadcast.WORLD.sendNews(player.getName() + " has just joined " + World.type.getWorldName() + "!");
-                startTutorial = true;
-            } else {
-                startTutorial = true;
             }
-			if (startTutorial) {
-
-                player.dialogue(new NPCDialogue(guide,
-                "Greetings, " + player.getName() + "! Welcome to " + World.type.getWorldName() + ".<br>" +
-                "Would you like to a run down on how the server works?"),
-                new OptionsDialogue("Play the tutorial?", new Option("Yes!", () -> introCutscene(guide, player)), new Option("No, I know what I'm doing!", () -> {
-                    player.closeDialogue();
-                    player.inTutorial = false;
-                    player.logoutListener = null;
-                    player.setTutorialStage(0);
-                    player.unlock();
-                })));
-            }
+            player.dialogue(new NPCDialogue(guide,
+            "Greetings, " + player.getName() + "! Welcome to " + World.type.getWorldName() + ".<br>" +
+            "Would you like to a run down on how the server works?"),
+            new OptionsDialogue("Play the tutorial?", new Option("Yes!", () -> introCutscene(guide, player)), new Option("No, I know what I'm doing!", () -> {
+                player.closeDialogue();
+                player.inTutorial = false;
+                player.logoutListener = null;
+                player.setTutorialStage(0);
+                player.unlock();
+            })));
 		});
 	}
 

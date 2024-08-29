@@ -39,7 +39,7 @@ public class PlayerBot {
         bot.init(info);
         bot.getPosition().copy(position);
         bot.lastRegion = bot.getPosition().getRegion();
-        bot.newPlayer = false;
+        bot.removeAttribute("NEW_PLAYER");
         bot.start();
         bot.setOnline(true);
         botConsumer.accept(bot);

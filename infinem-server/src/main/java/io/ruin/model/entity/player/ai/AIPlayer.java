@@ -33,7 +33,7 @@ public class AIPlayer extends Player {
         init(info);
         this.setName(username);
         this.lastRegion = position.getRegion();
-        this.newPlayer = false;
+        this.removeAttribute("NEW_PLAYER");
         this.setOnline(true);
         this.start();
 

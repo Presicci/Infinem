@@ -139,8 +139,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public TickDelay imbueHeartCooldown = new TickDelay();
 
-    @Expose public boolean newPlayer = true;
-
     public boolean inTutorial = false;
 
     @Expose public boolean krakenWarning = true;
