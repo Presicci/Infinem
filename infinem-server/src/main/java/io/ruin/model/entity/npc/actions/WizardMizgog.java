@@ -49,6 +49,7 @@ public class WizardMizgog {
                                                         player.getInventory().remove(Items.YELLOW_BEAD, 1);
                                                         player.getInventory().remove(Items.RED_BEAD, 1);
                                                         player.getInventory().add(Items.AMULET_OF_ACCURACY);
+                                                        player.getTaskManager().doLookupByUUID(1105);   // Return Wizard Mizgog's Beads
                                                         player.dialogue(
                                                                 new ItemDialogue().one(Items.AMULET_OF_ACCURACY, "Mizgog removes the beads from your backpack and gives you an Amulet of accuracy."),
                                                                 new PlayerDialogue("Thanks, Mizgog!"),
