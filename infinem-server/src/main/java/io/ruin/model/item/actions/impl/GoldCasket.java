@@ -128,8 +128,8 @@ public enum GoldCasket {
     private static final int KRAKEN_BOSS = 494;
 
     static {
-        for (GoldCasket goldCasket : GoldCasket.values())
-            ItemAction.registerInventory(goldCasket.itemId, 1, (player, item) -> open(player, item, goldCasket.minAmount, goldCasket.maxAmount));
+        //for (GoldCasket goldCasket : GoldCasket.values())
+        //    ItemAction.registerInventory(goldCasket.itemId, 1, (player, item) -> open(player, item, goldCasket.minAmount, goldCasket.maxAmount));
         set(0.6, "general graardor", "commander zilyana", "kree'arra", "k'ril tsutsaroth");
         set(0.5, "callisto", "venenatis");
         set(0.7 / 1.2, "chaos elemental", "vet'tion");
