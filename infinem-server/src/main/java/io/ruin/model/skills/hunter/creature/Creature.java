@@ -246,10 +246,6 @@ public abstract class Creature {
     protected void addLoot(Player player) {
         getLoot().forEach(item -> {
             player.collectResource(item);
-            if (player.blackChinchompaBoost.isDelayed()) {
-                boolean extra = Random.rollPercent(20);
-                if (extra) item.incrementAmount(1);
-            }
             if (item.getId() == Items.BONES) {
                 if (!player.getBoneCrusher().handleBury(item)) {
                     if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {

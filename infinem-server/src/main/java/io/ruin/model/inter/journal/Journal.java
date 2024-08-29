@@ -145,9 +145,6 @@ public enum Journal {
         CHARACTER.addEntry(new JournalPlayerGroup());
         CHARACTER.addEntry(TotalSpent.INSTANCE);
         CHARACTER.addEntry(PlayTime.INSTANCE);
-        CHARACTER.addEntry(ExpBonusTime.INSTANCE);
-        CHARACTER.addEntry(DropBoostTime.INSTANCE);
-        CHARACTER.addEntry(PetDropBoostTime.INSTANCE);
 
         CHARACTER.addCategory("");
         CHARACTER.addEntry(new DoubleDropChance());

@@ -257,11 +257,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean slayerCombatCheck;
     @Expose public int slayerLocation = 0;
 
-    public TickDelay blackChinchompaBoost = new TickDelay();
-    @Expose public int blackChinchompaBoostTimeLeft;
-    public TickDelay darkCrabBoost = new TickDelay();
-    @Expose public int darkCrabBoostTimeLeft;
-
     /**
      * Farming contracts
      */
@@ -499,10 +494,6 @@ public abstract class PlayerAttributes extends Entity {
      * Boost scrolls
      */
     public TickDelay expBonus = new TickDelay();
-    public TickDelay petDropBonus = new TickDelay();
-    @Expose public int petDropBonusTimeLeft;
-    public TickDelay rareDropBonus = new TickDelay();
-    @Expose public int rareDropBonusTimeLeft;
 
     /**
      * Wilderness points

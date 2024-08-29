@@ -318,17 +318,6 @@ public class Wilderness {
             player.sendMessage("You now have " + player.darkCrabBoost.remainingToMins() + " minutes of Dark crab skilling boost.");
         });*/
 
-        LoginListener.register(player -> {
-            if (player.blackChinchompaBoostTimeLeft > 0) {
-                player.blackChinchompaBoost.delay(player.blackChinchompaBoostTimeLeft);
-                player.blackChinchompaBoostTimeLeft = 0;
-            }
-            if (player.darkCrabBoostTimeLeft > 0) {
-                player.darkCrabBoost.delay(player.darkCrabBoostTimeLeft);
-                player.darkCrabBoostTimeLeft = 0;
-            }
-        });
-
         //Register map listener
         MapListener.register(Wilderness::checkActive)
                 .onEnter(Wilderness::entered)

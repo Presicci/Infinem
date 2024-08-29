@@ -206,10 +206,6 @@ public class FishingSpot {
                         player.collectResource(new Item(c.id, amount));
                         if (tool == FishingTool.CRYSTAL_HARPOON && CrystalEquipment.HARPOON.hasCharge(player))
                             CrystalEquipment.HARPOON.removeCharge(player);
-                        if (player.darkCrabBoost.isDelayed()) {
-                            if (Random.rollPercent(20))
-                                amount++;
-                        }
                         if (tool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(c.id)) {
                             player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_HARPOON.removeCharge(player);

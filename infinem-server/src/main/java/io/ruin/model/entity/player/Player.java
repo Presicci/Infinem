@@ -1331,20 +1331,8 @@ public class Player extends PlayerAttributes {
         /*
          * Scrolls Timer Saving
          */
-        if (player.rareDropBonus.remaining() > 0) {
-            player.rareDropBonusTimeLeft = player.rareDropBonus.remaining();
-        }
         if (player.expBonus.remaining() > 0) {
             player.putAttribute("XP_BONUS_TIME", player.expBonus.remaining());
-        }
-        if (player.petDropBonus.remaining() > 0) {
-            player.petDropBonusTimeLeft = player.petDropBonus.remaining();
-        }
-        if (player.blackChinchompaBoost.remaining() > 0) {
-            player.blackChinchompaBoostTimeLeft = player.blackChinchompaBoost.remaining();
-        }
-        if (player.darkCrabBoost.remaining() > 0) {
-            player.darkCrabBoostTimeLeft = player.darkCrabBoost.remaining();
         }
 		GameEventProcessor.killFor(this);
         Hunter.collapseAll(this);

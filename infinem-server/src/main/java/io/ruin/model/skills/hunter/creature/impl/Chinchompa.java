@@ -112,10 +112,6 @@ public class Chinchompa extends Creature {
     protected void addLoot(Player player) {
         getLoot().forEach(item -> {
             player.collectResource(item);
-            if (player.blackChinchompaBoost.isDelayed()) {
-                boolean extra = Random.rollPercent(20);
-                if (extra) item.incrementAmount(1);
-            }
             player.getInventory().add(item.getId(), item.getAmount());
         });
         player.getInventory().add(getTrapType().getItemId(), 1);
