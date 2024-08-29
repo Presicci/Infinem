@@ -329,25 +329,6 @@ public class ItemDefinition {
             name = "Bananas(5)";
         if (id == Items.TOMATOES_5)
             name = "Tomatoes(5)";
-        if(id == 2742) {
-            name = "Coin Casket (small)";
-            inventoryOptions[1] = null;
-        }
-
-        if(id == 2744) {
-            name = "Coin Casket (medium)";
-            inventoryOptions[1] = null;
-        }
-
-        if(id == 2746) {
-            name = "Coin Casket (large)";
-            inventoryOptions[1] = null;
-        }
-
-        if(id == 2748) {
-            name = "Coin Casket (giant)";
-            inventoryOptions[1] = null;
-        }
 
         if(id == 13190) { //bond
             name = World.type.getWorldName() + " Credit";
