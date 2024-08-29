@@ -80,7 +80,7 @@ public class Title {
                 .map(t -> new Option((t.getPrefix() == null ? "" : t.getPrefix())
                         + player.getName()
                         + (t.getSuffix() == null ? "" : t.getSuffix())
-                        + (t.unlockDescription != null ? (" (" + t.unlockDescription + ")") : ""), () -> {
+                        + ((t.unlockDescription != null && !t.unlockDescription.isEmpty()) ? (" (" + t.unlockDescription + ")") : ""), () -> {
                     select(player, t);
                 })).collect(Collectors.toList());
         if (options.size() == 0) {
