@@ -578,7 +578,7 @@ public class Loggers extends DatabaseUtils {
         //Bank
         List<BankItem> bankItems = new ArrayList<>(player.getBank().getCount());
         for (BankItem item : player.getBank().getItems()) {
-            if (item != null && item.getId() != Bank.BLANK_ID) {
+            if (item != null && item.getId() != Bank.BLANK_ID && item.getDef() != null) {
                 bankItems.add(item);
                 totalWealth += getWealth(item);
             }
@@ -612,6 +612,7 @@ public class Loggers extends DatabaseUtils {
         resultSet.updateInt("z", player.getAbsY());
         resultSet.updateInt("level", player.getHeight());
         resultSet.updateInt("wilderness_points", player.wildernessPoints);
+        resultSet.updateTimestamp("last_online", new Timestamp(System.currentTimeMillis()));
     }
 
     public static void logPvMInstance(int ownerId, String typeName, int cost, long timeCreated, long timeDestroyed) {
