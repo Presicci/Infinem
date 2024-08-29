@@ -24,6 +24,7 @@ public class TaskInterface {
     private static final Config COMPLETED_FILTER = Config.varpbit(10034, true);
 
     public static void openTaskInterface(Player player) {
+        player.getPacketSender().sendClientScript(10203, "s", player.getTaskManager().generateInProgressString());
         player.openInterface(InterfaceType.MAIN, 657);
         player.getPacketSender().sendAccessMask(657, 27, 0, 16, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(657, 32, 0, 6, AccessMasks.ClickOp1);
