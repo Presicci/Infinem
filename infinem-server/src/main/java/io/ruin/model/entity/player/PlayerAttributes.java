@@ -647,12 +647,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public TickDelay edgevilleStallCooldown = new TickDelay();
 
-    /**
-     * Appreciation points
-     */
-    @Expose public int appreciationTicks = 0;
-    @Expose public int appreciationPoints = 0;
-
     @Expose public double energyUnits = 10000;
 
 

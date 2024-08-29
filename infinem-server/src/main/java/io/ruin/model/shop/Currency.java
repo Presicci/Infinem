@@ -73,30 +73,6 @@ public enum Currency {
             return amount;
         }
     }),
-    APPRECIATION_POINTS(new CurrencyHandler("appreciation points") {
-        @Override
-        public int getCurrencyCount(Player player) {
-            return player.appreciationPoints;
-        }
-
-        @Override
-        public int removeCurrency(Player player, int amount) {
-            if(amount > player.appreciationPoints){
-                return 0;
-            }
-            player.appreciationPoints -= amount;
-            return amount;
-        }
-        @Override
-        public int addCurrency(Player player, int amount) {
-            if((long) player.appreciationPoints + (long) amount > Integer.MAX_VALUE){
-                player.appreciationPoints = Integer.MAX_VALUE;
-            } else {
-                player.appreciationPoints += amount;
-            }
-            return amount;
-        }
-    }),
     PVM_POINTS(new CurrencyHandler("pvm points") {
         @Override
         public int getCurrencyCount(Player player) {

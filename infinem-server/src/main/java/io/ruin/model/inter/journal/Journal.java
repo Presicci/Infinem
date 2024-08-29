@@ -139,7 +139,6 @@ public enum Journal {
 
         CHARACTER.addCategory("");
         CHARACTER.addCategory("Currencies");
-        CHARACTER.addEntry(new AppreciationPoints());
 
         CHARACTER.addCategory("");
         CHARACTER.addCategory("Account");

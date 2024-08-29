@@ -1578,10 +1578,6 @@ public class Player extends PlayerAttributes {
     private void tick() {
         playTime++;
 
-        if(++appreciationTicks >= 100) {
-            appreciationPoints += Random.get(5, 15);
-            appreciationTicks = 0;
-        }
         if(++specialRestoreTicks >= 50) {
             specialRestoreTicks = 0;
             combat.restoreSpecial(10);
