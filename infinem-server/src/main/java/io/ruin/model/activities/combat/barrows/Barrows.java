@@ -82,9 +82,9 @@ public class Barrows {
     }
 
     private static void search(Player player, BarrowsBrother brother) {
-        if(player.barrowsChestBrother == null)
-            player.barrowsChestBrother = Random.get(BarrowsBrother.values());
-        if(player.barrowsChestBrother == brother) {
+        if(!player.hasAttribute("BARROWS_CHEST_BROTHER"))
+            player.putAttribute("BARROWS_CHEST_BROTHER", Random.get(BarrowsBrother.values()).ordinal());
+        if(player.getAttributeIntOrZero("BARROWS_CHEST_BROTHER") == brother.ordinal()) {
             player.dialogue(
                     new MessageDialogue("You've found a hidden tunnel, do you want to enter?"),
                     new OptionsDialogue(
@@ -102,13 +102,14 @@ public class Barrows {
     }
 
     private static void loot(Player player) {
-        if(player.barrowsChestBrother == null) {
+        if(!player.hasAttribute("BARROWS_CHEST_BROTHER")) {
             player.getPacketSender().resetCamera();
             player.getMovement().teleport(3565, 3313, 0);
             return;
         }
-        if(!player.barrowsChestBrother.isKilled(player)) {
-            player.barrowsChestBrother.spawn(player);
+        BarrowsBrother cryptBrother = BarrowsBrother.values()[player.getAttributeIntOrZero("BARROWS_CHEST_BROTHER")];
+        if(!cryptBrother.isKilled(player)) {
+            cryptBrother.spawn(player);
             return;
         }
         if(Config.BARROWS_CHEST.get(player) == 0) {
@@ -138,7 +139,7 @@ public class Barrows {
             for(BarrowsBrother brother : BarrowsBrother.values())
                 brother.config.set(player, 0);
             Config.BARROWS_CHEST.set(player, 0);
-            player.barrowsChestBrother = null;
+            player.removeAttribute("BARROWS_CHEST_BROTHER");
             player.unlock();
         });
     }
