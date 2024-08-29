@@ -83,8 +83,8 @@ public class Belona {
 
         ));
         NPCAction.register(BELONA, "toggle-minerals", (player, npc) -> {
-            if (player.miningGuildMinerals) {
-                player.miningGuildMinerals = false;
+            if (!player.hasAttribute("MG_MINERALS_OFF")) {
+                player.removeAttribute("MG_MINERALS_OFF");
                 player.dialogue(
                         new PlayerDialogue("I don't want to receive minerals."),
                         new NPCDialogue(npc, "Very well. You'll not longer find any minerals when you mine here. If you" +
@@ -92,7 +92,7 @@ public class Belona {
 
                 );
             } else {
-                player.miningGuildMinerals = true;
+                player.removeAttribute("MG_MINERALS_OFF");
                 player.dialogue(
                         new PlayerDialogue("I'd like to receive minerals."),
                         new NPCDialogue(npc, "As you wish, You'll now find minerals when you mine here. Let me know if" +

@@ -316,7 +316,7 @@ public class Mining {
     }
 
     private static boolean minedMineral(Player player, Rock rockData) {
-        if (!player.miningGuildMinerals)
+        if (player.hasAttribute("MG_MINERALS_OFF"))
             return false;
         if (!player.getPosition().inBounds(MiningGuild.MINERAL_AREA))
             return false;
