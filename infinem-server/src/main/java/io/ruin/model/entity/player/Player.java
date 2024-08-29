@@ -1075,7 +1075,7 @@ public class Player extends PlayerAttributes {
         //setGroups(info.groupIds);
 
         if(position == null)
-            position = new Position(3086, 3495, 0);
+            position = new Position(3237, 3220, 0);
         else
             position.updateFirstChunk();
         lastPosition = position.copy();
