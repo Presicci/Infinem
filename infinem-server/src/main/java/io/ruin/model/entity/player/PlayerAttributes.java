@@ -122,8 +122,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public TickDelay emoteDelay = new TickDelay();
 
-    @Expose public boolean beginnerParkourEnergyBoost;
-
     public Teleother teleotherActive;
     public TeleGroup telegroupActive;
 

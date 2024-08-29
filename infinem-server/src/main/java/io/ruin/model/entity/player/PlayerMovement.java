@@ -38,8 +38,6 @@ public class PlayerMovement extends Movement {
         }
         int oldEnergy = getEnergy();
         double restore = 8 + (player.getStats().get(StatType.Agility).currentLevel / 6);
-        if(player.wildernessLevel == 0 && player.beginnerParkourEnergyBoost)
-            restore *= 1.25;
         if(SetEffect.GRACEFUL.hasPieces(player))
             restore *= 1.3;
         player.energyUnits = Math.min(player.energyUnits + restore, 10000);
