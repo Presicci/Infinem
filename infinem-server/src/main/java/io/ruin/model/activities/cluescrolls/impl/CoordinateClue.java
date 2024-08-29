@@ -168,7 +168,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.ELITE, new Position(2357, 3151, 0)); // Lletya.
         //registerDig(ClueType.ELITE, new Position(3587, 3180, 0)); // Meiyerditch.
         // VARLAMORE
-        registerDig(ClueType.ELITE, new Position(2820, 3078, 0)); // Tai Bwo Wannai. Hardwood Grove.
+        //registerDig(ClueType.ELITE, new Position(2820, 3078, 0)); // Tai Bwo Wannai. Hardwood Grove.
         registerDig(ClueType.ELITE, new Position(3811, 3060, 0)); // Small island north-east of Mos Le'Harmless.
         registerDig(ClueType.ELITE, new Position(2180, 3282, 0)); // North of Elf Camp.
         registerDig(ClueType.ELITE, new Position(2870, 2997, 0)); // North-east of Shilo Village.
