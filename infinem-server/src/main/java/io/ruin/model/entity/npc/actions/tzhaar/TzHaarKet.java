@@ -25,7 +25,7 @@ public class TzHaarKet {
         final int[] GUARDS = {2186, 2187};
         for (int guard : GUARDS) {
             NPCAction.register(guard, "talk-to", (player, npc) -> {
-                if (player.canEnterMorUlRek) {
+                if (player.hasAttribute("MOR_UL_REK")) {
                     player.dialogue(
                             new NPCDialogue(npc, "You need help JalYt-Ket-Xo-" + player.getName() + "?"),
                             new OptionsDialogue(
@@ -70,7 +70,7 @@ public class TzHaarKet {
                                                                                                             new NPCDialogue(npc, " That is most impressive JalYt-Ket-" + player.getName() + "."),
                                                                                                             new PlayerDialogue("Surely this privates I am capable? Can I pleeease come through now?"),
                                                                                                             new NPCDialogue(npc, "I suppose so, I'll grand you access to Mor Ul Rek. The guards will open the gates for you, you are the first JalYt to pass these gates!"),
-                                                                                                            new ActionDialogue(() -> player.canEnterMorUlRek = true))),
+                                                                                                            new ActionDialogue(() -> player.putAttribute("MOR_UL_REK", 1)))),
                                                                                                     new Option("Sorry, I don't think I am capable.", () -> player.dialogue(
                                                                                                             new PlayerDialogue("Sorry, I don't think I am capable.")
                                                                                                     ))

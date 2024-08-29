@@ -11,7 +11,7 @@ public class HotVentDoor {
 
     static {
         ObjectAction.register(30266, "pass", (player, obj) -> {
-            if (player.canEnterMorUlRek) {
+            if (player.hasAttribute("MOR_UL_REK")) {
                 player.startEvent(event -> {
                     player.lock();
                     if (obj.direction == 0)
@@ -30,7 +30,7 @@ public class HotVentDoor {
                             new NPCDialogue(2187, " That is most impressive JalYt-Ket-" + player.getName() + "."),
                             new PlayerDialogue("Surely this proves I am capable? Can I pleeease come through now?"),
                             new NPCDialogue(2187, "I suppose so, I'll grant you access to Mor Ul Rek. The guards will open the gates for you, you are the first JalYt to pass these gates!"),
-                            new ActionDialogue(() -> player.canEnterMorUlRek = true));
+                            new ActionDialogue(() -> player.putAttribute("MOR_UL_REK", 1)));
                 } else {
                     player.dialogue(new NPCDialogue(2187, "Oy! Get back from there, no JalYt allowed through."));
                 }
