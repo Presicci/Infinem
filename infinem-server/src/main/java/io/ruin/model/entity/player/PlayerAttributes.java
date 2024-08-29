@@ -645,12 +645,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public boolean bootsOfLightnessTaken = false;
 
-    /**
-     * Nest boxes
-     */
-    @Expose public int nestBoxSeeds;
-    @Expose public int nestBoxRings;
-
     public TickDelay edgevilleStallCooldown = new TickDelay();
 
     /**
