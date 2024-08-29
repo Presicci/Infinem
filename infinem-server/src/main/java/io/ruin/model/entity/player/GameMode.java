@@ -1,6 +1,7 @@
 package io.ruin.model.entity.player;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.services.Hiscores;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.model.combat.Hit;
@@ -48,6 +49,7 @@ public enum GameMode {
         Config.IRONMAN_MODE.set(player, 1);
         changeForumsGroup(player, IRONMAN.groupId);
         player.sendMessage(Color.RED.wrap("You have fallen as a Hardcore Ironman, your Hardcore status has been revoked."));
+        Hiscores.hardcoreDeath(player);
         if (player.getStats().totalLevel >= 100) {
             String overall = NumberUtils.formatNumber(player.getStats().totalLevel);
             if (killHit == null) {

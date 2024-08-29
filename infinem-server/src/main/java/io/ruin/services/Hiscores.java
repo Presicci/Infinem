@@ -30,6 +30,38 @@ public class Hiscores {
     /**
      * ECO
      */
+    public static void hardcoreDeath(Player player) {
+        if (OfflineMode.enabled)
+            return;
+        Server.siteDb.execute(new DatabaseStatement() {
+            @Override
+            public void execute(Connection connection) throws SQLException {
+                PreparedStatement statement = null;
+                ResultSet resultSet = null;
+                try {
+                    statement = connection.prepareStatement("SELECT * FROM highscores WHERE username = ? LIMIT 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                    statement.setString(1, player.getName());
+                    resultSet = statement.executeQuery();
+                    if (resultSet.next()) {
+                        resultSet.updateInt("archived", 0);
+                        resultSet.updateRow();
+                    }
+                } finally {
+                    DatabaseUtils.close(statement, resultSet);
+                }
+            }
+
+            @Override
+            public void failed(Throwable t) {
+                final StringWriter sw = new StringWriter();
+                final PrintWriter pw = new PrintWriter(sw, true);
+                t.printStackTrace(pw);
+                System.out.println("FAILED TO UPDATE HARDCORE DEATH FOR: "+player.getName());
+                System.out.println(sw.getBuffer().toString());
+                /* do nothing */
+            }
+        });
+    }
 
     private static void saveHiscores(Player player) {
         if (OfflineMode.enabled)
@@ -40,7 +72,7 @@ public class Hiscores {
                 PreparedStatement statement = null;
                 ResultSet resultSet = null;
                 try {
-                    statement = connection.prepareStatement("SELECT * FROM highscores WHERE username = ? LIMIT 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                    statement = connection.prepareStatement("SELECT * FROM highscores WHERE username = ? AND archived = 0 LIMIT 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
                     statement.setString(1, player.getName());
                     resultSet = statement.executeQuery();
                     if (!resultSet.next()) {
