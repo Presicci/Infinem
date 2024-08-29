@@ -35,6 +35,7 @@ public class Title {
             prefixTitle(colorAndShadow("aa00aa", "000000",  "Dragonstone ")).setPredicate(p -> p.isGroup(PlayerGroup.DRAGONSTONE)).setHidden(),
             prefixTitle(colorAndShadow("dddddd", "000000",  "Diamond ")).setPredicate(p -> p.isGroup(PlayerGroup.DIAMOND)).setHidden(),
             prefixTitle(colorAndShadow("ff5555", "000000",  "Ruby ")).setPredicate(p -> p.isGroup(PlayerGroup.RUBY)).setHidden(),
+            prefixTitle(colorAndShadow("55ff55", "000000",  "Emerald ")).setPredicate(p -> p.isGroup(PlayerGroup.EMERALD)).setHidden(),
             prefixTitle(colorAndShadow("5555ff", "000000",  "Sapphire ")).setPredicate(p -> p.isGroup(PlayerGroup.SAPPHIRE)).setHidden(),
 
             prefixTitle(colorAndShadow("FA3333", "000000", "Hard ")).setPredicate(p -> p.xpMode == XpMode.HARD).setHidden(),
