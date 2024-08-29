@@ -12,23 +12,23 @@ import java.util.concurrent.CompletableFuture;
  * Descending order from highest priority group
  */
 public enum PlayerGroup {
-    OWNER(100, 2, 16, 100),
-    DEVELOPER(3, 6, 16, 100),
-    COMMUNITY_MANAGER(8, 7, 17, "Server Manager"),
+    OWNER(100, 2, 41, 100),
+    DEVELOPER(3, 6, 0, 100),
+    COMMUNITY_MANAGER(8, 7, 42, "Server Manager"),
     ADMINISTRATOR(5, 2, 1, 0),
     MODERATOR(4, 1, 0, 0),
     FORUM_MODERATOR(7, 0, 0, 0),
-    SUPPORT(9, 8, 18, 0),
-    YOUTUBER(10, 27, 28, 0),
+    SUPPORT(9, 8, 42, 0),
+    YOUTUBER(10, 27, 43, 0),
     BETA_TESTER(6, 0, -1, 0),
-    ZENYTE(17, 15, 25, 100),        // <col=E79B3A>
-    ONYX(16, 14, 24, 80),           // <col=444444>
-    DRAGONSTONE(15, 13, 23, 60),    // <col=aa00aa>
-    DIAMOND(14, 12, 22, 40),        // <col=dddddd>
-    RUBY(13, 11, 21, 25),           // <col=ff5555>
-    EMERALD(12, 10, 20, 15),        // <col=55ff55>
-    SAPPHIRE(11, 9, 19, 10),        // <col=5555ff>
-    REGISTERED(2, 0, 0, 0),
+    ZENYTE(17, 15, 50, 100),        // <col=E79B3A>
+    ONYX(16, 14, 49, 80),           // <col=444444>
+    DRAGONSTONE(15, 13, 48, 60),    // <col=aa00aa>
+    DIAMOND(14, 12, 47, 40),        // <col=dddddd>
+    RUBY(13, 11, 46, 25),           // <col=ff5555>
+    EMERALD(12, 10, 45, 15),        // <col=55ff55>
+    SAPPHIRE(11, 9, 44, 10),        // <col=5555ff>
+    REGISTERED(2, 0, -1, 0),
     BANNED(18, 0, -1, 0);
 
     public final int id;
