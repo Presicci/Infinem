@@ -3,6 +3,8 @@ package io.ruin.model.activities.combat.barrows;
 import io.ruin.api.utils.Random;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -134,7 +136,7 @@ public class Barrows {
                     player.getCollectionLog().collect(item);
                 }
             }
-            player.sendMessage("Your Barrows chest count is: <col=FF0000>" + (++player.barrowsChestsOpened) + "</col>.");
+            player.sendMessage("Your Barrows chest count is: <col=FF0000>" + (BossKillCounter.BARROWS.getCounter().increment(player)) + "</col>.");
             player.getTaskManager().doLookupByUUID(722);    // Loot a Barrows Chest
             for(BarrowsBrother brother : BarrowsBrother.values())
                 brother.config.set(player, 0);

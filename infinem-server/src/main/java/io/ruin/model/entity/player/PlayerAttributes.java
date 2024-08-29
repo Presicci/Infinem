@@ -127,8 +127,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public NPC examineMonster;
 
-    @Expose public int barrowsChestsOpened;
-
     public TickDelay magicImbueEffect = new TickDelay();
 
     @Expose public boolean canEnterMorUlRek;
