@@ -10,7 +10,6 @@ import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.GameMode;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.RespawnPoint;
-import io.ruin.model.entity.player.XpMode;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.Interface;
@@ -130,20 +129,17 @@ public class StarterGuide {
 			player.face(guide);
 			boolean startTutorial = false;
 			if (actuallyNew) {
-                XpMode.setXpMode(player, XpMode.NORMAL);
 			    event.waitForDialogue(player);
-			    if (player.xpMode.equals(XpMode.NORMAL)) {
-                    player.dialogue(
-                            new NPCDialogue(guide, "Before I let you go, let's talk about your game mode."),
-                            new NPCDialogue(guide, "Do you want to see the options for Iron Man modes?"),
-                            new OptionsDialogue("View Iron Man options?",
-                                    new Option("Yes", () -> {
-                                        GameMode.openSelection(player);
-                                        player.unsafeDialogue(new MessageDialogue("Close the interface once you're happy with your selection." +
-                                                "<br><br><col=ff0000>WARNING:</col> This is the ONLY chance to choose your Iron Man mode.").hideContinue());
-                                    }), new Option("No", player::closeDialogue)));
-                    event.waitForDialogue(player);
-                }
+                player.dialogue(
+                        new NPCDialogue(guide, "Before I let you go, let's talk about your game mode."),
+                        new NPCDialogue(guide, "Do you want to see the options for Iron Man modes?"),
+                        new OptionsDialogue("View Iron Man options?",
+                                new Option("Yes", () -> {
+                                    GameMode.openSelection(player);
+                                    player.unsafeDialogue(new MessageDialogue("Close the interface once you're happy with your selection." +
+                                            "<br><br><col=ff0000>WARNING:</col> This is the ONLY chance to choose your Iron Man mode.").hideContinue());
+                                }), new Option("No", player::closeDialogue)));
+                event.waitForDialogue(player);
                 String text = "You want to be a part of the economy, then? Great!";
                 if (player.getGameMode() == GameMode.IRONMAN) {
                     text = "Iron Man, huh? Self-sufficiency is quite a challenge, good luck!";

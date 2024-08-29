@@ -824,26 +824,6 @@ public class Administrator {
                 return true;
             }
 
-            case "xpmode": {
-                XpMode mode = XpMode.HARD;
-                if (args.length > 0) {
-                    switch (args[0]) {
-                        case "hard":
-                            mode = XpMode.HARD;
-                            break;
-                        case "medium":
-                            mode = XpMode.MEDIUM;
-                            break;
-                        case "easy":
-                            mode = XpMode.EASY;
-                            break;
-                    }
-                }
-                XpMode.setXpMode(player, mode);
-                player.sendMessage("Your XP mode is now " + player.xpMode.getName() + ". Combat rate: " + player.xpMode.getCombatRate() + "x. Skilling rate: " + player.xpMode.getSkillRate() + "x.");
-                return true;
-            }
-
             case "update": {
                 if (isCommunityManager) {
                     return false;

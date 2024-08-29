@@ -64,8 +64,6 @@ public abstract class PlayerAttributes extends Entity {
     public Entity targetOverlayTarget;
     public int targetOverlayResetTicks;
 
-    @Expose public XpMode xpMode = XpMode.MEDIUM;
-
     public int viewingTheatreSlot;
     @Expose @Setter @Getter public boolean acceptedTheatreRisk;
     @Expose @Setter @Getter public boolean acceptedTheatreCrystals;
