@@ -168,7 +168,6 @@ public class StarterGuide {
                 player.closeDialogue();
                 player.inTutorial = false;
                 player.logoutListener = null;
-                player.setTutorialStage(0);
                 player.unlock();
             })));
 		});
@@ -218,7 +217,6 @@ public class StarterGuide {
             Config.LOCK_CAMERA.set(player, 0);
             player.getMovement().teleport(3237, 3220, 0);
             player.getPacketSender().resetCamera();
-            player.setTutorialStage(1);
             player.face(guide);
             player.dialogue(new NPCDialogue(guide,
                     "If you have any other questions, there are always helpful users in the help clan chat"));
@@ -226,7 +224,6 @@ public class StarterGuide {
             guide.animate(863);
             player.inTutorial = false;
             player.unlock();
-            player.setTutorialStage(0);
             player.clearHintArrow();
         });
     }

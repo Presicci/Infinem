@@ -55,8 +55,7 @@ import java.util.*;
 public abstract class PlayerAttributes extends Entity {
 
     public boolean debug;
-    @Expose @Getter @Setter
-    public int tutorialStage;
+
     @Setter protected Runnable onDialogueContinued;
 
     @Expose public Journal journal = Journal.MAIN;
