@@ -17,7 +17,7 @@ import static io.ruin.process.event.EventWorker.startEvent;
 
 public class VoteManager {
 
-    private static final String VOTE_URL = World.type.getWebsiteUrl() + "/voting";
+    private static final String VOTE_URL = World.type.getWebsiteUrl() + "/vote";
 
     private static int voteMysteryBoxesClaimed = 0;
 
