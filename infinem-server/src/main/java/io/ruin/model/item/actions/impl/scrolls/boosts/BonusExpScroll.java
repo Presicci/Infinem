@@ -28,9 +28,10 @@ public class BonusExpScroll {
                     new Option("No, I'm not ready yet!")));
         });
         LoginListener.register(player -> {
-            if (player.expBonusTimeLeft > 0) {
-                player.expBonus.delay(player.expBonusTimeLeft);
-                player.expBonusTimeLeft = 0;
+            int timeLeft = player.getAttributeIntOrZero("XP_BONUS_TIME");
+            if (timeLeft > 0) {
+                player.expBonus.delay(timeLeft);
+                player.removeAttribute("XP_BONUS_TIME");
             }
         });
     }

@@ -1335,7 +1335,7 @@ public class Player extends PlayerAttributes {
             player.rareDropBonusTimeLeft = player.rareDropBonus.remaining();
         }
         if (player.expBonus.remaining() > 0) {
-            player.expBonusTimeLeft = player.expBonus.remaining();
+            player.putAttribute("XP_BONUS_TIME", player.expBonus.remaining());
         }
         if (player.petDropBonus.remaining() > 0) {
             player.petDropBonusTimeLeft = player.petDropBonus.remaining();

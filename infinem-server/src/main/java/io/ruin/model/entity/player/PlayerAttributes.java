@@ -499,7 +499,6 @@ public abstract class PlayerAttributes extends Entity {
      * Boost scrolls
      */
     public TickDelay expBonus = new TickDelay();
-    @Expose public int expBonusTimeLeft;
     public TickDelay petDropBonus = new TickDelay();
     @Expose public int petDropBonusTimeLeft;
     public TickDelay rareDropBonus = new TickDelay();
