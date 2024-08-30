@@ -64,6 +64,7 @@ public class Title {
             prefixTitle(colorAndShadow("7a3e20", "000000", "Hunter ")).setPredicate(p -> p.getTaskManager().hasCompletedTask(1086)).setUnlockDescription("Catch 50,000 hunter creatures"),
             prefixTitle(colorAndShadow("cfa45b", "000000", "Clue Hunter ")).setPredicate(p -> p.getTaskManager().hasCompletedTask(1104)).setUnlockDescription("Complete 5,000 clues"),
             prefixTitle(colorAndShadow("db4425", "000000", "Crab Wrangler ")).setPredicate(p -> p.getTaskManager().hasCompletedTask(1030)).setUnlockDescription("Kill 5,000 crabs"),
+            prefixTitle(colorAndShadow("bf5821", "000000", "Yew-Gi-Oh ")).setPredicate(p -> p.getTaskManager().hasCompletedTask(1106)).setUnlockDescription("Burn 10,000 yew logs"),
             prefixTitle(colorAndShadow("bfbfbf", "000000", "<img=119>Dice Host ")).setPredicate(p -> p.diceHost).setUnlockDescription("Purchase a Dice Bag"),
             prefixTitle(colorAndShadow("FF2d00", "000000", "Custom Title ")).setPredicate(p -> p.hasCustomTitle).setUnlockDescription("Purchase Custom Title from the Store")
     };
