@@ -24,7 +24,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
-import io.ruin.model.locations.home.NPCLocator;
+import io.ruin.model.locations.home.LocationGuide;
 import io.ruin.model.map.Direction;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
@@ -124,7 +124,7 @@ public class StarterGuide {
 					event.delay(1);
 				}
 			}
-			NPC guide = NPCLocator.GUIDE;
+			NPC guide = LocationGuide.GUIDE;
 			player.getPacketSender().sendHintIcon(guide);
 			player.face(guide);
 			if (actuallyNew) {
