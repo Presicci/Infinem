@@ -5,6 +5,7 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.GameMode;
@@ -19,6 +20,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.XpCounter;
+import io.ruin.model.inter.journal.JournalTab;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
@@ -175,7 +177,7 @@ public class StarterGuide {
                 Broadcast.NEW_PLAYER.sendNews(player.getName() + " has just joined " + World.type.getWorldName() + "!");
             }
             player.dialogue(new NPCDialogue(guide,
-            "Greetings, " + player.getName() + "! Welcome to " + World.type.getWorldName() + ".<br>" +
+            "Welcome to " + World.type.getWorldName() + ".<br>" +
             "Would you like me to show you around Lumbridge?"),
             new OptionsDialogue("Play the tutorial?", new Option("Yes!", () -> introCutscene(guide, player)), new Option("No, I know what I'm doing!", () -> {
                 player.closeDialogue();
@@ -246,13 +248,20 @@ public class StarterGuide {
             player.face(guide);
             player.dialogue(
                     new NPCDialogue(guide, "If you need help finding something, talk to me and I'll point you in the right direction."),
-                    new NPCDialogue(guide, "If you have any other questions, there are always helpful users in the help clan chat")
+                    new NPCDialogue(guide, "If you have any other questions, there are always helpful users in the 'Help' clan chat")
             );
             e.waitForDialogue(player);
             guide.animate(863);
             player.removeTemporaryAttribute("TUTORIAL");
             player.unlock();
             player.clearHintArrow();
+
+            JournalTab.setTab(player, JournalTab.Tab.TASK);
+            RelicInterface.open(player);
+            player.dialogue(false,
+                    new NPCDialogue(guide, "I'll leave you with a choice. Here you can see Infinem's relics. These are powerful boons that are unlocked by completing tasks. You can pick any tier 1 relic right now."),
+                    new NPCDialogue(guide, "Now, start your adventure!")
+            );
         });
     }
 
