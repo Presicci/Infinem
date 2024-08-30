@@ -1,0 +1,94 @@
+[
+  {
+    "ids": [ 7794 ],
+    "guaranteed": [
+      { "id": 6812, "min": 1, "max": 1 }   //Wyvern bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 1314699,
+        "items": [
+          { "id": 1397, "min": 1, "max": 1, "weight": 32500 },   //Air battlestaff
+          { "id": 1392, "min": 3, "max": 5, "weight": 24399 },   //Battlestaff (noted)
+          { "id": 1371, "min": 1, "max": 1, "weight": 16299 },   //Adamant battleaxe
+          { "id": 1161, "min": 1, "max": 1, "weight": 16299 },   //Adamant full helm
+          { "id": 1275, "min": 1, "max": 1, "weight": 16299 },   //Rune pickaxe
+          { "id": 1123, "min": 1, "max": 1, "weight": 16299 },   //Adamant platebody
+          { "id": 21646, "min": 1, "max": 1, "weight": 1950 },   //Granite longsword
+          { "id": 21643, "min": 1, "max": 1, "weight": 391 }   //Granite boots
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 2404220,
+        "items": [
+          { "id": 890, "min": 38, "max": 42, "weight": 48799 },   //Adamant arrow
+          { "id": 555, "min": 50, "max": 50, "weight": 32500 },   //Water rune
+          { "id": 562, "min": 15, "max": 15, "weight": 32500 },   //Chaos rune
+          { "id": 563, "min": 15, "max": 15, "weight": 32500 },   //Law rune
+          { "id": 560, "min": 15, "max": 15, "weight": 32500 },   //Death rune
+          { "id": 565, "min": 15, "max": 15, "weight": 32500 },   //Blood rune
+          { "id": 566, "min": 10, "max": 10, "weight": 8130 },   //Soul rune
+          { "id": 9144, "min": 12, "max": 30, "weight": 8130 }   //Runite bolts
+        ]
+      },
+      {
+        "name": "Herbs",
+        "weight": 1117783,
+        "items": [
+          { "id": 214, "min": 2, "max": 2, "weight": 22900 },   //Grimy kwuarm (noted)
+          { "id": 216, "min": 2, "max": 2, "weight": 18300 },   //Grimy cadantine (noted)
+          { "id": 218, "min": 2, "max": 2, "weight": 18300 },   //Grimy dwarf weed (noted)
+          { "id": 2486, "min": 2, "max": 2, "weight": 13700 },   //Grimy lantadyme (noted)
+          { "id": 207, "min": 1, "max": 1, "weight": 16299 },   //Grimy ranarr weed
+          { "id": 219, "min": 1, "max": 1, "weight": 16299 }   //Grimy torstol
+        ]
+      },
+      {
+        "name": "tree-herb seed",
+        "weight": 8589,
+        "items": [
+          { "id": 0, "min": 4, "max": 4, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Resources",
+        "weight": 2233454,
+        "items": [
+          { "id": 7937, "min": 150, "max": 150, "weight": 65000 },   //Pure essence (noted)
+          { "id": 2362, "min": 2, "max": 4, "weight": 48799 },   //Adamantite bar (noted)
+          { "id": 6334, "min": 35, "max": 35, "weight": 48799 },   //Teak logs (noted)
+          { "id": 232, "min": 10, "max": 15, "weight": 24399 },   //Snape grass (noted)
+          { "id": 452, "min": 1, "max": 2, "weight": 24399 }   //Runite ore (noted)
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 2921252,
+        "items": [
+          { "id": 379, "min": 2, "max": 2, "weight": 65000 },   //Lobster
+          { "id": 995, "min": 3000, "max": 3000, "weight": 89400 },   //Coins
+          { "id": 2434, "min": 1, "max": 1, "weight": 56900 },   //Prayer potion(4)
+          { "id": 9463, "min": 1, "max": 1, "weight": 16299 },   //Adamant crossbow (u)
+          { "id": 21543, "min": 2, "max": 2, "weight": 16299 },   //Calcite
+          { "id": 21545, "min": 2, "max": 2, "weight": 16299 },   //Pyrophosphite
+          { "id": 21622, "min": 20, "max": 60, "weight": 16299 }   //Volcanic ash
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 6124798,
+        "items": [
+          { "id": 21555, "min": 5, "max": 24, "weight": 514000 },   //Numulite
+          { "id": 21562, "min": 1, "max": 1, "weight": 28600 },   //Unidentified small fossil
+          { "id": 21564, "min": 1, "max": 1, "weight": 14300 },   //Unidentified medium fossil
+          { "id": 21566, "min": 1, "max": 1, "weight": 11399 },   //Unidentified large fossil
+          { "id": 21568, "min": 1, "max": 1, "weight": 2859 },   //Unidentified rare fossil
+          { "id": 2722, "min": 1, "max": 1, "weight": 8470 },   //Clue scroll (hard)
+          { "id": 21637, "min": 1, "max": 1, "weight": 83 }   //Wyvern visage
+        ]
+      }
+    ]
+  }
+]
