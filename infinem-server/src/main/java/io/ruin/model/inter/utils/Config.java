@@ -90,7 +90,7 @@ public class Config {
 
     public static final Config CHAT_COLOR2 = varpbit(12284, false);
 
-    public static final Config HIDE_ROOFS = varpbit(12378, true);
+    public static final Config HIDE_ROOFS = varpbit(12378, true).defaultValue(1);
 
     public static final Config PET_OPTIONS = varpbit(5599, true);
 
