@@ -91,15 +91,19 @@ public enum ItemCombining {
     /**
      * Shattered Relic League Cosmetics
      */
-    SHATTERED_WHIP(Items.ABYSSAL_WHIP, 26421, 26482, true),
-    SHATTERED_TENTACLE(Items.ABYSSAL_TENTACLE, 26421, 26484, true),
-    SHATTERED_CROSSBOW(Items.RUNE_CROSSBOW, 26421, 26486, true),
     SHATTERED_BALANCE_BOOK(Items.BOOK_OF_BALANCE, 26421, 26488, true),
     SHATTERED_DARKNESS_BOOK(Items.BOOK_OF_DARKNESS, 26421, 26490, true),
     SHATTERED_LAW_BOOK(Items.BOOK_OF_LAW, 26421, 26492, true),
     SHATTERED_WAR_BOOK(Items.BOOK_OF_WAR, 26421, 26494, true),
     SHATTERED_HOLY_BOOK(Items.HOLY_BOOK, 26421, 26496, true),
-    SHATTERED_UNHOLY_BOOK(Items.UNHOLY_BOOK, 26421, 26498, true);
+    SHATTERED_UNHOLY_BOOK(Items.UNHOLY_BOOK, 26421, 26498, true),
+
+    /**
+     * Founder's items
+     */
+    SHATTERED_CROSSBOW(Items.RUNE_CROSSBOW, 32030, 26486, true),
+    SHATTERED_WHIP(Items.ABYSSAL_WHIP, 32031, 26482, true),
+    SHATTERED_TENTACLE(Items.ABYSSAL_TENTACLE, 32031, 26484, true);
 
     public final int mainId, accessoryId, combinedId;
     public final boolean reversible;
