@@ -175,20 +175,20 @@ public class StarterGuide {
 
     private static void introCutscene(NPC guide, Player player) {
         guide.startEvent((e) -> {
-            player.getPacketSender().sendClientScript(39, "i", 100);
-            Config.LOCK_CAMERA.set(player, 1);
+            player.getPacketSender().sendClientScript(39, "i", 50);
+            Config.LOCK_CAMERA.set(player, 2);
             player.getPacketSender().moveCameraToLocation(3234, 3220, 600, 0, 12);
             player.getPacketSender().turnCameraToLocation(3238, 3222, 250, 0, 25);
             player.dialogue(new NPCDialogue(guide,
                     "Waystones are located at most major cities in Infinem. " +
-                    "When you channel a waystone, you can travel to any other waystone that you have unlocked. " +
+                    "You can travel from a waystone to any other waystone that you have unlocked. " +
                     "To unlock a waystone all you have to do is find it and channel it."));
             e.waitForDialogue(player);
 
             player.getMovement().teleport(3230, 3241, 0);
             player.face(Direction.EAST);
-            player.getPacketSender().moveCameraToLocation(3223, 3239, 600, 0, 12);
-            player.getPacketSender().turnCameraToLocation(3218, 3238, 400, 0, 30);
+            player.getPacketSender().moveCameraToLocation(3223, 3239, 400, 0, 12);
+            player.getPacketSender().turnCameraToLocation(3218, 3237, 200, 0, 30);
             player.dialogue(new NPCDialogue(guide,
                     "Around Lumbridge you will find tutors that offer advice and have shops relating to their skill of expertise. " +
                             "These are the combat tutors who will supply you with any combat equipment you might need starting out."));
@@ -196,30 +196,45 @@ public class StarterGuide {
 
             player.getMovement().teleport(3211, 3220, 0);
             player.face(Direction.SOUTH);
-            player.getPacketSender().moveCameraToLocation(3214, 3221, 800, 0, 12);
-            player.getPacketSender().turnCameraToLocation(3209, 3222, 0, 0, 18);
-            if (!player.getGameMode().isIronMan()) {
-                player.dialogue(
-                        new NPCDialogue(guide, "In this room you'll find a bank and a poll booth. You'll also find the Wise Old Man who will help you vote and claim voting rewards, and __ who will help you visit the shop and claim anything you might have purchased."),
-                        new NPCDialogue(guide, "If you're interested in trading with other players the clerks here will help you access the Trading Post."));
-            } else {
-                player.dialogue(
-                        new NPCDialogue(guide, "In this room you'll find a bank and a poll booth. You'll also find the Wise Old Man who will help you vote and claim voting rewards, and __ who will help you visit the shop and claim anything you might have purchased."
-                ));
-            }
+            player.getPacketSender().moveCameraToLocation(3209, 3223, 400, 0, 12);
+            player.getPacketSender().turnCameraToLocation(3210, 3218, 0, 0, 18);
+            player.dialogue(new NPCDialogue(guide, "In this room you'll find a bank and a poll booth..."));
             e.waitForDialogue(player);
-            player.getPacketSender().moveCameraToLocation(3213, 3221, 800, 0, 12);
-            player.getPacketSender().turnCameraToLocation(3216, 3221, 0, 0, 18);
+            player.getPacketSender().moveCameraToLocation(3210, 3220, 400, 0, 12);
+            player.getPacketSender().turnCameraToLocation(3211, 3228, 0, 0, 18);
+            player.dialogue(new NPCDialogue(guide, "...as well as the Vote and Donation Managers. They will explain the process of voting and using the store and help you claim your rewards."));
+            e.waitForDialogue(player);
+            if (!player.getGameMode().isIronMan()) {
+                player.dialogue(new NPCDialogue(guide, "If you're interested in trading with other players, you can access the Grand Exchange through these Trading posts. They can be found in some other major cities as well."));
+                e.waitForDialogue(player);
+            }
+            player.getPacketSender().moveCameraToLocation(3210, 3221, 600, 0, 12);
+            player.getPacketSender().turnCameraToLocation(3215, 3220, 0, 0, 18);
             e.delay(1);
             player.dialogue(new NPCDialogue(guide,
                     "This is Death's Chest, it will hold your items in the event that you die horribly. Hopefully you wont be using it much."));
             e.waitForDialogue(player);
+            player.getPacketSender().moveCameraToLocation(3244, 3194, 600, 0, 12);
+            player.getPacketSender().turnCameraToLocation(3249, 3196, 0, 0, 18);
+            e.delay(1);
+            player.face(Direction.EAST);
+            player.getMovement().teleport(3237, 3220, 0);
+            e.delay(2);
+            player.getMovement().teleport(3245, 3193, 0);
+            e.delay(1);
+            player.dialogue(new NPCDialogue(guide,
+                    "In the graveyard, you will find Turael and The Dungeon Hub. The Dungeon Hub can be accessed once you claim any tier 3 relic, and Turael will get you started on your slayer journey."));
+            e.waitForDialogue(player);
+
+
             Config.LOCK_CAMERA.set(player, 0);
             player.getMovement().teleport(3237, 3220, 0);
             player.getPacketSender().resetCamera();
             player.face(guide);
-            player.dialogue(new NPCDialogue(guide,
-                    "If you have any other questions, there are always helpful users in the help clan chat"));
+            player.dialogue(
+                    new NPCDialogue(guide, "If you need help finding something, talk to me and I'll point you in the right direction."),
+                    new NPCDialogue(guide, "If you have any other questions, there are always helpful users in the help clan chat")
+            );
             e.waitForDialogue(player);
             guide.animate(863);
             player.removeTemporaryAttribute("TUTORIAL");
