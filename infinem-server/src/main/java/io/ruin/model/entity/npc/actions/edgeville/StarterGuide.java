@@ -268,23 +268,6 @@ public class StarterGuide {
         }
     }
 
-	private static NPC find(Player player, int id) {
-		for (NPC n : player.localNpcs()) {
-			if (n.getId() == id)
-				return n;
-		}
-		throw new IllegalArgumentException();
-	}
-
-	private static void setDrag(Player player) {
-		player.dialogue(
-				new OptionsDialogue("What drag setting would you like to use?",
-						new Option("5 (OSRS) (2007) Drag", () -> setDrag(player, 5)),
-						new Option("10 (Pre-EoC) (2011) Drag", () -> setDrag(player, 10))
-				)
-		);
-	}
-
 	private static void setDrag(Player player, int drag) {
 		player.dragSetting = drag;
 	}
@@ -292,85 +275,4 @@ public class StarterGuide {
 	private static void tutorial(Player player) {
         ecoTutorial(player);
 	}
-
-	private static void addPKModeItemToBank(Player player) {
-        player.getBank().add(19625, 5); // Home teleport
-        player.getBank().add(2550, 3); // Recoils
-        player.getBank().add(385, 125); // Sharks
-        player.getBank().add(3144, 50); // Karambwans
-        player.getBank().add(2436, 5); // attk
-        player.getBank().add(2440, 5); // str
-        player.getBank().add(2444, 5); // range
-        player.getBank().add(3024, 5); // restore
-//Next Line
-        player.getBank().add(6685, 10); // brew
-        player.getBank().add(560, 2250); // Death runes
-        player.getBank().add(565, 1000); // Blood runes
-        player.getBank().add(561, 300); // Nature runes
-        player.getBank().add(145, 1); // atk
-        player.getBank().add(157, 1); // str
-        player.getBank().add(169, 1); // range
-        player.getBank().add(3026, 1); // restore
-//Next Line
-        player.getBank().add(6687, 1); // brew
-        player.getBank().add(9075, 400); // Astral runes
-        player.getBank().add(555, 6000); // Water runes
-        player.getBank().add(557, 1000); // Earth runes
-        player.getBank().add(147, 1); // atk
-        player.getBank().add(159, 1); // str
-        player.getBank().add(171, 1); // range
-        player.getBank().add(3028, 1); // restore
-//Next Line
-        player.getBank().add(6689, 1); // brew
-        player.getBank().add(7458, 100); // mithril gloves for pures
-        player.getBank().add(7462, 100); // gloves
-        player.getBank().add(3842, 100); // god book
-        player.getBank().add(149, 1); // atk
-        player.getBank().add(161, 1); // str
-        player.getBank().add(173, 1); // range
-        player.getBank().add(3030, 1); // restore
-//Next Line
-        player.getBank().add(6691, 1); // brew
-        player.getBank().add(9144, 500); // bolts
-        player.getBank().add(2503, 5); // hides
-        player.getBank().add(4099, 5); // Mystic
-        player.getBank().add(2414, 100); // zamy god cape
-        player.getBank().add(10828, 5); // neit helm
-        player.getBank().add(4587, 5); // Scim
-        player.getBank().add(1163, 3); // rune full helm
-//Next Line
-        player.getBank().add(562, 50); // Chaos rune
-        player.getBank().add(892, 400); // rune arrows
-        player.getBank().add(2497, 5); // hides
-        player.getBank().add(4101, 5); // Mystic
-        player.getBank().add(4675, 5); // ancient staff
-        player.getBank().add(1201, 5); // rune
-        player.getBank().add(5698, 5); // dagger
-        player.getBank().add(1127, 3); // rune pl8
-//Next Line
-        player.getBank().add(563, 50); // law rune
-        player.getBank().add(9185, 5); // crossbow
-        player.getBank().add(10499, 100); // avas
-        player.getBank().add(4103, 5); // Mystic
-        player.getBank().add(4107, 5); // Mystic
-        player.getBank().add(3105, 5); // climbers
-        player.getBank().add(11978, 3); // glory(6)
-        player.getBank().add(1079, 3); // rune legs
-//Next Line
-        player.getBank().add(1215, 2); // dagger unpoisoned
-        player.getBank().add(3751, 2); // zerker helm
-        player.getBank().add(1093, 2); // rune
-
-
-        // Give the players PK stats
-        player.getStats().get(StatType.Attack).set(99);
-        player.getStats().get(StatType.Strength).set(99);
-        player.getStats().get(StatType.Defence).set(99);
-        player.getStats().get(StatType.Hitpoints).set(99);
-        player.getStats().get(StatType.Magic).set(99);
-        player.getStats().get(StatType.Ranged).set(99);
-        player.getStats().get(StatType.Prayer).set(99);
-        player.getCombat().updateLevel();
-    }
-
 }
