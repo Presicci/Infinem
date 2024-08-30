@@ -2869,5 +2869,40 @@
       822,
       824
     ]
+  },
+  "SHATTERED_CROSSBOW": {
+    "config": 5,
+    "maxDistance": 7,
+    "attackTicks": 6,
+    "attackAnimation": 9205,
+    "defendAnimation": 9160,
+    "equipSound": 2244,
+    "attackSound": 2695,
+    "attackSets": [
+      {
+        "child": 3,
+        "type": "ACCURATE",
+        "style": "RANGED"
+      },
+      {
+        "child": 7,
+        "type": "RAPID_RANGED",
+        "style": "RANGED"
+      },
+      {
+        "child": 15,
+        "type": "LONG_RANGED",
+        "style": "RANGED"
+      }
+    ],
+    "renderAnimations": [
+      9161,
+      823,
+      9164,
+      9165,
+      821,
+      822,
+      9204
+    ]
   }
 }
