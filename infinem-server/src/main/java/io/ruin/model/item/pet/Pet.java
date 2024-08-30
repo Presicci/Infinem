@@ -195,7 +195,10 @@ public enum Pet {
     HELL_CAT(7582, 1625, 5604, null),
     HELL_OVERGROWN_CAT(7581, 5604, 5590, null),
     HELL_WILY_CAT(7585, 5590, 1632, null),
-    HELL_LAZY_CAT(7584, 1632, 5597, null);
+    HELL_LAZY_CAT(7584, 1632, 5597, null),
+
+    // Custom
+    FOUNDER_PET(32032, 15002, null);
 
     public final int itemId, npcId, metaId;
 
