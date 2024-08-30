@@ -1,5 +1,6 @@
 package io.ruin.model.entity.npc.actions.edgeville;
 
+import io.ruin.PersistentData;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.NPCDefinition;
@@ -162,17 +163,19 @@ public class StarterGuide {
                 } else if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
                     text = "Ultimate Iron Man... Up for quite the challenge, aren't you?";
                 }
-                player.dialogue(new NPCDialogue(guide, text),
-                        new NPCDialogue(guide, "I'll give you a few items to help get you started..."),
-                        new NPCDialogue(guide, "There you go, some basic stuff. If you need anything else, remember to check the shops.") {
-                            @Override
-                            public void open(Player player) {
-                                giveEcoStarter(player);
-                                player.removeAttribute("NEW_PLAYER");
-                                super.open(player);
-                            }
-                        });
-                event.waitForDialogue(player);
+                if (PersistentData.INSTANCE.STARTER_IPS.getOrDefault(player.getIp(), 0) < 2) {
+                    player.dialogue(new NPCDialogue(guide, text),
+                            new NPCDialogue(guide, "I'll give you a few items to help get you started..."),
+                            new NPCDialogue(guide, "There you go, some basic stuff. If you need anything else, remember to check the shops.") {
+                                @Override
+                                public void open(Player player) {
+                                    giveEcoStarter(player);
+                                    player.removeAttribute("NEW_PLAYER");
+                                    super.open(player);
+                                }
+                            });
+                    event.waitForDialogue(player);
+                }
                 player.getPacketSender().resetHintIcon(true);
                 Broadcast.NEW_PLAYER.sendNews(player.getName() + " has just joined " + World.type.getWorldName() + "!");
             }
@@ -266,6 +269,9 @@ public class StarterGuide {
     }
 
     private static void giveEcoStarter(Player player) {
+        String playerIp = player.getIp();
+        int starterCount = PersistentData.INSTANCE.STARTER_IPS.getOrDefault(playerIp, 0);
+        PersistentData.INSTANCE.STARTER_IPS.put(playerIp, starterCount + 1);
         player.getInventory().add(COINS_995, 1000); // gp
         player.getInventory().add(558, 250); // Mind Rune
         player.getInventory().add(556, 500); // Air Rune
