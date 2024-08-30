@@ -249,6 +249,8 @@ public class Server extends ServerWrapper {
              */
             nettyServer.shutdown();
 
+            PersistentData.INSTANCE.save();
+
             /*
              * Remove players
              */
