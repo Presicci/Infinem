@@ -401,7 +401,7 @@ public class TaskManager {
     private boolean handleTrigger(TaskLookupType lookupType, String trigger, String[] triggers) {
         boolean found = false;
         for (String s : triggers) {
-            if (s.equalsIgnoreCase(trigger)) {
+            if (s.equalsIgnoreCase(trigger) || s.equalsIgnoreCase("any")) {
                 found = true;
                 break;
             }
