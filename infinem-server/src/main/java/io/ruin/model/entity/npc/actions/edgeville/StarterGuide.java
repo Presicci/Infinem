@@ -26,7 +26,6 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.locations.home.LocationGuide;
 import io.ruin.model.map.Direction;
-import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
 import io.ruin.utility.Broadcast;
 import lombok.SneakyThrows;
@@ -43,6 +42,7 @@ public class StarterGuide {
 	static {
 		NPCDefinition.get(307).ignoreOccupiedTiles = true;
         NPCAction.register(306, "talk-to", StarterGuide::optionsDialogue);
+        NPCAction.register(306, "reclaim relic items", StarterGuide::reclaimRelicItems);
 
 
 		LoginListener.register(player -> {
@@ -107,9 +107,21 @@ public class StarterGuide {
                                 new NPCDialogue(npc, "I can move your respawn location if you would like. Some have a fee associated with them."),
                                 new ActionDialogue(() -> respawnDialogue(player, npc))
                         ),
+                        new Option("Can I reclaim missing Relic items?", () -> reclaimRelicItems(player, npc)),
                         new Option("Replay tutorial", () -> introCutscene(npc, player))
                 )
         );
+    }
+
+    private static void reclaimRelicItems(Player player, NPC npc) {
+        int result = player.getRelicManager().reclaimRelicItems();
+        if (result < 0) {
+            player.dialogue(new NPCDialogue(npc, "You need " + Math.abs(result) + " free inventory slots to collect your items."));
+        } else if (result == 0) {
+            player.dialogue(new NPCDialogue(npc, "You have nothing to collect."));
+        } else {
+            player.dialogue(new NPCDialogue(npc, "Here you are, try not to lose them this time."));
+        }
     }
 
 	@SneakyThrows

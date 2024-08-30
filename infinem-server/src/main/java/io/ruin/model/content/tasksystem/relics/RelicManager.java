@@ -4,6 +4,10 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.StructDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.item.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -133,6 +137,29 @@ public class RelicManager {
                 return index;
         }
         return RELICS.length;
+    }
+
+    public int reclaimRelicItems() {
+        List<Item> itemsToAdd = new ArrayList<>();
+        for (Relic relic : Relic.values()) {
+            if (relic.getItemIds().length > 0 && hasRelic(relic)) {
+                for (int itemId : relic.getItemIds()) {
+                    if (player.findItem(itemId, true) == null) {
+                        itemsToAdd.add(new Item(itemId, 1));
+                    }
+                }
+            }
+        }
+        if (itemsToAdd.isEmpty()) {
+            return 0;
+        }
+        if (!player.getInventory().hasFreeSlots(itemsToAdd.size())) {
+            return -itemsToAdd.size();
+        }
+        for (Item item : itemsToAdd) {
+            player.getInventory().add(item);
+        }
+        return itemsToAdd.size();
     }
 
     public static int getPassiveStruct(int tier) {
