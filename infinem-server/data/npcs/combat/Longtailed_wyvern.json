@@ -1,11 +1,11 @@
 [
-  { // Spitting Wyvern (139)
-  "ids": [ 7794 ],
-  "handler": "io.ruin.model.combat.npc.slayer.wyverns.SpittingWyvern",
+  { // Long-tailed Wyvern (152)
+  "ids": [ 7792 ],
+  "handler": "io.ruin.model.combat.npc.slayer.wyverns.LongtailedWyvern",
   //Combat Info
   "hitpoints": 200,
-  "aggressive_level": 280,
-  "max_damage": 9,
+  "aggressive_level": 304,
+  "max_damage": 13,
   "attack_style": "STAB",
   //Slayer Info
   "slayer_level": 66,
@@ -13,10 +13,10 @@
   "slayer_tasks": [ "Fossil Island Wyverns" ],
   //Combat Stats
   "attack": 125,
-  "strength": 80,
+  "strength": 120,
   "defence": 90,
-  "ranged": 125,
-  "magic": 125,
+  "ranged": 90,
+  "magic": 90,
   //Aggressive Stats
   "stab_attack": 0,
   "slash_attack": 0,
