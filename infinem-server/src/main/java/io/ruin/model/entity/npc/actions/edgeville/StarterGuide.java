@@ -176,7 +176,7 @@ public class StarterGuide {
             }
             player.dialogue(new NPCDialogue(guide,
             "Greetings, " + player.getName() + "! Welcome to " + World.type.getWorldName() + ".<br>" +
-            "Would you like to a run down on how the server works?"),
+            "Would you like me to show you around Lumbridge?"),
             new OptionsDialogue("Play the tutorial?", new Option("Yes!", () -> introCutscene(guide, player)), new Option("No, I know what I'm doing!", () -> {
                 player.closeDialogue();
                 player.removeTemporaryAttribute("TUTORIAL");
