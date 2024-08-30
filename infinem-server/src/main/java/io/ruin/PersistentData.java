@@ -9,7 +9,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -22,7 +24,7 @@ public class PersistentData {
 
     public static PersistentData INSTANCE = new PersistentData();
 
-    @Expose public final Map<String, Integer> STARTER_IPS = new HashMap<>();
+    @Expose public final Set<String> STARTER_IPS = new HashSet<>();
 
     public void save() {
         try {
