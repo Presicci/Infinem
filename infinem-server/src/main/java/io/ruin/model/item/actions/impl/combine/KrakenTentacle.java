@@ -53,6 +53,7 @@ public class KrakenTentacle {
         if(charges == 0) //Assume the full abyssal tentacle was bought from a shop or the online store.
             charges = 10000;
         if(--charges <= 0) {
+            if (item.getId() == ABYSSAL_TENTACLE_OR) player.getInventory().addOrDrop(32031, 1);
             item.remove();
             player.getInventory().addOrDrop(KRAKEN_TENTACLE, 1);
         }
