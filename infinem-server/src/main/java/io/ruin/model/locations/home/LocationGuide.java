@@ -63,7 +63,7 @@ public class LocationGuide {
     public static void open(Player player) {
         OptionScroll.open(player, "Location Guide",
                 new Option("Bank", () -> locate(player, new Position(3209, 3219))),
-                new Option("Turael", () -> locate(player, TURAEL)),
+                new Option("Turael - Slayer", () -> locate(player, TURAEL)),
                 new Option("Grand Exchange", () -> locate(player, new Position(3212, 3223))),
                 new Option("Thieving Market", () -> locate(player, new Position(3296, 3216))),
                 new Option("Vote Manager", () -> locate(player, VOTE_MANAGER)),
