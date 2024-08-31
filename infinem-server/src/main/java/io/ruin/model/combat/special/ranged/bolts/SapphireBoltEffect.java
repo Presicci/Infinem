@@ -8,11 +8,11 @@ import io.ruin.model.stat.StatType;
 
 import java.util.function.BiFunction;
 
-public class SapphireBoltEffect implements BiFunction<Entity, Hit, Boolean> {
+public class SapphireBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
-        if(target.player == null || !Random.rollPercent(5))
+        if(target.player == null || !Random.rollPercent(getProcChange(target)))
             return false;
         Stat prayer = hit.attacker.player.getStats().get(StatType.Prayer);
         int drain = prayer.currentLevel / 20;
@@ -25,4 +25,8 @@ public class SapphireBoltEffect implements BiFunction<Entity, Hit, Boolean> {
         return true;
     }
 
+    @Override
+    protected int getBaseChance(Entity target) {
+        return target.player != null ? 5 : 0;
+    }
 }

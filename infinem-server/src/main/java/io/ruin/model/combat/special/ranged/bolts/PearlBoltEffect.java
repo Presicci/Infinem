@@ -12,13 +12,13 @@ import java.util.function.BiFunction;
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 6/2/2021
  */
-public class PearlBoltEffect implements BiFunction<Entity, Hit, Boolean> {
+public class PearlBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
         if (hit.attacker.player == null)
             return false;
-        if(!Random.rollPercent(6))
+        if(!Random.rollPercent(getProcChange(target)))
             return false;
         int newDamage = hit.damage;
         if (target.player != null) {
@@ -34,5 +34,10 @@ public class PearlBoltEffect implements BiFunction<Entity, Hit, Boolean> {
         target.graphics(750);
         hit.fixedDamage(newDamage);
         return true;
+    }
+
+    @Override
+    protected int getBaseChance(Entity target) {
+        return 6;
     }
 }

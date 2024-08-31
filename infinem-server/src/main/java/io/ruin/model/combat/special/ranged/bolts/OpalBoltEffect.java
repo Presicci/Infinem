@@ -11,15 +11,20 @@ import java.util.function.BiFunction;
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 6/2/2021
  */
-public class OpalBoltEffect implements BiFunction<Entity, Hit, Boolean> {
+public class OpalBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
-        if(!Random.rollPercent(5))
+        if(!Random.rollPercent(getProcChange(target)))
             return false;
         int newDamage = hit.damage + (int) (hit.attacker.player != null ? hit.attacker.player.getStats().get(StatType.Ranged).currentLevel * 0.10D : 0);
                 target.graphics(749);
         hit.fixedDamage(newDamage);
         return true;
+    }
+
+    @Override
+    protected int getBaseChance(Entity target) {
+        return 5;
     }
 }

@@ -6,11 +6,11 @@ import io.ruin.model.entity.Entity;
 
 import java.util.function.BiFunction;
 
-public class DragonBoltEffect implements BiFunction<Entity, Hit, Boolean> {
+public class DragonBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
-        if(!Random.rollPercent(6))
+        if(!Random.rollPercent(getProcChange(target)))
             return false;
         if(target.getCombat().getDragonfireResistance() > 0.3)
             return false;
@@ -20,4 +20,8 @@ public class DragonBoltEffect implements BiFunction<Entity, Hit, Boolean> {
         return true;
     }
 
+    @Override
+    protected int getBaseChance(Entity target) {
+        return 6;
+    }
 }
