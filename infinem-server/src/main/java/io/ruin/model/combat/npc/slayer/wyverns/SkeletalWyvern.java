@@ -14,7 +14,6 @@ import java.util.List;
 public class SkeletalWyvern extends NPCCombat {
 
     private static final Projectile PROJECTILE = new Projectile(500, 15, 31, 50, 56, 10, 16, 127);
-    private static final List<Integer> SHIELDS = Arrays.asList(21633, 22002, 22003, 21634, 9731, 2890, 11283, 11284);
     private static StatType[] DRAIN = { StatType.Attack, StatType.Strength, StatType.Defence, StatType.Ranged, StatType.Magic};
 
     private static final int WYVERN_SHIELD = 21633;
@@ -63,9 +62,8 @@ public class SkeletalWyvern extends NPCCombat {
         npc.graphics(502);
         int maxDamage = 60;
 
-        int shieldId = target.player.getEquipment().getId(Equipment.SLOT_SHIELD);
-
-        if (target.player != null && SHIELDS.contains(shieldId)) {
+        int protection = target.player != null ? target.player.getCombat().getIcyBreathResistance() : 0;
+        if (protection >= 1) {
             maxDamage = 10;
         } else if (target.player != null) {
             for (StatType statType : DRAIN) {
@@ -75,7 +73,7 @@ public class SkeletalWyvern extends NPCCombat {
         }
 
         // Having a wyvern shield (charged or uncharged) protects you from their freezing.
-        if (shieldId != WYVERN_SHIELD && shieldId != WYVERN_SHIELD_UNCHARGED) {
+        if (protection < 2) {
             if (Random.rollDie(3, 1))
                 target.freeze(3, npc);
         }

@@ -1795,6 +1795,19 @@ public class PlayerCombat extends Combat {
         return absorbDamage;
     }
 
+    public int getIcyBreathResistance() {
+        int shieldId = player.getEquipment().getId(Equipment.SLOT_SHIELD);
+        int protection = 0;
+        if (shieldId == 11283 || shieldId == 11284 || // dragonfire shield
+                shieldId == 22003 || shieldId == 22002  // dragonfire ward
+                || shieldId == 2890 || shieldId == 9731) {  // elemental/mind shield
+            protection = 1;
+        } else if (shieldId == 21634 || shieldId == 21633) {
+            protection = 2;
+        }
+        return protection;
+    }
+
     @Override
     public void faceTarget() {
         player.face(target);

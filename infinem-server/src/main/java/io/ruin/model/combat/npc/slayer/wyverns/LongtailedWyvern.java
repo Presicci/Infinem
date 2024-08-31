@@ -14,9 +14,6 @@ import java.util.List;
  * Created on 3/18/2022
  */
 public class LongtailedWyvern extends NPCCombat {
-
-    private static final List<Integer> SHIELDS = Arrays.asList(21633, 22002, 22003, 21634, 9731, 2890, 11283, 11284);
-
     private static final int WYVERN_SHIELD = 21633;
     private static final int WYVERN_SHIELD_UNCHARGED = 21634;
 
@@ -69,9 +66,8 @@ public class LongtailedWyvern extends NPCCombat {
         int maxDamage = 50;
         npc.graphics(1392);
 
-        int shieldId = target.player.getEquipment().getId(Equipment.SLOT_SHIELD);
-
-        if (target.player != null && SHIELDS.contains(shieldId)) {
+        int protection = target.player != null ? target.player.getCombat().getIcyBreathResistance() : 0;
+        if (protection >= 1) {
             target.player.sendMessage("Your shield provides protection from the icy breath!");
             maxDamage = 10;
         } else if (target.player != null) {
@@ -79,7 +75,7 @@ public class LongtailedWyvern extends NPCCombat {
         }
 
         // Having a wyvern shield (charged or uncharged) protects you from their freezing.
-        if (shieldId != WYVERN_SHIELD && shieldId != WYVERN_SHIELD_UNCHARGED) {
+        if (protection < 2) {
             if (Random.rollDie(3, 1))
                 target.freeze(3, npc);
             target.graphics(502);

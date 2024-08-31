@@ -79,9 +79,8 @@ public class TalonedWyvern extends NPCCombat {
         int maxDamage = 55;
         npc.graphics(1392);
 
-        int shieldId = target.player.getEquipment().getId(Equipment.SLOT_SHIELD);
-
-        if (target.player != null && SHIELDS.contains(shieldId)) {
+        int protection = target.player != null ? target.player.getCombat().getIcyBreathResistance() : 0;
+        if (protection >= 1) {
             target.player.sendMessage("Your shield provides protection from the icy breath!");
             maxDamage = 10;
         } else if (target.player != null) {
@@ -89,7 +88,7 @@ public class TalonedWyvern extends NPCCombat {
         }
 
         // Having a wyvern shield (charged or uncharged) protects you from their freezing.
-        if (shieldId != WYVERN_SHIELD && shieldId != WYVERN_SHIELD_UNCHARGED) {
+        if (protection < 2) {
             if (Random.rollDie(3, 1))
                 target.freeze(3, npc);
             target.graphics(502);
