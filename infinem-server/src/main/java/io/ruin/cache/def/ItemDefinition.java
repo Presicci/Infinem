@@ -368,9 +368,10 @@ public class ItemDefinition {
             buffer.readString();
         else if(opcode == 11)
             stackable = true;
-        else if(opcode == 12)
+        else if(opcode == 12) {
             value = buffer.readInt();
-        else if (opcode == 13) // wearPos1
+            protectValue = value;
+        } else if (opcode == 13) // wearPos1
             buffer.readByte();
         else if (opcode == 14) // wearPos2
             buffer.readByte();
