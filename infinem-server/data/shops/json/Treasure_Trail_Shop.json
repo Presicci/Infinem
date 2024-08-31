@@ -2,7 +2,7 @@
   "name": "Treasure Trail Shop",
   "currency": "TREASURE_TRAIL_POINTS",
   "npcs": [
-    7303
+
   ],
   "sellMultiplier": 1300,
   "buyMultiplier": 400,
