@@ -1805,6 +1805,9 @@ public class PlayerCombat extends Combat {
         } else if (shieldId == 21634 || shieldId == 21633) {
             protection = 2;
         }
+        if (player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT)) {
+            protection = 2;
+        }
         return protection;
     }
 
