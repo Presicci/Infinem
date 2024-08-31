@@ -139,8 +139,12 @@ public class PlayerCombat extends Combat {
         if(target != null) {
             if(!canAttack(target, true))
                 reset();
-            else
-                TargetRoute.set(player, target, useSpell() ? 10 : Math.min((weaponType.maxDistance + (getAttackType() == AttackType.LONG_RANGED ? 2 : 0)), 10));
+            else {
+                boolean longRanged = getAttackType() == AttackType.LONG_RANGED && weaponType.maxDistance < 10;
+                int attackRange = useSpell() ? 10
+                        : Math.min((weaponType.maxDistance + (longRanged ? 2 : 0)), 10);
+                TargetRoute.set(player, target, attackRange);
+            }
         }
     }
 
