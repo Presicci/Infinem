@@ -38,17 +38,17 @@ public class CrypticClue extends Clue {
 
     static {
         registerDig("46 is my number. My body is the colour of burnt orange and crawls among those with eight. Three mouths I have, yet I cannot eat. My blinking blue eye hides my grave.", 3170, 3885, 0, ClueType.HARD);
-        registerDig("Aggie I see, Lonely and southern I feel I am neither inside nor outside the house yet no house would be complete without me. Your treasure waits beneath me.", 3085, 3255, 0, ClueType.HARD);
+        registerDig("Aggie I see. Lonely and southern I feel. I am neither inside nor outside the house, yet no home would be complete without me. The treasure lies beneath me!", 3085, 3255, 0, ClueType.HARD);    // No runelite
         registerDig("Come to the evil ledge, Yew know yew want to. Try not to get stung.", 3089, 3468, 0, ClueType.HARD);
-        registerDig("Dig between some ominous stones in Falador.", 3040, 3398, 0, ClueType.EASY);
-        registerDig("Dig near some giant mushrooms behind the Grand Tree.", 2458, 3504, 0, ClueType.EASY);
+        registerDig("Dig between some ominous stones in Falador.", 3040, 3399, 0, ClueType.EASY);
+        registerDig("Dig near some giant mushrooms, behind the Grand Tree.", 2458, 3504, 0, ClueType.EASY);
         registerDig("Dig where the forces of Zamorak and Saradomin collide.", 3049, 4839, 0, ClueType.ELITE);
-        registerDig("I lie lonely and forgotten in mid wilderness, where the dead rise from their beds. Feel free to quarrel and wind me up and dig while you shoot their heads.", 3174, 3663, 0, ClueType.HARD);
+        registerDig("I lie lonely and forgotten in mid wilderness, where the dead rise from their beds. Feel free to quarrel and wind me up, and dig while you shoot their heads.", 3174, 3663, 0, ClueType.HARD);
         registerDig("My giant guardians below the market streets would be fans of rock and roll, if only they could grab hold of it. Dig near my green bubbles!", 3161, 9904, 0, ClueType.HARD);
         registerDig("The beasts retreat, for their Queen is gone; the song of this town still plays on. Dig near the birthplace of a blade, be careful not to melt your spade.", 2342, 3677, 0, ClueType.ELITE);
         registerDig("The beasts to my east snap claws and tails, The rest to my west can slide and eat fish. The force to my north will jump and they'll wail, Come dig by my fire and make a wish.", 2598, 3267, 0, ClueType.HARD);
-        registerDig("The treasure is buried in a small building full of bones. Here is a hint: it's not near a graveyard.", 3356, 3507, 0, ClueType.EASY);
-        registerDig("THEY'RE EVERYWHERE!!! But they were here first. Dig for treasure where the ground is rich with ore.", 3081, 3421, 0, ClueType.HARD);
+        //registerDig("The treasure is buried in a small building full of bones. Here is a hint: it's not near a graveyard.", 3356, 3507, 0, ClueType.EASY);
+        registerDig("THEY'RE EVERYWHERE!!!! But they were here first. Dig for treasure where the ground is rich with ore.", 3081, 3421, 0, ClueType.HARD);
         registerDig("W marks the spot.", 2867, 3546, 0, ClueType.ELITE);
     }
 
@@ -178,8 +178,8 @@ public class CrypticClue extends Clue {
     }
 
     static {
-        registerTalk("Father Aereck", "A reck you say Let's pray there aren't any ghosts.", ClueType.ELITE);
-        registerTalk("Abbot Langley", "A bag belt only?', he asked his balding brothers.", ClueType.HARD);
+        registerTalk("Father Aereck", "A reck you say; let's pray there aren't any ghosts.", ClueType.ELITE);
+        registerTalk("Abbot Langley", "'A bag belt only?', he asked his balding brothers.", ClueType.HARD);
         registerTalk("Horacio", "Dobson is my last name, and with gardening I seek fame.", ClueType.ELITE);
         registerTalk("General Bentnoze", "Generally speaking, his nose was very bent.", ClueType.HARD);
         registerTalk("Saniboch", "Gold I see, yet gold I require. Give me 875 if death you desire.", ClueType.HARD);
@@ -202,7 +202,7 @@ public class CrypticClue extends Clue {
         registerTalk("Jatix", "Speak to Jatix in Taverley.", ClueType.EASY);
         registerTalk("Kangai Mau", "Speak to Kangai Mau.", ClueType.MEDIUM);
         registerTalk("Ned", "Speak to Ned in Draynor Village.", ClueType.EASY);
-        registerTalk("Rusty", "Speak to Rusty north of Falador", ClueType.EASY);
+        registerTalk("Rusty", "Speak to Rusty north of Falador.", ClueType.EASY);
         registerTalk(501, "Speak to Sarah at Falador farm.", ClueType.EASY);
         registerTalk(1312, "Speak to the bartender of the Blue Moon Inn in Varrock.", ClueType.EASY);
         registerTalk("The Lady of the Lake", "Speak to the Lady of the Lake.", ClueType.EASY);
@@ -216,7 +216,7 @@ public class CrypticClue extends Clue {
         registerTalk("Hairdresser", "Talk to the barber in the Falador barber shop.", ClueType.EASY);
         registerTalk(1313, "Talk to the bartender of the Rusty Anchor in Port Sarim.", ClueType.EASY);
         registerTalk("Lucy", "Talk to a party-goer in Falador.", ClueType.EASY);
-        registerTalk("Gypsy Aris", "Varrock is where I reside not the land of the dead, but I am so old, I should be there instead. Let's hope your reward is as good as it says, just 1 gold one and you can have it read.", ClueType.ELITE);
+        registerTalk("Gypsy Aris", "Varrock is where I reside, not the land of the dead, but I am so old, I should be there instead. Let's hope your reward is as good as it says, just 1 gold one and you can have it read.", ClueType.ELITE);
         registerTalk("Vannaka", "You were 3 and I was the 6th. Come speak to me.", ClueType.ELITE);
     }
 
