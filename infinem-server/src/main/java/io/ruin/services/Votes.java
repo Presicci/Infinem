@@ -1,72 +1,72 @@
 package io.ruin.services;
 
 import io.ruin.Server;
-import io.ruin.api.database.DatabaseStatement;
-import io.ruin.api.database.DatabaseUtils;
+import io.ruin.api.utils.XenPost;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 
-import java.sql.*;
-import java.util.List;
-import java.util.function.BiConsumer;
+import java.util.HashMap;
+import java.util.concurrent.CompletableFuture;
 
 public class Votes {
 
-    public static void claim(Player player, NPC npc, BiConsumer<Integer, Integer> consumer) {
-        if (player.getInventory().isFull()) {
-            player.dialogue(new NPCDialogue(npc, "You need at least 1 inventory slot to claim your voting rewards."));
+    public static void claim(Player player, NPC npc) {
+        if (player.getInventory().isFull() && !player.getInventory().contains(32029)) {
+            if (npc != null) {
+                player.dialogue(new NPCDialogue(npc, "You need at least 1 inventory slot to claim your voting rewards."));
+            } else {
+                player.dialogue(new MessageDialogue("You need at least 1 inventory slot to claim your voting rewards."));
+            }
             return;
         }
-        player.lock();
-        player.dialogue(new NPCDialogue(npc, "Attempting to claim vote tickets, please wait...").hideContinue());
-        Server.siteDb.execute(new DatabaseStatement() {
-            @Override
-            public void execute(Connection connection) throws SQLException {
-                PreparedStatement statement = null;
-                ResultSet rs = null;
-                int count = 0;
-                try {
-                    statement = connection.prepareStatement("SELECT * FROM votes WHERE username = ? AND date_claimed IS NULL AND completed = 1", ResultSet.CONCUR_UPDATABLE);
-                    statement.setString(1, player.getName());
-                    rs = statement.executeQuery();
-                    while (rs.next()) {
-                        count++;
-                        //rs.updateTimestamp("date_claimed", new Timestamp(System.currentTimeMillis()));
+        if (npc != null) {
+            player.dialogue(new NPCDialogue(npc, "Attempting to claim vote tickets, please wait...").hideContinue());
+        } else {
+            player.dialogue(new MessageDialogue("Attempting to claim vote tickets, please wait...").hideContinue());
+        }
+        CompletableFuture.runAsync(() -> {
+            HashMap<Object, Object> map = new HashMap<>();
+            map.put("username", player.getName());
+            String result = XenPost.post("claim_votes", map);
+            Server.worker.execute(() -> {
+                if (Character.isDigit(result.charAt(0)) || result.charAt(0) == '-') {
+                    if (result.charAt(0) == '-') {
+                        if (npc != null) {
+                            player.dialogue(new NPCDialogue(npc, "You don't have any votes to claim. Type ::vote to vote."));
+                        } else {
+                            player.dialogue(new MessageDialogue("You don't have any votes to claim. Type ::vote to vote."));
+                        }
+                    } else {
+                        try {
+                            int amt = Integer.parseInt(result);
+                            if (amt < 1) {
+                                if (npc != null) {
+                                    player.dialogue(new NPCDialogue(npc, "You don't have any votes to claim. Type ::vote to vote."));
+                                } else {
+                                    player.dialogue(new MessageDialogue("You don't have any votes to claim. Type ::vote to vote."));
+                                }
+                            } else {
+                                player.getInventory().add(32029, amt);
+                                if (npc != null) {
+                                    player.dialogue(new NPCDialogue(npc, "You've claimed " + amt + " vote" + (amt > 1 ? "s" : "") + "! Thank you for voting for the server!"));
+                                } else {
+                                    player.dialogue(new MessageDialogue("You've claimed " + amt + " vote" + (amt > 1 ? "s" : "") + "! Thank you for voting for the server!"));
+                                }
+                            }
+                        } catch (NumberFormatException e) {
+                            System.err.println(player.getName() + " had an error claiming their vote tickets, output: " + result + " | " + e.getMessage());
+                        }
                     }
-                } finally {
-                    finish(count, 0);
-                    markClaimed(player);
+                } else {
+                    if (npc != null) {
+                        player.dialogue(new NPCDialogue(npc, "Something went wrong, please try again later."));
+                    } else {
+                        player.dialogue(new MessageDialogue("Something went wrong, please try again later."));
+                    }
                 }
-            }
-
-            @Override
-            public void failed(Throwable t) {
-                finish(-1, -1);
-                Server.logError("", t); //todo exclude timeouts
-            }
-
-            private void finish(int claimed, int runelocusCount) {
-                Server.worker.execute(() -> {
-                    consumer.accept(claimed, runelocusCount);
-                    player.unlock();
-                });
-            }
-
-            private void markClaimed(Player player) {
-                Server.siteDb.execute(connection -> {
-                    PreparedStatement statement = null;
-                    try {
-                        statement = connection.prepareStatement("UPDATE votes SET date_claimed=? WHERE username=? AND date_claimed IS NULL AND completed = 1", ResultSet.CONCUR_UPDATABLE);
-                        statement.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
-                        statement.setString(2, player.getName());
-                        statement.executeUpdate();
-                    } finally {
-                        DatabaseUtils.close(statement);
-                    }
-
-                });
-            }
+            });
         });
     }
 

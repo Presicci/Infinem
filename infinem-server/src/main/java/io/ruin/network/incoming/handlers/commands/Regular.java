@@ -1,5 +1,6 @@
 package io.ruin.network.incoming.handlers.commands;
 
+import io.ruin.services.Votes;
 import io.ruin.utility.Color;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;
@@ -324,6 +325,11 @@ public class Regular {
                     return true;
                 }
                 player.openUrl(World.type.getWorldName() + " Member #" + id, "https://community.kronos.rip/index.php?members/" + id);
+                return true;
+            }
+            case "claimvotes":
+            case "claimvote": {
+                Votes.claim(player, null);
                 return true;
             }
 //            case "referral": {
