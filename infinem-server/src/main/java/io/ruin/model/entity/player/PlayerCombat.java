@@ -1763,7 +1763,9 @@ public class PlayerCombat extends Combat {
 
     @Override
     public double getBonus(int bonusType) {
-        return player.getEquipment().bonuses[bonusType];
+        int bonus = player.getEquipment().bonuses[bonusType];
+        if (player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT) && bonusType >= 5 && bonusType <= 9) bonus = (int) (bonus * 1.25);
+        return bonus;
     }
 
     @Override
