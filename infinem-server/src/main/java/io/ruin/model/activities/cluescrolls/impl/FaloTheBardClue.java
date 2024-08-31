@@ -111,9 +111,9 @@ public class FaloTheBardClue extends Clue {
 
     @Getter
     private enum FaloSong {
-        DRAGON_SCIMITAR("A blood red weapon, a strong curved sword, found on the island of primate lords.", Items.DRAGON_SCIMITAR),
-        BOOK("A book that preaches of some great figure, lending strength, might and vigour.", Items.HOLY_BOOK, Items.BOOK_OF_BALANCE, Items.UNHOLY_BOOK, Items.BOOK_OF_LAW, Items.BOOK_OF_WAR, Items.BOOK_OF_DARKNESS),
-        CRYSTAL_BOW("A bow of elven craft was made, it shimmers bright, but will soon fade.", Items.CRYSTAL_BOW, 24123),
+        DRAGON_SCIMITAR("A blood red weapon, a strong curved sword, found on the island of primate lords.", Items.DRAGON_SCIMITAR, 20000, 28031),
+        BOOK("A book that preaches of some great figure, lending strength, might and vigour.", Items.HOLY_BOOK, Items.BOOK_OF_BALANCE, Items.UNHOLY_BOOK, Items.BOOK_OF_LAW, Items.BOOK_OF_WAR, Items.BOOK_OF_DARKNESS, 26488, 26490, 26492, 26494, 26496, 26498),
+        CRYSTAL_BOW("A bow of elven craft was made, it shimmers bright, but will soon fade.", Items.CRYSTAL_BOW, 23985, 24123),
         INFERNAL_AXE("A fiery axe of great inferno, when you use it, you'll wonder where the logs go.", Items.INFERNAL_AXE),
         MARK_OF_GRACE("A mark used to increase one's grace, found atop a seer's place.", Items.MARK_OF_GRACE),
         LAVA_DRAGON_BONES("A molten beast with fiery breath, you acquire these with its death.", Items.LAVA_DRAGON_BONES),
@@ -123,12 +123,12 @@ public class FaloTheBardClue extends Clue {
         //GREENMANS_ALE_M("Green is my favourite, mature ale I do love, this takes your herblore above.", 5743),
         //BARRELCHEST_ANCHOR("It can hold down a boat or crush a goat, this object, you see, is quite heavy.", Items.BARRELCHEST_ANCHOR),
         //BASALT("It comes from the ground, underneath the snowy plain. Trolls aplenty, with what looks like a mane.", 22603),
-        TZHAARKETOM("No attack to wield, only strength is required, made of obsidian, but with no room for a shield.", 6528, 23235),
+        TZHAARKETOM("No attack to wield, only strength is required, made of obsidian, but with no room for a shield.", 6528, 23235, 23991, 23993),
         //FIGHTER_TORSO("Penance healers runners and more, obtaining this body often gives much deplore.", Items.FIGHTER_TORSO),
         BARROWS_GLOVES("Strangely found in a chest, many believe these gloves are the best.", Items.BARROWS_GLOVES),
         //COOKING_GLOVES("These gloves of white won't help you fight, but aid in cooking, they just might.", Items.COOKING_GAUNTLETS),
         NUMULITE("They come from some time ago, from a land unto the east. Fossilised they have become, this small and gentle beast.", 21555),
-        RUNE_PLATEBODY("To slay a dragon you must first do, before this chest piece can be put on you.", Items.RUNE_PLATEBODY),
+        RUNE_PLATEBODY("To slay a dragon you must first do, before this chest piece can be put on you.", Items.RUNE_PLATEBODY, Items.RUNE_PLATEBODY_T, Items.RUNE_PLATEBODY_G, 23209, 23212, 23215, 23218, 23221),
         ROD_OF_INVADIS("Vampyres are agile opponents, damaged best with a weapon of many components.", Items.ROD_OF_IVANDIS_10, Items.ROD_OF_IVANDIS_2, Items.ROD_OF_IVANDIS_3, Items.ROD_OF_IVANDIS_4, Items.ROD_OF_IVANDIS_5, Items.ROD_OF_IVANDIS_6, Items.ROD_OF_IVANDIS_7, Items.ROD_OF_IVANDIS_8, Items.ROD_OF_IVANDIS_9, Items.ROD_OF_IVANDIS_1, 22398);
 
         private final String song;
