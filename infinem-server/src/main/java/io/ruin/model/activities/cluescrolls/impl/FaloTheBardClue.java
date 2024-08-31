@@ -122,7 +122,7 @@ public class FaloTheBardClue extends Clue {
         WARRIOR_GUILD_TOKEN("A token used to kill mythical beasts, in hopes of a blade or just for an xp feast.", Items.WARRIOR_GUILD_TOKEN),
         //GREENMANS_ALE_M("Green is my favourite, mature ale I do love, this takes your herblore above.", 5743),
         //BARRELCHEST_ANCHOR("It can hold down a boat or crush a goat, this object, you see, is quite heavy.", Items.BARRELCHEST_ANCHOR),
-        //BASALT("It comes from the ground, underneath the snowy plain. Trolls aplenty, with what looks like a mane.", 22603),
+        BASALT("It comes from the ground, underneath the snowy plain. Trolls aplenty, with what looks like a mane.", 22603),
         TZHAARKETOM("No attack to wield, only strength is required, made of obsidian, but with no room for a shield.", 6528, 23235, 23991, 23993),
         //FIGHTER_TORSO("Penance healers runners and more, obtaining this body often gives much deplore.", Items.FIGHTER_TORSO),
         BARROWS_GLOVES("Strangely found in a chest, many believe these gloves are the best.", Items.BARROWS_GLOVES),
