@@ -9,6 +9,9 @@ import io.ruin.utility.Broadcast;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -17,16 +20,21 @@ import java.time.temporal.ChronoUnit;
 public enum ActivitySpotlight {
     // Double key chance
     DOUBLE_MARKS_OF_GRACE,
-    //DOUBLE_PEST_CONTROL_POINTS,
+    DOUBLE_PEST_CONTROL_POINTS,
     DOUBLE_BIRD_NEST_CHANCE,
     DOUBLE_CLUE_NEST_CHANCE,
     DOUBLE_GEODE_CHANCE,
     DOUBLE_CLUE_BOTTLE_CHANCE
     ;
 
+    private static List<ActivitySpotlight> DISABLED_SPOTLIGHTS = Arrays.asList(DOUBLE_PEST_CONTROL_POINTS);
     public static ActivitySpotlight activeSpotlight;
     private static final int SPOTLIGHT_TIMER = 6000;    // 1 hour
     private static boolean spotlightsEnabled = true;
+
+    private static List<ActivitySpotlight> getPossibleActivities() {
+        return Arrays.stream(values()).filter(activity -> !DISABLED_SPOTLIGHTS.contains(activity) && activity != activeSpotlight).collect(Collectors.toList());
+    }
 
     public static void cycleSpotlight() {
         activeSpotlight = ActivitySpotlight.values()[Random.get(ActivitySpotlight.values().length - 1)];
