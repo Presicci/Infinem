@@ -23,7 +23,7 @@ public enum InterfaceType {
     INVENTORY(
             new Component(548, 73),
             new Component(161, 77),
-            new Component(164, 77),
+            new Component(164, 76),
             false
     ),
     INVENTORY_OVERLAY(
