@@ -251,7 +251,7 @@ public class EmoteClue extends Clue {
             return null;
         }
         item = player.getInventory().findFirst(alternatives.stream().mapToInt(Integer::intValue).toArray());
-        if (item != null)
+        if (item != null && !ignoreIventory)
             return item;
         Item equipped = player.getEquipment().get(ItemDefinition.get(itemId).equipSlot);
         if (equipped != null && alternatives.contains(equipped.getId())) {
