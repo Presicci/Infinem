@@ -271,6 +271,10 @@ public class JournalTab {
 
     public static void setTab(Player player, Tab tab) {
         int index = tab.ordinal() != 0 ? tab.ordinal() + 1 : tab.ordinal();
+        if (tab == Tab.INFORMATION) {
+            player.sendMessage("The server information tab is coming soon.");
+            return;
+        }
        /* if (tab == Tab.MISCELLANEOUS) {
             index = tab.ordinal();
         } else if (tab == Tab.ACTIVITIES) {
