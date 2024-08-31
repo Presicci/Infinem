@@ -578,7 +578,7 @@ public class EmoteClue extends Clue {
                 Arrays.asList(Items.RUNE_HALBERD, Items.RUNE_PLATEBODY, Items.AMULET_OF_STRENGTH), ClueType.HARD, Config.STASH_UNITS[67], 29023),
         CHAOS_TEMPLE("Shrug in the Zamorak temple found in the Eastern Wilderness. Beware of double agents! Equip rune platelegs, an iron platebody and blue dragonhide vambraces.",
                 Collections.singletonList(TabEmote.SHRUG), new Bounds(3235, 3604, 3244, 3613, 0),
-                Arrays.asList(Items.RUNE_PLATELEGS, Items.IRON_PLATEBODY, Items.BLACK_DHIDE_VAMB), ClueType.HARD, Config.STASH_UNITS[68], 29009),
+                Arrays.asList(Items.RUNE_PLATELEGS, Items.IRON_PLATEBODY, Items.BLUE_DHIDE_VAMB), ClueType.HARD, Config.STASH_UNITS[68], 29009),
         ROGUES_GENERAL_STORE("Yawn in the rogues' general store. Beware of double agents! Equip an adamant square shield, blue dragon vambraces and a rune pickaxe.",
                 Collections.singletonList(TabEmote.YAWN), new Bounds(3024, 3699, 3027, 3704, 0),
                 Arrays.asList(Items.ADAMANT_SQ_SHIELD, Items.BLUE_DHIDE_VAMB, Items.RUNE_PICKAXE), ClueType.HARD, Config.STASH_UNITS[69], 29013),
