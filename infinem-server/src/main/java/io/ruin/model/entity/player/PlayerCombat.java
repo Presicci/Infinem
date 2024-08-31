@@ -143,6 +143,7 @@ public class PlayerCombat extends Combat {
                 boolean longRanged = getAttackType() == AttackType.LONG_RANGED && weaponType.maxDistance < 10;
                 int attackRange = useSpell() ? 10
                         : Math.min((weaponType.maxDistance + (longRanged ? 2 : 0)), 10);
+                if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && getAttackStyle() != null && getAttackStyle().isRanged()) attackRange++;
                 TargetRoute.set(player, target, attackRange);
             }
         }
