@@ -2,11 +2,8 @@ package io.ruin.model.activities.cluescrolls.impl;
 
 import com.google.common.collect.ImmutableMap;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.model.activities.cluescrolls.Clue;
-import io.ruin.model.activities.cluescrolls.ClueType;
-import io.ruin.model.activities.cluescrolls.StashUnits;
+import io.ruin.model.activities.cluescrolls.*;
 import io.ruin.api.utils.AttributeKey;
-import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.entity.npc.actions.clues.Uri;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
@@ -59,18 +56,27 @@ public class EmoteClue extends Clue {
         if (emote != this.emotes.get(0) || !equipmentCheck(player) || player.hasTemporaryAttribute(AttributeKey.URI_SPAWNED)) {
             return;
         }
-        Uri npc = new Uri(player, this);
-        npc.addEvent(e -> {
-            int loops = 0;
-            while(player.isOnline()) {
-                if (player.getPosition().distance(npc.getPosition()) > 10 || loops > 15) {
-                    npc.remove();
+        Runnable runnable = () -> {
+            Uri npc = new Uri(player, this);
+            npc.addEvent(e -> {
+                int loops = 0;
+                while(player.isOnline()) {
+                    if (player.getPosition().distance(npc.getPosition()) > 10 || loops > 15) {
+                        npc.remove();
+                    }
+                    ++loops;
+                    e.delay(10);
                 }
-                ++loops;
-                e.delay(10);
-            }
-            npc.remove();
-        });
+                npc.remove();
+            });
+        };
+        if (type == ClueType.HARD) {
+            ClueEnemies.spawnDoubleAgent(player, 1778, 1777, runnable);
+        } else if (type == ClueType.MASTER) {
+            ClueEnemies.spawnDoubleAgent(player, 7312, -1, runnable);
+        } else {
+            runnable.run();
+        }
     }
 
     public static final Map<String, String> STRING_REPLACEMENTS = ImmutableMap.<String, String>builder()

@@ -2,6 +2,7 @@ package io.ruin.model.activities.cluescrolls;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.activities.cluescrolls.impl.EmoteClue;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
@@ -25,6 +26,39 @@ public class ClueEnemies {
             if (!spawnedWizard) {
                 player.putTemporaryAttribute(AttributeKey.SPAWNED_WIZARD, true);
                 NPC npc = new NPC(Random.get(possibleIds));
+                npc.targetPlayer(player, true);
+                npc.removeOnDeath();
+                npc.removeIfIdle(player);
+                npc.removalAction = (p -> {
+                    p.removeTemporaryAttribute(AttributeKey.SPAWNED_WIZARD);
+                });
+                npc.deathStartListener = (DeathListener.SimpleKiller) killer -> {
+                    player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, 1);
+                };
+                Bounds bounds = new Bounds(player.getPosition(), 3);
+                boolean hasSpawned = false;
+                while (!hasSpawned) {
+                    Position pos = bounds.randomPosition();
+                    if (ProjectileRoute.allow(player, pos) && !pos.equals(player.getPosition())) {
+                        npc.spawn(pos);
+                        npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
+                        hasSpawned = true;
+                    }
+                }
+            }
+        }
+    }
+
+    public static void spawnDoubleAgent( Player player, int normalId, int wildernessId, Runnable runnable) {
+        int killedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.KILLED_WIZARD, 0);
+        if (killedWizard == 1) {
+            player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
+            runnable.run();
+        } else {
+            boolean spawnAgent = player.getTemporaryAttributeOrDefault(AttributeKey.SPAWNED_WIZARD, false);
+            if (!spawnAgent) {
+                player.putTemporaryAttribute(AttributeKey.SPAWNED_WIZARD, true);
+                NPC npc = new NPC(wildernessId > 0 && player.wildernessLevel > 0 ? wildernessId : normalId);
                 npc.targetPlayer(player, true);
                 npc.removeOnDeath();
                 npc.removeIfIdle(player);
