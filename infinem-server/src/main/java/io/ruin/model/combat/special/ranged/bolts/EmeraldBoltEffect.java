@@ -10,7 +10,7 @@ public class EmeraldBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
-        if(!Random.rollPercent(getProcChange(target)))
+        if(!Random.rollPercent(getProcChange(target, hit)))
             return false;
         target.poison(5);
         target.graphics(752);

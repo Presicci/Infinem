@@ -15,7 +15,7 @@ public class JadeBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
-        if(!Random.rollPercent(getProcChange(target)))
+        if(!Random.rollPercent(getProcChange(target, hit)))
             return false;
         target.graphics(755);
         target.stun(2, true);

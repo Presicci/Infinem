@@ -10,7 +10,7 @@ public class DragonBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
-        if(!Random.rollPercent(getProcChange(target)))
+        if(!Random.rollPercent(getProcChange(target, hit)))
             return false;
         if(target.getCombat().getDragonfireResistance() > 0.3)
             return false;

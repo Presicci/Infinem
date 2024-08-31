@@ -10,7 +10,7 @@ public class OnyxBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
-        if(!Random.rollPercent(getProcChange(target)))
+        if(!Random.rollPercent(getProcChange(target, hit)))
             return false;
         int damage = target.hit(hit.boostDamage(0.20));
         int heal = (int) (damage * 0.25);

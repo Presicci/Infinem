@@ -18,7 +18,7 @@ public class PearlBoltEffect extends BoltEffect {
     public Boolean apply(Entity target, Hit hit) {
         if (hit.attacker.player == null)
             return false;
-        if(!Random.rollPercent(getProcChange(target)))
+        if(!Random.rollPercent(getProcChange(target, hit)))
             return false;
         int newDamage = hit.damage;
         if (target.player != null) {

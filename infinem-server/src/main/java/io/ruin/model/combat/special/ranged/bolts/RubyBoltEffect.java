@@ -10,7 +10,7 @@ public class RubyBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
-        if(!Random.rollPercent(getProcChange(target)))
+        if(!Random.rollPercent(getProcChange(target, hit)))
             return false;
         Entity attacker = hit.attacker;
         int sacrificeDamage = (int) (attacker.getHp() * 0.10);

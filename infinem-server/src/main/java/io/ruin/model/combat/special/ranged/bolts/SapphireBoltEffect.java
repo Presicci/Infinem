@@ -12,7 +12,7 @@ public class SapphireBoltEffect extends BoltEffect {
 
     @Override
     public Boolean apply(Entity target, Hit hit) {
-        if(target.player == null || !Random.rollPercent(getProcChange(target)))
+        if(target.player == null || !Random.rollPercent(getProcChange(target, hit)))
             return false;
         Stat prayer = hit.attacker.player.getStats().get(StatType.Prayer);
         int drain = prayer.currentLevel / 20;
