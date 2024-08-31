@@ -17,6 +17,7 @@ import io.ruin.model.map.route.routes.ProjectileRoute;
 public class ClueEnemies {
 
     public static void spawnSingleEnemyOnDig(Clue clue, Player player, int... possibleIds) {
+        if (possibleIds[0] == 2955 && player.wildernessLevel > 0) possibleIds[0] = 2954;
         int killedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.KILLED_WIZARD, 0);
         if (killedWizard == 1) {
             player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
