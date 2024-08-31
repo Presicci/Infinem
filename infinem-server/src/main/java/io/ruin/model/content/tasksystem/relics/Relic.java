@@ -85,9 +85,9 @@ public enum Relic {
     FAIRYS_FLIGHT(3, 1, 25102),
     GLOBETROTTER(3, 2, 28765),
     DUNGEON_HUB_PREMIUM(3, 3, 24545),
-    DEADEYE(4, 1),
+    DEADEYE(4, 1, 10499),
     JUGGERNAUT(4, 2),
-    ARCHMAGE(4, 3),
+    ARCHMAGE(4, 3, 12791, 26551),
     ;
 
     @Getter private final int tier, configValue;
