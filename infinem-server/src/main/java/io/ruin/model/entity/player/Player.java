@@ -7,6 +7,7 @@ import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.inter.handlers.NotificationInterface;
 import io.ruin.model.skills.slayer.PartnerSlayer;
 import io.ruin.network.central.CentralSender;
@@ -1667,9 +1668,10 @@ public class Player extends PlayerAttributes {
     @Override
     public boolean isPoisonImmune() {
         return super.isPoisonImmune() ||
-                player.getEquipment().hasId(SerpentineHelm.SERPENTINE.getChargedId()) ||
-                player.getEquipment().hasId(SerpentineHelm.MAGMA.getChargedId()) ||
-                player.getEquipment().hasId(SerpentineHelm.TANZANITE.getChargedId());
+                equipment.hasId(SerpentineHelm.SERPENTINE.getChargedId()) ||
+                equipment.hasId(SerpentineHelm.MAGMA.getChargedId()) ||
+                equipment.hasId(SerpentineHelm.TANZANITE.getChargedId()) ||
+                relicManager.hasRelicEnalbed(Relic.JUGGERNAUT);
     }
 
     @Override
@@ -1677,7 +1679,8 @@ public class Player extends PlayerAttributes {
         return super.isVenomImmune() ||
                 player.getEquipment().hasId(SerpentineHelm.SERPENTINE.getChargedId()) ||
                 player.getEquipment().hasId(SerpentineHelm.MAGMA.getChargedId()) ||
-                player.getEquipment().hasId(SerpentineHelm.TANZANITE.getChargedId());
+                player.getEquipment().hasId(SerpentineHelm.TANZANITE.getChargedId()) ||
+                relicManager.hasRelicEnalbed(Relic.JUGGERNAUT);
     }
 
     public GameMode getGameMode() {
