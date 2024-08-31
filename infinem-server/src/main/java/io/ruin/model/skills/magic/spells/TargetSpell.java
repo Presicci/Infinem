@@ -14,12 +14,11 @@ import io.ruin.model.inter.Widget;
 import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.inter.handlers.TabCombat;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
-import io.ruin.model.skills.magic.spells.modern.ClawsOfGuthix;
-import io.ruin.model.skills.magic.spells.modern.FlamesOfZamorak;
-import io.ruin.model.skills.magic.spells.modern.SaradominStrike;
+import io.ruin.model.skills.magic.spells.modern.*;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -177,6 +176,10 @@ public class TargetSpell extends Spell {
                 entity.publicSound(castSound[0], castSound[1], castSound[2]);
             if(projectile != null) //tb should be the only spell this is true for
                 projectileDuration = projectile.send(entity, target);
+            if (entity.isPlayer() && entity.player.getEquipment().hasId(Items.CHAOS_GAUNTLETS)
+                    &&this instanceof WindBolt || this instanceof WaterBolt || this instanceof EarthBolt || this instanceof FireBolt) {
+                maxDamage += 3;
+            }
             double percentageBonus = entity.getCombat().getBonus(EquipmentStats.MAGIC_DAMAGE);
             if(percentageBonus > 0)
                 maxDamage *= (1D + percentageBonus * 0.01);
