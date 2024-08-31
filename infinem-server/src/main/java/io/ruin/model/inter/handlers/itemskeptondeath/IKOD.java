@@ -8,6 +8,7 @@ package io.ruin.model.inter.handlers.itemskeptondeath;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Killer;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemDropPrompt;
@@ -169,7 +170,7 @@ public class IKOD {
         return keptItems;
     }
 
-    private static void downgradeItem(Item item, Item coins, ArrayList<Item> loseItems, ArrayList<Item> keepItems) {
+    private static void downgradeItem(Player originalOwner, Item item, Item coins, ArrayList<Item> loseItems, ArrayList<Item> keepItems) {
         ItemBreaking breakable = item.getDef().breakTo;
         ItemImbue imbue = item.getDef().upgradedFrom;
         ItemCombining combined = item.getDef().combinedFrom;
@@ -179,6 +180,9 @@ public class IKOD {
             coins.incrementAmount(breakable.coinRepairCost);
             keepItems.add(item);
         } else if (imbue != null && ItemDefinition.get(imbue.regularId) != null) {
+            if (item.getId() == imbue.nmzImbue) {
+                Config.NMZ_REWARD_POINTS_TOTAL.increment(originalOwner, imbue.nmzCost);
+            }
             item.setId(imbue.regularId);
             loseItems.add(item);
         } else if (combined != null && ItemDefinition.get(combined.mainId) != null) {
@@ -186,7 +190,7 @@ public class IKOD {
             item.setId(combined.mainId);
             breakable = mainDef.breakTo;
             if (breakable != null) {
-                downgradeItem(item, coins, loseItems, keepItems);
+                downgradeItem(originalOwner, item, coins, loseItems, keepItems);
             } else if (mainDef.tradeable) {
                 loseItems.add(item);
             } else {
@@ -255,7 +259,7 @@ public class IKOD {
                     break;
                 case LostToThePlayerWhoKillsYou:
                     if (!item.getDef().tradeable) {
-                        downgradeItem(item, coins, lostItems, keptItems);
+                        downgradeItem(player, item, coins, lostItems, keptItems);
                     } else {
                         lostItems.add(item);
                     }
@@ -280,7 +284,7 @@ public class IKOD {
                 case LostDowngraded:
                 case OtherKeptDowngraded:
                 case OtherKeptDowngradedLostKit:
-                    downgradeItem(item, coins, lostItems, keptItems);
+                    downgradeItem(player, item, coins, lostItems, keptItems);
                     break;
             }
         }
