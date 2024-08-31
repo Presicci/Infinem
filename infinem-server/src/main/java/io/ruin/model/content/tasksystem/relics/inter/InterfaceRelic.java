@@ -20,8 +20,9 @@ public enum InterfaceRelic {
     FAIRYS_FLIGHT(1725, Relic.FAIRYS_FLIGHT),
     GLOBETROTTER(4717, Relic.GLOBETROTTER),
     DUNGEON_HUB_PREMIUM(729, Relic.DUNGEON_HUB_PREMIUM),
-    POISON_RELIC(9011, Relic.POISON_RELIC),
-    TANK_RELIC(9012, Relic.TANK_RELIC);
+    DEADEYE(1728, Relic.DEADEYE),
+    JUGGERNAUT(1729, Relic.JUGGERNAUT),
+    ARCHMAGE(1730, Relic.ARCHMAGE),;
 
     private final int struct;
     private final Relic relic;
