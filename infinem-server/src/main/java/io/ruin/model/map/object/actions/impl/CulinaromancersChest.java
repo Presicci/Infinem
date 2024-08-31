@@ -1,5 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.inter.handlers.CollectionBox;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -46,9 +47,23 @@ public class CulinaromancersChest {
         ObjectAction.register(12308, 4, (player, obj) -> StaticShop.CULINAROMANCERS_CHEST_FOOD.open(player));
         ObjectAction.register(12308, 5, (player, obj) -> {
             List<ShopItem> items = new ArrayList<>();
-            items.addAll(gloves);   // TODO Unlock levels of this through something, maybe misthalin task points
-            items.addAll(other);
-            Shop shop = new Shop("Item Store", Currency.COINS, false, RestockRules.generateDefault(), items, true);
+            int unlockedIndex = AreaReward.CULINAROMANCERS_CHEST_ELITE.hasReward(player) ? 9
+                    : AreaReward.CULINAROMANCERS_CHEST_HARD.hasReward(player) ? 8
+                    : AreaReward.CULINAROMANCERS_CHEST_MEDIUM.hasReward(player) ? 6
+                    : AreaReward.CULINAROMANCERS_CHEST_EASY.hasReward(player) ? 3
+                    : 0;
+            for (int index = 0; index <= unlockedIndex; index++) {
+                items.add(gloves.get(index));
+            }
+            for (int index = 0; index <= unlockedIndex; index++) {
+                items.add(other.get(index));
+            }
+            if (AreaReward.CULINAROMANCERS_CHEST_DISCOUNT.hasReward(player)) {
+                for (ShopItem item : items) {
+                    item.price = (int) (item.price * 0.8);
+                }
+            }
+            Shop shop = new Shop("Culinaromancer's Chest", Currency.COINS, false, RestockRules.generateDefault(), items, true);
             shop.init();
             shop.populate();
             shop.open(player);

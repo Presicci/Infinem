@@ -16,6 +16,10 @@ public enum AreaReward {
     /**
      * General rewards
      */
+    CULINAROMANCERS_CHEST_EASY(TaskArea.GENERAL, AreaTaskTier.EASY, "Unlock up to Steel gloves in the Culinaromancer's Chest"),
+    CULINAROMANCERS_CHEST_MEDIUM(TaskArea.GENERAL, AreaTaskTier.MEDIUM, "Unlock up to Adamant gloves in the Culinaromancer's Chest"),
+    CULINAROMANCERS_CHEST_HARD(TaskArea.GENERAL, AreaTaskTier.HARD, "Unlock up to Dragon gloves in the Culinaromancer's Chest"),
+    CULINAROMANCERS_CHEST_ELITE(TaskArea.GENERAL, AreaTaskTier.ELITE, "Unlock Barrows gloves in the Culinaromancer's Chest"),
     CULINAROMANCERS_CHEST_DISCOUNT(TaskArea.GENERAL, AreaTaskTier.ELITE, "20% discount on items in the Culinaromancer's Chest"),
     FAIRY_RING(TaskArea.GENERAL, AreaTaskTier.ELITE, "Ability to use fairy rings without the need of a dramen or lunar staff"),
     /**
