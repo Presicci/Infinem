@@ -861,6 +861,7 @@ public class PlayerCombat extends Combat {
 
     private void postDamage(Hit hit) {
         Vengeance.check(player, hit);
+        //checkJuggernautThorns(player, hit);
         RingOfRecoil.check(player, hit);
         RingOfSuffering.check(player, hit);
         Redemption.check(player);
@@ -1800,5 +1801,16 @@ public class PlayerCombat extends Combat {
 
     public boolean hasSpecialActive() {
         return specialActive != null;
+    }
+
+    public static void checkJuggernautThorns(Player player, Hit hit) {
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT))
+            return;
+        if(hit.attacker == null || hit.attackStyle == null)
+            return;
+        int damage = (int) Math.max(Math.ceil(hit.damage * 0.10), 1);
+        if(damage == 0)
+            return;
+        hit.attacker.hit(new Hit().fixedDamage(damage));
     }
 }
