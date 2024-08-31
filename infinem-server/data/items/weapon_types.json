@@ -623,7 +623,7 @@
   },
   "LONGBOW": {
     "config": 3,
-    "maxDistance": 9,
+    "maxDistance": 10,
     "attackTicks": 6,
     "attackAnimation": 426,
     "defendAnimation": 424,
