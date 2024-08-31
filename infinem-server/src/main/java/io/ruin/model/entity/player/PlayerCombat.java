@@ -1105,7 +1105,7 @@ public class PlayerCombat extends Combat {
                     }
                 } else if (style.isRanged()) {
                     if (Random.rollDie(8)) {
-                        if (weaponName.contains("(p++)") || ammoName.contains("(p++)")) {
+                        if (weaponName.contains("(p++)") || ammoName.contains("(p++)") || (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && ammoName.contains("arrow"))) {
                             target.poison(4);
                         } else if (weaponName.contains("(p+)") || ammoName.contains("(p+)")) {
                             target.poison(3);
