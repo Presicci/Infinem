@@ -219,7 +219,7 @@ public class DeathStorage extends ItemContainer {
             cost = 10000000;
         }
         cost = (long) (cost * getDonatorCostMultiplier(player));
-        return new Item(COINS_995, (int) cost);
+        return new Item(COINS_995, (int) (cost * 0.1));
     }
 
     public static float getDonatorCostMultiplier(Player player) {
