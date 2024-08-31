@@ -32,8 +32,6 @@ public class XenUsername {
             map.put("name", player.getName());
             map.put("name_requested", usernameRequested);
             String result = XenPost.post("change_name", map);
-            System.out.println(player.getName());
-            System.out.println(result);
             Server.worker.execute(() -> { //we have our result (blocking part is done), so lets pass this back to the main thread so we can tell the player what happened
                 if (!player.isOnline()) { // the player may have logged out while we were running our request
                     return;
