@@ -64,7 +64,7 @@ public enum RingOfSuffering {
         player.sendFilteredMessage("<col=007f00>Your ring currently has "
                 + NumberUtils.formatNumber(charges) + " recoil charge" + (charges > 1 ? "s" : "")
                 + " remaining. The recoil effect is currently "
-                + (PlayerBoolean.RING_OF_SUFFERING.has(player) ? "enabled" : "disabled") + ".</col>");
+                + (PlayerBoolean.RING_OF_SUFFERING.has(player) ? "disabled" : "enabled") + ".</col>");
     }
 
     private static void charge(Player player, Item ringOfSuffering, int chargedId) {
@@ -133,7 +133,7 @@ public enum RingOfSuffering {
         player.dialogue(new OptionsDialogue(
                 new Option("Toggle recoil effect", () -> {
                     PlayerBoolean.RING_OF_SUFFERING.toggle(player);
-                    player.sendFilteredMessage("You " + (PlayerBoolean.RING_OF_SUFFERING.has(player) ? "enable" : "disable") + " the recoil effect of your ring.");
+                    player.sendFilteredMessage("You " + (PlayerBoolean.RING_OF_SUFFERING.has(player) ? "disable" : "enable") + " the recoil effect of your ring.");
                 }),
                 new Option("Discard recoil changes", () -> {
                     player.dialogue(new OptionsDialogue("Are you sure you wish to discard your recoil charges?",
@@ -153,7 +153,7 @@ public enum RingOfSuffering {
     }
 
     public static void check(Player player, Hit hit) {
-        if(!PlayerBoolean.RING_OF_SUFFERING.has(player))
+        if(PlayerBoolean.RING_OF_SUFFERING.has(player))
             return;
         if(hit.attacker == null || hit.attackStyle == null)
             return;
