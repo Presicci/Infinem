@@ -18,7 +18,6 @@ public enum AreaReward {
      */
     CULINAROMANCERS_CHEST_DISCOUNT(TaskArea.GENERAL, AreaTaskTier.ELITE, "20% discount on items in the Culinaromancer's Chest"),
     FAIRY_RING(TaskArea.GENERAL, AreaTaskTier.ELITE, "Ability to use fairy rings without the need of a dramen or lunar staff"),
-    SLAYER_BLOCK(TaskArea.GENERAL, AreaTaskTier.ELITE, "Unlocked the 6th slot for blocking Slayer tasks"),
     /**
      * Asgarnia rewards
      */
