@@ -1,5 +1,6 @@
 package io.ruin.model.map.object.actions.impl.transportation;
 
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.Interface;
@@ -216,7 +217,7 @@ public enum FairyRing { //todo add favorite option
     public static void openCombinationPanel(Player player, GameObject fairyRing) {
         Item dramenStaff = player.getEquipment().findFirst(772, 9084);
         boolean hasFairyMushroom = player.getEquipment().hasId(25102) || player.getInventory().hasId(25102);
-        if(dramenStaff == null && !hasFairyMushroom) {
+        if(dramenStaff == null && !hasFairyMushroom && !AreaReward.FAIRY_RING.hasReward(player)) {
             player.sendFilteredMessage("The fairy ring only works for those who wield fairy magic.");
             return;
         }
