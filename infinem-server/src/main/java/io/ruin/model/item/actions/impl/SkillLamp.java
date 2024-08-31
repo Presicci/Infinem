@@ -69,7 +69,7 @@ public enum SkillLamp {
                 Item lamp = player.getInventory().findItem(lampId);
                 if (lamp == null)
                     return;
-                int experience = Random.get(25000, 50000);
+                int experience = player.getStats().get(skill.statType).fixedLevel * 100;     // OSRS is 10x skill level
                 player.closeInterface(InterfaceType.MAIN);
                 lamp.remove();
                 player.getStats().addXp(skill.statType, experience, false);
