@@ -136,6 +136,8 @@ public class IKOD {
                     } else {
                         kind = IKODKind.Lost;
                     }
+                } else if (item.getId() == 24780 && flags.killedByAPlayer) {
+                    kind = IKODKind.LostToThePlayerWhoKillsYou;
                 } else {
                     kind = IKODKind.Lost;
                 }
@@ -210,6 +212,10 @@ public class IKOD {
                 item.removeCharges();
                 item.setId(crystalEquipment.getRevertIds()[0]);
             }
+            loseItems.add(item);
+        } else if (item.getId() == 24780) {
+            item.removeCharges();
+            item.setId(Items.AMULET_OF_FURY);
             loseItems.add(item);
         } else {
             // Change to keep if we want untradeables to go to dying players inv after death
