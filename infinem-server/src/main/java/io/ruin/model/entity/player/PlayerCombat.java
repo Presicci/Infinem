@@ -1789,6 +1789,9 @@ public class PlayerCombat extends Combat {
                 shieldId == 22003 || shieldId == 22002) {
             absorbDamage += 0.8;
         }
+        if (player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT)) {
+            absorbDamage += 1.0;
+        }
         return absorbDamage;
     }
 
