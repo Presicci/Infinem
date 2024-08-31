@@ -1185,6 +1185,12 @@ public class PlayerCombat extends Combat {
             SetEffect.AHRIM.checkAndApply(player, target, hit);
             SetEffect.TORAG.checkAndApply(player, target, hit);
             SetEffect.KARIL_DAMNED.checkAndApply(player, target, hit);
+            if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(20) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
+                if (target.getHp() <= 0 || hit.attackWeapon == null) {
+                    return;
+                }
+                target.hit(new Hit(player, hit.attackStyle, hit.attackType).randDamage(hit.maxDamage).setAttackWeapon(null).ignoreDefence().ignorePrayer());
+            }
         }
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null)
