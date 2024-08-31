@@ -146,7 +146,8 @@ public class Settings {
         INFO_BROADCAST(8, 6, 214, Config.INFORMATION_BROADCASTS::toggle),
         SKILL_BROADCAST(8, 7, 215, Config.SKILLING_BROADCASTS::toggle),
         DROP_BROADCAST(8, 8, 216, Config.DROP_BROADCASTS::toggle),
-        FRIEND_BROADCAST(8, 9, 217, Config.FRIEND_BROADCASTS::toggle);
+        FRIEND_BROADCAST(8, 9, 217, Config.FRIEND_BROADCASTS::toggle),
+        ACTIVITY_SPOTLIGHT_BROADCAST(8, 10, 218, Config.ACTIVITY_SPOTLIGHT_BROADCAST::toggle);
 
         private final int menuIndex, childIndex, searchIndex;
         private final Consumer<Player> consumer;

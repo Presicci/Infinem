@@ -217,7 +217,8 @@ public enum Icon {
     PET(67),
     SKILL_ICON(209),
     INVENTORY_BAG(233),
-    SMILY(51)
+    SMILY(51),
+    ACTIVITY_SPOTLIGHT(313)
     ;
 
     public final int imgId;

@@ -26,6 +26,9 @@ public enum Broadcast {
         }
         p.sendMessage(message);
     })),
+    ACTIVITY_SPOTLIGHT(Icon.ACTIVITY_SPOTLIGHT, (player, message) -> World.players.forEach(p -> {
+        if (Config.ACTIVITY_SPOTLIGHT_BROADCAST.get(p) == 1) p.sendMessage(message);
+    })),
     NEW_PLAYER(Icon.SMILY, (player, message) -> World.players.forEach(p -> p.sendMessage(message))),
     INFORMATION(Icon.INFO, (player, message) -> World.players.forEach(p -> {
         if (Config.INFORMATION_BROADCASTS.get(p) == 1) p.sendMessage(message);
