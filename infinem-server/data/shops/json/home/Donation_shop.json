@@ -1,0 +1,66 @@
+{
+  "name": "Donation Shop",
+  "currency": "VOTE_TICKETS",
+  "npcs": [
+    15001
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 1000,
+  "hideBuy": false,
+  "items": [
+    { // Founders pack (t1)
+      "itemId": 26554,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 50
+    },
+    { // Founders pack (t2)
+      "itemId": 26557,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 250
+    },
+    { // Founders pack (t3)
+      "itemId": 26560,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 500
+    },
+    { // Bond $5
+      "itemId": 32033,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 50
+    },
+    { // Bond $10
+      "itemId": 32035,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 100
+    },
+    { // Bond $25
+      "itemId": 32037,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 250
+    },
+    { // God book ornament kit
+      "itemId": 26421,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 150
+    },
+    { // Dragon defender
+      "itemId": 12954,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 50
+    },
+    { // Fire cape
+      "itemId": 6570,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 50
+    }
+  ]
+}
