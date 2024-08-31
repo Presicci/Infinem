@@ -3,6 +3,8 @@ package io.ruin.model.entity.player;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
 import io.ruin.model.item.Items;
 import io.ruin.model.skills.magic.spells.modern.WindStrike;
@@ -991,6 +993,19 @@ public class PlayerCombat extends Combat {
             hit.boostDamage(damage);
             double accuracy = player.getBestiary().getBestiaryEntry(target.npc.getDef()).getPerkMultiplier(AccuracyPerk.class, 0);
             hit.boostAttack(accuracy);
+        }
+
+        // Relic handling
+        RelicManager rm = player.getRelicManager();
+        if (rm.hasRelicEnalbed(Relic.ARCHMAGE) && hit.attackStyle != null && hit.attackStyle.isMagic()) {
+            hit.boostDamage(0.1);
+            hit.boostAttack(0.3);
+        } else if (rm.hasRelicEnalbed(Relic.DEADEYE) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
+            hit.boostDamage(0.1);
+            hit.boostAttack(0.2);
+        } else if (rm.hasRelicEnalbed(Relic.JUGGERNAUT) && hit.attackStyle != null && hit.attackStyle.isMelee()) {
+            hit.boostDamage(0.1);
+            hit.boostAttack(0.1);
         }
 
         // Efaritay's aid vs Tier 1 vampyre
