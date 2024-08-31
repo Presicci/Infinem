@@ -1084,10 +1084,15 @@ public class PlayerCombat extends Combat {
                 }
             }
         }
-
+        if (hit.damage > 0
+                && hit.attackStyle != null
+                && hit.attackStyle.isMelee()
+                && player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT)
+                && Random.rollDie(20)) {
+            hit.damage *= 2;
+        }
         if (target.npc != null && ChambersOfXeric.isRaiding(player))
             ChambersOfXeric.addDamagePoints(player, target.npc, hit.damage);
-
         /*
          * Poison handling
          */
