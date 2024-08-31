@@ -11,8 +11,8 @@
     { // Exp lamp
       "itemId": 28800,
       "stock": 100,
-      "buy_price": 15,
-      "sell_price": 15
+      "buy_price": 1,
+      "sell_price": 1
     },
     { // Herb box
       "itemId": 11738,
