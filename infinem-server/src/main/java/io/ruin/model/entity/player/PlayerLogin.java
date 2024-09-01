@@ -8,6 +8,7 @@ import io.ruin.api.utils.XenPost;
 import io.ruin.data.impl.login_set;
 import io.ruin.model.World;
 import io.ruin.network.central.CentralClient;
+import io.ruin.services.PhpbbRegister;
 import io.ruin.utility.OfflineMode;
 import lombok.extern.slf4j.Slf4j;
 
@@ -76,7 +77,7 @@ public class PlayerLogin extends LoginRequest {
                 return;
             }
             int returnCode = phpbbAuth();
-            if (returnCode == -1) {
+            if (returnCode == -1) { // Username isn't registered on forums
                 if (info.name.length() < 3) {
                     deny(Response.INVALID_LOGIN);
                     return;
@@ -85,7 +86,8 @@ public class PlayerLogin extends LoginRequest {
                     deny(Response.INVALID_LOGIN);
                     return;
                 }
-            } else if (returnCode == 0) {
+                PhpbbRegister.register(player);
+            } else if (returnCode == 0) {   // Wrong password
                 deny(Response.INVALID_LOGIN);
                 return;
             }
