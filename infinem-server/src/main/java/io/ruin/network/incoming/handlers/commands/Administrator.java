@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.collect.Lists;
 import com.google.gson.GsonBuilder;
+import io.ruin.PersistentData;
 import io.ruin.api.utils.*;
 import io.ruin.cache.def.*;
 import io.ruin.content.activities.event.TimedEventManager;
@@ -43,7 +44,6 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.*;
 import io.ruin.model.entity.player.ai.AIPlayer;
 import io.ruin.model.entity.player.ai.scripts.EmoteScript;
-import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -94,7 +94,6 @@ import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
-import io.ruin.network.central.CentralSender;
 import io.ruin.network.incoming.handlers.CommandHandler;
 import io.ruin.services.LatestUpdate;
 import io.ruin.services.Punishment;
@@ -2717,11 +2716,11 @@ public class Administrator {
             }
             case "spellbook": {
                 player.dialogue(
-                        new OptionsDialogue("Select which prayer book you'd like to switch to:",
-                                new Option("Modern", () -> PrayerAltar.switchBook(player, SpellBook.MODERN, true)),
-                                new Option("Ancient", () -> PrayerAltar.switchBook(player, SpellBook.ANCIENT, true)),
-                                new Option("Lunar", () -> PrayerAltar.switchBook(player, SpellBook.LUNAR, true)),
-                                new Option("Arceuus", () -> PrayerAltar.switchBook(player, SpellBook.ARCEUUS, true))
+                        new OptionsDialogue("Select which spellbook you'd like to switch to:",
+                                new Option("Modern", () -> SpellBook.MODERN.setActive(player)),
+                                new Option("Ancient", () -> SpellBook.ANCIENT.setActive(player)),
+                                new Option("Lunar", () -> SpellBook.LUNAR.setActive(player)),
+                                new Option("Arceuus", () -> SpellBook.ARCEUUS.setActive(player))
                         ).keepOpenWhenHit()
                 );
                 return true;
@@ -3114,6 +3113,10 @@ public class Administrator {
             }
             case "oldtasks": {
                 TaskInterface.openOldInterface(player);
+                return true;
+            }
+            case "saveconstants": {
+                PersistentData.INSTANCE.save();
                 return true;
             }
         }
