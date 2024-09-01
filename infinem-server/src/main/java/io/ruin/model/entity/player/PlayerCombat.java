@@ -305,6 +305,7 @@ public class PlayerCombat extends Combat {
             int damage = target.hit(hit);
             if (damage > 0) {
                 target.graphics(swamp ? 1042 : 1253, 90, duration);
+                aoeAttack(damage / 2, duration, 5);
             } else {
                 hit.nullify();
                 target.graphics(85, 92, duration);
@@ -1776,6 +1777,7 @@ public class PlayerCombat extends Combat {
     }
 
     private void aoeAttack(int maxDamage, int delay, int targetCap) {
+        if (!target.inMulti()) return;
         Item wep = player.getEquipment().get(Equipment.SLOT_WEAPON);
         if (wep == null) {
             /* obviously should never happen */
@@ -1784,36 +1786,34 @@ public class PlayerCombat extends Combat {
         ItemDefinition wepDef = wep.getDef();
         AttackStyle style = attackSet.style;
         AttackType type = attackSet.type;
-        if (target.inMulti()) {
-            int entityIndex = player.getClientIndex();
-            int targetIndex = target.getClientIndex();
-            int targetCount = 0;
-            for (Player plr : target.localPlayers()) {
-                int playerIndex = plr.getClientIndex();
-                if (playerIndex == entityIndex || playerIndex == targetIndex)
-                    continue;
-                if (!plr.getPosition().isWithinDistance(target.getPosition(), 1))
-                    continue;
-                if (!player.getCombat().canAttack(plr, false))
-                    continue;
-                plr.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
-                if (++targetCount >= targetCap)
-                    break;
-            }
-            for (NPC npc : target.localNpcs()) {
-                int npcIndex = npc.getClientIndex();
-                if (npcIndex == entityIndex || npcIndex == targetIndex)
-                    continue;
-                if (!npc.getPosition().isWithinDistance(target.getPosition(), 1))
-                    continue;
-                if (npc.getDef().ignoreMultiCheck)
-                    continue;
-                if (!player.getCombat().canAttack(npc, false))
-                    continue;
-                npc.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
-                if (++targetCount >= targetCap)
-                    break;
-            }
+        int entityIndex = player.getClientIndex();
+        int targetIndex = target.getClientIndex();
+        int targetCount = 0;
+        for (Player plr : target.localPlayers()) {
+            int playerIndex = plr.getClientIndex();
+            if (playerIndex == entityIndex || playerIndex == targetIndex)
+                continue;
+            if (!plr.getPosition().isWithinDistance(target.getPosition(), 1))
+                continue;
+            if (!player.getCombat().canAttack(plr, false))
+                continue;
+            plr.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
+            if (++targetCount >= targetCap)
+                break;
+        }
+        for (NPC npc : target.localNpcs()) {
+            int npcIndex = npc.getClientIndex();
+            if (npcIndex == entityIndex || npcIndex == targetIndex)
+                continue;
+            if (!npc.getPosition().isWithinDistance(target.getPosition(), 1))
+                continue;
+            if (npc.getDef().ignoreMultiCheck)
+                continue;
+            if (!player.getCombat().canAttack(npc, false))
+                continue;
+            npc.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
+            if (++targetCount >= targetCap)
+                break;
         }
     }
 }

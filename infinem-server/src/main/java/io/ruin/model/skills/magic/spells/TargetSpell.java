@@ -189,7 +189,6 @@ public class TargetSpell extends Spell {
             if (r != null && !saveRunes)
                 r.remove();
         }
-
         Hit hit = new Hit(entity, AttackStyle.MAGIC, AttackType.ACCURATE)
                 .randDamage(maxDamage)
                 .clientDelay(projectileDuration, 16)
@@ -213,48 +212,55 @@ public class TargetSpell extends Spell {
                 CombatUtils.addMagicXp(entity.player, baseXp, damage, target.isNpc());
         afterHit(hit, target);
 
-        if(primaryCast && multiTarget && target.inMulti()) {
-            int entityIndex = entity.getClientIndex();
-            int targetIndex = target.getClientIndex();
-            int targetCount = 0;
-            for(Player player : target.localPlayers()) {
-                int playerIndex = player.getClientIndex();
-                if(playerIndex == entityIndex || playerIndex == targetIndex)
-                    continue;
-                if(!player.getPosition().isWithinDistance(target.getPosition(), 1))
-                    continue;
-                if(entity.player != null) {
-                    if(!entity.player.getCombat().canAttack(player, false))
-                        continue;
-                } else {
-                    if(!entity.npc.getCombat().canAttack(player))
-                        continue;
-                }
-                cast(entity, player, projectileDuration, maxDamage);
-                if(++targetCount >= 9)
-                    break;
-            }
-            for(NPC npc : target.localNpcs()) {
-                int npcIndex = npc.getClientIndex();
-                if(npcIndex == entityIndex || npcIndex == targetIndex)
-                    continue;
-                if(!npc.getPosition().isWithinDistance(target.getPosition(), 1))
-                    continue;
-                if(npc.getDef().ignoreMultiCheck)
-                    continue;
-                if(entity.player != null) {
-                    if(!entity.player.getCombat().canAttack(npc, false))
-                        continue;
-                } else {
-                    if(!entity.npc.getCombat().canAttack(npc))
-                        continue;
-                }
-                cast(entity, npc, projectileDuration, maxDamage);
-                if(++targetCount >= 9)
-                    break;
-            }
+        if (primaryCast && multiTarget) {
+            aoeAttack(entity, target, maxDamage, projectileDuration, 9);
+        } else if (primaryCast && damage > 0 && entity.isPlayer() && entity.player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
+            aoeAttack(entity, target, damage / 2, projectileDuration, 5);
         }
         return true;
+    }
+
+    private void aoeAttack(Entity entity, Entity target, int maxDamage, int delay, int targetCap) {
+        if (!target.inMulti()) return;
+        int entityIndex = entity.getClientIndex();
+        int targetIndex = target.getClientIndex();
+        int targetCount = 0;
+        for(Player player : target.localPlayers()) {
+            int playerIndex = player.getClientIndex();
+            if(playerIndex == entityIndex || playerIndex == targetIndex)
+                continue;
+            if(!player.getPosition().isWithinDistance(target.getPosition(), 1))
+                continue;
+            if(entity.player != null) {
+                if(!entity.player.getCombat().canAttack(player, false))
+                    continue;
+            } else {
+                if(!entity.npc.getCombat().canAttack(player))
+                    continue;
+            }
+            cast(entity, player, delay, maxDamage);
+            if(++targetCount >= targetCap)
+                break;
+        }
+        for(NPC npc : target.localNpcs()) {
+            int npcIndex = npc.getClientIndex();
+            if(npcIndex == entityIndex || npcIndex == targetIndex)
+                continue;
+            if(!npc.getPosition().isWithinDistance(target.getPosition(), 1))
+                continue;
+            if(npc.getDef().ignoreMultiCheck)
+                continue;
+            if(entity.player != null) {
+                if(!entity.player.getCombat().canAttack(npc, false))
+                    continue;
+            } else {
+                if(!entity.npc.getCombat().canAttack(npc))
+                    continue;
+            }
+            cast(entity, npc, delay, maxDamage);
+            if(++targetCount >= targetCap)
+                break;
+        }
     }
 
     protected void beforeHit(Hit hit, Entity target) {
