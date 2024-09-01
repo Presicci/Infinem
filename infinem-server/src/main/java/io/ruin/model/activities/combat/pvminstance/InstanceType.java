@@ -14,15 +14,15 @@ import java.util.*;
 
 @Getter
 public enum InstanceType {
-    GIANT_MOLE("Giant Mole", new Bounds(1728, 5120, 1791, 5247, -1), 300_000, 60, new Position(1752, 5236, 0), new Position(2985, 3316, 0)),
-    DAGANNOTH_KINGS("Dagannoth Kings", 11589, 400_000, 60, new Position(2899, 4449, 0), new Position(1912, 4367, 0)),
-    KRAKEN("Kraken", 9116, 400_000, 60, new Position(2280, 10022, 0), new Position(2280, 10016, 0)),
-    KBD("King Black Dragon", 9033, 500_000, 60, new Position(2271, 4680, 0),  new Position(3067, 10253, 0)),
-    THERMONUCLEAR_SMOKE_DEVIL("Thermonuclear Smoke Devil", new Bounds(2344, 9432, 2376, 9456, 0), 400_000, 60, new Position(2376, 9452, 0), new Position(2379, 9452, 0)),
-    CERBERUS("Cerberus", 5140, 600_000, 60, new Position(1304, 1290, 0), new Position(1310, 1274, 0)),
-    CORP("Corporeal Beast", 11844, 1_000_000, 60, new Position(2974, 4384, 2), new Position(2970, 4384, 2)),
-    KALPHITE_QUEEN("Kalphite Queen", 13972, 500_000, 60, new Position(3507, 9494, 0), new Position(3509, 9496, 2)),
-    SARACHNIS("Sarachnis", 7322, 50_000, 60, new Position(1842, 9911, 0), new Position(1842, 9912, 0)),
+    GIANT_MOLE("Giant Mole", new Bounds(1728, 5120, 1791, 5247, -1), 15_000, 60, new Position(1752, 5236, 0), new Position(2985, 3316, 0)),
+    DAGANNOTH_KINGS("Dagannoth Kings", 11589, 25_000, 60, new Position(2899, 4449, 0), new Position(1912, 4367, 0)),
+    KRAKEN("Kraken", 9116, 25_000, 60, new Position(2280, 10022, 0), new Position(2280, 10016, 0)),
+    KBD("King Black Dragon", 9033, 25_000, 60, new Position(2271, 4680, 0),  new Position(3067, 10253, 0)),
+    THERMONUCLEAR_SMOKE_DEVIL("Thermonuclear Smoke Devil", new Bounds(2344, 9432, 2376, 9456, 0), 25_000, 60, new Position(2376, 9452, 0), new Position(2379, 9452, 0)),
+    CERBERUS("Cerberus", 5140, 25_000, 60, new Position(1304, 1290, 0), new Position(1310, 1274, 0)),
+    CORP("Corporeal Beast", 11844, 25_000, 60, new Position(2974, 4384, 2), new Position(2970, 4384, 2)),
+    KALPHITE_QUEEN("Kalphite Queen", 13972, 25_000, 60, new Position(3507, 9494, 0), new Position(3509, 9496, 2)),
+    SARACHNIS("Sarachnis", 7322, 25_000, 60, new Position(1842, 9911, 0), new Position(1842, 9912, 0)),
 
     BOUNCER_GHOST("Bouncer", new Bounds(1752, 4696, 1775, 4719, 0), 0, 60, new Position(1759, 4711, 0), new Position(2617, 9828, 0)),
     OBOR("Obor", new Bounds(3072, 9792, 3107, 9817, 0), 0, 60, new Position(3091, 9815, 0), new Position(3095, 9832, 0)),
@@ -30,10 +30,10 @@ public enum InstanceType {
 
     HESPORI("Hespori", new Bounds(1232, 10072, 1264, 10104, -1), 0, 60, new Position(1243, 10081), new Position(1230, 3729)),
 
-    BANDOS_GWD("General Graardor", new Bounds(2856, 5344, 2877, 5374, 2), 500_000, 60, Config.GWD_BANDOS_KC, "Bandos", new Position(2864, 5354, 2), new Position(2862, 5354, 2)),
-    ZAMORAK_GWD("K'ril Tsutsaroth", new Bounds(2912, 5312, 2944, 5336, 2), 500_000, 60, Config.GWD_ZAMORAK_KC, "Zamorak", new Position(2925, 5331, 2), new Position(2925, 5333, 2)),
-    ARMADYL_GWD("Kree'arra", new Bounds(2816, 5288, 2840, 5304, 2), 500_000, 60, Config.GWD_ARMADYL_KC, "Armadyl", new Position(2839, 5296, 2), new Position(2839, 5294, 2)),
-    SARADOMIN_GWD("Commander Zilyana", new Bounds(2880, 5248, 2911, 5278, -1), 500_000, 60, Config.GWD_SARADOMIN_KC, "Saradomin", new Position(2907, 5265, 0), new Position(2909, 5265, 0));
+    BANDOS_GWD("General Graardor", new Bounds(2856, 5344, 2877, 5374, 2), 25_000, 60, Config.GWD_BANDOS_KC, "Bandos", new Position(2864, 5354, 2), new Position(2862, 5354, 2)),
+    ZAMORAK_GWD("K'ril Tsutsaroth", new Bounds(2912, 5312, 2944, 5336, 2), 25_000, 60, Config.GWD_ZAMORAK_KC, "Zamorak", new Position(2925, 5331, 2), new Position(2925, 5333, 2)),
+    ARMADYL_GWD("Kree'arra", new Bounds(2816, 5288, 2840, 5304, 2), 25_000, 60, Config.GWD_ARMADYL_KC, "Armadyl", new Position(2839, 5296, 2), new Position(2839, 5294, 2)),
+    SARADOMIN_GWD("Commander Zilyana", new Bounds(2880, 5248, 2911, 5278, -1), 25_000, 60, Config.GWD_SARADOMIN_KC, "Saradomin", new Position(2907, 5265, 0), new Position(2909, 5265, 0));
 
     /**
      * Name of type
