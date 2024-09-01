@@ -1,5 +1,6 @@
 package io.ruin.model.skills.magic.spells;
 
+import io.ruin.api.utils.Random;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.activities.wilderness.MageArena;
 import io.ruin.model.combat.npc.MaxHitDummy;
@@ -7,6 +8,7 @@ import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.CombatUtils;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -145,7 +147,8 @@ public class TargetSpell extends Spell {
 
     private boolean cast(Entity entity, Entity target, int projectileDuration, int maxDamage) {
         boolean primaryCast = projectileDuration == -1;
-        if(primaryCast) {
+        if (primaryCast) {
+            boolean saveRunes = entity.player != null && entity.player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(10, 3);
             RuneRemoval r = null;
             if(entity.player != null) {
                 if(!entity.player.getStats().check(StatType.Magic, lvlReq, "cast this spell"))
@@ -160,7 +163,7 @@ public class TargetSpell extends Spell {
                     return false;
                 }
                 SpellSack sack = getSpellSack();
-                if ((sack == null || !sack.canCast(entity.player) || (r = RuneRemoval.get(entity.player, sack.getSack())) == null)
+                if (!saveRunes && (sack == null || !sack.canCast(entity.player) || (r = RuneRemoval.get(entity.player, sack.getSack())) == null)
                         && (runeItems != null && (r = RuneRemoval.get(entity.player, runeItems)) == null)) {
                     entity.player.sendMessage("You don't have enough runes to cast this spell.");
                     TabCombat.resetAutocast(entity.player);
@@ -183,7 +186,7 @@ public class TargetSpell extends Spell {
             double percentageBonus = entity.getCombat().getBonus(EquipmentStats.MAGIC_DAMAGE);
             if(percentageBonus > 0)
                 maxDamage *= (1D + percentageBonus * 0.01);
-            if(r != null)
+            if (r != null && !saveRunes)
                 r.remove();
         }
 
