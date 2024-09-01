@@ -25,7 +25,7 @@ import java.util.List;
 
 public enum ClueType {
 
-    BEGINNER(23182, 23245, 24361, 1, 3, -1, 1, 3, -1, new LootTable()
+    BEGINNER(23182, 23245, 24361, 1, 3, -1, 1, 3, -1, 50, new LootTable()
             .addTable("beginnerclue", 2,    // Uniques
                     new LootItem(23285, 1, 1, 1),   // Mole slippers
                     new LootItem(23288, 1, 1, 1),   // Frog slippers
@@ -116,7 +116,7 @@ public enum ClueType {
             ),
             StepType.ANAGRAM, StepType.HOTCOLD, StepType.EMOTE, StepType.MAP
     ),
-    EASY(2677, 20546, 24362, 2, 4, 16728, 2, 4, 50, new LootTable()
+    EASY(2677, 20546, 24362, 2, 4, 16728, 2, 4, 50, 35, new LootTable()
                 .addTable("easyclue", 8515,    // Uniques
                         new LootItem(20211, 1, 1, 17),    //Team cape zero
                         new LootItem(20217, 1, 1, 17),    //Team cape i
@@ -285,7 +285,7 @@ public enum ClueType {
     ),
 
     MEDIUM(
-            2801, 20545, 24363, 3, 5, 17607, 3, 5, 30, new LootTable()
+            2801, 20545, 24363, 3, 5, 17607, 3, 5, 30, 25, new LootTable()
             .addTable("mediumclue", 9071, // Uniques
                     new LootItem(2577, 1, 1, 88),  //Ranger boots
                     new LootItem(2579, 1, 1, 88),  //Wizard boots
@@ -435,7 +435,7 @@ public enum ClueType {
             )
     ),
 
-    HARD(2722, 20544, 24364, 4, 6, 22195, 4, 6, 15, new LootTable()
+    HARD(2722, 20544, 24364, 4, 6, 22195, 4, 6, 15, 10, new LootTable()
             .addTable("hardclue", 7575, // Uniques
                     new LootItem(10354, 1, 1, 61),   //Amulet of glory (t4)
                     new LootItem(2581, 1, 1, 61),   //Robin hood hat
@@ -631,7 +631,7 @@ public enum ClueType {
             )
     ),
 
-    ELITE(12073, 20543, 24365, 10, 12, 21680, 4, 6, 5, new LootTable()
+    ELITE(12073, 20543, 24365, 10, 12, 21680, 4, 6, 5, 5, new LootTable()
             .addTable("eliteclue", 3920, // Uniques
                     new LootItem(12538, 1, 1, 80),   //Dragon full helm ornament kit
                     new LootItem(12534, 1, 1, 80),   //Dragon chainbody ornament kit
@@ -778,7 +778,7 @@ public enum ClueType {
             )
     ),
 
-    MASTER(19835, 19836, 24366, 6, 8, 23469, 5, 7, -1, new LootTable()
+    MASTER(19835, 19836, 24366, 6, 8, 23469, 5, 7, -1, 3, new LootTable()
             .addTable("masterclue", 3828, // Uniques
                     new LootItem(20065, 1, 1, 117),   //Occult ornament kit
                     new LootItem(20062, 1, 1, 117),   //Torture ornament kit
@@ -914,7 +914,7 @@ public enum ClueType {
             StepType.COORDINATE, StepType.HOTCOLD, StepType.FALO, StepType.EMOTE
     );
 
-    public final int clueId, casketId, boxId;
+    public final int clueId, casketId, boxId, relicDupeChance;
 
     private final int minStages, maxStages, minRolls, maxRolls, masterChance;
 
@@ -924,7 +924,7 @@ public enum ClueType {
 
     private final StepType[] stepTypes;
 
-    ClueType(int clueId, int casketId, int boxId, int minStages, int maxStages, int sharedWeight, int minRolls, int maxRolls, int masterChance, LootTable lootTable, StepType... stepTypes) {
+    ClueType(int clueId, int casketId, int boxId, int minStages, int maxStages, int sharedWeight, int minRolls, int maxRolls, int masterChance, int relicDupeChance, LootTable lootTable, StepType... stepTypes) {
         this.clueId = clueId;
         this.casketId = casketId;
         this.boxId = boxId;
@@ -936,6 +936,7 @@ public enum ClueType {
         this.descriptiveName = StringUtils.vowelStart(name()) ? ("an " + name().toLowerCase()) : ("a " + name().toLowerCase());
         this.lootTable = lootTable;
         this.stepTypes = stepTypes;
+        this.relicDupeChance = relicDupeChance;
 
         // Add the shared table to each qualifying clue reward
         if (sharedWeight != -1) {

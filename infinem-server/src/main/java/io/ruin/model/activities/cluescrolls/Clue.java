@@ -1,9 +1,11 @@
 package io.ruin.model.activities.cluescrolls;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBox;
 import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBoxType;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -130,6 +132,17 @@ public class Clue {
                 pointAmount *= (completedClues % 100 == 0 ? 4 : completedClues % 10 == 0 ? 2 : 1);
                 int newAmt = Currency.TREASURE_TRAIL_POINTS.getCurrencyHandler().addCurrency(player, pointAmount);
                 player.sendMessage(Color.GREEN.wrap("You earn " + pointAmount + " treasure trail points. You now have " + newAmt + " points."));
+                if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Random.rollDie(100, def.clueType.relicDupeChance)) {
+                    if (def.clueType != ClueType.MASTER && Random.rollDie(10)) {
+                        int ordinal = def.clueType.ordinal();
+                        ClueType newType = ClueType.values()[ordinal + 1];
+                        player.getInventory().addOrDrop(newType.casketId, 1);
+                        player.sendMessage("Your relic duplicates and upgrades your reward casket!");
+                    } else {
+                        player.getInventory().addOrDrop(def.clueType.casketId, 1);
+                        player.sendMessage("Your relic duplicates your reward casket!");
+                    }
+                }
             }
             return true;
         }
