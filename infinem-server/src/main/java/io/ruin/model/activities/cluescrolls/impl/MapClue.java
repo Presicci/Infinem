@@ -36,10 +36,10 @@ public class MapClue extends Clue {
 
     static {
         // Beginner
-        registerDig(346, 3166, 3360, 0, ClueType.BEGINNER);     // Champion's guild
-        registerDig(351, 3043, 3399, 0, ClueType.BEGINNER);     // NE Falador
-        registerDig(348, 3091, 3227, 0, ClueType.BEGINNER);     // Draynor
-        registerDig(347, 3289, 3374, 0, ClueType.BEGINNER);     // Varrock east mine
+        registerDig(346, 3166, 3361, 0, ClueType.BEGINNER);     // Champion's guild
+        registerDig(351, 3043, 3398, 0, ClueType.BEGINNER);     // NE Falador
+        registerDig(348, 3093, 3226, 0, ClueType.BEGINNER);     // Draynor
+        registerDig(347, 3290, 3374, 0, ClueType.BEGINNER);     // Varrock east mine
         registerDig(356, 3110, 3152, 0, ClueType.BEGINNER);     // Wizard tower
         // Easy
         registerDig(346, 3166, 3360, 0, ClueType.EASY);     // Champion's guild
