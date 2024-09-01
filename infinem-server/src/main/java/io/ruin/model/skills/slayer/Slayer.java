@@ -4,6 +4,7 @@ import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.NPCDefinition;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -116,6 +117,10 @@ public class Slayer {
 
             player.getStats().addXp(StatType.Slayer, xp, true);
             player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERKILL, 1, true);
+
+            if (player.getRelicManager().hasRelic(Relic.MONSTER_HUNTER)) {
+                player.incrementHp(2);
+            }
 
             int killsCounted = 1;
             if (BraceletOfSlaughter.test(player)) {
