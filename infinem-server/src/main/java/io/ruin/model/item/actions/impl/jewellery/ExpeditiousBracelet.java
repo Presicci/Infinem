@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -67,7 +68,12 @@ public class ExpeditiousBracelet {
             fullCharges(player);
             charges = MAX_CHARGES;
         }
-        if (Random.rollDie(4)) {
+        boolean monsterHunterRelic = player.getRelicManager().hasRelic(Relic.MONSTER_HUNTER);
+        if (Random.rollDie(4) || (monsterHunterRelic && Random.rollDie(100, 35))) {
+            if (monsterHunterRelic) {
+                player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster.");
+                return true;
+            }
             if (charges > 1) {
                 player.putAttribute(AttributeKey.EXPEDITIOUS_CHARGES, --charges);
                 player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster. " + Color.RED.wrap("It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left."));
