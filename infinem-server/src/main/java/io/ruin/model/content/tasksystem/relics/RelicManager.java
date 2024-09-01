@@ -117,7 +117,7 @@ public class RelicManager {
         return true;
     }
 
-    private boolean hasRelic(Relic relic) {
+    public boolean hasRelic(Relic relic) {
         return RELICS[relic.getTier()-1].get(player) == relic.getConfigValue();
     }
 

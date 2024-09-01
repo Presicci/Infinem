@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.item.actions.ItemAction;
 
 public enum Geode {
@@ -35,7 +36,11 @@ public enum Geode {
         for(Geode geode : values()) {
             ItemAction.registerInventory(geode.itemID, "open", (player, item) -> {
                 player.getInventory().remove(item);
-                player.getInventory().add(geode.reward, 1);
+                if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER)) {
+                    player.getInventory().add(geode.reward, 2);
+                } else {
+                    player.getInventory().add(geode.reward, 1);
+                }
                 player.sendMessage("You open the geode and find a clue scroll.");
             });
         }

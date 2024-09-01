@@ -23,6 +23,8 @@ public class Clue {
 
     private static int OFFSET;
 
+    public static final List<Integer> SCROLL_BOXES = Arrays.asList(24361, 24362, 24363, 24364, 24365);
+
     public static final Clue[] CLUES = new Clue[700];
 
     // Clue storage, separated by ClueType

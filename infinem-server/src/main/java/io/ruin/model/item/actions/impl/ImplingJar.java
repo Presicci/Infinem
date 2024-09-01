@@ -1,6 +1,7 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
@@ -10,6 +11,9 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import lombok.Getter;
+
+import java.util.Arrays;
+import java.util.List;
 
 public enum ImplingJar {
 
@@ -300,6 +304,9 @@ public enum ImplingJar {
             loot = randomClue.lootTable.rollItem();
         } else {
             loot = jar.lootTable.rollItem();
+            if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(loot.getId())) {
+                loot.setAmount(2);
+            }
         }
         player.getInventory().addOrDrop(loot);
         player.getCollectionLog().collect(loot);

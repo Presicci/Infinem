@@ -3,7 +3,9 @@ package io.ruin.model.entity.npc;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
+import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.content.bestiary.perks.impl.GoldPickupPerk;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.ConditionalNPCLootTable;
 import io.ruin.utility.Color;
@@ -221,6 +223,10 @@ public class NPCDrops {
             Item ring = pKiller.getEquipment().get(Equipment.SLOT_RING);
             if (ring != null && ring.getId() == 32003 && Random.rollDie(1000)) {
                 pKiller.sendMessage(Color.ORANGE_RED.wrap("The power of Hazelmere blesses your drop and doubles it before your very eyes: " + item.getDef().name) + "!");
+                item.setAmount(item.getAmount() * 2);
+            }
+
+            if (pKiller.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(item.getId())) {
                 item.setAmount(item.getAmount() * 2);
             }
 

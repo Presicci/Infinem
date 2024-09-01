@@ -3,6 +3,7 @@ package io.ruin.model.skills.fishing;
 import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.content.ActivitySpotlight;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.stat.StatType;
@@ -49,7 +50,11 @@ public enum FishingClueBottle {
         for (FishingClueBottle clueBottle : values())
             ItemAction.registerInventory(clueBottle.bottleId, "open", (player, item) -> {
                 player.getInventory().remove(item);
-                player.getInventory().add(clueBottle.clueType.boxId, 1);
+                if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER)) {
+                    player.getInventory().add(clueBottle.clueType.boxId, 2);
+                } else {
+                    player.getInventory().add(clueBottle.clueType.boxId, 1);
+                }
                 player.sendMessage("You crack the bottle and find a clue scroll inside!");
             });
     }

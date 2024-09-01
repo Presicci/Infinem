@@ -1,7 +1,9 @@
 package io.ruin.model.skills.woodcutting;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.impl.Geode;
@@ -45,7 +47,11 @@ public enum ClueNest {
                     return;
                 }
                 item.setId(5075);   // Empty nest
-                player.getInventory().add(nest.reward, 1);
+                if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER)) {
+                    player.getInventory().add(nest.reward, 2);
+                } else {
+                    player.getInventory().add(nest.reward, 1);
+                }
                 PlayerCounter.OPENED_BIRDS_NESTS.increment(player, 1);
                 player.sendFilteredMessage("You take the clue box out of the bird's nest.");
             });
