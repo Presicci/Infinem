@@ -1,5 +1,6 @@
 package io.ruin.model.inter.handlers;
 
+import io.ruin.Server;
 import io.ruin.api.utils.JsonUtils;
 import io.ruin.cache.def.EnumDefinition;
 import io.ruin.model.entity.player.Player;
@@ -41,7 +42,7 @@ public class MusicPlayer {
 
     static {
         try {
-            musicList = JsonUtils.fromJson(JsonUtils.fromFile(new File("data/music.json")), List.class, Music.class);
+            musicList = JsonUtils.fromJson(JsonUtils.fromFile(new File(Server.dataFolder.getAbsolutePath() + "/music.json")), List.class, Music.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
