@@ -11,6 +11,7 @@ import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Tile;
+import lombok.var;
 
 public enum TabEmote {
     YES(0, 855),
@@ -118,7 +119,9 @@ public enum TabEmote {
         player.putTemporaryAttribute(AttributeKey.LAST_EMOTE, this);
         Tile tile = player.getPosition().getTile();
         if (tile.emoteAction != null) {
-            tile.emoteAction.accept(player, this);
+            for (var action : tile.emoteAction) {
+                action.accept(player, this);
+            }
         }
         // Emote delay
         AnimationDefinition def = AnimationDefinition.get(animationID);

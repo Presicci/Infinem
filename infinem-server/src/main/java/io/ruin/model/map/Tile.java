@@ -323,7 +323,7 @@ public class Tile {
 
     public Consumer<Player> digAction;
 
-    public BiConsumer<Player, TabEmote> emoteAction;
+    public List<BiConsumer<Player, TabEmote>> emoteAction;
 
     public boolean multi;
 

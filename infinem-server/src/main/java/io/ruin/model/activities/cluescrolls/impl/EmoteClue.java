@@ -744,7 +744,10 @@ public class EmoteClue extends Clue {
             this.stashUnitConfig = stashUnitConfig;
             this.objectId = objectId;
             EmoteClue emoteClue = new EmoteClue(clue, type, equipment, Collections.emptyList(), emotes);
-            bounds.forEachPos(pos -> pos.getTile().emoteAction = emoteClue::spawnUri);
+            bounds.forEachPos(pos -> {
+                if (pos.getTile().emoteAction == null) pos.getTile().emoteAction = new ArrayList<>();
+                pos.getTile().emoteAction.add(emoteClue::spawnUri);
+            });
             StashUnits.registerStashUnit(this, stashUnitConfig, objectId);
         }
 
@@ -759,7 +762,10 @@ public class EmoteClue extends Clue {
             this.objectId = objectId;
             this.setSize = setSize;
             EmoteClue emoteClue = new EmoteClue(clue, type, equipment, Collections.emptyList(), emotes, setSize);
-            bounds.forEachPos(pos -> pos.getTile().emoteAction = emoteClue::spawnUri);
+            bounds.forEachPos(pos -> {
+                if (pos.getTile().emoteAction == null) pos.getTile().emoteAction = new ArrayList<>();
+                pos.getTile().emoteAction.add(emoteClue::spawnUri);
+            });
             StashUnits.registerStashUnit(this, stashUnitConfig, objectId);
         }
 
@@ -773,7 +779,10 @@ public class EmoteClue extends Clue {
             this.stashUnitConfig = stashUnitConfig;
             this.objectId = objectId;
             EmoteClue emoteClue = new EmoteClue(clue, type, equipment, Collections.emptyList(), emotes);
-            bounds.forEachPos(pos -> pos.getTile().emoteAction = emoteClue::spawnUri);
+            bounds.forEachPos(pos -> {
+                if (pos.getTile().emoteAction == null) pos.getTile().emoteAction = new ArrayList<>();
+                pos.getTile().emoteAction.add(emoteClue::spawnUri);
+            });
             StashUnits.registerStashUnit(this, stashUnitConfig, objectId);
         }
 
@@ -787,7 +796,10 @@ public class EmoteClue extends Clue {
             this.stashUnitConfig = null;
             this.objectId = 0;
             EmoteClue emoteClue = new EmoteClue(clue, type, equipment, Collections.emptyList(), emotes);
-            bounds.forEachPos(pos -> pos.getTile().emoteAction = emoteClue::spawnUri);
+            bounds.forEachPos(pos -> {
+                if (pos.getTile().emoteAction == null) pos.getTile().emoteAction = new ArrayList<>();
+                pos.getTile().emoteAction.add(emoteClue::spawnUri);
+            });
         }
 
         EmoteClueData(String clue, List<TabEmote> emotes, Bounds bounds, List<Integer> equipment, List<Integer> emptySlots, ClueType type) {
@@ -800,7 +812,10 @@ public class EmoteClue extends Clue {
             this.stashUnitConfig = null;
             this.objectId = 0;
             EmoteClue emoteClue = new EmoteClue(clue, type, equipment, Collections.emptyList(), emotes);
-            bounds.forEachPos(pos -> pos.getTile().emoteAction = emoteClue::spawnUri);
+            bounds.forEachPos(pos -> {
+                if (pos.getTile().emoteAction == null) pos.getTile().emoteAction = new ArrayList<>();
+                pos.getTile().emoteAction.add(emoteClue::spawnUri);
+            });
         }
     }
 }
