@@ -133,20 +133,26 @@ public class Clue {
                 pointAmount *= (completedClues % 100 == 0 ? 4 : completedClues % 10 == 0 ? 2 : 1);
                 int newAmt = Currency.TREASURE_TRAIL_POINTS.getCurrencyHandler().addCurrency(player, pointAmount);
                 player.sendMessage(Color.GREEN.wrap("<shad=0>You earn " + pointAmount + " treasure trail points. You now have " + newAmt + " points."));
-                if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Random.rollDie(100, def.clueType.relicDupeChance)) {
-                    if (def.clueType != ClueType.MASTER && Random.rollDie(10)) {
-                        int ordinal = def.clueType.ordinal();
-                        ClueType newType = ClueType.values()[ordinal + 1];
-                        if (player.getInventory().hasRoomFor(newType.casketId) || !player.getBank().hasRoomFor(newType.casketId)) {
-                            player.getInventory().addOrDrop(newType.casketId, 1);
-                            player.sendMessage("Your relic duplicates and upgrades your reward casket!");
+                if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER)) {
+                    if (Random.rollDie(100, def.clueType.relicDupeChance)) {
+                        if (def.clueType != ClueType.MASTER && Random.rollDie(10)) {
+                            int ordinal = def.clueType.ordinal();
+                            ClueType newType = ClueType.values()[ordinal + 1];
+                            if (player.getInventory().hasRoomFor(newType.casketId) || !player.getBank().hasRoomFor(newType.casketId)) {
+                                player.getInventory().addOrDrop(newType.casketId, 1);
+                                player.sendMessage("Your relic duplicates and upgrades your reward casket!");
+                            } else {
+                                player.getBank().add(newType.casketId, 1);
+                                player.sendMessage("Your relic duplicates and upgrades your reward casket! It was sent to your bank.");
+                            }
                         } else {
-                            player.getBank().add(newType.casketId, 1);
-                            player.sendMessage("Your relic duplicates and upgrades your reward casket! It was sent to your bank.");
+                            player.getInventory().addOrDrop(def.clueType.casketId, 1);
+                            player.sendMessage("Your relic duplicates your reward casket!");
                         }
-                    } else {
-                        player.getInventory().addOrDrop(def.clueType.casketId, 1);
-                        player.sendMessage("Your relic duplicates your reward casket!");
+                    }
+                    if (Random.rollDie(10 - def.clueType.ordinal())) {
+                        player.getBank().add(2528);
+                        player.sendMessage("Your relic has sent a skill lamp to your bank.");
                     }
                 }
             }
