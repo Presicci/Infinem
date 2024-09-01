@@ -27,22 +27,16 @@ public enum TaskArea {
 
      public final String toString;
 
-     private final int easyRequirement, mediumRequirement, hardRequirement, eliteRequirement;
+     private final int[] tierRequirements;
 
-     TaskArea(String toString, int easyRequirement, int mediumRequirement, int hardRequirement, int eliteRequirement) {
+     TaskArea(String toString, int... tierRequirements) {
           this.toString = toString;
-          this.easyRequirement = easyRequirement;
-          this.mediumRequirement = mediumRequirement;
-          this.hardRequirement = hardRequirement;
-          this.eliteRequirement = eliteRequirement;
+          this.tierRequirements = tierRequirements;
      }
 
-     TaskArea(int easyRequirement, int mediumRequirement, int hardRequirement, int eliteRequirement) {
+     TaskArea(int... tierRequirements) {
           this.toString = StringUtils.capitalizeFirst(super.name().toLowerCase());
-          this.easyRequirement = easyRequirement;
-          this.mediumRequirement = mediumRequirement;
-          this.hardRequirement = hardRequirement;
-          this.eliteRequirement = eliteRequirement;
+          this.tierRequirements = tierRequirements;
      }
 
      @Override
@@ -70,7 +64,7 @@ public enum TaskArea {
      private int getPointThreshold(AreaTaskTier tier) {
           EnumDefinition tierEnum = EnumDefinition.get(9101);
           Map<Integer, Integer> tiers = tierEnum.getValuesAsInts();
-          return tiers.get(tier.ordinal());
+          return tiers.get(tierRequirements[tier.ordinal()]);
      }
 
      public static TaskArea getTaskArea(String name) {
