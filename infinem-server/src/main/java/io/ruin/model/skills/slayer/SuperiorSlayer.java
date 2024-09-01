@@ -2,6 +2,7 @@ package io.ruin.model.skills.slayer;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
@@ -30,7 +31,7 @@ public class SuperiorSlayer {
         if (superior == -1 || superior == npc.getId()) {
             return;
         }
-        int chance = 200;   // 1/200 chance of appearing by default
+        int chance = player.getRelicManager().hasRelic(Relic.MONSTER_HUNTER) ? 100 : 200;   // 1/200 chance of appearing by default
         if (Random.get(chance) == 1) {
             NPC monster = new NPC(superior);
             monster.spawn(npc.getPosition());
