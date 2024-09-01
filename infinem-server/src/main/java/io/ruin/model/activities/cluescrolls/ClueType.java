@@ -967,7 +967,7 @@ public enum ClueType {
                     new LootItem(12409, 5, 15, 525),   //Tai bwo wannai teleport
                     new LootItem(12642, 5, 15, 525),   //Lumberyard teleport
                     new LootItem(12410, 5, 15, 525),   //Iorwerth camp teleport
-                    new LootItem(21387, 1, 1, 300),   //Master scroll book (empty)
+                    new LootItem(21389, 1, 1, 300),   //Master scroll book (empty)
                     new LootItem(3827, 1, 1, 141),   //Saradomin page 1
                     new LootItem(3828, 1, 1, 141),   //Saradomin page 2
                     new LootItem(3829, 1, 1, 141),   //Saradomin page 3
@@ -1025,7 +1025,7 @@ public enum ClueType {
                     new LootItem(12409, 5, 15, 525),   //Tai bwo wannai teleport
                     new LootItem(12642, 5, 15, 525),   //Lumberyard teleport
                     new LootItem(12410, 5, 15, 525),   //Iorwerth camp teleport
-                    new LootItem(21387, 1, 1, 300),   //Master scroll book (empty)
+                    new LootItem(21389, 1, 1, 300),   //Master scroll book (empty)
                     new LootItem(3827, 1, 1, 141),   //Saradomin page 1
                     new LootItem(3828, 1, 1, 141),   //Saradomin page 2
                     new LootItem(3829, 1, 1, 141),   //Saradomin page 3
