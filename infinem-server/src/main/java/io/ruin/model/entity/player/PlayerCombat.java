@@ -351,36 +351,6 @@ public class PlayerCombat extends Combat {
             }
             updateLastAttack(4);
         }
-        if (weaponDef.id == CorruptedStaff.CHARGED) {
-            if (target.player != null) {
-                player.sendMessage(Color.RED.wrap("This staff's spell cannot be used against other players."));
-                return;
-            }
-            player.animate(1167);
-            player.graphics(5008, 92, 0);
-            int duration = new Projectile(5013, 75, 36, 51, 56, 10, 16, 11).send(player, target);
-            Hit hit = new Hit(player, AttackStyle.MAGIC, getAttackType()).randDamage(getCorruptedStaffMaxDamage()).clientDelay(duration).setAttackWeapon(weaponDef);
-            int damage = target.hit(hit);
-            if (damage > 0) {
-                int curr = -1;
-                int fixed = -1;
-                if (target != null && target.npc.getCombat() != null) {
-                    curr = target.npc.getCombat().getStat(StatType.Defence).currentLevel;
-                    fixed = target.npc.getCombat().getStat(StatType.Defence).fixedLevel;
-                }
-                double ratio = (double) curr / fixed;
-                if (Random.rollDie(6, 1) && ratio > 0.9) {
-                    target.npc.getCombat().getStat(StatType.Defence).drain(0.9);
-                    target.graphics(5012, 0, duration - 60);
-                } else {
-                    target.graphics(5010, 120, duration - 60);
-                }
-            } else {
-                hit.nullify();
-                target.graphics(85, 92, duration - 60);
-            }
-            updateLastAttack(4);
-        }
     }
 
     public int getCorruptedStaffMaxDamage() {
