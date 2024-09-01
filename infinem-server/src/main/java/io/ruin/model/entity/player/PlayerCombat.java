@@ -506,37 +506,7 @@ public class PlayerCombat extends Combat {
             target.hit(hit);
             if (chins) {
                 target.graphics(157, 100, delay);
-                if (target.inMulti()) {
-                    int entityIndex = player.getClientIndex();
-                    int targetIndex = target.getClientIndex();
-                    int targetCount = 0;
-                    for(Player plr : target.localPlayers()) {
-                        int playerIndex = plr.getClientIndex();
-                        if(playerIndex == entityIndex || playerIndex == targetIndex)
-                            continue;
-                        if(!plr.getPosition().isWithinDistance(target.getPosition(), 1))
-                            continue;
-                        if(!player.getCombat().canAttack(plr, false))
-                            continue;
-                        plr.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
-                        if(++targetCount >= 9)
-                            break;
-                    }
-                    for(NPC npc : target.localNpcs()) {
-                        int npcIndex = npc.getClientIndex();
-                        if (npcIndex == entityIndex || npcIndex == targetIndex)
-                            continue;
-                        if (!npc.getPosition().isWithinDistance(target.getPosition(), 1))
-                            continue;
-                        if (npc.getDef().ignoreMultiCheck)
-                            continue;
-                        if (!player.getCombat().canAttack(npc, false))
-                            continue;
-                        npc.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
-                        if (++targetCount >= 9)
-                            break;
-                    }
-                }
+                aoeAttack(maxDamage, delay, 9);
             }
         } else {
             if(rangedData.doubleDrawbackId != -1)
@@ -1794,7 +1764,7 @@ public class PlayerCombat extends Combat {
         return specialActive != null;
     }
 
-    public static void checkJuggernautThorns(Player player, Hit hit) {
+    private static void checkJuggernautThorns(Player player, Hit hit) {
         if (!player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT))
             return;
         if(hit.attacker == null || hit.attackStyle == null)
@@ -1803,5 +1773,47 @@ public class PlayerCombat extends Combat {
         if(damage == 0)
             return;
         hit.attacker.hit(new Hit().fixedDamage(damage));
+    }
+
+    private void aoeAttack(int maxDamage, int delay, int targetCap) {
+        Item wep = player.getEquipment().get(Equipment.SLOT_WEAPON);
+        if (wep == null) {
+            /* obviously should never happen */
+            return;
+        }
+        ItemDefinition wepDef = wep.getDef();
+        AttackStyle style = attackSet.style;
+        AttackType type = attackSet.type;
+        if (target.inMulti()) {
+            int entityIndex = player.getClientIndex();
+            int targetIndex = target.getClientIndex();
+            int targetCount = 0;
+            for (Player plr : target.localPlayers()) {
+                int playerIndex = plr.getClientIndex();
+                if (playerIndex == entityIndex || playerIndex == targetIndex)
+                    continue;
+                if (!plr.getPosition().isWithinDistance(target.getPosition(), 1))
+                    continue;
+                if (!player.getCombat().canAttack(plr, false))
+                    continue;
+                plr.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
+                if (++targetCount >= targetCap)
+                    break;
+            }
+            for (NPC npc : target.localNpcs()) {
+                int npcIndex = npc.getClientIndex();
+                if (npcIndex == entityIndex || npcIndex == targetIndex)
+                    continue;
+                if (!npc.getPosition().isWithinDistance(target.getPosition(), 1))
+                    continue;
+                if (npc.getDef().ignoreMultiCheck)
+                    continue;
+                if (!player.getCombat().canAttack(npc, false))
+                    continue;
+                npc.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
+                if (++targetCount >= targetCap)
+                    break;
+            }
+        }
     }
 }
