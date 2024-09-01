@@ -922,6 +922,13 @@ public class PlayerCombat extends Combat {
             salveAmuletBoost(player, hit, target);
             amuletOfAvariceBoost(player, hit, target);
         }
+        if (player.getRelicManager().hasRelic(Relic.MONSTER_HUNTER)) {
+            if (hit.attackStyle != null && target.npc != null && (Slayer.isTask(player, target.npc)
+                    || target.npc.getId() == 7413)) {
+                hit.boostAttack(0.1);
+                hit.boostDamage(0.1);
+            }
+        }
         SetEffect.DHAROK.checkAndApply(player, target, hit);
         SetEffect.VERAC.checkAndApply(player, target, hit);
         SetEffect.AHRIM_DAMNED.checkAndApply(player, target, hit);
