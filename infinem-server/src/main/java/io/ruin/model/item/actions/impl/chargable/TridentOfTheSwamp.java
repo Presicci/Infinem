@@ -1,6 +1,8 @@
 package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Hit;
@@ -75,6 +77,7 @@ public class TridentOfTheSwamp {
     }
 
     private static void consumeCharge(Player player, Item staff, Hit hit, Entity entity) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(10, 3)) return;
         if (AttributeExtensions.getCharges(staff) > 0) {
             AttributeExtensions.deincrementCharges(staff, 1);
         }

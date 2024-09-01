@@ -1,6 +1,8 @@
 package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Hit;
@@ -48,6 +50,7 @@ public class TridentOfTheSeas {
     }
 
     private static void consumeCharge(Player player, Item item, Hit hit, Entity entity) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(10, 3)) return;
         if (item.getId() == FULLY_CHARGED) {
             item.setId(CHARGED);
             item.putAttribute(AttributeTypes.CHARGES, 2499);
