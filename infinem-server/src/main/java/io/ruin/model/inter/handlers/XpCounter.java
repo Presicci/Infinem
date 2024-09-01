@@ -18,11 +18,12 @@ public class XpCounter {
              * Toggle
              */
             boolean enabled = Config.XP_COUNTER_SHOWN.toggle(player) == 1;
-            int childId = player.isFixedScreen() ? 16 : 7;
-            if(enabled)
+            int childId = player.isFixedScreen() ? 16 : 9;
+            if(enabled) {
                 player.getPacketSender().sendInterface(122, player.getGameFrameId(), childId, 1);
-            else
+            } else {
                 player.getPacketSender().removeInterface(player.getGameFrameId(), childId);
+            }
         } else {
             /**
              * Setup

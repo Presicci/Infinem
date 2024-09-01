@@ -78,7 +78,7 @@ public class DisplayHandler implements Incoming {
             ps.sendInterface(160, 165, 24 + tabChildOffset, 1);
 
         if(Config.XP_COUNTER_SHOWN.get(player) == 1)
-            ps.sendInterface(122, 165, 3 + tabChildOffset, 1);
+            ps.sendInterface(122, 165, 2 + tabChildOffset, 1);
 
         //ps.sendInterface(378, 165, 28, 0); //welcome screen pt1
         //ps.sendInterface(50, 165, 27, 0); //welcome screen pt2
