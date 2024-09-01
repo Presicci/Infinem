@@ -24,25 +24,47 @@ public class HomeTeleport extends Spell {
     private static final List<HomeTeleportOverride> OVERRIDES = new LinkedList<>();
 
     private HomeTeleport(Consumer<Player> consumer) {
-        clickAction = (p, i) -> {
-            if(p.wildernessLevel > 0) {
-                if(p.getCombat().isDefending(16)) {
-                    p.sendMessage("You can't cast this spell while in combat in the wilderness.");
-                    return;
-                }
-            } else if(p.pvpAttackZone) {
-                if(p.getCombat().isDefending(16)) {
-                    p.sendMessage("You can't cast this spell while in combat in a pvp zone.");
+        clickAction = (player, i) -> {
+            if (player.getCombat().isDefending(16)) {
+                player.sendMessage("You can't cast this spell while in combat.");
+                return;
+            }
+            if (player.pvpAttackZone) {
+                if (player.getCombat().isDefending(16)) {
+                    player.sendMessage("You can't cast this spell while in combat in a pvp zone.");
                     return;
                 }
             }
-            Position override = getHomeTeleportOverride(p);
-            p.getTaskManager().doLookupByUUID(64, 1);   // Cast Home Teleport
-            if (override != null) {
-                ModernTeleport.teleport(p, override.getX(), override.getY(), override.getZ());
-            } else {
-                consumer.accept(p);
+            if (player.isLocked())
+                return;
+            if (player.teleportListener != null && !player.teleportListener.allow(player))
+                return;
+            if (player.wildernessLevel > 20) {
+                player.sendMessage("You cannot teleport from over " + 20 + " wilderness.");
+                return;
             }
+            if (player.getCombat().checkTb())
+                return;
+            Position override = getHomeTeleportOverride(player);
+            player.startEvent(e -> {
+                player.animate(4847);
+                player.graphics(800);
+                e.delay(6);
+                player.animate(4850);
+                e.delay(4);
+                player.animate(4853);
+                player.graphics(802);
+                e.delay(4);
+                player.animate(4855);
+                player.graphics(803);
+                e.delay(4);
+                player.animate(4857);
+                player.graphics(804);
+                e.delay(3);
+                player.animate(-1);
+                player.getTaskManager().doLookupByUUID(64, 1);   // Cast Home Teleport
+                player.getMovement().teleport(World.HOME);
+            });
         };
     }
 
