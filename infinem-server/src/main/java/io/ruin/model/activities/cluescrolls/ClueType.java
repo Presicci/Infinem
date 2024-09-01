@@ -5,6 +5,7 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.cluescrolls.impl.AnagramClue;
 import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBoxType;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
@@ -1092,8 +1093,13 @@ public enum ClueType {
                 }
             }
             save.id = Random.get(clues).id;
-            if(save.remaining == 0)
-                save.remaining = Random.get(minStages, maxStages);
+            if(save.remaining == 0) {
+                if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER)) {
+                    save.remaining = Random.get(Math.max(1, minStages - 1), Math.max(1, maxStages - 1));
+                } else {
+                    save.remaining = Random.get(minStages, maxStages);
+                }
+            }
         }
         Clue.CLUES[save.id].open(player);
     }
