@@ -130,7 +130,7 @@ public enum Master {
     }
 
     private void giveTask(Player player) {
-        if (PartnerSlayer.getSlayerLevel(player) < 50 && PartnerSlayer.getCombatLevel(player) < 100) {
+        if (PartnerSlayer.getSlayerLevel(player) < slayerRequirement && PartnerSlayer.getCombatLevel(player) < combatRequirement) {
             if (PartnerSlayer.hasPartner(player)) {
                 player.dialogue(new NPCDialogue(npcId, "Sorry, but you and your partner are not strong enough to be taught by me, you need " + (slayerRequirement > 1 ? slayerRequirement + " slayer and " : "") + combatRequirement + " combat!"));
             } else {
