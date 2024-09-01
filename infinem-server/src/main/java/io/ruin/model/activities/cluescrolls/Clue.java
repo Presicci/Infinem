@@ -136,8 +136,13 @@ public class Clue {
                     if (def.clueType != ClueType.MASTER && Random.rollDie(10)) {
                         int ordinal = def.clueType.ordinal();
                         ClueType newType = ClueType.values()[ordinal + 1];
-                        player.getInventory().addOrDrop(newType.casketId, 1);
-                        player.sendMessage("Your relic duplicates and upgrades your reward casket!");
+                        if (player.getInventory().hasRoomFor(newType.casketId) || !player.getBank().hasRoomFor(newType.casketId)) {
+                            player.getInventory().addOrDrop(newType.casketId, 1);
+                            player.sendMessage("Your relic duplicates and upgrades your reward casket!");
+                        } else {
+                            player.getBank().add(newType.casketId, 1);
+                            player.sendMessage("Your relic duplicates and upgrades your reward casket! It was sent to your bank.");
+                        }
                     } else {
                         player.getInventory().addOrDrop(def.clueType.casketId, 1);
                         player.sendMessage("Your relic duplicates your reward casket!");
