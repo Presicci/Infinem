@@ -1,6 +1,6 @@
 [
   { //
-  "ids": [ 15021 ],
+  "ids": [  ],
   "handler": "io.ruin.model.activities.combat.bosses.KaalKetJor",
   //Combat Info
   "hitpoints": 2500,

@@ -1,6 +1,6 @@
 [
   { // Brutal black dragon (15018)
-  "ids": [ 15019 ],
+  "ids": [  ],
   "handler": "io.ruin.model.activities.combat.bosses.BrutalLavaDragon",
   //Combat Info
   "hitpoints": 5000,

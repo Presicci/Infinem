@@ -1,6 +1,6 @@
 [
   { // Tornado (15024)
-  "ids": [ 15024 ],
+  "ids": [  ],
   "handler": "",
   //Combat Info
   "hitpoints": 200,

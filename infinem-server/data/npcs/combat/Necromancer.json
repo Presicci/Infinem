@@ -1,6 +1,6 @@
 [
   { // Necromancer (15003)
-  "ids": [ 15003 ],
+  "ids": [  ],
   "handler": "io.ruin.model.activities.combat.bosses.necromancer.Necromancer",
   //Combat Info
   "hitpoints": 1200,
