@@ -37,7 +37,7 @@ public enum ActivitySpotlight {
     }
 
     public static void cycleSpotlight() {
-        activeSpotlight = ActivitySpotlight.values()[Random.get(ActivitySpotlight.values().length - 1)];
+        activeSpotlight = Random.get(getPossibleActivities());
         Broadcast.ACTIVITY_SPOTLIGHT.sendNews("<col=d9a414><shad=0>The activity spotlight is now: " + StringUtils.capitalizeFirst(activeSpotlight.toString().toLowerCase().replace("_", " ")));
     }
 
