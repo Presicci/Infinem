@@ -88,6 +88,8 @@ public enum Relic {
     DEADEYE(4, 1, 10499),
     JUGGERNAUT(4, 2),
     ARCHMAGE(4, 3, 12791, 26551),
+    TREASURE_HUNTER(5, 1),
+    MONSTER_HUNTER(5, 2)
     ;
 
     @Getter private final int tier, configValue;

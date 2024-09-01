@@ -22,7 +22,9 @@ public enum InterfaceRelic {
     DUNGEON_HUB_PREMIUM(729, Relic.DUNGEON_HUB_PREMIUM),
     DEADEYE(1728, Relic.DEADEYE),
     JUGGERNAUT(1729, Relic.JUGGERNAUT),
-    ARCHMAGE(1730, Relic.ARCHMAGE),;
+    ARCHMAGE(1730, Relic.ARCHMAGE),
+    TRESURE_HUNTER(1732, Relic.TREASURE_HUNTER),
+    MONSTER_HUNTER(4718, Relic.MONSTER_HUNTER);
 
     private final int struct;
     private final Relic relic;
