@@ -6,6 +6,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.content.bestiary.perks.impl.GoldPickupPerk;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.ConditionalNPCLootTable;
 import io.ruin.utility.Color;
@@ -592,6 +593,12 @@ public class NPCDrops {
             handleDrop(killer, pos, player, Collections.singletonList(new Item(20736)));    // Dust battlestaff
         }
         player.getTaskManager().doLookupByCategory(TaskCategory.SUPERIORKILL, 1, true);
+        if (player.getRelicManager().hasRelic(Relic.MONSTER_HUNTER)) {
+            int slayerLevel = npc.getCombat().getInfo().slayer_level;
+            int points = Math.max(1, (int) Math.ceil(slayerLevel / 10D));
+            Config.SLAYER_POINTS.increment(player, points);
+            player.sendMessage("Slaying the superior has rewarded you with " + points + " slayer points.");
+        }
     }
 
     /*
