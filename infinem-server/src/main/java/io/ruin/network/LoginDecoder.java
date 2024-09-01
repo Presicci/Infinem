@@ -194,7 +194,7 @@ public class LoginDecoder extends MessageDecoder<Channel> {
         String uuid = "";//in.readString();
         String name = in.readString();
         Pattern pattern = Pattern.compile("[A-Za-z0-9_ ]+");
-        if(name == null || name.length() > 12 || name.length() < 3 || (name = name.trim()).isEmpty() || !pattern.matcher(name).matches() || password == null || (password = password.trim()).isEmpty()) {
+        if(name == null || name.length() > 12 || (name = name.trim()).isEmpty() || !pattern.matcher(name).matches() || password == null || (password = password.trim()).isEmpty()) {
             /**
              * Invalid login
              */

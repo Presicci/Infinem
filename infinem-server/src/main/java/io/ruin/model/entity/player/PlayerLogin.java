@@ -77,6 +77,10 @@ public class PlayerLogin extends LoginRequest {
             }
             int returnCode = phpbbAuth();
             if (returnCode == -1) {
+                if (info.name.length() < 3) {
+                    deny(Response.INVALID_LOGIN);
+                    return;
+                }
                 if (player.getPassword() != null && player.getPassword().contains(":") && !info.password.equals(decrypt("6YUYrFblfufvV0m9", player.getPassword()))) {
                     deny(Response.INVALID_LOGIN);
                     return;
