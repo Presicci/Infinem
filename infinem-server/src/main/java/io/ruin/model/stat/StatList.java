@@ -241,7 +241,7 @@ public class StatList {
                 && type == StatType.Farming
                 && MapArea.FALADOR_FARM.inArea(player))
             multi *= 1.1;
-        if (MapArea.SLAYER_TOWER.inArea(player) && AreaReward.SLAYER_EXPERIENCE_25.hasReward(player))
+        if (type == StatType.Slayer && MapArea.SLAYER_TOWER.inArea(player) && AreaReward.SLAYER_EXPERIENCE_25.hasReward(player))
             multi *= AreaReward.SLAYER_EXPERIENCE_100.hasReward(player) ? 1.1
                     : AreaReward.SLAYER_EXPERIENCE_75.hasReward(player) ? 1.075
                     : AreaReward.SLAYER_EXPERIENCE_50.hasReward(player) ? 1.05
