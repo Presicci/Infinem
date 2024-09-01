@@ -7,6 +7,8 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.Tile;
 
+import java.util.ArrayList;
+
 public class MapClue extends Clue {
 
     private final int interfaceId;
@@ -27,7 +29,9 @@ public class MapClue extends Clue {
 
     private static void registerDig(int interfaceId, int x, int y, int z, ClueType type) {
         MapClue clue = new MapClue(interfaceId, type);
-        Tile.get(x, y, z, true).digAction = clue::advance;
+        Tile tile = Tile.get(x, y, z, true);
+        if (tile.digAction == null) tile.digAction = new ArrayList<>();
+        tile.digAction.add(clue::advance);
     }
 
     private static void registerObj(int interfaceId, int objectId, int x, int y, int z, ClueType type) {

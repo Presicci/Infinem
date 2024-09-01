@@ -9,6 +9,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,9 @@ public class CrypticClue extends Clue {
      */
     private static void registerDig(String clue, int x, int y, int z, ClueType type) {
         CrypticClue cryptic = new CrypticClue(clue, type);
-        Tile.get(x, y, z, true).digAction = cryptic::advance;
+        Tile tile = Tile.get(x, y, z, true);
+        if (tile.digAction == null) tile.digAction = new ArrayList<>();
+        tile.digAction.add(cryptic::advance);
     }
 
     static {

@@ -10,6 +10,8 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 
+import java.util.ArrayList;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 3/24/2022
@@ -52,14 +54,16 @@ public class CoordinateClue extends Clue {
         String clue = twoDigitInt(degY) + " degrees " + twoDigitInt(minY) + " minutes " + (north ? "north" : "south") + ",<br>"
                 + twoDigitInt(degX) + " degrees " + twoDigitInt(minX) + " minutes " + (east ? "east" : "west");
         CoordinateClue coordinateClue = new CoordinateClue(type, clue);
+        Tile tile = Tile.get(x, y, position.getZ(), true);
+        if (tile.digAction == null) tile.digAction = new ArrayList<>();
         if (type == ClueType.HARD) {
-            Tile.get(x, y, position.getZ(), true).digAction = (player -> ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 2955));
+            tile.digAction.add((player -> ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 2955)));
         } else if (type == ClueType.ELITE) {
-            Tile.get(x, y, position.getZ(), true).digAction = (player -> ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 6587, 6588));
+            tile.digAction.add(player -> ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 6587, 6588));
         } else if (type == ClueType.MASTER) {
-            Tile.get(x, y, position.getZ(), true).digAction = (player -> ClueEnemies.ancientOrBrassicanDig(coordinateClue, player));
+            tile.digAction.add(player -> ClueEnemies.ancientOrBrassicanDig(coordinateClue, player));
         } else {
-            Tile.get(x, y, position.getZ(), true).digAction = coordinateClue::advance;
+            tile.digAction.add(coordinateClue::advance);
         }
     }
 

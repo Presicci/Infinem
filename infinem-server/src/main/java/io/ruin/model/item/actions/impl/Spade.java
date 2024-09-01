@@ -4,13 +4,17 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Tile;
+import lombok.var;
 
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class Spade {
 
     public static void registerDig(int x, int y, int z, Consumer<Player> action) {
-        Tile.get(x, y, z, true).digAction = action;
+        Tile tile = Tile.get(x, y, z, true);
+        if (tile.digAction == null) tile.digAction = new ArrayList<>();
+        tile.digAction.add(action);
     }
 
     public static void registerDig(Bounds bounds, Consumer<Player> action) {
@@ -31,8 +35,11 @@ public class Spade {
             player.unlock();
             if(tile == null || tile.digAction == null)
                 player.sendMessage("Nothing interesting happens.");
-            else
-                tile.digAction.accept(player);
+            else {
+                for (var action : tile.digAction) {
+                    action.accept(player);
+                }
+            }
         });
     }
 

@@ -21,6 +21,8 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import lombok.AllArgsConstructor;
 
+import java.util.ArrayList;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 3/21/2022
@@ -111,7 +113,9 @@ public class HotColdClue extends Clue {
         for(int x = originalBounds.swX; x <= originalBounds.neX; x++) {
             for(int y = originalBounds.swY; y <= originalBounds.neY; y++) {
                 Position position = new Position(x, y, originalPosition.getZ());
-                Tile.get(position, true).digAction = (player) -> ClueEnemies.ancientOrBrassicanDig(clue, player);
+                Tile tile = Tile.get(position, true);
+                if (tile.digAction == null) tile.digAction = new ArrayList<>();
+                tile.digAction.add((player) -> ClueEnemies.ancientOrBrassicanDig(clue, player));
             }
         }
     }

@@ -321,7 +321,7 @@ public class Tile {
      * Misc vars
      */
 
-    public Consumer<Player> digAction;
+    public List<Consumer<Player>> digAction;
 
     public List<BiConsumer<Player, TabEmote>> emoteAction;
 
