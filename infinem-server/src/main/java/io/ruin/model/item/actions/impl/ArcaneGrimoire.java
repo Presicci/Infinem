@@ -21,7 +21,7 @@ public class ArcaneGrimoire {
     private static final int GRIMOIRE = 26551;
 
     private static void changeSpellbook(Player player) {
-        if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
             player.sendMessage("You need the Archmage relic and be out of the wilderness to use the Grimoire.");
             return;
         }
@@ -37,7 +37,7 @@ public class ArcaneGrimoire {
     }
 
     private static void lastSpellbook(Player player) {
-        if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
             player.sendMessage("You need the Archmage relic and be out of the wilderness to use the Grimoire.");
             return;
         }
@@ -45,7 +45,7 @@ public class ArcaneGrimoire {
     }
 
     private static void checkLast(Player player) {
-        if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
             player.sendMessage("You need the Archmage relic and be out of the wilderness to use the Grimoire.");
             return;
         }
