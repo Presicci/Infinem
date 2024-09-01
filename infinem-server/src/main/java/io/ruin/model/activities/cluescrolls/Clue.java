@@ -132,7 +132,7 @@ public class Clue {
                 player.sendMessage(message);
                 pointAmount *= (completedClues % 100 == 0 ? 4 : completedClues % 10 == 0 ? 2 : 1);
                 int newAmt = Currency.TREASURE_TRAIL_POINTS.getCurrencyHandler().addCurrency(player, pointAmount);
-                player.sendMessage(Color.GREEN.wrap("You earn " + pointAmount + " treasure trail points. You now have " + newAmt + " points."));
+                player.sendMessage(Color.GREEN.wrap("<shad=0>You earn " + pointAmount + " treasure trail points. You now have " + newAmt + " points."));
                 if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Random.rollDie(100, def.clueType.relicDupeChance)) {
                     if (def.clueType != ClueType.MASTER && Random.rollDie(10)) {
                         int ordinal = def.clueType.ordinal();
