@@ -98,7 +98,8 @@ public class Clue {
             if(--save.remaining > 0) {
                 player.dialogue(new ItemDialogue().one(def.clueType.clueId, "Good job, you are now one step closer to completing your clue scroll."));
             } else {
-                item.setId(def.clueType.casketId);
+                item.remove();
+                player.getInventory().add(def.clueType.casketId);
                 String message = "Great job, you have completed your clue scroll!";
                 int completedClues = 0;
                 int pointAmount = 1;
