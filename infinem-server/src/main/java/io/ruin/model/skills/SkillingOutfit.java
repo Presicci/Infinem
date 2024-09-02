@@ -2,6 +2,7 @@ package io.ruin.model.skills;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Items;
+import io.ruin.model.skills.woodcutting.Woodcutting;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -31,6 +32,12 @@ public enum SkillingOutfit {
             new SkillingOutfitPiece(0.008, Items.PROSPECTOR_JACKET, Items.VARROCK_ARMOUR_4, 25551),
             new SkillingOutfitPiece(0.006, Items.PROSPECTOR_LEGS, 25553),
             new SkillingOutfitPiece(0.002, Items.PROSPECTOR_BOOTS, 25555)
+    ),
+    LUMBERJACK(StatType.Woodcutting, 0.005,
+            new SkillingOutfitPiece(0.004, Items.LUMBERJACK_HAT),
+            new SkillingOutfitPiece(0.008, Items.LUMBERJACK_TOP),
+            new SkillingOutfitPiece(0.006, Items.LUMBERJACK_LEGS),
+            new SkillingOutfitPiece(0.002, Items.LUMBERJACK_BOOTS)
     );
 
     private final StatType statType;
