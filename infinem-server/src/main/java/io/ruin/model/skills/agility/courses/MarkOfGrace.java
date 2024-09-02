@@ -17,7 +17,7 @@ public class MarkOfGrace {
     public static void rollMark(Player player, int levelReq, List<Position> spawns) {
         if (spawns == null)
             return;
-        double chance = levelReq / 2D / 100D;
+        double chance = levelReq / 100D;
         if (Random.get() <= chance) {
             Position spawn = Random.get(spawns);
             int amount = (Random.get(1, 4) + markOfGraceDonatorIncrease(player)) * (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_MARKS_OF_GRACE) ? 2 : 1);
