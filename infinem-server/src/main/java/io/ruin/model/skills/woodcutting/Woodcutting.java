@@ -13,6 +13,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.BirdNest;
 import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
@@ -30,7 +31,10 @@ import io.ruin.model.skills.firemaking.Burning;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.event.EventConsumer;
+import io.ruin.utility.Color;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class Woodcutting {
@@ -161,6 +165,7 @@ public class Woodcutting {
                     rollBirdNest(player, treeData);
                     rollClueNest(player, treeData);
                     rollPet(player, treeData);
+                    rollOutfitPiece(player, treeData);
                     treeData.counter.increment(player, amount);
                     double xp = treeData.experience;
                     player.getStats().addXp(StatType.Woodcutting, xp * amount, true);
@@ -196,6 +201,25 @@ public class Woodcutting {
     private static void rollPet(Player player, Tree tree) {
         if (Random.rollDie(tree.petOdds - (player.getStats().get(StatType.Woodcutting).currentLevel * 25)))
             Pet.BEAVER.unlock(player);
+    }
+
+    private static final List<Integer> OUTFIT_PIECES = Arrays.asList(Items.LUMBERJACK_BOOTS, Items.LUMBERJACK_HAT, Items.LUMBERJACK_LEGS, Items.LUMBERJACK_TOP);
+
+    private static void rollOutfitPiece(Player player, Tree tree) {
+        if (Random.rollDie((tree.petOdds / 100) - (player.getStats().get(StatType.Woodcutting).currentLevel * 100))) {
+            for (int itemId : OUTFIT_PIECES) {
+                if (player.findItem(itemId) == null) {
+                    if (player.getInventory().hasRoomFor(itemId)) {
+                        player.sendMessage(Color.RED.wrap("<shad=0>You find a lumberjack piece while woodcutting!"));
+                        player.getInventory().add(itemId);
+                    } else {
+                        player.sendMessage(Color.RED.wrap("<shad=0>You find a lumberjack piece while woodcutting! It was sent to your bank."));
+                        player.getBank().add(itemId);
+                    }
+                    return;
+                }
+            }
+        }
     }
 
     protected static void rollBirdNest(Player player, Tree tree) {
