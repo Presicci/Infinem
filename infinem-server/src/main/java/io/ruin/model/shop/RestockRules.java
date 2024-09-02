@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 public class RestockRules {
 
     public static final RestockRules generateDefault() {
-        return new RestockRules(52, 1);//XXX this is OSRS default rate
+        return new RestockRules(10, 1);//XXX this is OSRS default rate
     }
 
     public RestockRules(int restockTicks, int restockPerTick) {
