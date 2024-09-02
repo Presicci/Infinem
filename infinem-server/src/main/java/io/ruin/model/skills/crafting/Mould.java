@@ -2,6 +2,7 @@ package io.ruin.model.skills.crafting;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -103,7 +104,9 @@ public enum Mould {
                 player.getInventory().add(mould.jewellery, 1);
                 player.getStats().addXp(StatType.Crafting, mould.exp, true);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MOULD_JEWL, ItemDefinition.get(mould.jewellery).name);
-                event.delay(1);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    event.delay(1);
+                }
             }
         });
     }
@@ -157,7 +160,9 @@ public enum Mould {
                     player.getInventory().add(MOLTEN_GLASS, 1);
                 }
                 player.getStats().addXp(StatType.Crafting, 10, true);
-                event.delay(2);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    event.delay(2);
+                }
             }
             player.resetAnimation();
         });
