@@ -3976,5 +3976,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Hatius Cosaintus",
+    "id": 5523,
+    "x": 3233,
+    "y": 3214,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
