@@ -194,7 +194,7 @@ public enum Mould {
             /*
              * Necklaces
              */
-            h.actions[GOLD_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, GOLD_RING);
+            h.actions[GOLD_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, GOLD_NECKLACES);
             h.actions[SAPPHIRE_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, SAPPHIRE_NECKLACES);
             h.actions[EMERALD_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, EMERALD_NECKLACES);
             h.actions[RUBY_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, RUBY_NECKLACES);
