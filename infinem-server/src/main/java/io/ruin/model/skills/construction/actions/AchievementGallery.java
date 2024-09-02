@@ -123,6 +123,9 @@ public class AchievementGallery {
                         return;
                     values()[slot].teleport(p);
                 };
+                h.closedAction = (player, integer) -> {
+                    player.getPacketSender().sendClientScript(927, "1",  1);
+                };
             });
         }
     }
