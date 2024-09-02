@@ -31,12 +31,8 @@ public class Regular {
 
             case "commands": {
                 player.sendScroll("<col=800000>Commands</col>",
-                        "<col=800000>Teleport Commands:</col>",
-                        "::home", "::stake",
-                        "::cammypvp", "::fallypvp", "::lumbpvp",
-                        "",
                         "<col=800000>Misc Commands:</col>",
-                        "::help", "::yell", "::skull",
+                        "::yell", "::skull",
                         "",
                         "<col=800000>Website Commands:</col>",
                         "::store", "::vote", "::guides", "::support", "::forums", "::scores", "::discord", "::thread #", "::member #"
@@ -54,78 +50,7 @@ public class Regular {
                 );
                 return true;
             }
-            /*
-             * Teleport commands
-             */
-            case "ev":
-            case "edgeville":
-            case "edge": {
-                CommandHandler.teleport(player, 3085, 3492, 0);
-                return true;
-            }
 
-            case "home": {
-                CommandHandler.teleport(player, World.HOME);
-                return true;
-            }
-
-            case "arena":
-            case "stake":
-            case "duel":
-            case "da": {
-                CommandHandler.teleport(player, 3367, 3265, 0);
-                return true;
-            }
-
-            case "cammypvp": {
-                CommandHandler.teleport(player, 134, 87, 0);
-                return true;
-            }
-            case "fallypvp": {
-                CommandHandler.teleport(player, 129, 362, 0);
-                return true;
-            }
-            case "lumbpvp": {
-                CommandHandler.teleport(player, 87, 467, 0);
-                return true;
-            }
-            case "tournament": {
-                CommandHandler.teleport(player, 3095, 3469, 0);
-                return true;
-            }
-            case "lastmanstanding":
-            case "lms": {
-                CommandHandler.teleport(player, 3405, 3178, 0);
-                return true;
-            }
-
-            /*
-             * Misc commands
-             */
-            case "help": {  //  TODO go through and edit the different help menus
-                if (args != null && args.length > 0) {
-                    try {
-                        Help.open(player, Integer.parseInt(args[0]));
-                    } catch (Exception e) {
-                        player.sendMessage("Invalid command usage. Example: [::help 1]");
-                    }
-                    return true;
-                }
-                Help.open(player);
-                return true;
-            }
-
-            case "bankitems": {
-                int slots = player.getBank().getItems().length;
-                for (int slot = 0; slot < slots; slot++) {
-                    BankItem item = player.getBank().get(slot);
-                    if (item == null)
-                        continue;
-                    System.out.println("ID: " + item.getId() + ", Slot: "
-                            + item.getSlot() + ", " + slot);
-                }
-                return true;
-            }
 
             case "players": {
                 int players = World.players.count();
@@ -273,58 +198,32 @@ public class Regular {
                 return true;
             }
             case "updates": {
-                player.openUrl(World.type.getWorldName() + " Updates", "https://community.kronos.rip/index.php?forums/news-updates.2/");
+                player.openUrl(World.type.getWorldName() + " Updates", "https://www.infinem.net/forums/viewforum.php?f=5");
                 return true;
             }
             case "rules": {
-                player.openUrl(World.type.getWorldName() + " Rules", "https://community.kronos.rip/index.php?threads/official-rules.73/");
+                player.openUrl(World.type.getWorldName() + " Rules", "https://www.infinem.net/forums/viewforum.php?f=11&sid=17653f2af30834fc3e1a3302b92fbc39");
                 return true;
             }
             case "vote": {
-                player.openUrl(World.type.getWorldName() + " Voting", World.type.getWebsiteUrl() + "/voting");
+                player.openUrl(World.type.getWorldName() + " Voting", World.type.getWebsiteUrl() + "/vote");
                 return true;
             }
             case "guides": {
-                player.openUrl(World.type.getWorldName() + " Guides", "https://community.kronos.rip/index.php?forums/guides.9/");
-                return true;
-            }
-            case "support": {
-                player.openUrl(World.type.getWorldName() + " Support", "https://community.kronos.rip/index.php");
+                player.openUrl(World.type.getWorldName() + " Guides", "https://www.infinem.net/forums/viewforum.php?f=9");
                 return true;
             }
             case "forums": {
-                player.openUrl(World.type.getWorldName() + " Forums", "https://community.kronos.rip/index.php");
+                player.openUrl(World.type.getWorldName() + " Forums", "https://www.infinem.net/forums/");
                 return true;
             }
             case "hiscores":
             case "scores": {
-                player.openUrl(World.type.getWorldName() + " Hiscores", World.type.getWebsiteUrl() + "/highscores/");
+                player.openUrl("https://www.infinem.net/highscores/");
                 return true;
             }
             case "discord": {
-                player.openUrl("Official " + World.type.getWorldName() + " Discord Server", "https://discord.gg/uytRcc8");
-                return true;
-            }
-            case "thread": {
-                int id;
-                try {
-                    id = Integer.parseInt(args[0]);
-                } catch (Exception e) {
-                    player.sendMessage("Invalid topic # entered, please try again.");
-                    return true;
-                }
-                player.openUrl(World.type.getWorldName() + " Thread #" + id, "https://community.kronos.rip/index.php?threads/" + id);
-                return true;
-            }
-            case "member": {
-                int id;
-                try {
-                    id = Integer.parseInt(args[0]);
-                } catch (Exception e) {
-                    player.sendMessage("Invalid user id entered, please try again.");
-                    return true;
-                }
-                player.openUrl(World.type.getWorldName() + " Member #" + id, "https://community.kronos.rip/index.php?members/" + id);
+                player.openUrl("Official " + World.type.getWorldName() + " Discord Server", "https://discord.gg/2j2rEnjVJg");
                 return true;
             }
             case "claimvotes":
@@ -332,25 +231,6 @@ public class Regular {
                 Votes.claim(player, null);
                 return true;
             }
-//            case "referral": {
-//                player.stringInput("Please enter the referral code you'd like to claim:", referralCode -> {
-//                    Referral.checkClaimed(player, referralCode, alreadyClaimed -> {
-//                        if(alreadyClaimed) {
-//                            player.dialogue(new MessageDialogue("You've already claimed this referral code."));
-//                            return;
-//                        }
-//                        Referral.claim(player, referralCode, success -> {
-//                            if(success)
-//                                player.dialogue(new MessageDialogue("You've successfully claimed the referral code."));
-//                            else
-//                                player.dialogue(new MessageDialogue("Error claiming referral code. Please try again later."));
-//                        });
-//                    });
-//
-//                });
-//
-//                return true;
-//            }
         }
         return false;
     }
