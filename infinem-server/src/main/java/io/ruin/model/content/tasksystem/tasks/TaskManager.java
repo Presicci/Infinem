@@ -7,7 +7,6 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.model.content.tasksystem.tasks.impl.DropAllTask;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.utility.Color;
-import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.content.tasksystem.tasks.inter.TabTask;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskSQLBuilder;
@@ -171,7 +170,6 @@ public class TaskManager {
     public void doLookupByCategory(TaskCategory category, String trigger, int amount, boolean incremental) {
         //  No tasks left for this category, abort
         if (completedCategories.contains(category.ordinal())) {
-            System.out.println("category complete " + category);
             return;
         }
         Server.gameDb.execute(connection -> {
@@ -323,7 +321,6 @@ public class TaskManager {
                 if (!triggerString.trim().isEmpty()) {
                     triggers = triggerString.trim().split(",");
                     if (!handleTrigger(lookupType, trigger, triggers)) {
-                        System.out.println("[" + player.getName() + "] uuid=" + uuid + ", cat=" + category + ", trig=" + trigger + ", amt=" + amount + ", inc=" + incremental + ", exit on required_obj");
                         continue;
                     }
                 }
@@ -334,7 +331,6 @@ public class TaskManager {
              */
             String mapareaString = rs.getString("maparea");
             if (!mapareaString.trim().isEmpty() && (mapArea == null || !mapareaString.equalsIgnoreCase(mapArea.toString().replace("_", " ")))) {
-                System.out.println("[" + player.getName() + "] uuid=" + uuid + ", cat=" + category + ", trig=" + trigger + ", amt=" + amount + ", inc=" + incremental + ", exit on maparea");
                 continue;
             }
 
@@ -349,14 +345,12 @@ public class TaskManager {
                     currentAmount += amount;
                     if (currentAmount < requiredAmount) {
                         inProgressTasks.put(uuid, currentAmount);
-                        System.out.println("Task #" + uuid + " progress: " + currentAmount + "/" + requiredAmount);
                         continue;
                     } else {
                         inProgressTasks.remove(uuid);
                     }
                 } else {
                     if (amount < requiredAmount) {
-                        System.out.println("[" + player.getName() + "] uuid=" + uuid + ", cat=" + category + ", trig=" + trigger + ", amt=" + amount + ", exit on amt");
                         continue;
                     }
                 }
@@ -383,7 +377,6 @@ public class TaskManager {
                 }
             }
             if (finalDifficulty == null || finalTaskarea == null) {
-                System.out.println("TASK ERROR! uuid=" + uuid + " diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
                 continue;
             }
             TaskArea finalTaskarea1 = finalTaskarea;
