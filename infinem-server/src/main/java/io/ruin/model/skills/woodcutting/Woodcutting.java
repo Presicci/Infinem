@@ -206,7 +206,7 @@ public class Woodcutting {
     private static final List<Integer> OUTFIT_PIECES = Arrays.asList(Items.LUMBERJACK_BOOTS, Items.LUMBERJACK_HAT, Items.LUMBERJACK_LEGS, Items.LUMBERJACK_TOP);
 
     private static void rollOutfitPiece(Player player, Tree tree) {
-        if (Random.rollDie((tree.petOdds / 100) - (player.getStats().get(StatType.Woodcutting).currentLevel * 100))) {
+        if (Random.rollDie((tree.petOdds / 100) - (player.getStats().get(StatType.Woodcutting).currentLevel * 10))) {
             for (int itemId : OUTFIT_PIECES) {
                 if (player.findItem(itemId) == null) {
                     if (player.getInventory().hasRoomFor(itemId)) {
