@@ -4,7 +4,7 @@
     "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
     //Combat Info
     "hitpoints": 3,
-    "aggressive_level": 2,
+    "aggressive_level": 0,
     "max_damage": 1,
     "attack_style": "RANGED",
     //Slayer Info
@@ -47,7 +47,7 @@
     "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
     //Combat Info
     "hitpoints": 3,
-    "aggressive_level": 6,
+    "aggressive_level": 0,
     "max_damage": 1,
     "attack_style": "RANGED",
     //Slayer Info
