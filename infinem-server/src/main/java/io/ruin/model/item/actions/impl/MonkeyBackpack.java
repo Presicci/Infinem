@@ -68,7 +68,7 @@ public enum MonkeyBackpack {
         ObjectAction.register(27256, 2030, 5609, 0, "search", (player, obj) -> {
             Item cape = player.getEquipment().get(Equipment.SLOT_CAPE);
             for (MonkeyBackpack backpack : values()) {
-                if (cape.getId() == backpack.itemId || player.getInventory().hasId(backpack.itemId)) {
+                if ((cape != null && cape.getId() == backpack.itemId) || player.getInventory().hasId(backpack.itemId)) {
                     player.sendMessage("The crate is empty.");
                     return;
                 }
