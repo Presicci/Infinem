@@ -1671,7 +1671,7 @@ public class Player extends PlayerAttributes {
                 equipment.hasId(SerpentineHelm.SERPENTINE.getChargedId()) ||
                 equipment.hasId(SerpentineHelm.MAGMA.getChargedId()) ||
                 equipment.hasId(SerpentineHelm.TANZANITE.getChargedId()) ||
-                relicManager.hasRelicEnalbed(Relic.JUGGERNAUT);
+                relicManager.hasRelic(Relic.JUGGERNAUT);
     }
 
     @Override
@@ -1680,7 +1680,7 @@ public class Player extends PlayerAttributes {
                 player.getEquipment().hasId(SerpentineHelm.SERPENTINE.getChargedId()) ||
                 player.getEquipment().hasId(SerpentineHelm.MAGMA.getChargedId()) ||
                 player.getEquipment().hasId(SerpentineHelm.TANZANITE.getChargedId()) ||
-                relicManager.hasRelicEnalbed(Relic.JUGGERNAUT);
+                relicManager.hasRelic(Relic.JUGGERNAUT);
     }
 
     public GameMode getGameMode() {
