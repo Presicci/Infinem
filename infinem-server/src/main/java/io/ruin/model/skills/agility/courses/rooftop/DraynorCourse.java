@@ -47,8 +47,6 @@ public class DraynorCourse {
          * Rough wall
          */
         ObjectAction.register(11404, "climb", (p, obj) -> p.startEvent(e -> {
-            if (!p.getStats().check(StatType.Agility, 10, "attempt this"))
-                return;
             p.lock(LockType.FULL_DELAY_DAMAGE);
             p.animate(828, 15);
             e.delay(2);
@@ -183,7 +181,7 @@ public class DraynorCourse {
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "draynor");
             p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
             AgilityPet.rollForPet(p, 33005);
-            MarkOfGrace.rollMark(p, 10, MARK_SPAWNS);
+            MarkOfGrace.rollMark(p, 1, MARK_SPAWNS);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                 p.sendFilteredMessage("Your Draynor Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
             p.unlock();
