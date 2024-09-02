@@ -34,5 +34,23 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Tiadeche",
+    "id": 4700,
+    "x": 2780,
+    "y": 3058,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Tamayu",
+    "id": 4704,
+    "x": 2800,
+    "y": 3057,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
