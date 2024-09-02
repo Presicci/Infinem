@@ -120,10 +120,6 @@ public enum Armour {
                     player.sendFilteredMessage("You use up a reel of your thread.");
                     thread.remove(1);
                 }
-                if (Random.get(30) == 0) {
-                    player.sendFilteredMessage("Your needle broke.");
-                    needle.remove(1);
-                }
 
                 player.getInventory().remove(armourType.leatherType.leather, armourType.required);
                 player.getInventory().add(armourType.cutID, 1);
