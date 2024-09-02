@@ -16,6 +16,10 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.BotPrevention;
 import io.ruin.model.stat.StatType;
+import io.ruin.utility.Color;
+
+import java.util.Arrays;
+import java.util.List;
 
 public enum Stall {
 
@@ -316,11 +320,31 @@ public enum Stall {
                 player.edgevilleStallCooldown.delay(3);
             if (Random.rollDie(stall.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
                 Pet.ROCKY.unlock(player);
+            rollOutfitPiece(player, stall);
             stall.counter.increment(player, 1);
             player.getStats().addXp(StatType.Thieving, stall.experience, true);
             BotPrevention.attemptBlock(player);
             player.unlock();
         });
+    }
+
+    private static final List<Integer> OUTFIT_PIECES = Arrays.asList(Items.ROGUE_BOOTS, Items.ROGUE_GLOVES, Items.ROGUE_TOP, Items.ROGUE_MASK, Items.ROGUE_TROUSERS);
+
+    private static void rollOutfitPiece(Player player, Stall stall) {
+        if (Random.rollDie((stall.petOdds / 100) - (player.getStats().get(StatType.Thieving).currentLevel * 10))) {
+            for (int itemId : OUTFIT_PIECES) {
+                if (player.findItem(itemId) == null) {
+                    if (player.getInventory().hasRoomFor(itemId)) {
+                        player.sendMessage(Color.RED.wrap("<shad=0>You find a rogue piece while thieving!"));
+                        player.getInventory().add(itemId);
+                    } else {
+                        player.sendMessage(Color.RED.wrap("<shad=0>You find a rogue piece while thieving! It was sent to your bank."));
+                        player.getBank().add(itemId);
+                    }
+                    return;
+                }
+            }
+        }
     }
 
     private static final Bounds HOME = new Bounds(2002, 3558, 2017, 3573, -1);

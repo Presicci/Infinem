@@ -23,7 +23,9 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.MapArea;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.skills.BotPrevention;
+import io.ruin.model.skills.woodcutting.Tree;
 import io.ruin.model.stat.StatType;
+import io.ruin.utility.Color;
 
 import java.util.Arrays;
 import java.util.List;
@@ -442,6 +444,25 @@ public enum PickPocket {
         return true;
     }
 
+    private static final List<Integer> OUTFIT_PIECES = Arrays.asList(Items.ROGUE_BOOTS, Items.ROGUE_GLOVES, Items.ROGUE_TOP, Items.ROGUE_MASK, Items.ROGUE_TROUSERS);
+
+    private static void rollOutfitPiece(Player player, PickPocket pickPocket) {
+        if (Random.rollDie((pickPocket.petOdds / 100) - (player.getStats().get(StatType.Thieving).currentLevel * 10))) {
+            for (int itemId : OUTFIT_PIECES) {
+                if (player.findItem(itemId) == null) {
+                    if (player.getInventory().hasRoomFor(itemId)) {
+                        player.sendMessage(Color.RED.wrap("<shad=0>You find a rogue piece while thieving!"));
+                        player.getInventory().add(itemId);
+                    } else {
+                        player.sendMessage(Color.RED.wrap("<shad=0>You find a rogue piece while thieving! It was sent to your bank."));
+                        player.getBank().add(itemId);
+                    }
+                    return;
+                }
+            }
+        }
+    }
+
     private static void recursiveAttemptPickpocket(Player player, NPC npc, PickPocket pickpocket) {
         player.unlock();
         if (!player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return;
@@ -537,6 +558,7 @@ public enum PickPocket {
                 }
                 if (Random.rollDie(pickpocket.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
                     Pet.ROCKY.unlock(player);
+                rollOutfitPiece(player, pickpocket);
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
                 player.getTaskManager().doLookupByCategory(TaskCategory.PICKPOCKET, npc.getDef().name.toLowerCase());
                 player.getTaskManager().doLookupByCategory(TaskCategory.STEAL, 1, true);
