@@ -193,11 +193,6 @@ public class NPCDefinition {
             options[2] = "Sell-items";
             options[3] = "Sets";
             options[4] = null;
-        } else if (id == 5523) {
-            /* Gambling man */
-            name = "Gambler";
-            options[0] = null;
-            options[2] = "Trade";
         } else if(id == 4398) {
             /* ECO Wizard */
             name = World.type.getWorldName() + " Wizard";
