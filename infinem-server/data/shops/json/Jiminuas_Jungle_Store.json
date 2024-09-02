@@ -1,0 +1,187 @@
+{
+  "name": "Jiminua's Jungle Store",
+  "currency": "COINS",
+  "generalStore": true,
+  "npcs": [
+    2893
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    { // Tinderbox
+      "itemId": 590,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Candle
+      "itemId": 36,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    { // Unlit torch
+      "itemId": 596,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 6
+    },
+    { //Pot
+      "itemId": 1931,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { //Rope
+      "itemId": 954,
+      "stock": 10,
+      "buy_price": 9,
+      "sell_price": 27
+    },
+    { //Leather body
+      "itemId": 1129,
+      "stock": 12,
+      "buy_price": 10,
+      "sell_price": 31
+    },
+    { //Leather gloves
+      "itemId": 1059,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 9
+    },
+    { //Leather boots
+      "itemId": 1061,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 9
+    },
+    { //Cooked meat
+      "itemId": 2142,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 6
+    },
+    { //Bread
+      "itemId": 2309,
+      "stock": 2,
+      "buy_price": 6,
+      "sell_price": 18
+    },
+    { //Vial
+      "itemId": 229,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { //Vial pack
+      "itemId": 11877,
+      "stock": 100,
+      "buy_price": 100,
+      "sell_price": 300
+    },
+    { //Vial of water
+      "itemId": 227,
+      "stock": 50,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { //Vial of water
+      "itemId": 227,
+      "stock": 50,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { //water-filled vial pack
+      "itemId": 11879,
+      "stock": 50,
+      "buy_price": 100,
+      "sell_price": 301
+    },
+    { //pestle and mortar
+      "itemId": 233,
+      "stock": 3,
+      "buy_price": 2,
+      "sell_price": 6
+    },
+    { //antipoison(3)
+      "itemId": 175,
+      "stock": 10,
+      "buy_price": 144,
+      "sell_price": 432
+    },
+    { //papyrus
+      "itemId": 970,
+      "stock": 50,
+      "buy_price": 5,
+      "sell_price": 15
+    },
+    { //charcoal
+      "itemId": 973,
+      "stock": 50,
+      "buy_price": 22,
+      "sell_price": 67
+    },
+    { //knife
+      "itemId": 946,
+      "stock": 2,
+      "buy_price": 3,
+      "sell_price": 9
+    },
+    { //hammer
+      "itemId": 2347,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { //machete
+      "itemId": 975,
+      "stock": 50,
+      "buy_price": 20,
+      "sell_price": 60
+    },
+    { //chisel
+      "itemId": 1755,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { //spade
+      "itemId": 952,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    { //bronze axe
+      "itemId": 1351,
+      "stock": 2,
+      "buy_price": 8,
+      "sell_price": 24
+    },
+    { //bronze pickaxe
+      "itemId": 1265,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { //iron axe
+      "itemId": 1349,
+      "stock": 5,
+      "buy_price": 28,
+      "sell_price": 84
+    },
+    { //bronze bar
+      "itemId": 2349,
+      "stock": 10,
+      "buy_price": 4,
+      "sell_price": 12
+    },
+    { //pure essence
+      "itemId": 7936,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 6
+    }
+  ]
+}
