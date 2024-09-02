@@ -844,5 +844,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 9
+  },
+  {
+    "name": "Fur trader",
+    "id": 3210,
+    "x": 3303,
+    "y": 3214,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
