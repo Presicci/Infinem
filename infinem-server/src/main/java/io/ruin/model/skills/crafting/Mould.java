@@ -151,7 +151,9 @@ public enum Mould {
                     break;
                 }
                 player.animate(899);
-                event.delay(2);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    event.delay(2);
+                }
                 sodaAsh.remove();
                 if (player.hasAttribute(AttributeKey.DISCARD_BUCKETS))
                     bucketOfSand.setId(MOLTEN_GLASS);
