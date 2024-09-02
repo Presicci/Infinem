@@ -326,7 +326,7 @@ public class Hit {
 			}
 			if (attackStyle != null && !defenceIgnored) {
 				if (attackStyle == AttackStyle.DRAGONFIRE) {
-					damage *= (1 - (Math.max(0, Math.min(1, target.getCombat().getDragonfireResistance()) - dragonfireResistancePenetration)));
+					damage *= (int) (1 - (Math.max(0, Math.min(1, target.getCombat().getDragonfireResistance()) - dragonfireResistancePenetration)));
 					if (damage <= 0)
 						block();
 				} else if (attacker != null) {
