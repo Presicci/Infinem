@@ -97,7 +97,9 @@ public enum Mould {
                 if(mouldItem == null)
                     return;
                 player.animate(899);
-                event.delay(3);
+                if (amt != amount + 1 && !player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    event.delay(3);
+                }
                 if(gem != null)
                     gem.remove();
                 goldBar.remove();
@@ -135,6 +137,7 @@ public enum Mould {
          * Molten glass
          */
         SkillItem moltenGlass = new SkillItem(MOLTEN_GLASS).addAction((player, amount, event) -> {
+            int amt = amount;
             while(amount-- > 0) {
                 Item sodaAsh = player.getInventory().findItem(SODA_ASH);
                 if(sodaAsh == null) {
@@ -146,12 +149,8 @@ public enum Mould {
                     player.sendMessage("You need some sand to make glass.");
                     break;
                 }
-                if (!player.hasAttribute(AttributeKey.DISCARD_BUCKETS) && !player.getInventory().hasRoomFor(MOLTEN_GLASS)) {
-                    player.sendMessage("Not enough space in your inventory.");
-                    break;
-                }
                 player.animate(899);
-                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                if (amt != amount + 1 && !player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     event.delay(2);
                 }
                 sodaAsh.remove();
