@@ -127,7 +127,8 @@ public enum PickPocket {
                     new LootItem(Items.BUCKET, 1, 1),
                     new LootItem(Items.LEATHER_GLOVES, 1, 1),
                     new LootItem(Items.SPADE, 1, 1)
-            )),
+            )
+    ),
     WARRIOR(25, 26.0, 386, 5, 2, "warrior's", PlayerCounter.PICKPOCKETED_WARRIOR,
             257211,
             22524,
@@ -226,7 +227,8 @@ public enum PickPocket {
                     new LootItem(Items.CACTUS_SEED, 1, 10),
                     new LootItem(21490, 1, 5),  // Seaweed spore
                     new LootItem(22873, 1, 5)   // Potato cactus seed
-            )),
+            ),
+            "martin the master gardener"),
     GUARD(40, 46.8, 386, 5, 2, "guard's", PlayerCounter.PICKPOCKETED_GUARD,
             257211,
             22527,
