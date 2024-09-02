@@ -21,6 +21,7 @@ public class DramenStaff {
                 e.delay(1);
                 primary.setId(Items.DRAMEN_STAFF);
                 player.sendMessage("You carefully cut the branch into a magical staff.");
+                player.getTaskManager().doLookupByUUID(1107);   // Craft a Dramen Staff
             });
         }));
     }
