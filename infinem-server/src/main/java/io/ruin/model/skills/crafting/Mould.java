@@ -70,7 +70,7 @@ public enum Mould {
     }
 
     private static final int GOLD_BAR = 2357;
-    private static final int EMPTY_BUCKET = 3727;
+    private static final int EMPTY_BUCKET = 1925;
     private static final int SODA_ASH = 1781;
     private static final int MOLTEN_GLASS = 1775;
     private static final int BUCKET_OF_SAND = 1783;
@@ -145,7 +145,6 @@ public enum Mould {
                 }
                 if (!player.hasAttribute(AttributeKey.DISCARD_BUCKETS) && !player.getInventory().hasRoomFor(MOLTEN_GLASS)) {
                     player.sendMessage("Not enough space in your inventory.");
-                    player.sendMessage("You can avoid this by toggling on the \"Discard Buckets\" setting.");
                     break;
                 }
                 player.animate(899);
