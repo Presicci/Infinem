@@ -11,6 +11,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.pet.Pet;
@@ -19,6 +20,9 @@ import io.ruin.model.map.MapArea;
 import io.ruin.model.skills.cooking.Food;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class FishingSpot {
 
@@ -80,6 +84,8 @@ public class FishingSpot {
         return level;
     }
 
+    private static final List<Integer> BARBARIAN_BAITS = Arrays.asList(Items.FISH_OFFCUTS, Items.FISHING_BAIT, Items.FEATHER, Items.ROE, Items.CAVIAR);
+
     private void fish(Player player, NPC npc) {
         boolean barehand;
         FishingTool tool = FishingTool.getAlternative(player, defaultTool);
@@ -140,9 +146,22 @@ public class FishingSpot {
             barehand = true;
         }
 
-        Item secondary;
+        Item secondary = null;
         if (barehand || tool.secondaryId == -1) {
             secondary = null;
+        } else if (defaultTool == FishingTool.BARBARIAN_ROD) {
+            Item bait = null;
+            for (int id : BARBARIAN_BAITS) {
+                bait = player.getInventory().findItem(id);
+                if (bait != null) {
+                    secondary = bait;
+                    break;
+                }
+            }
+            if (secondary == null) {
+                player.sendMessage("You need at least one bait to fish at this spot.");
+                return;
+            }
         } else if ((secondary = player.getInventory().findItem(tool.secondaryId)) == null) {
             player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
             return;
@@ -164,11 +183,13 @@ public class FishingSpot {
          * Start event
          */
         player.animate(barehand ? 6703 : tool.startAnimationId);
+        Item finalSecondary = secondary;
         player.startEvent(event -> {
             int animTicks = 2;
             boolean firstBarehandAnim = true;
             int lastLevel = fishing.currentLevel;
             int level = getLevelWithBoost(player, fishing);
+            Item bait = finalSecondary;
             while (true) {
                 if (animTicks > 0) { //we do this so we can check if the npc has moved every tick
                     int diffX = Math.abs(player.getAbsX() - npc.getAbsX());
@@ -191,8 +212,8 @@ public class FishingSpot {
                         player.getInventory().remove(c.id, 26);
                         player.sendFilteredMessage("A flying fish jumps up and eats some of your minnows!");
                     } else {
-                        if (secondary != null)
-                            secondary.incrementAmount(-1);
+                        if (bait != null)
+                            bait.incrementAmount(-1);
 
                         if (npc.getId() == MINNOWS)
                             player.sendFilteredMessage("You catch some minnows!");
@@ -256,12 +277,27 @@ public class FishingSpot {
                         return;
                     }
 
-                    if (!barehand && tool.secondaryId != -1) {
-                        Item requiredSecondary = player.getInventory().findItem(tool.secondaryId);
+                    if (bait != null) {
+                        if (defaultTool == FishingTool.BARBARIAN_ROD) {
+                            Item findBait = null;
+                            for (int id : BARBARIAN_BAITS) {
+                                findBait = player.getInventory().findItem(id);
+                                if (findBait != null) {
+                                    bait = findBait;
+                                    break;
+                                }
+                            }
+                            if (findBait == null) {
+                                player.sendMessage("You need at least one bait to fish at this spot.");
+                                return;
+                            }
+                        } else {
+                            Item requiredSecondary = player.getInventory().findItem(bait.getId());
 
-                        if (requiredSecondary == null) {
-                            player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
-                            return;
+                            if (requiredSecondary == null) {
+                                player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
+                                return;
+                            }
                         }
                     }
                 }
