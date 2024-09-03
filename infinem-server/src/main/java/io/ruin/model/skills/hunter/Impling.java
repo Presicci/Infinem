@@ -109,6 +109,7 @@ public enum Impling {
             }
             event.delay(2);
             if (npc.isRemoved() || npc.isHidden()) {  // Check if the npc has been removed
+                player.unlock();
                 return;
             }
             if (isCatch(player, impling)) {

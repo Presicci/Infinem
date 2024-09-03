@@ -90,6 +90,7 @@ public enum Butterfly {
             player.animate(hasMagicButterflyNet(player) ? 6605 : 6606);
             event.delay(2);
             if (npc.isRemoved() || npc.isHidden()) {  // Check if the npc has been removed
+                player.unlock();
                 return;
             }
             if (isCatch(player, butterfly)) {
