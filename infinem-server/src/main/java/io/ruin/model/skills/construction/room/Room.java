@@ -489,7 +489,7 @@ public abstract class Room {
                     Room newRoom = def.create();
                     newRoom.rotation = tempRoom.rotation;
                     house.setRoom(x, y, chunk.pointZ, newRoom);
-                    player.getTaskManager().doLookupByCategory(TaskCategory.BUILDROOM, newRoom.definition.toString().toLowerCase());
+                    player.getTaskManager().doLookupByCategory(TaskCategory.BUILDROOM, newRoom.definition.toString().toLowerCase().replace("_", " "));
                     house.buildAndEnter(player, player.getPosition().localPosition(), true);
                 }),
                 new Option("Cancel", player::closeDialogue)
