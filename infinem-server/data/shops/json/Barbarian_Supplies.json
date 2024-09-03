@@ -1,0 +1,18 @@
+{
+  "name": "Barbarian Supplies",
+  "currency": "COINS",
+  "npcs": [
+    2914
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    { // Barbarian rod
+      "itemId": 11323,
+      "stock": 10,
+      "buy_price": 125,
+      "sell_price": 250
+    }
+  ]
+}
