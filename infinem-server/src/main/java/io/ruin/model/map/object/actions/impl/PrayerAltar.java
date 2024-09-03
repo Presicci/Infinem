@@ -96,7 +96,13 @@ public class PrayerAltar {
                 );
             });
         }
-        ObjectAction.register(34771, "pray", (player, obj) -> switchBook(player, SpellBook.LUNAR, true));
+        ObjectAction.register(34771, "pray", (player, obj) -> {
+            if (SpellBook.LUNAR.isActive(player)) {
+                switchBook(player, SpellBook.MODERN, true);
+            } else {
+                switchBook(player, SpellBook.LUNAR, true);
+            }
+        });
         /**
          * Bones on our home location altar
          */
