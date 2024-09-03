@@ -51,7 +51,7 @@ public class CoordinateClue extends Clue {
         int degY = north ? (y - obsY) / 32 : (obsY - y) / 32;
         int minX = (int) (east ? Math.floor(((x - obsX) % 32) * 1.875) : Math.floor(((obsX - x) % 32) * 1.875));
         int minY = (int) (north ? Math.floor(((y - obsY) % 32) * 1.875) : Math.floor(((obsY - y) % 32) * 1.875));
-        String clue = twoDigitInt(degY) + " degrees " + twoDigitInt(minY) + " minutes " + (north ? "north" : "south") + ",<br>"
+        String clue = twoDigitInt(degY) + " degrees " + twoDigitInt(minY) + " minutes " + (north ? "north" : "south") + "<br>"
                 + twoDigitInt(degX) + " degrees " + twoDigitInt(minX) + " minutes " + (east ? "east" : "west");
         CoordinateClue coordinateClue = new CoordinateClue(type, clue);
         Tile tile = Tile.get(x, y, position.getZ(), true);
