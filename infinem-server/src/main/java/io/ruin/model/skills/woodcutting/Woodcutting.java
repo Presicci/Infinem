@@ -292,6 +292,7 @@ public class Woodcutting {
         ObjectAction.register(1289, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 1353));
         ObjectAction.register(1290, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 1354));   // Dead tree
         ObjectAction.register(1365, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 1352));   // Dead tree lumby swamp
+        ObjectAction.register(1291, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 23054));   // Dead tree rellekka hunter
         ObjectAction.register(36672, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 36673)); // Gwenith tree
         ObjectAction.register(36674, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 36675)); // Gwenith tree
         ObjectAction.register(42393, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 42394)); // Tree in shayzien
