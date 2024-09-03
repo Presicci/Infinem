@@ -2,7 +2,7 @@
   "name": "Mac's Cape Store",
   "currency": "COINS",
   "npcs": [
-    6481
+
   ],
   "sellMultiplier": 1300,
   "buyMultiplier": 400,
