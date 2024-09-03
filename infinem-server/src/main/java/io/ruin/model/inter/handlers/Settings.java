@@ -93,7 +93,7 @@ public class Settings {
             ));
         })),
         CLOSE_SIDE_PANEL_WITH_HOTKEY(3, 27, 108),
-        ESCAPE_CLOSES_INTERFACE(3, 28, 109),
+        ESCAPE_CLOSES_INTERFACE(3, 28, 109, Config.ESCAPE_CLOSES::toggle),
         // Display
         HIDE_ROOFS(4, 4, 114, Config.HIDE_ROOFS::toggle),
         ZOOMING_DISABLED(4, 5, 115, Config.ZOOMING_DISABLED::toggle),
