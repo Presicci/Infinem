@@ -115,6 +115,10 @@ public class FishingSpot {
                 player.sendMessage("You need a Fishing level of at least " + lowestCatch.levelReq + " to fish at this spot.");
                 return;
             }
+            if (defaultTool == FishingTool.BARBARIAN_ROD && (player.getStats().get(StatType.Strength).currentLevel < 15 || player.getStats().get(StatType.Agility).currentLevel < 15)) {
+                player.sendMessage("You need a Strength and Agility level of 15 to fish at this spot.");
+                return;
+            }
 
             barehand = false;
         } else {
