@@ -25,6 +25,7 @@ public class PersistentData {
     public static PersistentData INSTANCE = new PersistentData();
 
     @Expose public final Set<String> STARTER_IPS = new HashSet<>();
+    @Expose public final Set<String> WEEK_ONE_IPS = new HashSet<>();
 
     public void save() {
         try {
