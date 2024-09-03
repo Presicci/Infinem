@@ -1,5 +1,8 @@
 package io.ruin.model.content.tasksystem.areas;
 
+import io.ruin.api.utils.StringUtils;
+import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.scroll.DiaryScroll;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -11,8 +14,10 @@ import io.ruin.model.shop.Currency;
 import io.ruin.model.shop.RestockRules;
 import io.ruin.model.shop.Shop;
 import io.ruin.model.shop.ShopItem;
+import io.ruin.utility.Color;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -20,6 +25,25 @@ import java.util.List;
  * Created on 6/23/2024
  */
 public class AreaShop {
+
+    public static void viewShopPreview(Player player, TaskArea area) {
+        List<String> lines = new ArrayList<>();
+        AreaTaskTier tier = null;
+        for (AreaShopItem item : AreaShopItem.values()) {
+            if (item.getArea() != area) continue;
+            if (tier != item.getTier()) {
+                tier = item.getTier();
+                lines.add(Color.YELLOW.wrap(tier.toString()));
+            }
+            lines.add(Color.DARK_RED.wrap(ItemDefinition.get(item.getItemId()).name));
+        }
+        if (lines == null || lines.isEmpty()) {
+            player.sendMessage("There are currently no shop for that region.");
+            return;
+        }
+        DiaryScroll scroll = new DiaryScroll(Color.DARK_RED.wrap("Region Task Unlocks - " + StringUtils.capitalizeFirst(area.name().toLowerCase())), lines);
+        scroll.open(player);
+    }
 
     private static void openAreaShop(Player player, TaskArea area) {
         List<ShopItem> items = new ArrayList<>();

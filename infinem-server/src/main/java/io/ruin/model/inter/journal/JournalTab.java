@@ -300,7 +300,7 @@ public class JournalTab {
         /*if (tab == Tab.QUEST) {
             player.getPacketSender().sendString(tab.getId(), 1, "Journal");
         } else */if (tab == Tab.ACHIEVEMENT) {
-            player.getPacketSender().sendAccessMask(259, 2, 0, 11, AccessMasks.ClickOp1);
+            player.getPacketSender().sendAccessMask(259, 2, 0, 11, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3);
 //            player.getPacketSender().sendString(tab.getId(), 1, "Achievement Diary");
 //            for (Achievements.AchievementCategory category : Achievements.AchievementCategory.values()) {
 //                player.getAchievements().updateTabProgress(category);

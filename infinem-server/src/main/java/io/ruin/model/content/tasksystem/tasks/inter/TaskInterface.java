@@ -18,10 +18,10 @@ import io.ruin.model.inter.utils.Config;
  */
 public class TaskInterface {
 
-    private static final Config TIER_FILTER = Config.varpbit(10033, true);
-    private static final Config TYPE_FILTER = Config.varpbit(10037, true);
-    private static final Config AREA_FILTER = Config.varpbit(11692, true);
-    private static final Config COMPLETED_FILTER = Config.varpbit(10034, true);
+    public static final Config TIER_FILTER = Config.varpbit(10033, true);
+    public static final Config TYPE_FILTER = Config.varpbit(10037, true);
+    public static final Config AREA_FILTER = Config.varpbit(11692, true);
+    public static final Config COMPLETED_FILTER = Config.varpbit(10034, true);
 
     public static void openTaskInterface(Player player) {
         player.getPacketSender().sendClientScript(10203, "s", player.getTaskManager().generateInProgressString());
