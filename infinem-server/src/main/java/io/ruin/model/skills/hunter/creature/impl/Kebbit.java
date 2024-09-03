@@ -96,5 +96,6 @@ public class Kebbit extends Creature {
             return;
         }
         trap.getObject().setId(trap.getTrapType().getFailedObjectId());
+        trap.getOwner().traps.remove(trap);
     }
 }
