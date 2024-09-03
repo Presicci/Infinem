@@ -108,7 +108,7 @@ public enum Impling {
                 player.animate(hasMagicButterflyNet(player) ? 6605 : 6606);
             }
             event.delay(2);
-            if (npc.isRemoved()) {  // Check if the npc has been removed
+            if (npc.isRemoved() || npc.isHidden()) {  // Check if the npc has been removed
                 return;
             }
             if (isCatch(player, impling)) {
