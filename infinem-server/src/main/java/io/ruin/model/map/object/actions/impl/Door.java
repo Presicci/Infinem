@@ -447,7 +447,9 @@ public class Door {
                 {11470, 11471}, // Draynor manor
                 {11620, 11624}, // Longhall door 1
                 {11621, 11625}, // Longhall door 2
-                {2051, 15513}
+                {2051, 15513},
+                {44920, 44922},
+                {44921, 44923}
         };
         /**
          * These objects face 180 degrees different than others.
