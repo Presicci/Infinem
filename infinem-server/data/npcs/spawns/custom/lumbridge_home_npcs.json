@@ -88,5 +88,14 @@
     "z": 0,
     "direction": "N",
     "walkRange": 0
+  },
+  {
+    "name": "Mac",
+    "id": 6481,
+    "x": 3170,
+    "y": 3274,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
