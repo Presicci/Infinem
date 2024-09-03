@@ -324,7 +324,7 @@ public enum AreaReward {
         for (AreaReward task : rewards) {
             if (tier != task.tier) {
                 tier = task.tier;
-                lines.add(Color.YELLOW.wrap(tier.toString()));
+                lines.add(Color.YELLOW.wrap(tier.toString() + " - " + area.getPointThreshold(tier) + " pts"));
             }
             lines.add(Color.DARK_RED.wrap(task.description));
             if (task.additionalDescription.length > 0) {

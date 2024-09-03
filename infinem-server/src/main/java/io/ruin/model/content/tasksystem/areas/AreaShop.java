@@ -33,12 +33,12 @@ public class AreaShop {
             if (item.getArea() != area) continue;
             if (tier != item.getTier()) {
                 tier = item.getTier();
-                lines.add(Color.YELLOW.wrap(tier.toString()));
+                lines.add(Color.YELLOW.wrap(tier.toString() + " - " + area.getPointThreshold(tier) + " pts"));
             }
             lines.add(Color.DARK_RED.wrap(ItemDefinition.get(item.getItemId()).name));
         }
         if (lines == null || lines.isEmpty()) {
-            player.sendMessage("There are currently no shop for that region.");
+            player.sendMessage("There are currently no shop items for that region.");
             return;
         }
         DiaryScroll scroll = new DiaryScroll(Color.DARK_RED.wrap("Region Task Unlocks - " + StringUtils.capitalizeFirst(area.name().toLowerCase())), lines);

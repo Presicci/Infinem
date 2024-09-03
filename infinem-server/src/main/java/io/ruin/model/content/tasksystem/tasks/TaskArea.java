@@ -61,7 +61,7 @@ public enum TaskArea {
           return player.getTaskManager().getAreaTaskPoints(this.ordinal()) >= getPointThreshold(tier);
      }
 
-     private int getPointThreshold(AreaTaskTier tier) {
+     public int getPointThreshold(AreaTaskTier tier) {
           EnumDefinition tierEnum = EnumDefinition.get(9101);
           Map<Integer, Integer> tiers = tierEnum.getValuesAsInts();
           return tiers.get(tierRequirements[tier.ordinal()]);
