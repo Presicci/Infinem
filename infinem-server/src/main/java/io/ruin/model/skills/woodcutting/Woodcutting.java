@@ -227,8 +227,8 @@ public class Woodcutting {
         int chance = 256;
         if (WoodcuttingSkillCape.wearsWoodcuttingCape(player))
             chance -= chance / 10;
-        if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_BIRD_NEST_CHANCE))
-            chance /= 2;
+        if (ActivitySpotlight.isActive(ActivitySpotlight.QUADRUPLE_BIRD_NEST_CHANCE))
+            chance /= 4;
         if (Random.rollDie(chance)) {
             new GroundItem(BirdNest.getRandomNest(), 1)
                     .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
@@ -247,8 +247,8 @@ public class Woodcutting {
          for (ClueType clue : ClueType.values()) {
              if (clue == ClueType.MASTER) continue;
              int chance = (numerator / denominator) * (clue.ordinal() + 1);
-             if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_CLUE_NEST_CHANCE))
-                 chance /= 2;
+             if (ActivitySpotlight.isActive(ActivitySpotlight.QUADRUPLE_CLUE_NEST_CHANCE))
+                 chance /= 4;
              if (ringOfWealthEffect)
                  chance /= 2;
              if (Random.rollDie(chance)) {

@@ -38,8 +38,8 @@ public enum FishingClueBottle {
         if (bottle == null)
             return;
         double chance = ((100D + player.getStats().get(StatType.Fishing).currentLevel) / fish.petOdds);
-        if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_CLUE_BOTTLE_CHANCE))
-            chance *= 2;
+        if (ActivitySpotlight.isActive(ActivitySpotlight.QUADRUPLE_CLUE_BOTTLE_CHANCE))
+            chance *= 4;
         if (Random.get() < chance) {
             player.getInventory().addOrDrop(bottle.bottleId, 1);
             player.sendMessage("You catch a bottle!");
