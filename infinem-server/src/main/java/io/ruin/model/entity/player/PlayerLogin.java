@@ -10,6 +10,7 @@ import io.ruin.model.World;
 import io.ruin.network.central.CentralClient;
 import io.ruin.services.PhpbbRegister;
 import io.ruin.utility.OfflineMode;
+import kilim.tools.P;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.crypto.Cipher;
@@ -69,6 +70,8 @@ public class PlayerLogin extends LoginRequest {
         load(index);
     }
 
+    private HashMap<String, Integer> IPS = new HashMap<>();
+
     private void load(int index) {
         LOADING[index] = true;
         Server.worker.execute(() -> PlayerFile.load(this), player -> {
@@ -78,6 +81,10 @@ public class PlayerLogin extends LoginRequest {
             }
             int returnCode = phpbbAuth();
             if (returnCode == -1) { // Username isn't registered on forums
+                if (IPS.containsKey(info.ipAddress) && IPS.get(info.ipAddress) > 3) {
+                    deny(Response.INVALID_LOGIN);
+                    return;
+                }
                 if (info.name.length() < 3) {
                     deny(Response.INVALID_LOGIN);
                     return;
@@ -90,6 +97,12 @@ public class PlayerLogin extends LoginRequest {
             } else if (returnCode == 0) {   // Wrong password
                 deny(Response.INVALID_LOGIN);
                 return;
+            }
+            if (IPS.containsKey(info.ipAddress)) {
+                int count = IPS.get(info.ipAddress);
+                IPS.put(info.ipAddress, count + 1);
+            } else {
+                IPS.put(info.ipAddress, 1);
             }
             player.setIndex(index);
             player.init(info);
