@@ -137,7 +137,7 @@ public class RareDropTable {
     //Jason Was Here, Give me Hazelmere's Ring
     public static Optional<Item> rollRareDropTable(NPC npc, Player player) {
         // Combat level check
-        if (npc.getDef().combatInfo == null || npc.getDef().combatInfo.hitpoints < 15) {
+        if (npc.getDef().combatInfo == null || (npc.getDef().combatLevel > 50 && npc.getDef().combatInfo.hitpoints < 10)) {
             return Optional.empty();
         }
         int luckTier = Math.max(
