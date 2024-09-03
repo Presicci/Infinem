@@ -70,7 +70,7 @@ public class MaxCapeVariants {
     }
 
     public static boolean unlocked(Player player) {
-        return player.getStats().total99s >= 22;
+        return player.getStats().total99s >= 23;
     }
 
     public enum MaxCapes {
