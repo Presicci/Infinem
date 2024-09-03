@@ -54,6 +54,11 @@ public class FishingSpot {
                 /* not high enough level */
                 continue;
             }
+            if (c == FishingCatch.LEAPING_SALMON && (player.getStats().get(StatType.Strength).currentLevel < 30 || player.getStats().get(StatType.Agility).currentLevel < 30)) {
+                continue;
+            } else if (c == FishingCatch.LEAPING_STURGEON && (player.getStats().get(StatType.Strength).currentLevel < 45 || player.getStats().get(StatType.Agility).currentLevel < 45)) {
+                continue;
+            }
             double chance = c.baseChance;
             if (chance >= 1.0) {
                 /* always catch this bad boy */
