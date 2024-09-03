@@ -2,7 +2,7 @@
   "name": "Donation Shop",
   "currency": "VOTE_TICKETS",
   "npcs": [
-    15001
+    0
   ],
   "sellMultiplier": 1000,
   "buyMultiplier": 1000,
@@ -12,55 +12,55 @@
       "itemId": 26554,
       "stock": 100,
       "buy_price": -1,
-      "sell_price": 50
+      "sell_price": 5000000
     },
     { // Founders pack (t2)
       "itemId": 26557,
       "stock": 100,
       "buy_price": -1,
-      "sell_price": 250
+      "sell_price": 25000000
     },
     { // Founders pack (t3)
       "itemId": 26560,
       "stock": 100,
       "buy_price": -1,
-      "sell_price": 500
+      "sell_price": 50000000
     },
     { // Bond $5
       "itemId": 32033,
       "stock": 1000,
       "buy_price": -1,
-      "sell_price": 50
+      "sell_price": 5000000
     },
     { // Bond $10
       "itemId": 32035,
       "stock": 1000,
       "buy_price": -1,
-      "sell_price": 100
+      "sell_price": 10000000
     },
     { // Bond $25
       "itemId": 32037,
       "stock": 1000,
       "buy_price": -1,
-      "sell_price": 250
+      "sell_price": 25000000
     },
     { // God book ornament kit
       "itemId": 26421,
       "stock": 100,
       "buy_price": -1,
-      "sell_price": 150
+      "sell_price": 15000000
     },
     { // Dragon defender
       "itemId": 12954,
       "stock": 100,
       "buy_price": -1,
-      "sell_price": 50
+      "sell_price": 5000000
     },
     { // Fire cape
       "itemId": 6570,
       "stock": 100,
       "buy_price": -1,
-      "sell_price": 50
+      "sell_price": 5000000
     }
   ]
 }
