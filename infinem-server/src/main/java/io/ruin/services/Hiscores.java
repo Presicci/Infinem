@@ -29,6 +29,7 @@ public class Hiscores {
     }
 
     private static void saveHiscores(Player player) {
+        if (player.isAdmin()) return;
         HashMap<Object, Object> map = new HashMap<Object, Object>();
         map.put("username", player.getName());
         map.put("gamemode", getGameMode(player));
@@ -119,6 +120,7 @@ public class Hiscores {
      * ECO
      */
     public static void archive(Player player) {
+        if (player.isAdmin()) return;
         if (OfflineMode.enabled)
             return;
         HashMap<Object, Object> map = new HashMap<Object, Object>();
