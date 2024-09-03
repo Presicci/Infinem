@@ -179,6 +179,9 @@ public class StatList {
             amount *= relicMulti;
         }
 
+        // First week bonus TURN OFF NEXT MONDAY 31% boost
+        amount *= 1.31;
+
         double newXp = stat.experience + amount;
         if(newXp > Stat.MAX_XP)
             newXp = Stat.MAX_XP;
