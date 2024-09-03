@@ -121,11 +121,16 @@ public class Mac {
 
         ShopManager.registerShop(masterCapeShop);
 
+        NPCAction.register(6481, "talk-to", (player, npc) -> {
+            player.dialogue(new OptionsDialogue(
+                    new Option("Untrimmed", () -> ShopManager.openIfExists(player, MAC_SHOP_UUID)),
+                    new Option("Trimmed", () -> ShopManager.openIfExists(player, MAC_SHOP2_UUID)),
+                    new Option("Master", () -> ShopManager.openIfExists(player, MAC_MASTER_UUID))
+            ));
+        });
         NPCAction.register(6481, "buy-capes", (p, n) -> ShopManager.openIfExists(p, MAC_SHOP_UUID));
         NPCAction.register(6481, "buy-capes 2", (p, n) -> ShopManager.openIfExists(p, MAC_SHOP2_UUID));
         NPCAction.register(6481, "buy-master capes", (p, n) -> ShopManager.openIfExists(p, MAC_MASTER_UUID));
-        NPCAction.register(6481, "reset-levels", Mac::resetLevels);
-
     }
 
     /**
