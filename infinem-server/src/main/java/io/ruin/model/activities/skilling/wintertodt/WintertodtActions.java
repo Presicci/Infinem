@@ -110,6 +110,7 @@ public class WintertodtActions {
             return;
         }
         player.startEvent(event -> {
+            int tricksterCount = 0;
             while (true) {
                 if (b.getObject().id != Wintertodt.BURNING_BRAZIER) {
                     player.sendMessage("The brazier has gone out.");
@@ -121,7 +122,9 @@ public class WintertodtActions {
                     return;
                 }
                 player.animate(832);
-                event.delay(2);
+                if (tricksterCount == 0 || !player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
+                    event.delay(2);
+                }
                 int baseExperience = player.getStats().get(StatType.Firemaking).currentLevel + 5;
                 if (player.getInventory().remove(Wintertodt.BRUMA_KINDLING, 1) > 0) {
                     player.getStats().addXp(StatType.Firemaking, (player.getStats().get(StatType.Firemaking).fixedLevel * 3.8) + baseExperience, true);
@@ -131,7 +134,12 @@ public class WintertodtActions {
                     player.getStats().addXp(StatType.Firemaking, (player.getStats().get(StatType.Firemaking).fixedLevel * 3) + baseExperience, true);
                     Wintertodt.addPoints(player, 10);
                 }
-                event.delay(2);
+                if (tricksterCount > 7 || !player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
+                    event.delay(2);
+                }
+                if (tricksterCount++ >= 8) {
+                    tricksterCount = 0;
+                }
             }
         });
     }
