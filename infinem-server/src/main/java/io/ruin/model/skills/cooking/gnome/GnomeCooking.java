@@ -41,5 +41,17 @@ public class GnomeCooking {
             h.actions[4] = (SlotAction) (player, slot) -> recipeIndex.set(player, getCookingType(player).getRecipeIndexBySlot(slot));
             h.actions[9] = (SimpleAction) player -> GnomeRecipe.create(player, recipeIndex.get(player));
         });
+        ItemAction.registerInventory(2199, "empty tray", (player, item) -> {
+            item.setId(Items.CRUNCHY_TRAY);
+            player.sendFilteredMessage("You empty the burnt crunchies out of the tray.");
+        });
+        ItemAction.registerInventory(2247, "empty tin", (player, item) -> {
+            item.setId(Items.BATTA_TIN);
+            player.sendFilteredMessage("You empty the burnt batta out of the tin.");
+        });
+        ItemAction.registerInventory(2175, "empty bowl", (player, item) -> {
+            item.setId(Items.GNOMEBOWL_MOULD);
+            player.sendFilteredMessage("You empty the burnt gnomebowl out of the mould.");
+        });
     }
 }
