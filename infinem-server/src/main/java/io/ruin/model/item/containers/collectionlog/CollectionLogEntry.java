@@ -186,7 +186,7 @@ public enum CollectionLogEntry {
     MOTHERLODE_MINE(12021, CollectionLogCategory.OTHER),
     MY_NOTES(12037, CollectionLogCategory.OTHER),
     RANDOM_EVENTS(12029, CollectionLogCategory.OTHER),
-    REVENANTS(12016, CollectionLogCategory.OTHER, player -> player.killCounterMap.get(SlayerKillCounter.REVENANTS.name()).getKills()),
+    REVENANTS(12016, CollectionLogCategory.OTHER, player -> KillCounter.getKillCount(player, SlayerKillCounter.REVENANTS)),
     ROOFTOP_AGILITY(12035, CollectionLogCategory.OTHER),
     SHAYZIEN_ARMOUR(12022, CollectionLogCategory.OTHER),
     SHOOTING_STARS(12048, CollectionLogCategory.OTHER),
