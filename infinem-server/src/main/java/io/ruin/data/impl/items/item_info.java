@@ -51,12 +51,12 @@ public class item_info {
                     };
                     for(int i = 0; i < bonuses.length; i++) {
                         int value = rs.getInt(bonuses[i]);
-                        if (value > 0) {
+                       // if (value > 0) {
                             if (def.equipBonuses == null) {
                                 def.equipBonuses = new int[14];
                             }
                             def.equipBonuses[i] = value;
-                        }
+                       // }
                     }
                     String requirementString = rs.getString("equip_requirements");
                     if (requirementString != null && !requirementString.isEmpty()) {
