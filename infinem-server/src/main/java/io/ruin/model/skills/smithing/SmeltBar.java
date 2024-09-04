@@ -201,11 +201,11 @@ public class SmeltBar {
                 player.dialogue(new MessageDialogue("You need a Smithing level of at least 35 to smith cannonballs."));
                 return;
             }
-            if (player.getInventory().hasId(ItemID.STEEL_BAR)) {
+            if (!player.getInventory().hasId(ItemID.STEEL_BAR)) {
                 player.sendMessage("You need a steel bar to make cannonballs.");
                 return;
             }
-            if (player.getInventory().hasId(ItemID.AMMO_MOULD)) {
+            if (!player.getInventory().hasId(ItemID.AMMO_MOULD)) {
                 player.sendMessage("You need an ammo mould to make cannonballs.");
                 return;
             }
