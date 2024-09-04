@@ -1,5 +1,6 @@
 package io.ruin.model.activities.cluescrolls;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
@@ -109,6 +110,7 @@ public class Clue {
             ClueSave save = def.clueType.getSave(player);
             if(save == null || save.id != this.id)
                 continue;
+            player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
             save.id = -1;
             if(--save.remaining > 0) {
                 player.dialogue(new ItemDialogue().one(def.clueType.clueId, "Good job, you are now one step closer to completing your clue scroll."));

@@ -20,7 +20,6 @@ public class ClueEnemies {
         if (possibleIds[0] == 2955 && player.wildernessLevel > 0) possibleIds[0] = 2954;
         int killedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.KILLED_WIZARD, 0);
         if (killedWizard == 1) {
-            player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
             clue.advance(player);
         } else {
             boolean spawnedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.SPAWNED_WIZARD, false);
@@ -53,7 +52,6 @@ public class ClueEnemies {
     public static void spawnDoubleAgent( Player player, int normalId, int wildernessId, Runnable runnable) {
         int killedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.KILLED_WIZARD, 0);
         if (killedWizard == 1) {
-            player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
             runnable.run();
         } else {
             boolean spawnAgent = player.getTemporaryAttributeOrDefault(AttributeKey.SPAWNED_WIZARD, false);
@@ -86,7 +84,6 @@ public class ClueEnemies {
     public static void ancientOrBrassicanDig(Clue clue, Player player) {
         int killedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.KILLED_WIZARD, 0);
         if (killedWizard == 3 || clue.type != ClueType.MASTER) {
-            player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
             clue.advance(player);
         } else {
             boolean spawnedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.SPAWNED_WIZARD, false);
