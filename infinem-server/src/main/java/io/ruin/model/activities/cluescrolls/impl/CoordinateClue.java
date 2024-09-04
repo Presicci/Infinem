@@ -57,11 +57,20 @@ public class CoordinateClue extends Clue {
         Tile tile = Tile.get(x, y, position.getZ(), true);
         if (tile.digAction == null) tile.digAction = new ArrayList<>();
         if (type == ClueType.HARD) {
-            tile.digAction.add((player -> ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 2955)));
+            tile.digAction.add((player -> {
+                if (!coordinateClue.hasClue(player)) return;
+                ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 2955);
+            }));
         } else if (type == ClueType.ELITE) {
-            tile.digAction.add(player -> ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 6587, 6588));
+            tile.digAction.add(player -> {
+                if (!coordinateClue.hasClue(player)) return;
+                ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 6587, 6588);
+            });
         } else if (type == ClueType.MASTER) {
-            tile.digAction.add(player -> ClueEnemies.ancientOrBrassicanDig(coordinateClue, player));
+            tile.digAction.add(player -> {
+                if (!coordinateClue.hasClue(player)) return;
+                ClueEnemies.ancientOrBrassicanDig(coordinateClue, player);
+            });
         } else {
             tile.digAction.add(coordinateClue::advance);
         }

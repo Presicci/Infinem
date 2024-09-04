@@ -115,7 +115,10 @@ public class HotColdClue extends Clue {
                 Position position = new Position(x, y, originalPosition.getZ());
                 Tile tile = Tile.get(position, true);
                 if (tile.digAction == null) tile.digAction = new ArrayList<>();
-                tile.digAction.add((player) -> ClueEnemies.ancientOrBrassicanDig(clue, player));
+                tile.digAction.add((player) -> {
+                    if (!clue.hasClue(player)) return;
+                    ClueEnemies.ancientOrBrassicanDig(clue, player);
+                });
             }
         }
     }
