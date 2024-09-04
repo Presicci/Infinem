@@ -200,11 +200,12 @@ public class DwarfCannon extends OwnedObject {
         target.ifPresent(npc -> {
             Projectile cannonBall = new Projectile(53, 50, 50, 0, 0, 10, 0, 64);  // 852 for flying dwarf
             Hit hit = new Hit(getOwner(), AttackStyle.CANNON, AttackType.RAPID_RANGED).randDamage(MAX_HIT).ignoreDefence();
+            hit.denyExperience();
             int delay = cannonBall.send(getCorrectedPosition(getPosition()), npc);
             int tickDelay = (((25 * delay)) / 600);
             npc.hit(hit.delay(tickDelay));
             if (hit.damage > 0) {
-                getOwner().getStats().addXp(StatType.Ranged, Math.ceil(hit.damage / 2), true);
+                getOwner().getStats().addXp(StatType.Ranged, Math.ceil((double) hit.damage / 2), true);
             }
             setAmmo(getAmmo() - 1);
             if (getAmmo() <= 0) {
