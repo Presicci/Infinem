@@ -37,6 +37,7 @@ public class RuneEssence {
         }
         player.startEvent(event -> {
             player.sendMessage("You swing your pick at the rock.");
+            int loops = 0;
             while (true) {
                 if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull()) {
                     player.sendMessage("Your inventory is too full to hold any more rune stones.");
@@ -71,6 +72,9 @@ public class RuneEssence {
                     }
                     counter.increment(player, amount);
                     player.getStats().addXp(StatType.Mining, 5 * amount, true);
+                }
+                if (loops++ > 150) {
+                    break;
                 }
             }
         });
