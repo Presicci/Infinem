@@ -1,5 +1,6 @@
 package io.ruin.model.map.object.actions.impl.locations;
 
+import io.ruin.model.World;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.map.ClipUtils;
@@ -29,7 +30,7 @@ public class RangingGuild {
         ClipUtils.addClipping(2658, 3438, 0, 0, 0);
         ObjectAction.register(11665, "open", (player, obj) -> {
             if (obj.x != 2658 || obj.y != 3438) return;
-            player.startEvent(e -> {
+            World.startEvent(e -> {
                 GameObject object = obj;
                 // Entering
                 if (player.getAbsX() < object.x || player.getAbsY() > object.y) {
