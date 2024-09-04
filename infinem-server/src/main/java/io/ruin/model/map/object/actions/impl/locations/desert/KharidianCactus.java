@@ -10,6 +10,7 @@ import io.ruin.model.map.environment.Desert;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
+import io.ruin.process.event.Event;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -47,12 +48,13 @@ public class KharidianCactus {
                     player.sendMessage("You top up your skin with water from the cactus.");
                     player.getStats().addXp(StatType.Woodcutting, 10.0, true);
                     player.getTaskManager().doLookupByUUID(640);    // Cut a Cactus in the Kharidian Desert
-                    World.startEvent(we -> {
+                    Event event = World.startEvent(we -> {
                         object.setId(2671);
                         we.delay(100);
                         object.setId(2670);
                     });
                 });
+                return;
             }
         }
         player.sendMessage("You don't have any waterskins to fill.");
