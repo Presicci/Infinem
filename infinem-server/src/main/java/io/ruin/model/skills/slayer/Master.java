@@ -234,48 +234,61 @@ public enum Master {
         switch (option) {
             case 1:
                 if (talked) {
-                    player.dialogue(
-                            new NPCDialogue(npcId, greeting),
-                            new OptionsDialogue(new Option("I need another assignment.", () -> {
-                                player.dialogue(new PlayerDialogue("I need another assignment.").action(() -> giveTask(player)));
-                            }), new Option("Have you any rewards for me, or anything to trade?", () -> {
-                                player.dialogue(
-                                        new PlayerDialogue("Have you any rewards for me, or anything to trade?"),
-                                        new NPCDialogue(npcId, "I have quite a few rewards you can earn, and a wide<br>variety of Slayer equipment for sale."),
-                                        new OptionsDialogue(new Option("Look at rewards", () -> {
-                                            SlayerUnlock.openRewards(player);
-                                        }), new Option("Look at shop", () -> {
-                                            SlayerUnlock.openShop(player, npc);
-                                        }), new Option("Cancel", player::closeDialogue))
-                                );
-                            }), new Option("Let's talk about the difficulty of my assignments.", () -> {
-                                player.dialogue(new PlayerDialogue("Let's talk about the difficulty of my assignments."));
+                    if (npc.getId() == TURAEL.getNpcId() && Slayer.getTaskAmount(player) > 0 && Config.SLAYER_MASTER.get(player) != TURAEL.configIndex) {
+                        player.dialogue(
+                                new NPCDialogue(npc, "Ah come to me to reset your task, resetting your streak?"),
+                                new OptionsDialogue("Get a Turael task?",
+                                        new Option("Yes", () -> {
+                                            player.slayerSpree = 0;
+                                            assignTask(player);
+                                        }),
+                                        new Option("No")
+                                )
+                        );
+                    } else {
+                        player.dialogue(
+                                new NPCDialogue(npcId, greeting),
+                                new OptionsDialogue(new Option("I need another assignment.", () -> {
+                                    player.dialogue(new PlayerDialogue("I need another assignment.").action(() -> giveTask(player)));
+                                }), new Option("Have you any rewards for me, or anything to trade?", () -> {
+                                    player.dialogue(
+                                            new PlayerDialogue("Have you any rewards for me, or anything to trade?"),
+                                            new NPCDialogue(npcId, "I have quite a few rewards you can earn, and a wide<br>variety of Slayer equipment for sale."),
+                                            new OptionsDialogue(new Option("Look at rewards", () -> {
+                                                SlayerUnlock.openRewards(player);
+                                            }), new Option("Look at shop", () -> {
+                                                SlayerUnlock.openShop(player, npc);
+                                            }), new Option("Cancel", player::closeDialogue))
+                                    );
+                                }), new Option("Let's talk about the difficulty of my assignments.", () -> {
+                                    player.dialogue(new PlayerDialogue("Let's talk about the difficulty of my assignments."));
 
-                                if (!player.slayerCombatCheck) {
-                                    player.dialogue(new NPCDialogue(npcId, "The Slayer Masters will take your combat level into<br>account when choosing tasks for you, so you shouldn't<br>get anything too hard."),
-                                            new OptionsDialogue(new Option("That's fine - I don't want anything too tough.", () -> {
-                                                player.dialogue(new PlayerDialogue("That's fine - I don't want anything too tough."),
-                                                        new NPCDialogue(npcId, "Okay, we'll keep checking your combat level."));
-                                            }), new Option("Stop checking my combat level - I can take anything!", () -> {
-                                                player.slayerCombatCheck = true;
-                                                player.dialogue(new PlayerDialogue("Stop checking my combat level - I can take anything!"),
-                                                        new NPCDialogue(npcId, "Okay, from now on, all the Slayer Masters will assign<br>you anything from their lists, regardless of your combat<br>level."));
-                                            })));
-                                } else {
-                                    player.dialogue(new NPCDialogue(npcId, "The Slayer Masters may currently assign you any<br>task in our lists, regardless of your combat level."),
-                                            new OptionsDialogue(new Option("That's fine - I can handle any task.", () -> {
-                                                player.dialogue(new PlayerDialogue("That's fine - I can handle any task."),
-                                                        new NPCDialogue(npcId, "That's the spirit!"));
-                                            }), new Option("In future, please don't give anything too rough.", () -> {
-                                                player.slayerCombatCheck = false;
-                                                player.dialogue(new PlayerDialogue("In future, please don't give anything too rough."),
-                                                        new NPCDialogue(npcId, "Okay, from now on, all the Slayer Masters will take<br>your combat level into account when choosing tasks for<br>you, so you shouldn't get anything too hard."));
-                                            })));
-                                }
-                            }), new Option("Er... Nothing...", () -> {
-                                player.dialogue(new PlayerDialogue("Er... Nothing..."));
-                            }))
-                    );
+                                    if (!player.slayerCombatCheck) {
+                                        player.dialogue(new NPCDialogue(npcId, "The Slayer Masters will take your combat level into<br>account when choosing tasks for you, so you shouldn't<br>get anything too hard."),
+                                                new OptionsDialogue(new Option("That's fine - I don't want anything too tough.", () -> {
+                                                    player.dialogue(new PlayerDialogue("That's fine - I don't want anything too tough."),
+                                                            new NPCDialogue(npcId, "Okay, we'll keep checking your combat level."));
+                                                }), new Option("Stop checking my combat level - I can take anything!", () -> {
+                                                    player.slayerCombatCheck = true;
+                                                    player.dialogue(new PlayerDialogue("Stop checking my combat level - I can take anything!"),
+                                                            new NPCDialogue(npcId, "Okay, from now on, all the Slayer Masters will assign<br>you anything from their lists, regardless of your combat<br>level."));
+                                                })));
+                                    } else {
+                                        player.dialogue(new NPCDialogue(npcId, "The Slayer Masters may currently assign you any<br>task in our lists, regardless of your combat level."),
+                                                new OptionsDialogue(new Option("That's fine - I can handle any task.", () -> {
+                                                    player.dialogue(new PlayerDialogue("That's fine - I can handle any task."),
+                                                            new NPCDialogue(npcId, "That's the spirit!"));
+                                                }), new Option("In future, please don't give anything too rough.", () -> {
+                                                    player.slayerCombatCheck = false;
+                                                    player.dialogue(new PlayerDialogue("In future, please don't give anything too rough."),
+                                                            new NPCDialogue(npcId, "Okay, from now on, all the Slayer Masters will take<br>your combat level into account when choosing tasks for<br>you, so you shouldn't get anything too hard."));
+                                                })));
+                                    }
+                                }), new Option("Er... Nothing...", () -> {
+                                    player.dialogue(new PlayerDialogue("Er... Nothing..."));
+                                }))
+                        );
+                    }
                 } else {
                     player.dialogue(new OptionsDialogue(new Option("Who are you?", () -> {
                         player.dialogue(new PlayerDialogue("Who are you?"),
