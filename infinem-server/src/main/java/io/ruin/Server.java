@@ -157,10 +157,10 @@ public class Server extends ServerWrapper {
         if (!OfflineMode.enabled) {
             println("Connecting to SQL databases...");
 
-            siteDb = new Database(properties.getProperty("database_host"), "infinem", properties.getProperty("database_user"), properties.getProperty("database_password"));
+            //siteDb = new Database(properties.getProperty("database_host"), "infinem", properties.getProperty("database_user"), properties.getProperty("database_password"));
             gameDb = new Database(properties.getProperty("database_host"), "game", properties.getProperty("database_user"), properties.getProperty("database_password"));
 
-            DatabaseUtils.connect(new Database[]{gameDb, siteDb}, errors -> {
+            DatabaseUtils.connect(new Database[]{gameDb}, errors -> {
                 if (!errors.isEmpty()) {
                     for (Throwable t : errors)
                         logError("Database error", t);

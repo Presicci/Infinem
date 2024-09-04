@@ -43,7 +43,7 @@ public class CentralClient extends CentralSender {
         bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 30000);
         bootstrap.option(ChannelOption.TCP_NODELAY, true);
         bootstrap.option(ChannelOption.SO_KEEPALIVE, true);
-        bootstrap.remoteAddress(World.getCentralAddress(), 9345); //this ip must stay private
+        bootstrap.remoteAddress(World.getCentralAddress(), 6311); //this ip must stay private
         TaskWorker.startTask(t -> {
             while(true) {
                 process();
