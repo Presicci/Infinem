@@ -10,6 +10,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.dynamic.DynamicChunk;
 import io.ruin.model.skills.construction.room.Room;
 import io.ruin.model.skills.construction.room.impl.*;
+import io.ruin.model.stat.StatType;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -243,6 +244,10 @@ public enum RoomDefinition {
                 }
                 if (def == null)
                     return;
+                if (p.getStats().get(StatType.Construction).currentLevel < def.getLevelReq()) {
+                    p.dialogue(new MessageDialogue("You need a Construction level of " + def.getLevelReq() + " to create that room."));
+                    return;
+                }
                 if (!p.getInventory().contains(COINS_995, def.cost)) {
                     p.dialogue(new MessageDialogue("You don't have enough coins to create that room."));
                     return;
