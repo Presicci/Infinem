@@ -181,7 +181,7 @@ public enum Impling {
     private static final int PURO_PURO_TOTAL_SPAWN_WEIGHT = Arrays.stream(values()).mapToInt(imp -> imp.puroPuroSpawnWeight).sum();
 
     private static final int OVERWORLD_SPAWN_DELAY = 200; // spawn time for random spawns in the overworld (implings will attempt to spawn at this interval, if the active number is below maximum)
-    private static final int OVERWORLD_MAX_IMPLINGS = 30; // maximum number of overworld spawns that can be active at one time
+    private static final int OVERWORLD_MAX_IMPLINGS = 60; // maximum number of overworld spawns that can be active at one time
     private static final int OVERWORLD_TOTAL_SPAWN_WEIGHT = Arrays.stream(values()).mapToInt(imp -> imp.overworldSpawnWeight).sum();
 
     private static final int CRYSTAL_SPAWN_DELAY = 10000; // 10 min respawn
