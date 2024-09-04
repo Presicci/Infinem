@@ -18,7 +18,7 @@ import java.util.Properties;
 public class Server extends ServerWrapper {
 
 
-    public static final int PORT = 9345;
+    public static final int PORT = 6311;
 
     public static final ProcessWorker worker = Server.newWorker("central-server", 30L, 5);
     public static final ArrayList<World> worlds = new ArrayList<World>();
