@@ -331,7 +331,7 @@ public enum Stall {
     private static final List<Integer> OUTFIT_PIECES = Arrays.asList(Items.ROGUE_BOOTS, Items.ROGUE_GLOVES, Items.ROGUE_TOP, Items.ROGUE_MASK, Items.ROGUE_TROUSERS);
 
     private static void rollOutfitPiece(Player player, Stall stall) {
-        if (Random.rollDie((stall.petOdds / 100) - (player.getStats().get(StatType.Thieving).currentLevel * 10))) {
+        if (Random.rollDie(Math.max(500, (stall.petOdds / 100) - (player.getStats().get(StatType.Thieving).currentLevel * 10)))) {
             for (int itemId : OUTFIT_PIECES) {
                 if (player.findItem(itemId) == null) {
                     if (player.getInventory().hasRoomFor(itemId)) {
