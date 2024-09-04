@@ -944,8 +944,8 @@ public enum ClueType {
                     new LootItem(995, 20000, 35000, 3300),   //Coins
                     new LootItem(995, 10000, 15000, 1150),   //Coins
                     new LootItem(995, 15000, 30000, 262),   //Coins
-                    new LootItem(4561, 14, 33, 3300),   //Purple sweets
-                    new LootItem(4561, 8, 12, 1150),   //Purple sweets
+                    new LootItem(10476, 14, 33, 3300),   //Purple sweets
+                    new LootItem(10476, 8, 12, 1150),   //Purple sweets
                     new LootItem(7329, 20, 38, 660),   //Red firelighter
                     new LootItem(7330, 20, 38, 660),   //Green firelighter
                     new LootItem(7331, 20, 38, 660),   //Blue firelighter
@@ -1002,8 +1002,8 @@ public enum ClueType {
             new LootItem(995, 20000, 35000, 3300),   //Coins
                     new LootItem(995, 10000, 15000, 1150),   //Coins
                     new LootItem(995, 15000, 30000, 262),   //Coins
-                    new LootItem(4561, 14, 33, 3300),   //Purple sweets
-                    new LootItem(4561, 8, 12, 1150),   //Purple sweets
+                    new LootItem(10476, 14, 33, 3300),   //Purple sweets
+                    new LootItem(10476, 8, 12, 1150),   //Purple sweets
                     new LootItem(7329, 20, 38, 660),   //Red firelighter
                     new LootItem(7330, 20, 38, 660),   //Green firelighter
                     new LootItem(7331, 20, 38, 660),   //Blue firelighter
