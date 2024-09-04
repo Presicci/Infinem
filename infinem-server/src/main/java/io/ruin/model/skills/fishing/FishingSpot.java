@@ -239,7 +239,7 @@ public class FishingSpot {
                         if (tool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(c.id)) {
                             player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_HARPOON.removeCharge(player);
-                            player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
+                            player.getStats().addXp(StatType.Fishing, c.xp, true);
                             player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(c.id) / 2, true);
                             player.sendMessage("Your infernal harpoon incinerates the " + c.name() + ".");
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
@@ -249,10 +249,10 @@ public class FishingSpot {
                             } else {
                                 player.getInventory().addOrDrop(c.id, amount);
                             }
-                            player.getStats().addXp(StatType.Fishing, (c.xp * anglerBonus(player)) * (npc.getId() == MINNOWS ? 1 : 2), true);
+                            player.getStats().addXp(StatType.Fishing, c.xp * (npc.getId() == MINNOWS ? 1 : 2), true);
                         } else {
                             player.getInventory().addOrDrop(c.id, amount);
-                            player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
+                            player.getStats().addXp(StatType.Fishing, c.xp, true);
                         }
                         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FISHCATCH, ItemDefinition.get(c.id).name, amount, true);
                         if (npc.getId() != MINNOWS)
@@ -521,28 +521,5 @@ public class FishingSpot {
 
             minnow.minnowsFish = false;
         }
-    }
-
-    private static double anglerBonus(Player player) {
-        double bonus = 1.0;
-        Item hat = player.getEquipment().get(Equipment.SLOT_HAT);
-        Item top = player.getEquipment().get(Equipment.SLOT_CHEST);
-        Item waders = player.getEquipment().get(Equipment.SLOT_LEGS);
-        Item boots = player.getEquipment().get(Equipment.SLOT_FEET);
-
-        if (hat != null && hat.getId() == 13258)
-            bonus += 0.4;
-        if (top != null && top.getId() == 13259)
-            bonus += 0.8;
-        if (waders != null && waders.getId() == 13260)
-            bonus += 0.6;
-        if (boots != null && boots.getId() == 13261)
-            bonus += 0.2;
-
-        /* Whole set gives an additional 0.5% exp bonus */
-        if (bonus >= 3.0)
-            bonus += 0.5;
-
-        return bonus;
     }
 }

@@ -70,7 +70,7 @@ public enum Fishing {
 
                     player.collectResource(fish.itemId, 1);
                     player.getInventory().add(fish.itemId, 1);
-                    player.getStats().addXp(StatType.Fishing, fish.exp * anglerBonus(player), false);
+                    player.getStats().addXp(StatType.Fishing, fish.exp, false);
                     player.getInventory().remove(CAVE_WORMS, 1);
 
                     if(!player.getInventory().hasId(CAVE_WORMS)) {
@@ -102,28 +102,4 @@ public enum Fishing {
         chance += (double) levelDifference * 0.01;
         return !(roll > Math.min(chance, 0.90));
     }
-
-    private static double anglerBonus(Player player) {
-        double bonus = 1.0;
-        Item hat = player.getEquipment().get(Equipment.SLOT_HAT);
-        Item top = player.getEquipment().get(Equipment.SLOT_CHEST);
-        Item waders = player.getEquipment().get(Equipment.SLOT_LEGS);
-        Item boots = player.getEquipment().get(Equipment.SLOT_FEET);
-
-        if (hat != null && hat.getId() == 13258)
-            bonus += 0.4;
-        if (top != null && top.getId() == 13259)
-            bonus += 0.8;
-        if (waders != null && waders.getId() == 13260)
-            bonus += 0.6;
-        if (boots != null && boots.getId() == 13261)
-            bonus += 0.2;
-
-        /* Whole set gives an additional 0.5% exp bonus */
-        if (bonus >= 3.0)
-            bonus += 0.5;
-
-        return bonus;
-    }
-
 }

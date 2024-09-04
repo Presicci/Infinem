@@ -142,7 +142,7 @@ public enum ArielFishing {
                 worldEvent.delay(returnDelay);
                 player.sendMessage("Your cormorant returns with it's catch.");
                 ArielFishing reward = rollForFish(player);
-                player.getStats().addXp(StatType.Fishing, reward.fishExp * anglerBonus(player), true);
+                player.getStats().addXp(StatType.Fishing, reward.fishExp, true);
                 player.getStats().addXp(StatType.Hunter, reward.hunterExp, true);
                 player.getInventory().add(reward.fishId, 1);
                 if (Random.rollDie(10, 3)) {
@@ -226,28 +226,4 @@ public enum ArielFishing {
             spawn = bounds.randomPosition();
         return spawn;
     }
-
-    private static double anglerBonus(Player player) {
-        double bonus = 1.0;
-        Item hat = player.getEquipment().get(Equipment.SLOT_HAT);
-        Item top = player.getEquipment().get(Equipment.SLOT_CHEST);
-        Item waders = player.getEquipment().get(Equipment.SLOT_LEGS);
-        Item boots = player.getEquipment().get(Equipment.SLOT_FEET);
-
-        if (hat != null && hat.getId() == 13258)
-            bonus += 0.4;
-        if (top != null && top.getId() == 13259)
-            bonus += 0.8;
-        if (waders != null && waders.getId() == 13260)
-            bonus += 0.6;
-        if (boots != null && boots.getId() == 13261)
-            bonus += 0.2;
-
-        /* Whole set gives an additional 0.5% exp bonus */
-        if (bonus >= 3.0)
-            bonus += 0.5;
-
-        return bonus;
-    }
-
 }

@@ -38,7 +38,14 @@ public enum SkillingOutfit {
             new SkillingOutfitPiece(0.008, Items.LUMBERJACK_TOP),
             new SkillingOutfitPiece(0.006, Items.LUMBERJACK_LEGS),
             new SkillingOutfitPiece(0.002, Items.LUMBERJACK_BOOTS)
-    );
+    ),
+    ANGLER(StatType.Fishing, 0.005,
+            new SkillingOutfitPiece(0.004, Items.ANGLER_HAT),
+            new SkillingOutfitPiece(0.008, Items.ANGLER_TOP),
+            new SkillingOutfitPiece(0.006, Items.ANGLER_WADERS),
+            new SkillingOutfitPiece(0.002, Items.ANGLER_BOOTS)
+    )
+    ;
 
     private final StatType statType;
     private final double setBonus;
