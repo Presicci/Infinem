@@ -27,6 +27,7 @@ import io.ruin.data.impl.objects.object_spawns;
 import io.ruin.data.yaml.YamlLoader;
 import io.ruin.data.yaml.impl.ShopLoader;
 import io.ruin.model.World;
+import io.ruin.model.activities.cluescrolls.ClueEnemies;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.combat.inferno.Inferno;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
