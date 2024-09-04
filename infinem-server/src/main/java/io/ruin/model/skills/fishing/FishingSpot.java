@@ -249,7 +249,7 @@ public class FishingSpot {
                             } else {
                                 player.getInventory().addOrDrop(c.id, amount);
                             }
-                            player.getStats().addXp(StatType.Fishing, c.xp * (npc.getId() == MINNOWS ? 1 : 2), true);
+                            player.getStats().addXp(StatType.Fishing, c.xp, true);
                         } else {
                             player.getInventory().addOrDrop(c.id, amount);
                             player.getStats().addXp(StatType.Fishing, c.xp, true);
