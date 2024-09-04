@@ -42,12 +42,12 @@ public class VoteGambler {
          * Once it starts, it will...
          * check the entries -> Find a random entry -> Award the player associated -> Reset
          */
-        World.startEvent(event -> {
+        /*World.startEvent(event -> {
             while (true) {
                 event.delay(Server.toTicks(432 * 100));
                 handleWinnerEntry();
             }
-        });
+        });*/
         LoginListener.register(player -> {
             if (!unclaimedRewards.isEmpty()) {
                 unclaimedRewards.stream()
