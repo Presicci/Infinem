@@ -15,7 +15,7 @@ public class ZamorakWizard extends BasicPoisonCombat {
 
     @Override
     public void init() {
-        npc.forceText("For Saradomin!");
+        npc.forceText("For Zamorak!");
     }
 
     @Override
