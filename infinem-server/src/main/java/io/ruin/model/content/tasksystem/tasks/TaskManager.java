@@ -202,7 +202,7 @@ public class TaskManager {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ? AND required_object REGEXP ?");
                 statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
                 String replace = trigger.trim().toLowerCase().replace("_", " ").replace("+", "\\+").replace("(", "\\(").replace(")", "\\)");
-                statement.setString(2, "^" + replace + "$|," + replace + "$|," + replace + ",|^" + replace + ",|any");
+                statement.setString(2, "^" + replace + "$|," + replace + "$|," + replace + ",|^" + replace + ",|^any$");
                 rs = statement.executeQuery();
                 checkResults(rs, TaskLookupType.CAT_AND_TRIGGER, category, null, amount, incremental);
             } finally {
