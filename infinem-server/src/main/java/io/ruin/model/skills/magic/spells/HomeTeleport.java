@@ -46,6 +46,7 @@ public class HomeTeleport extends Spell {
             if (player.getCombat().checkTb())
                 return;
             Position override = getHomeTeleportOverride(player);
+            player.getMovement().reset();
             player.startEvent(e -> {
                 player.animate(4847);
                 player.graphics(800);
