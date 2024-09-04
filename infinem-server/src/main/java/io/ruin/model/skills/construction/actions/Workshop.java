@@ -37,11 +37,11 @@ public class Workshop {
         ItemDispenser.register(6790, Tool.RAKE, Tool.SPADE, Tool.TROWEL, Tool.SEED_DIBBER, Tool.WATERING_CAN);
 
         //Workbenches
-        ObjectAction.register(Buildable.WOODEN_WORKBENCH.getBuiltObjects()[0], 1, (player, obj) -> Flatpack.openFlatpackCategories(player, 20));
+        /*ObjectAction.register(Buildable.WOODEN_WORKBENCH.getBuiltObjects()[0], 1, (player, obj) -> Flatpack.openFlatpackCategories(player, 20));
         ObjectAction.register(Buildable.OAK_WORKBENCH.getBuiltObjects()[0], 1, (player, obj) -> Flatpack.openFlatpackCategories(player, 40));
         ObjectAction.register(Buildable.STEEL_FRAMED_WORKBENCH.getBuiltObjects()[0], 1, (player, obj) -> Flatpack.openFlatpackCategories(player, 60));
         ObjectAction.register(Buildable.BENCH_WITH_VICE.getBuiltObjects()[0], 1, (player, obj) -> Flatpack.openFlatpackCategories(player, 80));
-        ObjectAction.register(Buildable.BENCH_WITH_LATHE.getBuiltObjects()[0], 1, (player, obj) -> Flatpack.openFlatpackCategories(player, 99));
+        ObjectAction.register(Buildable.BENCH_WITH_LATHE.getBuiltObjects()[0], 1, (player, obj) -> Flatpack.openFlatpackCategories(player, 99));*/
     }
 
 
