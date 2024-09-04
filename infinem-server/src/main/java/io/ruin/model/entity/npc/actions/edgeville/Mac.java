@@ -123,8 +123,8 @@ public class Mac {
 
         NPCAction.register(6481, "talk-to", (player, npc) -> {
             player.dialogue(new OptionsDialogue(
-                    new Option("Untrimmed", () -> ShopManager.openIfExists(player, MAC_SHOP_UUID)),
-                    new Option("Trimmed", () -> ShopManager.openIfExists(player, MAC_SHOP2_UUID)),
+                    new Option("Untrimmed", () -> ShopManager.openIfExists(player, MAC_SHOP2_UUID)),
+                    new Option("Trimmed", () -> ShopManager.openIfExists(player, MAC_SHOP_UUID)),
                     new Option("Master", () -> ShopManager.openIfExists(player, MAC_MASTER_UUID))
             ));
         });
