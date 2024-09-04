@@ -3119,6 +3119,23 @@ public class Administrator {
                 PersistentData.INSTANCE.save();
                 return true;
             }
+            case "giverank": {
+                if (args.length < 2) {
+                    player.sendMessage("Syntax: ::giverank [playername] [rankname]");
+                }
+                Player target = World.getPlayer(args[0]);
+                if (target == null) {
+                    player.sendMessage("That player doesn't exist.");
+                    return true;
+                }
+                PlayerGroup group = PlayerGroup.valueOf(args[1]);
+                if (group == null) {
+                    player.sendMessage("That group doesn't exist.");
+                    return true;
+                }
+                target.join(group);
+                return true;
+            }
         }
         return false;
     }
