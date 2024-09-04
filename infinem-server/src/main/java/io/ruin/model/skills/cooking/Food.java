@@ -68,6 +68,7 @@ public enum Food {
     PLAIN_PIZZA(35, 143.0, 2287, 2289, 2305, "a plain pizza", "", 3, 35, 35, 35),
 
     //Bread
+    PITTA_BREAD(58, 40.0, Items.PITTA_DOUGH, Items.PITTA_BREAD, Items.BURNT_PITTA_BREAD, "a loaf of pitta bread", "loaves of pitta bread", 3, 58, 58, 58),
     BREAD(1, 40.0, 2307, 2309, 2311, "a loaf of bread", "loaves of bread", 3, 40, 38, 35),
 
     //Cake
