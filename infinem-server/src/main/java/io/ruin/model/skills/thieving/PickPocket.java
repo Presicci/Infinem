@@ -562,6 +562,10 @@ public enum PickPocket {
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
                 player.getTaskManager().doLookupByCategory(TaskCategory.PICKPOCKET, npc.getDef().name.toLowerCase());
                 player.getTaskManager().doLookupByCategory(TaskCategory.STEAL, 1, true);
+                if (pickpocket == ELF || pickpocket == ELF_PRIF)
+                    player.getTaskManager().doLookupByUUID(792, 1, true);   // Pickpocket an Elf 50 Times
+                if (pickpocket == VYRE)
+                    player.getTaskManager().doLookupByUUID(735, 1, true);   // Pickpocket a Vyre 50 Times
                 if (pickpocket == HAM && !player.getTaskManager().hasCompletedTask(938) && hasHAMSet(player))
                     player.getTaskManager().doLookupByUUID(938);    // Pickpocket a H.A.M. Member as a H.A.M. Member
                 recursiveAttemptPickpocket(player, npc, pickpocket);
