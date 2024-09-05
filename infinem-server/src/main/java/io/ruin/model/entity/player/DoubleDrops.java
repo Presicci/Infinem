@@ -22,15 +22,9 @@ public class DoubleDrops {
      * Math to retrieve loot rolls after a kill
      */
     public static int getRolls(Player player, NPC npc) {
-        int doubleDropChance = getDoubleDropChance(player);
         int rolls = 1;
         if (World.doubleDrops)
             rolls++;
-        if (player.storeAmountSpent > 0) {
-            if (Random.get(1, 100) <= doubleDropChance) {
-                rolls++;
-            }
-        }
         double bestiaryChance = player.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(ExtraDropPerk.class, 0);
         if (bestiaryChance > 1) {
             int bestiaryRolls = (int) bestiaryChance;
@@ -39,16 +33,6 @@ public class DoubleDrops {
         }
         if (bestiaryChance > 0 && Random.get() < bestiaryChance) {
             rolls++;
-        }
-//        if (player.pet.npcId == 20000) { //20% chance to double roll with founders pet
-//            if(Random.get(1, 100) <= 20) {
-//                rolls++;
-//            }
-//        }
-        if (player.getEquipment().contains(new Item(12785))) { //20% chance to double roll with ROW i
-            if (Random.get(1, 100) <= 20) {
-                rolls++;
-            }
         }
         if (Random.get(1, 100) <= gearCount(player) * 2) {
             rolls++;
@@ -61,21 +45,11 @@ public class DoubleDrops {
      */
     public static int getChance(Player player) {
         int chance = 0;
-
         if (World.doubleDrops)
             chance += 100;
-
-        chance += getDoubleDropChance(player);;
-
-//        if (player.pet.npcId == 20000)  //20% chance to double roll with founders pet
-//            chance += 20;
-
         if (player.getEquipment().contains(new Item(12785)))  //20% chance to double roll with ROW i
             chance += 20;
-
-
         chance += (gearCount(player) * 2);
-
         return chance;
     }
 
@@ -101,26 +75,5 @@ public class DoubleDrops {
             }
         }
         return gearRolls;
-    }
-
-    private static int getDoubleDropChance(Player player) {
-        int doubleDropChance = player.getPrimaryGroup().getDoubleDropChance();
-
-        if (player.isGroup(PlayerGroup.ZENYTE)) {
-            doubleDropChance = PlayerGroup.ZENYTE.getDoubleDropChance();
-        } else if (player.isGroup(PlayerGroup.ONYX)) {
-            doubleDropChance = PlayerGroup.ONYX.getDoubleDropChance();
-        } else if (player.isGroup(PlayerGroup.DRAGONSTONE)) {
-            doubleDropChance = PlayerGroup.DRAGONSTONE.getDoubleDropChance();
-        } else if(player.isGroup(PlayerGroup.DIAMOND)) {
-            doubleDropChance =PlayerGroup.DIAMOND.getDoubleDropChance();
-        }else if (player.isGroup(PlayerGroup.RUBY)) {
-            doubleDropChance = PlayerGroup.RUBY.getDoubleDropChance();
-        } else if (player.isGroup(PlayerGroup.EMERALD)) {
-            doubleDropChance = PlayerGroup.EMERALD.getDoubleDropChance();
-        } else if (player.isGroup(PlayerGroup.SAPPHIRE)) {
-            doubleDropChance = PlayerGroup.SAPPHIRE.getDoubleDropChance();
-        }
-        return doubleDropChance;
     }
 }
