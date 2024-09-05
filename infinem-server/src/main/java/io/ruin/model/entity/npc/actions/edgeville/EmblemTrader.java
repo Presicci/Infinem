@@ -21,7 +21,7 @@ public class EmblemTrader {
 
     static {
         //Wilderness Emblem Trader
-        NPCAction.register(7941, "talk-to", (player, npc) -> {
+        NPCAction.register(7943, "talk-to", (player, npc) -> {
             String currencyName = "coins";
             player.dialogue(new NPCDialogue(npc, "If you find an ancient emblem, totem, or statuette, use it on me and I'll exchange it for " + currencyName + "."));
         });
@@ -36,7 +36,7 @@ public class EmblemTrader {
         for (int[] artifact : ancientArtifacts) {
             int id = artifact[0];
             ItemDefinition.get(id).sigmundBuyPrice = artifact[1];
-            ItemNPCAction.register(id, 7941, (player, item, npc) -> player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Sell your " + ItemDefinition.get(id).name +
+            ItemNPCAction.register(id, 7943, (player, item, npc) -> player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Sell your " + ItemDefinition.get(id).name +
                     " for " + artifact[1] + " coins?", item, () -> {
                 item.remove();
                 player.getInventory().add(COINS_995, artifact[1]);
