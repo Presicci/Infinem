@@ -12,7 +12,7 @@ public enum ItemPack {
     EARTH_RUNES(12732, 557),
     MIND_RUNES(12736, 558),
     CHAOS_RUNES(12738, 562),
-    CATALYTIC_RUNES(12738, 562),
+    CATALYTIC_RUNES(20523, 562),
 
     // Farming
     SACKS(13252, 5419),
