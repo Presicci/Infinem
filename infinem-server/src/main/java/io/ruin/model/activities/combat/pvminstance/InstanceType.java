@@ -120,6 +120,18 @@ public enum InstanceType {
         return coinCost;
     }
 
+    public int getCost(Player player) {
+        int cost = coinCost;
+        if (player.isDiamond()) {
+            cost = (int) (cost * 0.85);
+        } else if (player.isRuby()) {
+            cost = (int) (cost * 0.90);
+        } else if (player.isEmerald()) {
+            cost = (int) (cost * 0.95);
+        }
+        return cost;
+    }
+
     /**
      * Spawns (In Local coords)
      */

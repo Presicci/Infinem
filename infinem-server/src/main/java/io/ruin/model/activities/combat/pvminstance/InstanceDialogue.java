@@ -121,14 +121,14 @@ public class InstanceDialogue {
             player.dialogue(new MessageDialogue("Please select an instance type first."), new ActionDialogue(this::createMenu));
             return;
         }
-        Item cost = new Item(COINS_995, type.getCost());
+        Item cost = new Item(COINS_995, type.getCost(player));
         player.dialogue(new YesNoDialogue("Create Instance?", "Creating this instance will cost " + NumberUtils.formatNumber(cost.getAmount()) + " " + cost.getDef().name + ".<br>" +
                 "The instance will last for " + type.getDuration() / 100 + " minutes. <br>" +
                 "Continue?", cost, this::create));
     }
 
     private void create() {
-        Item cost = new Item(COINS_995, type.getCost());
+        Item cost = new Item(COINS_995, type.getCost(player));
         boolean fromBank = false;
         if (!player.getInventory().contains(cost)) {
             if (!player.getBank().contains(cost)) {
@@ -205,7 +205,7 @@ public class InstanceDialogue {
 
     private Option toOption(InstanceType instanceType) {
         return new Option(instanceType.getName() + " - " +
-                "" + NumberUtils.formatNumber(instanceType.getCost()) + " " + "Coins" + "",
+                "" + NumberUtils.formatNumber(instanceType.getCost(player)) + " " + "Coins" + "",
                 () -> {
                     type = instanceType;
                     createMenu();
