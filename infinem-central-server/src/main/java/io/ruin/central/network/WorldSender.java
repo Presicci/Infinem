@@ -59,7 +59,7 @@ public class WorldSender {
     }
 
     public void sendOnlineCheck(String name) {
-        OutBuffer out = new OutBuffer(5).sendFixedPacket(4).addString(name);
+        OutBuffer out = new OutBuffer(Protocol.strLen(name) + 2).sendFixedPacket(4).addString(name);
         this.write(out);
     }
 
