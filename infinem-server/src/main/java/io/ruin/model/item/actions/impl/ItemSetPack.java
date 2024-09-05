@@ -11,7 +11,7 @@ import io.ruin.model.item.actions.ItemAction;
 public enum ItemSetPack {
     FOUNDERS_T1(26554, new Item(26427), new Item(26430), new Item(26433), new Item(26436), new Item(26424)),
     FOUNDERS_T2(26557, new Item(26439), new Item(26442), new Item(26445), new Item(26448), new Item(32030), new Item(26500)),
-    FOUNDERS_T3(26560, new Item(26451), new Item(26454), new Item(26457), new Item(26460), new Item(32031));
+    FOUNDERS_T3(26560, new Item(26451), new Item(26454), new Item(26457), new Item(26460), new Item(32031), new Item(32032));
 
     private final int packId;
     private final Item[] packContents;
