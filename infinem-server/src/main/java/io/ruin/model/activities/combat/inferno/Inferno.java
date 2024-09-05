@@ -622,23 +622,7 @@ public class Inferno {
     }
 
     private static int getStartingWave(Player player) {
-        if (player.isGroup(PlayerGroup.ZENYTE)) {
-            return 60;
-        } else if (player.isGroup(PlayerGroup.ONYX)) {
-            return 55;
-        } else if (player.isGroup(PlayerGroup.DRAGONSTONE)) {
-            return 50;
-        } else if (player.isGroup(PlayerGroup.DIAMOND)) {
-            return 45;
-        } else if (player.isGroup(PlayerGroup.RUBY)) {
-            return 40;
-        } else if (player.isGroup(PlayerGroup.EMERALD)) {
-            return 35;
-        } else if (player.isGroup(PlayerGroup.SAPPHIRE)) {
-            return 30;
-        } else {
-            return 25;
-        }
+        return 1;
     }
 
     static {
