@@ -132,6 +132,7 @@ public class Desert {
     }
 
     public static void tickDesertHeat(Player player) {
+        if (player.isRuby() || player.isDiamond()) return;
         int attrValue = player.getTemporaryAttributeIntOrZero("DESERT");
         if (attrValue <= 0 || player.hasTemporaryAttribute("DESERTTICKING") || player.getEquipment().hasId(Items.DESERT_AMULET_4)) return;
         if (attrValue == 1) {
