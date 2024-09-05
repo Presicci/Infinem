@@ -1192,9 +1192,7 @@ public class PlayerCombat extends Combat {
                 /**
                  * Rewards (Keep before items lost on death!)
                  */
-                boolean bhTarget = player.getBountyHunter().deathByTarget(pKiller);
                 if(pKiller != null) {
-                    killer.reward(player, bhTarget);
                     Config.PVP_DEATHS.increment(player, 1);
                     player.currentKillSpree = 0;
                 }
