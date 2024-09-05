@@ -309,16 +309,6 @@ public class NPCDrops {
                 }
             }
 
-            /*
-             * Donator Benefit: [Noted herbs in wilderness]
-             */
-            if (item.getDef().name.toLowerCase().contains("grimy")) {
-                if (pKiller.isDiamond() && pKiller.wildernessLevel > 0) {
-                    if (item.getDef().notedId > -1)
-                        item.setId(item.getDef().notedId);
-                }
-            }
-
             if (item.getDef().name.toLowerCase().contains("statius") ||
                     item.getDef().name.toLowerCase().contains("vesta") ||
                     item.getDef().name.toLowerCase().contains("zuriel")) {
