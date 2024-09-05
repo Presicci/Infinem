@@ -1,7 +1,7 @@
 package io.ruin.model.inter.dialogue;
 
 import io.ruin.model.World;
-import io.ruin.model.entity.npc.actions.edgeville.CreditManager;
+import io.ruin.model.entity.npc.actions.edgeville.DonationManager;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -59,7 +59,7 @@ public class LinkDialogue extends Dialogue {
             h.actions[8] = (SimpleAction) player -> {
                 player.dialogue(
                         new OptionsDialogue("Would you like to open our store?",
-                                new Option("Yes", () -> player.openUrl(World.type.getWorldName() + " Store", CreditManager.STORE_URL)),
+                                new Option("Yes", () -> player.openUrl(World.type.getWorldName() + " Store", DonationManager.STORE_URL)),
                                 new Option("No", player::closeDialogue)
                         )
                 );

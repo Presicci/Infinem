@@ -59,20 +59,26 @@ public enum PlayerGroup {
         this(id, clientId, clientImgId, "");
     }
 
-    public void sync(Player player, String type) {
-        sync(player, type, null);
+    public void sync(Player player) {
+        sync(player, null);
     }
 
-    public void sync(Player player, String type, Runnable successAction) {
-        CompletableFuture.runAsync(() -> {
-            Map<Object, Object> map = new HashMap<>();
-            map.put("userId", player.getUserId());
-            map.put("type", type);
-            map.put("groupId", id);
-            String result = XenPost.post("add_group", map);
-            if(successAction != null && "1".equals(result))
-                successAction.run();
-        });
+    public void sync(Player player, Runnable successAction) {
+        if (id >= 9 && id <= 15
+                && !player.isGroup(OWNER)
+                && !player.isGroup(MODERATOR)
+                && !player.isGroup(ADMINISTRATOR)
+                && !player.isGroup(COMMUNITY_MANAGER)
+                && !player.isGroup(DEVELOPER)) {
+            CompletableFuture.runAsync(() -> {
+                Map<Object, Object> map = new HashMap<>();
+                map.put("username", player.getName());
+                map.put("rank", id);
+                String result = XenPost.post("update_rank", map);
+                if(successAction != null && "1".equals(result))
+                    successAction.run();
+            });
+        }
     }
 
     public void removePKMode(Player player, String type) {

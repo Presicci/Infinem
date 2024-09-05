@@ -127,14 +127,14 @@ public class Punishment {
 
     public static void ban(Player p1, Player p2) {
         p1.sendMessage("Attemping to ban " + p2.getName() + "...");
-        PlayerGroup.BANNED.sync(p2, "ban", () -> {
+        //PlayerGroup.BANNED.sync(p2, "ban", () -> {
             Server.worker.execute(() -> {
                 p2.forceLogout();
                 p1.sendMessage("Successfully banned " + p2.getName() + "!");
 
                 logPunishment(p1, p2, -1, "banned");
             });
-        });
+        //});
     }
 
     public static void macBan(Player staffMember, Player punishedUser) {

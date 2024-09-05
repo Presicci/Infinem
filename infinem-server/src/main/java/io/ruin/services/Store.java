@@ -4,94 +4,154 @@ import com.google.common.collect.Lists;
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseStatement;
 import io.ruin.api.database.DatabaseUtils;
+import io.ruin.api.utils.XenPost;
 import io.ruin.cache.ItemID;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.player.PlayerAction;
-import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
-import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.ItemAction;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
 @Slf4j
 public class Store {
 
-    /**
-     * Credits item
-     */
-
-    public static void claimCredits(Player player, Item item) {
-        if(!World.isLive() && !player.isAdmin()) {
-            player.dialogue(new MessageDialogue("Sorry, you can't claim credits on this world."));
-            return;
+    public static void claim(Player player, NPC npc) {
+        if (npc != null) {
+            player.dialogue(new NPCDialogue(npc, "Attempting to claim donation rewards, please wait...").hideContinue());
+        } else {
+            player.dialogue(new MessageDialogue("Attempting to claim donation rewards, please wait...").hideContinue());
         }
-        PlayerAction action = player.getAction(1);
-        if(action == PlayerAction.FIGHT || action == PlayerAction.ATTACK) {
-            player.dialogue(new MessageDialogue("Sorry, you can't claim credits from where you're standing."));
-            return;
-        }
-        player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Your claimed credits will be made available to your online account.", item, () -> claimCredits0(player, item)));
-    }
-
-    private static void claimCredits0(Player player, Item item) {
-        player.lock();
-        player.dialogue(new ItemDialogue().one(item.getId(), "Attempting to claim credits, please wait...").hideContinue());
-        /*Server.forumDb.execute(new DatabaseStatement() {
-            @Override
-            public void execute(Connection connection) throws SQLException {
-                PreparedStatement statement = null;
-                ResultSet resultSet = null;
-                try {
-                    statement = connection.prepareStatement("SELECT * FROM xf_user WHERE user_id = ?", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-                    statement.setInt(1, player.getUserId());
-                    resultSet = statement.executeQuery();
-                    if(!resultSet.next()) {
-                        resultSet.moveToInsertRow();
-                        updateCredits(player, item.getAmount(), resultSet);
-                        resultSet.insertRow();
+        CompletableFuture.runAsync(() -> {
+            HashMap<Object, Object> map = new HashMap<>();
+            map.put("username", player.getName());
+            String result = XenPost.post("claim_donations", map);
+            Server.worker.execute(() -> {
+                if (Character.isDigit(result.charAt(0)) || result.charAt(0) == '-') {
+                    if (result.charAt(0) == '-') {
+                        if (npc != null) {
+                            player.dialogue(new NPCDialogue(npc, "You don't have any donation rewards to claim. Type ::store to visit the shop."));
+                        } else {
+                            player.dialogue(new MessageDialogue("You don't have any donation rewards to claim. Type ::store to visit the shop."));
+                        }
                     } else {
-                        long credits = resultSet.getInt("donation_shards");
-                        updateCredits(player, (int) Math.min(credits + item.getAmount(), Integer.MAX_VALUE), resultSet);
-                        resultSet.updateRow();
+                        try {
+                            String[] elements = result.split(",");
+                            if (elements.length < 2) {
+                                if (npc != null) {
+                                    player.dialogue(new NPCDialogue(npc, "Something went wrong, please try again later."));
+                                } else {
+                                    player.dialogue(new MessageDialogue("Something went wrong, please try again later."));
+                                }
+                            }
+                            int paidAmt = Integer.parseInt(elements[0]) * 10;
+                            int claimedItems = 0;
+                            for (int index = 1 ; index < elements.length; index++) {
+                                if (elements[index].length() < 2) continue;
+                                String[] item = elements[index].split(":");
+                                int storeId = Integer.parseInt(item[0]);
+                                int amt = Integer.parseInt(item[1]);
+                                // If is bond, subtract store amt spent
+                                switch (storeId) {
+                                    case 1:
+                                        addItem(player, 26554, amt);
+                                        break;
+                                    case 2:
+                                        addItem(player, 26557, amt);
+                                        break;
+                                    case 3:
+                                        addItem(player, 26560, amt);
+                                        break;
+                                    case 4:
+                                        addItem(player, 32033, amt);
+                                        paidAmt -= 50;
+                                        break;
+                                    case 5:
+                                        addItem(player, 32035, amt);
+                                        paidAmt -= 100;
+                                        break;
+                                    case 6:
+                                        addItem(player, 32037, amt);
+                                        paidAmt -= 250;
+                                        break;
+                                    case 7:
+                                        addItem(player, 26421, amt);
+                                        break;
+                                    case 8:
+                                        addItem(player, 12954, amt);
+                                        break;
+                                    case 9:
+                                        addItem(player, 6570, amt);
+                                        break;
+                                }
+                                claimedItems += amt;
+                            }
+                            player.storeAmountSpent += paidAmt;
+                            if (claimedItems > 0) {
+                                if (npc != null) {
+                                    player.dialogue(new NPCDialogue(npc, "You claimed " + claimedItems + " " + (claimedItems > 1 ? "rewards" : "reward") + ", and " + paidAmt + " credit.<br>You now have " + player.storeAmountSpent + " total donation credit."));
+                                } else {
+                                    player.dialogue(new MessageDialogue("You claimed " + claimedItems + " " + (claimedItems > 1 ? "rewards" : "reward") + ", and " + paidAmt + " credit.<br>You now have " + player.storeAmountSpent + " total donation credit."));
+                                }
+                            } else {
+                                if (npc != null) {
+                                    player.dialogue(new NPCDialogue(npc, "You claimed " + paidAmt + " credit.<br>You now have " + player.storeAmountSpent + " total donation credit."));
+                                } else {
+                                    player.dialogue(new MessageDialogue("You claimed " + paidAmt + " credit.<br>You now have " + player.storeAmountSpent + " total donation credit."));
+                                }
+                            }
+                            PlayerGroup group = getGroup(player);
+                            if(group != null && !player.isGroup(group)) {
+                                player.join(group);
+                                group.sync(player);
+                                player.sendMessage("Congratulations, you've unlocked a new donator rank: <img=" + group.clientImgId + ">");
+                            }
+                        } catch (NumberFormatException e) {
+                            System.err.println(player.getName() + " had an error claiming their donation rewards, output: " + result + " | " + e.getMessage());
+                        }
                     }
-                    finish(true);
-                } finally {
-                    DatabaseUtils.close(statement, resultSet);
+                } else {
+                    if (npc != null) {
+                        player.dialogue(new NPCDialogue(npc, "Something went wrong, please try again later."));
+                    } else {
+                        player.dialogue(new MessageDialogue("Something went wrong, please try again later."));
+                    }
                 }
-            }
-            @Override
-            public void failed(Throwable t) {
-                finish(false);
-                Server.logError("", t); //todo exclude timeouts
-            }
-            private void finish(boolean success) {
-                Server.worker.execute(() -> {
-                    if(success) {
-                        item.remove();
-                        player.dialogue(new ItemDialogue().one(item.getId(), item.getAmount() + " " + World.type.getWorldName() + " Credits have been added to your web account."));
-                    } else {
-                        player.dialogue(new MessageDialogue("Unable to claim credits at this time, please try again."));
-                    }
-                    player.unlock();
-                });
-            }
-        });*/
+            });
+        });
     }
 
-    private static void updateCredits(Player player, int credits, ResultSet resultSet) throws SQLException {
-        resultSet.updateInt("user_id", player.getUserId());
-        resultSet.updateString("username", player.getName()); //eh idk why this is stored lol
-        resultSet.updateInt("donation_shards", credits);
+    private static void addItem(Player player, int itemId, int amt) {
+        if (player.getInventory().hasRoomFor(itemId, amt)) {
+            player.getInventory().add(itemId, amt);
+        } else {
+            player.getBank().add(itemId, amt);
+        }
     }
 
-    static {
-        ItemAction.registerInventory(13190, "claim", Store::claimCredits);
+    public static PlayerGroup getGroup(Player player) {
+        /*if(player.storeAmountSpent >= 10000)
+            return  PlayerGroup.ZENYTE;
+        if(player.storeAmountSpent >= 5000)
+            return PlayerGroup.ONYX;
+        if(player.storeAmountSpent >= 2500)
+            return PlayerGroup.DRAGONSTONE;*/
+        if(player.storeAmountSpent >= 1000)
+            return PlayerGroup.DIAMOND;
+        if(player.storeAmountSpent >= 500)
+            return PlayerGroup.RUBY;
+        if(player.storeAmountSpent >= 250)
+            return PlayerGroup.EMERALD;
+        if(player.storeAmountSpent >= 50)
+            return PlayerGroup.SAPPHIRE;
+        return null;
     }
 
     /**
@@ -216,7 +276,6 @@ public class Store {
                     finish(false);
                 } finally {
                     DatabaseUtils.close(statement, resultSet);
-                    markClaimed(orders, player.getIp());
                 }
             }
 
@@ -231,24 +290,6 @@ public class Store {
                     consumer.accept(items, spent, error);
                     player.unlock();
                 });
-            }
-        });
-    }
-
-    private static void markClaimed(List<Integer> orders, String ip) {
-        Server.siteDb.execute(connection -> {
-            PreparedStatement statement = null;
-            for(int o : orders) {
-                try {
-                    statement = connection.prepareStatement("UPDATE orders SET claimed_ip=?, status=?, claimed_at=? WHERE id=?", ResultSet.CONCUR_UPDATABLE);
-                    statement.setString(1, ip);
-                    statement.setString(2, "Claimed");
-                    statement.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
-                    statement.setInt(4, o);
-                    statement.executeUpdate();
-                } finally {
-                    DatabaseUtils.close(statement);
-                }
             }
         });
     }

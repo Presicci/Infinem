@@ -1,6 +1,6 @@
 package io.ruin.model.activities.donatorzone;
 
-import io.ruin.model.entity.npc.actions.edgeville.CreditManager;
+import io.ruin.model.entity.npc.actions.edgeville.DonationManager;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -27,7 +27,7 @@ public class DonatorBossPortal {
     }
 
     public static boolean hasKillsLeft(Player player) {
-        PlayerGroup donationGroup = CreditManager.getGroup(player);
+        PlayerGroup donationGroup = DonationManager.getGroup(player);
         if (donationGroup != null) {
             switch (donationGroup) {
                 case ZENYTE:

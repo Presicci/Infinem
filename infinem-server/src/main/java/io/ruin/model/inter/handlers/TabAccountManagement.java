@@ -4,7 +4,7 @@ import io.ruin.data.impl.polls;
 import io.ruin.model.content.poll.PollInterface;
 import io.ruin.utility.Color;
 import io.ruin.model.World;
-import io.ruin.model.entity.npc.actions.edgeville.CreditManager;
+import io.ruin.model.entity.npc.actions.edgeville.DonationManager;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.entity.shared.listeners.LoginListener;
@@ -36,7 +36,7 @@ public class TabAccountManagement {
         InterfaceHandler.register(Interface.ACCOUNT_MANAGEMENT, h -> {
             h.actions[26] = (SimpleAction) p -> p.dialogue(
                     new OptionsDialogue("Would you like to open our store?",
-                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", CreditManager.STORE_URL)),
+                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", DonationManager.STORE_URL)),
                             new Option("No", p::closeDialogue)
                     )
             );
@@ -57,7 +57,7 @@ public class TabAccountManagement {
                   p.dialogue(new ItemDialogue().one(OSPVP_CREDITS, "You need at least " + Color.COOL_BLUE.wrap("50 " + World.type.getWorldName() + " Credits") + " to change your username. You can purchase credits from our store." +
                           "<br>Would you like to view the store?"),
                           new OptionsDialogue("Would you like to open our store?",
-                                  new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", CreditManager.STORE_URL)),
+                                  new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", DonationManager.STORE_URL)),
                                   new Option("No", p::closeDialogue)
                           ));
                   return;
@@ -107,7 +107,7 @@ public class TabAccountManagement {
                     )
             );
             h.actions[85] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to open our store?",
-                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", CreditManager.STORE_URL)),
+                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", DonationManager.STORE_URL)),
                             new Option("No", p::closeDialogue)
                     )
             );
