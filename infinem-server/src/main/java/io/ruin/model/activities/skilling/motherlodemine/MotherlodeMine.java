@@ -294,11 +294,14 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     if (Random.rollDie(247200 - (player.getStats().get(StatType.Mining).currentLevel * 25)))
                         Pet.ROCK_GOLEM.unlock(player);
                     if (!upperLevel && Random.rollDie(3, 1)) {
-                        obj.setId(obj.originalId);
-                        World.startEvent(worldEvent -> {
-                            worldEvent.delay(100);
-                            obj.setId(obj.id - 4);
-                        });
+                        int count = obj.incrementTemporaryNumericAttribute("DAMAGE", 1);
+                        if (count >= 3) {
+                            obj.setId(obj.originalId);
+                            World.startEvent(worldEvent -> {
+                                worldEvent.delay(100);
+                                obj.setId(obj.id - 4);
+                            });
+                        }
                     }
                 }
                 if (player.getInventory().isFull()) {
