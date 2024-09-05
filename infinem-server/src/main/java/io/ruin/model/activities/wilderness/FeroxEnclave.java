@@ -39,13 +39,7 @@ public class FeroxEnclave {
         player.getMovement().restoreEnergy(100);
         player.curePoison(1);
         player.cureVenom(1, 1);
-        if (player.isEmerald()) {
-            player.getCombat().restore();
-            player.sendMessage("Your stats and special attack have been restored!");
-        } else {
-            player.sendMessage("Your stats have been restored!");
-        }
-
+        player.sendMessage("Your stats have been restored!");
     }
 
     static {
