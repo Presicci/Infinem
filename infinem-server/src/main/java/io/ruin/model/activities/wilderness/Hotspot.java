@@ -28,7 +28,7 @@ public class Hotspot {
             new Hotspot("Revenant Caves", new Bounds(3136, 10048, 3263, 10239, -1))
     };
 
-    public static Hotspot ACTIVE = Random.get(HOTSPOTS);
+    public static Hotspot ACTIVE;
 
     /**
      * Separator
@@ -41,7 +41,7 @@ public class Hotspot {
     public Hotspot(String name, Bounds bounds) {
         this.name = name;
         this.bounds = bounds;
-        MapListener.registerBounds(bounds)
+        /*MapListener.registerBounds(bounds)
                 .onEnter(player -> {
                     if (bounds == ACTIVE.bounds)
                         player.sendMessage("<img=123>" + Color.ORANGE_RED.wrap("You have entered a wilderness hotspot, player kills in this area give double blood money!"));
@@ -49,7 +49,7 @@ public class Hotspot {
                 .onExit((player, logout) -> {
                     if (!logout && bounds == ACTIVE.bounds)
                         player.sendMessage("<img=123>" + Color.ORANGE_RED.wrap("You have left the wilderness hotspot!"));
-                });
+                });*/
     }
 
     /*
