@@ -300,15 +300,6 @@ public class NPCDrops {
                 continue;
             }
 
-            /*
-             * Donator Benefit: [Noted dragon bones in wilderness]
-             */
-            if (item.getId() == 534 || item.getId() == 536 || item.getId() == 6812 || item.getId() == 11943 || item.getId() == 22124) {
-                if (pKiller.isSapphire() && pKiller.wildernessLevel > 0) {
-                    item.setId(item.getDef().notedId);
-                }
-            }
-
             if (item.getDef().name.toLowerCase().contains("statius") ||
                     item.getDef().name.toLowerCase().contains("vesta") ||
                     item.getDef().name.toLowerCase().contains("zuriel")) {
