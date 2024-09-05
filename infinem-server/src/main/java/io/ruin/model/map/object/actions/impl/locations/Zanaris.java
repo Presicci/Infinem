@@ -6,9 +6,11 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.map.object.actions.impl.PassableDoor;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -39,7 +41,7 @@ public class Zanaris {
         Item dramenStaff = player.getEquipment().findFirst(772, 9084);
         boolean hasFairyMushroom = player.getEquipment().hasId(25102) || player.getInventory().hasId(25102);
         if(dramenStaff == null && !hasFairyMushroom) {
-            player.sendFilteredMessage("The door wont budge.");
+            PassableDoor.passDoor(player, door, Direction.WEST);
             return;
         }
         GameObject rotatedDoor = new GameObject(door.id, door.getPosition(), door.type, 1);
