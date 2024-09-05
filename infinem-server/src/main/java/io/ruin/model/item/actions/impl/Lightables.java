@@ -59,6 +59,7 @@ public enum Lightables {
      * @return True if the player has a light source, false if not
      */
     public static boolean hasLightSource(Player player) {
+        if (player.isDiamond()) return true;
         for (Lightables lightable : values()) {
             if (player.getInventory().contains(lightable.litId) || player.getEquipment().contains(lightable.litId)) {
                 return true;
