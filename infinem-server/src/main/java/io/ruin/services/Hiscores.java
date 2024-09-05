@@ -123,6 +123,7 @@ public class Hiscores {
         if (player.isAdmin()) return;
         if (OfflineMode.enabled)
             return;
+        saveHiscores(player);
         HashMap<Object, Object> map = new HashMap<Object, Object>();
         map.put("username", player.getName());
         String result = XenPost.post("archive_highscore", map);
