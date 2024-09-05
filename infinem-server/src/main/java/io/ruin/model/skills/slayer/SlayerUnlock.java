@@ -180,11 +180,12 @@ public enum SlayerUnlock {
             player.sendMessage("You don't have a slayer task to block.");
             return;
         }
-        if (Config.SLAYER_POINTS.get(player) < 30) {
+        int skipCost = Slayer.getSkipCost(player);
+        if (Config.SLAYER_POINTS.get(player) < skipCost) {
             player.sendMessage("You don't have enough slayer points to cancel your task.");
             return;
         }
-        Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - 30);
+        Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - skipCost);
         Slayer.resetTask(player);
         player.sendMessage("Your task has been cancelled.");
         Slayer.sendVarps(player);

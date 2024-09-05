@@ -187,7 +187,8 @@ public enum Master {
                     }
             );
         } else {
-            if (Config.SLAYER_POINTS.get(player) >= 30) {
+            int skipCost = Slayer.getSkipCost(player);
+            if (Config.SLAYER_POINTS.get(player) >= skipCost) {
                 player.dialogue(
                         new NPCDialogue(npcId, "Excellent, you're doing great. Your new task is to "
                                 + (isKonar ? "bring balance to " : "kill ")
@@ -199,8 +200,8 @@ public enum Master {
                         new OptionsDialogue(
                                 new Option("Got any tips for me?", new PlayerDialogue("Got any tips for me?"), new NPCDialogue(npcId, SlayerCreature.getTipFor(task)), new PlayerDialogue("Great, thanks!")),
                                 new Option("Great, thanks!", new PlayerDialogue("Okay, great!")),
-                                new Option("No thanks. (Reroll task, costs 30 Slayer points)", new NPCDialogue(npcId, "Very well."), new ActionDialogue(() -> {
-                                    Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - 30);
+                                new Option("No thanks. (Reroll task, costs " + skipCost +" Slayer points)", new NPCDialogue(npcId, "Very well."), new ActionDialogue(() -> {
+                                    Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - skipCost);
                                     Slayer.resetTask(player);
                                     giveTask(player);
                                 }))
