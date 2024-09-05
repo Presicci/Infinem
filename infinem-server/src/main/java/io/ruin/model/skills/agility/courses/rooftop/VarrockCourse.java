@@ -41,8 +41,7 @@ public class VarrockCourse {
             new Position(3194, 3404, 3),
             new Position(3196, 3394, 3),
             new Position(3205, 3395, 3),
-            new Position(3226, 3402, 3),
-            new Position(3236, 3407, 3)
+            new Position(3226, 3402, 3)
     );
     static {
         /*
