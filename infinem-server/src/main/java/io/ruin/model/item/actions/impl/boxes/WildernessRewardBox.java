@@ -181,10 +181,6 @@ public class WildernessRewardBox {
     }
 
     static {
-        ItemAction.registerInventory(SMALL_BOX, "open", (player, item) -> open(player, item, small));
-        ItemAction.registerInventory(MEDIUM_BOX, "open", (player, item) -> open(player, item, medium));
-        ItemAction.registerInventory(LARGE_BOX, "open", (player, item) -> open(player, item, big));
-        ItemAction.registerInventory(GIANT_BOX, "open", (player, item) -> open(player, item, giant));
     }
 
 
