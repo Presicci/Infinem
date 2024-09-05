@@ -354,23 +354,7 @@ public class FightCaves {
     }
 
     private static int getStartingWave(Player player) {
-        if (player.isGroup(PlayerGroup.ZENYTE)) {
-            return 63;
-        } else if (player.isGroup(PlayerGroup.ONYX)) {
-            return 60;
-        } else if (player.isGroup(PlayerGroup.DRAGONSTONE)) {
-            return 56;
-        } else if (player.isGroup(PlayerGroup.DIAMOND)) {
-            return 54;
-        } else if (player.isGroup(PlayerGroup.RUBY)) {
-            return 52;
-        } else if (player.isGroup(PlayerGroup.EMERALD)) {
-            return 50;
-        } else if (player.isGroup(PlayerGroup.SAPPHIRE)) {
-            return 50;
-        } else {
-            return 50;
-        }
+        return 1;
     }
 
     static {
