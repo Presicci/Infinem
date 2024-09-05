@@ -495,8 +495,13 @@ public class NPC extends NPCAttributes {
         npc.addEvent(e -> {   // If the player leaves or ignores the superior for x*y seconds, remove npc
             int loops = 0;
             int lastHealth = npc.getHp();
+            int lastId = npc.getId();
             while (loops < cycles) { // x y second loops
                 e.delay(Server.toTicks(timePerCycle));    // Check if the player is offline/out of range every 30 seconds
+                if (npc.getId() != lastId) {    // If npc transforms, like Kolodion
+                    lastId = npc.getId();
+                    loops = 0;
+                }
                 if (lastHealth > npc.getHp()) { // Reset timer if is 'in combat'
                     loops = 0;
                 }
