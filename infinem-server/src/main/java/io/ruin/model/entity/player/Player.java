@@ -1311,17 +1311,6 @@ public class Player extends PlayerAttributes {
         if (lastLoginDate == null || LocalDate.parse(lastLoginDate).isBefore(LocalDate.now())) {
             dailyReset();
         }
-
-        /*
-         * Donator Benefit: [1 Daily Lottery Ticket]
-         */
-        if (lastLoginDate != null && LocalDate.parse(lastLoginDate).isBefore(LocalDate.now()) && isSapphire()) {
-            sendMessage("You have received your daily lottery ticket. Thanks for supporting the server!");
-            bank.add(1464, 1);
-        }
-
-
-
         packetSender.sendVarp(1737, -2147483648);
         packetSender.sendClientScript(1105, "i", 1);
         packetSender.sendClientScript(423, "s", name);
