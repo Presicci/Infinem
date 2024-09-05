@@ -805,14 +805,6 @@ public class PacketSender {
                 .addByte(colorIndex);
         write(out);*/
     }
-    //TODO: 184 Revision Fix Custom Packet
-    public void sendAccountManagement(String donatorStatus, String username, int unreadPMs) {
-        /*OutBuffer out = new OutBuffer(2 + Protocol.strLen(donatorStatus) + 5).sendVarShortPacket(92)
-                .addString(donatorStatus)
-                .addString(username).
-                addByte(unreadPMs);
-        write(out);*/
-    }
 
     //TODO: 184 Revision Fix Custom Packet
     public void sendDropTable(String name, int petId, int petAverage, List<Integer[]> drops) {

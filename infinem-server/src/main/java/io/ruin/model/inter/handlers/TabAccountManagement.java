@@ -26,11 +26,6 @@ public class TabAccountManagement {
 
     static {
         /**
-         * Send the interface when our player logs in
-         */
-        LoginListener.register(player -> player.getPacketSender().sendAccountManagement(getDonatorRank(player), getUsername(player), player.getUnreadPMs()));
-
-        /**
          * Interface buttons
          */
         InterfaceHandler.register(Interface.ACCOUNT_MANAGEMENT, h -> {
@@ -113,28 +108,4 @@ public class TabAccountManagement {
             );
         });
     }
-
-    public static String getUsername(Player player) {
-        PlayerGroup clientGroup = player.getClientGroup();
-        return (clientGroup.clientImgId != -1 ? clientGroup.tag() + " " : "") + player.getName();
-    }
-
-    public static String getDonatorRank(Player player) {
-        if (player.isGroup(PlayerGroup.ZENYTE)) {
-            return PlayerGroup.ZENYTE.tag() + " Godlike";
-        } else if (player.isGroup(PlayerGroup.ONYX)) {
-            return PlayerGroup.ONYX.tag() + " Master";
-        } else if (player.isGroup(PlayerGroup.DRAGONSTONE)) {
-            return PlayerGroup.DRAGONSTONE.tag() + " Ultimate";
-        } else if (player.isGroup(PlayerGroup.DIAMOND)) {
-            return PlayerGroup.DIAMOND.tag() + " Extreme";
-        } else if (player.isGroup(PlayerGroup.RUBY)) {
-            return PlayerGroup.RUBY.tag() + " Super";
-        } else if (player.isGroup(PlayerGroup.SAPPHIRE)) {
-            return PlayerGroup.SAPPHIRE.tag() + " Regular";
-        } else {
-            return "Unranked";
-        }
-    }
-
 }
