@@ -83,6 +83,12 @@ public enum EquipSetTask {
     WIZARD(65, // Equip a Wizard Robe and Hat
             SetPiece.WIZARD_HAT,
             SetPiece.WIZARD_ROBE
+    ),
+    ANGLER(595,
+            SetPiece.ANGLER_BOOTS,
+            SetPiece.ANGLER_HAT,
+            SetPiece.ANGLER_WADERS,
+            SetPiece.ANGLER_TOP
     );
 
     private final int uuid;
@@ -179,7 +185,11 @@ public enum EquipSetTask {
         RED_DHIDE_CHAPS(Items.RED_DHIDE_CHAPS, Items.RED_DHIDE_CHAPS_T, Items.RED_DHIDE_CHAPS_G),
         RED_DHIDE_VAMBS(Items.RED_DHIDE_VAMB),
         WIZARD_ROBE(Items.BLUE_WIZARD_ROBE, Items.BLACK_ROBE, Items.BLUE_WIZARD_ROBE_G, Items.BLUE_WIZARD_ROBE_T, Items.BLACK_WIZARD_ROBE_G, Items.BLACK_WIZARD_ROBE_T),
-        WIZARD_HAT(Items.BLUE_WIZARD_HAT, Items.WIZARD_HAT, Items.BLUE_WIZARD_HAT_G, Items.BLUE_WIZARD_HAT_T, Items.BLACK_WIZARD_HAT_G, Items.BLACK_WIZARD_HAT_T);
+        WIZARD_HAT(Items.BLUE_WIZARD_HAT, Items.WIZARD_HAT, Items.BLUE_WIZARD_HAT_G, Items.BLUE_WIZARD_HAT_T, Items.BLACK_WIZARD_HAT_G, Items.BLACK_WIZARD_HAT_T),
+        ANGLER_BOOTS(Items.ANGLER_BOOTS),
+        ANGLER_WADERS(Items.ANGLER_BOOTS),
+        ANGLER_HAT(Items.ANGLER_HAT),
+        ANGLER_TOP(Items.ANGLER_TOP);
 
         public final int[] itemIds;
         public final boolean respectIndex, compareNames;
