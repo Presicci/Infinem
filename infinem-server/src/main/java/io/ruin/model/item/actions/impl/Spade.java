@@ -40,6 +40,9 @@ public class Spade {
                     action.accept(player);
                 }
             }
+            if (player.debug) {
+                player.sendMessage("Dig actions: " + tile.digAction.size());
+            }
         });
     }
 
