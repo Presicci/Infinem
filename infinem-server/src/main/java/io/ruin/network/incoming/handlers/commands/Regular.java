@@ -66,10 +66,6 @@ public class Regular {
                 break;
 
             case "skull": {
-                if (player.wildernessLevel > 0 || player.pvpAttackZone) {
-                    player.dialogue(new MessageDialogue("You can't use this command from where you're standing."));
-                    return true;
-                }
                 if (!player.getCombat().isDead())
                     EmblemTrader.skull(player);
                 return true;
