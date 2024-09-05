@@ -58,16 +58,18 @@ public class Store {
                                 String[] item = elements[index].split(":");
                                 int storeId = Integer.parseInt(item[0]);
                                 int amt = Integer.parseInt(item[1]);
-                                // If is bond, subtract store amt spent
                                 switch (storeId) {
                                     case 1:
                                         addItem(player, 26554, amt);
+                                        paidAmt *= 2;
                                         break;
                                     case 2:
                                         addItem(player, 26557, amt);
+                                        paidAmt *= 2;
                                         break;
                                     case 3:
                                         addItem(player, 26560, amt);
+                                        paidAmt *= 2;
                                         break;
                                     case 4:
                                         addItem(player, 32033, amt);
