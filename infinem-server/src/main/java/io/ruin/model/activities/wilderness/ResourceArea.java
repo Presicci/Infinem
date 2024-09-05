@@ -24,12 +24,6 @@ public class ResourceArea {
 
     private static void gateOpen(Player player, GameObject door) {
         if(player.getAbsY() >= 3945) {
-            /*
-             * Donator Benefit: [Free resource area entry]
-             */
-            if (player.isEmerald()) {
-                enter(player, door);
-            }
             Item currency = player.getInventory().findItem(getCurrency());
             ItemDefinition wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
             boolean hasWildernessSword = wepDef != null && wepDef.id == 13111;
