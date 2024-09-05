@@ -13,19 +13,11 @@ public class GodwarsBossEntrance {
     private static final int ECUMENICAL_KEY = 11942;
 
     private static int kcRequirement(Player player) {
-        if (player.isGroup(PlayerGroup.ZENYTE)) {
-            return 0;
-        } else if (player.isGroup(PlayerGroup.ONYX)) {
-            return 0;
-        } else if (player.isGroup(PlayerGroup.DRAGONSTONE)) {
-            return 0;
-        } else if (player.isGroup(PlayerGroup.DIAMOND)) {
-            return 10;
+        if (player.isGroup(PlayerGroup.DIAMOND)) {
+            return 25;
         } else if (player.isGroup(PlayerGroup.RUBY)) {
-            return 20;
-        } else if (player.isGroup(PlayerGroup.EMERALD)) {
             return 30;
-        } else if (player.isGroup(PlayerGroup.SAPPHIRE)) {
+        } else if (player.isGroup(PlayerGroup.EMERALD)) {
             return 35;
         } else {
             return 40;
