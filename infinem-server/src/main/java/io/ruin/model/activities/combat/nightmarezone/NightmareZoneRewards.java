@@ -3,12 +3,14 @@ package io.ruin.model.activities.combat.nightmarezone;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.DailyResetListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.ItemImbue;
 
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ public class NightmareZoneRewards {
                 action(p, 6, option, itemId);
             };
         });
+        DailyResetListener.register(player -> player.removeAttribute("NMZ_HERB_BOXES"));
     }
 
     public static void imbueItem(Player player, int id) {
@@ -57,12 +60,19 @@ public class NightmareZoneRewards {
             player.sendMessage("This item currently cannot be purchased, if this is a mistake, please contact staff.");
             return;
         }
+        int purchasedBoxes = player.getAttributeIntOrZero("NMZ_HERB_BOXES");
+        if (id == Items.HERB_BOX && purchasedBoxes >= 5) {
+            player.timeTillDailyReset("You've already bought 5 herb boxes today.<br><br>");
+            return;
+        }
         if (resource.price * amount < 0)
             amount = Integer.MAX_VALUE / resource.price;
         String name = new Item(id).getDef().name;
         int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
         if (points < amount * resource.price)
             amount = points / resource.price;
+        if (amount > (5 - purchasedBoxes))
+            amount = 5 - purchasedBoxes;
         if (amount <= 0) {
             player.sendMessage("You must have at least " + NumberUtils.formatNumber(resource.price) + " NMZ Points to purchase " + name);
             return;
@@ -74,6 +84,7 @@ public class NightmareZoneRewards {
             player.sendMessage("You currently have no space in your inventory.");
             return;
         }
+        if (id == Items.HERB_BOX) player.incrementNumericAttribute("NMZ_HERB_BOXES", amount);
         Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -(resource.price * amount));
         player.getInventory().add(item);
         refresh(player);
