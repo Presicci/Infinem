@@ -1,7 +1,7 @@
 [
   { // Padulah (149)
     "ids": [ 5263 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.Monkey",
     //Combat Info
     "hitpoints": 130,
     "aggressive_level": 298,
