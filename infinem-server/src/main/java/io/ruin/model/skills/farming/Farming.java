@@ -491,6 +491,11 @@ public class Farming {
                 secondary.remove(1);
                 player.sendFilteredMessage("You plant the seed in the pot.");
             });
+            ItemItemAction.register(5354, crop.getSeed(), (player, primary, secondary) -> {
+                primary.setId(crop.getSeedling());
+                secondary.remove(1);
+                player.sendFilteredMessage("You plant the seed in the pot.");
+            });
         });
 
         CROPS.stream().filter(crop -> crop instanceof TreeCrop).map(crop -> (TreeCrop) crop).forEach(crop -> {
