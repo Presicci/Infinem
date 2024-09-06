@@ -232,4 +232,12 @@ public enum AreaShopItem {
             return true;
         });
     }
+
+    public boolean checkUnlock(Player player, String message) {
+        return area.checkTierUnlock(player, tier, message);
+    }
+
+    public boolean hasUnlocked(Player player) {
+        return area.hasTierUnlocked(player, tier);
+    }
 }

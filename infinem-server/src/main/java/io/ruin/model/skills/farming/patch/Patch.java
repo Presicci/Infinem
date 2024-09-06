@@ -6,6 +6,7 @@ import io.ruin.api.utils.TimeUtils;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
+import io.ruin.model.content.tasksystem.areas.AreaShopItem;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabStats;
@@ -462,7 +463,7 @@ public abstract class Patch {
     }
 
     public boolean removeProduce() {
-        if ((player.getEquipment().getId(Equipment.SLOT_WEAPON) == 7409 || player.getInventory().contains(7409, 1)) && Random.get() < (0.1)) { // magic secateurs, save a "life"
+        if (AreaShopItem.MAGIC_SECATEURS.hasUnlocked(player) && (player.getEquipment().getId(Equipment.SLOT_WEAPON) == 7409 || player.getInventory().contains(7409, 1)) && Random.get() < (0.1)) { // magic secateurs, save a "life"
             player.sendFilteredMessage("<col=076900>Your magic secateurs allow you to efficiently harvest the crop!");
             return false;
         }
