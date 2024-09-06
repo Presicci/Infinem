@@ -12,6 +12,7 @@ import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.inter.handlers.NotificationInterface;
 import io.ruin.model.skills.slayer.PartnerSlayer;
 import io.ruin.network.central.CentralSender;
+import io.ruin.services.Store;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.InterfaceDefinition;
 import io.ruin.cache.def.VarpDefinition;
@@ -1323,6 +1324,10 @@ public class Player extends PlayerAttributes {
         packetSender.sendClientScript(3954, "IIi", 712 << 16 | 2, 712 << 16 | 3, player.getCombat().getLevel());
         if (World.isDev())
             player.join(PlayerGroup.OWNER);
+        PlayerGroup group = Store.getGroup(player);
+        if (group != null && !player.isGroup(group)) {
+            player.join(group);
+        }
     }
 
     public void finish() {
