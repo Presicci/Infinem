@@ -87,6 +87,7 @@ public enum ItemCombining {
     MAGMA_HELM_UNCHARGED(Items.SERPENTINE_HELM_UNCHARGED, 13201, 13198, true, "Revert the helm back to its normal form and get the mutagen back?"),
     TANZANITE_HELM(Items.SERPENTINE_HELM, 13200, 13197, true, "Revert the helm back to its normal form and get the mutagen back?"),
     TANZANITE_UNCHARGED(Items.SERPENTINE_HELM_UNCHARGED, 13200, 13196, true, "Revert the helm back to its normal form and get the mutagen back?"),
+    MAGIC_SHORTBOW_I(Items.MAGIC_SHORTBOW, Items.MAGIC_SHORTBOW_SCROLL, Items.MAGIC_SHORTBOW_I, false),
 
     /**
      * Shattered Relic League Cosmetics
