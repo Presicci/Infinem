@@ -35,7 +35,7 @@ public enum MolchRowboat {
             player.getMovement().teleport(destination);
             player.getPacketSender().fadeIn();
             player.closeDialogue();
-            if (this == MOLCH) {
+            if (this == MOLCH_ISLAND) {
                 player.getTaskManager().doLookupByUUID(953);    // Travel to Molch Island
             }
             player.unlock();
