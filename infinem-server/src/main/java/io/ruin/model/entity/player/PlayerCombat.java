@@ -491,7 +491,9 @@ public class PlayerCombat extends Combat {
             if(ammo != null) {
                 // Chins dont roll for chance of saving ammo or drop on ground so just decrement.
                 if (chins) {
-                    ammo.incrementAmount(-1);
+                    if (!player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)) {
+                        ammo.incrementAmount(-1);
+                    }
                 } else {
                     removeAmmo(ammo, hit);
                 }
