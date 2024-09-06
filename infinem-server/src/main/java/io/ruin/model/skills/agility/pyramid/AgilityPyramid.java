@@ -2,6 +2,7 @@ package io.ruin.model.skills.agility.pyramid;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.utility.Color;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
@@ -55,6 +56,7 @@ public class AgilityPyramid {
     }
 
     protected static boolean isSuccessful(Player player, int neverFailLevel) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return true;
         val level = player.getStats().get(StatType.Agility).currentLevel;
         val baseRequirement = 30;
         val baseChance = 75;//Base chance % to not fail minimum level.
