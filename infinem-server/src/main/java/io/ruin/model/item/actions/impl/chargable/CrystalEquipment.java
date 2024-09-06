@@ -3,6 +3,7 @@ package io.ruin.model.item.actions.impl.chargable;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -188,7 +189,10 @@ public enum CrystalEquipment {
                 ItemAction.registerInventory(equipment.inactiveId, "revert", equipment::revert);
             }
             if (Arrays.stream(CRYSTAL_WEAPONS).anyMatch(e -> e == equipment)) {
-                ItemDefinition.get(equipment.activeId).addPreTargetDefendListener((player, item, hit, target) -> equipment.removeCharge(player, item));
+                ItemDefinition.get(equipment.activeId).addPreTargetDefendListener((player, item, hit, target) -> {
+                    if (equipment == BOW && player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2)) return;
+                    equipment.removeCharge(player, item);
+                });
             }
             if (Arrays.stream(CRYSTAL_ARMOUR).anyMatch(e -> e == equipment)) {
                 ItemDefinition.get(equipment.activeId).addPostDamageListener((player, item, hit) -> {
