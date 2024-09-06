@@ -1,6 +1,7 @@
 package io.ruin.model.content.transportation.relics;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
@@ -9,6 +10,7 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.impl.locations.prifddinas.PrifCityEntrance;
 import io.ruin.model.map.object.actions.impl.transportation.FairyRing;
 import io.ruin.model.map.object.actions.impl.transportation.SpiritTree;
+import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,7 +34,13 @@ public class FairysFlight {
             new Option("Etceteria", (player) -> teleport(player, 2591, 3860, 0)),
             new Option("Falador Farm", (player) -> teleport(player, 3052, 3306, 0)),
             new Option("Falador Park", (player) -> teleport(player, 3007, 3375, 0)),
-            new Option("Farming Guild", (player) -> teleport(player, 1249, 3727, 0)),
+            new Option("Farming Guild", (player) -> {
+                if (player.getStats().get(StatType.Farming).fixedLevel < 45) {
+                    player.dialogue(new MessageDialogue("You need 45 farming to teleport to the farming guild."));
+                    return;
+                }
+                teleport(player, 1249, 3727, 0);
+            }),
             new Option("Fossil Island", (player) -> teleport(player, 3711, 3837, 0)),
             new Option("Harmony Island", (player) -> teleport(player, 3791, 2834, 0)),
             new Option("Hosidius Allotment", (player) -> teleport(player, 1741, 3554, 0)),
