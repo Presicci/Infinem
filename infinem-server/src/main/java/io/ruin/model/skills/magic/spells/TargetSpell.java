@@ -21,6 +21,7 @@ import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
 import io.ruin.model.skills.magic.spells.modern.*;
+import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -182,6 +183,14 @@ public class TargetSpell extends Spell {
             if (entity.isPlayer() && entity.player.getEquipment().hasId(Items.CHAOS_GAUNTLETS)
                     &&this instanceof WindBolt || this instanceof WaterBolt || this instanceof EarthBolt || this instanceof FireBolt) {
                 maxDamage += 3;
+            }
+            if (this instanceof MagicDart && entity.isPlayer()) {
+                int magicLevel = entity.player.getStats().get(StatType.Magic).currentLevel;;
+                if (entity.player.getEquipment().hasId(21255) && target.npc != null && Slayer.isTask(entity.player, target.npc)) {
+                    maxDamage += (magicLevel / 6) + 3;
+                } else {
+                    maxDamage += (magicLevel / 10);
+                }
             }
             double percentageBonus = entity.getCombat().getBonus(EquipmentStats.MAGIC_DAMAGE);
             if(percentageBonus > 0)
