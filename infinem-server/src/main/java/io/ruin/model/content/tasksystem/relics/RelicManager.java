@@ -122,7 +122,6 @@ public class RelicManager {
     }
 
     public boolean hasRelicEnalbed(Relic relic) {
-        if (player.wildernessLevel > 0 && relic.getTier() > 1) return false;
         return hasRelic(relic);
     }
 
