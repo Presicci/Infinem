@@ -28,6 +28,7 @@ public class OpalBoltEffect extends BoltEffect {
         int newDamage = hit.damage + (int) (hit.attacker.player != null ? hit.attacker.player.getStats().get(StatType.Ranged).currentLevel * 0.10D : 0);
         target.graphics(749);
         hit.fixedDamage(newDamage);
+        target.hit(hit);
         return true;
     }
 

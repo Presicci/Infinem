@@ -41,6 +41,7 @@ public class PearlBoltEffect extends BoltEffect {
         }
         target.graphics(750);
         hit.fixedDamage(newDamage);
+        target.hit(hit);
         return true;
     }
 

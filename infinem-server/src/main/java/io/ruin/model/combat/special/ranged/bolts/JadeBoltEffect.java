@@ -27,6 +27,7 @@ public class JadeBoltEffect extends BoltEffect {
             return false;
         target.graphics(755);
         target.stun(2, true);
+        target.hit(hit);
         return true;
     }
 
