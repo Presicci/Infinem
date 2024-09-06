@@ -26,7 +26,7 @@ public class AnagramClue extends Clue {
     private enum AnagramClueData {
         // Beginner
         RANAEL("Ranael", "An Earl", ClueType.BEGINNER),
-        SEDRIDOR("Sedridor", "Char Game Disorder", ClueType.BEGINNER),
+        SEDRIDOR("Sedridor", "Disorder", ClueType.BEGINNER),
         APOTHECARY("Apothecary", "Carpet Ahoy", ClueType.BEGINNER),
         Doric("Doric", "I Cord", ClueType.BEGINNER),
         BRIAN("Brian", "In Bar", ClueType.BEGINNER),
@@ -188,7 +188,7 @@ public class AnagramClue extends Clue {
             player.getPacketSender().sendString(203, 2, challenge);
         } else {
             player.openInterface(InterfaceType.MAIN, 203);
-            player.getPacketSender().sendString(203, 2, "The anagram reveals<br>who to speak to next:<br>" + clue);
+            player.getPacketSender().sendString(203, 2, "The anagram reveals<br>who to speak to next:<br>Disorder" + clue);
         }
     }
 
