@@ -4,7 +4,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 52,
-    "aggressive_level": 72,
+    "aggressive_level": 0,
     "max_damage": 6,
     "attack_style": "SLASH",
     //Slayer Info
@@ -47,7 +47,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 52,
-    "aggressive_level": 76,
+    "aggressive_level": 0,
     "max_damage": 6,
     "attack_style": "SLASH",
     //Slayer Info
@@ -90,7 +90,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 52,
-    "aggressive_level": 78,
+    "aggressive_level": 0,
     "max_damage": 6,
     "attack_style": "SLASH",
     //Slayer Info
@@ -133,7 +133,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 55,
-    "aggressive_level": 84,
+    "aggressive_level": 0,
     "max_damage": 7,
     "attack_style": "SLASH",
     //Slayer Info
