@@ -111,7 +111,7 @@ public class Config {
     public static final Config DISPLAY_NAME = varp(1055, true);
     public static final Config HAS_DISPLAY_NAME = varpbit(8199, true).defaultValue(1).forceSend();
 
-    public static final Config COLLECTION_LOG_SETTINGS = varpbit(11959, true);
+    public static final Config COLLECTION_LOG_SETTINGS = varpbit(11959, true).defaultValue(3);
 
     public static final Config ALCH_UNTRADEABLES = varpbit(6092, true).defaultValue(1);
     public static final Config ALCH_THRESHOLD = varpbit(6091, true).defaultValue(1000);
