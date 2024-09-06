@@ -587,7 +587,7 @@ public class PlayerCombat extends Combat {
         }
         if ((!hasAvaDevice() || !rollAvaChance()) && (!hasAdvancedAva() && !rollAdvnacedAva()) && (!player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)))
             dartAmount--;
-        if(Random.rollDie(3, 2))
+        if(Random.rollDie(3, 2) && (!player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)))
             scalesAmount--;
         Blowpipe.update(blowpipe, dart, dartAmount, scalesAmount);
     }
