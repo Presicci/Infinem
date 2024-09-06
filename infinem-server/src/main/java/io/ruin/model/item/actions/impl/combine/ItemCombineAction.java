@@ -144,15 +144,15 @@ public class ItemCombineAction {
         POTATO_WITH_BUTTER("You use the butter on the potato to make a potato with butter.", Collections.singletonList(new SkillRequired(StatType.Cooking, 39, 40.0)),
                 Arrays.asList(new ItemPair(Items.BAKED_POTATO, Items.POTATO_WITH_BUTTER), new ItemPair(Items.PAT_OF_BUTTER, -1))),
         CHILLI_POTATO("You use the chili on the potato to make a chilli potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 41, 15)),
-                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.CHILLI_POTATO), new ItemPair(Items.CHILLI_CON_CARNE, -1))),
+                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.CHILLI_POTATO), new ItemPair(Items.CHILLI_CON_CARNE, Items.BOWL))),
         POTATO_WITH_CHEESE("You use the cheese on the potato to make a potato with cheese.", Collections.singletonList(new SkillRequired(StatType.Cooking, 47, 40)),
                 Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.POTATO_WITH_CHEESE), new ItemPair(Items.CHEESE, -1))),
         EGG_POTATO("You use the egg on the potato to make an egg potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 51, 45)),
-                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.EGG_POTATO), new ItemPair(Items.EGG_AND_TOMATO, -1))),
+                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.EGG_POTATO), new ItemPair(Items.EGG_AND_TOMATO, Items.BOWL))),
         MUSHROOM_POTATO("You use the mushroom on the potato to make a mushroom potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 64, 55)),
-                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.MUSHROOM_POTATO), new ItemPair(Items.MUSHROOM_ONION, -1))),
+                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.MUSHROOM_POTATO), new ItemPair(Items.MUSHROOM_ONION, Items.BOWL))),
         TUNA_POTATO("You use the tuna on the potato to make a tuna potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 68, 10)),
-                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.TUNA_POTATO), new ItemPair(Items.TUNA_AND_CORN, -1))),
+                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.TUNA_POTATO), new ItemPair(Items.TUNA_AND_CORN, Items.BOWL))),
 
         /**
          * Cake
