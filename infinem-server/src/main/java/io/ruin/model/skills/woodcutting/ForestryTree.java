@@ -47,8 +47,6 @@ public class ForestryTree {
     private static void damageTree(GameObject tree) {
         int health = tree.incrementTemporaryNumericAttribute(HEALTH_KEY, 5);
         Tree treeType = tree.getTemporaryAttribute(TYPE_KEY);
-        Map<Player, Integer> activePlayers = tree.getTemporaryAttribute(PLAYERS_KEY);
-        System.out.println("Tree " + tree.x + ", " + tree.y + " has " + health + " health. " + activePlayers.size());
         if (health >= treeType.fellTime) {
             tree.removeTemporaryAttribute(PLAYERS_KEY);
             tree.removeTemporaryAttribute(HEALTH_KEY);
@@ -59,8 +57,6 @@ public class ForestryTree {
 
     private static void healTree(GameObject tree) {
         int health = tree.incrementTemporaryNumericAttribute(HEALTH_KEY, -3);
-        Map<Player, Integer> activePlayers = tree.getTemporaryAttribute(PLAYERS_KEY);
-        System.out.println("Tree " + tree.x + ", " + tree.y + " has " + health + " health. " + activePlayers.size());
         if (health <= 0) {
             tree.removeTemporaryAttribute(PLAYERS_KEY);
             tree.removeTemporaryAttribute(HEALTH_KEY);

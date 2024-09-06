@@ -44,8 +44,6 @@ public class TimedRock {
     private static void damageRock(GameObject rock) {
         int health = rock.incrementTemporaryNumericAttribute(HEALTH_KEY, 5);
         Rock rockType = rock.getTemporaryAttribute(TYPE_KEY);
-        int rockTimer = rock.getTemporaryAttributeIntOrZero(TIMER_KEY);
-        System.out.println("Rock " + rock.x + ", " + rock.y + " has " + health + " health. " + rockTimer);
         if (health >= rockType.depleteTime) {
             rock.removeTemporaryAttribute(TIMER_KEY);
             rock.removeTemporaryAttribute(HEALTH_KEY);
@@ -62,8 +60,6 @@ public class TimedRock {
 
     private static void healRock(GameObject rock) {
         int health = rock.incrementTemporaryNumericAttribute(HEALTH_KEY, -3);
-        int rockTimer = rock.getTemporaryAttributeIntOrZero(TIMER_KEY);
-        System.out.println("Rock " + rock.x + ", " + rock.y + " has " + health + " health. " + rockTimer);
         if (health <= 0) {
             rock.removeTemporaryAttribute(TIMER_KEY);
             rock.removeTemporaryAttribute(HEALTH_KEY);
