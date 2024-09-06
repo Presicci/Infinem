@@ -32,12 +32,12 @@ public class ArdougneCloak {
 
     static {
         ItemAction.registerInventory(Items.ARDOUGNE_CLOAK_1, "monastery teleport", (player, item) -> ModernTeleport.teleport(player, JewelleryTeleportBounds.ARDOUGNE_MONASTERY.getBounds()));
-        ItemAction.registerEquipment(Items.ARDOUGNE_CLOAK_1, "monastery teleport", (player, item) -> ModernTeleport.teleport(player, JewelleryTeleportBounds.ARDOUGNE_MONASTERY.getBounds()));
+        ItemAction.registerEquipment(Items.ARDOUGNE_CLOAK_1, "kandarin monastery", (player, item) -> ModernTeleport.teleport(player, JewelleryTeleportBounds.ARDOUGNE_MONASTERY.getBounds()));
         for (int itemId : ITEM_IDS) {
             ItemAction.registerInventory(itemId, "monastery teleport", (player, item) -> ModernTeleport.teleport(player, JewelleryTeleportBounds.ARDOUGNE_MONASTERY.getBounds()));
-            ItemAction.registerEquipment(itemId, "monastery teleport", (player, item) -> ModernTeleport.teleport(player, JewelleryTeleportBounds.ARDOUGNE_MONASTERY.getBounds()));
+            ItemAction.registerEquipment(itemId, "kandarin monastery", (player, item) -> ModernTeleport.teleport(player, JewelleryTeleportBounds.ARDOUGNE_MONASTERY.getBounds()));
             ItemAction.registerInventory(itemId, "farm teleport", ArdougneCloak::farmTeleport);
-            ItemAction.registerEquipment(itemId, "farm teleport", ArdougneCloak::farmTeleport);
+            ItemAction.registerEquipment(itemId, "ardougne farm", ArdougneCloak::farmTeleport);
         }
         DailyResetListener.register(player -> player.removeAttribute(KEY));
     }
