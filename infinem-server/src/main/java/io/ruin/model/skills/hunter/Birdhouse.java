@@ -131,7 +131,7 @@ public class Birdhouse {
     }
 
     private void dismantle() {
-        player.dialogue(new OptionsDialogue("<col=7f0000>You will lose any birds and seed in the birdhouse</col>",
+        player.dialogue(new OptionsDialogue("<col=7f0000>You will lose any birds and seeds in the birdhouse</col>",
                 new Option("Yes - dismantle and <col=7f0000>discard the birdhouse and contents</col>", () -> {
                     config.set(player, 0);
                     birdHouses.put(config.id, -1L);
@@ -148,7 +148,7 @@ public class Birdhouse {
         int hunterLevel = player.getStats().get(StatType.Hunter).currentLevel;
         player.startEvent(event -> {
             player.animate(827);
-            player.getStats().addXp(StatType.Hunter, birdHouse.hunterExperience, false);
+            player.getStats().addXp(StatType.Hunter, birdHouse.hunterExperience, true);
             player.getInventory().addOrDrop(Items.FEATHER, Random.get(30, 60));
             if (Random.rollPercent((int) (hunterLevel * 0.8))) {
                 player.getInventory().addOrDrop(5073, 1);   // Seed nest
