@@ -294,21 +294,19 @@ public class Config {
 
     public static final Config[] KEYBINDS = {
             varpbit(4675, true).defaultValue(1),     //Combat
-            varpbit(4676, true).defaultValue(2),     //Stats
-            varpbit(4677, true).defaultValue(3),     //Quests
-            varpbit(4678, true).defaultValue(13),    //Inventory
-            varpbit(4679, true).defaultValue(4),     //Equipment
-
             varpbit(4680, true).defaultValue(5),     //Prayer
-            varpbit(4682, true).defaultValue(6),     //Magic
-            varpbit(4684, true).defaultValue(8),     //Friends
-            varpbit(4685, true).defaultValue(9),     //Ignores
-            varpbit(4689, true).defaultValue(0),     //Logout
-
             varpbit(4686, true).defaultValue(10),    //Options
+            varpbit(4676, true).defaultValue(2),     //Stats
+            varpbit(4682, true).defaultValue(6),     //Magic
             varpbit(4687, true).defaultValue(11),    //Emotes
+            varpbit(4677, true).defaultValue(3),     //Quests
+            varpbit(4684, true).defaultValue(8),     //Friends
             varpbit(4683, true).defaultValue(7),     //Clan
+            varpbit(4678, true).defaultValue(13),    //Inventory
+            varpbit(4685, true).defaultValue(9),     //Ignores
             varpbit(4688, true).defaultValue(12),    //Music
+            varpbit(4679, true).defaultValue(4),     //Equipment
+            varpbit(4689, true).defaultValue(0),     //Logout
     };
 
     public static final Config ESCAPE_CLOSES = varpbit(4681, true);
