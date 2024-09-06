@@ -73,15 +73,15 @@ public class Store {
                                         break;
                                     case 4:
                                         addItem(player, 32033, amt);
-                                        paidAmt -= 50;
+                                        paidAmt -= 50 * amt;
                                         break;
                                     case 5:
                                         addItem(player, 32035, amt);
-                                        paidAmt -= 100;
+                                        paidAmt -= 100 * amt;
                                         break;
                                     case 6:
                                         addItem(player, 32037, amt);
-                                        paidAmt -= 250;
+                                        paidAmt -= 250 * amt;
                                         break;
                                     case 7:
                                         addItem(player, 26421, amt);
