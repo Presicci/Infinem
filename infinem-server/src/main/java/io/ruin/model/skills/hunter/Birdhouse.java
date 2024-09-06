@@ -3,6 +3,7 @@ package io.ruin.model.skills.hunter;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemID;
+import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -155,7 +156,7 @@ public class Birdhouse {
             }
             new GroundItem(Items.RAW_BIRD_MEAT, 10).owner(player).position(player.getPosition()).spawn();   // Spawn the raw meat
             for (int roll = 0; roll < 10; roll++) { // Roll nests 10 times
-                if (Random.rollPercent((int) (birdHouse.baseNestPercentage + (Math.min(0, hunterLevel - 50) * 0.15)))) {
+                if (Random.rollPercent((int) ((birdHouse.baseNestPercentage + ((Math.max(0, hunterLevel - 50) * 0.15)) * (ActivitySpotlight.isActive(ActivitySpotlight.QUADRUPLE_BIRD_NEST_CHANCE) ? 4 : 1))))) {
                     if (Random.get(10) == 1) {
                         player.getInventory().addOrDrop(Random.get(CLUE_NESTS), 1);
                     } else {
