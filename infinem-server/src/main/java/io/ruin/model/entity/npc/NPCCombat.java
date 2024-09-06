@@ -175,7 +175,7 @@ public abstract class NPCCombat extends Combat {
         Hit hit = new Hit(npc, attackStyle, null).randDamage(maxDamage);
         if (npc.hasTemporaryAttribute("POISON")) {
             hit.postDefend((entity) -> {    // 25% chance on successful attack to poison
-                if (entity.player != null && !hit.isBlocked() && Random.rollDie(4)) {
+                if (entity.player != null && !hit.isBlocked() && hit.damage > 0 && Random.rollDie(4)) {
                     entity.player.poison(npc.getTemporaryAttributeIntOrZero("POISON"));
                 }
             });
