@@ -951,13 +951,13 @@ public class PlayerCombat extends Combat {
 
         // Relic handling
         RelicManager rm = player.getRelicManager();
-        if (rm.hasRelicEnalbed(Relic.ARCHMAGE) && hit.attackStyle != null && hit.attackStyle.isMagic()) {
+        if (target.isNpc() && rm.hasRelicEnalbed(Relic.ARCHMAGE) && hit.attackStyle != null && hit.attackStyle.isMagic()) {
             hit.boostDamage(0.2);
             hit.boostAttack(0.6);
-        } else if (rm.hasRelicEnalbed(Relic.DEADEYE) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
+        } else if (target.isNpc() && rm.hasRelicEnalbed(Relic.DEADEYE) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
             hit.boostDamage(0.2);
             hit.boostAttack(0.4);
-        } else if (rm.hasRelicEnalbed(Relic.JUGGERNAUT) && hit.attackStyle != null && hit.attackStyle.isMelee()) {
+        } else if (target.isNpc() && rm.hasRelicEnalbed(Relic.JUGGERNAUT) && hit.attackStyle != null && hit.attackStyle.isMelee()) {
             hit.boostDamage(0.2);
             hit.boostAttack(0.2);
         }
@@ -1735,7 +1735,7 @@ public class PlayerCombat extends Combat {
                 shieldId == 22003 || shieldId == 22002) {
             absorbDamage += 0.8;
         }
-        if (player.getRelicManager().hasRelic(Relic.JUGGERNAUT)) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT)) {
             absorbDamage += 1.0;
         }
         return absorbDamage;
