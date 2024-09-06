@@ -64,10 +64,13 @@ public class Store {
                                         paidAmt *= 2;
                                         break;
                                     case 2:
+                                        addItem(player, 26554, amt);
                                         addItem(player, 26557, amt);
                                         paidAmt *= 2;
                                         break;
                                     case 3:
+                                        addItem(player, 26554, amt);
+                                        addItem(player, 26557, amt);
                                         addItem(player, 26560, amt);
                                         paidAmt *= 2;
                                         break;
