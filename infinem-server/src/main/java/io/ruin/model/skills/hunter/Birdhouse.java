@@ -342,7 +342,7 @@ public class Birdhouse {
                 ItemObjectAction.register(seed, i, (player, item, obj) -> {
                     player.getBirdhouse().config = player.getBirdhouse().getVarbitId(obj.id);
                     if (player.getBirdhouse().config == null) return;
-                    player.getBirdhouse().addSeeds();
+                    player.getBirdhouse().addSeeds(item);
                 });
             }
         }
