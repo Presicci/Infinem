@@ -14,6 +14,14 @@ import java.util.function.BiFunction;
  */
 public class TopazBoltEffect extends BoltEffect {
 
+    public TopazBoltEffect() {
+        super(false);
+    }
+
+    public TopazBoltEffect(boolean alwaysTrigger) {
+        super(alwaysTrigger);
+    }
+
     @Override
     public Boolean apply(Entity target, Hit hit) {
         if(!Random.rollPercent(getProcChange(target, hit)) || target.player == null)

@@ -8,6 +8,14 @@ import java.util.function.BiFunction;
 
 public class DragonBoltEffect extends BoltEffect {
 
+    public DragonBoltEffect() {
+        super(false);
+    }
+
+    public DragonBoltEffect(boolean alwaysTrigger) {
+        super(alwaysTrigger);
+    }
+
     @Override
     public Boolean apply(Entity target, Hit hit) {
         if(!Random.rollPercent(getProcChange(target, hit)))

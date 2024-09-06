@@ -14,6 +14,14 @@ import java.util.function.BiFunction;
  */
 public class PearlBoltEffect extends BoltEffect {
 
+    public PearlBoltEffect() {
+        super(false);
+    }
+
+    public PearlBoltEffect(boolean alwaysTrigger) {
+        super(alwaysTrigger);
+    }
+
     @Override
     public Boolean apply(Entity target, Hit hit) {
         if (hit.attacker.player == null)

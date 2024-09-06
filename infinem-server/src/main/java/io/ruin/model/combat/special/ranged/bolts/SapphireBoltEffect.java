@@ -10,6 +10,14 @@ import java.util.function.BiFunction;
 
 public class SapphireBoltEffect extends BoltEffect {
 
+    public SapphireBoltEffect() {
+        super(false);
+    }
+
+    public SapphireBoltEffect(boolean alwaysTrigger) {
+        super(alwaysTrigger);
+    }
+
     @Override
     public Boolean apply(Entity target, Hit hit) {
         if(target.player == null || !Random.rollPercent(getProcChange(target, hit)))

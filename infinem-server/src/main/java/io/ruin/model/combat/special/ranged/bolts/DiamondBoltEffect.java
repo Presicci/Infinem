@@ -8,6 +8,14 @@ import java.util.function.BiFunction;
 
 public class DiamondBoltEffect extends BoltEffect {
 
+    public DiamondBoltEffect() {
+        super(false);
+    }
+
+    public DiamondBoltEffect(boolean alwaysTrigger) {
+        super(alwaysTrigger);
+    }
+
     @Override
     public Boolean apply(Entity target, Hit hit) {
         if(!Random.rollPercent(getProcChange(target, hit)))

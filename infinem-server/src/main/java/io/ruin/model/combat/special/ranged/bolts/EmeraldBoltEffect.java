@@ -8,6 +8,14 @@ import java.util.function.BiFunction;
 
 public class EmeraldBoltEffect extends BoltEffect {
 
+    public EmeraldBoltEffect() {
+        super(false);
+    }
+
+    public EmeraldBoltEffect(boolean alwaysTrigger) {
+        super(alwaysTrigger);
+    }
+
     @Override
     public Boolean apply(Entity target, Hit hit) {
         if(!Random.rollPercent(getProcChange(target, hit)))

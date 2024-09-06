@@ -12,9 +12,16 @@ import java.util.function.BiFunction;
  */
 public abstract class BoltEffect implements BiFunction<Entity, Hit, Boolean> {
 
+    public BoltEffect(boolean alwaysTrigger) {
+        this.alwaysTrigger = alwaysTrigger;
+    }
+
+    protected boolean alwaysTrigger = false;
+
     protected abstract int getBaseChance(Entity target);
 
     protected int getProcChange(Entity target, Hit hit) {
+        if (alwaysTrigger) return 100;
         int baseChance = getBaseChance(target);
         if (target.player == null && hit.attacker.player != null && hit.attacker.player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE)) {
             baseChance = (int) Math.floor(baseChance * 1.5);
