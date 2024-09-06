@@ -2092,6 +2092,12 @@ public enum Pet {
                         new PlayerDialogue("Erm, I think the attack is over. I have already killed your queen."),
                         new NPCDialogue(pet.npcId, "Then we should spawn more overlords!"));
             }
+            case FOUNDER_PET: {
+                return player -> player.dialogue(new NPCDialogue(pet.npcId, "Infinem! Infinem! Infinem!"),
+                        new PlayerDialogue("Not so loud little guy..."),
+                        new NPCDialogue(pet.npcId, "INFINEM! INFINEM! INFINEM!"),
+                        new PlayerDialogue("..."));
+            }
         }
         return null;
     }
