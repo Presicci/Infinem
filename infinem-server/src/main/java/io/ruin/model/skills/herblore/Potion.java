@@ -166,7 +166,7 @@ public enum Potion {
         player.getInventory().add(potion, 1);
         player.getStats().addXp(StatType.Herblore, xp, true);
         String name = ItemDefinition.get(potion).name.toLowerCase();
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.POTION, name.substring(0, name.indexOf("(")), 1, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.POTION, name.contains("(") ? name.substring(0, name.indexOf("(")) : name, 1, true);
         player.animate(363);
         player.privateSound(2608);
     }
