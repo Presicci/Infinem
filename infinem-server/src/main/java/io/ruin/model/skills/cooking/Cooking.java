@@ -170,7 +170,7 @@ public class Cooking {
     public static void findCookable(Player player, GameObject obj, int anim, boolean fire) {
         List<SkillItem> items = new ArrayList<>();
         for (Food food : Food.values()) {
-            if (player.getInventory().contains(food.rawID) && food != Food.SINEW_BEAR_MEAT && food != Food.SINEW_MEAT) {
+            if (player.getInventory().contains(food.rawID) && food != Food.SINEW_BEAR_MEAT && food != Food.SINEW_MEAT && food != Food.RAW_KARAMBWAN_P) {
                 SkillItem i = new SkillItem(food.rawID).name(food.rawName).
                         addAction((p, amount, event) -> startCooking(p, food, obj, amount, anim, fire));
                 items.add(i);
