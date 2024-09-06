@@ -4428,5 +4428,86 @@
     "z": 0,
     "direction": "S",
     "walkRange": 8
+  },
+  {
+    "name": "Vulture",
+    "id": 1267,
+    "x": 3214,
+    "y": 2842,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Vulture",
+    "id": 1267,
+    "x": 3215,
+    "y": 2839,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Vulture",
+    "id": 1267,
+    "x": 3212,
+    "y": 2840,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Vulture",
+    "id": 1267,
+    "x": 3297,
+    "y": 2863,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Vulture",
+    "id": 1267,
+    "x": 3300,
+    "y": 2862,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Vulture",
+    "id": 1267,
+    "x": 3299,
+    "y": 2865,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Vulture",
+    "id": 1267,
+    "x": 3330,
+    "y": 2859,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Vulture",
+    "id": 1267,
+    "x": 3333,
+    "y": 2862,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Vulture",
+    "id": 1267,
+    "x": 3334,
+    "y": 2857,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
