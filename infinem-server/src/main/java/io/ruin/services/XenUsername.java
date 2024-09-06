@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.handlers.TabAccountManagement;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.ItemAction;
 
 import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
@@ -71,6 +72,14 @@ public class XenUsername {
                 player.dialogue(new MessageDialogue("You have successfully changed your username."));
                 player.setName(usernameRequested);
                 player.unlock();
+            });
+        });
+    }
+
+    static {
+        ItemAction.registerInventory(32039, "redeem", (player, item) -> {
+            player.nameInput("What would you like to change your display name to?", reqName -> {
+                XenUsername.requestNameChange(player, reqName);
             });
         });
     }
