@@ -194,7 +194,7 @@ public class Player extends PlayerAttributes {
      */
     @Getter private boolean[] groups;
 
-    @Getter @Expose private PlayerGroup primaryGroup;
+    @Setter @Getter @Expose private PlayerGroup primaryGroup;
 
     private PlayerGroup clientGroup; //the group displayed on clients
 

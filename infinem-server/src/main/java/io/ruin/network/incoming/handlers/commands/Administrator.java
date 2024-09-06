@@ -3120,7 +3120,7 @@ public class Administrator {
                 PersistentData.INSTANCE.save();
                 return true;
             }
-            case "giverank": {
+            case "setrank": {
                 if (args.length < 2) {
                     player.sendMessage("Syntax: ::giverank [playername] [rankname]");
                 }
@@ -3134,7 +3134,7 @@ public class Administrator {
                     player.sendMessage("That group doesn't exist.");
                     return true;
                 }
-                target.join(group);
+                target.setPrimaryGroup(group);
                 return true;
             }
         }
