@@ -550,13 +550,13 @@ public class PlayerCombat extends Combat {
     private void attackWithBlowpipe(Item blowpipe) {
         Blowpipe.Dart dart = Blowpipe.getDart(blowpipe);
         int dartAmount = Blowpipe.getDartAmount(blowpipe);
-        if(dart == Blowpipe.Dart.NONE || dartAmount == 0) {
+        if (dart == Blowpipe.Dart.NONE || dartAmount == 0) {
             player.sendMessage("Your blowpipe isn't loaded with any darts.");
             reset();
             return;
         }
         int scalesAmount = Blowpipe.getScalesAmount(blowpipe);
-        if(scalesAmount == 0) {
+        if (scalesAmount == 0) {
             player.sendMessage("Your blowpipe isn't charged with any scales.");
             reset();
             return;
@@ -565,27 +565,27 @@ public class PlayerCombat extends Combat {
         AttackType type = attackSet.type;
         int maxDamage = CombatUtils.getMaxDamage(player, style, type);
         int attackTicks = type == AttackType.RAPID_RANGED ? weaponType.attackTicks - 1 : weaponType.attackTicks;
-        if(target.npc != null)
+        if (target.npc != null)
             attackTicks--;
         updateLastAttack(attackTicks);
         Hit hit = new Hit(player, style, type)
                 .setAttackWeapon(blowpipe.getDef())
                 .setRangedAmmo(ItemDefinition.get(dart.id));
         attackAnim();
-        if(handleSpecial(style, type, maxDamage)) {
+        if (handleSpecial(style, type, maxDamage)) {
             int delay = ToxicBlowpipe.SIPHON_PROJECTILE.send(player, target);
             player.publicSound(2696);
             player.publicSound(800, 1, delay);
             hit.randDamage(maxDamage).boostDamage(0.50).clientDelay(delay);
             int damage = target.hit(hit);
-            if(damage >= 2)
+            if (damage >= 2)
                 player.incrementHp(damage / 2);
         } else {
             int delay = dart.rangedData.projectiles[0].send(player, target);
             hit.randDamage(maxDamage).clientDelay(delay);
             target.hit(hit);
         }
-        if(!hasAvaDevice() || !rollAvaChance())
+        if ((!hasAvaDevice() || !rollAvaChance()) && (!hasAdvancedAva() && !rollAdvnacedAva()) && (!player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)))
             dartAmount--;
         if(Random.rollDie(3, 2))
             scalesAmount--;
@@ -616,6 +616,7 @@ public class PlayerCombat extends Combat {
                     ammo.incrementAmount(-1);
                 }
             } else {
+                if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2)) return;
                 if (Random.rollPercent(20)) {   // Break ammo w/o ava
                     ammo.incrementAmount(-1);
                     return;
@@ -638,9 +639,11 @@ public class PlayerCombat extends Combat {
     }
 
     private boolean rollAvaChance() {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2)) return true;
         return Random.rollPercent(72); //72% chance according to wiki
     }
     private boolean rollAdvnacedAva() {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2)) return true;
         return Random.rollPercent(80); //80% chance according to wiki
     }
 
