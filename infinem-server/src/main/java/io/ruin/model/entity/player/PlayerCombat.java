@@ -952,14 +952,14 @@ public class PlayerCombat extends Combat {
         // Relic handling
         RelicManager rm = player.getRelicManager();
         if (rm.hasRelicEnalbed(Relic.ARCHMAGE) && hit.attackStyle != null && hit.attackStyle.isMagic()) {
-            hit.boostDamage(0.1);
-            hit.boostAttack(0.3);
+            hit.boostDamage(0.2);
+            hit.boostAttack(0.6);
         } else if (rm.hasRelicEnalbed(Relic.DEADEYE) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
-            hit.boostDamage(0.1);
-            hit.boostAttack(0.2);
+            hit.boostDamage(0.2);
+            hit.boostAttack(0.4);
         } else if (rm.hasRelicEnalbed(Relic.JUGGERNAUT) && hit.attackStyle != null && hit.attackStyle.isMelee()) {
-            hit.boostDamage(0.1);
-            hit.boostAttack(0.1);
+            hit.boostDamage(0.2);
+            hit.boostAttack(0.2);
         }
 
         // Efaritay's aid vs Tier 1 vampyre
