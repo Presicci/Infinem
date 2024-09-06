@@ -32,7 +32,7 @@ public class RubyBoltEffect extends BoltEffect {
             return false;
         if (specialDamage > 100)
             specialDamage = 100;
-        attacker.hit(new Hit().fixedDamage(sacrificeDamage));
+        if (!alwaysTrigger) attacker.hit(new Hit().fixedDamage(sacrificeDamage));
         target.hit(hit.fixedDamage(specialDamage).ignoreDefence().ignorePrayer());
         target.graphics(754);
         return true;

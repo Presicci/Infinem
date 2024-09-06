@@ -1,9 +1,12 @@
 package io.ruin.model.combat;
 
+import io.ruin.api.utils.Random;
 import io.ruin.model.combat.special.ranged.bolts.*;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Projectile;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.BiFunction;
 
 public enum RangedAmmo {
@@ -91,4 +94,14 @@ public enum RangedAmmo {
         this.effect = effect;
     }
 
+    private static final List<BoltEffect> VALID_BOLT_EFFECTS = Arrays.asList(
+            new DiamondBoltEffect(true), new DragonBoltEffect(true), new EmeraldBoltEffect(true),
+            new OnyxBoltEffect(true), new OpalBoltEffect(true), new PearlBoltEffect(true),
+            new RubyBoltEffect(true)
+    );
+
+    public static boolean procDeadeyeBoltEffect(Entity target, Hit hit) {
+        if (!Random.rollDie(10)) return false;
+        return Random.get(VALID_BOLT_EFFECTS).apply(target, hit);
+    }
 }

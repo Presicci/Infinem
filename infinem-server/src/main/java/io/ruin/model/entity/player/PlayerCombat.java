@@ -7,7 +7,6 @@ import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
 import io.ruin.model.item.Items;
-import io.ruin.model.skills.magic.spells.modern.WindStrike;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
@@ -50,8 +49,6 @@ import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.skills.magic.spells.TargetSpell;
 import io.ruin.model.skills.magic.spells.lunar.Vengeance;
-import io.ruin.model.skills.magic.spells.modern.FireSpell;
-import io.ruin.model.skills.magic.spells.modern.FireStrike;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.model.skills.prayer.Redemption;
 import io.ruin.model.skills.prayer.Retribution;
@@ -503,6 +500,9 @@ public class PlayerCombat extends Combat {
             }
             if(rangedAmmo != null && rangedAmmo.effect != null && rangedAmmo.effect.apply(target, hit))
                 return;
+            if (target.isNpc() && player.getRelicManager().hasRelic(Relic.DEADEYE) && RangedAmmo.procDeadeyeBoltEffect(target, hit)) {
+                return;
+            }
 
             target.hit(hit);
             if (chins) {
