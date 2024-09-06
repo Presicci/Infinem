@@ -148,7 +148,7 @@ public class TargetSpell extends Spell {
     private boolean cast(Entity entity, Entity target, int projectileDuration, int maxDamage) {
         boolean primaryCast = projectileDuration == -1;
         if (primaryCast) {
-            boolean saveRunes = entity.player != null && entity.player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(10, 3);
+            boolean saveRunes = entity.player != null && entity.player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(10, 5);
             RuneRemoval r = null;
             if(entity.player != null) {
                 if(!entity.player.getStats().check(StatType.Magic, lvlReq, "cast this spell"))

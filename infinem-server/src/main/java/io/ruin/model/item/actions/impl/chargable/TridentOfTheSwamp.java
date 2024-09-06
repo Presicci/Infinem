@@ -77,7 +77,7 @@ public class TridentOfTheSwamp {
     }
 
     private static void consumeCharge(Player player, Item staff, Hit hit, Entity entity) {
-        if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(10, 3)) return;
+        if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(10, 5)) return;
         if (AttributeExtensions.getCharges(staff) > 0) {
             AttributeExtensions.deincrementCharges(staff, 1);
         }
