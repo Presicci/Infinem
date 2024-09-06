@@ -26,8 +26,11 @@ public class TopazBoltEffect extends BoltEffect {
     public Boolean apply(Entity target, Hit hit) {
         if(!Random.rollPercent(getProcChange(target, hit)) || target.player == null)
             return false;
+        if (!target.isPlayer())
+            return false;
         target.graphics(757);
         ((Player) target).getStats().get(StatType.Magic).drain(1);
+        target.hit(hit);
         return true;
     }
 
