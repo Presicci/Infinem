@@ -61,18 +61,18 @@ public class Store {
                                 switch (storeId) {
                                     case 1:
                                         addItem(player, 26554, amt);
-                                        paidAmt *= 2;
+                                        paidAmt += 50;
                                         break;
                                     case 2:
                                         addItem(player, 26554, amt);
                                         addItem(player, 26557, amt);
-                                        paidAmt *= 2;
+                                        paidAmt += 250;
                                         break;
                                     case 3:
                                         addItem(player, 26554, amt);
                                         addItem(player, 26557, amt);
                                         addItem(player, 26560, amt);
-                                        paidAmt *= 2;
+                                        paidAmt += 500;
                                         break;
                                     case 4:
                                         addItem(player, 32033, amt);
