@@ -55,6 +55,13 @@ public class Regular {
             case "players": {
                 int players = World.players.count();
                 player.sendMessage("There is currently " + players + " player" + (players > 1 ? "s" : "") + " online!");
+                if (player.isStaff()) {
+                    List<String> names = new LinkedList<>();
+                    World.players.forEach(p -> {
+                        names.add(p.getName());
+                    });
+                    player.sendScroll("Players Online", names.toArray(new String[0]));
+                }
                 return true;
             }
             case "dz":
