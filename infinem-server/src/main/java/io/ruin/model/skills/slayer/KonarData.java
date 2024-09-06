@@ -102,7 +102,7 @@ public class KonarData {
         WATERBIRTH_ISLAND("Waterbirth Island", new Bounds(2495, 3713, 2557, 3772, -1)),
         GODWARS_DUNGEON("Godwars Dungeon", new Bounds(2816, 5255, 2942, 5370, -1)),
         BRINE_RAT_CAVERN("Brine Rat Cavern", new Bounds(2686, 10116, 2751, 10175, -1)),
-        SMOKE_DUNGEON("Smoke Dungeon", new Bounds(3200, 9344, 3326, 9404, -1)),
+        SMOKE_DUNGEON("Smoke Dungeon", new Bounds(3168, 9344, 3326, 9404, -1)),
         KALPHITE_LAIR("Kalphite Lair", new Bounds(3455, 9473, 3517, 9531, -1)),
         TROLL_STRONGHOLD("Troll Stronghold", new Bounds(2823, 10045, 2871, 10112, -1)),
         KARUULM_SLAYER_DUNGEON("Karuulm Slayer Dungeon", new Bounds(1248, 10146, 1390, 10282, -1)),
