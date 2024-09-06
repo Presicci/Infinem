@@ -47,10 +47,9 @@ public class TabAccountManagement {
                     )
             );
             h.actions[45] = (SimpleAction) p -> {
-              Item credits = p.getInventory().findItem(OSPVP_CREDITS);
-              if(credits == null || credits.getAmount() < 50) {
-                  p.dialogue(new ItemDialogue().one(OSPVP_CREDITS, "You need at least " + Color.COOL_BLUE.wrap("50 " + World.type.getWorldName() + " Credits") + " to change your username. You can purchase credits from our store." +
-                          "<br>Would you like to view the store?"),
+              if(!p.getInventory().hasId(32039)) {
+                  p.dialogue(new ItemDialogue().one(OSPVP_CREDITS, "You need a Name change ticket to change your username. You can purchase one from our store." +
+                          "<br>Would you like to visit the store?"),
                           new OptionsDialogue("Would you like to open our store?",
                                   new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", DonationManager.STORE_URL)),
                                   new Option("No", p::closeDialogue)

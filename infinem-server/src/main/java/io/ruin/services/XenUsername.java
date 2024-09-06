@@ -27,6 +27,10 @@ public class XenUsername {
                 player.dialogue(new MessageDialogue("The username you requested is already your username."));
                 return;
             }
+            if (player.getInventory().remove(32039, 1) < 1) {
+                player.dialogue(new MessageDialogue("You need a Name change ticket to change your username."));
+                return;
+            }
             // check if forum acc is linked, if not, just rename character
             HashMap<Object, Object> map = new HashMap<Object, Object>();
             map.put("name", player.getName());
@@ -38,35 +42,32 @@ public class XenUsername {
                 }
                 if (result == null) {
                     player.dialogue(new MessageDialogue("There was an issue processing your request. Please try again later."));
+                    player.getInventory().add(32039);
                     return;
                 }
                 if (!result.startsWith("Success")) {
                     switch (result) {
                         case "USERNAME_TAKEN": {
                             player.dialogue(new MessageDialogue("The username you requested is already in use. Please try again."));
+                            player.getInventory().add(32039);
                             return;
                         }
                         case "USERNAME_DISALLOWED" : {
                             player.dialogue(new MessageDialogue("The username you requested contains banned words. Please try again."));
+                            player.getInventory().add(32039);
                             return;
                         }
                         case "INVALID_EMOJIS":
                         case "INVALID_CHARS": {
                             player.dialogue(new MessageDialogue("The username you requested contains incorrect characters. Please try again."));
+                            player.getInventory().add(32039);
                             return;
                         }
                     }
                     player.dialogue(new MessageDialogue("There was an unexpected response from the host. Please contact a staff member."));
+                    player.getInventory().add(32039);
                     return;
                 }
-                player.lock();
-                Item credits = player.getInventory().findItem(13190);
-                if(credits == null || credits.getAmount() < 50) {
-                    player.sendMessage("You don't have enough credits to complete this transaction.");
-                    player.unlock();
-                    return;
-                }
-                player.getInventory().remove(13190, 50);
                 player.dialogue(new MessageDialogue("You have successfully changed your username."));
                 player.setName(usernameRequested);
                 player.unlock();
