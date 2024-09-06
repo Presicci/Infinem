@@ -147,6 +147,8 @@ public class Mining {
                             player.sendMessage("Your infernal pickaxe incinerates the " + ItemDefinition.get(id).name + ".");
                         } else if (rockData == Rock.COAL && CoalBag.hasOpenBag(player) && CoalBag.hasSpaceInBag(player)) {
                             player.incrementNumericAttribute("BAGGED_COAL", 1);
+                        } else if (rockData == Rock.ASH_PILE) {
+                            player.getInventory().addOrDrop(21622, getAshAmount(player));
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
                             if (player.getBank().hasRoomFor(id)) {
                                 player.getBank().add(id, amount);
@@ -228,6 +230,11 @@ public class Mining {
                 event.delay(1);
             }
         });
+    }
+
+    private static int getAshAmount(Player player) {
+        int level = player.getStats().get(StatType.Mining).currentLevel;
+        return level >= 97 ? 6 : level >= 82 ? 5 : level >= 67 ? 4 : level >= 52 ? 3 : level >= 37 ? 2 : 1;
     }
 
     public static int getEffectiveLevel(Player player) {
@@ -459,7 +466,8 @@ public class Mining {
                 {Rock.BASALT, 33257, 33253, PlayerCounter.MINE_SALT},
                 {Rock.LIMESTONE, 11382, 11383, PlayerCounter.MINED_LIMESTONE},
                 {Rock.LIMESTONE, 11383, 11384, PlayerCounter.MINED_LIMESTONE},
-                {Rock.LIMESTONE, 11384, 11385, PlayerCounter.MINED_LIMESTONE}
+                {Rock.LIMESTONE, 11384, 11385, PlayerCounter.MINED_LIMESTONE},
+                {Rock.ASH_PILE, 30985, 30986, PlayerCounter.MINED_VOLCANIC_ASH},
         };
         for (Object[] d : oreData) {
             Rock rock = (Rock) d[0];
@@ -517,6 +525,9 @@ public class Mining {
          */
         NPCAction.register(6601, "mine", (player, npc) -> mine(Rock.RUNE, player, null, -1, PlayerCounter.MINED_RUNITE, npc));
         NPCAction.register(6601, "prospect", (player, npc) -> prospect(Rock.RUNE, player, false));
+
+        // Empty ash pile
+        ObjectAction.register(30986, "mine", (player, obj) -> player.sendMessage("There's no ash left."));
     }
 
 }

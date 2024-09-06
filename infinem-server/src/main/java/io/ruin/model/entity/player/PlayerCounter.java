@@ -93,6 +93,7 @@ public enum PlayerCounter {
     MINED_CORRUPT,
     MINED_STARDUST,
     MINED_LIMESTONE,
+    MINED_VOLCANIC_ASH,
 
     /**
      * Smithing
