@@ -957,8 +957,8 @@ public class PlayerCombat extends Combat {
         // Relic handling
         RelicManager rm = player.getRelicManager();
         if (target.isNpc() && rm.hasRelicEnalbed(Relic.ARCHMAGE) && hit.attackStyle != null && hit.attackStyle.isMagic()) {
-            hit.boostDamage(0.2);
-            hit.boostAttack(0.6);
+            hit.boostDamage(0.4);
+            hit.boostAttack(0.8);
         } else if (target.isNpc() && rm.hasRelicEnalbed(Relic.DEADEYE) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
             hit.boostDamage(0.2);
             hit.boostAttack(0.4);
