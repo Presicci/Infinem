@@ -4,6 +4,7 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.shared.listeners.HitListener;
+import io.ruin.model.skills.magic.spells.modern.MagicDart;
 
 import java.util.Arrays;
 
@@ -26,7 +27,7 @@ public class LeafVulnerableMonster extends NPCCombat {// Turoths and Kurasks
                 block = true;
             } else if (hit.attackStyle.isRanged() && (hit.rangedAmmo == null || !hit.rangedAmmo.leafBladed)) {
                 block = true;
-            } else if (hit.attackStyle.isMagic()) { // TODO slayer dart spell!!!!
+            } else if (hit.attackStyle.isMagic() && !(hit.attackSpell instanceof MagicDart)) {
                 block = true;
             }
             if (block) {
