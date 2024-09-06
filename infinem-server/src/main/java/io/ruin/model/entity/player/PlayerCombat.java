@@ -1040,7 +1040,7 @@ public class PlayerCombat extends Combat {
                 && hit.attackStyle != null
                 && hit.attackStyle.isMelee()
                 && player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT)
-                && Random.rollDie(20)) {
+                && Random.rollDie(10)) {
             hit.damage *= 2;
         }
         if (target.npc != null && ChambersOfXeric.isRaiding(player))
