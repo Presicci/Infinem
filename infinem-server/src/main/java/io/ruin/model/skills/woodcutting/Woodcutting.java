@@ -324,6 +324,11 @@ public class Woodcutting {
         ObjectAction.register(1292, "chop down", (player, obj) -> chop(Tree.DRAMEN_TREE, player, obj, -1));
         ObjectAction.register(3037, "cut down", (player, obj) -> chop(Tree.ARCTIC_PINE, player, obj, 1349));
         ObjectAction.register(31420, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
+        ObjectAction.register(31421, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
+        ObjectAction.register(31422, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
+        ObjectAction.register(31423, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
+        ObjectAction.register(31424, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
+        ObjectAction.register(31425, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
     }
 
 }
