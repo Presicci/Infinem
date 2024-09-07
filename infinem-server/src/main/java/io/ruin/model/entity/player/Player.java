@@ -1181,6 +1181,10 @@ public class Player extends PlayerAttributes {
             prayer = new PlayerPrayer();
         prayer.init(this);
 
+        if (taskManager == null)
+            taskManager = new TaskManager(this);
+        taskManager.setPlayer(this);
+
         if(farming == null)
             farming = new Farming();
         farming.init(this);
@@ -1217,10 +1221,6 @@ public class Player extends PlayerAttributes {
 
         if (fremennikName == null)
             fremennikName = generateFremennikName();
-
-        if (taskManager == null)
-            taskManager = new TaskManager(this);
-        taskManager.setPlayer(this);
 
         if (relicManager == null)
             relicManager = new RelicManager(this);
