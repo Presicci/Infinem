@@ -34,10 +34,10 @@ public class Leaderboard {
         /*
          * Register the leaderboard event
          */
-        World.startEvent(e -> {
+        /*World.startEvent(e -> {
             /*
              * Start event every 24 hours
-             */
+             *
             while (true) {
                 e.delay(Server.toTicks(864 * 100));
                 pullWinners();
@@ -46,7 +46,7 @@ public class Leaderboard {
 
         /*
           Check if player has unclaimed rewards
-         */
+         *
         LoginListener.register(player -> {
             if (!unclaimedRewards.isEmpty()) {
                 unclaimedRewards.stream().filter(reward -> player.getUserId() == reward.userId).findAny().ifPresent(reward -> {
@@ -56,7 +56,7 @@ public class Leaderboard {
                 });
             }
 
-        });
+        });*/
 
         //ObjectAction.register(3192, "Edge PKing", ((player, obj) -> openEdgeLeaderBoard(player)));
         //ObjectAction.register(3192, "Deep Wild PKing", ((player, obj) -> openDeepWildernessLeaderBoard(player)));
