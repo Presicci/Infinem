@@ -38,6 +38,10 @@ public enum Arrow {
     }
 
     private void make(Player player, Item shaft, Item tipItem, int amount) {
+        if (!player.getInventory().hasRoomFor(outcome, amount)) {
+            player.sendMessage("You don't have enough inventory space to make that.");
+            return;
+        }
         shaft.remove(amount);
         tipItem.remove(amount);
         player.animate(8480);
