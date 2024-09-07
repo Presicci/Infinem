@@ -52,6 +52,7 @@ public class KonarData {
         DRAKE(112, TaskLocation.KARUULM_SLAYER_DUNGEON),
         DUST_DEVIL(49, TaskLocation.CATACOMBS_OF_KOUREND, TaskLocation.SMOKE_DUNGEON),
         FIRE_GIANT(16, TaskLocation.KARUULM_SLAYER_DUNGEON, TaskLocation.BRIMHAVEN_DUNGEON, TaskLocation.STRONGHOLD_SLAYER_CAVE, TaskLocation.CATACOMBS_OF_KOUREND, TaskLocation.WATERFALL_DUNGEON),
+        FOSSILE_ISLAND_WYVERN(106, TaskLocation.WYVERN_CAVE),
         GARGOYLE(46, TaskLocation.SLAYER_TOWER),
         GREATER_DEMON(29, TaskLocation.CHASM_OF_FIRE, TaskLocation.CATACOMBS_OF_KOUREND, TaskLocation.KARUULM_SLAYER_DUNGEON, TaskLocation.BRIMHAVEN_DUNGEON),
         HELLHOUND(31, TaskLocation.STRONGHOLD_SLAYER_CAVE, TaskLocation.CATACOMBS_OF_KOUREND, TaskLocation.TAVERLY_DUNGEON, TaskLocation.KARUULM_SLAYER_DUNGEON, TaskLocation.WITCHAVEN_DUNGEON),
@@ -113,7 +114,8 @@ public class KonarData {
         MOURNER_TUNNELS("Mourner Tunnels", new Bounds(1855, 4608, 2045, 4670, -1)),
         EVIL_CHICKEN_LAIR("Evil Chicken's Lair", new Bounds(2445, 4353, 2493, 4408, -1)),
         CHASM_OF_FIRE("Chasm of Fire", new Bounds(1409, 10050, 1468, 10108, -1)),
-        OGRE_ENCLAVE("Ogre Enclave", new Bounds(2561, 9407, 2621, 9469, -1));
+        OGRE_ENCLAVE("Ogre Enclave", new Bounds(2561, 9407, 2621, 9469, -1)),
+        WYVERN_CAVE("Wyvern Cave", Bounds.fromRegions(14495, 14496));
 
         private final String name;
         private final Bounds[] boundaries;
