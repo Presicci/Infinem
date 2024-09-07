@@ -144,34 +144,34 @@ public class PestControlGame {
 
 		//Register ladders
 		//North-west tower
-		/*ObjectAction.register(14296, map.convertX(2644), map.convertY(2601), 0, "climb", ((player, obj) -> {
+		ObjectAction.register(14296, map.convertX(2644), map.convertY(2601), 0, "climb", ((player, obj) -> {
 			//North-west tower
-			if (map.convertX(player.getAbsX()) == map.convertX(2643))
-				climb(player, map.convertX(2645), map.convertY(2601), 0, false, true, true);
+			/*if (map.convertX(player.getAbsX()) == map.convertX(2643))
+				climb(player, map.convertX(2645), map.convertY(2601), 0, false, true, false);
 			else
-				climb(player, map.convertX(2643), map.convertY(2601), 0, true, true, true);
+				climb(player, map.convertX(2643), map.convertY(2601), 0, true, true, false);*/
 		}));
 		ObjectAction.register(14296, map.convertX(2669), map.convertY(2601), 0, "climb", ((player, obj) -> {
 			//North-east tower
-			if (map.convertX(player.getAbsX()) == map.convertX(2670))
-				climb(player, map.convertX(2645), map.convertY(2601), 0, false, true, true);
+			/*if (map.convertX(player.getAbsX()) == map.convertX(2670))
+				climb(player, map.convertX(2668), map.convertY(2601), 0, false, true, false);
 			else
-				climb(player, map.convertX(2643), map.convertY(2601), 0, true, true, true);
+				climb(player, map.convertX(2670), map.convertY(2601), 0, true, true, false);*/
 		}));
 		ObjectAction.register(14296, map.convertX(2666), map.convertY(2586), 0, "climb", ((player, obj) -> {
 			//South-east tower
-			if (map.convertY(player.getAbsY()) == map.convertY(2585))
-				climb(player, map.convertX(2666), map.convertY(2587), 0, true, true, true);
+			/*if (map.convertY(player.getAbsY()) == map.convertY(2585))
+				climb(player, map.convertX(2666), map.convertY(2587), 0, true, true, false);
 			else
-				climb(player, map.convertX(2666), map.convertY(2585), 0, false, true, true);
+				climb(player, map.convertX(2666), map.convertY(2585), 0, false, true, false);*/
 		}));
 		ObjectAction.register(14296, map.convertX(2647), map.convertY(2586), 0, "climb", ((player, obj) -> {
 			//South-east tower
-			if (map.convertY(player.getAbsX()) == map.convertY(2587))
-				climb(player, map.convertX(2647), map.convertY(2589), 0, true, true, true);
+			/*if (map.convertY(player.getAbsX()) == map.convertY(2585))
+				climb(player, map.convertX(2647), map.convertY(2587), 0, true, true, false);
 			else
-				climb(player, map.convertX(2647), map.convertY(2587), 0, false, true, true);
-		}));*/
+				climb(player, map.convertX(2647), map.convertY(2585), 0, false, true, false);*/
+		}));
 
 
 		// Force update overlay after initialization.
@@ -334,7 +334,7 @@ public class PestControlGame {
 	 * Initializes & creates the dynamic map for this Pest Control game.
 	 */
 	private void initMap() {
-		map = new DynamicMap().build(10536, 0);
+		map = new DynamicMap().build(10536, 3);
 	}
 
 	/**
