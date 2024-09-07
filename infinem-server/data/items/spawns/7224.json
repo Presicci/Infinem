@@ -25,5 +25,113 @@
     "y": 3613,
     "z": 0,
     "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1835,
+    "y": 3636,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1835,
+    "y": 3637,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1835,
+    "y": 3639,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1835,
+    "y": 3640,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1836,
+    "y": 3640,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1836,
+    "y": 3643,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1837,
+    "y": 3644,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1839,
+    "y": 3645,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1841,
+    "y": 3644,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1843,
+    "y": 3643,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1844,
+    "y": 3641,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Snape grass",
+    "amount": 0,
+    "id": 231,
+    "x": 1843,
+    "y": 3638,
+    "z": 0,
+    "respawnSeconds": 60
   }
 ]
