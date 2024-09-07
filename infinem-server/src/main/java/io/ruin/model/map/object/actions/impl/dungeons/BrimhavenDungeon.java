@@ -98,5 +98,7 @@ public class BrimhavenDungeon {
                 return;
             p.getMovement().teleport(2698, p.getAbsY() >= 9499 ? 9492 : 9500, 0);
         });
+        ObjectAction.register(30198, 2696, 9436, 0, "enter", (player, obj) -> player.getMovement().teleport(2684, 9436, 0));
+        ObjectAction.register(30198, 2685, 9436, 0, "enter", (player, obj) -> player.getMovement().teleport(2697, 9436, 0));
     }
 }
