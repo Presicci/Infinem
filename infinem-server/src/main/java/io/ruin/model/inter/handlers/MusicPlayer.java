@@ -147,32 +147,37 @@ public class MusicPlayer {
     }
 
     public void unlock(final Music music, final boolean play) {
-        val slot = EnumDefinition.get(812).getValuesAsKeysStrings().get(music.getName()) - 1;
-        val musicIndex = EnumDefinition.get(819).getIntValuesArray()[slot];
-        val index = (musicIndex >> 14) - 1;
-        if (index >= Config.MUSIC_UNLOCKS.length) {
-            return;
-        }
-
-        val varp = Config.MUSIC_UNLOCKS[index];
-        val value = varp.get(player);
-        if (!isUnlocked(slot)) {
-            varp.set(player, value | (1 << (musicIndex & 0x3FFF)));
-            if (Config.MUSIC_UNLOCK_MESSAGE.get(player) == 0) {
-                player.sendFilteredMessage("<col=ff0000>You have unlocked a new music track: " + music.getName());
-            }
-            //val unlocked = player.getEmotesHandler().isUnlocked(Emote.AIR_GUITAR);
-            //if (!unlocked && unlockedMusicCount() >= 500) {
-            //    player.getEmotesHandler().unlock(Emote.AIR_GUITAR);
-            //    player.sendMessage(Colour.RS_GREEN.wrap("Congratulations, you've unlocked the Air Guitar emote!"));
-            // }
-        }
-        if (play) {
-            if (currentlyPlaying == music) {
+        try {
+            val slot = EnumDefinition.get(812).getValuesAsKeysStrings().get(music.getName()) - 1;
+            val musicIndex = EnumDefinition.get(819).getIntValuesArray()[slot];
+            val index = (musicIndex >> 14) - 1;
+            if (index >= Config.MUSIC_UNLOCKS.length) {
                 return;
             }
-            play(slot);
+
+            val varp = Config.MUSIC_UNLOCKS[index];
+            val value = varp.get(player);
+            if (!isUnlocked(slot)) {
+                varp.set(player, value | (1 << (musicIndex & 0x3FFF)));
+                if (Config.MUSIC_UNLOCK_MESSAGE.get(player) == 0) {
+                    player.sendFilteredMessage("<col=ff0000>You have unlocked a new music track: " + music.getName());
+                }
+                //val unlocked = player.getEmotesHandler().isUnlocked(Emote.AIR_GUITAR);
+                //if (!unlocked && unlockedMusicCount() >= 500) {
+                //    player.getEmotesHandler().unlock(Emote.AIR_GUITAR);
+                //    player.sendMessage(Colour.RS_GREEN.wrap("Congratulations, you've unlocked the Air Guitar emote!"));
+                // }
+            }
+            if (play) {
+                if (currentlyPlaying == music) {
+                    return;
+                }
+                play(slot);
+            }
+        } catch (Exception e) {
+            System.out.println("Error unlocking music - " + music.getName() + ": " + music.getMusicId());
         }
+
     }
 
     /** Whether the track at the given slot is unlocked or not. */
