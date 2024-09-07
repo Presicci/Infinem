@@ -631,7 +631,7 @@ public enum ClueType {
             )
     ),
 
-    ELITE(12073, 20543, 24365, 10, 12, 21680, 4, 6, 5, 5, new LootTable()
+    ELITE(12073, 20543, 24365, 5, 7, 21680, 4, 6, 5, 5, new LootTable()
             .addTable("eliteclue", 3920, // Uniques
                     new LootItem(12538, 1, 1, 80),   //Dragon full helm ornament kit
                     new LootItem(12534, 1, 1, 80),   //Dragon chainbody ornament kit
