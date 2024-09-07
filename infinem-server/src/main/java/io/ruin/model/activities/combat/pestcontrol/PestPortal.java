@@ -73,7 +73,7 @@ public class PestPortal {
 	 * Spawns some pests surrounding this portal.
 	 */
 	void spawnPests() {
-		int maxSpawnCount = Random.get(2, 3 + game.settings().ordinal());
+		int maxSpawnCount = Random.get(1, 1 + game.settings().ordinal());
 		int[] pests = game.settings().pests();
 		for (int i = 0; i < maxSpawnCount; i++) {
 			int roll = Random.get(5);
