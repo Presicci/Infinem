@@ -27,7 +27,7 @@ public enum ActivitySpotlight {
     QUADRUPLE_CLUE_BOTTLE_CHANCE
     ;
 
-    private static List<ActivitySpotlight> DISABLED_SPOTLIGHTS = Arrays.asList(DOUBLE_PEST_CONTROL_POINTS);
+    private static List<ActivitySpotlight> DISABLED_SPOTLIGHTS = Arrays.asList();
     public static ActivitySpotlight activeSpotlight;
     private static final int SPOTLIGHT_TIMER = 6000;    // 1 hour
     private static boolean spotlightsEnabled = true;
