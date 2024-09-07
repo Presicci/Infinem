@@ -229,11 +229,11 @@ public enum AreaReward {
     MORYTANIA_LEGS_2(TaskArea.MORYTANIA, AreaTaskTier.MEDIUM, "Unlocks the Morytania Legs 2",
             "5 daily teleports to the Slime Pit beneath the Ectofuntus",
             "Acts as a ghostspeak amulet when worn"),
-    ROBIN_13(TaskArea.MORYTANIA, AreaTaskTier.MEDIUM, "Robin will exchange 13 slime buckets and bonemeal for bones daily"),
+    //ROBIN_13(TaskArea.MORYTANIA, AreaTaskTier.MEDIUM, "Robin will exchange 13 slime buckets and bonemeal for bones daily"),
     SLAYER_EXPERIENCE_50(TaskArea.MORYTANIA, AreaTaskTier.MEDIUM, "5% more Slayer experience in the Slayer Tower"),
     MORYTANIA_LEGS_3(TaskArea.MORYTANIA, AreaTaskTier.HARD, "Unlocks the Morytania Legs 3",
             "Unlimited teleports to Burgh de Rott"),
-    ROBIN_26(TaskArea.MORYTANIA, AreaTaskTier.HARD, "Robin will exchange 26 slime buckets and bonemeal for bones daily"),
+    //ROBIN_26(TaskArea.MORYTANIA, AreaTaskTier.HARD, "Robin will exchange 26 slime buckets and bonemeal for bones daily"),
     //SHADE_PRAYER_EXP(TaskArea.MORYTANIA, AreaTaskTier.HARD, "50% more Prayer experience from burning shade remains"),
     BARROWS_RUNES(TaskArea.MORYTANIA, AreaTaskTier.HARD, "50% more runes from the Barrows chest"),
     SLAYER_EXPERIENCE_75(TaskArea.MORYTANIA, AreaTaskTier.HARD, "7.5% more Slayer experience in the Slayer Tower"),
@@ -243,10 +243,10 @@ public enum AreaReward {
     //It can be claimed from a ghost disciple. Note: A Ghostspeak amulet or Morytania legs 3 must be worn when claiming the Bonecrusher.
     MORYTANIA_LEGS_4(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Unlocks the Morytania Legs 4",
             "Unlimited teleports to the slime pit beneath the Ectofuntus"),
-    ROBIN_39(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Robin will exchange 39 slime buckets and bonemeal for bones daily"),
+    //ROBIN_39(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Robin will exchange 39 slime buckets and bonemeal for bones daily"),
     //SHADE_FIREMAKING_EXP(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "50% more Firemaking experience from burning shade remains"),
-    BONECRUSHER_FULL_EXP(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Bones buried via the Bonecrusher grant full Prayer experience"),
-    HARMONY_ISLAND_HERB(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Access to the herb patch on Harmony Island"),
+    //BONECRUSHER_FULL_EXP(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Bones buried via the Bonecrusher grant full Prayer experience"),
+    //HARMONY_ISLAND_HERB(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Access to the herb patch on Harmony Island"),
     SLAYER_EXPERIENCE_100(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "10% more Slayer experience in the Slayer Tower"),
 
     /**
@@ -259,31 +259,31 @@ public enum AreaReward {
      */
     WILDERNESS_SWORD_1(TaskArea.WILDERNESS, AreaTaskTier.EASY, "Unlocks the Wilderness Sword 1",
             "Always slashes webs successfully"),
-    FREE_RUNES_40(TaskArea.WILDERNESS, AreaTaskTier.EASY, "40 random free runes from Lundail once per day"),
-    WILDERNESS_LEVER_CHOICE(TaskArea.WILDERNESS, AreaTaskTier.EASY, "Wilderness lever can teleport you to either Edgeville or Ardougne"),
+    //FREE_RUNES_40(TaskArea.WILDERNESS, AreaTaskTier.EASY, "40 random free runes from Lundail once per day"),
+    //WILDERNESS_LEVER_CHOICE(TaskArea.WILDERNESS, AreaTaskTier.EASY, "Wilderness lever can teleport you to either Edgeville or Ardougne"),
     WILDERNESS_SWORD_2(TaskArea.WILDERNESS, AreaTaskTier.MEDIUM, "Unlocks the Wilderness Sword 2"),
-    FREE_RUNES_80(TaskArea.WILDERNESS, AreaTaskTier.MEDIUM, "80 random free runes from Lundail once per day"),
-    RESOURCE_AREA_DISCOUNT_20(TaskArea.WILDERNESS, AreaTaskTier.MEDIUM, "20% off entry to Resource Area"),
-    ENT_YIELD_BOOST(TaskArea.WILDERNESS, AreaTaskTier.MEDIUM, "Increases the chance of a successful yield from ents by 15%"),
+    //FREE_RUNES_80(TaskArea.WILDERNESS, AreaTaskTier.MEDIUM, "80 random free runes from Lundail once per day"),
+    //RESOURCE_AREA_DISCOUNT_20(TaskArea.WILDERNESS, AreaTaskTier.MEDIUM, "20% off entry to Resource Area"),
+    //ENT_YIELD_BOOST(TaskArea.WILDERNESS, AreaTaskTier.MEDIUM, "Increases the chance of a successful yield from ents by 15%"),
     //Access to Spindel, Artio and Calvar'ion.
     //Access to the shortcut in the Deep Wilderness Dungeon (requires Agility 46 )
     //Can have 4 ecumenical keys at a time
     WILDERNESS_SWORD_3(TaskArea.WILDERNESS, AreaTaskTier.HARD, "Unlocks the Wilderness Sword 3",
             "One free teleport to the Fountain of Rune daily"),
-    FREE_RUNES_120(TaskArea.WILDERNESS, AreaTaskTier.HARD, "120 random free runes from Lundail once per day"),
-    RESOURCE_AREA_DISCOUNT_50(TaskArea.WILDERNESS, AreaTaskTier.HARD, "50% off entry to Resource Area"),
-    OBELISK_CHOICE(TaskArea.WILDERNESS, AreaTaskTier.HARD, "Able to choose your destination when teleporting through the Ancient Obelisks"),
-    NOTED_WINE_OF_ZAMMY(TaskArea.WILDERNESS, AreaTaskTier.HARD, "Wine of zamorak found in the Chaos Temple and Deep Wilderness Dungeon will be noted"),
+    //FREE_RUNES_120(TaskArea.WILDERNESS, AreaTaskTier.HARD, "120 random free runes from Lundail once per day"),
+    //RESOURCE_AREA_DISCOUNT_50(TaskArea.WILDERNESS, AreaTaskTier.HARD, "50% off entry to Resource Area"),
+    //OBELISK_CHOICE(TaskArea.WILDERNESS, AreaTaskTier.HARD, "Able to choose your destination when teleporting through the Ancient Obelisks"),
+    //NOTED_WINE_OF_ZAMMY(TaskArea.WILDERNESS, AreaTaskTier.HARD, "Wine of zamorak found in the Chaos Temple and Deep Wilderness Dungeon will be noted"),
     //Can have 5 ecumenical keys at a time
     //Access to a shortcut to the Lava Maze (requires Agility 82 )
     //Access to a shortcut to the Lava Dragon Isle (requires Agility 74 )
     //50% more lava shards per lava scale
     WILDERNESS_SWORD_4(TaskArea.WILDERNESS, AreaTaskTier.ELITE, "Unlocks the Wilderness Sword 4",
             "Unlimited free teleports to the Fountain of Rune"),
-    FREE_RUNES_200(TaskArea.WILDERNESS, AreaTaskTier.ELITE, "200 random free runes from Lundail once per day"),
-    RESOURCE_AREA_FREE(TaskArea.WILDERNESS, AreaTaskTier.ELITE, "Free entry to Resource Area"),
-    NOTED_DRAGON_BONES(TaskArea.WILDERNESS, AreaTaskTier.ELITE, "All dragon bones drops from dragons in the Wilderness are noted"),
-    DARK_CRAB_CATCH_RATE(TaskArea.WILDERNESS, AreaTaskTier.ELITE, "Increased dark crab catch rate"),
+    //FREE_RUNES_200(TaskArea.WILDERNESS, AreaTaskTier.ELITE, "200 random free runes from Lundail once per day"),
+    //RESOURCE_AREA_FREE(TaskArea.WILDERNESS, AreaTaskTier.ELITE, "Free entry to Resource Area"),
+    //NOTED_DRAGON_BONES(TaskArea.WILDERNESS, AreaTaskTier.ELITE, "All dragon bones drops from dragons in the Wilderness are noted"),
+    //DARK_CRAB_CATCH_RATE(TaskArea.WILDERNESS, AreaTaskTier.ELITE, "Increased dark crab catch rate"),
 
     /**
      * Zeah
