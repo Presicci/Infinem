@@ -134,6 +134,7 @@ public class Barrows {
                             || item.getId() == Items.DEATH_RUNE || item.getId() == Items.BLOOD_RUNE) item.setAmount((int) (item.getAmount() * 1.5));
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                     player.getCollectionLog().collect(item);
+                    player.getTaskManager().doDropLookup(item);
                 }
             }
             player.sendMessage("Your Barrows chest count is: <col=FF0000>" + (BossKillCounter.BARROWS.getCounter().increment(player)) + "</col>.");
