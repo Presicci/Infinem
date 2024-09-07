@@ -144,7 +144,7 @@ public class PestControlGame {
 
 		//Register ladders
 		//North-west tower
-		ObjectAction.register(14296, map.convertX(2644), map.convertY(2601), 0, "climb", ((player, obj) -> {
+		/*ObjectAction.register(14296, map.convertX(2644), map.convertY(2601), 0, "climb", ((player, obj) -> {
 			//North-west tower
 			if (map.convertX(player.getAbsX()) == map.convertX(2643))
 				climb(player, map.convertX(2645), map.convertY(2601), 0, false, true, true);
@@ -171,7 +171,7 @@ public class PestControlGame {
 				climb(player, map.convertX(2647), map.convertY(2589), 0, true, true, true);
 			else
 				climb(player, map.convertX(2647), map.convertY(2587), 0, false, true, true);
-		}));
+		}));*/
 
 
 		// Force update overlay after initialization.
