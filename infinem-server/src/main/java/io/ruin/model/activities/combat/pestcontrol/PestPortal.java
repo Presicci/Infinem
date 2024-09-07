@@ -80,24 +80,39 @@ public class PestPortal {
 			int pestId = pests[Random.get(pests.length - 1)];
 			int offsetX;
 			int offsetY;
-			if (roll == 1) {
-				offsetX = -3;
-				offsetY = 2;
-			} else if (roll == 2) {
-				offsetX = 2;
-				offsetY = -3;
-			} else if (roll == 3) {
-				offsetX = 4;
-				offsetY = 1;
-			} else if (roll == 4) {
-				offsetX = 1;
-				offsetY = 4;
+			if (pestId >= 1709 && pestId <= 1713) {
+				if (roll == 1) {
+					offsetX = -1;
+					offsetY = 0;
+				} else if (roll == 2) {
+					offsetX = 0;
+					offsetY = 3;
+				} else if (roll == 3) {
+					offsetX = 0;
+					offsetY = -1;
+				} else {
+					offsetX = 3;
+					offsetY = 0;
+				}
 			} else {
-				offsetX = 3;
-				offsetY = 0;
+				if (roll == 1) {
+					offsetX = -3;
+					offsetY = 2;
+				} else if (roll == 2) {
+					offsetX = 2;
+					offsetY = -3;
+				} else if (roll == 3) {
+					offsetX = 4;
+					offsetY = 1;
+				} else if (roll == 4) {
+					offsetX = 1;
+					offsetY = 4;
+				} else {
+					offsetX = 3;
+					offsetY = 0;
+				}
 			}
-
-			game.map().addNpc(new NPC(pestId).spawn(npc.getPosition().relative(offsetX, offsetY, 0)));
+			game.map().addNpc(new PestNPC(pestId, npc).spawn(npc.getPosition().relative(offsetX, offsetY, 0)));
 		}
 	}
 

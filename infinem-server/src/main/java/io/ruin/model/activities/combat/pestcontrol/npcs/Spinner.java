@@ -17,6 +17,7 @@ public class Spinner extends NPCCombat {
 
 	@Override
 	public void init() {
+		npc.deathStartListener = (entity, killer, killHit) -> entity.animate(6876);
 		npc.deathEndListener = (entity, killer, hit) -> poison();
 		npc.hitListener = new HitListener().postDamage((hit)-> {
 			Entity attacker = hit.attacker;
@@ -27,31 +28,31 @@ public class Spinner extends NPCCombat {
 				}
 			}
 		});
+		delayAttack(10);
+		NPC portal = npc.getTemporaryAttribute("PORTAL");
+		if (portal != null) setTarget(portal);
 	}
 
 	@Override
 	public void follow() {
-		follow(6);
+		follow(1);
 	}
 
 	@Override
 	public boolean attack() {
-		if (!heal() && withinDistance(1)) {
-			basicAttack();
-			return true;
-		}
-		return false;
-	}
+        return heal();
+    }
 
 	public boolean heal() {
 		NPC portal = Streams.stream(npc.localNpcs())
 				.filter(i -> i.getId() >= 1747 && i.getId() <= 1750)
-				.filter(i -> Misc.getEffectiveDistance(npc, i) <= 1)
 				.findAny().orElse(null);
-
 		if (portal != null) {
 			npc.face(portal);
+			npc.animate(3909);
+			npc.graphics(658);
 			portal.incrementHp(Random.get(5, 10));
+			delayAttack(10);
 			return true;
 		}
 
