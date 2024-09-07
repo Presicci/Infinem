@@ -3137,6 +3137,18 @@ public class Administrator {
                 target.setPrimaryGroup(group);
                 return true;
             }
+            case "setspotlight": {
+                if (args == null || args.length < 1) {
+                    player.sendMessage("Syntax: ::setspotlight [index]");
+                    for (ActivitySpotlight spotlight : ActivitySpotlight.values()) {
+                        player.sendMessage(spotlight.name() + ": " + spotlight.ordinal());
+                    }
+                    return false;
+                }
+                int index = Integer.parseInt(args[0]);
+                ActivitySpotlight.setSpotlight(index);
+                return true;
+            }
         }
         return false;
     }

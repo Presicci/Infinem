@@ -50,6 +50,12 @@ public enum ActivitySpotlight {
         return activeSpotlight == spotlight;
     }
 
+    public static void setSpotlight(int index) {
+        if (index < 0 || index >= values().length) return;
+        activeSpotlight = values()[index];
+        Broadcast.ACTIVITY_SPOTLIGHT.sendNews("<col=d9a414><shad=0>The activity spotlight is now: " + StringUtils.capitalizeFirst(activeSpotlight.toString().toLowerCase().replace("_", " ")));
+    }
+
     static {
         World.startEvent(event -> {
             cycleSpotlight();
