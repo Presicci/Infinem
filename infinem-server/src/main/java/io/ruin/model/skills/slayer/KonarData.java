@@ -90,7 +90,7 @@ public class KonarData {
         RELEKKA_SLAYER_DUNGEON("Relekka Slayer Dungeon", new Bounds(2680, 9950, 2814, 10045, -1)),
         KRAKEN_COVE("Kraken Cove", new Bounds(2238, 9983, 2304, 10048, -1)),
         CATACOMBS_OF_KOUREND("Catacombs of Kourend", new Bounds(1588, 9978, 1747, 10110, -1)),
-        SLAYER_TOWER("Slayer Tower", new Bounds(1246, 10138, 1391, 10281, -1)),
+        SLAYER_TOWER("Slayer Tower", Bounds.fromRegion(13623)),
         TAVERLY_DUNGEON("Taverly Dungeon", new Bounds(2812, 9666, 2969, 9855, -1)),
         WITCHAVEN_DUNGEON("Witchaven Dungeon", new Bounds(2686, 9663, 2750, 9720, -1)),
         WATERFALL_DUNGEON("Waterfall Dungeon", new Bounds(2558, 9860, 2596, 9916, -1)),
