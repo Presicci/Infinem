@@ -60,12 +60,11 @@ public class Gargoyle extends NPCCombat {
     public void startDeath(Hit killHit) {
         if (!smashed) {
             if (killHit.attacker != null && killHit.attacker.player != null
-                    && Config.GARGOYLE_SMASHER.get(killHit.attacker.player) == 1
-                    && killHit.attacker.player.getInventory().contains(4162, 1)) { // autosmash
-                smash(killHit.attacker.player, npc, false);
-            } else
+                    && Config.GARGOYLE_SMASHER.get(killHit.attacker.player) == 1) { // autosmash
+            } else {
                 npc.setHp(1);
-            return;
+                return;
+            }
         }
         npc.transform(getCrumblingId());
         npc.animate(1520);
