@@ -54,6 +54,7 @@ public class Shifter extends NPCCombat {
 			List<Position> tiles = new ArrayList<>();
 			b.forEachPos(p -> ProjectileRoute.allow(npc, p) && !p.equals(target.getPosition()), tiles::add);
 			Collections.shuffle(tiles);
+			if (tiles.size() <= 0) return false;
 			Position dstTile = Random.get(tiles);
 			npc.getMovement().teleport(dstTile);
 			basicAttack();
