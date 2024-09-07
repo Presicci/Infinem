@@ -25,7 +25,7 @@ public enum Rock {
     URT_SALT(22597, "urt salt", 72, 70, 1, 5.0, 9, 1000000, 1),
     BASALT(22603, "basalt", 72, 70, 1, 5.0, 9, 1000000, 1),
     LIMESTONE(3211, "limestone", 10, 46.5, 1.02, 26.5, 20, 1000000, 1),
-    ASH_PILE(21622, "volcanic ash", 22, 30, 0.5, 10.0, 50, 741600, 1);
+    ASH_PILE(21622, "volcanic ash", 22, 30, 0.5, 10.0, 50, 741600, 0.25);
 
     public final int ore, levelReq, respawnTime, petOdds;
     public final String rockName;
