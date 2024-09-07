@@ -46,6 +46,8 @@ public final class PestControlBoat {
 	 */
 	public TickDelay nextDeparture = new TickDelay();
 
+	private boolean starting = false;
+
 	/**
 	 * Constructs a new {@link PestControlBoat} instance with the respective properties.
 	 * @param settings
@@ -118,14 +120,18 @@ public final class PestControlBoat {
 		if (lobbySize() >= MINIMUM_PARTY_SIZE || nextDeparture.finished()) {
 			if (lobbySize() < MINIMUM_PARTY_SIZE) {
 				nextDeparture.delay(1000 * 60 * 2 / 600);
+				starting = false;
 			} else {
-				if (game == null || game.ended()) {
+				if (nextDeparture.finished()) {
 					startGame();
-					nextDeparture.delay(1000 * 60 * 6 / 600);
+					starting = false;
+				}
+				if ((game == null || game.ended()) && !nextDeparture.isDelayed()) {
+					nextDeparture.delay(500 * 60 / 600);
+					starting = true;
 				}
 			}
 		}
-
 		updateOverlay();
 	}
 
