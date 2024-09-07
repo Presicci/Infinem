@@ -1815,8 +1815,11 @@ public class PlayerCombat extends Combat {
             int npcIndex = npc.getClientIndex();
             if (npcIndex == entityIndex || npcIndex == targetIndex)
                 continue;
-            if (!npc.getPosition().isWithinDistance(target.getPosition(), 1))
+            if (targetCap == 5 && !npc.getPosition().isWithinDistance(target.getPosition(), 3)) {
                 continue;
+            } else if (targetCap != 5 && !npc.getPosition().isWithinDistance(target.getPosition(), 1)) {
+                continue;
+            }
             if (npc.getDef().ignoreMultiCheck)
                 continue;
             if (!player.getCombat().canAttack(npc, false))
