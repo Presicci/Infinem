@@ -45,9 +45,9 @@ public class PestControl {
 	static {
         ObjectAction.register(27780, 1, (player, __) -> displayScoreBoard(player));
 		//NPCAction.register(1755, 3, (player, npc) -> displayRewardsShop(player));
-		ObjectAction.register(14315, 1, (player, obj) -> player.dialogue(new MessageDialogue("Pest control is coming very soon.")));//NOVICE_LANDER::join);
-		ObjectAction.register(25631, 1, (player, obj) -> player.dialogue(new MessageDialogue("Pest control is coming very soon.")));//INTERMEDIATE_LANDER::join);
-		ObjectAction.register(25632, 1, (player, obj) -> player.dialogue(new MessageDialogue("Pest control is coming very soon.")));//VETERAN_LANDER::join);
+		ObjectAction.register(14315, 1, NOVICE_LANDER::join);
+		ObjectAction.register(25631, 1, INTERMEDIATE_LANDER::join);
+		ObjectAction.register(25632, 1, VETERAN_LANDER::join);
 		ObjectAction.register(14314, 1, (p, __) -> {
 			NOVICE_LANDER.leave(p);
 			p.getMovement().teleport(NOVICE_LANDER.settings().exitTile());
