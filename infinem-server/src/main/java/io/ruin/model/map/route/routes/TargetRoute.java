@@ -3,6 +3,9 @@ package io.ruin.model.map.route.routes;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.map.route.RouteType;
 
+import java.util.Arrays;
+import java.util.List;
+
 //I'm not 100% sure I like this class...
 public class TargetRoute {
 
@@ -64,6 +67,8 @@ public class TargetRoute {
         route = null;
     }
 
+    private static final List<Integer> CLIP_IGNORE_NPCS = Arrays.asList(7706, 1747, 1748, 1749, 1750);
+
     private void beforeMovement0(Entity entity) {
         if(target.npc != null && target.npc.walkTo != null) {
             abs = true;
@@ -87,7 +92,7 @@ public class TargetRoute {
             int targetSize = target.getSize();
             if(!inTarget(absX, absY, size, targetX, targetY, targetSize)
                     && inRange(absX, absY, size, targetX, targetY, targetSize, distance)
-                    && ((target.npc != null && target.npc.getId() == 7706)|| ProjectileRoute.allow(absX, absY, entity.getHeight(), size, targetX, targetY, targetSize))) { // TODO: look into projectile clipping so the zuk(inferno boss) exception is not required?
+                    && ((target.npc != null && CLIP_IGNORE_NPCS.contains(target.npc.getId()))|| ProjectileRoute.allow(absX, absY, entity.getHeight(), size, targetX, targetY, targetSize))) { // TODO: look into projectile clipping so the zuk(inferno boss) exception is not required?
                 withinDistance = true;
                 entity.getMovement().reset();
             }
