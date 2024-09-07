@@ -29,8 +29,6 @@ public enum SkillLamp {
     THIEVING(StatType.Thieving, false, false),
     CRAFTING(StatType.Crafting, false, false),
     RUNECRAFTING(StatType.Runecrafting, false, false),
-    SLAYER(StatType.Slayer, false, false),
-    FARMING(StatType.Farming, false, false),
     MINING(StatType.Mining, false, false),
     SMITHING(StatType.Smithing, false, false),
     FISHING(StatType.Fishing, false, false),
@@ -38,6 +36,8 @@ public enum SkillLamp {
     FIRE_MAKING(StatType.Firemaking, false, false),
     WOODCUTTING(StatType.Woodcutting, false, false),
     FLETCHING(StatType.Fletching, false, false),
+    SLAYER(StatType.Slayer, false, false),
+    FARMING(StatType.Farming, false, false),
     CONSTRUCTION(StatType.Construction, false, false),
     HUNTER(StatType.Hunter, false, false);
 
