@@ -24,7 +24,7 @@ public final class PestControlBoat {
 	/**
 	 * The lowest amount of participants required to play this activity.
 	 */
-	private static final int MINIMUM_PARTY_SIZE = 5;
+	private static final int MINIMUM_PARTY_SIZE = 4;
 
 	/**
 	 * The collection of players awaiting within this boat.
