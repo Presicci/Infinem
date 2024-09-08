@@ -188,7 +188,7 @@ public class AnagramClue extends Clue {
             player.getPacketSender().sendString(203, 2, challenge);
         } else {
             player.openInterface(InterfaceType.MAIN, 203);
-            player.getPacketSender().sendString(203, 2, "The anagram reveals<br>who to speak to next:<br>Disorder" + clue);
+            player.getPacketSender().sendString(203, 2, "The anagram reveals<br>who to speak to next:<br>" + clue);
         }
     }
 
