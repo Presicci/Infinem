@@ -143,11 +143,10 @@ public class TargetSpell extends Spell {
     }
 
     public boolean cast(Entity entity, Entity target) {
-        return cast(entity, target, -1, maxDamage);
+        return cast(entity, target, -1, maxDamage, true);
     }
 
-    private boolean cast(Entity entity, Entity target, int projectileDuration, int maxDamage) {
-        boolean primaryCast = projectileDuration == -1;
+    private boolean cast(Entity entity, Entity target, int projectileDuration, int maxDamage, boolean primaryCast) {
         if (primaryCast) {
             boolean saveRunes = entity.player != null && entity.player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(10, 5);
             RuneRemoval r = null;
@@ -234,7 +233,6 @@ public class TargetSpell extends Spell {
         int entityIndex = entity.getClientIndex();
         int targetIndex = target.getClientIndex();
         int targetCount = 0;
-        System.out.println(targetCap);
         for(Player player : target.localPlayers()) {
             int playerIndex = player.getClientIndex();
             if(playerIndex == entityIndex || playerIndex == targetIndex)
@@ -248,7 +246,7 @@ public class TargetSpell extends Spell {
                 if(!entity.npc.getCombat().canAttack(player))
                     continue;
             }
-            cast(entity, player, delay, maxDamage);
+            cast(entity, player, delay, maxDamage, false);
             if(++targetCount >= targetCap)
                 break;
         }
@@ -270,7 +268,7 @@ public class TargetSpell extends Spell {
                 if(!entity.npc.getCombat().canAttack(npc))
                     continue;
             }
-            cast(entity, npc, delay, maxDamage);
+            cast(entity, npc, delay, maxDamage, false);
             if(++targetCount >= targetCap)
                 break;
         }
