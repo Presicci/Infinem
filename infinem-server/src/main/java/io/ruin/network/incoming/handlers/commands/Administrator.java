@@ -98,6 +98,7 @@ import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.handlers.CommandHandler;
 import io.ruin.services.LatestUpdate;
 import io.ruin.services.Punishment;
+import io.ruin.services.Store;
 import io.ruin.utility.AttributePair;
 import io.ruin.utility.CS2Script;
 import org.apache.commons.lang3.RandomUtils;
@@ -3092,26 +3093,6 @@ public class Administrator {
                 player.removeAttribute("MH_COMP");
                 return true;
             }
-            case "hometele": {
-                player.startEvent(e -> {
-                    player.animate(4847);
-                    player.graphics(800);
-                    e.delay(6);
-                    player.animate(4850);
-                    e.delay(4);
-                    player.animate(4853);
-                    player.graphics(802);
-                    e.delay(4);
-                    player.animate(4855);
-                    player.graphics(803);
-                    e.delay(4);
-                    player.animate(4857);
-                    player.graphics(804);
-                    e.delay(3);
-                    player.animate(-1);
-                });
-                return true;
-            }
             case "oldtasks": {
                 TaskInterface.openOldInterface(player);
                 return true;
@@ -3147,6 +3128,14 @@ public class Administrator {
                 }
                 int index = Integer.parseInt(args[0]);
                 ActivitySpotlight.setSpotlight(index);
+                return true;
+            }
+            case "testdono": {
+                if (args == null || args.length < 1) {
+                    player.sendMessage("Syntax: ::testdono [shopid]");
+                    return false;
+                }
+                player.sendMessage("Credits: " + Store.handleReward(player, Integer.parseInt(args[0]), 1));
                 return true;
             }
         }
