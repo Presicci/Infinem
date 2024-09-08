@@ -541,12 +541,12 @@ public class Config {
     public static final Config SLAYER_MASTER = varpbit(4067, true);
 
     public static final Config[] BLOCKED_TASKS = {
-            varpbit(3209, false),
-            varpbit(3210, false),
-            varpbit(3211, false),
-            varpbit(3212, false),
-            varpbit(4441, false),
-            varpbit(5023, false),
+            varpbit(3209, true),
+            varpbit(3210, true),
+            varpbit(3211, true),
+            varpbit(3212, true),
+            varpbit(4441, true),
+            varpbit(5023, true),
     };
 
     /**
