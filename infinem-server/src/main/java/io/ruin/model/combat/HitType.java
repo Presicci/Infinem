@@ -24,7 +24,7 @@ public enum HitType {
     CORRUPTION(false, 0),
     EMPTY_1(false, 1),
     POISON(true, 2),
-    EMPTY_3(false, 3),
+    YELLOW(false, 3),
     DISEASE(false, 4),
     VENOM(true, 5),
     HEAL(false, 6),
