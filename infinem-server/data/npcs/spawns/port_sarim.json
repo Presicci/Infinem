@@ -63,15 +63,6 @@
     "walkRange": 2
   },
   {
-    "name": "Banker",
-    "id": 1618,
-    "x": 3027,
-    "y": 3249,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Bartender",
     "id": 1313,
     "x": 3045,
