@@ -36,12 +36,12 @@ public enum PCReward {
     public static final Map<Integer, PCReward> REWARDS = new HashMap<>();
 
     public static final LootTable HERB_PACK_LOOT = new LootTable().addTable(0,
-            new LootItem(Items.GRIMY_HARRALANDER_NOTE, 2, 4, 0),
-            new LootItem(Items.GRIMY_RANARR_WEED_NOTE, 2, 3, 0),
-            new LootItem(Items.GRIMY_TOADFLAX_NOTE, 1, 4, 0),
-            new LootItem(Items.GRIMY_IRIT_LEAF_NOTE, 2, 4, 0),
-            new LootItem(Items.GRIMY_AVANTOE_NOTE, 1, 4, 0),
-            new LootItem(Items.GRIMY_KWUARM_NOTE, 1, 5, 0)
+            new LootItem(Items.GRIMY_HARRALANDER_NOTE, 1, 2, 0),
+            new LootItem(Items.GRIMY_RANARR_WEED_NOTE, 1, 2, 0),
+            new LootItem(Items.GRIMY_TOADFLAX_NOTE, 1, 2, 0),
+            new LootItem(Items.GRIMY_IRIT_LEAF_NOTE, 1, 2, 0),
+            new LootItem(Items.GRIMY_AVANTOE_NOTE, 1, 2, 0),
+            new LootItem(Items.GRIMY_KWUARM_NOTE, 1, 2, 0)
     );
 
     public static final LootTable MINERAL_PACK_LOOT = new LootTable().addTable(0,
