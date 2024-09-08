@@ -4,6 +4,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
 import io.ruin.model.skills.magic.Spell;
+import io.ruin.model.skills.magic.spells.hometeleport.HomeTeleportAnimation;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 
 import java.util.LinkedList;
@@ -25,6 +26,10 @@ public class HomeTeleport extends Spell {
 
     private HomeTeleport(Consumer<Player> consumer) {
         clickAction = (player, i) -> {
+            if (i == 9) {
+                HomeTeleportAnimation.selectTeleportAnimation(player);
+                return;
+            }
             if (player.getCombat().isDefending(16)) {
                 player.sendMessage("You can't cast this spell while in combat.");
                 return;
@@ -45,28 +50,32 @@ public class HomeTeleport extends Spell {
             }
             if (player.getCombat().checkTb())
                 return;
-            Position override = getHomeTeleportOverride(player);
             player.getMovement().reset();
-            player.startEvent(e -> {
-                player.animate(4847);
-                player.graphics(800);
-                e.delay(6);
-                player.animate(4850);
-                e.delay(4);
-                player.animate(4853);
-                player.graphics(802);
-                e.delay(4);
-                player.animate(4855);
-                player.graphics(803);
-                e.delay(4);
-                player.animate(4857);
-                player.graphics(804);
-                e.delay(3);
-                player.animate(-1);
-                player.getTaskManager().doLookupByUUID(64, 1);   // Cast Home Teleport
-                player.getMovement().teleport(World.HOME);
-            });
+            HomeTeleportAnimation animation = HomeTeleportAnimation.getAnimation(player);
+            animation.teleport(player);
         };
+    }
+
+    private static void standardAnimation(Player player) {
+        player.startEvent(e -> {
+            player.animate(4847);
+            player.graphics(800);
+            e.delay(6);
+            player.animate(4850);
+            e.delay(4);
+            player.animate(4853);
+            player.graphics(802);
+            e.delay(4);
+            player.animate(4855);
+            player.graphics(803);
+            e.delay(4);
+            player.animate(4857);
+            player.graphics(804);
+            e.delay(3);
+            player.animate(-1);
+            player.getTaskManager().doLookupByUUID(64, 1);   // Cast Home Teleport
+            player.getMovement().teleport(World.HOME);
+        });
     }
 
     private static class HomeTeleportOverride {
