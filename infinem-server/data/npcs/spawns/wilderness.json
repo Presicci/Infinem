@@ -5498,5 +5498,131 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3098,
+    "y": 3652,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3101,
+    "y": 3647,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3106,
+    "y": 3651,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3110,
+    "y": 3648,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3121,
+    "y": 3653,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3105,
+    "y": 3660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3107,
+    "y": 3663,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3098,
+    "y": 3672,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3101,
+    "y": 3676,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3119,
+    "y": 3693,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3081,
+    "y": 3604,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 3076,
+    "y": 3610,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 2988,
+    "y": 3672,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 2999,
+    "y": 3674,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
