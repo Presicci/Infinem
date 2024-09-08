@@ -253,6 +253,7 @@ public class PollnivneachCourse {
             p.getMovement().teleport(3363, 2998, 0);
             p.getStats().addXp(StatType.Agility, 540, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
+            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "pollnivneach");
             p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
             int laps = PlayerCounter.POLLNIVNEACH_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 70, MARK_SPAWNS);
