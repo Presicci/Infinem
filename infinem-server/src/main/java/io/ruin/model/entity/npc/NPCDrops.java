@@ -111,8 +111,7 @@ public class NPCDrops {
                         if (item.getId() == 22973) {
                             int part = generateBrimstoneRingPart(killer.player);
                             if (part != 22973) {
-                                items.remove(item);
-                                items.add(new Item(part));
+                                item.setId(part);
                             }
                             break;
                         }
