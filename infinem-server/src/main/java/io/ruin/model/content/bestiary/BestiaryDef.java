@@ -243,6 +243,7 @@ public class BestiaryDef {
 
     // mage arena 2 npcs
     private static final String[] IGNORED = {
+            "colonel radick",
             "delrith",
             "evil spirit",
             "fire warrior of lesarkus", // Temple of ikov
