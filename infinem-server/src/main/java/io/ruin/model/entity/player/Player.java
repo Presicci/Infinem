@@ -729,6 +729,7 @@ public class Player extends PlayerAttributes {
      */
 
     @Expose public HashMap<Integer, Integer> savedConfigs = new HashMap<>();
+    public HashMap<Config, Integer> loadedConfigs = new HashMap<>();
 
     public int[] varps = new int[VarpDefinition.LOADED.length];
 
