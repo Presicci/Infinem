@@ -126,7 +126,7 @@ public final class PestControlBoat {
 					startGame();
 					starting = false;
 				}
-				if ((game == null || game.ended()) && !nextDeparture.isDelayed()) {
+				if ((game == null || game.ended()) && !starting) {
 					nextDeparture.delay(500 * 60 / 600);
 					starting = true;
 				}
