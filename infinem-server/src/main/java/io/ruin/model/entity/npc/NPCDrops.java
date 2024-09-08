@@ -92,7 +92,6 @@ public class NPCDrops {
                             } else {
                                 handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.values()[item.getAmount() + 5]);
                             }
-                            seedItem = item;
                         }
 
                         /*
@@ -115,9 +114,6 @@ public class NPCDrops {
                             }
                             break;
                         }
-                    }
-                    if (seedItem != null) {
-                        items.remove(seedItem);
                     }
                     if (toAdd.size() > 0) {
                         items.addAll(toAdd);
@@ -220,6 +216,7 @@ public class NPCDrops {
 
     private void handleDrop(Killer killer, Position dropPosition, Player pKiller, List<Item> items) {
         for(Item item : items) {
+            if (item.getId() <= 0) continue;
             Item ring = pKiller.getEquipment().get(Equipment.SLOT_RING);
             if (ring != null && ring.getId() == 32003 && Random.rollDie(1000)) {
                 pKiller.sendMessage(Color.ORANGE_RED.wrap("The power of Hazelmere blesses your drop and doubles it before your very eyes: " + item.getDef().name) + "!");
