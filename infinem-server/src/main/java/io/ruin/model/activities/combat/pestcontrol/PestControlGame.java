@@ -199,6 +199,7 @@ public class PestControlGame {
 				rewardedPoints *= 2;
 			}
 			p.lock();
+			p.clearHits();
 			Position tile = settings.exitTile();
 			p.getMovement().teleport(tile.getX(), tile.getY());
 			p.unlock();
