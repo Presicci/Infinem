@@ -39,7 +39,7 @@ public class RuneEssence {
             player.sendMessage("You swing your pick at the rock.");
             int loops = 0;
             while (true) {
-                if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull()) {
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull()) {
                     player.sendMessage("Your inventory is too full to hold any more rune stones.");
                     player.privateSound(2277);
                     player.resetAnimation();
