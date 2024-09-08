@@ -166,50 +166,50 @@ public enum SetEffect {
     VOID_MELEE((player, target, hit) -> {
         hit.boostDamage(0.1).boostAttack(0.1);
     }, (player, hit) -> hit.attackStyle.isMelee(),
-            new Piece(Equipment.SLOT_CHEST, 8839),
-            new Piece(Equipment.SLOT_LEGS, 8840),
-            new Piece(Equipment.SLOT_HANDS, 8842),
-            new Piece(Equipment.SLOT_HAT, 11665)),
+            new Piece(Equipment.SLOT_CHEST, 8839, 26463),
+            new Piece(Equipment.SLOT_LEGS, 8840, 26465),
+            new Piece(Equipment.SLOT_HANDS, 8842, 26467),
+            new Piece(Equipment.SLOT_HAT, 11665, 26477)),
 
     VOID_RANGE((player, target, hit) -> {
         hit.boostDamage(0.1).boostAttack(0.1);
     }, (player, hit) -> hit.attackStyle.isRanged(),
-            new Piece(Equipment.SLOT_CHEST, 8839),
-            new Piece(Equipment.SLOT_LEGS, 8840),
-            new Piece(Equipment.SLOT_HANDS, 8842),
-            new Piece(Equipment.SLOT_HAT, 11664)),
+            new Piece(Equipment.SLOT_CHEST, 8839, 26463),
+            new Piece(Equipment.SLOT_LEGS, 8840, 26465),
+            new Piece(Equipment.SLOT_HANDS, 8842, 26467),
+            new Piece(Equipment.SLOT_HAT, 11664, 26475)),
 
     VOID_MAGE((player, target, hit) -> {
         hit.boostAttack(0.45);
     }, (player, hit) -> hit.attackStyle.isMagic(),
-            new Piece(Equipment.SLOT_CHEST, 8839),
-            new Piece(Equipment.SLOT_LEGS, 8840),
-            new Piece(Equipment.SLOT_HANDS, 8842),
-            new Piece(Equipment.SLOT_HAT, 11663)),
+            new Piece(Equipment.SLOT_CHEST, 8839, 26463),
+            new Piece(Equipment.SLOT_LEGS, 8840, 26465),
+            new Piece(Equipment.SLOT_HANDS, 8842, 26467),
+            new Piece(Equipment.SLOT_HAT, 11663, 26473)),
 
     ELITE_VOID_MELEE((player, target, hit) -> {
         hit.boostDamage(0.1).boostAttack(0.1);
     }, (player, hit) -> hit.attackStyle.isMelee(),
-            new Piece(Equipment.SLOT_CHEST, 13072),
-            new Piece(Equipment.SLOT_LEGS, 13073),
-            new Piece(Equipment.SLOT_HANDS, 8842),
-            new Piece(Equipment.SLOT_HAT, 11665)),
+            new Piece(Equipment.SLOT_CHEST, 13072, 26469),
+            new Piece(Equipment.SLOT_LEGS, 13073, 26471),
+            new Piece(Equipment.SLOT_HANDS, 8842, 26467),
+            new Piece(Equipment.SLOT_HAT, 11665, 26477)),
 
     ELITE_VOID_RANGE((player, target, hit) -> {
         hit.boostDamage(0.125).boostAttack(0.1);
     }, (player, hit) -> hit.attackStyle.isRanged(),
-            new Piece(Equipment.SLOT_CHEST, 13072),
-            new Piece(Equipment.SLOT_LEGS, 13073),
-            new Piece(Equipment.SLOT_HANDS, 8842),
-            new Piece(Equipment.SLOT_HAT, 11664)),
+            new Piece(Equipment.SLOT_CHEST, 13072, 26469),
+            new Piece(Equipment.SLOT_LEGS, 13073, 26471),
+            new Piece(Equipment.SLOT_HANDS, 8842, 26467),
+            new Piece(Equipment.SLOT_HAT, 11664, 26475)),
 
     ELITE_VOID_MAGE((player, target, hit) -> {
         hit.boostAttack(0.45).boostDamage(0.025);
     }, (player, hit) -> hit.attackStyle.isMagic(),
-            new Piece(Equipment.SLOT_CHEST, 13072),
-            new Piece(Equipment.SLOT_LEGS, 13073),
-            new Piece(Equipment.SLOT_HANDS, 8842),
-            new Piece(Equipment.SLOT_HAT, 11663)),
+            new Piece(Equipment.SLOT_CHEST, 13072, 26469),
+            new Piece(Equipment.SLOT_LEGS, 13073, 26471),
+            new Piece(Equipment.SLOT_HANDS, 8842, 26467),
+            new Piece(Equipment.SLOT_HAT, 11663, 26473)),
 
     BERSERKER_NECKLACE((player, target, hit) -> {
         hit.boostDamage(0.20);
