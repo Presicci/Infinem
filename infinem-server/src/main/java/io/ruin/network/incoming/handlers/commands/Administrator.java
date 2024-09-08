@@ -36,6 +36,7 @@ import io.ruin.model.activities.combat.raids.xeric.chamber.ChamberDefinition;
 import io.ruin.model.activities.combat.raids.xeric.party.Party;
 import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.combat.HitType;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
@@ -812,6 +813,10 @@ public class Administrator {
             case "hit":
             case "hitme": {
                 player.hit(new Hit().fixedDamage(Integer.parseInt(args[0])).delay(0));
+                return true;
+            }
+            case "hittype": {
+                player.hit(new Hit(HitType.values()[Integer.parseInt(args[0])]).fixedDamage(1).delay(0));
                 return true;
             }
 
