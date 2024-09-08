@@ -7,6 +7,7 @@ import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 
@@ -54,26 +55,28 @@ public class CoordinateClue extends Clue {
         String clue = twoDigitInt(degY) + " degrees " + twoDigitInt(minY) + " minutes " + (north ? "north" : "south") + "<br>"
                 + twoDigitInt(degX) + " degrees " + twoDigitInt(minX) + " minutes " + (east ? "east" : "west");
         CoordinateClue coordinateClue = new CoordinateClue(type, clue);
-        Tile tile = Tile.get(x, y, position.getZ(), true);
-        if (tile.digAction == null) tile.digAction = new ArrayList<>();
-        if (type == ClueType.HARD) {
-            tile.digAction.add((player -> {
-                if (!coordinateClue.hasClue(player)) return;
-                ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 2955);
-            }));
-        } else if (type == ClueType.ELITE) {
-            tile.digAction.add(player -> {
-                if (!coordinateClue.hasClue(player)) return;
-                ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 6587, 6588);
-            });
-        } else if (type == ClueType.MASTER) {
-            tile.digAction.add(player -> {
-                if (!coordinateClue.hasClue(player)) return;
-                ClueEnemies.ancientOrBrassicanDig(coordinateClue, player);
-            });
-        } else {
-            tile.digAction.add(coordinateClue::advance);
-        }
+        new Bounds(x, y, position.getZ(), 2).forEachPos(pos -> {
+            Tile tile = Tile.get(pos, true);
+            if (tile.digAction == null) tile.digAction = new ArrayList<>();
+            if (type == ClueType.HARD) {
+                tile.digAction.add((player -> {
+                    if (!coordinateClue.hasClue(player)) return;
+                    ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 2955);
+                }));
+            } else if (type == ClueType.ELITE) {
+                tile.digAction.add(player -> {
+                    if (!coordinateClue.hasClue(player)) return;
+                    ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 6587, 6588);
+                });
+            } else if (type == ClueType.MASTER) {
+                tile.digAction.add(player -> {
+                    if (!coordinateClue.hasClue(player)) return;
+                    ClueEnemies.ancientOrBrassicanDig(coordinateClue, player);
+                });
+            } else {
+                tile.digAction.add(coordinateClue::advance);
+            }
+        });
     }
 
     private static String twoDigitInt(int number) {
