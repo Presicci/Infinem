@@ -67,7 +67,6 @@ public class OptionScroll {
     static {
         InterfaceHandler.register(187, h -> {
             h.closedAction = (player, integer) -> {
-                if (player.isVisibleInterface(187)) return;
                 player.getPacketSender().sendClientScript(927, "1",  1);
                 player.optionScroll = null;
             };
