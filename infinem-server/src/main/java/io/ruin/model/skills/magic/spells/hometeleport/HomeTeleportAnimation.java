@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.actions.ItemAction;
 
 import java.util.Arrays;
 import java.util.function.Consumer;
@@ -33,7 +34,9 @@ public enum HomeTeleportAnimation {
             player.getMovement().teleport(World.HOME);
         });
     }),
-    FOUNDERS(player -> player.hasAttribute("FOUNDER_TELE"),
+    FOUNDERS(26500,
+            player -> player.hasAttribute("FOUNDER_TELE"),
+            player -> player.putAttribute("FOUNDER_TELE", 1),
             "Available through the store as part of the Founder's Pack - T2.",
             player -> {
                 player.startEvent(e -> {
@@ -62,15 +65,22 @@ public enum HomeTeleportAnimation {
     );
 
     private final Predicate<Player> unlockCondition;
-    private final Consumer<Player> teleportAction;
+    private final Consumer<Player> teleportAction, unlockAction;
     private final String unlockLocation;
+    private final int unlockItem;
 
     HomeTeleportAnimation(Consumer<Player> teleportAction) {
-        this(p -> true, "", teleportAction);
+        this(p -> true, null, "", teleportAction);
     }
 
-    HomeTeleportAnimation(Predicate<Player> unlockCondition, String unlockLocation, Consumer<Player> teleportAction) {
+    HomeTeleportAnimation(Predicate<Player> unlockCondition, Consumer<Player> unlockAction, String unlockLocation, Consumer<Player> teleportAction) {
+        this(-1, unlockCondition, unlockAction, unlockLocation, teleportAction);
+    }
+
+    HomeTeleportAnimation(int unlockItem, Predicate<Player> unlockCondition, Consumer<Player> unlockAction, String unlockLocation, Consumer<Player> teleportAction) {
+        this.unlockItem = unlockItem;
         this.unlockCondition = unlockCondition;
+        this.unlockAction = unlockAction;
         this.unlockLocation = unlockLocation;
         this.teleportAction = teleportAction;
     }
@@ -81,6 +91,11 @@ public enum HomeTeleportAnimation {
 
     public boolean hasUnlocked(Player player) {
         return unlockCondition.test(player);
+    }
+
+    public void unlock(Player player) {
+        if (unlockAction == null) return;
+        unlockAction.accept(player);
     }
 
     public void setAsActive(Player player) {
@@ -110,5 +125,21 @@ public enum HomeTeleportAnimation {
         OptionScroll.open(player, "Home Teleport Animations", false, Arrays.stream(HomeTeleportAnimation.values())
                 .map(anim -> new Option((anim.hasUnlocked(player) ? "" : "<str>") + anim.getName(), () -> anim.setAsActive(player)))
                 .toArray(Option[]::new));
+    }
+
+    static {
+        for (HomeTeleportAnimation anim : values()) {
+            if (anim.unlockItem > 0) {
+                ItemAction.registerInventory(anim.unlockItem, "read", (player, item) -> {
+                    if (anim.hasUnlocked(player)) {
+                        player.dialogue(new MessageDialogue("You already have this home teleport animation unlocked. You can activate it by right-clicking the home teleport spell in your spellbook."));
+                        return;
+                    }
+                    item.remove();
+                    anim.unlockAction.accept(player);
+                    player.dialogue(new MessageDialogue("You've unlocked the " + anim.getName() + " home teleport animation. You can activate it by right-clicking the home teleport spell in your spellbook."));
+                });
+            }
+        }
     }
 }
