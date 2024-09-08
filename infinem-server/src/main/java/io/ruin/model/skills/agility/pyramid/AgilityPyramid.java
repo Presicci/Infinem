@@ -3,6 +3,7 @@ package io.ruin.model.skills.agility.pyramid;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.utility.Color;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
@@ -295,15 +296,15 @@ public class AgilityPyramid {
             player.dialogue(
                     new MessageDialogue("You did not grab the pyramid top, are you sure you want to continue through the passge?"),
                     new OptionsDialogue("Leave?",
-                            new Option("Continue.", () -> {
-                                player.getMovement().teleport(3364, 2830, 0);
-                                player.dialogue(new MessageDialogue("You climb down the steep passage. It leads to the base of the<br>pyramid"));
-                                Config.HIDE_PYRAMID.set(player, 0);
-                            }),
+                            new Option("Continue.", () -> finish(player)),
                             new Option("No, I want my pyramid top!"))
             );
             return;
         }
+        finish(player);
+    }
+
+    private static void finish(Player player) {
         player.getMovement().teleport(3364, 2830, 0);
         player.dialogue(new MessageDialogue("You climb down the steep passage. It leads to the base of the<br>pyramid"));
         Config.HIDE_PYRAMID.set(player, 0);
@@ -325,6 +326,7 @@ public class AgilityPyramid {
                     if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                         player.sendFilteredMessage("Your Agility Pyramid lap count is: " + Color.RED.wrap(laps + "") + ".");
                     Config.HIDE_PYRAMID.set(player, 1);
+                    player.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
                 } else {
                     player.sendMessage("You don't have enough inventory space to pick up the pyramid top.");
                 }
