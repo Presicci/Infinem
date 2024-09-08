@@ -95,6 +95,30 @@ public class Store {
                                     case 9:
                                         addItem(player, 6570, amt);
                                         break;
+                                    case 10:
+                                        // Dwarf dwarf cannon
+                                        break;
+                                    case 11:
+                                        // Angler outfit
+                                        break;
+                                    case 12:
+                                        // Carpenter outfit
+                                        break;
+                                    case 13:
+                                        // Graceful outfit
+                                        break;
+                                    case 14:
+                                        // Prospector outfit
+                                        break;
+                                    case 15:
+                                        // Lumberjack outfit
+                                        break;
+                                    case 16:
+                                        // Rogue outfit
+                                        break;
+                                    case 17:    // Void ornament kit
+                                        addItem(player, 26479, amt * 6);
+                                        break;
                                 }
                                 claimedItems += amt;
                             }
