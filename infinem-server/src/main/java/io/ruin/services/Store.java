@@ -13,6 +13,7 @@ import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.*;
@@ -58,68 +59,7 @@ public class Store {
                                 String[] item = elements[index].split(":");
                                 int storeId = Integer.parseInt(item[0]);
                                 int amt = Integer.parseInt(item[1]);
-                                switch (storeId) {
-                                    case 1:
-                                        addItem(player, 26554, amt);
-                                        paidAmt += 50;
-                                        break;
-                                    case 2:
-                                        addItem(player, 26554, amt);
-                                        addItem(player, 26557, amt);
-                                        paidAmt += 250;
-                                        break;
-                                    case 3:
-                                        addItem(player, 26554, amt);
-                                        addItem(player, 26557, amt);
-                                        addItem(player, 26560, amt);
-                                        paidAmt += 500;
-                                        break;
-                                    case 4:
-                                        addItem(player, 32033, amt);
-                                        paidAmt -= 50 * amt;
-                                        break;
-                                    case 5:
-                                        addItem(player, 32035, amt);
-                                        paidAmt -= 100 * amt;
-                                        break;
-                                    case 6:
-                                        addItem(player, 32037, amt);
-                                        paidAmt -= 250 * amt;
-                                        break;
-                                    case 7:
-                                        addItem(player, 26421, amt);
-                                        break;
-                                    case 8:
-                                        addItem(player, 12954, amt);
-                                        break;
-                                    case 9:
-                                        addItem(player, 6570, amt);
-                                        break;
-                                    case 10:
-                                        // Dwarf dwarf cannon
-                                        break;
-                                    case 11:
-                                        // Angler outfit
-                                        break;
-                                    case 12:
-                                        // Carpenter outfit
-                                        break;
-                                    case 13:
-                                        // Graceful outfit
-                                        break;
-                                    case 14:
-                                        // Prospector outfit
-                                        break;
-                                    case 15:
-                                        // Lumberjack outfit
-                                        break;
-                                    case 16:
-                                        // Rogue outfit
-                                        break;
-                                    case 17:    // Void ornament kit
-                                        addItem(player, 26479, amt * 6);
-                                        break;
-                                }
+                                paidAmt += handleReward(player, storeId, amt);
                                 claimedItems += amt;
                             }
                             player.storeAmountSpent += paidAmt;
@@ -155,6 +95,86 @@ public class Store {
                 }
             });
         });
+    }
+
+    public static int handleReward(Player player,  int storeId, int amt) {
+        switch (storeId) {
+            case 1:
+                addItem(player, 26554, amt);
+                return 50;
+            case 2:
+                addItem(player, 26554, amt);
+                addItem(player, 26557, amt);
+                return 250;
+            case 3:
+                addItem(player, 26554, amt);
+                addItem(player, 26557, amt);
+                addItem(player, 26560, amt);
+                return 500;
+            case 4:
+                addItem(player, 32033, amt);
+                return -(50 * amt);
+            case 5:
+                addItem(player, 32035, amt);
+                return -(100 * amt);
+            case 6:
+                addItem(player, 32037, amt);
+                return -(250 * amt);
+            case 7:
+                addItem(player, 26421, amt);
+                break;
+            case 8:
+                addItem(player, 12954, amt);
+                break;
+            case 9:
+                addItem(player, 6570, amt);
+                break;
+            case 10:    // Dwarf dwarf cannon
+                break;
+            case 11:    // Angler outfit
+                addItem(player, Items.ANGLER_HAT, amt);
+                addItem(player, Items.ANGLER_TOP, amt);
+                addItem(player, Items.ANGLER_WADERS, amt);
+                addItem(player, Items.ANGLER_BOOTS, amt);
+                break;
+            case 12:    // Carpenter outfit
+                addItem(player, 24872, amt);
+                addItem(player, 24874, amt);
+                addItem(player, 24876, amt);
+                addItem(player, 24878, amt);
+                break;
+            case 13:    // Graceful outfit
+                addItem(player, 11850, amt);
+                addItem(player, 11852, amt);
+                addItem(player, 11854, amt);
+                addItem(player, 11856, amt);
+                addItem(player, 11858, amt);
+                addItem(player, 11860, amt);
+                break;
+            case 14:    // Prospector outfit
+                addItem(player, Items.PROSPECTOR_HELMET, amt);
+                addItem(player, Items.PROSPECTOR_JACKET, amt);
+                addItem(player, Items.PROSPECTOR_LEGS, amt);
+                addItem(player, Items.PROSPECTOR_BOOTS, amt);
+                break;
+            case 15:    // Lumberjack outfit
+                addItem(player, Items.LUMBERJACK_HAT, amt);
+                addItem(player, Items.LUMBERJACK_TOP, amt);
+                addItem(player, Items.LUMBERJACK_LEGS, amt);
+                addItem(player, Items.LUMBERJACK_BOOTS, amt);
+                break;
+            case 16:    // Rogue outfit
+                addItem(player, 5553, amt);
+                addItem(player, 5554, amt);
+                addItem(player, 5555, amt);
+                addItem(player, 5556, amt);
+                addItem(player, 5557, amt);
+                break;
+            case 17:    // Void ornament kit
+                addItem(player, 26479, amt * 6);
+                break;
+        }
+        return 0;
     }
 
     private static void addItem(Player player, int itemId, int amt) {
