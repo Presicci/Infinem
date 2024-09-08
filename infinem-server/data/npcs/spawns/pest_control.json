@@ -97,5 +97,14 @@
     "z": 0,
     "direction": "N",
     "walkRange": 0
+  },
+  {
+    "name": "Elite Void Knight",
+    "id": 5513,
+    "x": 2667,
+    "y": 2648,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
