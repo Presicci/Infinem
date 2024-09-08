@@ -318,7 +318,7 @@ public class NPCDrops {
             }
 
             double chance = pKiller.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(NotedDropPerk.class, 0);
-            if (item.getDef().notedId > -1 && chance > 0 && Random.get() < chance) {
+            if (item.getDef().notedId > -1 && chance > 0 && !item.getDef().isNote() && Random.get() < chance) {
                 item.setId(item.getDef().notedId);
             } else if (canNote(pKiller, item)) {
                 item.setId(item.getDef().notedId);
