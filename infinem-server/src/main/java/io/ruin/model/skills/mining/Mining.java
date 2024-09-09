@@ -18,6 +18,7 @@ import io.ruin.model.item.actions.impl.Geode;
 import io.ruin.model.item.actions.impl.chargable.CelestialRing;
 import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
+import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.item.actions.impl.storage.CoalBag;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
@@ -164,12 +165,7 @@ public class Mining {
                     if (Random.rollDie(rockData.petOdds - (player.getStats().get(StatType.Mining).currentLevel * 25)))
                         Pet.ROCK_GOLEM.unlock(player);
 
-                    /* Rolling for a Geode clue scroll */
-                    if (Random.rollDie(ActivitySpotlight.isActive(ActivitySpotlight.QUADRUPLE_GEODE_CHANCE) ? 63 : 250, 1)) {
-                        player.getInventory().addOrDrop(Geode.getRandomGeode(), 1);
-                        PlayerCounter.MINED_GEODE.increment(player, 1);
-                        player.getTaskManager().doLookupByUUID(102, 1);  // Obtain a Clue Geode While Mining
-                    }
+                    rollGeode(player);
 
                     /* Rolling for mined minerals */
                     if (minedMineral(player, rockData))
@@ -230,6 +226,19 @@ public class Mining {
                 event.delay(1);
             }
         });
+    }
+
+    private static void rollGeode(Player player) {
+        /* Rolling for a Geode clue scroll */
+        int denominator = ActivitySpotlight.isActive(ActivitySpotlight.QUADRUPLE_GEODE_CHANCE) ? 63 : 250;
+        if (RingOfWealth.wearingRingOfWealthImbued(player) && player.wildernessLevel > 0) {
+            denominator /= 2;
+        }
+        if (Random.rollDie(denominator, 1)) {
+            player.getInventory().addOrDrop(Geode.getRandomGeode(), 1);
+            PlayerCounter.MINED_GEODE.increment(player, 1);
+            player.getTaskManager().doLookupByUUID(102, 1);  // Obtain a Clue Geode While Mining
+        }
     }
 
     private static int getAshAmount(Player player) {
