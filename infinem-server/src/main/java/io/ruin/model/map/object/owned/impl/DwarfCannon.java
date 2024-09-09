@@ -2,6 +2,8 @@ package io.ruin.model.map.object.owned.impl;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
+import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -208,7 +210,9 @@ public class DwarfCannon extends OwnedObject {
             if (hit.damage > 0) {
                 getOwner().getStats().addXp(StatType.Ranged, Math.ceil((double) hit.damage / 2), true);
             }
-            setAmmo(getAmmo() - 1);
+            if (!getOwner().getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)) {
+                setAmmo(getAmmo() - 1);
+            }
             if (getAmmo() <= 0) {
                 getOwner().sendMessage("Your cannon is out of ammo!");
                 setStage(CannonStage.FURNACE, true);
