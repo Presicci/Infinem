@@ -67,7 +67,7 @@ public class OptionScroll {
     static {
         InterfaceHandler.register(187, h -> {
             h.closedAction = (player, integer) -> {
-                player.getPacketSender().sendClientScript(927, "1",  1);
+                player.getPacketSender().sendClientScript(4079);
             };
             h.actions[3] = (SlotAction) (player, slot) -> {
                 player.optionScroll.select(player, slot);
