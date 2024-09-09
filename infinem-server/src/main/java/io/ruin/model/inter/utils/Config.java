@@ -1173,6 +1173,7 @@ public class Config {
     public static final Config DONATOR_RANK = varp(1780, true);
     public static final Config FOUNTAIN_OF_RUNE = varpbit(4145, false);
     private static final Config MEIYERDITCH_BOAT = varpbit(2585, false).defaultValue(1);
+    private static final Config YANILLE_HOUSE = varpbit(4153, false).defaultValue(2);
 
     /**
      * Elemental workshop
