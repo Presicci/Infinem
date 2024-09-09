@@ -277,5 +277,140 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Revenant knight",
+    "id": 7939,
+    "x": 3220,
+    "y": 10217,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant cyclops",
+    "id": 7934,
+    "x": 3166,
+    "y": 10190,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant demon",
+    "id": 7936,
+    "x": 3184,
+    "y": 10191,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3176,
+    "y": 10159,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant dark beast",
+    "id": 7938,
+    "x": 3205,
+    "y": 10160,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant demon",
+    "id": 7936,
+    "x": 3163,
+    "y": 10119,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant ork",
+    "id": 7937,
+    "x": 3213,
+    "y": 10101,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant ork",
+    "id": 7937,
+    "x": 3229,
+    "y": 10126,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant goblin",
+    "id": 7931,
+    "x": 3228,
+    "y": 10068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3201,
+    "y": 10069,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant hobgoblin",
+    "id": 7933,
+    "x": 3242,
+    "y": 10100,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3254,
+    "y": 10146,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant hellhound",
+    "id": 7935,
+    "x": 3246,
+    "y": 10168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant dragon",
+    "id": 7940,
+    "x": 3238,
+    "y": 10198,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3215,
+    "y": 10195,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
