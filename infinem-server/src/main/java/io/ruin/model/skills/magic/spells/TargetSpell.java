@@ -254,9 +254,10 @@ public class TargetSpell extends Spell {
             int npcIndex = npc.getClientIndex();
             if(npcIndex == entityIndex || npcIndex == targetIndex)
                 continue;
-            if (targetCap == 5 && !npc.getPosition().isWithinDistance(target.getPosition(), 3)) {
+            boolean archmage = entity.isPlayer() && entity.player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE);
+            if (targetCap == 5 && !npc.getPosition().isWithinDistance(target.getPosition(), 2)) {
                 continue;
-            } else if (targetCap != 5 && !npc.getPosition().isWithinDistance(target.getPosition(), 1)) {
+            } else if (targetCap != 5 && !npc.getPosition().isWithinDistance(target.getPosition(), archmage ? 2 : 1)) {
                 continue;
             }
             if(npc.getDef().ignoreMultiCheck)
