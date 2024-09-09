@@ -752,8 +752,6 @@ public abstract class Entity extends TemporaryAttributesHolder {
                         if(!isLocked() && !getCombat().retaliating && getCombat().allowRetaliate(hit.attacker)) {
                             getCombat().retaliating = true;
                             addEvent(e -> {
-                                if (isPlayer())
-                                    e.delay(1);
                                 if(!getCombat().isDead() && !hit.attacker.getCombat().isDead()) {
                                     getCombat().setTarget(hit.attacker);
                                     getCombat().faceTarget();
