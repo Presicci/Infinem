@@ -345,22 +345,9 @@ public class RuneLite
 		// Tell the plugin manager if client is outdated or not
 		pluginManager.setOutdated(isOutdated);
 
-		// Load external plugin manager
-		oprsExternalPluginManager.setupInstance();
-		oprsExternalPluginManager.startExternalUpdateManager();
-		oprsExternalPluginManager.startExternalPluginManager();
-		oprsExternalPluginManager.setOutdated(isOutdated);
-
-		// Update external plugins
-		oprsExternalPluginManager.update(); //TODO: Re-enable after fixing actions for new repo
-
 		// Load the plugins, but does not start them yet.
 		// This will initialize configuration
 		pluginManager.loadCorePlugins();
-
-		oprsExternalPluginManager.loadPlugins();
-
-		externalPluginManager.loadExternalPlugins();
 
 		SplashScreen.stage(.70, null, "Finalizing configuration");
 
@@ -383,7 +370,6 @@ public class RuneLite
 		// Register event listeners
 		eventBus.register(clientUI);
 		eventBus.register(pluginManager);
-		eventBus.register(externalPluginManager);
 		eventBus.register(overlayManager);
 		eventBus.register(configManager);
 		eventBus.register(discordService);
