@@ -11,7 +11,7 @@ public class ArmadylSpiritualMage extends NPCCombat {
     @Override
     public void init() {
         npc.attackNpcListener = (player, n, message) -> {
-            if (player.getCombat().getAttackStyle().isMelee()) {
+            if (player.getCombat().getAttackStyle().isMelee() && player.getCombat().queuedSpell == null) {
                 if (message)
                     player.sendMessage("The aviansie is flying too high for you to hit with melee.");
                 return false;

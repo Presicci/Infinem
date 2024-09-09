@@ -26,7 +26,7 @@ public class Vespula extends NPCCombat {
     public void init() {
         npc.hitListener = new HitListener().postDefend(this::postDefend).preDefend(this::preDefend).postTargetDefend(this::postTargetDefend);
         npc.attackNpcListener = (player, npc1, message) -> {
-            if (npc.getId() == FLYING && player.getCombat().getAttackStyle().isMelee()) {
+            if (npc.getId() == FLYING && player.getCombat().getAttackStyle().isMelee() && player.getCombat().queuedSpell == null) {
                 if (message) player.sendMessage("Vespula is flying too high for you to hit with melee!");
                 return false;
             }

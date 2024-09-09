@@ -15,7 +15,7 @@ public class ArmadyleanGuard extends NPCCombat {
     public void init() {
         npc.forceText("No warning! Begone!");
         npc.attackNpcListener = (player, n, message) -> {
-            if (player.getCombat().getAttackStyle().isMelee()) {
+            if (player.getCombat().getAttackStyle().isMelee() && player.getCombat().queuedSpell == null) {
                 if (message)
                     player.sendMessage("The guard is flying too high for you to hit with melee.");
                 return false;
