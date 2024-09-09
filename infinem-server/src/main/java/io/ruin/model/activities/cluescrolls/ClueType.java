@@ -21,6 +21,7 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.pet.Pet;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public enum ClueType {
@@ -1053,6 +1054,16 @@ public enum ClueType {
                     new LootItem(12623, 1, 1, 141),   //Ancient page 3
                     new LootItem(12624, 1, 1, 141)   //Ancient page 4
             );
+
+    private static final List<Integer> BOXES = Arrays.asList(24361, 24362, 24363, 24364, 24365, 24366);
+
+    public static boolean isClueBox(Item item) {
+        return isClueBox(item.getId());
+    }
+
+    public static boolean isClueBox(int item) {
+        return BOXES.contains(item);
+    }
 
     private void open(Player player) {
         ClueSave save;
