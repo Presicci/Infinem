@@ -2,6 +2,7 @@ package io.ruin.model.content.transportation.relics;
 
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.actions.ItemAction;
@@ -24,7 +25,7 @@ import java.util.List;
 public class Globetrotter {
 
     private static final List<Option> OPTIONS = Arrays.asList(
-            new Option("Annakarl (Demonic Ruins)", (player) -> teleport(player, MagicTeleportBounds.ANNAKARL.getBounds())),
+            new Option("Annakarl (Demonic Ruins)", (player) -> wildernessTeleport(player, 46, MagicTeleportBounds.ANNAKARL.getBounds())),
             new Option("Ape Atoll", (player) -> teleport(player, MagicTeleportBounds.APE_ATOLL.getBounds())),
             new Option("Ape Atoll Dungeon", (player) -> teleport(player, MagicTeleportBounds.APE_ATOLL_DUNGEON.getBounds())),
             new Option("Arceuus Library", (player) -> teleport(player, MagicTeleportBounds.ARCEUUS_LIBRARY.getBounds())),
@@ -32,17 +33,17 @@ public class Globetrotter {
             new Option("Barrows", (player) -> teleport(player, MagicTeleportBounds.BARROWS.getBounds())),
             new Option("Battlefront", (player) -> teleport(player, MagicTeleportBounds.BATTLEFRONT.getBounds())),
             new Option("Camelot", (player) -> teleport(player, MagicTeleportBounds.CAMELOT.getBounds())),
-            new Option("Carrallanger (Graveyard of Shadows)", (player) -> teleport(player, MagicTeleportBounds.CARRALLANGAR.getBounds())),
+            new Option("Carrallanger (Graveyard of Shadows)", (player) -> wildernessTeleport(player, 19, MagicTeleportBounds.CARRALLANGAR.getBounds())),
             new Option("Catherby", (player) -> teleport(player, MagicTeleportBounds.CATHERBY.getBounds())),
             new Option("Draynor Manor", (player) -> teleport(player, MagicTeleportBounds.DRAYNOR_MANOR.getBounds())),
             new Option("East Ardougne", (player) -> teleport(player, MagicTeleportBounds.ARDOUGNE.getBounds())),
             new Option("Falador", (player) -> teleport(player, MagicTeleportBounds.FALADOR.getBounds())),
             new Option("Fenkenstrain's Castle", (player) -> teleport(player, MagicTeleportBounds.FENKENSTRAINS_CASTLE.getBounds())),
             new Option("Fishing Guild", (player) -> teleport(player, MagicTeleportBounds.FISHING_GUILD.getBounds())),
-            new Option("Ghorrock (Frozen Waste Plateau)", (player) -> teleport(player, MagicTeleportBounds.GHORROCK.getBounds())),
+            new Option("Ghorrock (Frozen Waste Plateau)", (player) -> wildernessTeleport(player, 45, MagicTeleportBounds.GHORROCK.getBounds())),
             new Option("Grand Exchange", (player) -> teleport(player, MagicTeleportBounds.VARROCK_GE.getBounds())),
             new Option("Harmony Island", (player) -> teleport(player, MagicTeleportBounds.HARMONY_ISLAND.getBounds())),
-            new Option("Ice Plateau", (player) -> teleport(player, MagicTeleportBounds.ICE_PLATEAU.getBounds())),
+            new Option("Ice Plateau", (player) -> wildernessTeleport(player, 53, MagicTeleportBounds.ICE_PLATEAU.getBounds())),
             new Option("Kharyll (Canifis)", (player) -> teleport(player, MagicTeleportBounds.KHARYLL.getBounds())),
             new Option("Kourend Castle", (player) -> teleport(player, MagicTeleportBounds.KOUREND.getBounds())),
             new Option("Lassar (Ice Mountain)", (player) -> teleport(player, MagicTeleportBounds.LASSAR.getBounds())),
@@ -63,7 +64,7 @@ public class Globetrotter {
                 player.putTemporaryAttribute("LAST_TELE_HOUSE", 1);
                 TeleportToHouse.teleport(player, 1);
             }),
-            new Option("The Forgotten Cemetary", (player) -> teleport(player, MagicTeleportBounds.CEMETARY.getBounds())),
+            new Option("The Forgotten Cemetary", (player) -> wildernessTeleport(player, 31, MagicTeleportBounds.CEMETARY.getBounds())),
             new Option("Troll Stronghold", (player) -> teleport(player, BasaltTeleport.canTeleportUpper.test(player) ? BasaltTeleport.TROLL_STRONGHOLD_UPPER : BasaltTeleport.TROLL_STRONGHOLD)),
             new Option("Trollheim", (player) -> teleport(player, MagicTeleportBounds.TROLLHEIM.getBounds())),
             new Option("Varrock", (player) -> teleport(player, MagicTeleportBounds.VARROCK.getBounds())),
@@ -120,6 +121,13 @@ public class Globetrotter {
             return;
         }
         ModernTeleport.teleport(player, pos);
+    }
+
+    private static void wildernessTeleport(Player player, int level, Bounds bounds) {
+        player.dialogueKeepInterfaces(new OptionsDialogue("That teleport is in level " + level + " wilderness, continue?",
+                new Option("Yes", () -> teleport(player, bounds)),
+                new Option("No")
+        ));
     }
 
     private static void teleport(Player player, Bounds bounds) {
