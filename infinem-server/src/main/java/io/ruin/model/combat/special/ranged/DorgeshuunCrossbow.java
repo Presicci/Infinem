@@ -7,6 +7,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.stat.StatType;
 
@@ -23,13 +24,15 @@ public class DorgeshuunCrossbow implements Special {
 
     @Override
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         player.animate(4230);
         player.publicSound(1080);
         int delay = Projectile.bolt(698).send(player, target);
         int damage = target.hit(new Hit(player, attackStyle, attackType)
                 .randDamage(maxDamage)
                 .boostAttack(1.0)
-                .clientDelay(delay));
+                .clientDelay(delay)
+                .setAttackWeapon(weaponDef));
         if(damage > 0) {
             if(target.player != null) {
                 target.player.getStats().get(StatType.Defence).drain(damage);

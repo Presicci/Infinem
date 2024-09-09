@@ -22,13 +22,14 @@ public class ArmadylCrossbow implements Special {
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         // In place to allow weapon poison to work
         ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
         player.animate(4230);
         player.privateSound(3892, 1, 15);
         int delay = PROJECTILE.send(player, victim);
-        victim.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostAttack(1.0).clientDelay(delay).setRangedAmmo(ammoDef));
+        victim.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostAttack(1.0).clientDelay(delay).setRangedAmmo(ammoDef).setAttackWeapon(weaponDef));
         return true;
     }
 

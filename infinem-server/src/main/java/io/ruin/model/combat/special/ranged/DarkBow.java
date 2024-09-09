@@ -30,6 +30,7 @@ public class DarkBow implements Special {
 
     @Override
     public boolean handle(Player player, Entity target, AttackStyle style, AttackType type, int maxDamage) {
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         // In place to allow weapon poison to work
         ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
@@ -67,7 +68,8 @@ public class DarkBow implements Special {
                     .randDamage(maxDamage)
                     .boostDamage(damageBoost)
                     .clientDelay(delay)
-                    .setRangedAmmo(ammoDef);
+                    .setRangedAmmo(ammoDef)
+                    .setAttackWeapon(weaponDef);
             hit.postDefend(t -> {
                 hit.type = HitType.DAMAGE;
                 hit.damage = Math.max(minDamage, hit.damage);

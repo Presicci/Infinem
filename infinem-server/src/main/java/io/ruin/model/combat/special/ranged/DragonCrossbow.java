@@ -25,6 +25,7 @@ public class DragonCrossbow implements Special {
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         // In place to allow weapon poison to work
         ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
@@ -43,7 +44,7 @@ public class DragonCrossbow implements Special {
             if (n != victim && player.getCombat().canAttack(n, false) && Misc.getEffectiveDistance(n, victim) <= 1)
                 targets.add(n);
         });
-        targets.forEach(e -> e.hit(new Hit(player, attackStyle, attackType).randDamage((int) (maxDamage * 0.8)).clientDelay(delay).setRangedAmmo(ammoDef)));
+        targets.forEach(e -> e.hit(new Hit(player, attackStyle, attackType).randDamage((int) (maxDamage * 0.8)).clientDelay(delay).setRangedAmmo(ammoDef).setAttackWeapon(weaponDef)));
         return true;
     }
 

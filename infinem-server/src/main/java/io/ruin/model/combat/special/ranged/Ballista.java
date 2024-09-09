@@ -20,6 +20,7 @@ public class Ballista implements Special {
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle style, AttackType type, int maxDamage) {
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         // In place to allow weapon poison to work
         ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
@@ -33,6 +34,7 @@ public class Ballista implements Special {
                 .clientDelay(delay)
                 .postDamage(t -> t.graphics(344, 120, 0))
                 .setRangedAmmo(ammoDef)
+                .setAttackWeapon(weaponDef)
         );
         return true;
     }

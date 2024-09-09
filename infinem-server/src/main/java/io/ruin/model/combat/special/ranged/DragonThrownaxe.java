@@ -21,10 +21,11 @@ public class DragonThrownaxe implements Special {
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         int delay = PROJECTILE.send(player, victim);
         player.animate(7521);
         player.graphics(1317, 120, 0);
-        Hit hit = new Hit(player, attackStyle, attackType).randDamage(maxDamage).clientDelay(delay).boostAttack(0.25);
+        Hit hit = new Hit(player, attackStyle, attackType).randDamage(maxDamage).clientDelay(delay).boostAttack(0.25).setAttackWeapon(weaponDef);
         victim.hit(hit);
         player.getCombat().removeAmmo(player.getEquipment().get(Equipment.SLOT_WEAPON), hit);
         return true;

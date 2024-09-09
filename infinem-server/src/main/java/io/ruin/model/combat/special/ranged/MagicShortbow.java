@@ -25,6 +25,7 @@ public class MagicShortbow implements Special {
 
     @Override
     public boolean handle(Player player, Entity target, AttackStyle style, AttackType type, int maxDamage) {
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         // In place to allow weapon poison to work
         ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
@@ -41,10 +42,10 @@ public class MagicShortbow implements Special {
         int delay = SECOND.send(player, target);
         hits[0] = new Hit(player, style, type).randDamage(maxDamage)
                 .boostAttack(0.43)  // Tooltip says 55% accuracy but apparently it actually has 143%
-                .clientDelay(delay).setRangedAmmo(ammoDef);
+                .clientDelay(delay).setRangedAmmo(ammoDef).setAttackWeapon(weaponDef);
         hits[1] = new Hit(player, style, type).randDamage(maxDamage)
                 .boostAttack(0.43)  // Tooltip says 55% accuracy but apparently it actually has 143%
-                .clientDelay(delay).setRangedAmmo(ammoDef);
+                .clientDelay(delay).setRangedAmmo(ammoDef).setAttackWeapon(weaponDef);
         player.getCombat().removeAmmo(ammo, hits);
         target.hit(hits);
         return true;
