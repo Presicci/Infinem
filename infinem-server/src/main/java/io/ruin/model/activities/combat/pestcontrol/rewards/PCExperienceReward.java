@@ -15,13 +15,13 @@ import java.util.Map;
 @Getter
 @AllArgsConstructor
 public enum PCExperienceReward {
-    ATTACK(2, 560, StatType.Attack),
-    STRENGTH(7, 560, StatType.Strength),
-    DEFENCE(12, 560, StatType.Defence),
-    RANGED(17, 512, StatType.Ranged),
-    MAGIC(22, 512, StatType.Magic),
-    HITPOINTS(27, 560, StatType.Hitpoints),
-    PRAYER(32, 288, StatType.Prayer);
+    ATTACK(2, 2800, StatType.Attack),
+    STRENGTH(7, 2800, StatType.Strength),
+    DEFENCE(12, 2800, StatType.Defence),
+    RANGED(17, 2520, StatType.Ranged),
+    MAGIC(22, 2520, StatType.Magic),
+    HITPOINTS(27, 2600, StatType.Hitpoints),
+    PRAYER(32, 1480, StatType.Prayer);
 
     private final int baseChild, experience;
     private final StatType statType;
@@ -44,7 +44,7 @@ public enum PCExperienceReward {
         }
         double multiplier = rewardIndex == 0 ? 1 : rewardIndex == 1 ? 1.01 : 1.1;
         double experience = getExperience(level) * cost * multiplier;
-        player.getStats().addXp(statType, experience, true);
+        player.getStats().addXp(statType, experience, false);
         player.incrementNumericAttribute("PEST_POINTS", -cost);
         player.removeTemporaryAttribute("PC_SHOP_SLOT");
     }
