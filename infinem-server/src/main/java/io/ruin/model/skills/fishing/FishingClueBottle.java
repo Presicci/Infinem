@@ -6,6 +6,7 @@ import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.stat.StatType;
 
 public enum FishingClueBottle {
@@ -40,6 +41,9 @@ public enum FishingClueBottle {
         double chance = ((100D + player.getStats().get(StatType.Fishing).currentLevel) / fish.petOdds);
         if (ActivitySpotlight.isActive(ActivitySpotlight.QUADRUPLE_CLUE_BOTTLE_CHANCE))
             chance *= 4;
+        if (RingOfWealth.wearingRingOfWealthImbued(player) && player.wildernessLevel > 0) {
+           chance *= 2;
+        }
         if (Random.get() < chance) {
             player.getInventory().addOrDrop(bottle.bottleId, 1);
             player.sendMessage("You catch a bottle!");
