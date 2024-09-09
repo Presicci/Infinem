@@ -521,7 +521,12 @@ public class PlayerCombat extends Combat {
                     new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setRangedAmmo(ammo.getDef()).setAttackWeapon(wepDef),
             };
             removeAmmo(ammo, hits);
-            target.hit(hits);
+            for (Hit hit : hits) {
+                if (target.isNpc() && player.getRelicManager().hasRelic(Relic.DEADEYE) && RangedAmmo.procDeadeyeBoltEffect(target, hit)) {
+                    continue;
+                }
+                target.hit(hit);
+            }
         }
     }
 
