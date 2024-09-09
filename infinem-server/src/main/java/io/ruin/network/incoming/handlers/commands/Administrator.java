@@ -3143,6 +3143,21 @@ public class Administrator {
                 player.sendMessage("Credits: " + Store.handleReward(player, Integer.parseInt(args[0]), 1));
                 return true;
             }
+            case "giveslayerpoints": {
+                if (args == null || args.length < 2) {
+                    player.sendMessage("Syntax: ::giveslayerpoints [playername] [points]");
+                    return true;
+                }
+                Player target = World.getPlayer(args[0]);
+                if (target == null) {
+                    player.sendMessage("That player doesn't exist.");
+                    return true;
+                }
+                int toAdd = Integer.parseInt(args[1]);
+                int current = Config.SLAYER_POINTS.get(target);
+                Config.SLAYER_POINTS.set(target, current + toAdd);
+                return true;
+            }
         }
         return false;
     }
