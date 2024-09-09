@@ -4,7 +4,7 @@
   "npcOption": "Trade",
   "uniquePerNpc": true,
   "npcs": [
-    7663, 8623, 6798, 401, 402, 403, 404, 405
+    7663, 8623, 6797, 6798, 401, 402, 403, 404, 405
   ],
   "sellMultiplier": 1000,
   "buyMultiplier": 600,
