@@ -119,6 +119,7 @@ public enum BarrowsDegradeable {
                 }
                 ItemObjectAction.register(id, Buildable.ARMOUR_STAND.getBuiltObjects()[0], (player, item, obj) -> Workshop.repair(player, item, set.getRepairCost(item), set.newId));
                 RepairNPC.REPAIR_COSTS.put(id, set.getStaticRepairCost());
+                ItemDefinition.get(id).custom_values.put("REPAIRED_ID", set.newId);
             }
         }
     }

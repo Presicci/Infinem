@@ -63,8 +63,14 @@ public class RepairNPC {
                 }
             }
             currency.remove(finalTotalPrice);
-            for(Item item : brokenItems)
-                item.setId(item.getDef().brokenFrom.fixedId);
+            for(Item item : brokenItems) {
+                int repairedId = item.getDef().getCustomValueOrDefault("REPAIRED_ID", -1);
+                if (item.getDef().brokenFrom != null) {
+                    item.setId(item.getDef().brokenFrom.fixedId);
+                } else if (repairedId > 0) {
+                    item.setId(repairedId);
+                }
+            }
             player.dialogue(new NPCDialogue(npc, "I've repaired all your items for you."));
         }));
     }
