@@ -1153,7 +1153,14 @@ public class PlayerCombat extends Combat {
                 if (target.getHp() <= 0 || hit.attackWeapon == null) {
                     return;
                 }
-                target.hit(new Hit(player, hit.attackStyle, hit.attackType).randDamage(hit.maxDamage).setAttackWeapon(null).ignoreDefence().ignorePrayer());
+                Hit secondHit = new Hit(player, hit.attackStyle, hit.attackType).randDamage(hit.maxDamage).setAttackWeapon(null).ignoreDefence().ignorePrayer();
+                RangedAmmo rangedAmmo = hit.rangedWeapon == null ? null : hit.rangedWeapon.rangedAmmo;
+                if(rangedAmmo != null && rangedAmmo.effect != null && rangedAmmo.effect.apply(target, secondHit))
+                    return;
+                if (target.isNpc() && player.getRelicManager().hasRelic(Relic.DEADEYE) && RangedAmmo.procDeadeyeBoltEffect(target, secondHit)) {
+                    return;
+                }
+                target.hit(secondHit);
             }
         }
         for(Item item : player.getEquipment().getItems()) {
