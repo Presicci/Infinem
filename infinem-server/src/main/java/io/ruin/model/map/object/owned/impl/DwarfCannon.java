@@ -94,6 +94,7 @@ public class DwarfCannon extends OwnedObject {
         new Bounds(3326, 3202, 3392, 3266, -1), //Duel arena
         new Bounds(3349, 3267, 3392, 3325, -1), //Duel arena
         new Bounds(3642, 3204, 3683, 3234, -1), //Ver sinhaza
+        new Bounds(3195, 3189, 3265, 3298, 0),  // Home
     };
 
     public DwarfCannon(Player owner, int id) {
