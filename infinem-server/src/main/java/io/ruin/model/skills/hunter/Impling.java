@@ -305,6 +305,10 @@ public enum Impling {
             new Position(2569, 4312, 0),
             new Position(2569, 4307, 0),
             new Position(2569, 4302, 0),
+            new Position(2569, 4295, 0),
+            new Position(2570, 4292, 0),
+            new Position(2582, 4298, 0),
+            new Position(2591, 4303, 0),
             new Position(2569, 4297, 0), //sw
 
             new Position(2614, 4342, 0), //ne
@@ -312,9 +316,13 @@ public enum Impling {
             new Position(2614, 4332, 0),
             new Position(2614, 4327, 0),
             new Position(2614, 4322, 0),
+            new Position(2614, 4328, 0),
             new Position(2614, 4317, 0),
+            new Position(2608, 4316, 0),
             new Position(2614, 4312, 0),
             new Position(2614, 4307, 0),
+            new Position(2614, 4302, 0),
+            new Position(2604, 4298, 0),
             new Position(2614, 4302, 0),
             new Position(2614, 4297, 0), //se
     };
