@@ -317,19 +317,6 @@ public enum Impling {
             new Position(2614, 4307, 0),
             new Position(2614, 4302, 0),
             new Position(2614, 4297, 0), //se
-
-            new Position(2560, 4342, 0),
-            new Position(2550, 4342, 0),
-            new Position(2540, 4342, 0),
-            new Position(2530, 4342, 0),
-            new Position(2520, 4342, 0),
-
-            new Position(2560, 4297, 0),
-            new Position(2550, 4297, 0),
-            new Position(2540, 4297, 0),
-            new Position(2530, 4297, 0),
-            new Position(2520, 4297, 0),
-
     };
 
     private static final Position[] OVERWORLD_RANDOM_SPAWN_POSITIONS = {
