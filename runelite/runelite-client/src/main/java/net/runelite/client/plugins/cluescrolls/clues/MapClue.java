@@ -124,7 +124,7 @@ public class MapClue extends ClueScroll implements ObjectClueScroll
 	@Override
 	public void makeOverlayHint(PanelComponent panelComponent, ClueScrollPlugin plugin)
 	{
-		panelComponent.getChildren().add(TitleComponent.builder().text("Map Clue").build());
+		/*panelComponent.getChildren().add(TitleComponent.builder().text("Map Clue").build());
 
 		panelComponent.getChildren().add(LineComponent.builder()
 			.left("Click the clue scroll along the edge of your world map to see your destination.")
@@ -158,13 +158,13 @@ public class MapClue extends ClueScroll implements ObjectClueScroll
 			panelComponent.getChildren().add(LineComponent.builder()
 				.left(description)
 				.build());
-		}
+		}*/
 	}
 
 	@Override
 	public void makeWorldOverlayHint(Graphics2D graphics, ClueScrollPlugin plugin)
 	{
-		LocalPoint localLocation = LocalPoint.fromWorld(plugin.getClient(), getLocation());
+		/*LocalPoint localLocation = LocalPoint.fromWorld(plugin.getClient(), getLocation());
 
 		if (localLocation == null)
 		{
@@ -191,7 +191,7 @@ public class MapClue extends ClueScroll implements ObjectClueScroll
 		else
 		{
 			OverlayUtil.renderTileOverlay(plugin.getClient(), graphics, localLocation, plugin.getSpadeImage(), Color.ORANGE);
-		}
+		}*/
 	}
 
 	public static MapClue forItemId(int itemId)
