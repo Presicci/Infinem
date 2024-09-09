@@ -73,6 +73,8 @@ public class PrayerAltar {
         });
         // Nardah statuette
         ObjectAction.register(10389, 1, (player, obj) -> pray(player));
+        // Entrana
+        ObjectAction.register(10638, 1, (player, obj) -> pray(player));
         // Ancient pyramid altar
         ObjectAction.register(6552, 3232, 9311, 0, "pray-at", (player, obj) -> {
             if (!AreaReward.ANCIENT_MAGIC.checkReward(player, "use ancient magics.")) return;
