@@ -17,6 +17,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
+import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.skills.mining.EssenceMine;
@@ -420,8 +421,8 @@ public enum DialogueLoaderAction {
         player.startEvent(e -> {
             player.lock();
             player.getPacketSender().fadeOut();
-            GameObject obj = new GameObject(6257, player.getPosition(), 0, 0);
-            obj.spawn();
+            GameObject obj = new GameObject(6257, player.getPosition(), 10, 0);
+            Tile.get(player.getPosition()).addObject(obj.spawn());
             e.delay(5);
             player.getPacketSender().fadeIn();
             player.unlock();

@@ -23,8 +23,10 @@ public class Dung {
         player.getInventory().add(productId);
         player.sendMessage("You very carefully scoop the dung up with the bucket.");
         if (removeForever) {
-            if (!object.isRemoved())
-                object.remove();
+            if (!object.isRemoved()) {
+                object.tile.removeObject(object.remove());
+            }
+
         } else {
             World.startEvent(e -> {
                 object.setId(-1);
