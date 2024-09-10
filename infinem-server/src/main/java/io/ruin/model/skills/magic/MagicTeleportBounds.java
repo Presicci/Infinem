@@ -51,7 +51,7 @@ public enum MagicTeleportBounds {
     DRAYNOR_MANOR(new Bounds(3108, 3350, 3109, 3351, 0)),
     BATTLEFRONT(new Bounds(1345, 3740, 1347, 3741, 0)),
     MIND_ALTAR(new Bounds(2979, 3509, 2980, 3510, 0)),
-    SALVE_GRAVEYARD(new Bounds(3433, 3460, 3435, 3462, 0)),
+    SALVE_GRAVEYARD(new Bounds(3433, 3460, 3435, 3461, 0)),
     FENKENSTRAINS_CASTLE(new Bounds(3547, 3528, 3549, 3529, 0)),
     WEST_ARDOUGNE(new Bounds(2499, 3291, 2501, 3292, 0)),
     HARMONY_ISLAND(new Bounds(3796, 2864, 3798, 2866, 0)),
