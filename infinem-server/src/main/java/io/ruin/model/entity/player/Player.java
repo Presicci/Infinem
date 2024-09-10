@@ -1260,16 +1260,6 @@ public class Player extends PlayerAttributes {
          */
         sendMessage("Welcome to " + World.type.getWorldName() + "!" + (" Have fun!"));
 
-        sendMessage(Color.COOL_BLUE.wrap("<shad=0>Until next Monday, everyone gets a 31% experience multiplier, thank you everyone for a great launch!"));
-
-        if (!hasAttribute("WEEKONE") && !PersistentData.INSTANCE.WEEK_ONE_IPS.contains(player.ipAddress)) {
-            getBank().add(11863, 1);    // Rainbow partyhat
-            getBank().add(32029, 10);              // Vote tickets
-            sendMessage(Color.RED.wrap("<shad=0>Thank you for logging in for our launch! A rainbow partyhat and some vote tickets have been added to your bank!"));
-            putAttribute("WEEKONE", 1);
-            PersistentData.INSTANCE.WEEK_ONE_IPS.add(player.ipAddress);
-        }
-
         World.sendLoginMessages(this);
 
         /*
