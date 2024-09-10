@@ -98,7 +98,7 @@ public class ResourceArea {
     }
 
     private static int getEntryFee() {
-        return 30000;
+        return 7500;
     }
 
     private static String getCurrencyName() {
