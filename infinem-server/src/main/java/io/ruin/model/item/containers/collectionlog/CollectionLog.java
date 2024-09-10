@@ -5,6 +5,8 @@ import io.ruin.cache.def.EnumDefinition;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.StructDefinition;
 import io.ruin.model.inter.AccessMasks;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.process.CoreWorker;
 import io.ruin.utility.Color;
 import io.ruin.cache.ItemID;
@@ -26,7 +28,9 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import lombok.Getter;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -205,6 +209,10 @@ public class CollectionLog {
         );
     }
 
+    private static final List<Integer> IGNORED_UNTRADEABLE_IDS = Arrays.asList(
+            Items.DRAGON_DEFENDER, Items.FIRE_CAPE
+    );
+
     static {
         NPCAction.register(8491, "talk-to", (player, npc) -> {
             player.dialogue(
@@ -218,8 +226,21 @@ public class CollectionLog {
 
         NPCAction.register(8491,"get log", (player, npc) -> player.dialogue(get(player,npc)));
 
-        ItemAction.registerInventory(ItemID.COLLECTION_LOG, 1, (player, item) -> {
-            player.getCollectionLog().open(player);
+        ItemAction.registerInventory(ItemID.COLLECTION_LOG, 1, (player, item) -> player.getCollectionLog().open(player));
+        ItemItemAction.register(ItemID.COLLECTION_LOG, (p, primary, secondary) -> {
+            if (secondary.getDef().tradeable) {
+                p.sendMessage("You can only add untradeables to the collection log in this way.");
+                return;
+            }
+            if (IGNORED_UNTRADEABLE_IDS.contains(secondary.getId())) {
+                p.sendMessage("You can't add that item to your log.");
+                return;
+            }
+            if (p.getCollectionLog().collectIfNotCollected(secondary)) {
+                p.sendMessage("You log your " + secondary.getDef().name + " in your collection log.");
+            } else {
+                p.sendMessage("You already have a log of that item in your collection log.");
+            }
         });
 
         InterfaceHandler.register(Interface.COLLECTION_LOG, h -> {
