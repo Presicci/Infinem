@@ -433,7 +433,7 @@ public class World extends EventWorker {
                 int offset = 0;
                 while(true) {
                     e.delay(1500); // 15 minutes
-                    Broadcast.WORLD.sendNews(Icon.INFO, "[Info]", announcements.get(offset));
+                    Broadcast.INFORMATION.sendNews(Icon.INFO, "[Info]", announcements.get(offset));
                     if(++offset >= announcements.size())
                         offset = 0;
                 }
