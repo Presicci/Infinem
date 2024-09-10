@@ -337,6 +337,9 @@ public class ItemDefinition {
             inventoryOptions[0] = "Claim";
             inventoryOptions[2] = null;
         }
+        if (id == Items.RUNITE_ORE) {
+            value = 800;
+        }
         if (id == Preset.DRAGON_2H_SWORD || id == 13024 || id == 13026 || id == 9243 || id == 6109 || id == 3751) {
             value = 0;
         }
