@@ -11,14 +11,14 @@
     { // Mining gloves
       "itemId": 21343,
       "stock": 100,
-      "buy_price": 48,
-      "sell_price": 60
+      "buy_price": 32,
+      "sell_price": 40
     },
     { // Superior mining gloves
       "itemId": 21345,
       "stock": 100,
-      "buy_price": 96,
-      "sell_price": 120
+      "buy_price": 80,
+      "sell_price": 100
     },
     { // Soft clay pack
       "itemId": 24851,
