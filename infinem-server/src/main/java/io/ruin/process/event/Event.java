@@ -8,6 +8,8 @@ import kilim.Continuation;
 import kilim.NotPausable;
 import kilim.Pausable;
 import kilim.Task;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.function.Supplier;
 
@@ -21,6 +23,7 @@ public class Event {
 
     private Supplier<Boolean> cancelCondition;
 
+    @Setter @Getter
     private Runnable cancelAction;
 
     public EventType eventType = EventType.DEFAULT;

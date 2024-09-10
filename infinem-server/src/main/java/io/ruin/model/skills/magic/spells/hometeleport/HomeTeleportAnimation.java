@@ -32,6 +32,9 @@ public enum HomeTeleportAnimation {
             player.animate(-1);
             player.getTaskManager().doLookupByUUID(64, 1);   // Cast Home Teleport
             player.getMovement().teleport(World.HOME);
+        }).setCancelAction(() -> {
+            player.animate(-1);
+            player.graphics(-1);
         });
     }),
     FOUNDERS(26500,
@@ -60,6 +63,9 @@ public enum HomeTeleportAnimation {
                     player.animate(-1);
                     player.getTaskManager().doLookupByUUID(64, 1);   // Cast Home Teleport
                     player.getMovement().teleport(World.HOME);
+                }).setCancelAction(() -> {
+                    player.animate(-1);
+                    player.graphics(-1);
                 });
             }
     );

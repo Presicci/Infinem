@@ -502,10 +502,12 @@ public abstract class Entity extends TemporaryAttributesHolder {
         if (activeEvent != null && activeEvent.persistent()) {
             return;
         }
-
         if(activeEvent != null) {
-            if(resetCombat || !activeEvent.isIgnoreCombatReset())
+            if(resetCombat || !activeEvent.isIgnoreCombatReset()) {
+                Runnable cancelAction = activeEvent.getCancelAction();
+                if (cancelAction != null) cancelAction.run();
                 activeEvent = null;
+            }
         }
         if(nextEvent != null) {
             if(resetCombat || !nextEvent.isIgnoreCombatReset())
