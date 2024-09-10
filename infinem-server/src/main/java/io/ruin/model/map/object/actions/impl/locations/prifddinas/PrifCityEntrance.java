@@ -21,10 +21,12 @@ public class PrifCityEntrance {
             StatType.Hunter, StatType.Mining, StatType.Smithing, StatType.Woodcutting
     };
 
+    private static final String MESSAGE = "agility, construction, farming, herblore, hunter, mining, smithing and woodcutting";
+
     public static boolean prifSkillCheck(Player player) {
         for (StatType statType : SKILLS) {
             if (player.getStats().get(statType).currentLevel < 70) {
-                player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "You need level 70 in " + statType.name() + " to enter Prifddinas.").animate(588));
+                player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "You need level 70 in " + MESSAGE + " to enter Prifddinas.").animate(588));
                 return false;
             }
         }
@@ -34,7 +36,7 @@ public class PrifCityEntrance {
     public static boolean prifSkillCheckNoNPC(Player player) {
         for (StatType statType : SKILLS) {
             if (player.getStats().get(statType).currentLevel < 70) {
-                player.dialogue(new MessageDialogue("You need level 70 in " + statType.name() + " to enter Prifddinas."));
+                player.dialogue(new MessageDialogue("You need level 70 in " + MESSAGE + " to enter Prifddinas."));
                 return false;
             }
         }
