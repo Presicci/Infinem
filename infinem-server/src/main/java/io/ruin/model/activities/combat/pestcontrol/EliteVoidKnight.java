@@ -45,6 +45,7 @@ public class EliteVoidKnight {
                 new OptionsDialogue("Pay 200 Commendation points to upgrade it?",
                         new Option("Okay", () -> {
                             item.setId(newId);
+                            player.getCollectionLog().collect(newId);
                             player.incrementNumericAttribute("PEST_POINTS", -200);
                         }),
                         new Option("Cancel")
