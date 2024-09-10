@@ -155,6 +155,7 @@ public class IKOD {
         Iterator<Item> iter = sortedByProtectValue.stream()
                 .filter(item -> !item.getDef().neverProtect)
                 .iterator();
+        if (!iter.hasNext()) return keptItems;
         Item item = iter.next();
         while (keepCount > 0) {
             keptItems.add(new Item(item.getId(), 1, item.copyOfAttributes()));
