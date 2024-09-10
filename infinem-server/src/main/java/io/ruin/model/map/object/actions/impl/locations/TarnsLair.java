@@ -22,7 +22,32 @@ public class TarnsLair {
     }
 
     static {
-        // West start
+        // Western pillar pit
+        Tile.getObject(20542, 3148, 4597, 1).skipReachCheck = pos -> pos.equals(3150, 4597) || pos.equals(3146, 4597);
+        Tile.getObject(20543, 3148, 4595, 1).skipReachCheck = pos -> pos.equals(3150, 4595) || pos.equals(3146, 4595);
+        Tile.getObject(20544, 3146, 4595, 1).skipReachCheck = pos -> pos.equals(3148, 4595) || pos.equals(3148, 4597) || pos.equals(3144, 4595) || pos.equals(3144, 4597);
+        Tile.getObject(20545, 3144, 4595, 1).skipReachCheck = pos -> pos.equals(3142, 4595, 1) || pos.equals(3144, 4597, 1) || pos.equals(3146, 4595, 1);
+        Tile.getObject(20546, 3142, 4595, 1).skipReachCheck = pos -> pos.equals(3140, 4595, 1) || pos.equals(3144, 4595, 1) || pos.equals(3144, 4597, 1);
+        Tile.getObject(20547, 3144, 4597, 1).skipReachCheck = pos -> pos.equals(3144, 4595, 1) || pos.equals(3142, 4595, 1) || pos.equals(3146, 4595, 1) || pos.equals(3144, 4599, 1);
+        Tile.getObject(20548, 3144, 4599, 1).skipReachCheck = pos -> pos.equals(3144, 4601, 1) || pos.equals(3144, 4597, 1) || pos.equals(3146, 4597, 1);
+        Tile.getObject(20560, 3150, 4597, 1).walkTo = new Position(3148, 4597, 1);
+        Tile.getObject(20561, 3150, 4595, 1).walkTo = new Position(3148, 4595, 1);
+        Tile.getObject(20562, 3140, 4595, 1).walkTo = new Position(3142, 4595, 1);
+        Tile.getObject(20563, 3144, 4601, 1).walkTo = new Position(3144, 4599, 1);
+        ObjectAction.register(20542, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20543, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20543, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20544, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20545, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20546, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20547, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20548, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20561, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20562, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20563, "jump-to", TarnsLair::jump);
+
+
+        // Eastern Pillar pit
         Tile.getObject(20549, 3182, 4596, 1).skipReachCheck = pos -> pos.equals(3180, 4596) || pos.equals(3184, 4598);
         Tile.getObject(20550, 3182, 4600, 1).skipReachCheck = pos -> pos.equals(3180, 4600) || pos.equals(3184, 4600) || pos.equals(3184, 4598);
         Tile.getObject(20551, 3184, 4600, 1).skipReachCheck = pos -> pos.equals(3182, 4600) || pos.equals(3184, 4598) || pos.equals(3186, 4598);
