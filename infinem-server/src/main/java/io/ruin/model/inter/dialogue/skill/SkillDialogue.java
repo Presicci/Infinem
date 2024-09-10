@@ -19,12 +19,15 @@ public class SkillDialogue extends Dialogue {
      * Handling
      */
 
+    private static final Config SPACEBAR_INDEX = Config.varp(2673, false);
+
     static {
         InterfaceHandler.register(Interface.MAKE_DIALOGUE, h -> {
             for (int i = 0; i < 10; i++) {
                 int index = i;
                 h.actions[14 + i] = (DefaultAction) (player, option, slot, itemId) -> {
-                      select(player, index, slot);
+                    select(player, index, slot);
+                    SPACEBAR_INDEX.set(player, index);
                 };
             }
             h.closedAction = (player, integer) -> {
@@ -53,18 +56,22 @@ public class SkillDialogue extends Dialogue {
      */
 
     public static void cook(Player player, SkillItem... item) {
+        if (SPACEBAR_INDEX.get(player) >= item.length) SPACEBAR_INDEX.setInstant(player, 0);
         player.dialogue(new SkillDialogue("How many would you like to cook?", item));
     }
 
     public static void make(Player player, BiConsumer<Player, Item> action, SkillItem... items) {
+        if (SPACEBAR_INDEX.get(player) >= items.length) SPACEBAR_INDEX.setInstant(player, 0);
         player.dialogue(new SkillDialogue(items).setAction(action));
     }
 
     public static void make(String title, Player player, SkillItem... items) {
+        if (SPACEBAR_INDEX.get(player) >= items.length) SPACEBAR_INDEX.setInstant(player, 0);
         player.dialogue(new SkillDialogue(title, items));
     }
 
     public static void make(Player player, SkillItem... items) {
+        if (SPACEBAR_INDEX.get(player) >= items.length) SPACEBAR_INDEX.setInstant(player, 0);
         player.dialogue(new SkillDialogue(items));
     }
 
