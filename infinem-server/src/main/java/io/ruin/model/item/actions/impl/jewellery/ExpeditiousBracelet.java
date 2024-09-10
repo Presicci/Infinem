@@ -69,7 +69,7 @@ public class ExpeditiousBracelet {
             charges = MAX_CHARGES;
         }
         boolean monsterHunterRelic = player.getRelicManager().hasRelic(Relic.MONSTER_HUNTER);
-        if (Random.rollDie(4) || (monsterHunterRelic && Random.rollDie(100, 35))) {
+        if (monsterHunterRelic ? Random.rollDie(100, 35) : Random.rollDie(4)) {
             if (monsterHunterRelic) {
                 player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster.");
                 return true;
