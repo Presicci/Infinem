@@ -64,7 +64,7 @@ public class Zulrah extends NPCCombat { // this is a mess
     };
 
     static {
-        ObjectAction.register(10068, "board", (player, obj) -> {
+        ObjectAction.register(10068, 1, (player, obj) -> {
             player.dialogue(new OptionsDialogue("Go to Zulrah's shrine?",
                     new Option("Yes", () -> enter(player)),
                     new Option("No", () -> {})));
