@@ -136,7 +136,7 @@ public enum CollectionLogEntry {
     VENENATIS(11988, CollectionLogCategory.BOSS, player -> KillCounter.getKillCount(player, BossKillCounter.VENENATIS)),
     VETION(11989, CollectionLogCategory.BOSS, player -> KillCounter.getKillCount(player, BossKillCounter.VETION)),
     VORKATH(11990, CollectionLogCategory.BOSS, player -> KillCounter.getKillCount(player, BossKillCounter.VORKATH)),
-    WINTERTODT(11991, CollectionLogCategory.BOSS, player -> KillCounter.getKillCount(player, BossKillCounter.WINTERTODT)),
+    WINTERTODT(11991, CollectionLogCategory.BOSS, PlayerCounter.WINTERTODT_SUBDUED::get),
     ZALCANO(11992, CollectionLogCategory.BOSS),
     ZULRAH(11993, CollectionLogCategory.BOSS),
     // Raids

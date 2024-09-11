@@ -105,7 +105,7 @@ public class Hiscores {
         map.put("venenatis", KillCounter.getKillCount(player, BossKillCounter.VENENATIS));
         map.put("vetion", KillCounter.getKillCount(player, BossKillCounter.VETION));
         map.put("vorkath", KillCounter.getKillCount(player, BossKillCounter.VORKATH));
-        map.put("wintertodt", KillCounter.getKillCount(player, BossKillCounter.WINTERTODT));
+        map.put("wintertodt", PlayerCounter.WINTERTODT_SUBDUED.get(player));
         map.put("zulrah", KillCounter.getKillCount(player, BossKillCounter.ZULRAH));
         // Pking
         map.put("kills", Config.PVP_KILLS.get(player));
