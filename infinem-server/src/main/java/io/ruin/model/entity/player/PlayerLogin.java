@@ -79,10 +79,6 @@ public class PlayerLogin extends LoginRequest {
                 deny(Response.ERROR_LOADING_ACCOUNT);
                 return;
             }
-            if (IPS.containsKey(info.ipAddress) && MACS.contains(info.macAddress)) {
-                deny(Response.LOGIN_LIMIT);
-                return;
-            }
             int returnCode = phpbbAuth();
             if (returnCode == -1) { // Username isn't registered on forums
                 if (info.name.length() < 3) {
@@ -104,7 +100,6 @@ public class PlayerLogin extends LoginRequest {
             } else {
                 IPS.put(info.ipAddress, 1);
             }
-            MACS.add(info.macAddress);
             player.setIndex(index);
             player.init(info);
             World.players.set(index, player);
