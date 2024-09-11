@@ -92,9 +92,9 @@ public class Amy {
                         new Option("Beginner Contract", () -> MahoganyHomes.assignContract(player, MahoganyDifficulty.BEGINNER)),
                         new Option((constructionLevel < 20 ? "<str>" : "") + "Novice Contract (Requires 20 Construction)",
                                 () -> MahoganyHomes.assignContract(player, MahoganyDifficulty.NOVICE)),
-                        new Option((constructionLevel < 20 ? "<str>" : "") + "Adept Contract (Requires 50 Construction)",
+                        new Option((constructionLevel < 50 ? "<str>" : "") + "Adept Contract (Requires 50 Construction)",
                                 () -> MahoganyHomes.assignContract(player, MahoganyDifficulty.ADEPT)),
-                        new Option((constructionLevel < 20 ? "<str>" : "") + "Expert Contract (Requires 70 Construction)",
+                        new Option((constructionLevel < 70 ? "<str>" : "") + "Expert Contract (Requires 70 Construction)",
                                 () -> MahoganyHomes.assignContract(player, MahoganyDifficulty.EXPERT)),
                         new Option("I'll pass actually.", new PlayerDialogue("I'll pass actually."))
                 )
