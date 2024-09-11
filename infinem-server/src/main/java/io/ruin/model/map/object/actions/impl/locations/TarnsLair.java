@@ -22,14 +22,24 @@ public class TarnsLair {
     }
 
     static {
+        // Southern pit
+        Tile.getObject(20540, 3184, 4560, 1).skipReachCheck = pos -> pos.equals(3184, 4558) || pos.equals(3184, 4562);
+        Tile.getObject(20541, 3184, 4562, 1).skipReachCheck = pos -> pos.equals(3184, 4560) || pos.equals(3184, 4564);
+        Tile.getObject(20558, 3184, 4558, 1).walkTo = new Position(3184, 4560, 1);
+        Tile.getObject(20559, 3184, 4564, 1).walkTo = new Position(3184, 4562, 1);
+        ObjectAction.register(20540, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20541, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20558, "jump-to", TarnsLair::jump);
+        ObjectAction.register(20559, "jump-to", TarnsLair::jump);
+
         // Western pillar pit
         Tile.getObject(20542, 3148, 4597, 1).skipReachCheck = pos -> pos.equals(3150, 4597) || pos.equals(3146, 4597);
         Tile.getObject(20543, 3148, 4595, 1).skipReachCheck = pos -> pos.equals(3150, 4595) || pos.equals(3146, 4595);
         Tile.getObject(20544, 3146, 4595, 1).skipReachCheck = pos -> pos.equals(3148, 4595) || pos.equals(3148, 4597) || pos.equals(3144, 4595) || pos.equals(3144, 4597);
-        Tile.getObject(20545, 3144, 4595, 1).skipReachCheck = pos -> pos.equals(3142, 4595, 1) || pos.equals(3144, 4597, 1) || pos.equals(3146, 4595, 1);
-        Tile.getObject(20546, 3142, 4595, 1).skipReachCheck = pos -> pos.equals(3140, 4595, 1) || pos.equals(3144, 4595, 1) || pos.equals(3144, 4597, 1);
-        Tile.getObject(20547, 3144, 4597, 1).skipReachCheck = pos -> pos.equals(3144, 4595, 1) || pos.equals(3142, 4595, 1) || pos.equals(3146, 4595, 1) || pos.equals(3144, 4599, 1);
-        Tile.getObject(20548, 3144, 4599, 1).skipReachCheck = pos -> pos.equals(3144, 4601, 1) || pos.equals(3144, 4597, 1) || pos.equals(3146, 4597, 1);
+        Tile.getObject(20545, 3144, 4595, 1).skipReachCheck = pos -> pos.equals(3142, 4595) || pos.equals(3144, 4597) || pos.equals(3146, 4595);
+        Tile.getObject(20546, 3142, 4595, 1).skipReachCheck = pos -> pos.equals(3140, 4595) || pos.equals(3144, 4595) || pos.equals(3144, 4597);
+        Tile.getObject(20547, 3144, 4597, 1).skipReachCheck = pos -> pos.equals(3144, 4595) || pos.equals(3142, 4595) || pos.equals(3146, 4595) || pos.equals(3144, 4599);
+        Tile.getObject(20548, 3144, 4599, 1).skipReachCheck = pos -> pos.equals(3144, 4601) || pos.equals(3144, 4597) || pos.equals(3146, 4597);
         Tile.getObject(20560, 3150, 4597, 1).walkTo = new Position(3148, 4597, 1);
         Tile.getObject(20561, 3150, 4595, 1).walkTo = new Position(3148, 4595, 1);
         Tile.getObject(20562, 3140, 4595, 1).walkTo = new Position(3142, 4595, 1);
