@@ -413,7 +413,7 @@ public class NPCDrops {
         if (npc.wildernessSpawnLevel <= 0) return;
         int chance = Math.max(3, Math.min(15, 40 - npc.getDef().combatLevel));
         if (Random.rollDie(chance)) {
-            if (pKiller.findItem(Items.LOOTING_BAG) == null && pKiller.findItem(22586) == null) {
+            if (pKiller.findItem(Items.LOOTING_BAG, true) == null && pKiller.findItem(22586, true) == null) {
                 handleDrop(killer, dropPosition, pKiller, new Item(Items.LOOTING_BAG));
             }
         }
