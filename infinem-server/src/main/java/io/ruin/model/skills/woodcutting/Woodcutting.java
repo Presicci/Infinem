@@ -319,6 +319,8 @@ public class Woodcutting {
         ObjectAction.register(29670, "cut", (player, obj) -> chop(Tree.REDWOOD, player, obj, 29671));
         ObjectAction.register(29763, "chop", (player, obj) -> chop(Tree.SAPLING, player, obj, 29764));
         ObjectAction.register(9034, "chop down", (player, obj) -> chop(Tree.MAHOGANY, player, obj, 9035));
+        ObjectAction.register(36688, "chop down", (player, obj) -> chop(Tree.MAHOGANY, player, obj, 36689));    // Prif mahog
+        ObjectAction.register(36686, "chop down", (player, obj) -> chop(Tree.TEAK, player, obj, 36687));    // Prif teak
         ObjectAction.register(10821, "chop down", (player, obj) -> chop(Tree.HOLLOW_TREE, player, obj, 2310));
         ObjectAction.register(10830, "chop down", (player, obj) -> chop(Tree.HOLLOW_TREE, player, obj, 4061));
         ObjectAction.register(1292, "chop down", (player, obj) -> chop(Tree.DRAMEN_TREE, player, obj, -1));
