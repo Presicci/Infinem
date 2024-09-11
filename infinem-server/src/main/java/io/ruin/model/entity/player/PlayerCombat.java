@@ -7,6 +7,7 @@ import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
@@ -592,7 +593,10 @@ public class PlayerCombat extends Combat {
             hit.randDamage(maxDamage).clientDelay(delay);
             target.hit(hit);
         }
-        if ((!hasAvaDevice() || !rollAvaChance()) && (!hasAdvancedAva() && !rollAdvnacedAva()) && (!player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)))
+        if (!rollAvaAttractor()
+                && !rollAvaAccumulator()
+                && !rollAvaAssembler()
+                && !player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2))
             dartAmount--;
         if(Random.rollDie(3, 2) && (!player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)))
             scalesAmount--;
@@ -604,11 +608,18 @@ public class PlayerCombat extends Combat {
             ammo.remove(hits.length);
             return;
         }
-        boolean ava = hasAvaDevice();
-        boolean advAva = hasAdvancedAva();
         for(Hit hit : hits) {
-            if(ava) {
-                if (rollAvaChance()) {  // Keep ammo
+            if (hasAvaAttractor()) {
+                if (rollAvaAttractor() || (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2))) {
+                    continue;
+                } else {
+                    if (Random.rollPercent(40)) {
+                        ammo.incrementAmount(-1);
+                        return;
+                    }
+                }
+            } else if (hasAvaAccumulator()) {
+                if (rollAvaAccumulator() || (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2))) {  // Keep ammo
                     continue;
                 } else {
                     if (Random.rollPercent(71)) {   // Break ammo
@@ -616,8 +627,8 @@ public class PlayerCombat extends Combat {
                         return;
                     }
                 }
-            } else if (advAva) {
-                if (rollAdvnacedAva()) {  // Keep ammo
+            } else if (hasAvaAssembler()) {
+                if (rollAvaAssembler() || (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2))) {  // Keep ammo
                     continue;
                 } else {
                     ammo.incrementAmount(-1);
@@ -635,22 +646,33 @@ public class PlayerCombat extends Combat {
         }
     }
 
-    private boolean hasAvaDevice() {
-        int capeID = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return capeID == 10499 || capeID == 9756 || capeID == 9757;
+    private boolean hasAvaAttractor() {
+        int capeId = player.getEquipment().getId(Equipment.SLOT_CAPE);
+        return capeId == 10498;
     }
 
-    private boolean hasAdvancedAva() {
-        int capeID = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return capeID == 21898 || capeID == 13337  || capeID == 22109 || capeID == 13342;
+    private boolean hasAvaAccumulator() {
+        int capeId = player.getEquipment().getId(Equipment.SLOT_CAPE);
+        return capeId == 10499 || capeId == 9756 || capeId == 9757 || capeId == 32022;
     }
 
-    private boolean rollAvaChance() {
-        if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2)) return true;
+    private boolean hasAvaAssembler() {
+        int capeId = player.getEquipment().getId(Equipment.SLOT_CAPE);
+        return capeId == 22109 || MaxCapeVariants.wearing(player);
+    }
+
+    private boolean rollAvaAttractor() {
+        if (!hasAvaAttractor()) return false;
+        return Random.rollPercent(60); //60% chance according to wiki
+    }
+
+    private boolean rollAvaAccumulator() {
+        if (!hasAvaAccumulator()) return false;
         return Random.rollPercent(72); //72% chance according to wiki
     }
-    private boolean rollAdvnacedAva() {
-        if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2)) return true;
+
+    private boolean rollAvaAssembler() {
+        if (!hasAvaAssembler()) return false;
         return Random.rollPercent(80); //80% chance according to wiki
     }
 
