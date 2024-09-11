@@ -2556,5 +2556,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 15
+  },
+  {
+    "name": "The Collector",
+    "id": 8491,
+    "x": 3265,
+    "y": 3454,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
   }
 ]
