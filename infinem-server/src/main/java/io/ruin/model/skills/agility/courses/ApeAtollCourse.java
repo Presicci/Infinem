@@ -37,7 +37,7 @@ public class ApeAtollCourse {
 
     private static final List<Position> MARK_SPAWNS = Arrays.asList(
             new Position(2746, 2732, 0),
-            new Position(2759, 2732, 0),
+            new Position(2758, 2732, 0),
             new Position(2752, 2741, 0)
     );
 
