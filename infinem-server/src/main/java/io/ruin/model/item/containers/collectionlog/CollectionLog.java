@@ -224,7 +224,10 @@ public class CollectionLog {
                     get(player, npc));
         });
 
-        NPCAction.register(8491,"get log", (player, npc) -> player.dialogue(get(player,npc)));
+        NPCAction.register(8491,"get-log", (player, npc) -> player.dialogue(get(player,npc)));
+        NPCAction.register(8491,"count-log", (player, npc) -> player.dialogue(
+                new NPCDialogue(npc, "You've collected " + player.getCollectionLog().getCollected().size() + " items.")
+        ));
 
         ItemAction.registerInventory(ItemID.COLLECTION_LOG, 1, (player, item) -> player.getCollectionLog().open(player));
         ItemItemAction.register(ItemID.COLLECTION_LOG, (p, primary, secondary) -> {
