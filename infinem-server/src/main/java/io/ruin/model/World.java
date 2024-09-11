@@ -266,16 +266,16 @@ public class World extends EventWorker {
         ownedObjects.remove(object.getOwnerUID() + ":" + object.getIdentifier());
     }
 
-    public static void addCannonReclaim(int userId, boolean isOrnament) {
+    public static void addCannonReclaim(String username, boolean isOrnament) {
         Server.gameDb.execute(connection -> {
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO lost_cannons (user_id, ornament) VALUES (?, ?)");
-            statement.setInt(1, userId);
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO lost_cannons (username, ornament) VALUES (?, ?)");
+            statement.setString(1, username);
             statement.setBoolean(2, isOrnament);
             statement.executeUpdate();
         });
     }
 
-    public static void doCannonReclaim(int userId, Consumer<Tuple<Boolean, Boolean>> consumer) {
+    public static void doCannonReclaim(String username, Consumer<Tuple<Boolean, Boolean>> consumer) {
         Server.gameDb.execute(new DatabaseStatement() {
 
             private boolean result;
@@ -286,12 +286,12 @@ public class World extends EventWorker {
                 PreparedStatement statement = null;
                 ResultSet rs = null;
                 try {
-                    statement = connection.prepareStatement("SELECT * FROM lost_cannons WHERE user_id = ?");
-                    statement.setInt(1, userId);
+                    statement = connection.prepareStatement("SELECT * FROM lost_cannons WHERE UPPER(username) = UPPER(?)");
+                    statement.setString(1, username);
                     rs = statement.executeQuery();
                     boolean isOrnament = false;
                     if (rs.next()) {
-                        result = rs.getInt(1) == userId;
+                        result = rs.getString(1).equalsIgnoreCase(username);
                         isOrnament =  rs.getBoolean(2);
                     }
                     boolean finalIsOrnament = isOrnament;
@@ -304,10 +304,10 @@ public class World extends EventWorker {
         });
     }
 
-    public static void removeCannonReclaim(int userId) {
+    public static void removeCannonReclaim(String username) {
         Server.gameDb.execute(connection -> {
-            PreparedStatement statement = connection.prepareStatement("DELETE FROM lost_cannons WHERE user_id = ?");
-            statement.setInt(1, userId);
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM lost_cannons WHERE username = ?");
+            statement.setString(1, username);
             statement.execute();
         });
     }
@@ -351,7 +351,7 @@ public class World extends EventWorker {
             for(Player player : players) {
                 GameObject cannon = World.getOwnedObject(player, DwarfCannon.IDENTIFIER);
                 if (cannon != null) {
-                    addCannonReclaim(player.getUserId(), Arrays.stream(DwarfCannon.ORNAMENT_CANNON_OBJECTS).anyMatch(e -> e == cannon.id));
+                    addCannonReclaim(player.getName(), Arrays.stream(DwarfCannon.ORNAMENT_CANNON_OBJECTS).anyMatch(e -> e == cannon.id));
                 }
                 Duel duel = player.getDuel();
                 if (duel.stage >= 3) {

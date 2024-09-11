@@ -186,7 +186,7 @@ public class DwarfCannon extends OwnedObject {
             if (getPosition().inBounds(new Bounds(2240, 4672, 2303, 4735, -1))) { //king black dragon
                 getOwner().sendMessage("Your cannon has been destroyed for placing it in this area.");
                 destroy();
-                World.addCannonReclaim(getOwnerUID(), isOrnament);
+                World.addCannonReclaim(getOwner().getName(), isOrnament);
                 return;
             }
         }
@@ -228,7 +228,7 @@ public class DwarfCannon extends OwnedObject {
         }
         if (needsDestroyed()) {
             getOwnerOpt().ifPresent(player -> player.sendMessage("<col=ff0000>Your cannon has decayed. Speak to Nulodion to get a new one!</col>"));
-            World.addCannonReclaim(getOwnerUID(), isOrnament);
+            World.addCannonReclaim(getOwner().getName(), isOrnament);
             new GroundItem(CANNON_BALL, getAmmo()).owner(getOwnerUID()).spawn();
             setAmmo(0);
             destroy();
@@ -378,7 +378,7 @@ public class DwarfCannon extends OwnedObject {
     }
 
     private static void setupCannon(Player player, Item item) {
-        World.doCannonReclaim(player.getUserId(), (reclaim) -> {
+        World.doCannonReclaim(player.getName(), (reclaim) -> {
             if (reclaim.first()) {
                 player.sendMessage("You can't deploy this cannon, you have one you need to reclaim.");
             } else {
@@ -520,15 +520,15 @@ public class DwarfCannon extends OwnedObject {
          * Nulodion reclaiming
          */
         NPCAction.register(1400, "talk-to", (player, npc) -> {
-            World.doCannonReclaim(player.getUserId(), (reclaim) -> {
+            World.doCannonReclaim(player.getName(), (reclaim) -> {
                 if (reclaim.first()) {
                     boolean hasSpace = player.getInventory().hasFreeSlots(DwarfCannon.CANNON_PARTS.length);
                     player.dialogue(
-                            new PlayerDialogue("I've lost my cannon, can i have another one?"),
+                            new PlayerDialogue("I've lost my cannon, can I have another one?"),
                             !hasSpace ? new NPCDialogue(npc, "Come back when you at least 4 inventory spaces.") : new NPCDialogue(npc, "Yeah sure, here you go. Try not to do it again."),
                             !hasSpace ? new MessageDialogue("You need at least 4 inventory spaces to claim your cannon back.") : new ItemDialogue().one(DwarfCannon.BARRELS, "The Drunken dwarf gives you another cannon.").action(() -> {
                                 IntStream.of(reclaim.second() ? DwarfCannon.ORNAMENT_CANNON_PARTS : DwarfCannon.CANNON_PARTS).forEach(player.getInventory()::add);
-                                World.removeCannonReclaim(player.getUserId());
+                                World.removeCannonReclaim(player.getName());
                             })
                     );
                 }
@@ -536,9 +536,9 @@ public class DwarfCannon extends OwnedObject {
         });
 
         LoginListener.register(player -> {
-            World.doCannonReclaim(player.getUserId(), (reclaim) -> {    // TODO ADD ISORNAMENT TAG TO THIS!
+            World.doCannonReclaim(player.getName(), (reclaim) -> {    // TODO ADD ISORNAMENT TAG TO THIS!
                 if (reclaim.first())
-                    player.sendMessage(Color.RED.wrap("Your cannon has been destoryed, you can reclaim it from the Drunken Dwarf at home."));
+                    player.sendMessage(Color.RED.wrap("Your cannon has been destroyed, you can reclaim it from the Nulodion at the Dwarven mine."));
             });
         });
     }
