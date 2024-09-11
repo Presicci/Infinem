@@ -53,9 +53,10 @@ public class Arclight {
         int currentCharges = AttributeExtensions.getCharges(arclight);
         int shardsToUse = Math.min(3, shards.getAmount());
         int chargesToAdd = shardsToUse == 3 ? 1000 : (333 * shardsToUse);
-        arclight.putAttribute(AttributeTypes.CHARGES, Math.min(10000, currentCharges + chargesToAdd));
+        int newCharges = Math.min(10000, currentCharges + chargesToAdd);
+        arclight.putAttribute(AttributeTypes.CHARGES, newCharges);
         shards.remove(shardsToUse);
-        player.dialogue(new ItemDialogue().one(ARCLIGHT, "Your Arclight now holds " + NumberUtils.formatNumber(currentCharges) + " charges."));
+        player.dialogue(new ItemDialogue().one(ARCLIGHT, "Your Arclight now holds " + NumberUtils.formatNumber(newCharges) + " charges."));
 
     }
 
