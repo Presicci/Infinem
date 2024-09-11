@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.stat.StatType;
@@ -48,6 +49,17 @@ public class MahoganyHomes {
     }
 
     protected static void assignContract(Player player, MahoganyDifficulty difficulty) {
+        int constructionLevel = player.getStats().get(StatType.Construction).fixedLevel;
+        if (difficulty == MahoganyDifficulty.NOVICE && constructionLevel < 20) {
+            player.dialogue(new MessageDialogue("You need a Construction level of 20 to accept Novice contracts."));
+            return;
+        } else if (difficulty == MahoganyDifficulty.ADEPT && constructionLevel < 50) {
+            player.dialogue(new MessageDialogue("You need a Construction level of 50 to accept Adept contracts."));
+            return;
+        } else if (difficulty == MahoganyDifficulty.EXPERT && constructionLevel < 70) {
+            player.dialogue(new MessageDialogue("You need a Construction level of 70 to accept Expert contracts."));
+            return;
+        }
         // Reset
         for (MahoganyHotspot hotspot : MahoganyHotspot.values()) {
             hotspot.getVarbit().set(player, 0);
