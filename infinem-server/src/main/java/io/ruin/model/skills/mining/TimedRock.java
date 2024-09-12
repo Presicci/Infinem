@@ -35,7 +35,6 @@ public class TimedRock {
 
     protected static void pingRockWithMiningGloves(GameObject rock, Rock rockType, int emptyId) {
         if (!rock.hasTemporaryAttribute(TIMER_KEY)) setupRock(rock, rockType, emptyId);
-        System.out.println("Mining gloves!");
         rock.putTemporaryAttribute(TIMER_KEY, 5);
         int currentHealth = rock.getTemporaryAttributeIntOrZero(HEALTH_KEY);
         rock.putTemporaryAttribute(HEALTH_KEY, Math.max(1, currentHealth - 5));
