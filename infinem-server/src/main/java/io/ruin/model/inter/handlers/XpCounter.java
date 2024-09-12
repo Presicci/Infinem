@@ -12,6 +12,11 @@ import io.ruin.model.stat.StatType;
 
 public class XpCounter {
 
+    public static void sendCounter(Player player) {
+        int childId = player.isFixedScreen() ? 16 : 9;
+        player.getPacketSender().sendInterface(122, player.getGameFrameId(), childId, 1);
+    }
+
     public static void select(Player player, int option) {
         if(option == 1) {
             /**

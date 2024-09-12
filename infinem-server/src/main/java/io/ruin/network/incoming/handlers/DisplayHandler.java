@@ -6,6 +6,7 @@ import io.ruin.cache.def.EnumDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
+import io.ruin.model.inter.handlers.XpCounter;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.network.PacketSender;
 import io.ruin.network.incoming.Incoming;
@@ -29,6 +30,8 @@ public class DisplayHandler implements Incoming {
             sendDisplay(player, displayMode);
             player.start();
             player.setOnline(true);
+            if(Config.XP_COUNTER_SHOWN.get(player) == 1)
+                XpCounter.sendCounter(player);
         } else {
             setDisplayMode(player, displayMode);
         }
@@ -76,9 +79,6 @@ public class DisplayHandler implements Incoming {
         int tabChildOffset = DEFAULT_SCREEN_CHILD_OFFSET;
         if(Config.DATA_ORBS.get(player) == 0)
             ps.sendInterface(160, 165, 24 + tabChildOffset, 1);
-
-        if(Config.XP_COUNTER_SHOWN.get(player) == 1)
-            ps.sendInterface(122, 165, 2 + tabChildOffset, 1);
 
         //ps.sendInterface(378, 165, 28, 0); //welcome screen pt1
         //ps.sendInterface(50, 165, 27, 0); //welcome screen pt2
