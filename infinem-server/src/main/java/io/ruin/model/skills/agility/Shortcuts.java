@@ -32,6 +32,26 @@ public class Shortcuts {
             });
         }));
 
+        // Fossil island hole
+        ObjectAction.register(31482, 3712, 3828, 0, "climb through", ((player, obj) -> {
+            if (!player.getStats().check(StatType.Agility, 70, "climb through"))
+                return;
+            player.startEvent(event -> {
+                player.animate(2796);
+                event.delay(1);
+                player.getMovement().teleport(3716, 3815, 0);
+            });
+        }));
+        ObjectAction.register(31481, 3714, 3816, 0, "climb through", ((player, obj) -> {
+            if (!player.getStats().check(StatType.Agility, 70, "climb through"))
+                return;
+            player.startEvent(event -> {
+                player.animate(2796);
+                event.delay(1);
+                player.getMovement().teleport(3714, 3830, 0);
+            });
+        }));
+
         // Stepping stones in Brimhaven Dungeon
         // Varrock south fence jump
         // Scale Goblin Village wall
