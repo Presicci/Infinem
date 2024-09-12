@@ -118,7 +118,7 @@ public class Shop {
         shopItems.clear();
         defaultStock.forEach(shopItem ->
         {
-            if (shopItem.getId() != -1 && shopItem.getId() < 30000) {
+            if (shopItem.getId() != -1 && shopItem.getId() < 35000) {
                 shopItems.add(shopItem);
             }
         });

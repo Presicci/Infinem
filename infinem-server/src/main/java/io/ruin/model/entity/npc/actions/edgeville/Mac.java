@@ -9,8 +9,10 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.shop.*;
+import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatRequirement;
 import io.ruin.model.stat.StatType;
+import io.ruin.utility.Misc;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,7 +25,7 @@ public class Mac {
 
     public static final String MAC_SHOP_UUID = "9cdf0778-af8d-49ca-8dad-dff2e4862583";
     public static final String MAC_SHOP2_UUID = "9cdf0778-af8d-49ca-8dad-dff2e4862584";
-    public static final String MAC_MASTER_UUID = "cb3b999f-67a3-47d7-ab8d-87f0fe858f91";
+    public static final String MAC_MASTER_UUID = "cb3c999f-67a3-47d7-ab8d-87f0fe858f91";
     private static final int ECO_PRICE = 99000;
 
     static {
@@ -58,18 +60,18 @@ public class Mac {
                 .flatMap(Stream::of)
                 .collect(Collectors.toList());
 
-        List<ShopItem> capes200m = Stream.of(types)
+        List<ShopItem> masterCapes = Stream.of(types)
                 .map(statType -> {
-                    ShopItem cape200m = ShopItem.builder()
+                    ShopItem masterCape = ShopItem.builder()
                             .id(statType.masterCapeId)
-                            .additionalItems(Arrays.asList(new Item(statType.hoodId, 1)))
                             .amount(100)
-                            .price(200000)
+                            .price(120000)
                             .requirementCheckType(RequirementCheckType.REQUIRED_TO_BUY)
-                            .additionalRequirements(player -> player.getStats().get(statType).experience < 200_000_000 ? "You need 200m xp in " + statType.descriptiveName + " to buy that" : "")
+                            .additionalItems(Arrays.asList(new Item(statType.hoodId, 1)))
+                            .additionalRequirements(player -> player.getStats().get(statType).hasVirtualLevel(120) ? "" : "You need a virtual " + statType.descriptiveName + " level of 120 (" + Misc.abbreviateItemQuantity(Stat.getVirtualExperience(120)) + ") to buy that.")
                             .build();
 
-                    return new ShopItem[] {cape200m};
+                    return new ShopItem[] {masterCape};
                 })
                 .flatMap(Stream::of)
                 .collect(Collectors.toList());
@@ -114,7 +116,7 @@ public class Mac {
                 .title("Mac's Master Cape Emporium")
                 .currency(Currency.COINS)
                 .canSellToStore(false)
-                .defaultStock(capes200m)
+                .defaultStock(masterCapes)
                 .generatedByBuilder(true)
                 .accessibleByIronMan(true)
                 .build();
