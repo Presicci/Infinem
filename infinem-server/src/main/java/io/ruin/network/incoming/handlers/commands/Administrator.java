@@ -27,8 +27,10 @@ import io.ruin.data.impl.objects.object_spawns;
 import io.ruin.data.yaml.YamlLoader;
 import io.ruin.data.yaml.impl.ShopLoader;
 import io.ruin.model.World;
+import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueEnemies;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.activities.combat.inferno.Inferno;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;
@@ -3156,6 +3158,14 @@ public class Administrator {
                 int toAdd = Integer.parseInt(args[1]);
                 int current = Config.SLAYER_POINTS.get(target);
                 Config.SLAYER_POINTS.set(target, current + toAdd);
+                return true;
+            }
+            case "spawnclue": {
+                ClueEnemies.spawnSingleEnemyOnDig(null, player, 2955);
+                return true;
+            }
+            case "spawnclues": {
+                ClueEnemies.ancientOrBrassicanDig(new Clue(ClueType.MASTER, StepType.ANAGRAM), player);
                 return true;
             }
         }
