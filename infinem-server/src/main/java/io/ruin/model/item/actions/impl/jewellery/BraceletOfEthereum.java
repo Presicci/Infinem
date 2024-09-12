@@ -77,7 +77,7 @@ public class BraceletOfEthereum {
     }
 
     private static void uncharge(Player player, Item bracelet) {
-        player.dialogue(new YesNoDialogue("Are you sure you want to uncharge it?", "If you uncharge the bracelet, all the ether will be lost!", bracelet, () -> {
+        player.dialogue(new YesNoDialogue("Are you sure you want to uncharge it?", "If you uncharge the bracelet, all ether will be returned.", bracelet, () -> {
             int added = player.getInventory().add(REVENANT_ETHER, AttributeExtensions.getCharges(bracelet));
             if (added > 0) {
                 AttributeExtensions.setCharges(bracelet, 0);
