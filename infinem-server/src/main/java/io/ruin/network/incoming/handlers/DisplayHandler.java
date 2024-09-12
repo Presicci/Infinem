@@ -6,6 +6,7 @@ import io.ruin.cache.def.EnumDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.handlers.XpCounter;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.network.PacketSender;
@@ -43,6 +44,7 @@ public class DisplayHandler implements Incoming {
         if (displayMode == 2 && Config.SIDE_PANELS.get(p) == 1) displayMode = 3;
         if (p.getDisplayMode() == displayMode) return;
         p.setDisplayMode(displayMode);
+        p.closeInterface(InterfaceType.MAIN_STRETCHED);
         PacketSender ps = p.getPacketSender();
 
         Map<Integer, Integer> oldComponents = getToplevelComponents(p).getValuesAsInts();
