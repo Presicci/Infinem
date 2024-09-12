@@ -1065,7 +1065,9 @@ public class PlayerCombat extends Combat {
                 }
             }
         }
-        if (hit.damage > 0
+        if (target != null
+                && target.isNpc()
+                && hit.damage > 0
                 && hit.attackStyle != null
                 && hit.attackStyle.isMelee()
                 && player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT)
@@ -1176,7 +1178,7 @@ public class PlayerCombat extends Combat {
             SetEffect.AHRIM.checkAndApply(player, target, hit);
             SetEffect.TORAG.checkAndApply(player, target, hit);
             SetEffect.KARIL_DAMNED.checkAndApply(player, target, hit);
-            if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(10) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
+            if (target.isNpc() && player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(10) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
                 if (target.getHp() <= 0 || hit.attackWeapon == null) {
                     return;
                 }
