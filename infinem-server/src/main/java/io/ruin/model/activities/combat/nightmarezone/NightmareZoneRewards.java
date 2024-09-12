@@ -69,7 +69,7 @@ public class NightmareZoneRewards {
             amount = Integer.MAX_VALUE / resource.price;
         String name = new Item(id).getDef().name;
         int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
-        if (id == Items.HERB_BOX && points < amount * resource.price)
+        if (points < amount * resource.price)
             amount = points / resource.price;
         if (id == Items.HERB_BOX && amount > (5 - purchasedBoxes))
             amount = 5 - purchasedBoxes;
