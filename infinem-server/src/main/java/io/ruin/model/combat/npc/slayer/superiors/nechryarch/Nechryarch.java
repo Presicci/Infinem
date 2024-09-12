@@ -39,7 +39,7 @@ public class Nechryarch extends Superior {
     public boolean attack() {
         if (!withinDistance(1))
             return false;
-        if (Random.rollDie(2, 1))
+        if (Random.rollDie(3, 1))
             checkDeathSpawns();
         basicAttack();
         return true;
