@@ -263,7 +263,7 @@ public class Zulrah extends NPCCombat { // this is a mess
     }
 
     private boolean checkFumes() {
-        if ((spawningFumes || ((currentPhase == 0 || Random.rollPercent(35))) && hasEmptyFumesSpot())) {
+        if ((spawningFumes || (currentPhase == 0 || Random.rollPercent(35))) && getEmptyFumesSpots().size() > 4) {
             spawningFumes = true;
             return fumes();
         }
