@@ -107,6 +107,7 @@ public class SawmillOperator {
                     )
             ));
             NPCAction.register(3101, "buy-plank", (player, npc) -> skillDialogue(player));
+            NPCAction.register(9140, "buy-plank", (player, npc) -> skillDialogue(player));
         }
     }
 }
