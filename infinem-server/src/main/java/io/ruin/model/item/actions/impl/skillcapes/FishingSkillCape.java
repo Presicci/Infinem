@@ -41,7 +41,7 @@ public class FishingSkillCape {
     }
 
     private static void teleportToFishingGuild(Player player) {
-        ModernTeleport.teleport(player, new Bounds(2493,3414,2595,3416,0));
+        ModernTeleport.teleport(player, new Bounds(2604, 3400, 2607, 3402, 0));
     }
 
     private static void teleportToOttosGrotto(Player player) {
