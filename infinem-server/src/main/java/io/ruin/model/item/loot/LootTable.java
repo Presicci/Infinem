@@ -479,7 +479,6 @@ public class LootTable {
                 new LootItem(5321, 2, 11),      // Watermelon
                 new LootItem(22879, 2, 8)       // Snape grass
         }),
-
         GENERAL_SEED_485(5305, "general seed485", "General seed table", 1000, new LootItem[] {
                 new LootItem(5305, 4, 229),     // Barley
                 new LootItem(5307, 3, 228),     // Hammerstone
@@ -489,7 +488,6 @@ public class LootTable {
                 new LootItem(5310, 2, 57),      // Krandorian
                 new LootItem(5311, 1, 29)       // Wildblood
         }),
-
         GENERAL_SEED_728(5096, "general seed728", "General seed table",1000, new LootItem[] {
                 new LootItem(5096, 1, 376),     // Marigold
                 new LootItem(5098, 1, 249),     // Nasturtium
@@ -497,7 +495,6 @@ public class LootTable {
                 new LootItem(5099, 1, 119),     // Woad
                 new LootItem(5100, 1, 95)       // Limpwurt
         }),
-
         GENERAL_SEED_850(5101, "general seed850", "General seed table",1000, new LootItem[] {
                 new LootItem(5101, 1, 400),     // Redberry
                 new LootItem(5102, 1, 280),     // Cadavaberry
@@ -506,7 +503,6 @@ public class LootTable {
                 new LootItem(5105, 1, 29),      // Whiteberry
                 new LootItem(5106, 1, 11),      // Poison ivy
         }),
-
         GENERAL_SEED_947(5291, "general seed947", "General seed table",1000, new LootItem[] {
                 new LootItem(5291, 1, 320),     // Guam
                 new LootItem(5292, 1, 218),     // Marrentill
@@ -523,14 +519,12 @@ public class LootTable {
                 new LootItem(5303, 1, 3),       // Dwarf weed
                 new LootItem(5304, 1, 2)        // Torstol
         }),
-
         GENERAL_SEED_995(5282, "general seed995", "General seed table", 1100, new LootItem[] {
                 new LootItem(5282, 1, 500),     // Mushroom
                 new LootItem(5281, 1, 300),     // Belladonna
                 new LootItem(5280, 1, 200),     // Cactus
                 new LootItem(22873, 1, 100)     // Potato cactus
         }),
-
         HERB(199, "herb drop", "Herb table",128, new LootItem[] {
                 new LootItem(199, 1, 32),   // Guam
                 new LootItem(201, 1, 24),   // Marrentill
@@ -544,7 +538,6 @@ public class LootTable {
                 new LootItem(2485, 1, 3),   // Lantadyme
                 new LootItem(217, 1, 3),    // Dwarf weed
         }),
-
         UNCOMMON_SEED(22879, "uncommon seed", "Uncommon seed table", 1048, new LootItem[] {
                 new LootItem(5100, 1, 137), // Limpwurt
                 new LootItem(5323, 1, 131), // Strawberry
@@ -572,7 +565,6 @@ public class LootTable {
                 new LootItem(5303, 1, 2),   // Dwarf weed
                 new LootItem(5304, 1, 1)    // Torstol
         }),
-
         RARE_SEED(5304, "rare seed", "Rare seed table", 238, new LootItem[] {
                 new LootItem(5296, 1, 47),   // Toadflax
                 new LootItem(5297, 1, 32),   // Irit
@@ -589,7 +581,6 @@ public class LootTable {
                 new LootItem(5303, 1, 3),   // Dwarf weed
                 new LootItem(5304, 1, 2)   // Torstol
         }),
-
         TREE_HERB_SEED(5313, "tree-herb seed", "Tree-herb seed table", 250, new LootItem[] {
                 new LootItem(5295, 1, 30),      // Ranarr
                 new LootItem(5300, 1, 28),      // Snapdragon
@@ -608,14 +599,12 @@ public class LootTable {
                 new LootItem(22869, 1, 4),      // Celastrus
                 new LootItem(22871, 1, 4)       // Redwood
         }),
-
         USEFUL_HERB(212, "useful herb", "Useful herb table", 16, new LootItem[] {
                 new LootItem(212, 1, 5),        // Avantoe
                 new LootItem(3052, 1, 4),       // Snapdragon
                 new LootItem(207, 1, 4),        // Ranarr
                 new LootItem(219, 1, 3)         // Torstol
         }),
-
         ALLOTMENT_SEED(5282, "allotment seed", "Allotment seed table", 128, new LootItem[] {
                 new LootItem(5318, 1, 4, 64),       // Potato
                 new LootItem(5319, 1, 3, 32),       // Onion
@@ -626,7 +615,6 @@ public class LootTable {
                 new LootItem(5321, 1, 1),                        // Watermelon
                 new LootItem(22879, 1, 1),                       // Snape grass
         }),
-
         TALISMAN(Items.AIR_TALISMAN, "talisman drop", "Talisman table", 28, new LootItem[] {
                 new LootItem(Items.AIR_TALISMAN, 1, 1, 4),          // Air
                 new LootItem(Items.BODY_TALISMAN, 1, 1, 4),         // Body
@@ -638,7 +626,6 @@ public class LootTable {
                 new LootItem(Items.CHAOS_TALISMAN, 1, 1, 1),        // Chaos
                 new LootItem(Items.NATURE_TALISMAN, 1, 1, 1)        // Nature
         }),
-
         WILDERNESS_SLAYER_CAVE(true, 24614, "wilderness slayer", "Wildy slayer cave", 28, new LootItem[] {
                 new LootItem(24613, 1, 10, 60),  // Blighted entangle sack
                 new LootItem(24592, 1, 2, 50),   // Blighted anglerfish
@@ -662,13 +649,20 @@ public class LootTable {
                 new LootItem(12783, 1, 4),   // Ring of wealth scroll
                 new LootItem(24585, 1, 1)   // Looting bag note
         }),
-
         SUPERIOR(20724, "superior", "Superior table", 8, new LootItem[] {
                 new LootItem(20736, 1, 1, 3),        // Dust battlestaff
                 new LootItem(20730, 1, 1, 3),        // Mist battlestaff
                 new LootItem(20724, 1, 1, 1),        // Imbued heart
                 new LootItem(21270, 1, 1, 1)         // Eternal gem
-        });
+        }),
+        INFINITY(Items.INFINITY_HAT, "infinity", "Infinity table", 5, new LootItem[]{
+                new LootItem(Items.INFINITY_HAT, 1, 1),
+                new LootItem(Items.INFINITY_TOP, 1, 1),
+                new LootItem(Items.INFINITY_BOTTOMS, 1, 1),
+                new LootItem(Items.INFINITY_GLOVES, 1, 1),
+                new LootItem(Items.INFINITY_BOOTS, 1, 1)
+        })
+        ;
 
         public final int itemId;
         public final String title, name;

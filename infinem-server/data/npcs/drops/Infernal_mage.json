@@ -6,11 +6,25 @@
     ],
     "tables": [
       {
+        "name": "infinity",
+        "weight": 1,
+        "items": [
+          { "id": 0, "min": 10, "max": 10, "weight": 5 }
+        ]
+      },
+      {
         "name": "Armour",
         "weight": 4,
         "items": [
           { "id": 4107, "min": 1, "max": 1, "weight": 195 },   //Mystic boots (dark)
           { "id": 4099, "min": 1, "max": 1, "weight": 195 }   //Mystic hat (dark)
+        ]
+      },
+      {
+        "name": "Beginner wand",
+        "weight": 3,
+        "items": [
+          { "id": 6908, "min": 1, "max": 1, "weight": 1 }
         ]
       },
       {
