@@ -79,6 +79,10 @@ public class PlayerLogin extends LoginRequest {
                 deny(Response.ERROR_LOADING_ACCOUNT);
                 return;
             }
+            if (player.hasAttribute("BANNED")) {
+                deny(Response.IP_BANNED);
+                return;
+            }
             int returnCode = phpbbAuth();
             if (returnCode == -1) { // Username isn't registered on forums
                 if (info.name.length() < 3) {

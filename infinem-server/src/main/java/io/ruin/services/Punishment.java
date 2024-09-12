@@ -128,6 +128,7 @@ public class Punishment {
     public static void ban(Player p1, Player p2) {
         p1.sendMessage("Attemping to ban " + p2.getName() + "...");
         //PlayerGroup.BANNED.sync(p2, "ban", () -> {
+        p2.putAttribute("BANNED", 1);
             Server.worker.execute(() -> {
                 p2.forceLogout();
                 p1.sendMessage("Successfully banned " + p2.getName() + "!");
