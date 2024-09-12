@@ -1751,6 +1751,10 @@ public class PlayerCombat extends Combat {
     @Override
     public double getBonus(int bonusType) {
         int bonus = player.getEquipment().bonuses[bonusType];
+        // Moved magic e void handling here so bonus is additive
+        if (bonusType == EquipmentStats.MAGIC_DAMAGE && SetEffect.ELITE_VOID_MAGE.hasPieces(player)) {
+            bonus += 5;
+        }
         if (target != null && target.isPlayer()) return bonus;
         if (player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT) && bonusType >= 5 && bonusType <= 9) bonus = (int) (bonus * 1.25);
         return bonus;

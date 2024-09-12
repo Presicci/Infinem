@@ -192,8 +192,9 @@ public class TargetSpell extends Spell {
                 }
             }
             double percentageBonus = entity.getCombat().getBonus(EquipmentStats.MAGIC_DAMAGE);
-            if(percentageBonus > 0)
-                maxDamage *= (1D + percentageBonus * 0.01);
+            if(percentageBonus > 0) {
+                maxDamage = (int) (maxDamage * (1D + (percentageBonus * 0.01)));
+            }
             if (r != null && !saveRunes)
                 r.remove();
         }
