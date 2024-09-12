@@ -1184,7 +1184,7 @@ public class Config {
     /**
      * Agility Pyramid
      */
-    public static final Config HIDE_PYRAMID = varpbit(1556, false);
+    public static final Config HIDE_PYRAMID = varpbit(1556, true);
     public static final Config MOVING_BLOCK = varpbit(1550, false);
 
     /**
