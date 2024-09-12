@@ -1751,6 +1751,7 @@ public class PlayerCombat extends Combat {
     @Override
     public double getBonus(int bonusType) {
         int bonus = player.getEquipment().bonuses[bonusType];
+        if (target != null && target.isPlayer()) return bonus;
         if (player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT) && bonusType >= 5 && bonusType <= 9) bonus = (int) (bonus * 1.25);
         return bonus;
     }
@@ -1776,7 +1777,7 @@ public class PlayerCombat extends Combat {
                 shieldId == 22003 || shieldId == 22002) {
             absorbDamage += 0.8;
         }
-        if (player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT)) {
+        if ((target == null || target.isNpc()) && player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT)) {
             absorbDamage += 1.0;
         }
         return absorbDamage;
