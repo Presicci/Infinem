@@ -303,7 +303,7 @@ public class PlayerCombat extends Combat {
             int damage = target.hit(hit);
             if (damage > 0) {
                 target.graphics(swamp ? 1042 : 1253, 90, duration);
-                if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) aoeAttack(damage / 2, duration, 5);
+                if (target.isNpc() && player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) aoeAttack(damage / 2, duration, 5);
             } else {
                 hit.nullify();
                 target.graphics(85, 92, duration);
