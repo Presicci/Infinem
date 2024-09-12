@@ -204,7 +204,7 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_HAT, 11664, 26475)),
 
     ELITE_VOID_MAGE((player, target, hit) -> {
-        hit.boostAttack(0.45).boostDamage(0.025);
+        hit.boostAttack(0.45).boostDamage(0.05);
     }, (player, hit) -> hit.attackStyle.isMagic(),
             new Piece(Equipment.SLOT_CHEST, 13072, 26469),
             new Piece(Equipment.SLOT_LEGS, 13073, 26471),
