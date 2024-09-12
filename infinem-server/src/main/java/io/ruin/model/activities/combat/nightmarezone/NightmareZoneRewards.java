@@ -71,7 +71,7 @@ public class NightmareZoneRewards {
         int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
         if (id == Items.HERB_BOX && points < amount * resource.price)
             amount = points / resource.price;
-        if (amount > (5 - purchasedBoxes))
+        if (id == Items.HERB_BOX && amount > (5 - purchasedBoxes))
             amount = 5 - purchasedBoxes;
         if (amount <= 0) {
             player.sendMessage("You must have at least " + NumberUtils.formatNumber(resource.price) + " NMZ Points to purchase " + name);
