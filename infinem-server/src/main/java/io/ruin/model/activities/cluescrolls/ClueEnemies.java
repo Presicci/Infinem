@@ -8,6 +8,8 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
+import io.ruin.model.map.route.RouteFinder;
 import io.ruin.model.map.route.routes.ProjectileRoute;
 
 /**
@@ -35,16 +37,9 @@ public class ClueEnemies {
                 npc.deathStartListener = (DeathListener.SimpleKiller) killer -> {
                     player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, 1);
                 };
-                Bounds bounds = new Bounds(player.getPosition(), 3);
-                boolean hasSpawned = false;
-                while (!hasSpawned) {
-                    Position pos = bounds.randomPosition();
-                    if (ProjectileRoute.allow(player, pos) && !pos.equals(player.getPosition())) {
-                        npc.spawn(pos);
-                        npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
-                        hasSpawned = true;
-                    }
-                }
+                Position pos = RouteFinder.findWalkable(player.getPosition());
+                npc.spawn(pos);
+                npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
             }
         }
     }
@@ -67,16 +62,9 @@ public class ClueEnemies {
                 npc.deathStartListener = (DeathListener.SimpleKiller) killer -> {
                     player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, 1);
                 };
-                Bounds bounds = new Bounds(player.getPosition(), 3);
-                boolean hasSpawned = false;
-                while (!hasSpawned) {
-                    Position pos = bounds.randomPosition();
-                    if (ProjectileRoute.allow(player, pos) && !pos.equals(player.getPosition())) {
-                        npc.spawn(pos);
-                        npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
-                        hasSpawned = true;
-                    }
-                }
+                Position pos = RouteFinder.findWalkable(player.getPosition());
+                npc.spawn(pos);
+                npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
             }
         }
     }
@@ -114,7 +102,8 @@ public class ClueEnemies {
                         boolean hasSpawned = false;
                         while (!hasSpawned) {
                             Position pos = bounds.randomPosition();
-                            if (ProjectileRoute.allow(player, pos) && !pos.equals(player.getPosition())
+                            if (Tile.get(pos).allowStandardEntrance()
+                                    && ProjectileRoute.allow(player, pos) && !pos.equals(player.getPosition())
                                     && (positions[0] == null || !pos.equals(positions[0]))
                                     && (positions[1] == null || !pos.equals(positions[1]))) {
                                 wizard.spawn(pos);
@@ -136,16 +125,9 @@ public class ClueEnemies {
                     npc.deathStartListener = (DeathListener.SimpleKiller) killer -> {
                         player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, 3);
                     };
-                    Bounds bounds = new Bounds(player.getPosition(), 3);
-                    boolean hasSpawned = false;
-                    while (!hasSpawned) {
-                        Position pos = bounds.randomPosition();
-                        if (ProjectileRoute.allow(player, pos) && !pos.equals(player.getPosition())) {
-                            npc.spawn(pos);
-                            npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
-                            hasSpawned = true;
-                        }
-                    }
+                    Position pos = RouteFinder.findWalkable(player.getPosition());
+                    npc.spawn(pos);
+                    npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
                 }
             }
         }
