@@ -3168,6 +3168,32 @@ public class Administrator {
                 ClueEnemies.ancientOrBrassicanDig(new Clue(ClueType.MASTER, StepType.ANAGRAM), player);
                 return true;
             }
+            case "removebankitem": {
+                if (args == null || args.length < 3) {
+                    player.sendMessage("Syntax: ::removebankitem [playername] [item] [amt]");
+                    return true;
+                }
+                Player target = World.getPlayer(args[0]);
+                if (target == null) {
+                    player.sendMessage("That player doesn't exist.");
+                    return true;
+                }
+                target.getBank().remove(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+                return true;
+            }
+            case "removeitem": {
+                if (args == null || args.length < 3) {
+                    player.sendMessage("Syntax: ::removebankitem [playername] [item] [amt]");
+                    return true;
+                }
+                Player target = World.getPlayer(args[0]);
+                if (target == null) {
+                    player.sendMessage("That player doesn't exist.");
+                    return true;
+                }
+                target.getInventory().remove(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+                return true;
+            }
         }
         return false;
     }
