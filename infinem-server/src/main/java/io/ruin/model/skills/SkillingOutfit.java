@@ -12,38 +12,38 @@ import lombok.Getter;
  */
 @Getter
 public enum SkillingOutfit {
-    CONSTRUCTION(StatType.Construction, 0.005,
-            new SkillingOutfitPiece(0.004, 24872),
-            new SkillingOutfitPiece(0.008, 24874),
-            new SkillingOutfitPiece(0.006, 24876),
-            new SkillingOutfitPiece(0.002, 24878)
+    CONSTRUCTION(StatType.Construction, 0.014,
+            new SkillingOutfitPiece(0.008, 24872),
+            new SkillingOutfitPiece(0.012, 24874),
+            new SkillingOutfitPiece(0.01, 24876),
+            new SkillingOutfitPiece(0.006, 24878)
     ),
-    GRACEFUL(StatType.Agility, 0.004, // 3% total boost
+    GRACEFUL(StatType.Agility, 0.008, // 5% total boost
             // Normal, arceuus, port piscarilius, lovakengj, shayzien, hosidius, kourend, brimhaven agility, hallowed sepulchre, trailblazer
-            new SkillingOutfitPiece(0.0035, 11850, 13580, 13592, 13604, 13616, 13628, 13668, 21063, 24745, 25071),            // Hood
-            new SkillingOutfitPiece(0.004, 11852, 13582, 13594, 13606, 13618, 13630, 13670, 21066, 24748, 25074),             // Cape
-            new SkillingOutfitPiece(0.0055, 11854, 13584, 13596, 13608, 13620, 13632, 13672, 21069, 24751, 25077),            // Top
-            new SkillingOutfitPiece(0.006, 11856, 13586, 13598, 13610, 13622, 13634, 13674, 21072, 24754, 25080),             // Legs
-            new SkillingOutfitPiece(0.003, 11858, 13588, 13600, 13612, 13624, 13636, 13676, 21075, 24757, 25083),             // Gloves
-            new SkillingOutfitPiece(0.004, 11860, 13590, 13602, 13614, 13626, 13638, 13678, 21078, 24760, 25086)              // Boots
+            new SkillingOutfitPiece(0.006, 11850, 13580, 13592, 13604, 13616, 13628, 13668, 21063, 24745, 25071),            // Hood
+            new SkillingOutfitPiece(0.007, 11852, 13582, 13594, 13606, 13618, 13630, 13670, 21066, 24748, 25074),             // Cape
+            new SkillingOutfitPiece(0.01, 11854, 13584, 13596, 13608, 13620, 13632, 13672, 21069, 24751, 25077),            // Top
+            new SkillingOutfitPiece(0.008, 11856, 13586, 13598, 13610, 13622, 13634, 13674, 21072, 24754, 25080),             // Legs
+            new SkillingOutfitPiece(0.005, 11858, 13588, 13600, 13612, 13624, 13636, 13676, 21075, 24757, 25083),             // Gloves
+            new SkillingOutfitPiece(0.006, 11860, 13590, 13602, 13614, 13626, 13638, 13678, 21078, 24760, 25086)              // Boots
     ),
-    PROSPECTOR(StatType.Mining, 0.005,
-            new SkillingOutfitPiece(0.004, Items.PROSPECTOR_HELMET, 25549),
-            new SkillingOutfitPiece(0.008, Items.PROSPECTOR_JACKET, Items.VARROCK_ARMOUR_4, 25551),
-            new SkillingOutfitPiece(0.006, Items.PROSPECTOR_LEGS, 25553),
-            new SkillingOutfitPiece(0.002, Items.PROSPECTOR_BOOTS, 25555)
+    PROSPECTOR(StatType.Mining, 0.014,
+            new SkillingOutfitPiece(0.008, Items.PROSPECTOR_HELMET, 25549),
+            new SkillingOutfitPiece(0.012, Items.PROSPECTOR_JACKET, Items.VARROCK_ARMOUR_4, 25551),
+            new SkillingOutfitPiece(0.01, Items.PROSPECTOR_LEGS, 25553),
+            new SkillingOutfitPiece(0.006, Items.PROSPECTOR_BOOTS, 25555)
     ),
-    LUMBERJACK(StatType.Woodcutting, 0.005,
-            new SkillingOutfitPiece(0.004, Items.LUMBERJACK_HAT),
-            new SkillingOutfitPiece(0.008, Items.LUMBERJACK_TOP),
-            new SkillingOutfitPiece(0.006, Items.LUMBERJACK_LEGS),
-            new SkillingOutfitPiece(0.002, Items.LUMBERJACK_BOOTS)
+    LUMBERJACK(StatType.Woodcutting, 0.014,
+            new SkillingOutfitPiece(0.008, Items.LUMBERJACK_HAT),
+            new SkillingOutfitPiece(0.012, Items.LUMBERJACK_TOP),
+            new SkillingOutfitPiece(0.01, Items.LUMBERJACK_LEGS),
+            new SkillingOutfitPiece(0.006, Items.LUMBERJACK_BOOTS)
     ),
-    ANGLER(StatType.Fishing, 0.005,
-            new SkillingOutfitPiece(0.004, Items.ANGLER_HAT),
-            new SkillingOutfitPiece(0.008, Items.ANGLER_TOP),
-            new SkillingOutfitPiece(0.006, Items.ANGLER_WADERS),
-            new SkillingOutfitPiece(0.002, Items.ANGLER_BOOTS)
+    ANGLER(StatType.Fishing, 0.014,
+            new SkillingOutfitPiece(0.008, Items.ANGLER_HAT),
+            new SkillingOutfitPiece(0.012, Items.ANGLER_TOP),
+            new SkillingOutfitPiece(0.01, Items.ANGLER_WADERS),
+            new SkillingOutfitPiece(0.006, Items.ANGLER_BOOTS)
     )
     ;
 
