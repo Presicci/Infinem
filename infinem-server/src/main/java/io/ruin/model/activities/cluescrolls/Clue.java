@@ -152,7 +152,7 @@ public class Clue {
                 player.sendMessage(Color.GREEN.wrap("<shad=0>You earn " + pointAmount + " treasure trail points. You now have " + newAmt + " points."));
                 if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER)) {
                     if (Random.rollDie(100, def.clueType.relicDupeChance)) {
-                        if (def.clueType != ClueType.MASTER && Random.rollDie(10)) {
+                        if (def.clueType != ClueType.MASTER && Random.rollDie(5)) {
                             int ordinal = def.clueType.ordinal();
                             ClueType newType = ClueType.values()[ordinal + 1];
                             if (player.getInventory().hasRoomFor(newType.casketId) || !player.getBank().hasRoomFor(newType.casketId)) {
