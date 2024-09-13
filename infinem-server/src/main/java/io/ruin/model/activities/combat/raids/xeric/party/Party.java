@@ -109,6 +109,7 @@ public class Party {
 
     public static void sendRaidJournal(Player player, Party party) {
         /* set the journal interface */
+        player.putTemporaryAttribute("RAID_JOURNAL", party);
         JournalTab.setTab(player, JournalTab.Tab.RAIDING_JOURNAL);
 
         player.getPacketSender().sendClientScript(1547, "i", party.getMembers().size());

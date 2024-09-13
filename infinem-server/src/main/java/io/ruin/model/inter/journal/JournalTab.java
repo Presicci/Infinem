@@ -1,6 +1,7 @@
 package io.ruin.model.inter.journal;
 
 import io.ruin.Server;
+import io.ruin.model.activities.combat.raids.xeric.party.Party;
 import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
@@ -275,6 +276,9 @@ public class JournalTab {
             player.sendMessage("The server information tab is coming soon.");
             return;
         }
+        if (tab == Tab.SUMMARY && player.hasTemporaryAttribute("RAID_JOURNAL")) {
+            tab = Tab.RAIDING_JOURNAL;
+        }
        /* if (tab == Tab.MISCELLANEOUS) {
             index = tab.ordinal();
         } else if (tab == Tab.ACTIVITIES) {
@@ -318,6 +322,22 @@ public class JournalTab {
                 }
 
             }*/
+        }
+
+        if (tab == Tab.RAIDING_JOURNAL) {
+            Party party = player.getTemporaryAttribute("RAID_JOURNAL");
+            player.getPacketSender().sendClientScript(1547, "i", party.getMembers().size());
+            /* party members information */
+            int ind = 0;
+            if (party.getMembers().size() != 0) {
+                for (Player member : party.getMembers()) {
+                    String memberInformation = "<col=" + (member == party.getLeader() ? "ffffff" : "9f9f9f") + ">" + member.getName() + "</col>" + "|" +
+                            member.getCombat().getLevel() + "|" +
+                            member.getStats().totalLevel;
+                    player.getPacketSender().sendClientScript(1548, "is", ind++, memberInformation);
+                }
+            }
+            player.getPacketSender().sendClientScript(1553, "i", ind - 1);
         }
 
         for (TabComponent c : tab.getComponents()) {

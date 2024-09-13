@@ -709,6 +709,7 @@ public class ChambersOfXeric {
             player.getMovement().teleport(1233, 3566, 0);
         } else {
             //TODO CoX quest tab interface
+            player.removeTemporaryAttribute("RAID_JOURNAL");
             JournalTab.setTab(player, JournalTab.Tab.SUMMARY);
             player.getPacketSender().resetCamera();
             player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
