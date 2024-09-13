@@ -124,6 +124,43 @@ public class Hunter {
         });
     }
 
+    public static void resetTrap(Player player, GameObject obj) {
+        if (!isOwner(player, obj)) {
+            player.sendMessage("This isn't your trap.");
+            return;
+        }
+        Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
+        if (trap == null) {
+            destroyTrap(obj);
+            return;
+        }
+        if (trap.isBusy()) {
+            return;
+        }
+        TrapType type = trap.getTrapType();
+        player.startEvent(event -> {
+            player.lock();
+            player.animate(trap.getTrapType().getDismantleAnimation());
+            event.delay(2);
+            if (!obj.isRemoved()) {
+                // Destroy old
+                trap.getTrapType().onRemove(player, obj);
+                destroyTrap(obj);
+                // Rebuild
+                GameObject newObj = GameObject.spawn(type.getActiveObjectId(), obj.x, obj.y, player.getHeight(), 10, 0);
+                Trap newTrap = new Trap(player, type, newObj);
+                player.traps.add(newTrap);
+                type.onPlace(player, newObj);
+                addTimeoutEvent(player, newTrap);
+                if (player.getPosition().equals(newObj.getPosition())) {
+                    player.getRouteFinder().routeSelf();
+                    event.delay(1);
+                }
+            }
+            player.unlock();
+        });
+    }
+
     public static void destroyTrap(GameObject obj) {
         Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
         if (!obj.isRemoved() && !(trap.getTrapType() instanceof DeadfallTrap))
@@ -150,8 +187,8 @@ public class Hunter {
         }
         ObjectAction.register(type.getActiveObjectId(), "dismantle", Hunter::dismantleTrap);
         ObjectAction.register(type.getFailedObjectId(), "dismantle", Hunter::dismantleTrap);
-        ObjectAction.register(type.getActiveObjectId(), "reset", Hunter::dismantleTrap);
-        ObjectAction.register(type.getFailedObjectId(), "reset", Hunter::dismantleTrap);
+        ObjectAction.register(type.getActiveObjectId(), "reset", Hunter::resetTrap);
+        ObjectAction.register(type.getFailedObjectId(), "reset", Hunter::resetTrap);
         for (int id : type.getSuccessObjects())
             ObjectAction.register(id, 1, Hunter::checkTrap);
     }
