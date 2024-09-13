@@ -337,7 +337,7 @@ public class ThievableChests {
                 player.sendMessage("You steal some loot from the chest.");
                 lookupTask(player, chest, item);
                 replaceChest(object, chest.replacementId, chest.respawnTime);
-                if (chest == Chest.ROGUES_CASTLE && Random.rollDie(50)) {
+                if (chest == Chest.ROGUES_CASTLE && Random.rollDie(10)) {
                     rougesAttack(player);
                 }
             } else {
