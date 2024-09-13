@@ -21,7 +21,7 @@ public class Region {
 
     public static final int CLIENT_SIZE = 104;
 
-    public static final Region[] LOADED = new Region[Short.MAX_VALUE + 1];
+    public static final Region[] LOADED = new Region[Short.MAX_VALUE + 5000];
 
     /**
      * Separator
