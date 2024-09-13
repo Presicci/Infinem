@@ -94,7 +94,7 @@ public class AdamantDragon extends MetalDragon {
             if (target == null)
                 return;
             for (Position poss : positions) {
-                if (target == null)
+                if (target == null || poss == null)
                     continue;
                 if (target.getPosition().isWithinDistance(poss, 1)) {
                     int maxDamage = target.isPoisonImmune() ? 8 : 16;
