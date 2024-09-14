@@ -46,7 +46,7 @@ public class Pickables {
                     return;
                 }
                 player.getInventory().add(itemId, 1);
-                player.sendMessage("You pick some " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
+                player.sendFilteredMessage("You pick some " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                 player.getStats().addXp(StatType.Farming, 1, false);
                 if(Random.rollDie(6, 1))
                     remove(obj);
