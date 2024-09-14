@@ -106,6 +106,7 @@ public class PlayerLogin extends LoginRequest {
                 login(player, info, index);
             } else {
                 System.err.println("Login for " + info.name + " had return code: " + returnCode);
+                deny(Response.INVALID_LOGIN);
             }
         });
     }
