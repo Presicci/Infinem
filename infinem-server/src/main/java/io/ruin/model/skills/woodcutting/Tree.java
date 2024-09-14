@@ -22,7 +22,8 @@ public enum Tree {
     REDWOOD(19669, "redwood logs", 90, 2.73, 0.026, 380.0, 440, 199, false, 72321, PlayerCounter.CHOPPED_REDWOOD),
     ENTTRUNK(-1, "ent trunk", -1, 16.8, 0.27, 25, -1, 0, true, 317647, PlayerCounter.CHOPPED_ENTS), // Used for algo only;
     HOLLOW_TREE(3239, "bark", 45, 9, 0.033, 82.5, 60, 43, false, 214367, PlayerCounter.CHOPPED_REGULAR),
-    DRAMEN_TREE(771, "dramen branch", 36, 16.8, 0.27, 0, 0.0, 0, false, 317647, PlayerCounter.CHOPPED_REGULAR);
+    DRAMEN_TREE(771, "dramen branch", 36, 16.8, 0.27, 0, 0.0, 0, false, 317647, PlayerCounter.CHOPPED_REGULAR),
+    FOSSIL_ISLAND_VINES(-1, "vines", 1, 25, 0.54, 2, -1, 120, true, 317647, PlayerCounter.CHOPPED_REGULAR);
 
     public final int log, levelReq, respawnTime, petOdds;
     public final double experience, baseChance, levelSlope;

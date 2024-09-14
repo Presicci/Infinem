@@ -141,7 +141,7 @@ public class Woodcutting {
                             }
                             if (loot.getId() == 21626)
                                 player.getTaskManager().doLookupByUUID(352);    // Chop a Sulliuscep Cap
-                        } else if (treeData != Tree.CRYSTAL) {
+                        } else if (treeData != Tree.CRYSTAL && treeData.log != -1) {
                             if (treeData == Tree.REGULAR && KandarinHeadgear.hasEquipped(player)) amount += 1;
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
                                 if (player.getBank().hasRoomFor(treeData.log)) {
@@ -159,8 +159,10 @@ public class Woodcutting {
                             if (hatchet == Hatchet.RUNE)
                                 player.getTaskManager().doLookupByUUID(95, 1);  // Chop Some Logs With a Rune Axe
                         }
-                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHOPLOG, ItemDefinition.get(treeData.log).name);
-                        player.collectResource(new Item(treeData.log, 1));
+                        if (treeData.log != -1) {
+                            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHOPLOG, ItemDefinition.get(treeData.log).name);
+                            player.collectResource(new Item(treeData.log, 1));
+                        }
                     }
                     rollBirdNest(player, treeData);
                     rollClueNest(player, treeData);
@@ -331,6 +333,9 @@ public class Woodcutting {
         ObjectAction.register(31423, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
         ObjectAction.register(31424, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
         ObjectAction.register(31425, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
+        // Fossil island vines
+        ObjectAction.register(30646, 1, (player, obj) -> chop(Tree.FOSSIL_ISLAND_VINES, player, obj, -1));
+        ObjectAction.register(30648, 1, (player, obj) -> chop(Tree.FOSSIL_ISLAND_VINES, player, obj, -1));
     }
 
 }
