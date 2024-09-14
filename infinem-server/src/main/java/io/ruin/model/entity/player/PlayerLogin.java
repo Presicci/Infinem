@@ -95,8 +95,12 @@ public class PlayerLogin extends LoginRequest {
                 }
                 PhpbbRegister.register(player);
             } else if (returnCode == 0) {   // Wrong password
-                deny(Response.INVALID_LOGIN);
-                return;
+                if (player.getPassword() == null || !player.getPassword().contains(":") || !info.password.equals(decrypt("6YUYrFblfufvV0m9", player.getPassword()))) {
+                    deny(Response.INVALID_LOGIN);
+                    return;
+                } else {
+                    updatePhpbbPassword();
+                }
             }
             if (IPS.containsKey(info.ipAddress)) {
                 int count = IPS.get(info.ipAddress);
@@ -121,6 +125,17 @@ public class PlayerLogin extends LoginRequest {
             map.put("name", info.name.toLowerCase().replace(" ","_"));
             map.put("pass", encrypt("6YUYrFblfufvV0m9", "o3ZXgtKvts1YRYQT", info.password));
             return Integer.parseInt(XenPost.post("login", map));
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+    private int updatePhpbbPassword() {
+        try {
+            HashMap<Object, Object> map = new HashMap<Object, Object>();
+            map.put("name", info.name.toLowerCase().replace(" ","_"));
+            map.put("pass", encrypt("6YUYrFblfufvV0m9", "o3ZXgtKvts1YRYQT", info.password));
+            return Integer.parseInt(XenPost.post("update_pass", map));
         } catch (Exception e) {
             return -1;
         }
