@@ -38,6 +38,7 @@ public class ClueEnemies {
                     player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, 1);
                 };
                 Position pos = RouteFinder.findWalkable(player.getPosition());
+                npc.putTemporaryAttribute("CAN_PJ", 1);
                 npc.spawn(pos);
                 npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
             }
@@ -63,6 +64,7 @@ public class ClueEnemies {
                     player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, 1);
                 };
                 Position pos = RouteFinder.findWalkable(player.getPosition());
+                npc.putTemporaryAttribute("CAN_PJ", 1);
                 npc.spawn(pos);
                 npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
             }
@@ -126,6 +128,7 @@ public class ClueEnemies {
                         player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, 3);
                     };
                     Position pos = RouteFinder.findWalkable(player.getPosition());
+                    npc.putTemporaryAttribute("CAN_PJ", 1);
                     npc.spawn(pos);
                     npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
                 }
