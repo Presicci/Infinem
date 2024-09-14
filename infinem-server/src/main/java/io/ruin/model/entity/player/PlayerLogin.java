@@ -99,24 +99,29 @@ public class PlayerLogin extends LoginRequest {
                     deny(Response.INVALID_LOGIN);
                 } else {
                     updatePhpbbPassword();
+                    login(player, info, index);
                 }
             } else if (returnCode == 1) {
-                if (IPS.containsKey(info.ipAddress)) {
-                    int count = IPS.get(info.ipAddress);
-                    IPS.put(info.ipAddress, count + 1);
-                } else {
-                    IPS.put(info.ipAddress, 1);
-                }
-                player.setIndex(index);
-                player.init(info);
-                World.players.set(index, player);
-                LOADING[index] = false;
-                player.getPacketSender().sendLogin(info);
-                player.getChannel().pipeline().replace("decoder", "decoder", player.getDecoder());
+                login(player, info, index);
             } else {
                 System.err.println("Login for " + info.name + " had return code: " + returnCode);
             }
         });
+    }
+
+    private static void login(Player player, LoginInfo info, int index) {
+        if (IPS.containsKey(info.ipAddress)) {
+            int count = IPS.get(info.ipAddress);
+            IPS.put(info.ipAddress, count + 1);
+        } else {
+            IPS.put(info.ipAddress, 1);
+        }
+        player.setIndex(index);
+        player.init(info);
+        World.players.set(index, player);
+        LOADING[index] = false;
+        player.getPacketSender().sendLogin(info);
+        player.getChannel().pipeline().replace("decoder", "decoder", player.getDecoder());
     }
 
     private static final BigInteger AUTH_KEY = new BigInteger("104669708125332383643049895335043994044443794620533303994927");
