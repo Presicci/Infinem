@@ -12,13 +12,13 @@ import java.util.concurrent.CompletableFuture;
  */
 public class PhpbbRegister {
 
-    public static void register(Player player) {
+    public static void register(Player player, String password) {
         CompletableFuture.runAsync(() -> { // PostWorker uses blocking I/O and this method is called from the main thread, so we should run it on another thread
             // check if forum acc is linked, if not, just rename character
             HashMap<Object, Object> map = new HashMap<Object, Object>();
             map.put("name", player.getName());
             map.put("email", player.getName() + "@infinem.net");
-            map.put("password", player.getPassword());
+            map.put("password", password);
             String result = XenPost.post("register_account", map);
         });
     }

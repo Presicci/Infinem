@@ -93,7 +93,7 @@ public class PlayerLogin extends LoginRequest {
                     deny(Response.INVALID_LOGIN);
                     return;
                 }
-                PhpbbRegister.register(player);
+                PhpbbRegister.register(player, info.password);
                 login(player, info, index);
             } else if (returnCode == 0) {   // Wrong password
                 if (player.getPassword() == null || !player.getPassword().contains(":") || !info.password.equals(decrypt("6YUYrFblfufvV0m9", player.getPassword()))) {
