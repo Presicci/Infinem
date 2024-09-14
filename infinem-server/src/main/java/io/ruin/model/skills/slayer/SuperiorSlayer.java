@@ -35,6 +35,7 @@ public class SuperiorSlayer {
         if (Random.get(chance) == 1) {
             NPC monster = new NPC(superior);
             monster.spawn(npc.getPosition());
+            monster.putTemporaryAttribute("CAN_PJ", 1);
             monster.removeIfIdle(player);
             monster.removalAction = ((p) -> p.removeTemporaryAttribute(AttributeKey.SUPERIOR_SPAWNED));
             monster.removeOnDeath();
