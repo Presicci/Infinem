@@ -102,7 +102,7 @@ public class HesporiPatch extends Patch {
                 if (Random.rollDie(5000)) {
                     Pet.TANGLEROOT.unlock(player);
                 }
-                player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
+                player.getStats().addXp(StatType.Farming, 12600, true);
             });
         }
     }
