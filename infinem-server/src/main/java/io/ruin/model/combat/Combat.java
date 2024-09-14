@@ -105,8 +105,9 @@ public abstract class Combat {
     private static final Bounds EDGEVILLE_BOUNDS = new Bounds(2993, 3523, 3124, 3597, -1);
 
     public boolean allowPj(Entity attacker) {
-        return attacker == lastAttacker ||
-                !isDefending(attacker.getPosition().inBounds(EDGEVILLE_BOUNDS) ? 16 : 8);
+        return attacker == lastAttacker
+                || (lastAttacker != null && lastAttacker.isNpc() && attacker.isNpc() && attacker.npc.hasTemporaryAttribute("CAN_PJ"))
+                || !isDefending(attacker.getPosition().inBounds(EDGEVILLE_BOUNDS) ? 16 : 8);
     }
 
     /**
