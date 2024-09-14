@@ -13,8 +13,28 @@ import java.util.Arrays;
 public class Gargoyle extends NPCCombat {
 
     static {
-        for (int i : Arrays.asList(412, 413, 1543))
+        for (int i : Arrays.asList(412, 413, 1543)) {
             ItemNPCAction.register(4162, i, (player, item, npc) -> smash(player, npc, true));
+            ItemNPCAction.register(21754, i, (player, item, npc) -> throwingSmash(player, npc));
+        }
+    }
+
+    private static void throwingSmash(Player p, NPC npc) {
+        if (npc.getCombat().getTarget() != p) {
+            p.sendMessage("That gargoyle is not fighting you.");
+            return;
+        }
+        if (npc.getHp() > 9) {
+            p.sendMessage("The gargoyle is not weak enough to be smashed!");
+            return;
+        }
+        p.addEvent(event -> {
+            p.animate(1665);
+            event.delay(1);
+            ((Gargoyle)npc.getCombat()).smashed = true;
+            npc.getCombat().startDeath(null);
+            p.getInventory().remove(21754, 1);
+        });
     }
 
     private static void smash(Player p, NPC npc, boolean manual) {
