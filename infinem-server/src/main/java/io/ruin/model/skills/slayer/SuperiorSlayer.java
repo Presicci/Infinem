@@ -31,7 +31,7 @@ public class SuperiorSlayer {
         if (superior == -1 || superior == npc.getId()) {
             return;
         }
-        int chance = player.getRelicManager().hasRelic(Relic.MONSTER_HUNTER) ? 100 : 200;   // 1/200 chance of appearing by default
+        int chance = player.getRelicManager().hasRelic(Relic.MONSTER_HUNTER) ? 50 : 200;   // 1/200 chance of appearing by default
         if (Random.get(chance) == 1) {
             NPC monster = new NPC(superior);
             monster.spawn(npc.getPosition());
