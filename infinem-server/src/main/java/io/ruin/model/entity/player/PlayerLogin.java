@@ -97,23 +97,25 @@ public class PlayerLogin extends LoginRequest {
             } else if (returnCode == 0) {   // Wrong password
                 if (player.getPassword() == null || !player.getPassword().contains(":") || !info.password.equals(decrypt("6YUYrFblfufvV0m9", player.getPassword()))) {
                     deny(Response.INVALID_LOGIN);
-                    return;
                 } else {
                     updatePhpbbPassword();
                 }
-            }
-            if (IPS.containsKey(info.ipAddress)) {
-                int count = IPS.get(info.ipAddress);
-                IPS.put(info.ipAddress, count + 1);
+            } else if (returnCode == 1) {
+                if (IPS.containsKey(info.ipAddress)) {
+                    int count = IPS.get(info.ipAddress);
+                    IPS.put(info.ipAddress, count + 1);
+                } else {
+                    IPS.put(info.ipAddress, 1);
+                }
+                player.setIndex(index);
+                player.init(info);
+                World.players.set(index, player);
+                LOADING[index] = false;
+                player.getPacketSender().sendLogin(info);
+                player.getChannel().pipeline().replace("decoder", "decoder", player.getDecoder());
             } else {
-                IPS.put(info.ipAddress, 1);
+                System.err.println("Login for " + info.name + " had return code: " + returnCode);
             }
-            player.setIndex(index);
-            player.init(info);
-            World.players.set(index, player);
-            LOADING[index] = false;
-            player.getPacketSender().sendLogin(info);
-            player.getChannel().pipeline().replace("decoder", "decoder", player.getDecoder());
         });
     }
 
@@ -123,7 +125,7 @@ public class PlayerLogin extends LoginRequest {
         try {
             HashMap<Object, Object> map = new HashMap<Object, Object>();
             map.put("name", info.name.toLowerCase().replace(" ","_"));
-            map.put("pass", encrypt("6YUYrFblfufvV0m9", "o3ZXgtKvts1YRYQT", info.password));
+            map.put("pass", info.password);
             return Integer.parseInt(XenPost.post("login", map));
         } catch (Exception e) {
             return -1;
@@ -134,7 +136,7 @@ public class PlayerLogin extends LoginRequest {
         try {
             HashMap<Object, Object> map = new HashMap<Object, Object>();
             map.put("name", info.name.toLowerCase().replace(" ","_"));
-            map.put("pass", encrypt("6YUYrFblfufvV0m9", "o3ZXgtKvts1YRYQT", info.password));
+            map.put("pass", info.password);
             return Integer.parseInt(XenPost.post("update_pass", map));
         } catch (Exception e) {
             return -1;
