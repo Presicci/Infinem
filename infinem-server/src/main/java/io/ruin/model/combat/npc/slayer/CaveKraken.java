@@ -34,7 +34,7 @@ public class CaveKraken extends NPCCombat {
     }
 
     protected void preTargetDefend(Hit hit, Entity entity) {
-        hit.ignorePrayer();
+
     }
 
     private void postDamage(Hit hit) {
