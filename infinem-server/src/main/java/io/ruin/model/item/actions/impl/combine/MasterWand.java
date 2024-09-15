@@ -28,8 +28,9 @@ public class MasterWand {
             player.getInventory().remove(Items.APPRENTICE_WAND, 1);
             player.getInventory().remove(Items.TEACHER_WAND, 1);
             player.getInventory().add(Items.MASTER_WAND, 1);
-            player.getCollectionLog().collectIfNotCollected(new Item(Items.MASTER_WAND, 1));
+            player.getCollectionLog().collect(new Item(Items.MASTER_WAND, 1));
             player.dialogue(new ItemDialogue().one(Items.MASTER_WAND, "You combine the wands into a Master wand."));
+            player.getTaskManager().doLookupByUUID(236);    // Create a Master Wand
         }));
     }
 
