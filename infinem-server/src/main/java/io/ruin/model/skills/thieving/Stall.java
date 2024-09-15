@@ -195,7 +195,9 @@ public enum Stall {
                     {11734, 634},
             },
             new LootTable().addTable(1,
-                    new LootItem(442, 1, 1)                      //Silver ore
+                    new LootItem(Items.SILVER_ORE, 1, 16),
+                    new LootItem(Items.SILVER_BAR, 1, 3),
+                    new LootItem(Items.TIARA, 1, 1)
             )),
     SPICE_STALL(65, 5, 81.0, 364900, "spice stall",
             PlayerCounter.SPICE_STALL_THIEVES,
