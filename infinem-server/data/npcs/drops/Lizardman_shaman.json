@@ -7,78 +7,78 @@
     "tables": [
       {
         "name": "Pre-roll",
-        "weight": 1,
+        "weight": 3571,
         "items": [
-          { "id": 13576, "min": 1, "max": 1, "weight": 20 }   //Dragon warhammer
+          { "id": 13576, "min": 1, "max": 1, "weight": 333 }   //Dragon warhammer
         ]
       },
       {
         "name": "Weapons and armour",
-        "weight": 950,
+        "weight": 2130640,
         "items": [
-          { "id": 1147, "min": 1, "max": 1, "weight": 3600 },   //Rune med helm
-          { "id": 1399, "min": 1, "max": 1, "weight": 3400 },   //Earth battlestaff
-          { "id": 1407, "min": 1, "max": 1, "weight": 3400 },   //Mystic earth staff
-          { "id": 1347, "min": 1, "max": 1, "weight": 3200 },   //Rune warhammer
-          { "id": 1113, "min": 1, "max": 1, "weight": 2400 },   //Rune chainbody
-          { "id": 2489, "min": 1, "max": 1, "weight": 2000 }   //Red d'hide vambraces
+          { "id": 1147, "min": 1, "max": 1, "weight": 36000 },   //Rune med helm
+          { "id": 1399, "min": 1, "max": 1, "weight": 34000 },   //Earth battlestaff
+          { "id": 1407, "min": 1, "max": 1, "weight": 34000 },   //Mystic earth staff
+          { "id": 1347, "min": 1, "max": 1, "weight": 32000 },   //Rune warhammer
+          { "id": 1113, "min": 1, "max": 1, "weight": 24000 },   //Rune chainbody
+          { "id": 2489, "min": 1, "max": 1, "weight": 20000 }   //Red d'hide vambraces
         ]
       },
       {
         "name": "Runes",
-        "weight": 1055,
+        "weight": 2345156,
         "items": [
-          { "id": 556, "min": 60, "max": 80, "weight": 5000 },   //Air rune
-          { "id": 562, "min": 40, "max": 60, "weight": 5000 },   //Chaos rune
-          { "id": 560, "min": 20, "max": 30, "weight": 5000 },   //Death rune
-          { "id": 554, "min": 60, "max": 80, "weight": 5000 }   //Fire rune
+          { "id": 556, "min": 60, "max": 80, "weight": 50000 },   //Air rune
+          { "id": 562, "min": 40, "max": 60, "weight": 50000 },   //Chaos rune
+          { "id": 560, "min": 20, "max": 30, "weight": 50000 },   //Death rune
+          { "id": 554, "min": 60, "max": 80, "weight": 50000 }   //Fire rune
         ]
       },
       {
         "name": "Materials",
-        "weight": 930,
+        "weight": 2007737,
         "items": [
-          { "id": 13383, "min": 2, "max": 2, "weight": 8000 },   //Xerician fabric
-          { "id": 454, "min": 20, "max": 25, "weight": 4000 },   //Coal (noted)
-          { "id": 441, "min": 30, "max": 35, "weight": 4000 },   //Iron ore (noted)
-          { "id": 452, "min": 3, "max": 5, "weight": 1600 }   //Runite ore (noted)
+          { "id": 13383, "min": 2, "max": 2, "weight": 80000 },   //Xerician fabric
+          { "id": 454, "min": 20, "max": 25, "weight": 40000 },   //Coal (noted)
+          { "id": 441, "min": 30, "max": 35, "weight": 40000 },   //Iron ore (noted)
+          { "id": 452, "min": 3, "max": 5, "weight": 16000 }   //Runite ore (noted)
         ]
       },
       {
         "name": "Herbs",
-        "weight": 475,
+        "weight": 965320,
         "items": [
-          { "id": 214, "min": 2, "max": 3, "weight": 2810 },   //Grimy kwuarm (noted)
-          { "id": 216, "min": 2, "max": 3, "weight": 2250 },   //Grimy cadantine (noted)
-          { "id": 218, "min": 2, "max": 3, "weight": 2250 },   //Grimy dwarf weed (noted)
-          { "id": 2486, "min": 2, "max": 3, "weight": 1689 }   //Grimy lantadyme (noted)
+          { "id": 214, "min": 2, "max": 3, "weight": 28100 },   //Grimy kwuarm (noted)
+          { "id": 216, "min": 2, "max": 3, "weight": 22500 },   //Grimy cadantine (noted)
+          { "id": 218, "min": 2, "max": 3, "weight": 22500 },   //Grimy dwarf weed (noted)
+          { "id": 2486, "min": 2, "max": 3, "weight": 16900 }   //Grimy lantadyme (noted)
         ]
       },
       {
         "name": "tree-herb seed",
-        "weight": 105,
+        "weight": 214510,
         "items": [
           { "id": 0, "min": 4, "max": 4, "weight": 5 }
         ]
       },
       {
         "name": "Other",
-        "weight": 1475,
+        "weight": 3046121,
         "items": [
-          { "id": 995, "min": 100, "max": 6000, "weight": 14000 },   //Coins
-          { "id": 13391, "min": 10, "max": 14, "weight": 7600 },   //Lizardman fang
-          { "id": 7054, "min": 2, "max": 2, "weight": 6000 },   //Chilli potato
-          { "id": 13392, "min": 1, "max": 1, "weight": 400 }   //Xeric's talisman (inert)
+          { "id": 995, "min": 100, "max": 6000, "weight": 140000 },   //Coins
+          { "id": 13391, "min": 10, "max": 14, "weight": 80000 },   //Lizardman fang
+          { "id": 7054, "min": 2, "max": 2, "weight": 60000 },   //Chilli potato
+          { "id": 13392, "min": 1, "max": 1, "weight": 4000 }   //Xeric's talisman (inert)
         ]
       },
       {
         "name": "Tertiary",
-        "weight": 43,
+        "weight": 91523,
         "items": [
-          { "id": 2722, "min": 1, "max": 1, "weight": 500 },   //Clue scroll (hard)
-          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
-          { "id": 12073, "min": 1, "max": 1, "weight": 83 },   //Clue scroll (elite)
-          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+          { "id": 2722, "min": 1, "max": 1, "weight": 5000 },   //Clue scroll (hard)
+          { "id": 10976, "min": 1, "max": 1, "weight": 2500 },   //Long bone
+          { "id": 12073, "min": 1, "max": 1, "weight": 833 },   //Clue scroll (elite)
+          { "id": 10977, "min": 1, "max": 1, "weight": 200 }   //Curved bone
         ]
       }
     ]
