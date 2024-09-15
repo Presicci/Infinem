@@ -9,6 +9,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.event.Event;
@@ -85,6 +86,7 @@ public enum LogCutting {
             player.sendMessage("You need 2 logs to make a shield.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int made = 0;
             while (made++ < amount) {

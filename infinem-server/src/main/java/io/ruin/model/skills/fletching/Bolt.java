@@ -7,6 +7,7 @@ import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 public enum Bolt {
@@ -65,6 +66,7 @@ public enum Bolt {
     }
 
     private void make(Player player, Item boltItem, Item tipItem, int amount) {
+        RandomEvent.attemptTrigger(player);
         boltItem.remove(amount);
         tipItem.remove(amount);
         player.getInventory().add(tipped, amount);

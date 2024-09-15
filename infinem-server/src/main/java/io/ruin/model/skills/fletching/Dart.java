@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.skills.Tool.FEATHER;
@@ -57,6 +58,7 @@ public enum Dart {
             player.sendMessage("You haven't unlocked the ability to fletch broad bolts yet.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         int supplyCount = Math.min(tipItem.getAmount(), featherItem.getAmount());
         int toMake = Math.min(supplyCount, 10);
         tipItem.remove(toMake);

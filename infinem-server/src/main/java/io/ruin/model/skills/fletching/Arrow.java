@@ -8,6 +8,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 public enum Arrow {
@@ -42,6 +43,7 @@ public enum Arrow {
             player.sendMessage("You don't have enough inventory space to make that.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         shaft.remove(amount);
         tipItem.remove(amount);
         player.animate(8480);

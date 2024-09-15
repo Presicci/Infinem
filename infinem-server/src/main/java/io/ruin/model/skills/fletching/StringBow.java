@@ -7,6 +7,7 @@ import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 public enum StringBow {
@@ -39,6 +40,7 @@ public enum StringBow {
     }
 
     private void make(Player player, Item unstrung, Item bowString) {
+        RandomEvent.attemptTrigger(player);
         unstrung.remove();
         bowString.remove();
         player.getInventory().add(strung, 1);
