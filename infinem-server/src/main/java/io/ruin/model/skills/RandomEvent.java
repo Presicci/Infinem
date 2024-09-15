@@ -55,12 +55,14 @@ public enum RandomEvent {
                     player.sendMessage("The stranger adds a reward to your bank as he disappears...");
                 }
                 player.getCollectionLog().collect(costumePiece.getId());
+                player.getTaskManager().doLookupByUUID(1108);   // Get a Random Event
                 return;
             }
         }
         Item randomReward = rewards.rollItem();
         player.getInventory().addOrDrop(randomReward);
         player.sendMessage("The stranger hands you a reward as he disappears...");
+        player.getTaskManager().doLookupByUUID(1108);   // Get a Random Event
     }
 
     private void spawn(Player player) {
