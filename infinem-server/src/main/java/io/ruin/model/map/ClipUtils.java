@@ -617,6 +617,8 @@ public class ClipUtils {
         // Varrock south
         clearClipping(3233, 3383, 0, 3, 0);
         clearClipping(3236, 3382, 0, 2, 1);
+        // Leela's house
+        clearClipping(1785, 3594, 0, 0, 0);
     }
 
     public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {
