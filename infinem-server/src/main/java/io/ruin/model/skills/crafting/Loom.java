@@ -8,6 +8,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
@@ -37,7 +38,7 @@ public enum Loom {
                     + " to make that.");
             return;
         }
-
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int amt = amount;
             while(amt --> 0) {

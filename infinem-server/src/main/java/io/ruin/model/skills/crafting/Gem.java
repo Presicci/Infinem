@@ -9,6 +9,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.skills.Tool.CHISEL;
@@ -42,6 +43,7 @@ public enum Gem {
     }
 
     private void cut(Player player, Item uncutItem) {
+        RandomEvent.attemptTrigger(player);
         player.animate(animId);
         player.privateSound(2586);
         uncutItem.setId(cutId);

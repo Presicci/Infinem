@@ -16,6 +16,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemNPCAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Color;
 import lombok.AllArgsConstructor;
@@ -49,6 +50,7 @@ public enum DagannothHide {
                 return;
             }
         }
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int made = 0;
             while (made++ < amount) {

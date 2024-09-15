@@ -7,6 +7,7 @@ import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.skills.Tool.BALL_OF_WOOL;
@@ -39,6 +40,7 @@ public enum Amulet {
     }
 
     private void string(Player player, Item unstrung, Item wool) {
+        RandomEvent.attemptTrigger(player);
         unstrung.setId(strung);
         wool.remove();
         player.sendFilteredMessage("You put some string on your amulet.");

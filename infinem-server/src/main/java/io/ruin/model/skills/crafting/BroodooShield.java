@@ -4,6 +4,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.construction.Material;
 import io.ruin.model.stat.StatType;
@@ -34,6 +35,7 @@ public class BroodooShield {
             player.sendMessage("You need 8 nails and 2 snakeskins to make a broodoo shield.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.getInventory().remove(nail, 8);
         player.getInventory().remove(Items.SNAKESKIN, 2);
         mask.remove();

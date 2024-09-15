@@ -9,6 +9,7 @@ import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 public enum SilverCasting {
@@ -60,6 +61,7 @@ public enum SilverCasting {
         int amount = Config.IQ.get(player);
         if (!player.getStats().check(StatType.Crafting, silverCasting.levelReq, "make this"))
             return;
+        RandomEvent.attemptTrigger(player);
         if(silverCasting.gem == -1) {
             player.startEvent(event -> {
                 int amt = amount;

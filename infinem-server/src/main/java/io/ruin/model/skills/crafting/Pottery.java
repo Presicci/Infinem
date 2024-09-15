@@ -11,6 +11,7 @@ import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.actions.impl.Containers;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 public enum Pottery {
@@ -59,6 +60,7 @@ public enum Pottery {
             player.sendMessage("You need soft clay to make pottery.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int made = 0;
             while (made++ < amount) {
@@ -82,6 +84,7 @@ public enum Pottery {
     }
 
     private static void firePottery(Player player, Pottery pottery, int amount) {
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int made = amount;
             while (made-- > 0) {

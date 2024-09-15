@@ -5,6 +5,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
@@ -75,6 +76,7 @@ public enum LeatherShields{
             player.dialogue(new MessageDialogue("You need a " + armour.shieldName + " to craft " + armour.completedShieldName + "."));
             return;
         }
+        RandomEvent.attemptTrigger(player);
         makeAmount = Math.min(maxShieldAmount, makeAmount);
         makeAmount = Math.min(maxNailAmount, makeAmount);
         makeAmount = Math.min(maxLeatherAmount, makeAmount);

@@ -2,6 +2,7 @@ package io.ruin.model.skills.crafting;
 
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.skills.Tool.CHISEL;
@@ -29,6 +30,7 @@ public enum Snelm {
             ItemItemAction.register(Items.CHISEL, snelm.uncutId, (player, chisel, shell) -> {
                 if(!player.getStats().check(StatType.Crafting, 15, CHISEL, snelm.uncutId, "cut the snelm."))
                     return;
+                RandomEvent.attemptTrigger(player);
                 player.animate(1309);
                 player.getStats().addXp(StatType.Crafting, 32.5, true);
                 player.sendFilteredMessage("You cut the snelm.");

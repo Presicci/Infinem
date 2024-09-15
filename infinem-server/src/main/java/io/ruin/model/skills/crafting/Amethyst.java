@@ -5,6 +5,7 @@ import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
@@ -30,11 +31,10 @@ public enum Amethyst {
         player.closeInterfaces();
         if (!player.getStats().check(StatType.Crafting, crystal.levelReq, "make this"))
             return;
-
         int maxAmount = player.getInventory().getAmount(AMETHYST);
         if (maxAmount < amount)
             amount = maxAmount;
-
+        RandomEvent.attemptTrigger(player);
         final int amt = amount;
         player.startEvent(event -> {
             int made = 0;

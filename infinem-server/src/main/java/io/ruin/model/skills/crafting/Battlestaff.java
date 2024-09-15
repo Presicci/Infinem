@@ -6,6 +6,7 @@ import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 public enum Battlestaff {
@@ -26,6 +27,7 @@ public enum Battlestaff {
     }
 
     private void make(Player player, Item staff, Item orb) {
+        RandomEvent.attemptTrigger(player);
         staff.setId(staffId);
         orb.remove();
         player.getStats().addXp(StatType.Crafting, exp, true);

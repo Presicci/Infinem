@@ -9,6 +9,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 public enum SpinningWheel {
@@ -39,6 +40,7 @@ public enum SpinningWheel {
             player.sendMessage("You'll need " + before.getDef().name.toLowerCase() + " to make that.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int amt = amount;
             while(amt --> 0) {

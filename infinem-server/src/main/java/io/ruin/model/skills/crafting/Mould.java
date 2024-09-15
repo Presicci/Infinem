@@ -14,6 +14,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 public enum Mould {
@@ -84,6 +85,7 @@ public enum Mould {
             player.sendMessage("You haven't unlocked the ability to craft this ring.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int amt = amount;
             while(amt --> 0) {

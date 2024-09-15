@@ -8,6 +8,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public enum Glass {
             player.sendMessage("You need a molten glass to craft this item!");
             return;
         }
-
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int amt = amount;
             while(amt --> 0) {
