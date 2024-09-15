@@ -86,7 +86,7 @@ public class Woodcutting {
             player.privateSound(2277);
             return;
         }
-        RandomEvent.attemptTrigger(player);
+        RandomEvent.attemptTrigger(player, 10, 1.3D);
         player.startEvent(event -> {
             int attempts = 0;
             player.animate(hatchet.animationId);

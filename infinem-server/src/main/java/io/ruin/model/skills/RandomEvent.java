@@ -65,10 +65,10 @@ public enum RandomEvent {
         player.getTaskManager().doLookupByUUID(1108);   // Get a Random Event
     }
 
-    private void spawn(Player player) {
+    private void spawn(Player player, double durationMultiplier) {
         NPC npc = new NPC(npcId);
         player.randomEventNPC = npc;
-        player.randomEventJailDelay.delaySeconds(240);
+        player.randomEventJailDelay.delaySeconds((int) (240 * durationMultiplier));
         player.randomEventNpcShoutDelay.delaySeconds(10);
         player.sendMessage(Color.COOL_BLUE.wrap("Someone appears interested in your actions..."));
         npc.ownerId = player.getUserId();
@@ -168,10 +168,18 @@ public enum RandomEvent {
     }
 
     public static void attemptTrigger(Player player) {
+        attemptTrigger(player, 50, 1D);
+    }
+
+    public static void attemptTrigger(Player player, int chance) {
+        attemptTrigger(player, chance, 1D);
+    }
+
+    public static void attemptTrigger(Player player, int chance, double durationMultiplier) {
         if (player.randomEventNPC != null) return;    // Already spawned
-        if (!Random.rollDie(10)) return;    // 1/10
+        if (!Random.rollDie(chance)) return;
         if (!player.addTickEvent(new TickEvent(TickEventType.RANDOM_EVENT, 4000))) return;      // 40 minute cooldown
-        Random.get(RandomEvent.values()).spawn(player);
+        Random.get(RandomEvent.values()).spawn(player, durationMultiplier);
     }
 
     static {

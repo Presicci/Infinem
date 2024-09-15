@@ -74,7 +74,7 @@ public class Mining {
             player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
             return;
         }
-        RandomEvent.attemptTrigger(player);
+        RandomEvent.attemptTrigger(player, 10, 1.3D);
         final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
         player.startEvent(event -> {
             int attempts = 1;
