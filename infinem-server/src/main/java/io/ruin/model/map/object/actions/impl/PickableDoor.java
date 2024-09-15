@@ -50,7 +50,11 @@ public enum PickableDoor {
             if (insideBounds != null && insideBounds.inBounds(player)) {
                 PassableDoor.passDoor(player, obj, openDirection, 0, null, obj.id);
             } else {
-                player.dialogue(new MessageDialogue("The door is locked."));
+                if (objectId == 40178) {
+                    PassableDoor.passDoor(player, obj, openDirection, 0, null, obj.id);
+                } else {
+                    player.dialogue(new MessageDialogue("The door is locked."));
+                }
             }
         });
         ObjectAction.register(objectId, objectPos, "pick-lock", (player, obj) -> {
