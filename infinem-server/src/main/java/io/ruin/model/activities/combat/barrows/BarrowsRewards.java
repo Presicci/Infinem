@@ -2,7 +2,7 @@ package io.ruin.model.activities.combat.barrows;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.model.content.bestiary.perks.impl.ExtraDropPerk;
+import io.ruin.model.content.bestiary.perks.impl.misc.BarrowsChestPerk;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
@@ -67,7 +67,7 @@ public class BarrowsRewards {
 
         double rolls = brothersKilled;
 
-        double bestiaryChance = player.getBestiary().getBestiaryEntry("barrows brother").getPerkMultiplier(ExtraDropPerk.class, 0);
+        double bestiaryChance = player.getBestiary().getBestiaryEntry("barrows brother").getPerkMultiplier(BarrowsChestPerk.class, 0);
         if (bestiaryChance > 1) {
             int bestiaryRolls = (int) bestiaryChance;
             bestiaryChance -= bestiaryRolls;
@@ -76,7 +76,6 @@ public class BarrowsRewards {
         if (bestiaryChance > 0 && Random.get() < bestiaryChance) {
             rolls++;
         }
-        System.out.println(rolls);
 
         for(int i = 0; i < rolls; i++) {
             if(Random.get() > customBarrowsChance) {

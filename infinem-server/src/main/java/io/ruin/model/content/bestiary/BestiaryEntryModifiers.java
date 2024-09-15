@@ -26,6 +26,14 @@ public enum BestiaryEntryModifiers {
                 entry.addPerk(new LuckPerk(true));
                 entry.addPerk(new GoldPickupPerk());
             }
+    ),
+    BARROWS_BROTHERS(
+            entry -> entry.getName() != null && entry.getName().equalsIgnoreCase("barrows brother"),
+            entry -> {
+                entry.removePerk(ExtraDropPerk.class);
+                entry.removePerk(GoldPickupPerk.class);
+                entry.addPerk(new BarrowsChestPerk());
+            }
     );
 
     private final Predicate<BestiaryEntry> predicate;
