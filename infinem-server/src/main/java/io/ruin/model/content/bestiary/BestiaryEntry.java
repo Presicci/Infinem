@@ -17,23 +17,43 @@ public class BestiaryEntry {
     private final int killCount;
     private final Player player;
 
-    private static List<BestiaryPerk> perks;
+    @Getter private List<BestiaryPerk> perks = new ArrayList<>();
 
     public BestiaryEntry(Player player, String name, int killCount) {
         this.player = player;
         this.name = name;
         this.killCount = killCount;
         boolean isBoss = BestiaryDef.isBoss(name);
-        perks = Arrays.asList(
-                new DamagePerk(isBoss),
-                new AccuracyPerk(isBoss),
-                new ExtraDropPerk(isBoss),
-                new NotedDropPerk(isBoss),
-                new ReducedEnemyAccuracyPerk(isBoss),
-                new RespawnPerk(isBoss),
-                new LuckPerk(isBoss),
-                new GoldPickupPerk()
-        );
+        perks.add(new DamagePerk(isBoss));
+        perks.add(new AccuracyPerk(isBoss));
+        perks.add(new ExtraDropPerk(isBoss));
+        perks.add(new NotedDropPerk(isBoss));
+        perks.add(new ReducedEnemyAccuracyPerk(isBoss));
+        perks.add(new RespawnPerk(isBoss));
+        perks.add(new LuckPerk(isBoss));
+        perks.add(new GoldPickupPerk());
+        for (BestiaryEntryModifiers modifiers : BestiaryEntryModifiers.values()) {
+            if (modifiers.getPredicate().test(this)) modifiers.getConsumer().accept(this);
+        }
+    }
+
+    public void clearPerks() {
+        perks = new ArrayList<>();
+    }
+
+    public void addPerk(BestiaryPerk perk) {
+        perks.add(perk);
+    }
+
+    public void removePerk(Class<? extends BestiaryPerk> clazz) {
+        BestiaryPerk perkToRemove = null;
+        for (BestiaryPerk perk : perks) {
+            if (clazz.isInstance(perk)) {
+                perkToRemove = perk;
+                break;
+            }
+        }
+        if (perkToRemove != null) perks.remove(perkToRemove);
     }
 
     public double getPerkMultiplier(Class<?> perkType, double defaultMulti) {
