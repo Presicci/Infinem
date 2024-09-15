@@ -2,6 +2,7 @@ package io.ruin.model.skills.magic.spells.lunar;
 
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.stat.StatType;
@@ -36,6 +37,7 @@ public class SuperglassMake extends Spell {
             }
             p.startEvent(event -> {
                 p.lock();
+                RandomEvent.attemptTrigger(p);
                 p.animate(4413);
                 p.graphics(729, 96, 0);
                 AtomicInteger count = new AtomicInteger();
