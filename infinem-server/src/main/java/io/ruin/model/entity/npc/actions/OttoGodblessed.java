@@ -1,10 +1,14 @@
 package io.ruin.model.entity.npc.actions;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemNPCAction;
 
@@ -38,11 +42,29 @@ public class OttoGodblessed {
         }
     }
 
+    private static void dialogue(Player player, NPC npc) {
+        player.dialogue(
+                new NPCDialogue(npc, "What can I help ya with?"),
+                new OptionsDialogue(
+                        new Option((player.hasAttribute(AttributeKey.BREAK_VIALS) ? "Disable" : "Enable") + " vial smashing", () -> {
+                            if (player.hasAttribute(AttributeKey.BREAK_VIALS)) {
+                                player.removeAttribute(AttributeKey.BREAK_VIALS);
+                            } else {
+                                player.putAttribute(AttributeKey.BREAK_VIALS, 1);
+                            }
+                        }),
+                        new Option("View shop", () -> npc.openShop(player))
+                )
+        );
+    }
+
     static {
         /*
          * Zamorakian spear/hasta conversion
          */
         for(int id : new int[]{11824, 11889})
             ItemNPCAction.register(id, 2914, OttoGodblessed::convertZamorakianWeapon);
+
+        NPCAction.register(2914, "talk-to", OttoGodblessed::dialogue);
     }
 }
