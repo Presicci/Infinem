@@ -129,7 +129,7 @@ public enum AreaReward {
     SEERS_TELEPORT(TaskArea.KANDARIN, AreaTaskTier.HARD, "Can switch the destination of Camelot Teleport to Seers' Village"),
     COIN_POUCHES_2(TaskArea.KANDARIN, AreaTaskTier.HARD, "Ability to hold a maximum of 84 coin pouches"),
     // 150 free noted pure essence every day from Wizard Cromperty
-    // Thormac will enchant battlestaves for 30,000 coins each (down from 40,000)
+    THORMAC_DISCOUNT_1(TaskArea.KANDARIN, AreaTaskTier.HARD, "Thormac will enchant battlestaves for 30,000 coins each (down from 40,000)"),
     // 15% more marks of grace from Seers' Village Rooftop Course
     // 10% increased chance to save a harvest life from the Catherby herb patch
     KANDARIN_HEADGEAR_4(TaskArea.KANDARIN, AreaTaskTier.ELITE, "Unlocks the Kandarin Headgear 4",
@@ -138,7 +138,7 @@ public enum AreaReward {
             "Unlimited teleports to the Ardougne farm patch"),
     COIN_POUCHES_3(TaskArea.KANDARIN, AreaTaskTier.ELITE, "Ability to hold a maximum of 140 coin pouches"),
     // 250 free noted pure essence every day from Wizard Cromperty
-    // Thormac will enchant battlestaves for 20,000 coins each (down from 30,000)
+    THORMAC_DISCOUNT_2(TaskArea.KANDARIN, AreaTaskTier.ELITE, "Thormac will enchant battlestaves for 20,000 coins each (down from 30,000)"),
     // 15% increased chance to save a harvest life from the Catherby herb patch
     // 25% more marks of grace from the Ardougne Rooftop Course
     // Bert will automatically deliver 84 buckets of sand to your bank each day you log in. (Ultimate ironmen are ineligible)
