@@ -27,6 +27,7 @@ import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.route.RouteFinder;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.firemaking.Burning;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -85,6 +86,7 @@ public class Woodcutting {
             player.privateSound(2277);
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int attempts = 0;
             player.animate(hatchet.animationId);
