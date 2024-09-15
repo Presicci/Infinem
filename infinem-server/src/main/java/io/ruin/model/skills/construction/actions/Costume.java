@@ -8,6 +8,8 @@ import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public enum Costume {
     //fancy dress box
@@ -735,5 +737,21 @@ public enum Costume {
                 || this == SPOTTED_CAPE
                 || this == SPOTTIER_CAPE
                 || (ordinal() >= 197 && ordinal() <= 220);
+    }
+
+    public static Costume getCostumeByItemId(int itemId) {
+        return COSTUMES_BY_ITEM_ID.getOrDefault(itemId, null);
+    }
+
+    private static final Map<Integer, Costume> COSTUMES_BY_ITEM_ID = new HashMap<>();
+
+    static {
+        for (Costume costume : values()) {
+            for (Item[] piece : costume.pieces) {
+                for (Item item : piece) {
+                    COSTUMES_BY_ITEM_ID.put(item.getId(), costume);
+                }
+            }
+        }
     }
 }
