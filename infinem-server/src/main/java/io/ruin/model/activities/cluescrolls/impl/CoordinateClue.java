@@ -177,7 +177,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.HARD, new Position(3305, 3692, 0)); // Wilderness. West of eastern green dragon.
         registerDig(ClueType.HARD, new Position(3055, 3696, 0)); // Wilderness. Bandit Camp.
         registerDig(ClueType.HARD, new Position(3302, 3696, 0)); // Wilderness. West of eastern green dragon.
-        registerDig(ClueType.HARD, new Position(1479, 3696, 0)); // Lizardman Canyon.
+        registerDig(ClueType.HARD, new Position(1479, 3699, 0)); // Lizardman Canyon.
         registerDig(ClueType.HARD, new Position(2341, 3697, 0)); // North-east of the Piscatoris Fishing Colony bank.
         registerDig(ClueType.HARD, new Position(2712, 3732, 0)); // North-east of Rellekka.
         registerDig(ClueType.HARD, new Position(2970, 3749, 0)); // Wilderness. Forgotten Cemetery.
