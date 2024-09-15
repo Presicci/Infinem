@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
 import io.ruin.model.item.Item;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.stat.StatType;
@@ -24,6 +25,7 @@ public class SpinFlaxSpell extends Spell {
             p.startEvent(event -> {
                 List<Item> flax = items;
                 p.lock();
+                RandomEvent.attemptTrigger(p);
                 p.animate(4413);
                 p.graphics(748, 96, 0);
                 if (flax.size() > 5) { // Limit of 5
