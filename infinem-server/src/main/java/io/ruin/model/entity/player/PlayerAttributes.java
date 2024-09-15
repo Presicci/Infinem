@@ -7,7 +7,6 @@ import io.ruin.content.activities.tournament.Tournament;
 import io.ruin.content.activities.tournament.TournamentFightPair;
 import io.ruin.content.objects.Cannon;
 import io.ruin.model.activities.ActivityTimer;
-import io.ruin.model.activities.combat.barrows.BarrowsBrother;
 import io.ruin.model.activities.cluescrolls.ClueSave;
 import io.ruin.model.activities.combat.fightcaves.FightCaves;
 import io.ruin.model.activities.combat.inferno.Inferno;
@@ -43,8 +42,6 @@ import io.ruin.model.skills.hunter.Birdhouse;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.magic.spells.lunar.TeleGroup;
 import io.ruin.model.skills.magic.spells.modern.Teleother;
-import io.ruin.model.skills.smithing.SmithBar;
-import io.ruin.model.stat.StatType;
 import io.ruin.utility.TickDelay;
 import io.ruin.utility.TimedList;
 import lombok.Getter;
@@ -620,10 +617,10 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int refundedCredits = 0;
 
 
-    public NPC botPreventionNPC;
-    public boolean dismissBotPreventionNPC;
-    public TickDelay botPreventionJailDelay = new TickDelay();
-    public TickDelay botPreventionNpcShoutDelay = new TickDelay();
+    public NPC randomEventNPC;
+    public boolean dismissRandomEvent;
+    public TickDelay randomEventJailDelay = new TickDelay();
+    public TickDelay randomEventNpcShoutDelay = new TickDelay();
 
     @Expose public int claimedVotes;
 

@@ -21,9 +21,9 @@ public class BotPrevention {
 
     public static void spawn(Player player) {
         NPC npc = new NPC(PILLORY_GUARD);
-        player.botPreventionNPC = npc;
-        player.botPreventionJailDelay.delaySeconds(120);
-        player.botPreventionNpcShoutDelay.delaySeconds(30);
+        player.randomEventNPC = npc;
+        player.randomEventJailDelay.delaySeconds(120);
+        player.randomEventNpcShoutDelay.delaySeconds(30);
         player.sendMessage(Color.COOL_BLUE.wrap("A guard has suspicion you've been stealing!"));
         npc.ownerId = player.getUserId();
         npc.spawn(player.getAbsX(), player.getAbsY(), player.getHeight());
@@ -36,17 +36,17 @@ public class BotPrevention {
                     e.delay(1);
                     continue;
                 }
-                if(!player.botPreventionNpcShoutDelay.isDelayed()) {
-                    int seconds = player.botPreventionJailDelay.remaining() / 10 * 6;
+                if(!player.randomEventNpcShoutDelay.isDelayed()) {
+                    int seconds = player.randomEventJailDelay.remaining() / 10 * 6;
                     if(seconds <= 40)
                         npc.forceText("This is your last chance " + player.getName() + "!");
                         else
                         npc.forceText("Hey " + player.getName() + ", I'm talking to you!");
-                    player.botPreventionNpcShoutDelay.delaySeconds(30);
+                    player.randomEventNpcShoutDelay.delaySeconds(30);
                     e.delay(1);
                     continue;
                 }
-                if(!player.botPreventionJailDelay.isDelayed()) {
+                if(!player.randomEventJailDelay.isDelayed()) {
                     npc.forceText("You're coming with me, " + player.getName() + ".");
                     npc.lock();
                     player.lock();
@@ -62,7 +62,7 @@ public class BotPrevention {
                     player.unlock();
                     break;
                 }
-                if(player.dismissBotPreventionNPC) {
+                if(player.dismissRandomEvent) {
                     npc.lock();
                     npc.animate(863);
                     resetBlock(player);
@@ -76,7 +76,7 @@ public class BotPrevention {
                     break;
                 }
                 if (!npc.getPosition().isWithinDistance(player.getPosition(), 14)) {
-                    player.dismissBotPreventionNPC = true;
+                    player.dismissRandomEvent = true;
                     e.delay(1);
                     continue;
                 }
@@ -114,14 +114,14 @@ public class BotPrevention {
     }
 
     private static void resetBlock(Player player) {
-        player.botPreventionNPC = null;
-        player.dismissBotPreventionNPC = false;
-        player.botPreventionJailDelay.reset();
-        player.botPreventionNpcShoutDelay.reset();
+        player.randomEventNPC = null;
+        player.dismissRandomEvent = false;
+        player.randomEventJailDelay.reset();
+        player.randomEventNpcShoutDelay.reset();
     }
 
     public static boolean isBlocked(Player player) {
-        return player.botPreventionNPC != null;
+        return player.randomEventNPC != null;
     }
 
     static {
@@ -134,8 +134,8 @@ public class BotPrevention {
                         new PlayerDialogue("That doesn't sound like something I'd do!"),
                         new NPCDialogue(PILLORY_GUARD, "Very well.. carry on."),
                         new ActionDialogue(() -> {
-                            if(player.botPreventionNPC != null)
-                                player.dismissBotPreventionNPC = true;
+                            if(player.randomEventNPC != null)
+                                player.dismissRandomEvent = true;
                         }));
             }
         });
@@ -144,7 +144,7 @@ public class BotPrevention {
                 player.dialogue(new NPCDialogue(PILLORY_GUARD, "You're no use to me, " + player.getName() + "."));
                 return;
             }
-            player.dismissBotPreventionNPC = true;
+            player.dismissRandomEvent = true;
         }));
     }
 }
