@@ -4,6 +4,7 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.handlers.TabCombat;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.actions.ItemAction;
@@ -42,6 +43,7 @@ public class ArcaneGrimoire {
             return;
         }
         Config.MAGIC_BOOK.set(player, player.getAttributeIntOrZero("LAST_SPELLBOOK"));
+        TabCombat.updateAutocast(player, false);
     }
 
     private static void checkLast(Player player) {
