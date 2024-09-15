@@ -1474,7 +1474,7 @@ public class PlayerCombat extends Combat {
             player.specTeleportDelay.delaySeconds(5);
         }
 
-        boolean ignoresSpecialDrain = (target.isNpc() && target.npc != null
+        boolean ignoresSpecialDrain = (target != null && target.isNpc() && target.npc != null
                 && Arrays.stream(MaxHitDummy.dummyIds).anyMatch(i -> i == target.npc.getId()));
         if (!ignoresSpecialDrain) {
             Config.SPECIAL_ENERGY.set(player, energy - (amount * 10)); //drain special energy
