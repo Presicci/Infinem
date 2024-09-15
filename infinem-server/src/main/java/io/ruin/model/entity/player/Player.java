@@ -1769,6 +1769,28 @@ public class Player extends PlayerAttributes {
         }
     }
 
+    public boolean hasItem(int itemId, boolean ignoreAttributes) {
+        if (getInventory().contains(itemId, 1, false, ignoreAttributes)) {
+            return true;
+        } else if (getEquipment().contains(itemId, 1, false, ignoreAttributes)) {
+            return true;
+        } else if (getBank().contains(itemId, 1, false, ignoreAttributes)) {
+            return true;
+        } else if (getLootingBag().contains(itemId, 1, false, ignoreAttributes)) {
+            return true;
+        } else if (getSeedVault().contains(itemId, 1, false, ignoreAttributes)) {
+            return true;
+        } else if (getDeathStorage().contains(itemId, 1, false, ignoreAttributes)) {
+            return true;
+        } else if (getPrivateRaidStorage().contains(itemId, 1, false, ignoreAttributes)) {
+            return true;
+        } else if (house.isStoredInCostumeRoom(itemId)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Finds an item in any containers connected to the player.
      * @return ItemContainerG<? extends Item>,
