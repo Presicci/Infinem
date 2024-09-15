@@ -426,6 +426,13 @@ public enum SmithBar {
         player.openInterface(InterfaceType.MAIN, Interface.SMITHING);
     }
 
+    public static SmithBar getDataByBar(int barId) {
+        for (SmithBar bar : values()) {
+            if (bar.itemId == barId) return bar;
+        }
+        return null;
+    }
+
     private static SmithBar findBestBar(Player player) {
         int smithingLevel = player.getStats().get(StatType.Smithing).currentLevel;
         SmithBar bestBar = null;

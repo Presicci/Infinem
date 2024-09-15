@@ -7,6 +7,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
@@ -41,6 +42,7 @@ public class SmithItem {
         }
         if (!player.getStats().check(StatType.Smithing, level, "make that"))
             return;
+        RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             int made = 0;
             while (true) {

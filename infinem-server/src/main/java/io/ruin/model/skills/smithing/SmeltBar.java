@@ -21,6 +21,7 @@ import io.ruin.model.item.actions.impl.storage.CoalBag;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.crafting.SilverCasting;
 import io.ruin.model.skills.mining.Rock;
 import io.ruin.model.stat.StatType;
@@ -120,6 +121,7 @@ public class SmeltBar {
         player.closeInterface(InterfaceType.CHATBOX);
         if (!player.getStats().check(StatType.Smithing, bar.smeltLevel, "smelt that bar"))
             return;
+        RandomEvent.attemptTrigger(player);
         boolean useCoalBag = player.getInventory().hasId(CoalBag.COAL_BAG) || player.getInventory().hasId(CoalBag.OPEN_COAL_BAG);
         player.startEvent(event -> {
             int remaining = smeltAmount;
@@ -209,6 +211,7 @@ public class SmeltBar {
                 player.sendMessage("You need an ammo mould to make cannonballs.");
                 return;
             }
+            RandomEvent.attemptTrigger(player);
             p.startEvent(e -> {
                 int amt = amount;
                 while (amt-- > 0) {
