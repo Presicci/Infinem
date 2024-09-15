@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Baba Yaga",
+    "id": 3837,
+    "x": 2452,
+    "y": 4647,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  }
+]
