@@ -1943,7 +1943,7 @@ public class Player extends PlayerAttributes {
         animationUpdate.set(id, 0);
     }
 
-    @Getter @Expose private final List<TickEvent> tickingEvents = new ArrayList<>();
+    @Getter @Expose private List<TickEvent> tickingEvents = new ArrayList<>();
 
     private void tickEvents() {
         tickingEvents.removeIf(event -> event.tick() <= 0);

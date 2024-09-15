@@ -1,5 +1,6 @@
 package io.ruin.process.tickevent;
 
+import com.google.gson.annotations.Expose;
 import lombok.Getter;
 
 /**
@@ -8,8 +9,8 @@ import lombok.Getter;
  */
 public class TickEvent {
 
-    @Getter private final TickEventType type;
-    private int durationTicks;
+    @Expose @Getter private final TickEventType type;
+    @Expose private int durationTicks;
     private final TickEventRunnable[] onTick;
     private final Runnable onComplete;
 
