@@ -10,6 +10,12 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    OGRE_ENCLAVE_ENTRANCE(2804, new Position(2504, 3037), new Position(2588, 9408, 0), 2796),
+    OGRE_ENCLAVE_EXIT(2814, new Position(2589, 9408), new Position(2506, 3039, 0)),
+    OGRE_ENCLAVE_EXIT_2(2815, new Position(2588, 9408), new Position(2506, 3039, 0)),
+
+    OGRE_ENCLAVE_NORTH_EXIT(2813, new Position(2598, 9468, 0), new Position(2524, 3070, 0), 2796),
+
     JEFF_HOUSE_UP(11789, new Position(3237, 3447), new Position(3239, 3447, 1)),
     JEFF_HOUSE_DOWN(11793, new Position(3237, 3447, 1), new Position(3238, 3446, 0)),
 
