@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
 import io.ruin.model.item.Item;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
@@ -59,6 +60,7 @@ public class StringJewellery extends Spell {
                                 p.sendMessage("You don't have enough runes to cast this spell.");
                                 break;
                             }
+                            RandomEvent.attemptTrigger(p);
                             item.setId(amulet.strung);
                             p.animate(4412);
                             p.graphics(746, 96, 0);
