@@ -501,7 +501,7 @@ public class EmoteClue extends Clue {
                 Arrays.asList(TabEmote.DANCE, TabEmote.BOW), new Bounds(3485, 3479, 3501, 3498, 0),
                 Arrays.asList(Items.MITHRIL_PLATELEGS, Items.IRON_2H_SWORD, Items.GREEN_ROBE_TOP), ClueType.MEDIUM, Config.STASH_UNITS[45], 28987),
         LUMBRIDGE_SWAMP_CAVE("Dance in the dark caves beneath Lumbridge Swamp. Blow a kiss before you talk to me. Equip an air staff, Bronze full helm and an amulet of power.",
-                Arrays.asList(TabEmote.CRY, TabEmote.JUMP_FOR_JOY), new Bounds(3165, 9567, 3175, 9574, 0),
+                Arrays.asList(TabEmote.DANCE, TabEmote.BLOW_KISS), new Bounds(3165, 9567, 3175, 9574, 0),
                 Arrays.asList(Items.STAFF_OF_AIR, Items.BRONZE_FULL_HELM, Items.AMULET_OF_POWER), ClueType.MEDIUM, Config.STASH_UNITS[46], 29000),
         TZHAAR_SWORD_SHOP("Jump for joy in the TzHaar sword shop. Shrug before you talk to me. Equip a Steel longsword, Blue D'hide body and blue mystic gloves.",
                 Arrays.asList(TabEmote.JUMP_FOR_JOY, TabEmote.SHRUG), new Bounds(2475, 5144, 2480, 5148, 0),
