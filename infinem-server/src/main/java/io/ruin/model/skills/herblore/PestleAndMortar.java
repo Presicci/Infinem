@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.Tool;
 
 public enum PestleAndMortar {
@@ -43,6 +44,7 @@ public enum PestleAndMortar {
                 for (Item resource : player.getInventory().getItems()) {
                     if (resource == null || resource.getId() != item.before)
                         continue;
+                    RandomEvent.attemptTrigger(player);
                     if (item == LAVA_SCALE) {
                         int amountOfShards = Random.get(3, 6);
                         resource.remove();

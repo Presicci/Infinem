@@ -5,6 +5,7 @@ import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
@@ -28,6 +29,7 @@ public enum HerbTar {
     }
 
     private void mix(Player player, Item primary, Item secondary) {
+        RandomEvent.attemptTrigger(player);
         primary.remove(1);
         secondary.remove(1);
         player.getInventory().add(result, 15);

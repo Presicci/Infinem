@@ -10,6 +10,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.impl.skillcapes.HerbloreSkillCape;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.skills.Tool.VIAL_OF_WATER;
@@ -62,6 +63,7 @@ public enum Herb {
             ItemAction.registerInventory(herb.grimyId, "clean", (player, item) -> {
                 if (!player.getStats().check(StatType.Herblore, herb.lvlReq, item.getId(), "clean this"))
                     return;
+                RandomEvent.attemptTrigger(player);
                 if (player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     int herbId = item.getId();
                     for (Item invItem : player.getInventory().getItems()) { // Clean all herbs
@@ -95,6 +97,7 @@ public enum Herb {
                     Item vialItem = player.getInventory().findItem(VIAL_OF_WATER);
                     if (vialItem == null)
                         return;
+                    RandomEvent.attemptTrigger(player);
                     herb.mix(player, herbItem, vialItem);
                     if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                         event.delay(2);

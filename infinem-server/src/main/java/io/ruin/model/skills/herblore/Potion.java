@@ -11,6 +11,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.impl.jewellery.AmuletOfChemistry;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import java.util.*;
@@ -163,6 +164,7 @@ public enum Potion {
         if (FOUR_DOSE.contains(this) || AmuletOfChemistry.test(player)) {
             potion = vialIds[3];
         }
+        RandomEvent.attemptTrigger(player);
         player.getInventory().add(potion, 1);
         player.getStats().addXp(StatType.Herblore, xp, true);
         String name = ItemDefinition.get(potion).name.toLowerCase();

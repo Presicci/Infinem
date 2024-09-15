@@ -9,6 +9,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -61,6 +62,7 @@ public enum BarbarianMix {
     }
 
     private void mixAction(Player player, Item basePotion, Item fish) {
+        RandomEvent.attemptTrigger(player);
         fish.remove();
         basePotion.setId(vialIds[1]);
         player.getStats().addXp(StatType.Herblore, experience, true);
