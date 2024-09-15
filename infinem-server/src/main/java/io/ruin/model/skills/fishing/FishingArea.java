@@ -752,9 +752,9 @@ public enum FishingArea {
     private static void fishingSpotTimer() {
         World.startEvent(e -> {
             while (true) {
-                e.delay(Random.get(350, 450));   // 3.5 - 4.5 minute delay
+                e.delay(Random.get(350, 400));   // 3.5 - 4.0 minute delay
                 for (NPC npc : spots) {
-                    if (npc.fishingArea != null && Random.rollDie(2, 1)) {
+                    if (npc.fishingArea != null) {
                         npc.fishingArea.move(npc);
                     }
                 }
