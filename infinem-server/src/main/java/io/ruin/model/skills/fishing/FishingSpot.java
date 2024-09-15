@@ -17,6 +17,7 @@ import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.MapArea;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.cooking.Food;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -111,7 +112,7 @@ public class FishingSpot {
             player.sendMessage("You need a Hunter level of at least 33 to fish with a barb-tail harpoon.");
             return;
         }
-
+        RandomEvent.attemptTrigger(player);
         Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
         if (player.getInventory().contains(tool.id, 1, false, true) || (weapon != null && weapon.getId() == tool.id)) {
             FishingCatch lowestCatch = regularCatches[0];

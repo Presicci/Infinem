@@ -1,6 +1,7 @@
 package io.ruin.model.skills.fishing.lakemolch;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
@@ -114,6 +115,7 @@ public enum ArielFishing {
             }
             npc.lock();
             Position npcPos = npc.getPosition();
+            RandomEvent.attemptTrigger(player);
             player.lock();
             World.startEvent(worldEvent -> {
                 player.faceTemp(npc);
