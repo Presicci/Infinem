@@ -169,20 +169,21 @@ public enum RandomEvent {
                 if(npc.ownerId != player.getUserId()) {
                     player.dialogue(new NPCDialogue(re.npcId, "I'm not interested in talking with you, " + player.getName() + "."));
                 } else {
-                    player.dialogue(new NPCDialogue(re.npcId, re.randomOverhead(player)),
+                    player.dialogue(
+                            new NPCDialogue(re.npcId, re.randomOverhead(player)).keepOpenWhenHit(),
                             new OptionsDialogue(
                                     new Option("What is it?",
-                                            new PlayerDialogue("What is it?"),
-                                            new NPCDialogue(npc, "Well actually, I've forgotten... Carry on."),
+                                            new PlayerDialogue("What is it?").keepOpenWhenHit(),
+                                            new NPCDialogue(npc, "Well actually, I've forgotten... Carry on.").keepOpenWhenHit(),
                                             new ActionDialogue(() -> {
                                                 if(player.randomEventNPC != null) {
                                                     player.dismissRandomEvent = true;
                                                     re.reward(player);
                                                 }
-                                            })
+                                            }).keepOpenWhenHit()
                                     ),
                                     new Option("*Ignore him* (bad idea)")
-                            )
+                            ).keepOpenWhenHit()
                     );
                 }
             });
