@@ -1,0 +1,281 @@
+[
+  {
+    "name": "Blue dragon",
+    "id": 265,
+    "x": 2591,
+    "y": 9432,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Blue dragon",
+    "id": 266,
+    "x": 2603,
+    "y": 9441,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Blue dragon",
+    "id": 265,
+    "x": 2611,
+    "y": 9458,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Blue dragon",
+    "id": 265,
+    "x": 2592,
+    "y": 9461,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Blue dragon",
+    "id": 265,
+    "x": 2580,
+    "y": 9449,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Blue dragon",
+    "id": 265,
+    "x": 2569,
+    "y": 9439,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Greater demon",
+    "id": 2025,
+    "x": 2583,
+    "y": 9459,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2025,
+    "x": 2616,
+    "y": 9427,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2026,
+    "x": 2616,
+    "y": 9423,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2027,
+    "x": 2613,
+    "y": 9426,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2028,
+    "x": 2612,
+    "y": 9422,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogre chieftain",
+    "id": 4362,
+    "x": 2616,
+    "y": 9447,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ogre chieftain",
+    "id": 4362,
+    "x": 2615,
+    "y": 9452,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogre chieftain",
+    "id": 4362,
+    "x": 2570,
+    "y": 9441,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogre chieftain",
+    "id": 4362,
+    "x": 2575,
+    "y": 9437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogre chieftain",
+    "id": 4362,
+    "x": 2569,
+    "y": 9431,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogre chieftain",
+    "id": 4362,
+    "x": 2579,
+    "y": 9430,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant bat",
+    "id": 2834,
+    "x": 2607,
+    "y": 9421,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Giant bat",
+    "id": 2834,
+    "x": 2612,
+    "y": 9417,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Giant bat",
+    "id": 2834,
+    "x": 2617,
+    "y": 9417,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Giant bat",
+    "id": 2834,
+    "x": 2619,
+    "y": 9422,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Skeleton",
+    "id": 70,
+    "x": 2586,
+    "y": 9437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Skeleton",
+    "id": 70,
+    "x": 2574,
+    "y": 9436,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Skeleton",
+    "id": 70,
+    "x": 2577,
+    "y": 9461,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 2577,
+    "y": 9459,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 2570,
+    "y": 9443,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 2584,
+    "y": 9437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 2589,
+    "y": 9427,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 2597,
+    "y": 9435,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 2610,
+    "y": 9438,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 2611,
+    "y": 9458,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  }
+]
