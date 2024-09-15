@@ -17,6 +17,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.ground.GroundItemAction;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
@@ -127,7 +128,7 @@ public enum Burning {
             player.sendMessage("You can't light a fire here.");
             return;
         }
-
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int attempts = 0;
 
