@@ -75,28 +75,28 @@ public class DwarfCannon extends OwnedObject {
     @Getter @Setter private CannonDirection cannonDirection = CannonDirection.NORTH;
 
     private static final Bounds[] AREA_RESTRICTIONS = {
-        new Bounds(1600, 9984, 1727, 10111, -1), //catacomes of kourend
-        new Bounds(1728, 5312, 1791, 5375, -1), //ancient cavern
-        new Bounds(3281, 3158, 3304, 3178, -1), //alkarid palace
-        new Bounds(2368, 3072, 2431, 3135, -1), //castle wars
-        new Bounds(2950, 9800, 3071, 9855, -1), //dwarven mine
-        new Bounds(2994, 9698, 3071, 9799, -1), //dwarven mine
-        new Bounds(3008, 6016, 3071, 6079, -1), //zalcano
-        new Bounds(3405, 3579, 3452, 3530, -1), //slayer tower
-        new Bounds(3229, 10151, 3257, 10187, -1), //revenant caves
-        new Bounds(3245, 10136, 3259, 10154, -1), //revenant caves
-        new Bounds(2838, 3534, 2876, 3556, -1), //warriors guild
-        new Bounds(2432, 10112, 2559, 10175, -1), //waterbirth dungeon
-        new Bounds(2240, 9984, 2303, 10047, -1), //kraken cove
-        new Bounds(3200, 10304, 3263, 10367, -1), //scorpia
-        new Bounds(3520, 9664, 3583, 9727, -1), //barrows crypt
-        new Bounds(1990, 3526, 2112, 3648, -1), //Home
-        new Bounds(2628, 2627, 2680, 2683, -1), //Pest control
-        new Bounds(1247, 10144, 1411, 10296, -1), //Karluum dungeon
-        new Bounds(3326, 3202, 3392, 3266, -1), //Duel arena
-        new Bounds(3349, 3267, 3392, 3325, -1), //Duel arena
-        new Bounds(3642, 3204, 3683, 3234, -1), //Ver sinhaza
-        new Bounds(3195, 3189, 3265, 3298, 0),  // Home
+            new Bounds(1600, 9984, 1727, 10111, -1), //catacomes of kourend
+            new Bounds(1728, 5312, 1791, 5375, -1), //ancient cavern
+            new Bounds(3281, 3158, 3304, 3178, -1), //alkarid palace
+            new Bounds(2368, 3072, 2431, 3135, -1), //castle wars
+            new Bounds(2950, 9800, 3071, 9855, -1), //dwarven mine
+            new Bounds(2994, 9698, 3071, 9799, -1), //dwarven mine
+            new Bounds(3008, 6016, 3071, 6079, -1), //zalcano
+            new Bounds(3405, 3579, 3452, 3530, -1), //slayer tower
+            new Bounds(3229, 10151, 3257, 10187, -1), //revenant caves
+            new Bounds(3245, 10136, 3259, 10154, -1), //revenant caves
+            new Bounds(2838, 3534, 2876, 3556, -1), //warriors guild
+            new Bounds(2432, 10112, 2559, 10175, -1), //waterbirth dungeon
+            new Bounds(2240, 9984, 2303, 10047, -1), //kraken cove
+            new Bounds(3200, 10304, 3263, 10367, -1), //scorpia
+            new Bounds(3520, 9664, 3583, 9727, -1), //barrows crypt
+            new Bounds(1990, 3526, 2112, 3648, -1), //Home
+            new Bounds(2628, 2627, 2680, 2683, -1), //Pest control
+            new Bounds(1247, 10144, 1411, 10296, -1), //Karluum dungeon
+            new Bounds(3326, 3202, 3392, 3266, -1), //Duel arena
+            new Bounds(3349, 3267, 3392, 3325, -1), //Duel arena
+            new Bounds(3642, 3204, 3683, 3234, -1), //Ver sinhaza
+            new Bounds(3195, 3189, 3265, 3298, 0),  // Home
     };
 
     public DwarfCannon(Player owner, int id) {
