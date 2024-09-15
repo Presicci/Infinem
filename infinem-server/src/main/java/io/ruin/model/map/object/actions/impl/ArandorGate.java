@@ -1,5 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
+import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Position;
@@ -45,7 +46,7 @@ public class ArandorGate {
         // West gate
         ObjectAction.register(3945, "enter", (player, obj) -> {
             boolean north = player.getAbsY() < obj.y;
-            player.startEvent(e -> {
+            World.startEvent(e -> {
                 player.lock();
                 if (player.getAbsX() != 2385) {
                     player.stepAbs(2385, player.getAbsY(), StepType.FORCE_WALK);
