@@ -23,6 +23,9 @@ public class DoubleDoor {
         // Camelot castle
         ObjectAction.register(26081, 2757, 3482, 0, "open", (player, obj) -> passThroughLongitudinal(player, obj, 26081, 26082, new Position(2757, 3482), new Position(2758, 3482), true));
         ObjectAction.register(26082, 2758, 3482, 0, "open", (player, obj) -> passThroughLongitudinal(player, obj, 26081, 26082, new Position(2757, 3482), new Position(2758, 3482), true));
+        // Gu'Tanoth gate
+        ObjectAction.register(2788, 2504, 3062, 0, "open", (player, obj) -> passThroughLateral(player, obj, 2789, 2788, new Position(2504, 3063), new Position(2504, 3062), false));
+        ObjectAction.register(2789, 2504, 3063, 0, "open", (player, obj) -> passThroughLateral(player, obj, 2789, 2788, new Position(2504, 3063), new Position(2504, 3062), false));
     }
 
     /**
