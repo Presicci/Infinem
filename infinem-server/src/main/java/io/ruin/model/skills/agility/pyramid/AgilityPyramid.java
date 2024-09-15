@@ -4,6 +4,7 @@ import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.utility.Color;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
@@ -72,6 +73,7 @@ public class AgilityPyramid {
     private static void jumpGap(Player player, GameObject object) {
         if (!player.getStats().check(StatType.Agility, 30, "jump this"))
             return;
+        RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             player.lock();
             e.delay(1);
@@ -105,6 +107,7 @@ public class AgilityPyramid {
     private static void crossGap(Player player, GameObject object) {
         if (!player.getStats().check(StatType.Agility, 30, "cross this"))
             return;
+        RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             player.lock();
             Position startPos = new Position(
@@ -164,6 +167,7 @@ public class AgilityPyramid {
     private static void crossPlank(Player player, GameObject object) {
         if (!player.getStats().check(StatType.Agility, 30, "cross this"))
             return;
+        RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             player.lock();
             player.stepAbs(object.getPosition().getX(), object.getPosition().getY(), StepType.FORCE_WALK);
@@ -204,6 +208,7 @@ public class AgilityPyramid {
     private static void crossLedge(Player player, GameObject object) {
         if (!player.getStats().check(StatType.Agility, 30, "attempt this"))
             return;
+        RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             Position startPos = new Position(
                     object.getFaceDirection() == Direction.EAST ? object.getPosition().getX() : object.getFaceDirection() == Direction.WEST ? object.getPosition().getX() + 1: player.getPosition().getX(),
@@ -262,6 +267,7 @@ public class AgilityPyramid {
     private static void climbLowWall(Player player, GameObject object) {
         if (!player.getStats().check(StatType.Agility, 30, "climb-over"))
             return;
+        RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             player.lock();
             player.privateSound(2453, 1, 30);

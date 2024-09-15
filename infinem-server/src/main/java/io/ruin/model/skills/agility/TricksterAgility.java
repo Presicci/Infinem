@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.network.incoming.handlers.ObjectActionHandler;
 
 /**
@@ -15,6 +16,7 @@ public class TricksterAgility {
     public static final String KEY = "TRICKSTER_AGIL";
 
     public static void attemptNext(Player player, GameObject object) {
+        RandomEvent.attemptTrigger(player);
         if (!player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return;
         if (player.incrementTemporaryNumericAttribute(KEY, 1) >= 4) return;
         ObjectActionHandler.handleAction(player, 1, object.id, object.getPosition().getX(), object.getPosition().getY(), 0);
