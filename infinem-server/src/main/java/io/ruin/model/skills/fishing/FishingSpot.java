@@ -112,7 +112,7 @@ public class FishingSpot {
             player.sendMessage("You need a Hunter level of at least 33 to fish with a barb-tail harpoon.");
             return;
         }
-        RandomEvent.attemptTrigger(player);
+        RandomEvent.attemptTrigger(player, 5);
         Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
         if (player.getInventory().contains(tool.id, 1, false, true) || (weapon != null && weapon.getId() == tool.id)) {
             FishingCatch lowestCatch = regularCatches[0];
