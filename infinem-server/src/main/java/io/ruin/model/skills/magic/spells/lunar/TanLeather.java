@@ -5,6 +5,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 
@@ -66,6 +67,7 @@ public class TanLeather extends Spell {
                 p.startEvent(event -> {
                     List<Item> leather = items;
                     p.lock();
+                    RandomEvent.attemptTrigger(p);
                     p.animate(4413);
                     p.graphics(746, 96, 0); // TODO proper gfx
                     p.publicSound(2879);
