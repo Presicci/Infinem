@@ -10,6 +10,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    BOBS_HOUSE_STAIRS_UP(11797, new Position(3239, 3489), new Position(3242, 3489, 1)),
+    BOBS_HOUSE_STAIRS_DOWN(11799, new Position(3240, 3489, 1), new Position(3238, 3489)),
+
     OGRE_ENCLAVE_ENTRANCE(2804, new Position(2504, 3037), new Position(2588, 9408, 0), 2796),
     OGRE_ENCLAVE_EXIT(2814, new Position(2589, 9408), new Position(2506, 3039, 0)),
     OGRE_ENCLAVE_EXIT_2(2815, new Position(2588, 9408), new Position(2506, 3039, 0)),
