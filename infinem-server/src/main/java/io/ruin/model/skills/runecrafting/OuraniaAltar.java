@@ -10,6 +10,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Utils;
 import lombok.extern.slf4j.Slf4j;
@@ -49,6 +50,7 @@ public class OuraniaAltar {
     //Need to take another look at a way to do this better.
     static {
         ObjectAction.register(29631, "Craft-rune", (player, obj) -> {
+            RandomEvent.attemptTrigger(player);
             player.startEvent(event -> {
                 List<Altars> altars = Arrays.stream(Altars.values()).filter(a -> a != Altars.WRATH).collect(Collectors.toList());
                 int essenceCount = 0, fromPouches = 0;

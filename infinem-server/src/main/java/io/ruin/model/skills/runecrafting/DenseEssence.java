@@ -11,6 +11,7 @@ import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
@@ -34,6 +35,7 @@ public class DenseEssence {
                 player.dialogue(new ItemDialogue().one(DARK_ESSENCE_FRAGMENTS, "Your pile of fragments cannot grow any larger."));
                 return;
             }
+            RandomEvent.attemptTrigger(player);
             player.animate(7202);
             player.getInventory().remove(13446, 1);
             if (addFragments)
@@ -66,6 +68,7 @@ public class DenseEssence {
                 player.sendMessage("You don't have any dense essence blocks to venerate.");
                 return;
             }
+            RandomEvent.attemptTrigger(player);
             for (Item denseBlock : denseBlocks)
                 denseBlock.setId(13446);
             int blockCount = denseBlocks.size();

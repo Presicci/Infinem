@@ -18,6 +18,7 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
@@ -123,6 +124,7 @@ public enum Altars {
     private void runeConversation(Player player, Altars altar) {
         if (!player.getStats().check(StatType.Runecrafting, altar.levelRequirement, "infuse these runes"))
             return;
+        RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             int essenceCount = 0, fromPouches = 0;
             if (altar.essence == Essence.DARK) {
@@ -227,9 +229,8 @@ public enum Altars {
             player.sendMessage("You need pure essence to bind " + runeCombination.runeNameLowercase + ".");
             return;
         }
-
+        RandomEvent.attemptTrigger(player);
         int amountToCombine = Math.min(requiredRunes.getAmount(), pureEssence.count());
-
         player.startEvent(event -> {
             player.lock();
             requiredRunes.remove(amountToCombine);
@@ -276,7 +277,7 @@ public enum Altars {
             player.sendMessage("You need a Tiara to bind here.");
             return;
         }
-
+        RandomEvent.attemptTrigger(player);
         talisman.remove();
         tiara.setId(altar.tiara);
         player.getStats().addXp(StatType.Runecrafting, 25.0, true);
