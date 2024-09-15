@@ -28,6 +28,7 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.MapArea;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.woodcutting.Hatchet;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -73,6 +74,7 @@ public class Mining {
             player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
         player.startEvent(event -> {
             int attempts = 1;

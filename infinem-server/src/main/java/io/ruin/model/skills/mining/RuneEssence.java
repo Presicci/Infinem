@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -35,6 +36,7 @@ public class RuneEssence {
             player.privateSound(2277);
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             player.sendMessage("You swing your pick at the rock.");
             int loops = 0;
