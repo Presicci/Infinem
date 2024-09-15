@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells.modern;
 
 import io.ruin.model.item.Item;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.smithing.SmithBar;
@@ -62,7 +63,7 @@ public class SuperheatItem extends Spell {
             if (bar == SmithBar.GOLD && player.getEquipment().hasId(776)) {
                 smeltXp *= 2.5;
             }
-
+            RandomEvent.attemptTrigger(player);
             player.getInventory().add(bar.itemId, 1);
             player.getStats().addXp(StatType.Smithing, smeltXp, true);
             player.sendMessage("You superheat the ore, smelting it.");
