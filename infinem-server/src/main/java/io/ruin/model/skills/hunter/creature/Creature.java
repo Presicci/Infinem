@@ -13,6 +13,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.route.routes.ProjectileRoute;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.hunter.creature.impl.Bird;
 import io.ruin.model.skills.hunter.creature.impl.Chinchompa;
 import io.ruin.model.skills.hunter.traps.Trap;
@@ -227,6 +228,7 @@ public abstract class Creature {
             player.lock();
             player.animate(trap.getTrapType().getDismantleAnimation());
             event.delay(2);
+            RandomEvent.attemptTrigger(player);
             addLoot(player);
             player.getStats().addXp(StatType.Hunter, getCatchXP(), true);
             player.getTaskManager().doLookupByCategoryAndTrigger(

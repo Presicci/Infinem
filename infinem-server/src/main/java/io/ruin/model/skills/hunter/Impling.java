@@ -17,6 +17,7 @@ import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.route.routes.TargetRoute;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -113,7 +114,7 @@ public enum Impling {
                 return;
             }
             if (isCatch(player, impling)) {
-
+                RandomEvent.attemptTrigger(player);
                 if (barehands) {
                     ImplingJar jar = ImplingJar.forJarId(impling.jarId);
                     Item loot;
@@ -135,7 +136,6 @@ public enum Impling {
                 } else {
                     impJar.setId(impling.jarId);
                 }
-
                 despawnImpling(npc);
                 player.getStats().addXp(StatType.Hunter, player.getPosition().inBounds(PURO_PURO) ? impling.puroExp : impling.worldExp, true);
                 PlayerCounter.IMPLINGS_CAUGHT.increment(player, 1);

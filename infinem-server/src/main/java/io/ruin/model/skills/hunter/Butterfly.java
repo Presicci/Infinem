@@ -12,6 +12,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.ButterflyNet;
 import io.ruin.model.map.route.routes.TargetRoute;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
@@ -94,6 +95,7 @@ public enum Butterfly {
                 return;
             }
             if (isCatch(player, butterfly)) {
+                RandomEvent.attemptTrigger(player);
                 jar.setId(butterfly.jarId);
                 removeButterfly(npc);
                 player.getStats().addXp(StatType.Hunter, butterfly.experience, true);

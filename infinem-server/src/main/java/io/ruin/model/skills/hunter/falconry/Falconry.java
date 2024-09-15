@@ -17,6 +17,7 @@ import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.*;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.route.routes.ProjectileRoute;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.agility.shortcut.JumpShortcut;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.stat.StatType;
@@ -141,6 +142,7 @@ public class Falconry {
     private static void retrieve(Player player, NPC npc, FalconryCatch kebbit) {
         player.startEvent(e -> {
             player.lock();
+            RandomEvent.attemptTrigger(player);
             player.getPacketSender().resetHintIcon(false);
             player.animate(5212);
             e.delay(1);
