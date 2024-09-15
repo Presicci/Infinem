@@ -102,7 +102,7 @@ public enum RandomEvent {
                     e.delay(3);
                     World.sendGraphics(86, 60, 0, npc.getPosition());
                     World.sendGraphics(86, 60, 0, player.getPosition());
-                    Punishment.jail(player, npc, 250);
+                    Punishment.jail(player, npc, 100);
                     e.delay(1);
                     npc.remove();
                     player.unlock();
