@@ -39,7 +39,7 @@ public class Bryophyta extends NPCCombat {
         growthlings = new ArrayList<NPC>();
         npc.setIgnoreMulti(true);
         npc.hitListener = new HitListener().postDefend(hit -> {
-            if (growthlings.size() > 0 && hit.type != HitType.POISON && hit.type != HitType.VENOM) {
+            if (!growthlings.isEmpty() && hit.type != HitType.POISON && hit.type != HitType.VENOM) {
                 hit.damage = 0;
                 //if (hit.attacker.player != null) {
                 //    hit.attacker.player.sendMessage("<col=" + Color.RED + ">Bryophyta is immune while her growthlings are alive!");
@@ -55,7 +55,7 @@ public class Bryophyta extends NPCCombat {
 
     @Override
     public boolean attack() {
-        if ((growthlings.size() == 0 && Random.rollDie(5, 1) && growthlingCooldown <= 0) || growthlingCooldown <= -5 ) {
+        if (growthlings.isEmpty() && Random.rollDie(5, 1) && growthlingCooldown <= 0) {
             summonGrowthlings();
         } else {
             --growthlingCooldown;
@@ -79,7 +79,7 @@ public class Bryophyta extends NPCCombat {
     }
 
     private void summonGrowthlings() {
-        growthlingCooldown = 4;
+        growthlingCooldown = 7;
 
         Position pos;
         for (int index = 0; index < 3; index++) {
