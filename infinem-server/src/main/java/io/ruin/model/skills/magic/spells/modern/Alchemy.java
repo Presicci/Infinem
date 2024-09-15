@@ -2,6 +2,7 @@ package io.ruin.model.skills.magic.spells.modern;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.model.content.tasksystem.areas.diaryitems.ExplorersRing;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -137,6 +138,7 @@ public class Alchemy extends Spell {
 
 
     private static void alch(Player player, Item item, RuneRemoval runes, Level level, int value) {
+        RandomEvent.attemptTrigger(player);
         if (item.getDef().stackable)
             item.remove(1);
         else
