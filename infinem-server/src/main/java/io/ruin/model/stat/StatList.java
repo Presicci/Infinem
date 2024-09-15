@@ -193,6 +193,8 @@ public class StatList {
         stat.experience = newXp;
         stat.updated = true;
 
+        player.putTemporaryAttribute("LAST_XP", System.currentTimeMillis());
+
         int oldLevel = stat.fixedLevel;
         int newLevel = stat.fixedLevel = Stat.levelForXp(stat.experience);
         int gain = newLevel - oldLevel;

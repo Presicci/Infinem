@@ -68,7 +68,7 @@ public enum RandomEvent {
     private void spawn(Player player) {
         NPC npc = new NPC(npcId);
         player.randomEventNPC = npc;
-        player.randomEventJailDelay.delaySeconds(120);
+        player.randomEventJailDelay.delaySeconds(240);
         player.randomEventNpcShoutDelay.delaySeconds(10);
         player.sendMessage(Color.COOL_BLUE.wrap("Someone appears interested in your actions..."));
         npc.ownerId = player.getUserId();
@@ -93,19 +93,30 @@ public enum RandomEvent {
                     continue;
                 }
                 if (!player.randomEventJailDelay.isDelayed()) {
-                    npc.forceText("Guards! Lets go, " + player.getName() + ".");
-                    npc.lock();
-                    player.lock();
-                    npc.animate(864);
-                    player.face(npc);
-                    resetBlock(player);
-                    e.delay(3);
-                    World.sendGraphics(86, 60, 0, npc.getPosition());
-                    World.sendGraphics(86, 60, 0, player.getPosition());
-                    Punishment.jail(player, npc, 100);
-                    e.delay(1);
-                    npc.remove();
-                    player.unlock();
+                    if (System.currentTimeMillis() - player.getTemporaryAttributeIntOrZero("LAST_XP") < 60000) {
+                        npc.forceText("Guards! Lets go, " + player.getName() + ".");
+                        npc.lock();
+                        player.lock();
+                        npc.animate(864);
+                        player.face(npc);
+                        resetBlock(player);
+                        e.delay(3);
+                        World.sendGraphics(86, 60, 0, npc.getPosition());
+                        World.sendGraphics(86, 60, 0, player.getPosition());
+                        Punishment.jail(player, npc, 100);
+                        e.delay(1);
+                        npc.remove();
+                        player.unlock();
+                    } else {
+                        npc.forceText("Aghh, nevermind.");
+                        npc.lock();
+                        npc.animate(864);
+                        resetBlock(player);
+                        e.delay(3);
+                        World.sendGraphics(86, 60, 0, npc.getPosition());
+                        e.delay(1);
+                        npc.remove();
+                    }
                     break;
                 }
                 if (player.dismissRandomEvent) {
@@ -170,20 +181,20 @@ public enum RandomEvent {
                     player.dialogue(new NPCDialogue(re.npcId, "I'm not interested in talking with you, " + player.getName() + "."));
                 } else {
                     player.dialogue(
-                            new NPCDialogue(re.npcId, re.randomOverhead(player)).keepOpenWhenHit(),
+                            new NPCDialogue(re.npcId, re.randomOverhead(player)).keepOpenWhenHit().setOnClose(p -> player.putTemporaryAttribute("LAST_XP", System.currentTimeMillis())),
                             new OptionsDialogue(
                                     new Option("What is it?",
-                                            new PlayerDialogue("What is it?").keepOpenWhenHit(),
+                                            new PlayerDialogue("What is it?").keepOpenWhenHit().setOnClose(p -> player.putTemporaryAttribute("LAST_XP", System.currentTimeMillis())),
                                             new NPCDialogue(npc, "Well actually, I've forgotten... Carry on.").keepOpenWhenHit(),
                                             new ActionDialogue(() -> {
                                                 if(player.randomEventNPC != null) {
                                                     player.dismissRandomEvent = true;
                                                     re.reward(player);
                                                 }
-                                            }).keepOpenWhenHit()
+                                            }).keepOpenWhenHit().setOnClose(p -> player.putTemporaryAttribute("LAST_XP", System.currentTimeMillis()))
                                     ),
                                     new Option("*Ignore him* (bad idea)")
-                            ).keepOpenWhenHit()
+                            ).keepOpenWhenHit().setOnClose(p -> player.putTemporaryAttribute("LAST_XP", System.currentTimeMillis()))
                     );
                 }
             });
