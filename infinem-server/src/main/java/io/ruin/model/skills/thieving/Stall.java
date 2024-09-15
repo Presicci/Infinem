@@ -171,7 +171,7 @@ public enum Stall {
                     new LootItem(359, 1, 1, 3),                      //Raw tuna
                     new LootItem(377, 1, 1, 2)                      //Raw lobster
             )),
-    WIRE_MACHINE(44, 5, 45.0, 364900, "wire machine",
+    WIRE_MACHINE(44, 2, 45.0, 364900, "wire machine",
             PlayerCounter.WIRE_MACHINE_THIEVES,
             new int[][] {
                     {22730, 22731},
