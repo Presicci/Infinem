@@ -11,6 +11,8 @@ import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 
+import java.awt.*;
+import java.awt.datatransfer.DataFlavor;
 import java.util.ArrayList;
 
 /**
@@ -30,6 +32,23 @@ public class CoordinateClue extends Clue {
     public void open(Player player) {
         player.openInterface(InterfaceType.MAIN, 203);
         player.getPacketSender().sendString(203, 2, clue);
+    }
+
+    public static void showClueForPos(Player player) {
+        int x = player.getPosition().getX();
+        int y = player.getPosition().getY();
+        int obsX = 2440;
+        int obsY = 3161;
+        boolean north = y > obsY;
+        boolean east = x > obsX;
+        int degX = east ? (x - obsX) / 32 : (obsX - x) / 32;
+        int degY = north ? (y - obsY) / 32 : (obsY - y) / 32;
+        int minX = (int) (east ? Math.floor(((x - obsX) % 32) * 1.875) : Math.floor(((obsX - x) % 32) * 1.875));
+        int minY = (int) (north ? Math.floor(((y - obsY) % 32) * 1.875) : Math.floor(((obsY - y) % 32) * 1.875));
+        String clue = twoDigitInt(degY) + " degrees " + twoDigitInt(minY) + " minutes " + (north ? "north" : "south") + "<br>"
+                + twoDigitInt(degX) + " degrees " + twoDigitInt(minX) + " minutes " + (east ? "east" : "west");
+        player.getPacketSender().sendString(203, 2, clue);
+        player.openInterface(InterfaceType.MAIN, 203);
     }
 
     private static void registerDig(ClueType type, Position position) {

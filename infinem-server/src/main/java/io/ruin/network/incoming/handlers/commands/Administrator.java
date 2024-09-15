@@ -31,6 +31,7 @@ import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueEnemies;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.cluescrolls.StepType;
+import io.ruin.model.activities.cluescrolls.impl.CoordinateClue;
 import io.ruin.model.activities.combat.inferno.Inferno;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;
@@ -397,6 +398,11 @@ public class Administrator {
                             .toString());
                     player.openInterface(InterfaceType.MAIN, 203);
                 } catch (Exception e) {}
+                return true;
+            }
+
+            case "testcoordclue": {
+                CoordinateClue.showClueForPos(player);
                 return true;
             }
 
