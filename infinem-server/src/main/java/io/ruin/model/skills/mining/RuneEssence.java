@@ -75,7 +75,7 @@ public class RuneEssence {
                     counter.increment(player, amount);
                     player.getStats().addXp(StatType.Mining, 5 * amount, true);
                 }
-                if (loops++ > 150) {
+                if (loops++ > 50) {
                     break;
                 }
             }
