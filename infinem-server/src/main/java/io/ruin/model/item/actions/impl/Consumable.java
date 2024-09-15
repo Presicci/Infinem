@@ -31,6 +31,7 @@ public class Consumable {
      */
 
     static {
+        registerEat(Items.CHOCOLATE_BAR, 3, "chocolate bar");
         registerEat(Items.CHOCICE, 7, "chocice");
         registerEat(Items.COOKED_OOMLIE_WRAP, 14, p -> p.sendFilteredMessage("You eat the oomlie meat; it tastes very gamy."));
         registerEat(Items.CHOPPED_TOMATO, 2, "chopped tomato");
