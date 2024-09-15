@@ -158,7 +158,7 @@ public enum RandomEvent {
 
     public static void attemptTrigger(Player player) {
         if (player.randomEventNPC != null) return;    // Already spawned
-        if (!Random.rollDie(50)) return;    // 1/50
+        if (!Random.rollDie(10)) return;    // 1/10
         if (!player.addTickEvent(new TickEvent(TickEventType.RANDOM_EVENT, 3000))) return;      // 30 minute cooldown
         Random.get(RandomEvent.values()).spawn(player);
     }
