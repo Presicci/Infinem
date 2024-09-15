@@ -15,6 +15,7 @@ import io.ruin.model.map.Bounds;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.BotPrevention;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Color;
 
@@ -302,9 +303,10 @@ public enum Stall {
             return;
 
         if (BotPrevention.isBlocked(player)) {
-            player.sendMessage("You can't steal from a stall while a guard is watching you.");
+            player.sendMessage("You can't steal from a stall while someone is watching you.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
 
         player.startEvent(event -> {
             player.sendFilteredMessage("You attempt to steal from the " + stall.name + "...");

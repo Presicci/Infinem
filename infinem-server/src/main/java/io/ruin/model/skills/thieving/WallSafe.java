@@ -12,6 +12,7 @@ import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.cache.ItemID.COINS_995;
@@ -33,6 +34,7 @@ public class WallSafe {
             player.sendMessage("You don't have enough inventory space to do that.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             if (!player.isAt(wallSafe.x, wallSafe.y))
                 event.delay(1);

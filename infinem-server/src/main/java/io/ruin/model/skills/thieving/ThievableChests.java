@@ -14,6 +14,7 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 /**
@@ -315,6 +316,7 @@ public class ThievableChests {
             player.sendMessage("You need a thieving level of " + chest.level + " to disarm this trap.");
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             player.lock(LockType.FULL_REGULAR_DAMAGE);
             player.sendMessage("You begin to open the chest...");

@@ -23,6 +23,7 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.MapArea;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.skills.BotPrevention;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.woodcutting.Tree;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Color;
@@ -481,6 +482,7 @@ public enum PickPocket {
         if (!checkAll(player, pickpocket)) {
             return;
         }
+        RandomEvent.attemptTrigger(player);
         player.lock(LockType.FULL_REGULAR_DAMAGE);
         player.addEvent(event -> {
             if (successful(player, pickpocket)) {
