@@ -113,7 +113,6 @@ public class Mining {
                 }
 
                 Item gem = null;
-                boolean multiple = false;
                 if (canAttempt(attempts, pickaxe) && Random.get(100) <= chance(player, getEffectiveLevel(player), rockData)) {
                     int amount = (isSalt(rockData)) ? getSaltAmount(player) : 1;
                     if (rockData != Rock.GEM_ROCK && Random.rollDie(wearingGlory(player) ? 86 : 256)) {  // 1/256 chance to replace ore with a gem
@@ -135,7 +134,6 @@ public class Mining {
                         if (Random.rollPercent(getExtraOreChance(player, rockData))) {
                             amount *= 2;
                             player.sendFilteredMessage("You manage to mine an additional ore.");
-                            multiple = true;
                         }
                         if (rockData.ordinal() <= Rock.ADAMANT.ordinal())
                             CelestialRing.removeChargeIfEquipped(player);
@@ -183,7 +181,7 @@ public class Mining {
                         player.getTaskManager().doLookupByUUID(24, 1);  // Obtain a Gem While Mining
                         continue;
                     } else {
-                        player.getStats().addXp(StatType.Mining, (rockyOutcrop ? rockData.multiExp[random] : rockData.experience * (multiple ? 2 : 1)) * amount, true);
+                        player.getStats().addXp(StatType.Mining, (rockyOutcrop ? rockData.multiExp[random] : rockData.experience * amount), true);
                     }
                     if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
                         player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
