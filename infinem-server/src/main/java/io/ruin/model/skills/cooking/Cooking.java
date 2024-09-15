@@ -15,6 +15,7 @@ import io.ruin.model.item.actions.impl.skillcapes.CookingSkillCape;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
@@ -73,6 +74,7 @@ public class Cooking {
     private static void startCooking(Player player, Food food, GameObject obj, int amountToCook, int anim, boolean fire) {
         if (!player.getStats().check(StatType.Cooking, food.levelRequirement, "cook " + food.descriptiveName))
             return;
+        RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             int amount = amountToCook;
             while (amount-- > 0) {
