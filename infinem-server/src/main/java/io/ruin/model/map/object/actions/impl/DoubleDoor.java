@@ -20,6 +20,9 @@ public class DoubleDoor {
         // Dwarf Cannon Camp
         ObjectAction.register(15605, 2568, 3456, 0, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 15604, 15605, new Position(2567, 3456), new Position(2568, 3456), false)));
         ObjectAction.register(15604, 2567, 3456, 0, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 15604, 15605, new Position(2567, 3456), new Position(2568, 3456), false)));
+        // Camelot castle
+        ObjectAction.register(26081, 2757, 3482, 0, "open", (player, obj) -> passThroughLongitudinal(player, obj, 26081, 26082, new Position(2757, 3482), new Position(2758, 3482), true));
+        ObjectAction.register(26082, 2758, 3482, 0, "open", (player, obj) -> passThroughLongitudinal(player, obj, 26081, 26082, new Position(2757, 3482), new Position(2758, 3482), true));
     }
 
     /**
