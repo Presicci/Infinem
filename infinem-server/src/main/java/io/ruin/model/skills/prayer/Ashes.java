@@ -4,6 +4,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,6 +31,7 @@ public enum Ashes {
         player.startEvent(event -> {
             if (player.boneBuryDelay.isDelayed())
                 return;
+            RandomEvent.attemptTrigger(player);
             bone.remove();
             player.animate(2295);
             player.getStats().addXp(StatType.Prayer, experience, true);

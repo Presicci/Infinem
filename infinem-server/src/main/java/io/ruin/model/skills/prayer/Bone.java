@@ -12,6 +12,7 @@ import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.object.actions.impl.PyreSite;
 import io.ruin.model.map.object.actions.impl.dungeons.KourendCatacombs;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
@@ -80,6 +81,7 @@ public enum Bone {
         player.startEvent(event -> {
             if (player.boneBuryDelay.isDelayed())
                 return;
+            RandomEvent.attemptTrigger(player);
             ItemDefinition neckDef = player.getEquipment().getDef(Equipment.SLOT_AMULET);
             if (neckDef != null && neckDef.id == DRAGONBONE_NECKLACE) {
                 boneNecklaceEffect(player, bone);
