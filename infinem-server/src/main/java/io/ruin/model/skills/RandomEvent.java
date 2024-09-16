@@ -56,6 +56,14 @@ public enum RandomEvent {
                     new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
             )
     ),
+    MIME(
+            6750,
+            new String[]{"[player name]!", "Hello? [player name]?", "Talk to me, [player name]!", "[player name]? Are you there?", "I'd like to talk to you, [player name]!"},
+            new Item[]{new Item(3057), new Item(3058), new Item(3059), new Item(3060), new Item(3061)},
+            new LootTable().addTable(1,
+                    new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
+            )
+    )
     ;
 
     private final int npcId;
