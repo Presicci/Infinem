@@ -16,6 +16,7 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.loot.RareDropTable;
 import io.ruin.model.map.object.actions.impl.PyreSite;
 import io.ruin.model.map.object.actions.impl.chests.*;
+import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.construction.mahoganyhomes.MahoganySupplyCrate;
 import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.thieving.PickPocket;
@@ -152,6 +153,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Supply Crate (Mahogany Homes)", MahoganySupplyCrate.LOOT_TABLE),
             new DropViewerEntry("Gem Rock", Mining.GEM_ROCK_TABLE),
             new DropViewerEntry("Muddy Chest", MuddyChest.LOOT),
-            new DropViewerEntry("Chewed Bones", PyreSite.CHEWED_BONES_LOOT)
+            new DropViewerEntry("Chewed Bones", PyreSite.CHEWED_BONES_LOOT),
+            new DropViewerEntry("Mystery Box", RandomEvent.MYSTERY_BOX)
     ).collect(Collectors.toCollection(ArrayList::new));
 }

@@ -9,8 +9,10 @@ import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.item.loot.RareDropTable;
 import io.ruin.model.map.route.routes.DumbRoute;
 import io.ruin.process.tickevent.TickEvent;
 import io.ruin.process.tickevent.TickEventType;
@@ -77,7 +79,16 @@ public enum RandomEvent {
                     new LootItem(Items.FROG_TOKEN, 1, 1)
             ),
             false
-    )
+    ),
+    QUIZ_MASTER(
+            6755,
+            new String[]{"Hey [player name]! It's your lucky day!", "Wakey-wakey, [player name]!", "Come along with me, [player name]!", "You're in for a treat, [player name]!", "Hey [player name]! It's your lucky day!"},
+            new Item[]{},
+            new LootTable().addTable(1,
+                    new LootItem(6199, 1, 1)
+            ),
+            true
+    ),
     ;
 
     private final int npcId;
@@ -261,5 +272,47 @@ public enum RandomEvent {
                 player.dismissRandomEvent = true;
             }));
         }
+    }
+
+    /*
+     * Mystery box
+     */
+    public static final LootTable MYSTERY_BOX = new LootTable()
+            .addTable(204,
+                    new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1),
+                    new LootItem(Items.CABBAGE, 1, 1),
+                    new LootItem(Items.DIAMOND, 1, 1),
+                    new LootItem(Items.BUCKET, 1, 1),
+                    new LootItem(956, 1, 1),
+                    new LootItem(Items.OLD_BOOT, 1, 1),
+                    new LootItem(Items.BODY_RUNE, 1, 1),
+                    new LootItem(Items.ONION, 1, 1),
+                    new LootItem(Items.MITHRIL_SCIMITAR, 1, 1),
+                    new LootItem(Items.CASKET, 1, 1),
+                    new LootItem(Items.STEEL_PLATEBODY, 1, 1),
+                    new LootItem(Items.NATURE_RUNE, 20, 1)
+            )
+            .addTable(34,
+                    new LootItem(24362, 1, 200),
+                    new LootItem(24363, 1, 150),
+                    new LootItem(24364, 1, 100)
+            )
+            .addTable(17,
+                    new LootItem(-1, 1, 1)
+            )
+            .addTable(1,
+                    new LootItem(Items.STALE_BAGUETTE, 1, 1)
+            );
+
+    static {
+        ItemAction.registerInventory(6199, "open", (player, item) -> {
+            item.remove();
+            Item loot = MYSTERY_BOX.rollItem();
+            if (loot == null || loot.getId() == -1) {
+                loot = RareDropTable.RARE_DROP_TABLE.rollItem();
+            }
+            player.getInventory().add(loot);
+            player.getCollectionLog().collect(loot);
+        });
     }
 }
