@@ -221,11 +221,11 @@ public class SmeltBar {
                     }
                     player.animate(3243);
                     player.privateSound(2725);
-                    player.sendMessage("You heat the steel bar into a liquid state.");
+                    player.sendFilteredMessage("You heat the steel bar into a liquid state.");
                     e.delay(1);
-                    player.sendMessage("You pour the molten metal into your cannonball mould.");
+                    player.sendFilteredMessage("You pour the molten metal into your cannonball mould.");
                     e.delay(1);
-                    player.sendMessage("The molten metal cools slowly to form 4 cannonballs.");
+                    player.sendFilteredMessage("The molten metal cools slowly to form 4 cannonballs.");
                     e.delay(2);
                     if (player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                         ++amt;
@@ -241,7 +241,7 @@ public class SmeltBar {
                         player.getInventory().add(ItemID.CANNONBALL, 4);
                         player.getStats().addXp(StatType.Smithing, 6.4 * 4, true);
                     }
-                    player.sendMessage("You remove the cannonballs from the mould.");
+                    player.sendFilteredMessage("You remove the cannonballs from the mould.");
                 }
             });
         }));
