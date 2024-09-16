@@ -89,6 +89,15 @@ public enum RandomEvent {
             ),
             true
     ),
+    GENIE(
+            326,
+            new String[]{"Greetings, [Master/Mistress] [player name]!", "Hello, [Master/Mistress] [player name]?", "Ehem... [Master/Mistress] [player name]?", "I'm waiting for you, [Master/Mistress] [player name]!"},
+            new Item[]{},
+            new LootTable().addTable(1,
+                    new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
+            ),
+            false
+    ),
     ;
 
     private final int npcId;
@@ -98,7 +107,7 @@ public enum RandomEvent {
     private final boolean animate;
 
     private String randomOverhead(Player player) {
-        return Random.get(overheadText).replace("[player name]", player.getName());
+        return Random.get(overheadText).replace("[player name]", player.getName()).replace("[Master/Mistress]", player.getAppearance().isMale() ? "Master" : "Mistress");
     }
 
     private void reward(Player player) {
