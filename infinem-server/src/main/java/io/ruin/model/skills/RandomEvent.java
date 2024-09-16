@@ -121,6 +121,15 @@ public enum RandomEvent {
             ),
             true
     ),
+    DUNCE(
+            6749,
+            new String[]{"Surprise exam, [player name]!", "Surprise exam, [player name]!", "Come to school, [player name]!", "You're getting tested, [player name]!", "The teacher wants you, [player name]!", "Teacher gets angry when he's kept waiting, [player name]!"},
+            new Item[]{},
+            new LootTable().addTable(1,
+                    new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
+            ),
+            false
+    )
     ;
 
     private final int npcId;
