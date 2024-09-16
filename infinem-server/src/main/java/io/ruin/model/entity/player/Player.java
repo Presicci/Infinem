@@ -1784,7 +1784,7 @@ public class Player extends PlayerAttributes {
             return true;
         } else if (getPrivateRaidStorage().contains(itemId, 1, false, ignoreAttributes)) {
             return true;
-        } else if (house.isStoredInCostumeRoom(itemId)) {
+        } else if (house != null && house.isStoredInCostumeRoom(itemId)) {
             return true;
         } else {
             return false;
