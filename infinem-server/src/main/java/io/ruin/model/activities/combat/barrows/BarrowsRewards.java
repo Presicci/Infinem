@@ -3,6 +3,7 @@ package io.ruin.model.activities.combat.barrows;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.bestiary.perks.impl.misc.BarrowsChestPerk;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
@@ -91,6 +92,9 @@ public class BarrowsRewards {
                 int amount = item.getAmount();
                 if(brothersKilled < 6) //if player didn't kill all 6 brothers, reduce the amount!
                     amount *= (brothersKilled / 6);
+                if (AreaReward.BARROWS_RUNES.hasReward(player)
+                        && (item.getId() == Items.MIND_RUNE || item.getId() == Items.CHAOS_RUNE
+                        || item.getId() == Items.DEATH_RUNE || item.getId() == Items.BLOOD_RUNE)) amount *= 1.5;
                 item.setAmount(amount);
                 container.add(item);
             } else {

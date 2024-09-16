@@ -129,9 +129,6 @@ public class Barrows {
             loot.sendUpdates();
             for(Item item : loot.getItems()) {
                 if(item != null) {
-                    if (AreaReward.BARROWS_RUNES.hasReward(player)
-                            && item.getId() == Items.MIND_RUNE || item.getId() == Items.CHAOS_RUNE
-                            || item.getId() == Items.DEATH_RUNE || item.getId() == Items.BLOOD_RUNE) item.setAmount((int) (item.getAmount() * 1.5));
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                     player.getCollectionLog().collect(item);
                     player.getTaskManager().doDropLookup(item);
