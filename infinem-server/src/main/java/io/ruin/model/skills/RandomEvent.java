@@ -49,6 +49,14 @@ public enum RandomEvent {
                     new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
             )
     ),
+    GRAVEDIGGER(
+            6746,
+            new String[]{"Hello, [player name]?", "Please help me, [player name].", "I need your help, [player name]!", "Can I borrow you for a minute, [player name]?"},
+            new Item[]{new Item(7594), new Item(7592), new Item(7593), new Item(7595), new Item(7596)},
+            new LootTable().addTable(1,
+                    new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
+            )
+    ),
     ;
 
     private final int npcId;
