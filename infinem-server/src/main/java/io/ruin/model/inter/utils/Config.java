@@ -1354,8 +1354,6 @@ public class Config {
         for(Config config : configs) {
             if(!config.save)
                 continue;
-            if (config.get(player) == config.defaultValue && !player.loadedConfigs.containsKey(config))  // Nothing changed, save some save space
-                continue;
             int saveId = config.id << 16 | (config.bit != null ? 1 : 0);
             player.savedConfigs.put(saveId, config.get(player));
         }
