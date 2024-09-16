@@ -43,7 +43,8 @@ public class DorgeshKaanLamps {
             breakLamp(player, 1);   // Break a new lamp after fixing 1
             int lampsFixed = player.incrementNumericAttribute(attKey, 1);
             boolean milestone = lampsFixed % 100 == 0;
-            player.getStats().addXp(StatType.Firemaking, milestone ? 6000 : 1000, true);
+            player.getStats().addXp(StatType.Firemaking, milestone ? 2500 : 500, true);
+            player.getStats().addXp(StatType.Crafting, milestone ? 2500 : 500, true);
             config.set(player, 0);
             player.sendMessage(milestone ? "You have replaced 100 orbs and have gained extra experience." : "You fix the lamp.");
             player.getTaskManager().doLookupByUUID(932);    // Fix a Lamp in Dorgesh-Kaan
