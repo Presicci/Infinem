@@ -2369,5 +2369,99 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+
+
+
+
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2647,
+    "x": 3631,
+    "y": 3431,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2652,
+    "x": 3618,
+    "y": 3430,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2652,
+    "x": 3620,
+    "y": 3454,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2647,
+    "x": 3632,
+    "y": 3460,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2647,
+    "x": 3519,
+    "y": 3443,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2647,
+    "x": 3483,
+    "y": 3442,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2652,
+    "x": 3481,
+    "y": 3441,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2652,
+    "x": 3517,
+    "y": 3410,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2652,
+    "x": 3471,
+    "y": 3346,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bruise Blamish Snail",
+    "id": 2647,
+    "x": 3474,
+    "y": 3348,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
   }
 ]
