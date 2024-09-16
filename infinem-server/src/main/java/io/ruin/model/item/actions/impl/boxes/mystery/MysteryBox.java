@@ -265,7 +265,7 @@ public class MysteryBox {
     }
 
     static {
-        ItemAction.registerInventory(6199, "open", (player, item) -> {
+        /*ItemAction.registerInventory(6199, "open", (player, item) -> {
             player.lock();
             player.closeDialogue();
             Item reward;
@@ -284,16 +284,16 @@ public class MysteryBox {
             if (reward.lootBroadcast != null)
                 Broadcast.GLOBAL.sendNews(Icon.MYSTERY_BOX, "Mystery Box", "" + player.getName() + " just received " + reward.getDef().descriptiveName + "!");
             player.unlock();
-        });
+        });*/
 
         /*
          * Mystery box gifting
          */
-        ItemAction.registerInventory(6199, "gift", MysteryBox::gift);
+        /*ItemAction.registerInventory(6199, "gift", MysteryBox::gift);
         ItemAction.registerInventory(6828, "gift", MysteryBox::gift);
         ItemAction.registerInventory(6829, "gift", MysteryBox::gift);
         ItemAction.registerInventory(290, "gift", MysteryBox::gift);
         ItemAction.registerInventory(6831, "gift", MysteryBox::gift);
-        ItemAction.registerInventory(22330, "gift", MysteryBox::gift);
+        ItemAction.registerInventory(22330, "gift", MysteryBox::gift);*/
     }
 }
