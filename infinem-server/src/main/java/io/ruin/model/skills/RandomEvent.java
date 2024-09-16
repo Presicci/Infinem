@@ -129,7 +129,30 @@ public enum RandomEvent {
                     new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
             ),
             false
-    )
+    ),
+    RICK_TURPENTINE(
+            375,
+            new String[]{"Good day to you, [player name].", "I seek a moment of your time!", "[player name], please speak to me!"},
+            new Item[]{},
+            new LootTable().addTable(1,
+                    new LootItem(Items.UNCUT_SAPPHIRE, 1, 30),
+                    new LootItem(Items.KEBAB, 1, 15),
+                    new LootItem(Items.UNCUT_EMERALD, 1, 15),
+                    new LootItem(Items.SPINACH_ROLL, 1, 14),
+                    new LootItem(995, 80, 10),
+                    new LootItem(995, 160, 10),
+                    new LootItem(995, 320, 10),
+                    new LootItem(995, 480, 10),
+                    new LootItem(995, 640, 10),
+                    new LootItem(Items.UNCUT_RUBY, 1, 8),
+                    new LootItem(995, 240, 6),
+                    new LootItem(Items.COSMIC_TALISMAN, 1, 4),
+                    new LootItem(Items.UNCUT_DIAMOND, 1, 2),
+                    new LootItem(Items.TOOTH_HALF_OF_KEY, 1, 1),
+                    new LootItem(Items.LOOP_HALF_OF_KEY, 1, 1)
+            ),
+            true
+    ),
     ;
 
     private final int npcId;
