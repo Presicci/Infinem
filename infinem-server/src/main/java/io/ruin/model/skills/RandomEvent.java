@@ -29,8 +29,7 @@ public enum RandomEvent {
             new String[]{"Hello, [player name]?", "Please help me, [player name].", "I need your help, [player name]!", "Can I borrow you for a minute, [player name]?"},
             new Item[]{new Item(25129), new Item(25131), new Item(25133), new Item(25135), new Item(25137)},
             new LootTable().addTable(1,
-                    new LootItem(995, 100, 300, 1),
-                    new LootItem(Items.FLAX_NOTE, 1, 27, 1)
+                    new LootItem(Items.FLAX_NOTE, 20, 55, 1)
             )
     ),
     DRILL_DEMON(
