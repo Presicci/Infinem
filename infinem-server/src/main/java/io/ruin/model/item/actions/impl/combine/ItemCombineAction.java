@@ -330,6 +330,11 @@ public class ItemCombineAction {
                     player.getInventory().remove(i.required);
                 }
             }
+            if (skillsRequired != null) {
+                for (SkillRequired skill : skillsRequired) {
+                    player.getStats().addXp(skill.statType, skill.experience, true);
+                }
+            }
             if (this == ItemCombine.PINEAPPLE_PIZZA || this == ItemCombine.PINEAPPLE_PIZZA2)
                 player.getTaskManager().doLookupByUUID(99, 1);  // Make a Pineapple Pizza
             if (this == ItemCombine.SUPER_KEBAB_1 || this == ItemCombine.SUPER_KEBAB_2 || this == ItemCombine.SUPER_KEBAB_3)
