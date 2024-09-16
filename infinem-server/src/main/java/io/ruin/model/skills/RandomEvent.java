@@ -30,7 +30,8 @@ public enum RandomEvent {
             new Item[]{new Item(25129), new Item(25131), new Item(25133), new Item(25135), new Item(25137)},
             new LootTable().addTable(1,
                     new LootItem(Items.FLAX_NOTE, 20, 55, 1)
-            )
+            ),
+            true
     ),
     DRILL_DEMON(
             6743,
@@ -38,7 +39,8 @@ public enum RandomEvent {
             new Item[]{new Item(6654), new Item(6655), new Item(6656)},
             new LootTable().addTable(1,
                     new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
-            )
+            ),
+            true
     ),
     FREAKY_FORESTER(
             6748,
@@ -46,7 +48,8 @@ public enum RandomEvent {
             new Item[]{new Item(6180), new Item(6181), new Item(6182)},
             new LootTable().addTable(1,
                     new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
-            )
+            ),
+            true
     ),
     GRAVEDIGGER(
             6746,
@@ -54,7 +57,8 @@ public enum RandomEvent {
             new Item[]{new Item(7594), new Item(7592), new Item(7593), new Item(7595), new Item(7596)},
             new LootTable().addTable(1,
                     new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
-            )
+            ),
+            true
     ),
     MIME(
             6750,
@@ -62,7 +66,17 @@ public enum RandomEvent {
             new Item[]{new Item(3057), new Item(3058), new Item(3059), new Item(3060), new Item(3061)},
             new LootTable().addTable(1,
                     new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
-            )
+            ),
+            true
+    ),
+    FROG(
+            5430,
+            new String[]{"Hello, [player name]", "[player name], the frog desires your attention!"},
+            new Item[]{},
+            new LootTable().addTable(1,
+                    new LootItem(Items.FROG_TOKEN, 1, 1)
+            ),
+            false
     )
     ;
 
@@ -70,6 +84,7 @@ public enum RandomEvent {
     private final String[] overheadText;
     private final Item[] costumePieces;
     private final LootTable rewards;
+    private final boolean animate;
 
     private String randomOverhead(Player player) {
         return Random.get(overheadText).replace("[player name]", player.getName());
@@ -94,6 +109,7 @@ public enum RandomEvent {
         player.getInventory().addOrDrop(randomReward);
         player.sendMessage("The stranger hands you a reward as he disappears...");
         player.getTaskManager().doLookupByUUID(1108);   // Get a Random Event
+        if (randomReward.getId() == Items.FROG_TOKEN) player.getCollectionLog().collect(randomReward);
     }
 
     private void spawn(Player player, double durationMultiplier) {
@@ -128,7 +144,7 @@ public enum RandomEvent {
                         npc.forceText("Guards! Lets go, " + player.getName() + ".");
                         npc.lock();
                         player.lock();
-                        npc.animate(864);
+                        if (animate) npc.animate(864);
                         player.face(npc);
                         resetBlock(player);
                         e.delay(3);
@@ -141,7 +157,7 @@ public enum RandomEvent {
                     } else {
                         npc.forceText("Aghh, nevermind.");
                         npc.lock();
-                        npc.animate(864);
+                        if (animate) npc.animate(864);
                         resetBlock(player);
                         e.delay(3);
                         World.sendGraphics(86, 60, 0, npc.getPosition());
@@ -152,7 +168,7 @@ public enum RandomEvent {
                 }
                 if (player.dismissRandomEvent) {
                     npc.lock();
-                    npc.animate(863);
+                    if (animate) npc.animate(863);
                     resetBlock(player);
                     e.delay(3);
                     World.sendGraphics(86, 60, 0, npc.getPosition());
