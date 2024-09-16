@@ -98,6 +98,29 @@ public enum RandomEvent {
             ),
             false
     ),
+    CERTERS(
+            5436,
+            new String[]{"Greetings [player name], I need your help.", "Talk to me, [player name]!", "Hello, [player name], are you there?", "I'd like to talk to you, [player name]!", "ehem... Hello [player name], please talk to me!"},
+            new Item[]{},
+            new LootTable().addTable(1,
+                    new LootItem(Items.UNCUT_SAPPHIRE, 1, 30),
+                    new LootItem(Items.KEBAB, 1, 15),
+                    new LootItem(Items.UNCUT_EMERALD, 1, 15),
+                    new LootItem(Items.SPINACH_ROLL, 1, 14),
+                    new LootItem(995, 80, 10),
+                    new LootItem(995, 160, 10),
+                    new LootItem(995, 320, 10),
+                    new LootItem(995, 480, 10),
+                    new LootItem(995, 640, 10),
+                    new LootItem(Items.UNCUT_RUBY, 1, 8),
+                    new LootItem(995, 240, 6),
+                    new LootItem(Items.COSMIC_TALISMAN, 1, 4),
+                    new LootItem(Items.UNCUT_DIAMOND, 1, 2),
+                    new LootItem(Items.TOOTH_HALF_OF_KEY, 1, 1),
+                    new LootItem(Items.LOOP_HALF_OF_KEY, 1, 1)
+            ),
+            true
+    ),
     ;
 
     private final int npcId;
