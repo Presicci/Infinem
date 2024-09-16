@@ -32,6 +32,8 @@ import io.ruin.model.activities.cluescrolls.ClueEnemies;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.activities.cluescrolls.impl.CoordinateClue;
+import io.ruin.model.activities.combat.barrows.BarrowsBrother;
+import io.ruin.model.activities.combat.barrows.BarrowsRewards;
 import io.ruin.model.activities.combat.inferno.Inferno;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;
@@ -41,6 +43,7 @@ import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.content.ActivitySpotlight;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.content.transportation.relics.DungeonHub;
@@ -63,6 +66,8 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.inter.utils.Unlock;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.ItemContainer;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.GoldCasket;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.actions.impl.ItemBreaking;
@@ -3198,6 +3203,25 @@ public class Administrator {
                     return true;
                 }
                 target.getInventory().remove(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+                return true;
+            }
+            case "testbarrows": {
+                ItemContainer loot = BarrowsRewards.loot(player);
+                player.getPacketSender().sendClientScript(917, "ii", -1, -1);
+                player.openInterface(InterfaceType.MAIN, Interface.BARROWS_LOOT);
+                player.getPacketSender().sendAccessMask(Interface.BARROWS_LOOT, 3, 0, 8, 1024);
+                loot.sendUpdates();
+                for(Item item : loot.getItems()) {
+                    if(item != null) {
+                        player.getInventory().addOrDrop(item.getId(), item.getAmount());
+                        player.getCollectionLog().collect(item);
+                        player.getTaskManager().doDropLookup(item);
+                    }
+                }
+                for(BarrowsBrother brother : BarrowsBrother.values())
+                    brother.config.set(player, 0);
+                Config.BARROWS_CHEST.set(player, 0);
+                player.removeAttribute("BARROWS_CHEST_BROTHER");
                 return true;
             }
         }
