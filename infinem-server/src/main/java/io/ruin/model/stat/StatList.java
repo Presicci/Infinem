@@ -183,6 +183,7 @@ public class StatList {
         if(newXp > Stat.MAX_XP)
             newXp = Stat.MAX_XP;
         if (newXp >= Stat.xpForLevel(120) && stat.experience < Stat.xpForLevel(120)) {
+            Broadcast.SKILL.sendNews(Icon.SKILL_ICON, player.getName() + " has just reached virtual level 120 in " + type.name() + "!");
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLMASTER, type.name());
         }
         if(newXp == Stat.MAX_XP && stat.experience < Stat.MAX_XP) {
