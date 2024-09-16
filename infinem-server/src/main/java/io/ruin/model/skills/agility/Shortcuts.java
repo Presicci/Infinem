@@ -52,6 +52,44 @@ public class Shortcuts {
             });
         }));
 
+        // Stronghold slayer cave tunnel
+        ObjectAction.register(30174, 2430, 9806, 0, "enter", ((player, obj) -> {
+            if (!player.getStats().check(StatType.Agility, 72, "climb through"))
+                return;
+            player.startEvent(event -> {
+                player.animate(2796);
+                event.delay(1);
+                player.getMovement().teleport(2435, 9806, 0);
+            });
+        }));
+        ObjectAction.register(30175, 2430, 9807, 0, "enter", ((player, obj) -> {
+            if (!player.getStats().check(StatType.Agility, 72, "climb through"))
+                return;
+            player.startEvent(event -> {
+                player.animate(2796);
+                event.delay(1);
+                player.getMovement().teleport(2435, 9807, 0);
+            });
+        }));
+        ObjectAction.register(30174, 2434, 9807, 0, "enter", ((player, obj) -> {
+            if (!player.getStats().check(StatType.Agility, 72, "climb through"))
+                return;
+            player.startEvent(event -> {
+                player.animate(2796);
+                event.delay(1);
+                player.getMovement().teleport(2429, 9807, 0);
+            });
+        }));
+        ObjectAction.register(30175, 2434, 9806, 0, "enter", ((player, obj) -> {
+            if (!player.getStats().check(StatType.Agility, 72, "climb through"))
+                return;
+            player.startEvent(event -> {
+                player.animate(2796);
+                event.delay(1);
+                player.getMovement().teleport(2429, 9806, 0);
+            });
+        }));
+
         // Stepping stones in Brimhaven Dungeon
         // Varrock south fence jump
         // Scale Goblin Village wall
