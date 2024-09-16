@@ -41,6 +41,14 @@ public enum RandomEvent {
                     new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
             )
     ),
+    FREAKY_FORESTER(
+            6748,
+            new String[]{"[player name]!", "Hello? [player name]?", "Talk to me, [player name]!", "[player name]? Are you there?!", "I'd like to talk to you, [player name]!"},
+            new Item[]{new Item(6180), new Item(6181), new Item(6182)},
+            new LootTable().addTable(1,
+                    new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
+            )
+    ),
     ;
 
     private final int npcId;
