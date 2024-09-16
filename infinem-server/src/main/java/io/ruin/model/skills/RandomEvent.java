@@ -33,6 +33,14 @@ public enum RandomEvent {
                     new LootItem(Items.FLAX_NOTE, 1, 27, 1)
             )
     ),
+    DRILL_DEMON(
+            6743,
+            new String[]{"Private [player name], atten-SHUN!", "Stop day-dreaming, Private [player name]!", "Get your rear in gear, Private [player name]!", "I want you for my corps, Private [player name]!"},
+            new Item[]{new Item(6654), new Item(6655), new Item(6656)},
+            new LootTable().addTable(1,
+                    new LootItem(Items.BOOK_OF_KNOWLEDGE, 1, 1)
+            )
+    ),
     ;
 
     private final int npcId;
