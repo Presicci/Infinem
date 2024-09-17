@@ -16,12 +16,15 @@ public class CaveCrawler extends NPCCombat {
         follow(1);
     }
 
+    private boolean heal = false;
+
     @Override
     public boolean attack() {
         if (!withinDistance(1))
             return false;
         basicAttack();
-        npc.incrementHp(1);
+        if (heal) npc.incrementHp(1);
+        heal = !heal;
         if (Random.rollDie(4, 1))
             target.poison(3);
         return true;
