@@ -227,10 +227,6 @@ public class NPCDrops {
                 item.setAmount(item.getAmount() * 2);
             }
 
-            if (pKiller.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(item.getId())) {
-                item.setAmount(item.getAmount() * 2);
-            }
-
             // Attempt a task unlock for each item dropped
             pKiller.getTaskManager().doDropLookup(item);
 
@@ -239,6 +235,10 @@ public class NPCDrops {
              */
             if (item.getDef().clueType != null) {
                 item.setId(item.getDef().clueType.boxId);
+            }
+
+            if (pKiller.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(item.getId())) {
+                item.setAmount(item.getAmount() * 2);
             }
 
             /*
