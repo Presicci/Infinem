@@ -36,6 +36,8 @@ public class RockCake {
 
     static {
         ItemAction.registerInventory(Items.DWARVEN_ROCK_CAKE, "eat", (player, item) -> eat(player));
+        ItemAction.registerInventory(Items.DWARVEN_ROCK_CAKE, "guzzle", (player, item) -> eat(player));
+        ItemAction.registerInventory(Items.DWARVEN_ROCK_CAKE_2, "eat", (player, item) -> guzzle(player));
         ItemAction.registerInventory(Items.DWARVEN_ROCK_CAKE_2, "guzzle", (player, item) -> guzzle(player));
     }
 }
