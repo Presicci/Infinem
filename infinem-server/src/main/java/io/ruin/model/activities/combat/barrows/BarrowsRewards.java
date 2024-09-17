@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.bestiary.perks.impl.misc.BarrowsChestPerk;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
@@ -86,6 +87,8 @@ public class BarrowsRewards {
                 Item item;
                 if(!rolledClue && (item = TERTIARY_TABLE.rollItem()) != null) {
                     rolledClue = true;
+                    int quantity = player.getRelicManager().hasRelicEnalbed(Relic.TREASURE_HUNTER) ? 2 : 1;
+                    item.setAmount(quantity);
                     container.add(item);
                 }
                 item = MAIN_TABLE.rollItem();
