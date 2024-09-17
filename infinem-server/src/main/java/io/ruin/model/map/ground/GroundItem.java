@@ -247,6 +247,12 @@ public class GroundItem {
     public void pickup(Player player, int distance) {
         if (!check(player))
             return;
+        int id;
+        if (this.id == 7957) {
+            id = Items.WHITE_APRON;
+        } else {
+            id = this.id;
+        }
         if (id == Items.WINE_OF_ZAMORAK && originalOwner == -1) {
             if (!WineOfZamorak.takeWine(player))
                 return;
