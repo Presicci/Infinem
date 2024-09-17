@@ -340,9 +340,6 @@ public class ItemDefinition {
         if (id == Items.RUNITE_ORE) {
             value = 800;
         }
-        if (id == Preset.DRAGON_2H_SWORD || id == 13024 || id == 13026 || id == 9243 || id == 6109 || id == 3751) {
-            value = 0;
-        }
         if(id == 22816 || id == 22817) {
             inventoryOptions[4] = "Destroy";
         }

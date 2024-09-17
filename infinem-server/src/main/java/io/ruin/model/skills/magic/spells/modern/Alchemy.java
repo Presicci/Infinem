@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells.modern;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.areas.diaryitems.ExplorersRing;
 import io.ruin.model.skills.RandomEvent;
 import io.ruin.utility.Color;
@@ -92,15 +93,10 @@ public class Alchemy extends Spell {
     }
 
     private static void tryAlch(Player player, Item item, RuneRemoval runes, Level level) {
-        if (item.getId() == 7462 || item.getId() == Preset.DRAGON_2H_SWORD || item.getId() == BraceletOfEthereum.REVENANT_ETHER) {
-            player.sendMessage("You can't alchemize this item.");
-            return;
-        }
-
         int value = level == Level.LOW ? item.getDef().lowAlchValue : item.getDef().highAlchValue;
         if(item.getDef().isNote())
             value = item.getDef().fromNote().highAlchValue;
-        if (value == 0 || item.getId() == COINS_995) {
+        if (value == 0 || item.getId() == COINS_995 || item.getId() == BraceletOfEthereum.REVENANT_ETHER) {
             player.sendMessage("You can't alchemize this item.");
             return;
         }
@@ -158,5 +154,11 @@ public class Alchemy extends Spell {
             player.getTaskManager().doLookupByUUID(148, 1); // Cast the High Level Alchemy spell
         if (Config.FOUNTAIN_OF_RUNE.get(player) == 1)
             player.getTaskManager().doLookupByUUID(841);    // Cast Alchemy at the Fountain of Rune
+    }
+
+    static {
+        ItemDefinition.forEach(i -> {
+            if (i.value == 0) System.out.println(i.id);
+        });
     }
 }
