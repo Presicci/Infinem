@@ -22,11 +22,6 @@ public class Config {
     }
 
     /**
-     * Blast furnace
-     */
-    public static final Config BARS_IN_DESPENSER = varpbit(936, false);
-
-    /**
      * Nightmare
      */
     public static final Config IMPREGNANTED = varpbit(10151, false);
