@@ -22,6 +22,9 @@ public enum LinearClimbingSpot {
     KARUULM29(34397, new Position(1324, 3778),
             34397, new Position(1324, 3784),
             29, 1, Direction.NORTH),
+    MYTHS_GUILD30(31758, new Position(2488, 2898),
+            31759, new Position(2486, 2898),
+            30, 1, Direction.WEST),
     KARUULM62(34396, new Position(1324, 3788),
             34396, new Position(1324, 3794),
             62, 1, Direction.NORTH),
@@ -69,6 +72,8 @@ public enum LinearClimbingSpot {
             ObjectAction.register(spot.topId, spot.topPos, "climb", (spot::climb));
             ObjectAction.register(spot.bottomId, spot.bottomPos, "climb up", (spot::climb));
             ObjectAction.register(spot.topId, spot.topPos, "climb down", (spot::climb));
+            ObjectAction.register(spot.bottomId, spot.bottomPos, "climb-up", (spot::climb));
+            ObjectAction.register(spot.topId, spot.topPos, "climb-down", (spot::climb));
         }
     }
 }
