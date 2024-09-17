@@ -85,7 +85,7 @@ public class BasketOfFruit {
             return;
         }
         player.getInventory().remove(basket.fruitId, fillAmount);
-        item.setId(item.getId() + (fillAmount * 2));
+        item.setId(basket.basketId + ((fillAmount - 1) * 2));
         player.sendMessage("You add " + fillAmount + " " + ItemDefinition.get(basket.fruitId).name.toLowerCase() + "" + (fillAmount > 1 ? "s" : "") + " to the basket.");
     }
 
@@ -134,6 +134,7 @@ public class BasketOfFruit {
     }
 
     private static int getContainedAmount(Item item, Baskets basket) {
+        if (item.getId() == BASKET) return 0;
         return ((item.getId() - basket.basketId) / 2) + 1;
     }
 
