@@ -187,12 +187,6 @@ public class NPCDefinition {
             name = "Security Advisor";
             options[2] = "Check Pin Settings";
             options[3] = "Check 2FA Settings";
-        } else if(id == 3894) {
-            /* Sigmund the Merchant */
-            options[0] = "Buy-items";
-            options[2] = "Sell-items";
-            options[3] = "Sets";
-            options[4] = null;
         } else if(id == 4398) {
             /* ECO Wizard */
             name = World.type.getWorldName() + " Wizard";
