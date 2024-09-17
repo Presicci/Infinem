@@ -31,6 +31,12 @@ public class Consumable {
      */
 
     static {
+        registerEat(Items.STRAWBERRY, 0, player -> {
+            int hpLevel = player.getStats().get(StatType.Hitpoints).fixedLevel;
+            player.sendMessage("You eat the strawberry.");
+            if (player.incrementHp((int) (1 + (hpLevel * 0.06))) > 0)
+                player.sendMessage("It heals some health.");
+        });
         registerEat(Items.TOMATO, 2, "tomato");
         registerEat(Items.CHOCOLATE_BAR, 3, "chocolate bar");
         registerEat(Items.CHOCICE, 7, "chocice");
