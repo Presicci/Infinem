@@ -155,10 +155,4 @@ public class Alchemy extends Spell {
         if (Config.FOUNTAIN_OF_RUNE.get(player) == 1)
             player.getTaskManager().doLookupByUUID(841);    // Cast Alchemy at the Fountain of Rune
     }
-
-    static {
-        ItemDefinition.forEach(i -> {
-            if (i.value == 0) System.out.println(i.id);
-        });
-    }
 }
