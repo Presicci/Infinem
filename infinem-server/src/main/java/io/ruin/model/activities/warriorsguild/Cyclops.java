@@ -25,6 +25,7 @@ public class Cyclops extends BasicCombat {
                     .owner(killer.player)
                     .position(npc.getPosition())
                     .spawn();
+            killer.player.getCollectionLog().collect(defenderId);
             killer.player.nextDefenderId = getNext(killer.player, killer.player.getHeight() == 0);
             killer.player.sendMessage("<col=804080>The cyclops has dropped a " + ItemDefinition.get(defenderId).name + "."
                     + (defenderId == DRAGON_DEFENDER ? "" : (defenderId == RUNE_DEFENDER ? " Head to the basement for a chance at a Dragon defender." : " Reenter the room to get the next tier defender.")));
