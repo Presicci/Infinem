@@ -25,6 +25,7 @@ public enum Potion {
     ANTIPOISON(5, 37.5, "antipoison", "marrentill potion (unf)", "unicorn horn dust"),
     RELICYMS_BALM(8, 40.0, "relicym's balm", "rogue's purse", "snake weed", "vial of water"),
     STRENGTH(12, 50.0, "strength potion", "tarromin potion (unf)", "limpwurt root"),
+    SERUM_207(15, 50.0, "serum 207", "tarromin potion (unf)", "ashes"),
     GUTHIX_REST(18, 59, "guthix rest", "cup of hot water", "guam leaf", "harralander", "marrentill"),
     RESTORE(22, 62.5, "restore potion", "harralander potion (unf)", "red spiders' eggs"),
     COMPOST(22, 60, "compost potion", "harralander potion (unf)", "volcanic ash"),
