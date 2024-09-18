@@ -52,6 +52,10 @@ public class CoordinateClue extends Clue {
     }
 
     private static void registerDig(ClueType type, Position position) {
+        registerDig(type, position, null);
+    }
+
+    private static void registerDig(ClueType type, Position position, Position hintPos) {
         /**
          * int x2 = 2440;
          * 		int y2 = 3161;
@@ -61,8 +65,9 @@ public class CoordinateClue extends Clue {
          *
          * 		return new WorldPoint(x2, y2, 0);
          */
-        int x = position.getX();
-        int y = position.getY();
+        if (hintPos == null) hintPos = position;
+        int x = hintPos.getX();
+        int y = hintPos.getY();
         int obsX = 2440;
         int obsY = 3161;
         boolean north = y > obsY;
@@ -74,7 +79,7 @@ public class CoordinateClue extends Clue {
         String clue = twoDigitInt(degY) + " degrees " + twoDigitInt(minY) + " minutes " + (north ? "north" : "south") + "<br>"
                 + twoDigitInt(degX) + " degrees " + twoDigitInt(minX) + " minutes " + (east ? "east" : "west");
         CoordinateClue coordinateClue = new CoordinateClue(type, clue);
-        new Bounds(x, y, position.getZ(), 2).forEachPos(pos -> {
+        new Bounds(position.getX(), position.getY(), position.getZ(), 2).forEachPos(pos -> {
             Tile tile = Tile.get(pos, true);
             if (tile.digAction == null) tile.digAction = new ArrayList<>();
             if (type == ClueType.HARD) {
@@ -207,7 +212,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.ELITE, new Position(3811, 3060, 0)); // Small island north-east of Mos Le'Harmless.
         registerDig(ClueType.ELITE, new Position(2180, 3282, 0)); // North of Elf Camp.
         registerDig(ClueType.ELITE, new Position(2870, 2997, 0)); // North-east of Shilo Village.
-        registerDig(ClueType.ELITE, new Position(3246, 6083, 0)); // Prifddinas
+        registerDig(ClueType.ELITE, new Position(3246, 6083, 0), new Position(2222, 3331)); // Prifddinas
         registerDig(ClueType.ELITE, new Position(3302, 2988, 0)); // On top of a cliff to the west of Pollnivneach.
         registerDig(ClueType.ELITE, new Position(2511, 2980, 0)); // Just south of Gu'Tanoth, west of gnome glider.
         registerDig(ClueType.ELITE, new Position(2318, 2954, 0)); // Isle of souls east
