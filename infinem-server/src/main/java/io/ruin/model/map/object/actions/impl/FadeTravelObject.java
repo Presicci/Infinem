@@ -9,6 +9,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    BLAST_FURNACE_IN(9084, new Position(2930, 10196), new Position(1939, 4958)),
+    BLAST_FURNACE_OUT(9138, new Position(1939, 4956), new Position(2931, 10196)),
+
     HOLLOWS_OUT(5054, new Position(3477, 9846), new Position(3495, 3465, 0), 828),
     HOLLOWS_IN(5055, new Position(3495, 3464), new Position(3477, 9845, 0), 827),
     HOLLOWS_MYRE_OUT(5056, new Position(3500, 9812), new Position(3509, 3449, 0)),

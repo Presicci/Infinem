@@ -1,0 +1,13 @@
+Thumpy: What is it, human? I'm working.
+<Gosh, you're a remarkably big dwarf.
+Player: Gosh, you're a remarkably big dwarf.
+Thumpy: My brothers and I have a rare genetic condition affecting our growth. Rather than treating us as freaks, you might like to appreciate how useful it is that we can operate the machinery.
+<Sorry.
+Player: Sorry.
+Thumpy: That's ok, human. You're not the first to comment on it. Now, did you need anything? I've got work to do here.
+><Are you sure you're really a dwarf?
+Player: Are you sure you're really a dwarf?
+Thumpy: ... look, do you want help with something, or did you just come here to be rude? I've got work to do.
+>
+><I'll let you get on with it.
+Player: I'll let you get on with it.

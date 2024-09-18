@@ -18,7 +18,8 @@ public enum PassableDoor {
     TROLL_STRONGHOLD_PRISON_DOOR(3780, "unlock", new Position(2848, 10107, 1), Direction.WEST),
     TAI_BWO_WANNAI_1(779, "open", new Position(2782, 3057), Direction.EAST),
     TAI_BWO_WANNAI_2(779, "open", new Position(2792, 3054), Direction.EAST),
-    TAI_BWO_WANNAI_3(779, "open", new Position(2802, 3058), Direction.EAST);
+    TAI_BWO_WANNAI_3(779, "open", new Position(2802, 3058), Direction.EAST),
+    BLAST_FURNACE_GATE(9141, "open", new Position(1937, 4969), Direction.NORTH);
 
     private final int id, rotationOffset, tempObjectId;
     private final String option;

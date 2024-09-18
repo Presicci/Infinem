@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Ordan",
+    "id": 1560,
+    "x": 1936,
+    "y": 4966,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Jorzik",
+    "id": 1561,
+    "x": 1939,
+    "y": 4969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Stumpy",
+    "id": 7384,
+    "x": 1947,
+    "y": 4966,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Thumpy",
+    "id": 5454,
+    "x": 1945,
+    "y": 4968,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Dumpy",
+    "id": 7386,
+    "x": 1950,
+    "y": 4963,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  }
+]

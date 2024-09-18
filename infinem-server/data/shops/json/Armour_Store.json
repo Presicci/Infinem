@@ -1,0 +1,156 @@
+{
+  "name": "Armour store",
+  "currency": "COINS",
+  "npcs": [
+    1561
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1147,
+      "stock": 0,
+      "buy_price": 6400,
+      "sell_price": 19200
+    },
+    {
+      "itemId": 1163,
+      "stock": 0,
+      "buy_price": 11733,
+      "sell_price": 35200
+    },
+    {
+      "itemId": 1127,
+      "stock": 0,
+      "buy_price": 21667,
+      "sell_price": 65000
+    },
+    {
+      "itemId": 1093,
+      "stock": 0,
+      "buy_price": 21333,
+      "sell_price": 64000
+    },
+    {
+      "itemId": 1185,
+      "stock": 0,
+      "buy_price": 12800,
+      "sell_price": 38400
+    },
+    {
+      "itemId": 1201,
+      "stock": 0,
+      "buy_price": 18133,
+      "sell_price": 54400
+    },
+    {
+      "itemId": 1113,
+      "stock": 0,
+      "buy_price": 16667,
+      "sell_price": 50000
+    },
+    {
+      "itemId": 1079,
+      "stock": 0,
+      "buy_price": 21333,
+      "sell_price": 64000
+    },
+    {
+      "itemId": 1145,
+      "stock": 0,
+      "buy_price": 640,
+      "sell_price": 1920
+    },
+    {
+      "itemId": 1161,
+      "stock": 0,
+      "buy_price": 1173,
+      "sell_price": 3520
+    },
+    {
+      "itemId": 1123,
+      "stock": 0,
+      "buy_price": 5546,
+      "sell_price": 16640
+    },
+    {
+      "itemId": 1091,
+      "stock": 0,
+      "buy_price": 2133,
+      "sell_price": 6400
+    },
+    {
+      "itemId": 1183,
+      "stock": 0,
+      "buy_price": 1280,
+      "sell_price": 3840
+    },
+    {
+      "itemId": 1199,
+      "stock": 0,
+      "buy_price": 1813,
+      "sell_price": 5440
+    },
+    {
+      "itemId": 1111,
+      "stock": 0,
+      "buy_price": 1600,
+      "sell_price": 4800
+    },
+    {
+      "itemId": 1073,
+      "stock": 0,
+      "buy_price": 2133,
+      "sell_price": 6400
+    },
+    {
+      "itemId": 1143,
+      "stock": 0,
+      "buy_price": 260,
+      "sell_price": 780
+    },
+    {
+      "itemId": 1159,
+      "stock": 0,
+      "buy_price": 476,
+      "sell_price": 1430
+    },
+    {
+      "itemId": 1121,
+      "stock": 0,
+      "buy_price": 1733,
+      "sell_price": 5200
+    },
+    {
+      "itemId": 1085,
+      "stock": 0,
+      "buy_price": 866,
+      "sell_price": 2600
+    },
+    {
+      "itemId": 1181,
+      "stock": 0,
+      "buy_price": 520,
+      "sell_price": 1560
+    },
+    {
+      "itemId": 1197,
+      "stock": 0,
+      "buy_price": 736,
+      "sell_price": 2210
+    },
+    {
+      "itemId": 1109,
+      "stock": 0,
+      "buy_price": 650,
+      "sell_price": 1950
+    },
+    {
+      "itemId": 1071,
+      "stock": 0,
+      "buy_price": 866,
+      "sell_price": 2600
+    }
+  ]
+}
