@@ -57,6 +57,7 @@ public class BlastFurnaceCoffer {
             }
             player.getInventory().remove(995, i);
             incrementCofferAmount(player, i);
+            BlastFurnace.processBars(player);
         });
     }
 

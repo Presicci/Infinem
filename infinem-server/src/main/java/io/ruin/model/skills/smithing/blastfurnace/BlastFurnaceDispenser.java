@@ -34,6 +34,8 @@ public class BlastFurnaceDispenser {
         if (!BlastFurnace.hasBars(player)) {
             BlastFurnace.DISPENSER.set(player, 0);
         }
+        player.getTaskManager().doLookupByUUID(1109, amt, true);    // Smelt 50 Bars at the Blast Furnace
+        player.getTaskManager().doLookupByUUID(524, amt, true);     // Smelt 5,000 Bars at the Blast Furnace
         // processvarbits
         player.dialogue(new MessageDialogue("You take " + amt + " " + item.getDef().name.toLowerCase() + (amt > 1 ? "s" : "") + " from the dispenser."));
         BlastFurnace.processBars(player);
