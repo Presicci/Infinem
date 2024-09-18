@@ -106,6 +106,7 @@ public class BlastFurnace {
                     continue barLoop;
                 }
             }
+            int cost = player.getTaskManager().hasCompletedTask(524) ? 75 : 100;    // Smelt 5,000 Bars at the Blast Furnace
             if (bar.smeltItems.size() > 1) {
                 Item primary = bar.smeltItems.get(0);
                 Item secondary = bar.smeltItems.get(1);
@@ -114,7 +115,7 @@ public class BlastFurnace {
                 int secondaryAmount = secondaryOre.equals(BlastFurnaceOre.COAL) ? getOre(player, secondaryOre) / (secondary.getAmount() / 2) : getOre(player, secondaryOre);
                 int amount = Math.min(getOre(player, primaryOre), secondaryAmount);
                 amount = (getBar(player, bar) + amount) > 28 ? 28 - getBar(player, bar) : amount;
-                amount = Math.min(BlastFurnaceCoffer.getAmount(player) / 100, amount);
+                amount = Math.min(BlastFurnaceCoffer.getAmount(player) / cost, amount);
                 removeOre(player, primaryOre, amount);
                 if (bar.equals(SmithBar.BRONZE)) {
                     removeOre(player, secondaryOre, amount);
@@ -123,13 +124,13 @@ public class BlastFurnace {
                 }
                 addBar(player, bar, amount);
                 player.getStats().addXp(StatType.Smithing, (bar.smeltXp * amount), true);
-                BlastFurnaceCoffer.decrementCofferAmount(player, amount * 100);
+                BlastFurnaceCoffer.decrementCofferAmount(player, amount * cost);
             } else {
                 Item ore = bar.smeltItems.get(0);
                 BlastFurnaceOre oreEnum = BlastFurnaceOre.getOreById(ore.getId());
                 int amount = getOre(player, oreEnum);
                 amount = (getBar(player, bar) + amount) > 28 ? 28 - getBar(player, bar) : amount;
-                amount = Math.min(BlastFurnaceCoffer.getAmount(player) / 100, amount);
+                amount = Math.min(BlastFurnaceCoffer.getAmount(player) / cost, amount);
                 addBar(player, bar, amount);
                 removeOre(player, oreEnum, amount);
                 boolean hasGoldsmithGloves = player.getEquipment().hasId(Items.GOLDSMITH_GAUNTLETS);
@@ -138,7 +139,7 @@ public class BlastFurnace {
                 } else {
                     player.getStats().addXp(StatType.Smithing, bar.smeltXp * amount, true);
                 }
-                BlastFurnaceCoffer.decrementCofferAmount(player, amount * 100);
+                BlastFurnaceCoffer.decrementCofferAmount(player, amount * cost);
             }
             barsMade = true;
         }
