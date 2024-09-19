@@ -181,7 +181,7 @@ public class ShopManager {
                 if (original != null) {
                     int difference = Integer.compare(shopItem.getAmount(), original.getAmount());
                     if (difference != 0) {
-                        shopItem.setAmount(shopItem.getAmount() - difference);
+                        shopItem.setAmount(shopItem.getAmount() - (difference * restockRules.restockPerTick));
                         shopItem.update();
                     }
                 } else {
