@@ -36,8 +36,8 @@ public class BlastFurnace {
 
     public static int getTotalBars(Player player) {
         int amount = 0;
-        for (BlastFurnaceOre ore : BlastFurnaceOre.values()) {
-            amount += getOre(player, ore);
+        for (SmithBar bar : SmithBar.values()) {
+            amount += getBar(player, bar);
         }
         return amount;
     }
