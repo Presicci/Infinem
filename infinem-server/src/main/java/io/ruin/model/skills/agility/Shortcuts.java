@@ -9,6 +9,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
 import io.ruin.model.skills.agility.shortcut.*;
 import io.ruin.model.stat.StatType;
+import kilim.tools.P;
 
 public class Shortcuts {
     static {
@@ -89,6 +90,18 @@ public class Shortcuts {
                 player.getMovement().teleport(2429, 9806, 0);
             });
         }));
+
+        // Arceuus rock climb
+        Tile.getObject(34741, new Position(1761, 3873, 0)).nearPosition = (player, object) -> {
+            if (player.getAbsY() >= object.y
+                    || (player.getAbsX() <= 1752 && player.getAbsY() >= 3866)
+                    || (player.getAbsX() >= 1779 && player.getAbsY() >= 3865)
+                    || player.getAbsX() >= 1781) {
+                return new Position(1761, 3874, 0);
+            } else {
+                return new Position(1761, 3872, 0);
+            }
+        };
 
         // Stepping stones in Brimhaven Dungeon
         // Varrock south fence jump
