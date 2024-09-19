@@ -66,7 +66,6 @@ public enum TeleGroup {
             target.player.getPacketSender().sendString(Interface.TELEOTHER, 91, location);
             target.player.telegroupActive = this;
         }
-        player.getStats().addXp(StatType.Magic, exp, true);
         return LunarTeleport.teleport(player, x, y, 0);
     }
 
