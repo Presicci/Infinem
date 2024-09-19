@@ -41,6 +41,7 @@ public class SuperiorSlayer {
             monster.removeOnDeath();
             monster.targetPlayer(player, false); // Targets player so no one can steal
             monster.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
+            monster.isSuperior = true;
             player.sendMessage("<col=ff0000>A superior foe has appeared...</col>");
             player.putTemporaryAttribute(AttributeKey.SUPERIOR_SPAWNED, null);
         }
