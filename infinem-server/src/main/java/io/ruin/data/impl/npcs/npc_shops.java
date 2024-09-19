@@ -36,7 +36,7 @@ public class npc_shops extends DataFile {
         List<ShopItem> items = new ArrayList<>();
         for (TempItem i : s.items)
             items.add(new ShopItem(i.itemId, i.stock, i.sell_price, i.buy_price));
-        Shop shop = new Shop(s.name, s.currency, s.generalStore, RestockRules.generateDefault(), items, s.ironman);
+        Shop shop = new Shop(s.name, s.currency, s.generalStore, new RestockRules(s.restockTicks, s.restockAmt), items, s.ironman);
         if (s.taskArea != null && s.taskTier != null) {
             shop.taskTier = s.taskTier;
             shop.taskArea = s.taskArea;
@@ -50,7 +50,7 @@ public class npc_shops extends DataFile {
         }
         for (int n : npcs) {
             if(s.uniquePerNpc){
-                shop = new Shop(s.name, s.currency, s.generalStore, RestockRules.generateDefault(), items, s.ironman);
+                shop = new Shop(s.name, s.currency, s.generalStore, new RestockRules(s.restockTicks, s.restockAmt), items, s.ironman);
             }
             Shop fShop = shop;
             NPCDefinition npcDefinition = NPCDefinition.get(n);
@@ -131,6 +131,10 @@ public class npc_shops extends DataFile {
         private boolean hideBuy;
         @Expose
         private boolean uniquePerNpc;
+        @Expose
+        private int restockTicks = 10;
+        @Expose
+        private int restockAmt = 1;
         @Expose
         private TaskArea taskArea;
         @Expose
