@@ -619,6 +619,8 @@ public class ClipUtils {
         clearClipping(3236, 3382, 0, 2, 1);
         // Leela's house
         clearClipping(1785, 3594, 0, 0, 0);
+        // Kraken lair
+        addClipping(2261, 10016, 0, 1, 0);
     }
 
     public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {
