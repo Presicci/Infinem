@@ -22,9 +22,9 @@ public class SpinFlaxSpell extends Spell {
                 p.sendMessage("You don't have any flax to spin.");
                 return false;
             }
+            p.lock();
             p.startEvent(event -> {
                 List<Item> flax = items;
-                p.lock();
                 RandomEvent.attemptTrigger(p);
                 p.animate(4413);
                 p.graphics(748, 96, 0);
