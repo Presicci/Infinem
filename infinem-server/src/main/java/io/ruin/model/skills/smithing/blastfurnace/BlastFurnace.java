@@ -154,7 +154,7 @@ public class BlastFurnace {
             int ticks = 0;
             while (true) {
                 if (!player.isOnline()) break;
-                if (player.hasTemporaryAttribute("BF_EARLY_COOL")) {
+                if (player.hasTemporaryAttribute("BF_EARLY_COOL") || getTotalBars(player) == 0) {
                     player.removeTemporaryAttribute("BF_EARLY_COOL");
                     break;
                 }
