@@ -15,6 +15,7 @@ import io.ruin.model.item.actions.impl.jewellery.BraceletOfSlaughter;
 import io.ruin.model.item.actions.impl.jewellery.ExpeditiousBracelet;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.MapArea;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.stat.StatType;
 
@@ -48,7 +49,7 @@ public class Slayer {
 
         if (task > 0 && am > 0 && master > 0 && creature != null && creature.contains(npc)) {
             int combatLevel = npc.getDef().combatLevel;
-
+            Position dropPosition = npc.getCombat().getDropPosition();
             if (master == SlayerMaster.KRYSTILIA_ID && player.wildernessLevel <= 0) {
                 player.sendMessage("<col=FF0000>You must kill your slayer assignment within the wilderness to receive experience!");
                 return;
@@ -68,7 +69,7 @@ public class Slayer {
                     chance = 50;
                 }
                 if (Random.get(chance) == 1) {
-                    new GroundItem(23490, 1).owner(player).position(npc.getPosition()).spawn();
+                    new GroundItem(23490, 1).owner(player).position(dropPosition).spawn();
                 }
 
                 /*
@@ -81,7 +82,7 @@ public class Slayer {
                     chance = 30;
                 }
                 if (Random.get(chance) == 1) {
-                    new GroundItem(21257, 1).owner(player).position(npc.getPosition()).spawn();
+                    new GroundItem(21257, 1).owner(player).position(dropPosition).spawn();
                 }
 
                 /*
@@ -107,7 +108,7 @@ public class Slayer {
                 }
 
                 if (Random.get(chance) == 1) {
-                    new GroundItem(23083, 1).owner(player).position(npc.getPosition()).spawn();
+                    new GroundItem(23083, 1).owner(player).position(dropPosition).spawn();
                 }
             }
 
