@@ -147,14 +147,14 @@ public class Equipment extends ItemContainer {
                     worn.clearAttributes();
                     worn.putAttributes(selectedItem.copyOfAttributes());
                 }
-                if (equipSlot == SLOT_WEAPON || worn.getId() == 12853 || worn.getId() == 12851) {
-                    TabCombat.resetAutocast(player);
-                }
                 worn.setId(selectedId);
                 worn.setAmount(selectedAmount);
                 worn.putAttributes(attributeCopy);
                 selectedItem.clearAttributes();
                 selectedItem.putAttributes(attributes);
+                if (equipSlot == SLOT_WEAPON || worn.getId() == 12853 || worn.getId() == 12851) {
+                    TabCombat.resetAutocast(player);
+                }
                 if (equippedDef.unequipAction != null) {
                     equippedDef.unequipAction.handle(player);
                 }
