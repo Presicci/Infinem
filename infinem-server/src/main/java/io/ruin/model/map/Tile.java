@@ -339,6 +339,8 @@ public class Tile {
 
     public boolean safePVPInstance = false;
 
+    public int playerLastTile;
+
     private List<Consumer<Entity>> triggers;
 
     private List<Consumer<Entity>> lazyTriggers;
@@ -364,9 +366,12 @@ public class Tile {
         for(int x = absX; x < (absX + size); x++) {
             for(int y = absY; y < (absY + size); y++) {
                 Tile tile = Tile.get(x, y, z, true);
-                if(entity.player != null)
+                if(entity.player != null) {
                     tile.playerCount += increment;
+                    if (tile.npcCount > 0) tile.playerLastTile = 2;
+                }
                 else {
+                    tile.playerLastTile -= 1;
                     tile.npcCount += increment;
                     if (entity.npc.clip) {
                         if (increment > 0) {
@@ -394,7 +399,7 @@ public class Tile {
                     continue;
                 }
                 Tile tile = Tile.get(x, y, z, true);
-                if(tile.playerCount > 0 || tile.npcCount > 0)
+                if (tile.playerLastTile == 0 && (tile.playerCount > 0 || tile.npcCount > 0))
                     return true;
             }
         }
