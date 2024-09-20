@@ -46,6 +46,9 @@ public class CharterShips {
             Config.CHARTER_PREVIOUS.set(player, ship.ordinal() + 1);
         Traveling.fadeTravel(player, ship.pos);
         player.closeInterface(InterfaceType.MAIN);
+        if (ship == CharterPoints.MOS_LEHARMLESS) {
+            player.getTaskManager().doLookupByUUID(713);    // Visit Mos Le'Harmless
+        }
     }
 
     private static final int[] CREWMEMBERS = {
