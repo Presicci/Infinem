@@ -560,7 +560,16 @@
   {
     "name": "Dust devil",
     "id": 7249,
-    "x": 1708,
+    "x": 1712,
+    "y": 10020,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dust devil",
+    "id": 7249,
+    "x": 1715,
     "y": 10018,
     "z": 0,
     "direction": "S",
@@ -569,8 +578,26 @@
   {
     "name": "Dust devil",
     "id": 7249,
-    "x": 1708,
-    "y": 10018,
+    "x": 1716,
+    "y": 10015,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dust devil",
+    "id": 7249,
+    "x": 1714,
+    "y": 10013,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dust devil",
+    "id": 7249,
+    "x": 1712,
+    "y": 10012,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -579,7 +606,7 @@
     "name": "Dust devil",
     "id": 7249,
     "x": 1708,
-    "y": 10018,
+    "y": 10012,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -587,8 +614,8 @@
   {
     "name": "Dust devil",
     "id": 7249,
-    "x": 1708,
-    "y": 10018,
+    "x": 1710,
+    "y": 10014,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -596,35 +623,8 @@
   {
     "name": "Dust devil",
     "id": 7249,
-    "x": 1708,
-    "y": 10018,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Dust devil",
-    "id": 7249,
-    "x": 1708,
-    "y": 10018,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Dust devil",
-    "id": 7249,
-    "x": 1708,
-    "y": 10018,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Dust devil",
-    "id": 7249,
-    "x": 1708,
-    "y": 10018,
+    "x": 1712,
+    "y": 10016,
     "z": 0,
     "direction": "S",
     "walkRange": 3
