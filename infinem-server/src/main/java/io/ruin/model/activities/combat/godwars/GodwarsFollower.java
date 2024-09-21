@@ -67,6 +67,7 @@ public class GodwarsFollower {
     };
 
     private static Bounds GODWARS = new Bounds(2816, 5249, 2943, 5375, -1);
+    private static Bounds WILDY_GODWARS = Bounds.fromRegion(12190);
 
     private static final Predicate<ItemDefinition> ARMADYL_ITEM = def -> Arrays.stream(ARMADYL_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
     private static final Predicate<ItemDefinition> SARADOMIN_ITEM = def -> Arrays.stream(SARADOMIN_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
@@ -87,7 +88,7 @@ public class GodwarsFollower {
          * Armadyl
          */
         SpawnListener.register(ARMADYL_FOLLOWER.stream().mapToInt(i -> i).toArray(), npc -> {
-            if (npc.getPosition().inBounds(GODWARS)) {
+            if (npc.getPosition().inBounds(GODWARS) || npc.getPosition().inBounds(WILDY_GODWARS)) {
                 npc.deathEndListener = (DeathListener.SimplePlayer) killer -> Config.GWD_ARMADYL_KC.set(killer.player, Config.GWD_ARMADYL_KC.get(killer.player) + 1);
                 if (npc.aggressionImmunity == null)
                     npc.aggressionImmunity = isProtected(0);
@@ -98,7 +99,7 @@ public class GodwarsFollower {
          * Saradomin
          */
         SpawnListener.register(SARADOMIN_FOLLOWER.stream().mapToInt(i -> i).toArray(), npc -> {
-            if (npc.getPosition().inBounds(GODWARS)) {
+            if (npc.getPosition().inBounds(GODWARS) || npc.getPosition().inBounds(WILDY_GODWARS)) {
                 npc.deathEndListener = (DeathListener.SimplePlayer) killer -> Config.GWD_SARADOMIN_KC.set(killer.player, Config.GWD_SARADOMIN_KC.get(killer.player) + 1);
                 if (npc.aggressionImmunity == null)
                     npc.aggressionImmunity = isProtected(1);
@@ -109,7 +110,7 @@ public class GodwarsFollower {
          * Zamorak
          */
         SpawnListener.register(ZAMORAK_FOLLOWER.stream().mapToInt(i -> i).toArray(), npc -> {
-            if (npc.getPosition().inBounds(GODWARS)) {
+            if (npc.getPosition().inBounds(GODWARS) || npc.getPosition().inBounds(WILDY_GODWARS)) {
                 npc.deathEndListener = (DeathListener.SimplePlayer) killer -> Config.GWD_ZAMORAK_KC.set(killer.player, Config.GWD_ZAMORAK_KC.get(killer.player) + 1);
                 if (npc.aggressionImmunity == null)
                     npc.aggressionImmunity = isProtected(2);
@@ -120,7 +121,7 @@ public class GodwarsFollower {
          * Bandos
          */
         SpawnListener.register(BANDOS_FOLLOWER.stream().mapToInt(i -> i).toArray(), npc -> {
-            if (npc.getPosition().inBounds(GODWARS)) {
+            if (npc.getPosition().inBounds(GODWARS) || npc.getPosition().inBounds(WILDY_GODWARS)) {
                 npc.deathEndListener = (DeathListener.SimplePlayer) killer -> Config.GWD_BANDOS_KC.set(killer.player, Config.GWD_BANDOS_KC.get(killer.player) + 1);
                 if (npc.aggressionImmunity == null)
                     npc.aggressionImmunity = isProtected(3);
