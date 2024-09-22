@@ -156,8 +156,8 @@ public class Adam {
             }
         });
         GameMode.changeForumsGroup(player, GameMode.STANDARD.groupId);
-        Config.IRONMAN_MODE.set(player, 0);
         Hiscores.archive(player);
+        Config.IRONMAN_MODE.set(player, 0);
         player.dialogue(new MessageDialogue("You have successfully removed your Ironman restrictions."));
     }
 
