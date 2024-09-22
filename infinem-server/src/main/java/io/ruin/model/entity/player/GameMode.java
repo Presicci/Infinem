@@ -44,10 +44,10 @@ public enum GameMode {
     public static final int[] NORMAL_ARMOR = { 12810, 12811, 12812 };
 
     public static void hardcoreDeath(Player player, Hit killHit) {
+        Hiscores.archive(player);
         Config.IRONMAN_MODE.set(player, 1);
         changeForumsGroup(player, IRONMAN.groupId);
         player.sendMessage(Color.RED.wrap("You have fallen as a Hardcore Ironman, your Hardcore status has been revoked."));
-        Hiscores.archive(player);
         if (player.getStats().totalLevel >= 100) {
             String overall = NumberUtils.formatNumber(player.getStats().totalLevel);
             if (killHit == null) {
