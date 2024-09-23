@@ -553,7 +553,7 @@ public class Player extends PlayerAttributes {
     /**
      * Dialogue
      */
-    @Getter private NPC dialogueNPC;
+    @Getter @Setter private NPC dialogueNPC;
 
     private int dialogueStage;
 
