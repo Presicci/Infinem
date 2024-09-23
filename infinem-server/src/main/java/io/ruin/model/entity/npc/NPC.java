@@ -516,6 +516,15 @@ public class NPC extends NPCAttributes {
         });
     }
 
+    public void doIfOutOfCombat(Runnable runnable) {
+        npc.addEvent(e -> {
+            while (npc.getCombat().isDefending(10) || npc.getCombat().isAttacking(10)) {
+                e.delay(10);
+            }
+            runnable.run();
+        });
+    }
+
     public void doIfIdle(Player player, Runnable runnable) {
         doIfIdle(player, 30, 4, runnable);
     }
