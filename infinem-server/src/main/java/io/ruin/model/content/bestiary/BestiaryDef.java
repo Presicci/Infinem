@@ -1,6 +1,8 @@
 package io.ruin.model.content.bestiary;
 
 import io.ruin.cache.def.NPCDefinition;
+import io.ruin.model.entity.shared.listeners.LoginListener;
+import lombok.var;
 
 import java.util.*;
 
@@ -408,5 +410,38 @@ public class BestiaryDef {
                 ENTRIES.add(name);
         });
         System.out.println("Loaded " + ENTRIES.size() + " bestiary entries");
+
+        LoginListener.register(player -> {
+            var killcounts = player.getBestiary().getKillCounts();
+            var keySet = new TreeSet<>(killcounts.keySet());
+            kc : for (String entry : keySet) {
+                int amt = killcounts.get(entry);
+                if (!ENTRIES.contains(entry)) {
+                    for (Map.Entry<String, String> replacement : REPLACEMENTS.entrySet()) {
+                        if (entry.equalsIgnoreCase(replacement.getKey())) {
+                            killcounts.remove(entry);
+                            if (killcounts.containsKey(replacement.getValue())) {
+                                amt += killcounts.get(replacement.getValue());
+                            }
+                            killcounts.put(replacement.getValue(), amt);
+                            continue kc;
+                        }
+                    }
+                    for (Map.Entry<String, String[]> category : CATEGORIES.entrySet()) {
+                        for (String member : category.getValue()) {
+                            if (entry.equalsIgnoreCase(member)) {
+                                killcounts.remove(entry);
+                                if (killcounts.containsKey(category.getKey())) {
+                                    amt += killcounts.get(category.getKey());
+                                }
+                                killcounts.put(category.getKey(), amt);
+                                continue kc;
+                            }
+                        }
+                    }
+                    killcounts.remove(entry);
+                }
+            }
+        });
     }
 }
