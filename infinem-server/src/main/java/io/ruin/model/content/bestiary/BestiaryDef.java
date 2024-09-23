@@ -85,6 +85,7 @@ public class BestiaryDef {
     };
 
     public static Map<String, String[]> CATEGORIES = new HashMap<String, String[]>() {{
+        put("shade", new String[]{"loar shade", "phrin shade", "riyl shade", "asyn shade", "fiyr shade", "urium shade"});
         put("zombie", new String[] { "sorebones", "zombie pirate", "zombie swab", "zombies champion", "summoned zombie", "undead lumberjack" });
         put("dagannoth", new String[] { "dagannoth spawn", "dagannoth fledgeling" });
         put("kourend guard", new String[] { "soldier (tier 1)", "soldier (tier 2)", "soldier (tier 3)", "soldier (tier 4)", "soldier (tier 5)", "kourend head guard" });
