@@ -50,6 +50,10 @@ public class CollectionLog {
         this.player = player;
     }
 
+    public boolean hasCollected(int itemId) {
+        return getCollected(itemId) > 0;
+    }
+
     public int getCollected(int itemId) {
         return collected.getOrDefault(itemId,0);
     }
