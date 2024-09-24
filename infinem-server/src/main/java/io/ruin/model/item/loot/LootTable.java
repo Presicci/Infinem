@@ -204,6 +204,18 @@ public class LootTable {
         return items == null ? null : items.get(0);
     }
 
+    public List<Item> rollGuaranteed() {
+        List<Item> items;
+        if(guaranteed != null) {
+            items = new ArrayList<>(guaranteed.length + 1);
+            for (LootItem item : guaranteed)
+                item.addToList(items);
+        } else {
+            items = new ArrayList<>(0);
+        }
+        return items;
+    }
+
     public List<Item> rollItems(boolean allowGuaranteed) {
         List<Item> items;
         if(allowGuaranteed && guaranteed != null) {
