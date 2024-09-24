@@ -17,6 +17,7 @@ import io.ruin.model.map.object.owned.OwnedObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -48,6 +49,8 @@ public class GameObject extends TemporaryAttributesHolder {
     public int conOwner = -1;
 
     private long lastAnimationTick;
+
+    public Map<String, Object> attributes = new HashMap<>();
 
     public GameObject(int id, int x, int y, int z, int type, int direction) {
         this.id = id;
