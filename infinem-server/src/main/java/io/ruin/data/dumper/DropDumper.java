@@ -232,7 +232,6 @@ public class DropDumper {
                     }
                     List<DumpItem> tableItems = new ArrayList<>();
                     for(Element tr : trs) {
-                        System.out.println(tableName);
                         Elements tds = tr.select("td");
                         if(tds.size() == 0)
                             continue;
@@ -576,6 +575,7 @@ public class DropDumper {
                         if(i != (guaranteed.length - 1))
                             bw.write(",");
                         bw.write("   //" + item.getName());
+                        System.out.println("new LootItem(" + item.id + ", " + item.min + ", " + item.max + ", " + item.weight + ");");
                     }
                     bw.newLine();
                     bw.write("    ]");
@@ -643,6 +643,7 @@ public class DropDumper {
                                 bw.write(","); //weight,
                                 bw.newLine();
                                 bw.write("        \"items\": [");
+                                System.out.println("new table: " + (finalTableWeights != null ? finalTableWeights[i] : table.weight));
                                 for(int x = 0; x < table.items.length; x++) {
                                     DumpItem item = (DumpItem) table.items[x];
                                     bw.newLine();
@@ -664,6 +665,7 @@ public class DropDumper {
                                     if(x != (table.items.length - 1))
                                         bw.write(",");
                                     bw.write("   //" + item.getName());
+                                    System.out.println("new LootItem(" + item.id + ", " + item.min + ", " + item.max + ", " + item.weight + "), // " + item.getName());
                                 }
                                 bw.newLine();
                                 bw.write("        ]");
