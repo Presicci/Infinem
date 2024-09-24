@@ -57,7 +57,7 @@ public class ItemDefinition {
     }
 
     private static final List<Integer> PLURAL_ITEMS = Arrays.asList(
-            Items.EQUA_LEAVES
+            Items.EQUA_LEAVES, Items.SPLITBARK_BOOTS_NOTE, Items.SPLITBARK_LEGS, Items.SPLITBARK_GAUNTLETS
     );
 
     private static final List<Integer> DESCRIPTORLESS_ITEMS = Arrays.asList(
