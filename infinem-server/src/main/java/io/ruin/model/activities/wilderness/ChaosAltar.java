@@ -93,7 +93,7 @@ public class ChaosAltar {
               if(Random.rollDie(2, 1)) {
                   player.sendMessage("The Dark Lord spares your sacrifice but still rewards you for your efforts.");
               } else {
-                  player.getInventory().remove(item.getId(), 1);
+                  if (!Bone.zealotSaveBone(player)) player.getInventory().remove(item.getId(), 1);
               }
               player.animate(3705);
               player.getStats().addXp(StatType.Prayer, bone.exp * 3.5, true);

@@ -116,7 +116,7 @@ public class Chapel {
     public static void offer(Player player, GameObject obj, Altar altarType, Bone boneType) {
         player.startEvent(event -> {
             while (player.getInventory().contains(boneType.id, 1)) {
-                player.getInventory().remove(boneType.id, 1);
+                if (!Bone.zealotSaveBone(player)) player.getInventory().remove(boneType.id, 1);
                 player.animate(3705);
                 player.sendFilteredMessage("The gods are pleased with your offerings.");
                 double xpBonus = 0;

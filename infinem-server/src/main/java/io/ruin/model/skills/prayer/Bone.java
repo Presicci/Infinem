@@ -1,5 +1,6 @@
 package io.ruin.model.skills.prayer;
 
+import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
@@ -86,7 +87,7 @@ public enum Bone {
             if (neckDef != null && neckDef.id == DRAGONBONE_NECKLACE) {
                 boneNecklaceEffect(player, bone);
             }
-            bone.remove();
+            if (!zealotSaveBone(player)) bone.remove();
             player.animate(827);
             player.sendMessage("You dig a hole in the ground...");
             int pyreCharges = player.getAttributeIntOrZero(PyreSite.PYRE_KEY);
@@ -110,6 +111,20 @@ public enum Bone {
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.BURYBONE, bone.getDef().name.toLowerCase());
             KourendCatacombs.buriedBone(player, this);
         });
+    }
+
+    private static final int[] ZEALOT_PIECES = { 25440, 25438, 25436, 25434 };
+
+    public static boolean zealotSaveBone(Player player) {
+        int pieces = 0;
+        for (int piece : ZEALOT_PIECES) {
+            if (player.getEquipment().hasId(piece)) pieces++;
+        }
+        if (Random.get() < pieces * 0.0125) {
+            player.sendFilteredMessage("Your zealot robes save you a bone.");
+            return true;
+        }
+        return false;
     }
 
     private void boneNecklaceEffect(Player player, Item bone) {
