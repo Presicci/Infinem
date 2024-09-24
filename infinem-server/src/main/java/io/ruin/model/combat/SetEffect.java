@@ -40,7 +40,7 @@ public enum SetEffect {
         hit.boostDamage(damageMod);
         player.sendMessage(damageMod + "");
     }, (player, hit) -> hit.attackStyle.isMelee(),
-            new Piece(Equipment.SLOT_HAT, 4716, 4980, 4981, 4982, 4983),
+            new Piece(Equipment.SLOT_HAT, 4716, 4880, 4881, 4882, 4883),
             new Piece(Equipment.SLOT_CHEST, 4720, 4892, 4893, 4894, 4895),
             new Piece(Equipment.SLOT_LEGS, 4722, 4898, 4899, 4900, 4901),
             new Piece(Equipment.SLOT_WEAPON, 4718, 4886, 4887, 4888, 4889)),
@@ -53,7 +53,7 @@ public enum SetEffect {
             hit.attacker.hit(new Hit().fixedDamage(damage));
         }
     }, (player, hit) -> hit.attacker != null && hit.attackStyle != null,
-            new Piece(Equipment.SLOT_HAT, 4716, 4980, 4981, 4982, 4983),
+            new Piece(Equipment.SLOT_HAT, 4716, 4880, 4881, 4882, 4883),
             new Piece(Equipment.SLOT_CHEST, 4720, 4892, 4893, 4894, 4895),
             new Piece(Equipment.SLOT_LEGS, 4722, 4898, 4899, 4900, 4901),
             new Piece(Equipment.SLOT_WEAPON, 4718, 4886, 4887, 4888, 4889),
