@@ -858,6 +858,13 @@ public abstract class Entity extends TemporaryAttributesHolder {
             getMovement().reset();
     }
 
+    public void freezeTicks(int ticks, Entity entity) {
+        freezeDelay.delay(ticks);
+        freezer = entity;
+        if(player != null && !player.isLocked())
+            getMovement().reset();
+    }
+
     public void resetFreeze() {
         freezeDelay.reset();
         freezer = null;
