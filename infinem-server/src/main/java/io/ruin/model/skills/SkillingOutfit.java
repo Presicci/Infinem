@@ -50,6 +50,13 @@ public enum SkillingOutfit {
             new SkillingOutfitPiece(0.024, 25434),
             new SkillingOutfitPiece(0.02, 25436),
             new SkillingOutfitPiece(0.012, 25440)
+    ),
+    ROGUE(StatType.Thieving, 0.022,
+            new SkillingOutfitPiece(0.016, Items.ROGUE_MASK),
+            new SkillingOutfitPiece(0.02, Items.ROGUE_TOP),
+            new SkillingOutfitPiece(0.018, Items.ROGUE_TROUSERS),
+            new SkillingOutfitPiece(0.012, Items.ROGUE_GLOVES),
+            new SkillingOutfitPiece(0.012, Items.ROGUE_BOOTS)
     )
     ;
 
