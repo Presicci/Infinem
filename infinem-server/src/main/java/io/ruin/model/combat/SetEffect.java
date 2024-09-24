@@ -237,7 +237,10 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_CHEST, 25404),
             new Piece(Equipment.SLOT_LEGS, 25416),
             new Piece(Equipment.SLOT_HANDS, 25407),
-            new Piece(Equipment.SLOT_FEET, 25410))
+            new Piece(Equipment.SLOT_FEET, 25410)),
+    SWAMPBARK(new Piece(Equipment.SLOT_HAT, 25398),
+            new Piece(Equipment.SLOT_CHEST, 25389),
+            new Piece(Equipment.SLOT_LEGS, 25401))
     ;
 
     BiPredicate<Player, Hit> hitCondition; // must fulfill this condition to even check if the pieces are equipped

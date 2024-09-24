@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells.modern;
 
 import io.ruin.model.combat.Hit;
+import io.ruin.model.combat.SetEffect;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.skills.hunter.Impling;
@@ -30,7 +31,14 @@ public class RootSpell extends TargetSpell {
 
     @Override
     public void afterHit(Hit hit, Entity target) {
-        hold(hit, target, duration, false);
+        int rootTicks = duration;
+        if (hit.attacker != null && hit.attacker.isPlayer()) {
+            int swampbarkPieceCount = SetEffect.SWAMPBARK.numberOfPieces(hit.attacker.player);
+            if (swampbarkPieceCount > 0) {
+                rootTicks += swampbarkPieceCount * 2;
+            }
+        }
+        hold(hit, target, rootTicks, false);
     }
 
     private boolean castOnNonCombat(Player player, Entity target) {
@@ -57,8 +65,12 @@ public class RootSpell extends TargetSpell {
             player.publicSound(hitSoundId, 1, delay);
         if(r != null)
             r.remove();
-
-        target.freezeTicks(duration, player);
+        int rootTicks = duration;
+        int swampbarkPieceCount = SetEffect.SWAMPBARK.numberOfPieces(player);
+        if (swampbarkPieceCount > 0) {
+            rootTicks += swampbarkPieceCount * 2;
+        }
+        target.freezeTicks(rootTicks, player);
         target.getMovement().reset();
         return true;
     }
