@@ -102,9 +102,7 @@ public class CombatUtils {
         if(entity.player != null) {
             effectiveDefence *= (1D + entity.player.getPrayer().defenceBoost);
             if (SetEffect.TORAG_DAMNED.hasPieces((Player) entity)) {
-                ((Player) entity).sendMessage("Before:" + effectiveDefence);
                 effectiveDefence *= 1D + (1D - (Double.valueOf(entity.getHp()) / Double.valueOf(entity.getMaxHp())));
-                ((Player) entity).sendMessage("After:" + effectiveDefence);
             }
         }
         if(type != null) {
