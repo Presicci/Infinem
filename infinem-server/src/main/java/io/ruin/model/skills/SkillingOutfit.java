@@ -44,6 +44,12 @@ public enum SkillingOutfit {
             new SkillingOutfitPiece(0.024, Items.ANGLER_TOP),
             new SkillingOutfitPiece(0.02, Items.ANGLER_WADERS),
             new SkillingOutfitPiece(0.012, Items.ANGLER_BOOTS)
+    ),
+    ZEALOT(StatType.Prayer, 0.028,
+            new SkillingOutfitPiece(0.016, 25438),
+            new SkillingOutfitPiece(0.024, 25434),
+            new SkillingOutfitPiece(0.02, 25436),
+            new SkillingOutfitPiece(0.012, 25440)
     )
     ;
 
