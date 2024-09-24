@@ -14,10 +14,8 @@ public abstract class BloodSpell extends TargetSpell {
             if (hit.attacker.player != null) {
                 int bloodbarkPieceCount = SetEffect.BLOODBARK.numberOfPieces(hit.attacker.player);
                 if (bloodbarkPieceCount > 0) {
-                    healAmount *= 1D + (bloodbarkPieceCount * 0.02);
+                    healAmount = (int) (healAmount * (1D + (bloodbarkPieceCount * 0.02)));
                 }
-                if (hit.attacker.player.getEquipment().hasId(22647)) // zuriel's staff
-                    healAmount *= 1.5;
             }
             hit.attacker.incrementHp(healAmount);
         }
