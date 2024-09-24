@@ -12,7 +12,7 @@ public class Entangle extends RootSpell {
     }
 
     public Entangle() {
-        super(15);
+        super(24);
         setLvlReq(79);
         setBaseXp(89.0);
         setMaxDamage(5);

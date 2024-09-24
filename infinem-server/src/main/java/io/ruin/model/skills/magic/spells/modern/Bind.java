@@ -11,7 +11,7 @@ public class Bind extends RootSpell {
     }
 
     public Bind() {
-        super(5);
+        super(8);
         setLvlReq(20);
         setBaseXp(30.0);
         setMaxDamage(0);

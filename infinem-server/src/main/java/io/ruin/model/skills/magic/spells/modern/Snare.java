@@ -11,7 +11,7 @@ public class Snare extends RootSpell {
     }
 
     public Snare() {
-        super(10);
+        super(16);
         setLvlReq(50);
         setBaseXp(60.0);
         setMaxDamage(2);

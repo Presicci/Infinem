@@ -58,7 +58,7 @@ public class RootSpell extends TargetSpell {
         if(r != null)
             r.remove();
 
-        target.freeze(duration, player);
+        target.freezeTicks(duration, player);
         target.getMovement().reset();
         return true;
     }
