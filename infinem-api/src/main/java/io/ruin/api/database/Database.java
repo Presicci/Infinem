@@ -38,7 +38,7 @@ public class Database {
             throw new RuntimeException("Database " + host + "/" + database + " is already connected!");
 
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:mysql://" + host + "/" + database + "?useSSL=false&serverTimezone=UTC");
+        config.setJdbcUrl("jdbc:mysql://" + host + "/" + database + "?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC");
         config.setUsername(username);
         config.setPassword(password);
 
