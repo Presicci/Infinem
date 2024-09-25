@@ -39,7 +39,8 @@ public class TempleRepairing {
 
     protected static void addSanctity(Player player, int amount) {
         if (player.getAttributeIntOrZero(SANCTITY_KEY) >= 100) return;
-        player.incrementNumericAttribute(SANCTITY_KEY, amount);
+        int newAmt = player.incrementNumericAttribute(SANCTITY_KEY, amount);
+        if (newAmt >= 100) player.getTaskManager().doLookupByUUID(728); // Achieve 100% Shades of Mort'Ton Sanctity
         player.getPacketSender().sendVarp(345, player.getAttributeIntOrZero(SANCTITY_KEY));
     }
 
