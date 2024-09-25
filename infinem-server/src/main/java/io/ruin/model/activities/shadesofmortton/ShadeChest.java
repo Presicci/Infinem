@@ -1308,6 +1308,9 @@ public enum ShadeChest {
             for (Item item : loot) {
                 addLoot(player, item);
             }
+            if (ordinal() < 5) {
+                player.getTaskManager().doLookupByUUID(711);    // Open a Bronze Chest
+            }
             trySpawnUndeadZealot(player);
             player.unlock();
         });
