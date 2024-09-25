@@ -173,6 +173,48 @@ public class Store {
             case 17:    // Void ornament kit
                 addItem(player, 26479, amt * 6);
                 break;
+            case 18:    // Zealot outfit
+                addItem(player, 25438, 1);
+                addItem(player, 25434, 1);
+                addItem(player, 25436, 1);
+                addItem(player, 25440, 1);
+                break;
+            case 19:    // Skilling outfit bundle
+                // Angler outfit
+                addItem(player, Items.ANGLER_HAT, amt);
+                addItem(player, Items.ANGLER_TOP, amt);
+                addItem(player, Items.ANGLER_WADERS, amt);
+                addItem(player, Items.ANGLER_BOOTS, amt);
+                // Carpenter
+                addItem(player, 24872, amt);
+                addItem(player, 24874, amt);
+                addItem(player, 24876, amt);
+                addItem(player, 24878, amt);
+                // Graceful
+                addItem(player, 11850, amt);
+                addItem(player, 11852, amt);
+                addItem(player, 11854, amt);
+                addItem(player, 11856, amt);
+                addItem(player, 11858, amt);
+                addItem(player, 11860, amt);
+                // Prospector
+                addItem(player, Items.PROSPECTOR_HELMET, amt);
+                addItem(player, Items.PROSPECTOR_JACKET, amt);
+                addItem(player, Items.PROSPECTOR_LEGS, amt);
+                addItem(player, Items.PROSPECTOR_BOOTS, amt);
+                // Lumberjack
+                addItem(player, Items.LUMBERJACK_HAT, amt);
+                addItem(player, Items.LUMBERJACK_TOP, amt);
+                addItem(player, Items.LUMBERJACK_LEGS, amt);
+                addItem(player, Items.LUMBERJACK_BOOTS, amt);
+                // Rogue
+                addItem(player, 5553, amt);
+                addItem(player, 5554, amt);
+                addItem(player, 5555, amt);
+                addItem(player, 5556, amt);
+                addItem(player, 5557, amt);
+                // Zealot
+                break;
         }
         return 0;
     }
