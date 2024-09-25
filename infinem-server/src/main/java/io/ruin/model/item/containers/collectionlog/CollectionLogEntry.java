@@ -185,7 +185,7 @@ public enum CollectionLogEntry {
     MONKEY_BACKPACKS(12040, CollectionLogCategory.OTHER),
     MOTHERLODE_MINE(12021, CollectionLogCategory.OTHER),
     MY_NOTES(12037, CollectionLogCategory.OTHER),
-    RANDOM_EVENTS(12029, CollectionLogCategory.OTHER),
+    RANDOM_EVENTS(12029, CollectionLogCategory.OTHER, PlayerCounter.RANDOM_EVENTS::get),
     REVENANTS(12016, CollectionLogCategory.OTHER, player -> KillCounter.getKillCount(player, SlayerKillCounter.REVENANTS)),
     ROOFTOP_AGILITY(12035, CollectionLogCategory.OTHER),
     SHAYZIEN_ARMOUR(12022, CollectionLogCategory.OTHER),

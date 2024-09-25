@@ -5,6 +5,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
@@ -177,6 +178,7 @@ public enum RandomEvent {
                 }
                 player.getCollectionLog().collect(costumePiece.getId());
                 player.getTaskManager().doLookupByUUID(1108);   // Get a Random Event
+                PlayerCounter.RANDOM_EVENTS.increment(player, 1);
                 return;
             }
         }
@@ -184,6 +186,7 @@ public enum RandomEvent {
         player.getInventory().addOrDrop(randomReward);
         player.sendMessage("The stranger hands you a reward as he disappears...");
         player.getTaskManager().doLookupByUUID(1108);   // Get a Random Event
+        PlayerCounter.RANDOM_EVENTS.increment(player, 1);
         if (randomReward.getId() == Items.FROG_TOKEN) player.getCollectionLog().collect(randomReward);
     }
 
