@@ -210,6 +210,7 @@ public class AgilityPyramid {
             return;
         RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
+            player.lock();
             Position startPos = new Position(
                     object.getFaceDirection() == Direction.EAST ? object.getPosition().getX() : object.getFaceDirection() == Direction.WEST ? object.getPosition().getX() + 1: player.getPosition().getX(),
                     object.getFaceDirection() == Direction.NORTH ? object.getPosition().getY() : object.getFaceDirection() == Direction.SOUTH ? object.getPosition().getY() + 1 : player.getPosition().getY(),
