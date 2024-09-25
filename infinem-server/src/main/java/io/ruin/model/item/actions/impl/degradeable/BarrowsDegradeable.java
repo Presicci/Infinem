@@ -61,7 +61,12 @@ public enum BarrowsDegradeable {
         this.newId = newId;
         this.degradeableBaseId = degradeableBaseId;
         for (int id : Arrays.asList(newId, degradeableBaseId, degradeableBaseId + 1, degradeableBaseId + 2, degradeableBaseId + 3)) {
-            ItemDefinition.get(id).addPreDefendListener((player, item, hit) -> removeCharge(item, 1));
+            ItemDefinition def = ItemDefinition.get(id);
+            if (def.equipSlot == Equipment.SLOT_WEAPON) {
+                def.addPreTargetDefendListener((player, item, hit, target) -> removeCharge(item, 1));
+            } else {
+                def.addPreDefendListener((player, item, hit) -> removeCharge(item, 1));
+            }
             ItemAction.registerInventory(id, "check", (player, item) -> player.sendMessage("Your " + ItemDefinition.get(newId).name + " has " + item.getCharges() + " charges remaining."));
             ItemAction.registerEquipment(id, "check", (player, item) -> player.sendMessage("Your " + ItemDefinition.get(newId).name + " has " + item.getCharges() + " charges remaining."));
             ItemDefinition.get(id).custom_values.put("DROP_PROMPT", new ItemDropPrompt("Dropping this item will break it.", this::destroy
