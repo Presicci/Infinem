@@ -1,8 +1,10 @@
 package io.ruin.data.impl.dialogue;
 
 import io.ruin.api.utils.Random;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
+import io.ruin.model.activities.shadesofmortton.Coffin;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.transportation.charterships.CharterShips;
 import io.ruin.api.utils.AttributeKey;
@@ -16,6 +18,7 @@ import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
@@ -24,11 +27,82 @@ import io.ruin.model.skills.mining.EssenceMine;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    DAMPE_LOCKS(player -> {
+        List<Coffin> REVERSED_LIST = Arrays.asList(Coffin.values());
+        Collections.reverse(REVERSED_LIST);
+        Coffin coffin = Arrays.stream(REVERSED_LIST.toArray(new Coffin[0])).filter(c -> player.getInventory().hasId(c.getLockId())).findFirst().orElse(null);
+        NPC npc = player.getDialogueNPC();
+        if (coffin == null) {
+            player.dialogue(
+                    new PlayerDialogue("You gave me a broken coffin, what am I supposed to do with it?"),
+                    new NPCDialogue(npc, "Bring me locks, I fix coffin with locks..."),
+                    new PlayerDialogue("Right... and where am I suppose to find such locks?"),
+                    new NPCDialogue(npc, "In catacombs... in chests..."),
+                    new PlayerDialogue("Great, thanks for the information.")
+            );
+        } else {
+            player.dialogue(
+                    new PlayerDialogue("I found one of the locks you were talking about, I think."),
+                    new ItemDialogue().one(coffin.getLockId(), "You show Dampe the lock you found and his cold eyes light up."),
+                    new NPCDialogue(npc, "That is it, give to me now and I repair the coffin."),
+                    new OptionsDialogue("Give Dampe a lock?",
+                            new Option("Yes", () -> {
+                                Item coffinItem = player.getInventory().findItem(25457);
+                                if (coffinItem != null) {
+                                    if (player.getInventory().hasId(coffin.getLockId())) {
+                                        player.getInventory().remove(coffin.getLockId(), 1);
+                                        coffinItem.setId(coffin.getCoffinId());
+                                        player.dialogue(
+                                                new ItemDialogue().two(coffin.getLockId(), 25457, "You hand over the coffin and lock to Dampe."),
+                                                new MessageDialogue("You hear him clumsily attach the lock to the coffin."),
+                                                new NPCDialogue(npc, "Finished, take it.")
+                                        );
+                                    }
+                                } else {
+                                    player.dialogue(new NPCDialogue(npc, "You ain't got no broken coffin for me to fix. If you need one, just ask."));
+                                }
+                            }),
+                            new Option("No", new PlayerDialogue("No thanks, I'm going to hang on to it for now."), new NPCDialogue(npc, "*grunts*"))
+                    )
+            );
+        }
+    }),
+    DAMPE_GIVECOFFIN(player -> {
+        boolean hasCoffin = false;
+        if (player.getInventory().hasId(25457)) hasCoffin = true;
+        else for (Coffin coffin : Coffin.values()) {
+            if (player.getInventory().hasId(coffin.getCoffinId())
+                    || player.getEquipment().hasId(coffin.getCoffinId())
+                    || player.getInventory().hasId(coffin.getOpenId())
+                    || player.getEquipment().hasId(coffin.getOpenId())) {
+                hasCoffin = true;
+                break;
+            }
+        }
+        NPC npc = player.getDialogueNPC();
+        if (hasCoffin) {
+            player.dialogue(
+                    new NPCDialogue(npc, "Get lost, you've already got a coffin, I ain't givin' you anotha.")
+            );
+        } else {
+            player.dialogue(
+                    new NPCDialogue(npc, "*grunts*"),
+                    new ItemDialogue().one(25457, npc.getDef().name + " hands you " + ItemDefinition.get(25457).descriptiveName + ".").consumer((p) -> {
+                        p.getInventory().addOrDrop(25457, 1);
+                    }),
+                    new PlayerDialogue("It's broken?"),
+                    new NPCDialogue(npc, "Bring me locks, find in the catacombs... I repair coffin with locks.")
+            );
+        }
+    }),
     DONDAKAN_CANNON(player -> {
         Traveling.fadeTravel(player, 2583, 4936, 0);
     }),
