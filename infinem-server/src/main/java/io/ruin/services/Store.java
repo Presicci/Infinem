@@ -214,6 +214,15 @@ public class Store {
                 addItem(player, 5556, amt);
                 addItem(player, 5557, amt);
                 // Zealot
+                addItem(player, 25438, 1);
+                addItem(player, 25434, 1);
+                addItem(player, 25436, 1);
+                addItem(player, 25440, 1);
+                // Pyromancer
+                addItem(player, Items.PYROMANCER_HOOD, 1);
+                addItem(player, Items.PYROMANCER_GARB, 1);
+                addItem(player, Items.PYROMANCER_ROBE, 1);
+                addItem(player, Items.PYROMANCER_BOOTS, 1);
                 break;
             case 20:    // Pyromancer outfit
                 addItem(player, Items.PYROMANCER_HOOD, 1);
