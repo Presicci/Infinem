@@ -114,7 +114,7 @@ public class BestiaryDef {
                 "dessourt", "dessourt (hard)", "agrith-na-na", "agrith-na-na (hard)", "chronozon", "chronozon (hard)", "slagilith", "slagilith (hard)", "count draynor", "count draynor (hard)", "giant roc", "giant roc (hard)",
                 "karamel", "karamel (hard)", "skeleton hellhound", "skeleton hellhound (hard)", "treus dayth", "treus dayth (hard)", "ice troll king", "ice troll king (hard)",
                 "barrelchest", "barrelchest (hard)", "trapped soul", "trapped soul (hard)", "bouncer", "bouncer (hard)", "culinaromancer", "culinaromancer (hard)",
-                "me", "me (hard)", "jungle demon", "jungle demon (hard)", "giant scarab", "giant scarab (hard)", "black knight titan", "black knight titan (hard)", "the everlasting", "the everlasting (hard)",
+                "me", "me (hard)", "jungle demon", "jungle demon (hard)", "giant scarab", "giant scarab (hard)", "black knight titan", "black knight titan (hard)", "the everlasting", "the everlasting (hard)", "moss guardian", "moss guardian (hard)",
         });
         put("bandit", new String[] { "black heather", "speedy keith", "bandit champion", "guard bandit" });
         put("troll", new String[] { "troll general", "kraka", "mountain troll", "pee hat", "thrower troll", "troll spectator", "stick", "berry", "twig", "kob" });
