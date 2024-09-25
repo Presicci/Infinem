@@ -27,7 +27,7 @@ public class SlayerStaffEnchanted {
                 new YesNoDialogue("Are you sure you want to do this?", "You will enchant your staff, making it untradable.", staff, () -> {
                     staff.setId(SLAYER_STAFF_E);
                     staff.setCharges(2500);
-                    scroll.remove();
+                    scroll.remove(1);
                     new ItemDialogue().one(SLAYER_STAFF_E, "You have enchanted your Slayer's staff.");
                 })
         );
