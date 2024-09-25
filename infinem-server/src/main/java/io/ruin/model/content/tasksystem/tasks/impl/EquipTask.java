@@ -62,6 +62,7 @@ public enum EquipTask {
             Items.TEAM_CAPE_I, Items.TEAM_CAPE_X
     ),
     PROTEST_BANNER(948, 25822),     // Equip a Protest Banner
+    GOLD_COFFIN(1113, 25467, 25473),    // Equip a Gold Coffin
     ;
 
     private final int uuid;
