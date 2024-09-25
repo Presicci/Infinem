@@ -73,7 +73,7 @@ public class TempleRepairing {
     }
 
     private static boolean isSuccessfulRepair(int effectiveLevel) {
-        int roll = Math.max(2, 12 - (effectiveLevel / 10));
+        int roll = Math.max(2, 10 - (effectiveLevel / 10));
         return Random.rollDie(roll);
     }
 
