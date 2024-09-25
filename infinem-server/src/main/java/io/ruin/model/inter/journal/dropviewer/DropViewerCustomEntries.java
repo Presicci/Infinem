@@ -6,6 +6,8 @@ import io.ruin.model.activities.combat.bosses.hespori.HesporiLoot;
 import io.ruin.model.activities.combat.bosses.slayer.sire.FontOfConsumption;
 import io.ruin.model.activities.combat.pestcontrol.rewards.PCReward;
 import io.ruin.model.activities.combat.raids.xeric.XericRewards;
+import io.ruin.model.activities.shadesofmortton.FuneralPyre;
+import io.ruin.model.activities.shadesofmortton.ShadeChest;
 import io.ruin.model.entity.npc.actions.misc.Wyson;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.BirdNest;
@@ -154,6 +156,37 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Gem Rock", Mining.GEM_ROCK_TABLE),
             new DropViewerEntry("Muddy Chest", MuddyChest.LOOT),
             new DropViewerEntry("Chewed Bones", PyreSite.CHEWED_BONES_LOOT),
-            new DropViewerEntry("Mystery Box", RandomEvent.MYSTERY_BOX)
+            new DropViewerEntry("Mystery Box", RandomEvent.MYSTERY_BOX),
+            new DropViewerEntry("Loar Remains", FuneralPyre.LOAR.getLootTable()),
+            new DropViewerEntry("Phrin Remains", FuneralPyre.PHRIN.getLootTable()),
+            new DropViewerEntry("Riyl Remains", FuneralPyre.RIYL.getLootTable()),
+            new DropViewerEntry("Asyn Remains", FuneralPyre.ASYN.getLootTable()),
+            new DropViewerEntry("Fiyr Remains", FuneralPyre.FIYR.getLootTable()),
+            new DropViewerEntry("Urium Remains", FuneralPyre.URIUM.getLootTable()),
+            new DropViewerEntry("Bronze Red Chest (SoM)", ShadeChest.BRONZE_RED.getLootTable()),
+            new DropViewerEntry("Bronze Brown Chest (SoM)", ShadeChest.BRONZE_BROWN.getLootTable()),
+            new DropViewerEntry("Bronze Crimson Chest (SoM)", ShadeChest.BRONZE_CRIMSON.getLootTable()),
+            new DropViewerEntry("Bronze Black Chest (SoM)", ShadeChest.BRONZE_BLACK.getLootTable()),
+            new DropViewerEntry("Bronze Purple Chest (SoM)", ShadeChest.BRONZE_PURPLE.getLootTable()),
+            new DropViewerEntry("Steel Red Chest (SoM)", ShadeChest.STEEL_RED.getLootTable()),
+            new DropViewerEntry("Steel Brown Chest (SoM)", ShadeChest.STEEL_BROWN.getLootTable()),
+            new DropViewerEntry("Steel Crimson Chest (SoM)", ShadeChest.STEEL_CRIMSON.getLootTable()),
+            new DropViewerEntry("Steel Black Chest (SoM)", ShadeChest.STEEL_BLACK.getLootTable()),
+            new DropViewerEntry("Steel Purple Chest (SoM)", ShadeChest.STEEL_PURPLE.getLootTable()),
+            new DropViewerEntry("Black Red Chest (SoM)", ShadeChest.BLACK_RED.getLootTable()),
+            new DropViewerEntry("Black Brown Chest (SoM)", ShadeChest.BLACK_BROWN.getLootTable()),
+            new DropViewerEntry("Black Crimson Chest (SoM)", ShadeChest.BLACK_CRIMSON.getLootTable()),
+            new DropViewerEntry("Black Black Chest (SoM)", ShadeChest.BLACK_BLACK.getLootTable()),
+            new DropViewerEntry("Black Purple Chest (SoM)", ShadeChest.BLACK_PURPLE.getLootTable()),
+            new DropViewerEntry("Silver Red Chest (SoM)", ShadeChest.SILVER_RED.getLootTable()),
+            new DropViewerEntry("Silver Brown Chest (SoM)", ShadeChest.SILVER_BROWN.getLootTable()),
+            new DropViewerEntry("Silver Crimson Chest (SoM)", ShadeChest.SILVER_CRIMSON.getLootTable()),
+            new DropViewerEntry("Silver Black Chest (SoM)", ShadeChest.SILVER_BLACK.getLootTable()),
+            new DropViewerEntry("Silver Purple Chest (SoM)", ShadeChest.SILVER_PURPLE.getLootTable()),
+            new DropViewerEntry("Gold Red Chest (SoM)", ShadeChest.GOLD_RED.getLootTable()),
+            new DropViewerEntry("Gold Brown Chest (SoM)", ShadeChest.GOLD_BROWN.getLootTable()),
+            new DropViewerEntry("Gold Crimson Chest (SoM)", ShadeChest.GOLD_CRIMSON.getLootTable()),
+            new DropViewerEntry("Gold Black Chest (SoM)", ShadeChest.GOLD_BLACK.getLootTable()),
+            new DropViewerEntry("Gold Purple Chest (SoM)", ShadeChest.GOLD_PURPLE.getLootTable())
     ).collect(Collectors.toCollection(ArrayList::new));
 }
