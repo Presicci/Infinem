@@ -234,7 +234,7 @@ public enum AreaReward {
     MORYTANIA_LEGS_3(TaskArea.MORYTANIA, AreaTaskTier.HARD, "Unlocks the Morytania Legs 3",
             "Unlimited teleports to Burgh de Rott"),
     //ROBIN_26(TaskArea.MORYTANIA, AreaTaskTier.HARD, "Robin will exchange 26 slime buckets and bonemeal for bones daily"),
-    //SHADE_PRAYER_EXP(TaskArea.MORYTANIA, AreaTaskTier.HARD, "50% more Prayer experience from burning shade remains"),
+    SHADE_PRAYER_EXP(TaskArea.MORYTANIA, AreaTaskTier.HARD, "50% more Prayer experience from burning shade remains"),
     BARROWS_RUNES(TaskArea.MORYTANIA, AreaTaskTier.HARD, "50% more runes from the Barrows chest"),
     SLAYER_EXPERIENCE_75(TaskArea.MORYTANIA, AreaTaskTier.HARD, "7.5% more Slayer experience in the Slayer Tower"),
     //Double Mort myre fungi when casting Bloom
@@ -244,7 +244,7 @@ public enum AreaReward {
     MORYTANIA_LEGS_4(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Unlocks the Morytania Legs 4",
             "Unlimited teleports to the slime pit beneath the Ectofuntus"),
     //ROBIN_39(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Robin will exchange 39 slime buckets and bonemeal for bones daily"),
-    //SHADE_FIREMAKING_EXP(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "50% more Firemaking experience from burning shade remains"),
+    SHADE_FIREMAKING_EXP(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "50% more Firemaking experience from burning shade remains"),
     //BONECRUSHER_FULL_EXP(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Bones buried via the Bonecrusher grant full Prayer experience"),
     //HARMONY_ISLAND_HERB(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Access to the herb patch on Harmony Island"),
     SLAYER_EXPERIENCE_100(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "10% more Slayer experience in the Slayer Tower"),
