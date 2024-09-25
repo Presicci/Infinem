@@ -1063,5 +1063,14 @@
     "z": 1,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Barlak",
+    "id": 2344,
+    "x": 2697,
+    "y": 5316,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
