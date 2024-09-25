@@ -60,6 +60,12 @@ public class TabCombat {
         }
     }
 
+    public static void forceResetAutocast(Player player) {
+        Config.AUTOCAST.set(player, 0);
+        player.getCombat().autocastSpell = null;
+        player.getCombat().updateCombatLevel();
+    }
+
     public static void resetAutocast(Player player) {
         Integer autocastId = getAutocastId(player);
         if (player.getCombat().autocastSpell != null) {

@@ -166,7 +166,7 @@ public class TargetSpell extends Spell {
                 if (!saveRunes && (sack == null || !sack.canCast(entity.player) || (r = RuneRemoval.get(entity.player, sack.getSack())) == null)
                         && (runeItems != null && (r = RuneRemoval.get(entity.player, runeItems)) == null)) {
                     entity.player.sendMessage("You don't have enough runes to cast this spell.");
-                    TabCombat.resetAutocast(entity.player);
+                    TabCombat.forceResetAutocast(entity.player);
                     return false;
                 }
             }
