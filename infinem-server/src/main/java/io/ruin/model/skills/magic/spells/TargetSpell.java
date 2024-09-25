@@ -163,7 +163,7 @@ public class TargetSpell extends Spell {
                     return false;
                 }
                 SpellSack sack = getSpellSack();
-                if (!saveRunes && (sack == null || !sack.canCast(entity.player) || (r = RuneRemoval.get(entity.player, sack.getSack())) == null)
+                if ((sack == null || !sack.canCast(entity.player) || (r = RuneRemoval.get(entity.player, sack.getSack())) == null)
                         && (runeItems != null && (r = RuneRemoval.get(entity.player, runeItems)) == null)) {
                     entity.player.sendMessage("You don't have enough runes to cast this spell.");
                     TabCombat.forceResetAutocast(entity.player);
