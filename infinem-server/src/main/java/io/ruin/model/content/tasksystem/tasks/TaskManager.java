@@ -3,6 +3,7 @@ package io.ruin.model.content.tasksystem.tasks;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
+import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.content.tasksystem.tasks.impl.DropAllTask;
 import io.ruin.model.entity.shared.listeners.LoginListener;
@@ -479,7 +480,7 @@ public class TaskManager {
         for (int uuid : inProgressTasks.keySet()) {
             sb.append(uuid);
             sb.append("|");
-            sb.append(inProgressTasks.get(uuid));
+            sb.append(NumberUtils.formatNumber(inProgressTasks.get(uuid)));
             sb.append("|");
         }
         sb.deleteCharAt(sb.length() - 1);   // Trim trailing |
