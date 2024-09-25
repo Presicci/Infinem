@@ -165,7 +165,7 @@ public enum CollectionLogEntry {
     MAHOGANY_HOMES(12015, CollectionLogCategory.MINIGAMES, PlayerCounter.MAHOGANY_HOMES_CONTRACTS::get),
     PEST_CONTROL(12007, CollectionLogCategory.MINIGAMES),
     ROGUES_DEN(12012, CollectionLogCategory.MINIGAMES),
-    SHADES_OF_MORTON(12006, CollectionLogCategory.MINIGAMES),
+    SHADES_OF_MORTON(12006, CollectionLogCategory.MINIGAMES, PlayerCounter.PYRES_LIT::get),
     SOUL_WARS(12047, CollectionLogCategory.MINIGAMES),
     TEMPLE_TREKKING(12008, CollectionLogCategory.MINIGAMES),
     TITHE_FARM(12014, CollectionLogCategory.MINIGAMES),
