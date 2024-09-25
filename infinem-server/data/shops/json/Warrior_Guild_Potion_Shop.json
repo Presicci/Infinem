@@ -6,23 +6,25 @@
   ],
   "sellMultiplier": 1200,
   "buyMultiplier": 150,
+  "restockTicks": 5,
+  "restockAmt": 25,
   "hideBuy": false,
   "items": [
     {
       "itemId": 115,
-      "stock": 10,
+      "stock": 25,
       "buy_price": 0,
       "sell_price": 0
     },
     {
       "itemId": 121,
-      "stock": 10,
+      "stock": 25,
       "buy_price": 0,
       "sell_price": 0
     },
     {
       "itemId": 133,
-      "stock": 10,
+      "stock": 25,
       "buy_price": 0,
       "sell_price": 0
     }
