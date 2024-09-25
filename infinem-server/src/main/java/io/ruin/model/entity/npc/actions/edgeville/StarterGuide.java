@@ -185,6 +185,12 @@ public class StarterGuide {
                 player.removeTemporaryAttribute("TUTORIAL");
                 player.logoutListener = null;
                 player.unlock();
+                JournalTab.setTab(player, JournalTab.Tab.TASK);
+                RelicInterface.open(player);
+                player.dialogue(false,
+                        new NPCDialogue(guide, "I'll leave you with a choice. Here you can see Infinem's relics. These are powerful boons that are unlocked by completing tasks. You can pick any tier 1 relic right now."),
+                        new NPCDialogue(guide, "Now, start your adventure!")
+                );
             })));
 		});
 	}
