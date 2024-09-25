@@ -2206,6 +2206,20 @@
 			},
 			// Black dragon
 			{
+				"weighing": 3,
+				"min": 75,
+				"max": 125,
+				"creatureUid": 119
+			},
+			// Black knight
+			{
+				"weighing": 4,
+				"min": 70,
+				"max": 110,
+				"creatureUid": 48
+			},
+			// Bloodveld
+			{
 				"weighing": 5,
 				"min": 50,
 				"max": 85,
@@ -2220,12 +2234,26 @@
 			},
 			// Dark warrior
 			{
+				"weighing": 5,
+				"min": 75,
+				"max": 125,
+				"creatureUid": 49
+			},
+			// Dust devil
+			{
 				"weighing": 6,
 				"min": 75,
 				"max": 130,
 				"creatureUid": 54
 			},
 			// Earth warrior
+			{
+				"weighing": 5,
+				"min": 35,
+				"max": 60,
+				"creatureUid": 101
+			},
+			// Ent
 			{
 				"weighing": 7,
 				"min": 100,
@@ -2255,6 +2283,13 @@
 			},
 			// Hellhound
 			{
+				"weighing": 3,
+				"min": 75,
+				"max": 125,
+				"creatureUid": 14
+			},
+			// Hill giant
+			{
 				"weighing": 6,
 				"min": 100,
 				"max": 160,
@@ -2268,6 +2303,13 @@
 				"creatureUid": 19
 			},
 			// Ice warrior
+			{
+				"weighing": 5,
+				"min": 100,
+				"max": 150,
+				"creatureUid": 50
+			},
+			// Jellies
 			{
 				"weighing": 3,
 				"min": 35,
@@ -2296,6 +2338,27 @@
 				"creatureUid": 99
 			},
 			// Mammoths
+			{
+				"weighing": 4,
+				"min": 100,
+				"max": 150,
+				"creatureUid": 17
+			},
+			// Moss giant
+			{
+				"weighing": 5,
+				"min": 75,
+				"max": 125,
+				"creatureUid": 52
+			},
+			// Nechryael
+			{
+				"weighing": 3,
+				"min": 62,
+				"max": 75,
+				"creatureUid": 120
+			},
+			// Pirate
 			{
 				"weighing": 5,
 				"min": 40,
@@ -2338,6 +2401,13 @@
 				"creatureUid": 89
 			},
 			// Spiritual creature
+			{
+				"weighing": 3,
+				"min": 75,
+				"max": 125,
+				"creatureUid": 10
+			},
+			// Zombie
 			{
 				"weighing": 8,
 				"min": 3,
