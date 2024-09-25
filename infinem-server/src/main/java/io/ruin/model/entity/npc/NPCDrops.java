@@ -5,6 +5,8 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.activities.shadesofmortton.Coffin;
+import io.ruin.model.activities.shadesofmortton.FuneralPyre;
 import io.ruin.model.content.bestiary.perks.impl.GoldPickupPerk;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.inter.utils.Config;
@@ -239,6 +241,12 @@ public class NPCDrops {
 
             if (pKiller.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(item.getId())) {
                 item.setAmount(item.getAmount() * 2);
+            }
+
+            // Coffins picking up shade remains
+            if (FuneralPyre.REMAINS.contains(item.getId())) {
+                Coffin coffin = Coffin.getCoffin(pKiller);
+                if (coffin != null && coffin.addRemains(pKiller, item.getId())) continue;
             }
 
             /*
