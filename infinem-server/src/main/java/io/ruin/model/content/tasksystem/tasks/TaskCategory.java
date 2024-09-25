@@ -32,7 +32,8 @@ public enum TaskCategory {
     SMELT_BAR, SMITH_ITEM, SMITH_BAR,
     BESTIARY, BESTIARY_ENTRIES, BESTIARY_BOSS,
     CLEAN_HERB,
-    PLANT_SEED
+    PLANT_SEED,
+    PYRE_LOG
     ;
 
     public final int[] uuids;

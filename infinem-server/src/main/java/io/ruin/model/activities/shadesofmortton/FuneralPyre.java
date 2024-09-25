@@ -2,6 +2,7 @@ package io.ruin.model.activities.shadesofmortton;
 
 import io.ruin.model.World;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
@@ -121,6 +122,7 @@ public enum FuneralPyre {
             PlayerCounter.PYRES_LIT.increment(player, 1);
             pyre.spawnLoot(player, object);
             resetPyre(object);
+            player.getTaskManager().doLookupByCategory(TaskCategory.PYRE_LOG, 1, true);
             player.resetAnimation();
             player.unlock();
         });
