@@ -26,6 +26,8 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 import static io.ruin.cache.ItemID.*;
 import static io.ruin.model.item.actions.impl.BloodyTokens.BLOODY_TOKENS;
@@ -108,6 +110,12 @@ public class BankActions {
      */
 
     static {
+        for (int vbObj : Collections.singletonList(12759)) {
+            ObjectDefinition.get(vbObj).bank = true;
+            ObjectAction.register(vbObj, 1, (player, obj) -> player.getBank().open());
+            ObjectAction.register(vbObj, 3, (player, obj) -> TradePost.openCoffer(player));
+            ItemObjectAction.register(vbObj, (p, item, obj) -> itemOnBank(p, item));
+        }
         ObjectDefinition.forEach(objDef -> {
             if(objDef.hasOption("bank") || objDef.name.toLowerCase().contains("bank")) {
                 if(ObjectAction.register(objDef.id, "use", (p, obj) -> p.getBank().open()) || ObjectAction.register(objDef.id, "bank", (p, obj) -> p.getBank().open())) {
