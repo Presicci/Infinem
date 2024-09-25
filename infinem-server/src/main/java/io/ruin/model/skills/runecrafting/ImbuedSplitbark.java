@@ -89,6 +89,7 @@ public enum ImbuedSplitbark {
             player.putAttribute(getAttributeKey(), 1);
             player.dialogue(new ItemDialogue().one(scrollId, "Reading through the scroll reveals the secret to infusing Splitbark armour with " + getRuneName() + " runes at a " + getRuneName() + " Altar to create " + getRuneName() + "bark armour!"));
             player.sendMessage("As you close the scroll it starts to disintegrate in your hands.");
+            player.getTaskManager().doLookupByUUID(1112);   // Learn How to Make Swampbark or Bloodbark Armour
         }
     }
 
