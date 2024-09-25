@@ -1920,14 +1920,14 @@
     "npcName": "Afflicted(Ulsquire)"
   },
   {
-    "id": 1289,
+    "id": 1290,
     "x": 3488,
     "y": 3297,
     "z": 0,
     "direction": "N",
     "walkRange": 1,
     "world": "ECO",
-    "npcName": "Afflicted(Razmire)"
+    "npcName": "Razmire Keelgan"
   },
   {
     "id": 1298,
@@ -2463,5 +2463,16 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
+  },
+
+
+  {
+    "name": "Dampe",
+    "id": 10590,
+    "x": 3480,
+    "y": 3321,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
