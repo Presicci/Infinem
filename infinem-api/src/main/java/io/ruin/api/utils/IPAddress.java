@@ -15,22 +15,20 @@ public class IPAddress {
                 "http://bot.whatismyipaddress.com",
                 "http://icanhazip.com/"
         };
-        /*for(String site : checkSites) {
-            Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(80));
-            try(BufferedReader in = new BufferedReader(new InputStreamReader(new URL(site).openConnection(proxy).getInputStream()))) {
-                System.out.println(in.lines());
+        for(String site : checkSites) {
+            try(BufferedReader in = new BufferedReader(new InputStreamReader(new URL(site).openStream()))) {
                 String ip = in.readLine();
                 if(ip != null && (ip = ip.trim()).length() > 0)
                     return ip;
             } catch(Exception e) {
                 System.err.println("Failed to read IP from " + site + " (" + e.getMessage() + ")");
             }
-        }*/
-        Socket socket = new Socket();
+        }
+        /*Socket socket = new Socket();
         socket.connect(new InetSocketAddress("google.com", 80));
         System.out.println(socket.getLocalAddress().toString());
-        return socket.getLocalAddress().toString();
-        //throw new IOException("Failed to obtain IP Address!");
+        return socket.getLocalAddress().toString();*/
+        throw new IOException("Failed to obtain IP Address!");
     }
 
     public static String get(Channel channel) {
