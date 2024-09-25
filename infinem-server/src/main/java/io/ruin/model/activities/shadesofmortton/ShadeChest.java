@@ -1308,8 +1308,10 @@ public enum ShadeChest {
             for (Item item : loot) {
                 addLoot(player, item);
             }
-            if (ordinal() < 5) {
+            if (ordinal() <= 4) {
                 player.getTaskManager().doLookupByUUID(711);    // Open a Bronze Chest
+            } else if (ordinal() >= 10 && ordinal() <= 14) {
+                player.getTaskManager().doLookupByUUID(723);    // Open a Black Chest
             }
             trySpawnUndeadZealot(player);
             player.unlock();
