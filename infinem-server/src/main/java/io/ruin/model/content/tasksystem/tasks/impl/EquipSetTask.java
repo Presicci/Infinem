@@ -89,6 +89,12 @@ public enum EquipSetTask {
             SetPiece.ANGLER_HAT,
             SetPiece.ANGLER_WADERS,
             SetPiece.ANGLER_TOP
+    ),
+    ZEALOT(1111, // Equip a Full Set of Zealot's Robes
+            SetPiece.ZEALOT_HELM,
+            SetPiece.ZEALOT_ROBE_TOP,
+            SetPiece.ZEALOT_ROBE_BOTTOM,
+            SetPiece.ZEALOT_BOOTS
     );
 
     private final int uuid;
@@ -189,7 +195,11 @@ public enum EquipSetTask {
         ANGLER_BOOTS(Items.ANGLER_BOOTS),
         ANGLER_WADERS(Items.ANGLER_BOOTS),
         ANGLER_HAT(Items.ANGLER_HAT),
-        ANGLER_TOP(Items.ANGLER_TOP);
+        ANGLER_TOP(Items.ANGLER_TOP),
+        ZEALOT_HELM(25438),
+        ZEALOT_ROBE_TOP(25434),
+        ZEALOT_ROBE_BOTTOM(25436),
+        ZEALOT_BOOTS(25440);
 
         public final int[] itemIds;
         public final boolean respectIndex, compareNames;
