@@ -1,0 +1,35 @@
+HASTALKED:10590
+/Player: Hello again.
+Dampe: *grunts*
+Player: Ah, as cheerful as ever I see.
+Dampe: What d'ya want.
+<Ask about locks.
+DAMPE_LOCKS:
+><Ask for another coffin.
+Player: Could I get another of those coffins?
+DAMPE_GIVECOFFIN:
+><Ask about his robes.
+Player: Where did you get those robes?
+Dampe: Given to me.
+Player: By who?
+Dampe: A dead friend of mine.
+Player: Oh... how did they die?
+Dampe: In the catacombs.
+Player: Sorry to hear that...
+Dampe: *grunts*
+><Just wanted a chat.
+Player: Nothing, I just wanted to chat.
+Dampe: *grunts*
+/Player: Hello stranger.
+Dampe: *grunts*
+Player: Ah very friendly I see. What's that coffin on your back?
+Dampe: For carryin' the dead.
+Player: Woah, don't tell me you have a body in there?
+Dampe: No, remains.
+Player: Oh, you carry the remains of shades in it? Could you give me one?
+Dampe: *grunts*
+*ITEM:25457
+Player: It's broken? What am I supposed to do with a broken coffin?
+Dampe: Bring me locks, find in the catacombs... I repair coffin with locks.
+Player: Right... Guess I should head into the catacombs then... see if I can find any of these 'locks'.
+Dampe: *grunts*
