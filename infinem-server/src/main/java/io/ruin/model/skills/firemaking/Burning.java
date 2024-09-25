@@ -165,7 +165,7 @@ public enum Burning {
                 groundLog.remove();
                 player.sendFilteredMessage("The fire catches and the logs begin to burn.");
                 player.privateSound(2596);
-                player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player), true);
+                player.getStats().addXp(StatType.Firemaking, burning.exp, true);
                 burning.counter.increment(player, 1);
                 player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDefinition.get(burning.itemId).name);
                 GameObject fire = new GameObject(burning.fireId, firePos.getX(), firePos.getY(), firePos.getZ(), 10, 0);
@@ -221,7 +221,7 @@ public enum Burning {
                 GameObject fire = new GameObject(burning.fireId, firePos.getX(), firePos.getY(), firePos.getZ(), 10, 0);
                 createFire(burning, fire);
             }
-            player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player) * finalAmount, true);
+            player.getStats().addXp(StatType.Firemaking, burning.exp * finalAmount, true);
             player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDefinition.get(burning.itemId).name, finalAmount);
             burning.counter.increment(player, finalAmount);
         });
@@ -242,29 +242,6 @@ public enum Burning {
         int level = player.getStats().get(StatType.Firemaking).currentLevel;
         double difference = (level - log.levelReq) * (level > 95 ? 3 : level > 50 ? 2 : 1);
         return Math.min(100, points + difference);
-    }
-
-    private static double pyromancerBonus(Player player) {
-        double bonus = 1.0;
-        Item hood = player.getEquipment().get(Equipment.SLOT_HAT);
-        Item garb = player.getEquipment().get(Equipment.SLOT_CHEST);
-        Item robe = player.getEquipment().get(Equipment.SLOT_LEGS);
-        Item boots = player.getEquipment().get(Equipment.SLOT_FEET);
-
-        if (hood != null && hood.getId() == 20708)
-            bonus += 0.4;
-        if (garb != null && garb.getId() == 20704)
-            bonus += 0.8;
-        if (robe != null && robe.getId() == 20706)
-            bonus += 0.6;
-        if (boots != null && boots.getId() == 20710)
-            bonus += 0.2;
-
-        /* Whole set gives an additional 0.5% exp bonus */
-        if (bonus >= 3.0)
-            bonus += 0.5;
-
-        return bonus;
     }
 
     static {

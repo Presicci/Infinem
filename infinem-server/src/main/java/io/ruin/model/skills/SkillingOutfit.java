@@ -57,6 +57,12 @@ public enum SkillingOutfit {
             new SkillingOutfitPiece(0.018, Items.ROGUE_TROUSERS),
             new SkillingOutfitPiece(0.012, Items.ROGUE_GLOVES),
             new SkillingOutfitPiece(0.012, Items.ROGUE_BOOTS)
+    ),
+    PYROMANCER(StatType.Firemaking, 0.028,
+            new SkillingOutfitPiece(0.016, Items.PYROMANCER_HOOD),
+            new SkillingOutfitPiece(0.024, Items.PYROMANCER_GARB),
+            new SkillingOutfitPiece(0.02, Items.PYROMANCER_ROBE),
+            new SkillingOutfitPiece(0.012, Items.PYROMANCER_BOOTS)
     )
     ;
 
