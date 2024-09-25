@@ -1642,16 +1642,6 @@
     ]
   },
   {
-    "name": "Wolf Mountain",
-    "hint": "unlocked near Lava Dragon Isle.",
-    "musicId": 189,
-    "duration": 194,
-    "regionIds": [
-      12603,
-      12859
-    ]
-  },
-  {
     "name": "Heart and Mind",
     "hint": "unlocked at the Body altar.",
     "musicId": 190,
