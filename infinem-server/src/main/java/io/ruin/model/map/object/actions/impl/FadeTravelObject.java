@@ -9,6 +9,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    HALLOWED_SEPULCRE_ENTRANCE(38574, new Position(3654, 3385), new Position(2400, 5969, 0)),
+    HALLOWED_SEPULCRE_EXIT(38601, new Position(2399, 5966), new Position(3654, 3384, 0)),
+
     BLAST_FURNACE_IN(9084, new Position(2930, 10196), new Position(1939, 4958)),
     BLAST_FURNACE_OUT(9138, new Position(1939, 4956), new Position(2931, 10196)),
 
