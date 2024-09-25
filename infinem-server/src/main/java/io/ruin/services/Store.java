@@ -215,6 +215,12 @@ public class Store {
                 addItem(player, 5557, amt);
                 // Zealot
                 break;
+            case 20:    // Pyromancer outfit
+                addItem(player, Items.PYROMANCER_HOOD, 1);
+                addItem(player, Items.PYROMANCER_GARB, 1);
+                addItem(player, Items.PYROMANCER_ROBE, 1);
+                addItem(player, Items.PYROMANCER_BOOTS, 1);
+                break;
         }
         return 0;
     }
