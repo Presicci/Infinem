@@ -10,6 +10,22 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    // Arceuus stairs
+    ARCEUUS_STAIRS_UP(27853, new Position(1679, 3803), new Position(1685, 3803, 1)),
+    ARCEUUS_STAIRS_UP_1(27854, new Position(1679, 3801), new Position(1685, 3802, 1)),
+    ARCEUUS_STAIRS_UP_2(27853, new Position(1679, 3785), new Position(1685, 3785, 1)),
+    ARCEUUS_STAIRS_UP_3(27854, new Position(1679, 3783), new Position(1685, 3784, 1)),
+    ARCEUUS_STAIRS_UP_4(27853, new Position(1707, 3792, 1), new Position(1703, 3793, 2)),
+    ARCEUUS_STAIRS_UP_5(27854, new Position(1707, 3794, 1), new Position(1703, 3794, 2)),
+    ARCEUUS_STAIRS_UP_6(27851, new Position(1692, 3793), new Position(1688, 3794, 1)),
+    ARCEEUS_STAIRS_DOWN(27855, new Position(1681, 3803, 1), new Position(1678, 3803, 0)),
+    ARCEEUS_STAIRS_DOWN_1(27856, new Position(1681, 3801, 1), new Position(1678, 3802, 0)),
+    ARCEEUS_STAIRS_DOWN_2(27855, new Position(1681, 3785, 1), new Position(1678, 3785, 0)),
+    ARCEEUS_STAIRS_DOWN_3(27856, new Position(1681, 3783, 1), new Position(1678, 3784, 0)),
+    ARCEEUS_STAIRS_DOWN_4(27855, new Position(1704, 3792, 2), new Position(1710, 3793, 1)),
+    ARCEEUS_STAIRS_DOWN_5(27856, new Position(1704, 3794, 2), new Position(1710, 3794, 1)),
+    ARCEEUS_STAIRS_DOWN_6(27852, new Position(1689, 3793, 1), new Position(1695, 3794, 0)),
+
     BOBS_HOUSE_STAIRS_UP(11797, new Position(3239, 3489), new Position(3242, 3489, 1)),
     BOBS_HOUSE_STAIRS_DOWN(11799, new Position(3240, 3489, 1), new Position(3238, 3489)),
 
