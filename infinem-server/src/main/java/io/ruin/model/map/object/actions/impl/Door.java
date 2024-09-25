@@ -493,6 +493,8 @@ public class Door {
                 return;
             if (def.id == 4250 || def.id == 4251) // rellekka doors
                 return;
+            if ((def.id >= 4106 && def.id <= 4109) || def.id == 41210)
+                return;
             String name = def.name.toLowerCase();
             if (name.contains("gate")) {
                 def.gateType = true;
