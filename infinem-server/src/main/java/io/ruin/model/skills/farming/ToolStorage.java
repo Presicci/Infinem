@@ -7,6 +7,7 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.OptionAction;
@@ -81,8 +82,8 @@ public class ToolStorage {
             }
 
             @Override
-            public void onDeposit(Player player, int item) {
-                Config.STORAGE_SECATEURS_TYPE.set(player, item == 7409 ? 1 : 0);
+            public void onDeposit(Player player, Item item) {
+                Config.STORAGE_SECATEURS_TYPE.set(player, item.getId() == 7409 ? 1 : 0);
             }
 
             @Override
@@ -104,8 +105,8 @@ public class ToolStorage {
             }
 
             @Override
-            public void onDeposit(Player player, int item) {
-                player.getFarming().getStorage().wateringCanCharges = WATERING_CAN_IDS.indexOf(item);
+            public void onDeposit(Player player, Item item) {
+                player.getFarming().getStorage().wateringCanCharges = WATERING_CAN_IDS.indexOf(item.getId());
             }
 
             @Override
@@ -132,7 +133,7 @@ public class ToolStorage {
                 int stored = super.get(player);
                 if (stored == 0)
                     return 0;
-                return player.getFarming().getStorage().emptyBottomlessBucket ? 1 : 2;
+                return player.getFarming().getStorage().bottomlessBucket.getId() == 22994 ? 1 : 2;
             }
 
             @Override
@@ -141,13 +142,25 @@ public class ToolStorage {
             }
 
             @Override
-            public void onDeposit(Player player, int item) {
-                player.getFarming().getStorage().emptyBottomlessBucket = item == 22994;
+            public void onDeposit(Player player, Item item) {
+                player.getFarming().getStorage().bottomlessBucket = item;
+            }
+
+            @Override
+            public void update(Player player, int amount) {
+                if (amount < 0) Config.STORAGE_BOTTOMLESS_COMPOST.set(player, 0);
+                else {
+                    if (player.getFarming().getStorage().bottomlessBucket.getId() == 22997) {
+                        Config.STORAGE_BOTTOMLESS_COMPOST.set(player, 2);
+                    } else {
+                        Config.STORAGE_BOTTOMLESS_COMPOST.set(player, 1);
+                    }
+                }
             }
 
             @Override
             public int addItem(Player player, int amount, boolean noted) {
-                return player.getInventory().add(player.getFarming().getStorage().emptyBottomlessBucket ? 22994 : 22997, 1);
+                return player.getInventory().add(player.getFarming().getStorage().bottomlessBucket);
             }
         },
         EMPTY_BUCKET(1925, null) {
@@ -221,7 +234,7 @@ public class ToolStorage {
             return player.getInventory().add(itemId, amount);
         }
 
-        public void onDeposit(Player player, int item) {
+        public void onDeposit(Player player, Item item) {
             /* memes */
         }
 
@@ -268,8 +281,8 @@ public class ToolStorage {
                 if (item == null)
                     continue;
                 if (tool.accept(item.getId())) {
+                    tool.onDeposit(player, item);
                     item.remove();
-                    tool.onDeposit(player, item.getId());
                     tool.update(player, 1);
                     return;
                 }
@@ -291,7 +304,7 @@ public class ToolStorage {
             }
             player.getInventory().remove(itemId, amount, true);
             tool.update(player, amount);
-            tool.onDeposit(player, itemId); // just in case
+            tool.onDeposit(player, new Item(itemId)); // just in case
         }
     }
 
@@ -494,10 +507,16 @@ public class ToolStorage {
                 player.dialogue(new MessageDialogue("The leprechaun only has bank notes for farming produce."));
             }
         });
+        LoginListener.register(p -> {
+            if (p.getFarming().getStorage().bottomlessBucket == null && Tool.BOTTOMLESS_BUCKET.config.get(p) > 0) {
+                p.getFarming().getStorage().bottomlessBucket = new Item(22994);
+                Tool.BOTTOMLESS_BUCKET.config.set(p, 1);
+            }
+        });
     }
 
     @Expose private int wateringCanCharges;
-    @Expose private boolean emptyBottomlessBucket;
+    @Expose private Item bottomlessBucket;
 
     private Player player;
 }
