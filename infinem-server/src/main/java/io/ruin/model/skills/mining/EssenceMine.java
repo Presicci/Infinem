@@ -90,11 +90,26 @@ public class EssenceMine {
         );
     }
 
+    private static void shopDialogue(Player player, NPC npc, String npcName) {
+        player.dialogue(
+                new NPCDialogue(npc, "Hello, would you like me to teleport you to the Essence mine?"),
+                new OptionsDialogue(
+                        new Option("I need to mine some rune essence.", () -> player.dialogue(
+                                new PlayerDialogue("Can you teleport me to the Rune Essence?"),
+                                new NPCDialogue(npc, "Okay. Hold onto your hat!"),
+                                new ActionDialogue(() -> enterMine(player, npc, npcName))
+                        )),
+                        new Option("Can I browse your shop?", () -> npc.openShop(player)),
+                        new Option("No, thank you.")
+                )
+        );
+    }
+
     static {
         ObjectAction.register(34825, 1, EssenceMine::leaveMine);
         NPCAction.register(2886, "teleport", (player, npc) -> enterMine(player, npc, "AUBURY"));
         NPCAction.register(5034, "teleport", (player, npc) -> enterMine(player, npc, "SEDRIDOR"));
-        NPCAction.register(5034, "talk-to", (player, npc) -> dialogue(player, npc, "SEDRIDOR"));
+        NPCAction.register(5034, "talk-to", (player, npc) -> shopDialogue(player, npc, "SEDRIDOR"));
         NPCAction.register(3248, "teleport", (player, npc) -> enterMine(player, npc, "DISTENTOR"));
         NPCAction.register(8480, 3, (player, npc) -> enterMine(player, npc, "CROMPERTY"));
         NPCAction.register(8480, 1, (player, npc) -> dialogue(player, npc, "CROMPERTY"));
