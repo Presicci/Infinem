@@ -1,6 +1,7 @@
 package io.ruin.model.skills.fletching;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -94,8 +95,9 @@ public enum Bolt {
                     if (tipItem == null)
                         return;
                     int maxAmount = Math.min(boltItem.getAmount(), tipItem.getAmount());
-                    if (maxAmount > 10) {
-                        bolt.make(player, boltItem, tipItem, 10);
+                    int maxPossible = player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER) ? 100 : 10;
+                    if (maxAmount > maxPossible) {
+                        bolt.make(player, boltItem, tipItem, maxPossible);
                         event.delay(2);
                         continue;
                     }
