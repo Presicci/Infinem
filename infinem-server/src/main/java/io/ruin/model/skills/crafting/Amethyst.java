@@ -60,7 +60,8 @@ public enum Amethyst {
             SkillDialogue.make(player,
                     new SkillItem(AMETHYST_BOLT_TIPS.itemID).addAction((p, amount, event) -> craft(p, AMETHYST_BOLT_TIPS, amount)),
                     new SkillItem(AMETHYST_ARROW_TIPS.itemID).addAction((p, amount, event) -> craft(p, AMETHYST_ARROW_TIPS, amount)),
-                    new SkillItem(AMETHYST_JAVELIN_HEADS.itemID).addAction((p, amount, event) -> craft(p, AMETHYST_JAVELIN_HEADS, amount)));
+                    new SkillItem(AMETHYST_JAVELIN_HEADS.itemID).addAction((p, amount, event) -> craft(p, AMETHYST_JAVELIN_HEADS, amount)),
+                    new SkillItem(AMETHYST_DART_TIPS.itemID).addAction((p, amount, event) -> craft(p, AMETHYST_DART_TIPS, amount)));
         });
     }
 }
