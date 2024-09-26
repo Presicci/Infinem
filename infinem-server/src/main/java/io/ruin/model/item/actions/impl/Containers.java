@@ -68,9 +68,9 @@ public enum Containers {
         player.animate(832);
         player.privateSound(2609);
         if (waterContainer == Containers.CLAY) {
-            player.sendMessage("You wet the clay.");
+            player.sendFilteredMessage("You wet the clay.");
         } else {
-            player.sendMessage("You fill the " + waterContainer.name + " from the " + source.name().toLowerCase() + ".");
+            player.sendFilteredMessage("You fill the " + waterContainer.name + " from the " + source.name().toLowerCase() + ".");
         }
     }
 
