@@ -1,0 +1,36 @@
+{
+  "name": "Sedridor's Stellar Talismans",
+  "currency": "COINS",
+  "npcs": [
+    5034
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 250,
+  "hideBuy": false,
+  "items": [
+    { // Air talisman
+      "itemId": 1438,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 250
+    },
+    { // Water talisman
+      "itemId": 1444,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 250
+    },
+    { // Earth talisman
+      "itemId": 1440,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 250
+    },
+    { // Fire talisman
+      "itemId": 1442,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 250
+    }
+  ]
+}
