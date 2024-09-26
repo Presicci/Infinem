@@ -38,6 +38,8 @@ public enum JumpShortcut {
             new Position(2761, 3435), new Position(2761, 3438)),
     BARROWS_BROKEN_FENCE1(18411, new Position(3582, 3263), 1, 0, "climb-over",
             new Position(3582, 3264, 0), new Position(3582, 3262, 0)),
+    DERANGED_ARCHAEOLOGIST(31842, new Position(3682, 3716), 1, 0, "climb",
+            new Position(3682, 3717, 0), new Position(3682, 3715, 0)),
     FALADOR_JUMP5(24222, new Position(2935, 3355), 5,0, "climb-over",
             new Position(2936, 3355), new Position(2934, 3355)),
     CORSAIR_JUMP10(31757, new Position(2546, 2872), 10,1, "climb",
