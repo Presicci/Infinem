@@ -74,10 +74,6 @@ public class RedwoodCrop implements TreeCrop {
 
     @Override
     public double getHarvestXP() {
-        return 0;
-    }
-
-    public double getCheckHealthXP() {
         return 22450;
     }
 
