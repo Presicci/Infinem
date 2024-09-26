@@ -171,6 +171,7 @@ public class TabCombat {
                 case Items.SKULL_SCEPTRE:
                 case 21276: // Skull sceptre (i)
                     return null;
+                case Items.CURSED_GOBLIN_STAFF:
                 case Items.SARADOMIN_STAFF:
                 case Items.GUTHIX_STAFF:
                 case Items.ZAMORAK_STAFF:
