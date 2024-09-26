@@ -240,6 +240,7 @@ public class BestiaryDef {
                 "kalphite queen",
                 "tzkal-zuk",
                 "crazy archaeologist",
+                "deranged archaeologist",
                 "zulrah"
         ));
     }};
