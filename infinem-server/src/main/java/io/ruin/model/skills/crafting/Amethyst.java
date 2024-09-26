@@ -13,7 +13,8 @@ public enum Amethyst {
 
     AMETHYST_BOLT_TIPS(21338, 83, 60.0, 15),
     AMETHYST_ARROW_TIPS(21350, 85, 60.0, 15),
-    AMETHYST_JAVELIN_HEADS(21352, 87, 60.0, 5);
+    AMETHYST_JAVELIN_HEADS(21352, 87, 60.0, 5),
+    AMETHYST_DART_TIPS(25853, 89, 60.0, 8);
 
     public final int itemID, levelReq, amount;
     public final double exp;
