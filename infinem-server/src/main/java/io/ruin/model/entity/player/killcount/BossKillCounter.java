@@ -28,7 +28,7 @@ public enum BossKillCounter {
     DAG_PRIME("Dagannoth Prime"),
     DAG_REX("Dagannoth Rex"),
     DAG_SUPREME("Dagannoth Supreme"),
-    //DERANGED_ARCHAEOLOGIST("Deranged Archaeologist"),
+    DERANGED_ARCHAEOLOGIST("Deranged Archaeologist"),
     GENERAL_GRAARDOR("General Graardor"),
     GIANT_MOLE("Giant Mole"),
     GROTESQUE_GUARDIANS("Grotesque Guardians"),
