@@ -132,7 +132,7 @@
     "ids": [ 1713 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Spinner",
     //Combat Info
-    "hitpoints": 1,
+    "hitpoints": 93,
     "aggressive_level": 0,
     "max_damage": 5,
     "attack_style": "CRUSH",
