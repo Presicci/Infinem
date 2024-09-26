@@ -612,7 +612,7 @@ public enum PickPocket {
             chance *= 1.1;
         }
         if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
-            chance *= 1.1;
+            chance = 100;
         }
         return (int) Math.floor(chance);
     }
