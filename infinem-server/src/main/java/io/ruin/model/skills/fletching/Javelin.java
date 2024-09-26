@@ -1,5 +1,6 @@
 package io.ruin.model.skills.fletching;
 
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -54,8 +55,9 @@ public enum Javelin {
                     if (headItem == null)
                         return;
                     int maxAmount = Math.min(shaft.getAmount(), headItem.getAmount());
-                    if (maxAmount > 15) {
-                        javelin.make(player, shaft, headItem, 15);
+                    int maxPossible = player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER) ? 150 : 15;
+                    if (maxAmount > maxPossible) {
+                        javelin.make(player, shaft, headItem, maxPossible);
                         event.delay(2);
                         continue;
                     }
