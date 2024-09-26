@@ -48,11 +48,11 @@ public enum Pottery {
             return;
         }
         if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER))
-            player.sendMessage("You mix the clay and water.");
+            player.sendFilteredMessage("You mix the clay and water.");
         primary.setId(SOFT_CLAY);
         secondary.setId(emptyContainer);
         if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER))
-            player.sendMessage("You now have some soft workable clay.");
+            player.sendFilteredMessage("You now have some soft workable clay.");
     }
 
     private static void spinClay(Player player, Pottery pottery, int amount) {
