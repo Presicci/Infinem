@@ -1,6 +1,7 @@
 package io.ruin.model.skills.fletching;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
@@ -60,7 +61,8 @@ public enum Dart {
         }
         RandomEvent.attemptTrigger(player);
         int supplyCount = Math.min(tipItem.getAmount(), featherItem.getAmount());
-        int toMake = Math.min(supplyCount, 10);
+        int maxPossible = player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER) ? 100 : 10;
+        int toMake = Math.min(supplyCount, maxPossible);
         tipItem.remove(toMake);
         featherItem.remove(toMake);
         player.animate(emote);
