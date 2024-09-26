@@ -75,7 +75,7 @@ public enum Pottery {
                 player.animate(883);
                 player.privateSound(2588);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
-                    player.sendMessage("You make the clay into a " + pottery.name);
+                    player.sendFilteredMessage("You make the clay into a " + pottery.name);
                     event.delay(5);
                 }
 
@@ -95,13 +95,13 @@ public enum Pottery {
                     return;
                 }
 
-                player.sendMessage("You put a " + pottery.name + " in the oven.");
+                player.sendFilteredMessage("You put a " + pottery.name + " in the oven.");
                 player.privateSound(2725);
                 player.animate(1317);
                 event.delay(6);
                 unfiredPottery.setId(pottery.fired);
                 player.getStats().addXp(StatType.Crafting, pottery.firedExp, true);
-                player.sendMessage("You remove the " + pottery.name + " from the oven.");
+                player.sendFilteredMessage("You remove the " + pottery.name + " from the oven.");
                 if (pottery == PLANT_POT)
                     player.getTaskManager().doLookupByUUID(917);   // Mould and Fire a Plant Pot
                 event.delay(1);
