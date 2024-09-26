@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
@@ -16,8 +17,8 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 public enum CreviceShortcut {
-
-    FALADOR(42, 1, Position.of(3028, 9806), Position.of(3035, 9806), true),
+    ZMI_1(1, 0, new Position(3056, 5586, 0), new Position(3053, 5588, 0), false),
+    FALADOR_42(42, 1, Position.of(3028, 9806), Position.of(3035, 9806), true),
     ZANARIS_46(46, 1, new Position(2400, 4404, 0), new Position(2400, 4402, 0), false),
     ZANARIS_66(46, 1, new Position(2409, 4402, 0), new Position(2409, 4400, 0), false),
     HEROES_GUILD(67, 1, new Position(2899, 9902), new Position(2914, 9894), true),
@@ -56,7 +57,13 @@ public enum CreviceShortcut {
     }
 
     static {
-        ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
+        // ZMI pathing
+        Tile.getObject(29626, 3053, 5587, 0).walkTo = new Position(3053, 5588, 0);
+        Tile.getObject(29627, 3055, 5586, 0).walkTo = new Position(3056, 5586, 0);
+        ObjectAction.register(29626, 3053, 5587, 0, "Squeeze-through", CreviceShortcut.ZMI_1::squeeze);
+        ObjectAction.register(29627, 3055, 5586, 0, "Squeeze-through", CreviceShortcut.ZMI_1::squeeze);
+
+        ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR_42::squeeze);
         ObjectAction.register(17002, 2400, 4403, 0, "Squeeze-past", CreviceShortcut.ZANARIS_46::squeeze);
         ObjectAction.register(17002, 2409, 4401, 0, "Squeeze-past", CreviceShortcut.ZANARIS_66::squeeze);
         ObjectAction.register(9739, 2899, 9901, 0, "use", CreviceShortcut.HEROES_GUILD::squeeze);
