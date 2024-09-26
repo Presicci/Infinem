@@ -47,10 +47,12 @@ public enum Pottery {
             player.sendMessage("You can't water that.");
             return;
         }
-        player.sendMessage("You mix the clay and water.");
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER))
+            player.sendMessage("You mix the clay and water.");
         primary.setId(SOFT_CLAY);
         secondary.setId(emptyContainer);
-        player.sendMessage("You now have some soft workable clay.");
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER))
+            player.sendMessage("You now have some soft workable clay.");
     }
 
     private static void spinClay(Player player, Pottery pottery, int amount) {
@@ -157,7 +159,8 @@ public enum Pottery {
                     int maxAmount = Math.min(softClay.count(), wateringContainer.count());
                     if (maxAmount > 1) {
                         Pottery.makeSoftClay(player, softClay, wateringContainer, waterContainers.empty);
-                        event.delay(2);
+                        if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER))
+                            event.delay(2);
                         continue;
                     }
                     Pottery.makeSoftClay(player, softClay, wateringContainer, waterContainers.empty);
