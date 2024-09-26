@@ -38,7 +38,7 @@ public class ChatHandler implements Incoming {
         /*
         * If player mentions any of these words don't send it.
         */
-        List<String> badWords = Arrays.asList("runite", "ikov", "zenyte", "roatz", "alora", "nigger");
+        List<String> badWords = Arrays.asList("ikov", "roatz", "alora", "nigger");
         for(String word : badWords) {
             if (message.toLowerCase().contains(word)) {
                 return;
