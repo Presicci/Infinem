@@ -27,6 +27,7 @@ public enum RangedWeapon {
     MITHRIL_DART(new RangedData(235, Projectile.thrown(229, 11))),
     ADAMANT_DART(new RangedData(236, Projectile.thrown(230, 11))),
     RUNE_DART(new RangedData(237, Projectile.thrown(231, 11))),
+    AMETHYST_DART(new RangedData(1937, Projectile.thrown(1936, 105))),
     DRAGON_DART(new RangedData(1123, Projectile.thrown(1122, 105))),
     /**
      * Throwing axes
