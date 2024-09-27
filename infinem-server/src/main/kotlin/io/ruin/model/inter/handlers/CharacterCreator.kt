@@ -18,14 +18,14 @@ object CharacterCreator {
             // Hair color
             h.actions[43] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[0]--
-                if (p.appearance.colors[0] == 0) {
+                if (p.appearance.colors[0] < 0) {
                     p.appearance.colors[0] = 25
                 }
                 p.appearance.update()
             }
             h.actions[44] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[0]++
-                if (p.appearance.colors[0] == 25) {
+                if (p.appearance.colors[0] > 25) {
                     p.appearance.colors[0] = 0
                 }
                 p.appearance.update()
@@ -35,14 +35,14 @@ object CharacterCreator {
             // Torso color
             h.actions[47] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[1]--
-                if (p.appearance.colors[1] == 0) {
+                if (p.appearance.colors[1] < 0) {
                     p.appearance.colors[1] = 29
                 }
                 p.appearance.update()
             }
             h.actions[48] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[1]++
-                if (p.appearance.colors[1] == 29) {
+                if (p.appearance.colors[1] > 29) {
                     p.appearance.colors[1] = 0
                 }
                 p.appearance.update()
@@ -51,14 +51,14 @@ object CharacterCreator {
             // Leg color
             h.actions[51] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[2]--
-                if (p.appearance.colors[2] == 0) {
+                if (p.appearance.colors[2] < 0) {
                     p.appearance.colors[2] = 29
                 }
                 p.appearance.update()
             }
             h.actions[52] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[2]++
-                if (p.appearance.colors[2] == 29) {
+                if (p.appearance.colors[2] > 29) {
                     p.appearance.colors[2] = 0
                 }
                 p.appearance.update()
@@ -67,14 +67,14 @@ object CharacterCreator {
             // Feet color
             h.actions[55] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[3]--
-                if (p.appearance.colors[3] == 0) {
-                    p.appearance.colors[3] = 7
+                if (p.appearance.colors[3] < 0) {
+                    p.appearance.colors[3] = 6
                 }
                 p.appearance.update()
             }
             h.actions[56] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[3]++
-                if (p.appearance.colors[3] == 7) {
+                if (p.appearance.colors[3] > 7) {
                     p.appearance.colors[3] = 0
                 }
                 p.appearance.update()
@@ -83,14 +83,14 @@ object CharacterCreator {
             // Skin color
             h.actions[59] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[4]--
-                if (p.appearance.colors[4] == 0) {
-                    p.appearance.colors[4] = 8
+                if (p.appearance.colors[4] < 0) {
+                    p.appearance.colors[4] = 7
                 }
                 p.appearance.update()
             }
             h.actions[60] = DefaultAction { p, _, _, _ ->
                 p.appearance.colors[4]++
-                if (p.appearance.colors[4] == 8) {
+                if (p.appearance.colors[4] > 7) {
                     p.appearance.colors[4] = 0
                 }
                 p.appearance.update()
