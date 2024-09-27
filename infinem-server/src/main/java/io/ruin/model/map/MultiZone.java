@@ -121,7 +121,7 @@ public class MultiZone {
                 12107, //Abyss
                 9619, //Smoke devil dungeon
                 12960, 12958, 12957,
-                6810, // Skotizo lair
+                9048, // Skotizo lair
                 10536, // Pest Control battlegrounds
                 13470, 13469, 13726, 13725  // Wildy slayer dungeon
         };
