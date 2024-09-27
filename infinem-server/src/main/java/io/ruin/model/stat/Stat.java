@@ -2,6 +2,8 @@ package io.ruin.model.stat;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Items;
 
 public class Stat {
 
@@ -117,7 +119,7 @@ public class Stat {
         return fixedLevel > currentLevel;
     }
 
-    public void process(boolean hitpoints, boolean rapidRestore, boolean rapidHeal, boolean preserve) {
+    public void process(boolean hitpoints, boolean rapidRestore, boolean rapidHeal, boolean preserve, Player player) {
         if(currentLevel > fixedLevel) {
             int boostTime = 100; //60 seconds
             if(preserve)
@@ -131,8 +133,15 @@ public class Stat {
             }
         } else if(currentLevel < fixedLevel) {
             int depleteTime = 100; //60 seconds
-            if(hitpoints ? rapidHeal : rapidRestore)
-                depleteTime /= 2;
+            if (hitpoints) {
+                if (rapidHeal)
+                    depleteTime /= 2;
+                if (player.getEquipment().hasId(Items.REGEN_BRACELET))
+                    depleteTime /= 2;
+            } else {
+                if (rapidRestore)
+                    depleteTime /= 2;
+            }
             if(++depletedFor >= depleteTime) {
                 currentLevel++;
                 depletedFor = 0;
