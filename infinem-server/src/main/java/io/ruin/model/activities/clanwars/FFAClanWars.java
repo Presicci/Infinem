@@ -28,13 +28,13 @@ public class FFAClanWars {
         /**
          * Entrance/exit portals
          */
-        ObjectAction.register(PVP_ENTRANCE_PORTAL, "use", (player, obj) -> player.dialogue(
+        /*ObjectAction.register(PVP_ENTRANCE_PORTAL, "use", (player, obj) -> player.dialogue(
                 new MessageDialogue("<col=FF0000>Warning:</col> This portal will take you to the Fun PVP Area.<br>Do you wish to proceed?").lineHeight(24),
                 new OptionsDialogue(
                         new Option("Yes, proceed to the Fun PVP Area.", () -> Traveling.fadeTravel(player, 3327, 4751, 0)),
                         new Option("No, stay where I am.")
                 )
-        ));
+        ));*/
         ObjectAction.register(ENTRANCE_PORTAL, "enter", (player, obj) -> player.getMovement().teleport(3327, 4751));
         ObjectAction.register(EXIT_PORTAL, "exit", (player, obj) -> player.getMovement().teleport(3128, 3625, 0));
 

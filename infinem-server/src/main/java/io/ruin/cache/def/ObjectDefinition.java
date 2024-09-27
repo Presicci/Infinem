@@ -308,10 +308,6 @@ public class ObjectDefinition {
         } else if(id == 40006) {
             copy(4537);
             options[4] = null;
-        } else if(id == 40007) {
-            copy(13619);
-            name = "Fun PVP Portal";
-            options[4] = null;
         } else if(id == 40008) {
             copy(20839);
             name = "Tournament Barrier";
