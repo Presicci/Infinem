@@ -80,6 +80,9 @@ public class NPCDrops {
             if (npc.isSuperior) {
                 rolls += 3; // Superiors drop minimum of 4 items
             }
+            if (npc.getId() == 8059 || npc.getId() == 8061) {
+                rolls += 1;
+            }
             for(int i = 0; i < rolls; i++) {
                 List<Item> items = t.rollItems(i == 0);
                 List<Item> toAdd = new ArrayList<Item>();
