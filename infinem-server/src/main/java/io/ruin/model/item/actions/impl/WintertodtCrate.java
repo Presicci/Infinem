@@ -7,6 +7,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.item.pet.Pet;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
@@ -51,6 +52,8 @@ public class WintertodtCrate {
             item.remove();
             Item firstReward = TABLE.rollItem();
             Item secondReward = TABLE.rollItem();
+            if (Random.rollDie(2500))
+                Pet.PHOENIX.unlock(player);
             player.getInventory().addOrDrop(firstReward.getId(), firstReward.getAmount());
             player.getInventory().addOrDrop(secondReward.getId(), secondReward.getAmount());
             player.dialogue(new MessageDialogue("You have earned: " + firstReward.getDef().name + " x " + firstReward.getAmount() + ", "
