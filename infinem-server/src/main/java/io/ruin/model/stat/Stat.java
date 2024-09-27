@@ -130,7 +130,7 @@ public class Stat {
                 updated = true;
             }
         } else if(currentLevel < fixedLevel) {
-            int depleteTime = 50; //30 seconds
+            int depleteTime = 100; //60 seconds
             if(hitpoints ? rapidHeal : rapidRestore)
                 depleteTime /= 2;
             if(++depletedFor >= depleteTime) {
