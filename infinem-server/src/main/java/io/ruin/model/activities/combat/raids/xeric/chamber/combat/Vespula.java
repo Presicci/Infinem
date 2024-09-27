@@ -1,6 +1,7 @@
 package io.ruin.model.activities.combat.raids.xeric.chamber.combat;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.utility.Color;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
@@ -26,7 +27,7 @@ public class Vespula extends NPCCombat {
     public void init() {
         npc.hitListener = new HitListener().postDefend(this::postDefend).preDefend(this::preDefend).postTargetDefend(this::postTargetDefend);
         npc.attackNpcListener = (player, npc1, message) -> {
-            if (npc.getId() == FLYING && player.getCombat().getAttackStyle().isMelee() && player.getCombat().queuedSpell == null) {
+            if (npc.getId() == FLYING && player.getCombat().getAttackStyle().isMelee() && player.getCombat().queuedSpell == null && Config.AUTOCAST.get(player) == 0) {
                 if (message) player.sendMessage("Vespula is flying too high for you to hit with melee!");
                 return false;
             }
