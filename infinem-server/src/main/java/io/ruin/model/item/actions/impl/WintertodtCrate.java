@@ -3,6 +3,7 @@ package io.ruin.model.item.actions.impl;
 import io.ruin.api.utils.Random;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
@@ -12,7 +13,7 @@ import static io.ruin.cache.ItemID.COINS_995;
 public class WintertodtCrate {
 
     public static final LootTable TABLE = new LootTable()
-            .addTable(63,
+            .addTable(234,
                     new LootItem(1522, 50, 150, 1),       //Oak logs
                     new LootItem(6334, 35, 60, 1),        //Teak logs
                     new LootItem(8836, 20, 50, 1),        //Mahogany logs
@@ -34,14 +35,15 @@ public class WintertodtCrate {
                     new LootItem(384, 5, 21, 1),          //Raw shark
                     new LootItem(13574, 10, 20, 1),       //Dynamite
                     new LootItem(20718, 5, 20, 1)         //Burnt pages
-            ).addTable(1,
-                    new LootItem(20704, 1, 1),
-                    new LootItem(20706, 1, 1),
-                    new LootItem(20708, 1, 1),
-                    new LootItem(20710, 1, 1),
-                    new LootItem(20712, 1, 1),
-                    new LootItem(20716, 1, 1),
-                    new LootItem(20720, 1, 1)
+            ).addTable(10,
+                    new LootItem(Items.PYROMANCER_GARB, 1, 1000),
+                    new LootItem(Items.PYROMANCER_ROBE, 1, 1000),
+                    new LootItem(Items.PYROMANCER_HOOD, 1, 1000),
+                    new LootItem(Items.PYROMANCER_BOOTS, 1, 1000),
+                    new LootItem(Items.WARM_GLOVES, 1, 1000),
+                    new LootItem(Items.BRUMA_TORCH, 1, 1000),
+                    new LootItem(Items.TOME_OF_FIRE, 1, 150),
+                    new LootItem(Items.DRAGON_AXE, 1, 15)
             );
 
     static {
