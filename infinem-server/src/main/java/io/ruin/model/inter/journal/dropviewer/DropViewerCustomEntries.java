@@ -13,6 +13,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.BirdNest;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.actions.impl.InfernalEel;
+import io.ruin.model.item.actions.impl.WintertodtCrate;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.loot.RareDropTable;
@@ -187,6 +188,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Gold Brown Chest (SoM)", ShadeChest.GOLD_BROWN.getLootTable()),
             new DropViewerEntry("Gold Crimson Chest (SoM)", ShadeChest.GOLD_CRIMSON.getLootTable()),
             new DropViewerEntry("Gold Black Chest (SoM)", ShadeChest.GOLD_BLACK.getLootTable()),
-            new DropViewerEntry("Gold Purple Chest (SoM)", ShadeChest.GOLD_PURPLE.getLootTable())
+            new DropViewerEntry("Gold Purple Chest (SoM)", ShadeChest.GOLD_PURPLE.getLootTable()),
+            new DropViewerEntry("Wintertodt Crate", WintertodtCrate.TABLE)
     ).collect(Collectors.toCollection(ArrayList::new));
 }
