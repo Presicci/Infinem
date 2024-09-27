@@ -36,6 +36,7 @@ public class Blowpipe {
         MITHRIL(809, RangedWeapon.MITHRIL_DART.data),
         ADAMANT(810, RangedWeapon.ADAMANT_DART.data),
         RUNE(811, RangedWeapon.RUNE_DART.data),
+        AMETHYST(25849, RangedWeapon.AMETHYST_DART.data),
         DRAGON(11230, RangedWeapon.DRAGON_DART.data);
 
         public final int id;
