@@ -58,10 +58,10 @@ public class Skotizo extends NPCCombat { // Kourend catacombs boss
             player.animate(3865);
             player.graphics(1296);
             event.delay(3);
-            DynamicMap map = new DynamicMap().build(6810, 0);
-            NPC skotizo = new NPC(7297).spawn(map.swRegion.baseX + SKOTIZO_SPAWN[0], map.swRegion.baseY + SKOTIZO_SPAWN[1], 0, Direction.SOUTH, 8);
+            DynamicMap map = new DynamicMap().build(9048, 0);
+            NPC skotizo = new NPC(7286).spawn(map.swRegion.baseX + SKOTIZO_SPAWN[0], map.swRegion.baseY + SKOTIZO_SPAWN[1], 0, Direction.SOUTH, 8);
             map.addNpc(skotizo);
-            player.getMovement().teleport(map.convertX(1695), map.convertY(9878));
+            player.getMovement().teleport(map.convertX(2257), map.convertY(5668));
             player.openInterface(InterfaceType.PRIMARY_OVERLAY, 308);
             map.assignListener(player).onExit((p, logout) -> {
                 if (logout) {
