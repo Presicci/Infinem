@@ -9,6 +9,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.PlayerBoolean;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.killcount.BossKillCounter;
@@ -539,7 +540,7 @@ public enum Pet {
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Zilyana pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.COMMANDER_ZILYANA)) + " kill count!");
                 break;
             case PHOENIX:
-                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Phoenix pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.WINTERTODT)) + " kill count!");
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Phoenix pet at " + NumberUtils.formatNumber(PlayerCounter.WINTERTODT_SUBDUED.get(player)) + " kill count!");
                 break;
             case PRINCE_BLACK_DRAGON:
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Prince Black Dragon pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.KING_BLACK_DRAGON)) + " kill count!");
