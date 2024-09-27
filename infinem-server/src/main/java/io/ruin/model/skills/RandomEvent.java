@@ -200,6 +200,7 @@ public enum RandomEvent {
         npc.spawn(player.getAbsX(), player.getAbsY(), player.getHeight());
         npc.face(player);
         npc.forceText(randomOverhead(player));
+        player.getPacketSender().sendHintIcon(npc);
         npc.addEvent(e -> {
             while (player.isOnline()) {
                 npc.face(player);
