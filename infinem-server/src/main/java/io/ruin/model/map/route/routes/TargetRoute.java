@@ -67,7 +67,7 @@ public class TargetRoute {
         route = null;
     }
 
-    private static final List<Integer> CLIP_IGNORE_NPCS = Arrays.asList(7706, 1747, 1748, 1749, 1750, 7288);
+    private static final List<Integer> CLIP_IGNORE_NPCS = Arrays.asList(7706, 1747, 1748, 1749, 1750, 7288, 8583);
 
     private void beforeMovement0(Entity entity) {
         if(target.npc != null && target.npc.walkTo != null) {
