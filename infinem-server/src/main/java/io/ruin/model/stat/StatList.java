@@ -268,7 +268,7 @@ public class StatList {
             Stat stat = stats[statId];
             StatType type = types[statId];
             if(type != StatType.Prayer)
-                stat.process(type == StatType.Hitpoints, rapidRestore, rapidHeal, preserve);
+                stat.process(type == StatType.Hitpoints, rapidRestore, rapidHeal, preserve, player);
             if(stat.updated) {
                 stat.updated = false;
                 player.getPacketSender().sendStat(statId, stat.currentLevel, (int) stat.experience);

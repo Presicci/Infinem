@@ -138,6 +138,8 @@ public class Stat {
                     depleteTime /= 2;
                 if (player.getEquipment().hasId(Items.REGEN_BRACELET))
                     depleteTime /= 2;
+                if (player.getRelicManager().hasRelicInTier(4))
+                    depleteTime /= 4;
             } else {
                 if (rapidRestore)
                     depleteTime /= 2;
