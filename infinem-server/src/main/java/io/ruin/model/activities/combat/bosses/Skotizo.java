@@ -6,16 +6,20 @@ import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.dynamic.DynamicMap;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.actions.ObjectAction;
 
 import java.util.function.Function;
 
@@ -174,5 +178,17 @@ public class Skotizo extends NPCCombat { // Kourend catacombs boss
         for (NPC altar : altars)
             if (altar.getId() == AWAKENED_ALTAR) count++;
         return count;
+    }
+
+    static {
+        // Exit portal
+        ObjectAction.register(28925, "use", (player, obj) -> {
+            player.dialogue(
+                    new OptionsDialogue("Leave the arena?",
+                            new Option("Yes", () -> Traveling.fadeTravel(player, 1665, 10048, 0)),
+                            new Option("No")
+                    ).keepOpenWhenHit()
+            );
+        });
     }
 }
