@@ -36,12 +36,12 @@ public class MorytaniaLegs {
     static {
         for (int itemId : ITEM_IDS) {
             ItemAction.registerInventory(itemId, "ecto teleport", MorytaniaLegs::ectoTeleport);
-            ItemAction.registerEquipment(itemId, "ecto teleport", MorytaniaLegs::ectoTeleport);
+            ItemAction.registerEquipment(itemId, "ectofuntus pit", MorytaniaLegs::ectoTeleport);
         }
         ItemAction.registerInventory(Items.MORYTANIA_LEGS_3, "burgh teleport", (player, item) -> burghTeleport(player));
-        ItemAction.registerEquipment(Items.MORYTANIA_LEGS_3, "burgh teleport", (player, item) -> burghTeleport(player));
+        ItemAction.registerEquipment(Items.MORYTANIA_LEGS_3, "burgh de rott", (player, item) -> burghTeleport(player));
         ItemAction.registerInventory(Items.MORYTANIA_LEGS_4, "burgh teleport", (player, item) -> burghTeleport(player));
-        ItemAction.registerEquipment(Items.MORYTANIA_LEGS_4, "burgh teleport", (player, item) -> burghTeleport(player));
+        ItemAction.registerEquipment(Items.MORYTANIA_LEGS_4, "burgh de rott", (player, item) -> burghTeleport(player));
         DailyResetListener.register(player -> player.removeAttribute(KEY));
     }
 }
