@@ -1,6 +1,7 @@
 package io.ruin.model.activities.combat.bosses.vorkath;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.combat.AttackStyle;
@@ -294,9 +295,11 @@ public class Vorkath extends NPCCombat {
         target.graphics(369, 0, delay);
         target.freeze(30, npc);
         Position pos = Random.get(npc.getPosition().area(7, position ->
-                position.getTile().clipping == 0
+                ProjectileRoute.allow(target, position)
+                        && position.getTile().clipping == 0
                         && position.isWithinDistance(target.getPosition(), 10)
                         && !position.isWithinDistance(target.getPosition(), 2)
+                        && !position.isWithinDistance(npc.getCentrePosition(), 6)
                         && npc.getSpawnPosition().getY() - position.getY() <= 8));
         ZOMBIE_SPAWN_PROJECTILE.send(npc, pos.getX(), pos.getY());
         npc.addEvent(event -> {
