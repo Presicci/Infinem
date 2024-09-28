@@ -294,9 +294,8 @@ public class Vorkath extends NPCCombat {
         int delay = ICE_PROJECTILE.send(npc, target);
         target.graphics(369, 0, delay);
         target.freeze(30, npc);
-        Position pos = Random.get(npc.getPosition().area(7, position ->
-                ProjectileRoute.allow(target, position)
-                        && position.getTile().clipping == 0
+        Position pos = Random.get(npc.getCentrePosition().area(7, position ->
+                position.getTile().clipping == 0
                         && position.isWithinDistance(target.getPosition(), 10)
                         && !position.isWithinDistance(target.getPosition(), 2)
                         && !position.isWithinDistance(npc.getCentrePosition(), 6)
