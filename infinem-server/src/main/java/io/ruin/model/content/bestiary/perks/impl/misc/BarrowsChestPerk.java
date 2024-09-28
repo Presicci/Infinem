@@ -14,22 +14,22 @@ public class BarrowsChestPerk extends MixedPerk {
     @Override
     protected Map<Integer, Double> getBreakpoints() {
         return new LinkedHashMap<Integer, Double>() {{
-            put(36, 0.02);
-            put(72, 0.04);
-            put(108, 0.06);
-            put(144, 0.08);
-            put(180, 0.1);
+            put(60, 0.2);
+            put(120, 0.4);
+            put(180, 0.6);
+            put(240, 0.8);
+            put(300, 1.0);
         }};
     }
 
     @Override
     protected double getIncrement() {
-        return 0.01;
+        return 0.25;
     }
 
     @Override
     protected int getInterval() {
-        return 30;
+        return 300;
     }
 
     @Override
