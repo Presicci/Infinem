@@ -18,11 +18,11 @@ public class ExtraDropPerk extends MixedPerk {
     @Override
     protected Map<Integer, Double> getBreakpoints() {
         return isBoss ? getBossBreakpoints() : new LinkedHashMap<Integer, Double>() {{
-            put(20, 0.01);
-            put(40, 0.02);
-            put(60, 0.03);
-            put(80, 0.04);
-            put(100, 0.05);
+            put(100, 0.1);
+            put(250, 0.2);
+            put(500, 0.3);
+            put(750, 0.4);
+            put(1000, 0.5);
         }};
     }
 
