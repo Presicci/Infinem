@@ -146,7 +146,7 @@ public enum SpellBook {
             new TodoSpell("Boost Potion Share"),
             new LunarTeleport(87, 92, MagicTeleportBounds.FISHING_GUILD.getBounds()),
             TeleGroup.FISHING_GUILD.toSpell(),
-            new TodoSpell("Plank Make"),
+            new PlankMake(),
             new LunarTeleport(87, 92, MagicTeleportBounds.CATHERBY.getBounds()),
             TeleGroup.CATHERBY.toSpell(),
             new TodoSpell("Recharge Dragonstone"),
