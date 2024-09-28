@@ -28,11 +28,11 @@ public class ExtraDropPerk extends MixedPerk {
 
     private Map<Integer, Double> getBossBreakpoints() {
         return new LinkedHashMap<Integer, Double>() {{
-            put(40, 0.01);
-            put(80, 0.02);
-            put(120, 0.03);
-            put(160, 0.04);
-            put(200, 0.05);
+            put(50, 0.2);
+            put(100, 0.4);
+            put(150, 0.6);
+            put(200, 0.8);
+            put(250, 1.0);
         }};
     }
 
@@ -47,7 +47,7 @@ public class ExtraDropPerk extends MixedPerk {
     }
 
     private int getBossInterval() {
-        return 200;
+        return 50;
     }
 
     @Override
