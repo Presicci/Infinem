@@ -146,6 +146,7 @@ public class Woodcutting {
                         } else if (treeData != Tree.CRYSTAL && treeData.log != -1) {
                             if (treeData == Tree.REGULAR && KandarinHeadgear.hasEquipped(player)) amount += 1;
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                                amount *= 2;
                                 if (player.getBank().hasRoomFor(treeData.log)) {
                                     player.getBank().add(treeData.log, amount);
                                     player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
