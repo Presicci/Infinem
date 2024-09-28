@@ -31,7 +31,7 @@ public class ShadeCatacombs {
     };
 
     private static void openDoor(Player player, GameObject object, KeyType keyType) {
-        int[] POSSIBLE_KEYS = Arrays.copyOfRange(KEYS, keyType.minKeyIndex, KEYS.length - 1);
+        int[] POSSIBLE_KEYS = Arrays.copyOfRange(KEYS, keyType.minKeyIndex, KEYS.length);
         if (!player.getInventory().hasAtLeastOneOf(POSSIBLE_KEYS)) {
             player.sendMessage("You need a " + keyType.name().toLowerCase() + " key to open this door.");
             return;
