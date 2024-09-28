@@ -97,7 +97,9 @@ public class IKOD {
                 } else if ((item.getId() == Items.RUNE_POUCH && flags.killedByAPlayer)
                         || isLootingBag(item)
                         || item.getDef().name.contains("ironman")
-                        || (item.getId() == Items.FALCONERS_GLOVE || item.getId() == Items.FALCONERS_GLOVE_2 || item.getId() == 22816 || item.getId() == 22817)) {
+                        || (item.getId() == Items.FALCONERS_GLOVE || item.getId() == Items.FALCONERS_GLOVE_2 || item.getId() == 22816 || item.getId() == 22817)
+                        || item.getId() == 10531 || item.getId() == 10532 || item.getId() == 10533 || item.getId() == 10534 || item.getId() == 10535 || item.getId() == 10536 || item.getId() == 10537  // Barb assault eggs
+                        ) {
                     kind = IKODKind.Deleted;
                 } else if (breakable != null) {
                     if (flags.killedByAPlayer) {
