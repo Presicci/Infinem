@@ -18,7 +18,7 @@ public class Splatter extends NPCCombat {
 
 	@Override
 	public void init() {
-		//npc.deathStartListener = (entity, killer, killHit) -> splat();
+		npc.deathStartListener = (entity, killer, killHit) -> splat();
 		npc.hitListener = new HitListener().postDamage((hit)-> {
 			Entity attacker = hit.attacker;
 			if (attacker != null && attacker.isPlayer()) {
