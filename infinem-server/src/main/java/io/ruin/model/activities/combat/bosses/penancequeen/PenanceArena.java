@@ -123,8 +123,10 @@ public class PenanceArena {
                 new MessageDialogue("...No one seems to care.")
         ));
         ObjectAction.register(20235, "dunk", (player, obj) -> poisonEgg(player));
+        ObjectAction.register(20233, "dunk", (player, obj) -> poisonEgg(player));
         ObjectAction.register(20250, "get-spikes", (player, obj) -> spikeEgg(player));
         ObjectAction.register(20232, "dunk", (player, obj) -> heatEgg(player));
+        ObjectAction.register(20234, "dunk", (player, obj) -> heatEgg(player));
         ObjectAction.register(20133, "shoot", PenanceArena::shootEgg);
         ObjectAction.register(20267, "load", PenanceArena::shootEgg);
         ObjectAction.register(20267, "look-in", (player, obj) -> player.sendMessage("I should load some omega eggs in here."));
