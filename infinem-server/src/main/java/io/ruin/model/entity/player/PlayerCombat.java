@@ -591,7 +591,10 @@ public class PlayerCombat extends Combat {
         } else {
             int delay = dart.rangedData.projectiles[0].send(player, target);
             hit.randDamage(maxDamage).clientDelay(delay);
-            target.hit(hit);
+            if (target.isNpc() && player.getRelicManager().hasRelic(Relic.DEADEYE) && RangedAmmo.procDeadeyeBoltEffect(target, hit)) {
+            } else {
+                target.hit(hit);
+            }
         }
         if (!rollAvaAttractor()
                 && !rollAvaAccumulator()
