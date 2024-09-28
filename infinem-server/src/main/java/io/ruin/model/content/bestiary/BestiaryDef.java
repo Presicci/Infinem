@@ -241,7 +241,8 @@ public class BestiaryDef {
                 "tzkal-zuk",
                 "crazy archaeologist",
                 "deranged archaeologist",
-                "zulrah"
+                "zulrah",
+                "penance queen"
         ));
     }};
 
