@@ -31,6 +31,17 @@ public class Consumable {
      */
 
     static {
+        // Penance eggs
+        registerEat(Items.BLUE_EGG, 10, player -> {
+            player.getStats().get(StatType.Defence).boost(5, 0.15);
+            player.sendMessage("You eat the egg.");
+        });
+        registerEat(Items.GREEN_EGG, 20, "egg");
+        registerEat(Items.RED_EGG, 7, player -> {
+            player.getStats().get(StatType.Prayer).restore(7, 0.27);
+            player.sendMessage("You eat the egg.");
+        });
+
         registerEat(Items.STRAWBERRY, 0, player -> {
             int hpLevel = player.getStats().get(StatType.Hitpoints).fixedLevel;
             player.sendMessage("You eat the strawberry.");
