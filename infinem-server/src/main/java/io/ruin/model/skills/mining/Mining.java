@@ -147,7 +147,9 @@ public class Mining {
                             InfernalTools.INFERNAL_PICKAXE.removeCharge(player);
                             player.sendMessage("Your infernal pickaxe incinerates the " + ItemDefinition.get(id).name + ".");
                         } else if (rockData == Rock.COAL && CoalBag.hasOpenBag(player) && CoalBag.hasSpaceInBag(player)) {
-                            player.incrementNumericAttribute("BAGGED_COAL", 1);
+                            int space = CoalBag.getSpaceInBag(player);
+                            if (amount > space) amount = space;
+                            player.incrementNumericAttribute("BAGGED_COAL", amount);
                         } else if (rockData == Rock.ASH_PILE) {
                             player.getInventory().addOrDrop(21622, getAshAmount(player));
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {

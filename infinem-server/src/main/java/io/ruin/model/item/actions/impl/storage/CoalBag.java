@@ -108,6 +108,10 @@ public class CoalBag {
         return player.getAttributeIntOrZero("BAGGED_COAL") < getBagSize(player);
     }
 
+    public static int getSpaceInBag(Player player) {
+        return getBagSize(player) - player.getAttributeIntOrZero("BAGGED_COAL");
+    }
+
     static {
         ItemAction.registerInventory(COAL_BAG, "fill", (player, item) -> fill(player));
         ItemAction.registerInventory(COAL_BAG, "check", (player, item) -> check(player));
