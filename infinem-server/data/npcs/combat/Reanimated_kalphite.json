@@ -4,17 +4,17 @@
     "handler": "",
     //Combat Info
     "hitpoints": 35,
-    "aggressive_level": 2,
-    "max_damage": 31,
+    "aggressive_level": 0,
+    "max_damage": 12,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 35.0,
+    "slayer_tasks": [ "Kalphite" ],
     //Combat Stats
-    "attack": 300,
-    "strength": 300,
-    "defence": 300,
+    "attack": 110,
+    "strength": 110,
+    "defence": 110,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -24,11 +24,11 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 50,
-    "slash_defence": 50,
-    "crush_defence": 10,
-    "magic_defence": 100,
-    "ranged_defence": 100,
+    "stab_defence": 25,
+    "slash_defence": 25,
+    "crush_defence": 5,
+    "magic_defence": 50,
+    "ranged_defence": 50,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,

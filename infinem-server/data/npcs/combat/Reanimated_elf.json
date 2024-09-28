@@ -4,17 +4,17 @@
     "handler": "",
     //Combat Info
     "hitpoints": 35,
-    "aggressive_level": 2,
+    "aggressive_level": 0,
     "max_damage": 10,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 35.0,
+    "slayer_tasks": [ "Elves" ],
     //Combat Stats
-    "attack": 35,
-    "strength": 36,
-    "defence": 37,
+    "attack": 95,
+    "strength": 95,
+    "defence": 80,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -24,9 +24,9 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 50,
-    "slash_defence": 70,
-    "crush_defence": 70,
+    "stab_defence": 5,
+    "slash_defence": 20,
+    "crush_defence": 40,
     "magic_defence": 60,
     "ranged_defence": 50,
     //Immunites

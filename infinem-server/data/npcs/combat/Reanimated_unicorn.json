@@ -4,8 +4,8 @@
     "handler": "",
     //Combat Info
     "hitpoints": 15,
-    "aggressive_level": 6,
-    "max_damage": 1,
+    "aggressive_level": 0,
+    "max_damage": 6,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
@@ -13,8 +13,8 @@
     "slayer_tasks": [],
     //Combat Stats
     "attack": 11,
-    "strength": 12,
-    "defence": 11,
+    "strength": 13,
+    "defence": 13,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -24,11 +24,11 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 5,
-    "slash_defence": 15,
-    "crush_defence": 15,
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
     "magic_defence": 0,
-    "ranged_defence": 5,
+    "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,

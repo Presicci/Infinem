@@ -1,22 +1,22 @@
 [
   { // Reanimated Dragon
     "ids": [ 7039 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.dragons.ChromaticDragon",
     //Combat Info
     "hitpoints": 35,
-    "aggressive_level": 2,
+    "aggressive_level": 0,
     "max_damage": 22,
-    "attack_style": "CRUSH",
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 112,
-    "strength": 112,
-    "defence": 112,
+    "attack": 68,
+    "strength": 68,
+    "defence": 68,
     "ranged": 1,
-    "magic": 100,
+    "magic": 68,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -24,11 +24,11 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 50,
-    "slash_defence": 70,
-    "crush_defence": 70,
-    "magic_defence": 90,
-    "ranged_defence": 30,
+    "stab_defence": 20,
+    "slash_defence": 40,
+    "crush_defence": 40,
+    "magic_defence": 30,
+    "ranged_defence": 20,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,

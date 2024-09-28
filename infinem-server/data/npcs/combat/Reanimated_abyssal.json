@@ -1,22 +1,22 @@
 [
-  { // Reanimated Tzhaar
-    "ids": [ 7035 ],
+  { // Reanimated Abyssal
+    "ids": [ 7038 ],
     "handler": "",
     //Combat Info
     "hitpoints": 35,
     "aggressive_level": 0,
-    "max_damage": 15,
+    "max_damage": 8,
     "attack_style": "CRUSH",
     //Slayer Info
-    "slayer_level": 1,
+    "slayer_level": 85,
     "slayer_xp": 35.0,
-    "slayer_tasks": [ "TzHaar" ],
+    "slayer_tasks": [ "Abyssal Demons" ],
     //Combat Stats
-    "attack": 120,
-    "strength": 140,
-    "defence": 120,
+    "attack": 97,
+    "strength": 67,
+    "defence": 135,
     "ranged": 1,
-    "magic": 40,
+    "magic": 1,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -24,22 +24,22 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
-    "crush_defence": 0,
+    "stab_defence": 20,
+    "slash_defence": 20,
+    "crush_defence": 20,
     "magic_defence": 0,
-    "ranged_defence": 0,
+    "ranged_defence": 20,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 5,
+    "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": -1,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 2610,
-    "defend_animation": -1,
-    "death_animation": 2607
+    "attack_animation": 1537,
+    "defend_animation": 2309,
+    "death_animation": 1538
   }
 ]

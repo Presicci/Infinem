@@ -4,8 +4,8 @@
     "handler": "",
     //Combat Info
     "hitpoints": 5,
-    "aggressive_level": 2,
-    "max_damage": 1,
+    "aggressive_level": 0,
+    "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
@@ -18,9 +18,9 @@
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": -21,
+    "slash_attack": -21,
+    "crush_attack": -21,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats

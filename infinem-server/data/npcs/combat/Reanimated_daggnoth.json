@@ -1,21 +1,21 @@
 [
   { // Reanimated Dagannoth
     "ids": [ 7033 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.waterbirth.RangedDagannoth",
     //Combat Info
     "hitpoints": 35,
-    "aggressive_level": 2,
-    "max_damage": 11,
-    "attack_style": "CRUSH",
+    "aggressive_level": 0,
+    "max_damage": 10,
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 35.0,
+    "slayer_tasks": [ "Dagannoths" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 75,
-    "ranged": 1,
+    "attack": 78,
+    "strength": 78,
+    "defence": 81,
+    "ranged": 50,
     "magic": 1,
     //Aggressive Stats
     "stab_attack": 0,
@@ -24,11 +24,11 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": -10,
-    "slash_defence": 10,
-    "crush_defence": 90,
-    "magic_defence": 150,
-    "ranged_defence": 200,
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,

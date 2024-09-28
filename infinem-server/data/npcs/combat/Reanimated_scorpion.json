@@ -4,13 +4,13 @@
     "handler": "",
     //Combat Info
     "hitpoints": 15,
-    "aggressive_level": 2,
+    "aggressive_level": 0,
     "max_damage": 5,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 15.0,
+    "slayer_tasks": [ "Scorpions" ],
     //Combat Stats
     "attack": 11,
     "strength": 12,
@@ -27,8 +27,8 @@
     "stab_defence": 5,
     "slash_defence": 15,
     "crush_defence": 15,
-    "magic_defence": 0,
-    "ranged_defence": 5,
+    "magic_defence": 5,
+    "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
