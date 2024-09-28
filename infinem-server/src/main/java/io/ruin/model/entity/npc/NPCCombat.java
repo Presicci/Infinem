@@ -287,7 +287,6 @@ public abstract class NPCCombat extends Combat {
                         info.pet.unlock(killer.player);
                     }
                 }
-                DailyTask.checkNPCKill(killer.player, npc);
             }
 
             if(npc.deathEndListener != null) {
