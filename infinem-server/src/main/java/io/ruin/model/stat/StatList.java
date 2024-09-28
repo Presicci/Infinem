@@ -172,7 +172,7 @@ public class StatList {
          * XP Modes
          */
         if (useMultiplier) {
-            amount *= 7 + ((player.getRelicManager().getHighestTier() - 1) * 2);
+            amount *= 12 + ((player.getRelicManager().getHighestTier() - 1) * 2);
             amount *= getExperienceMultiplier(type);
             amount *= getSkillingOutfitMultiplier(type);
             double relicMulti = getRelicMultiplier(type);
