@@ -78,7 +78,7 @@ public class PenanceQueen extends NPCCombat {
             rangers.add(ranger);
             if (target.isPlayer()) ranger.doIfIdle(target.player, () -> {
                 rangers.remove(ranger);
-                npc.remove();
+                ranger.remove();
             });
             ranger.deathEndListener = (entity, killer, killHit) ->  {
                 rangers.remove(ranger);
