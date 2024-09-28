@@ -1,10 +1,25 @@
 [
   {
-    "ids": [ 1667, 5739, 5740, 5741, 5742, 5743, 5744, 5745, 5746, 5747 ],
-    "guaranteed": [
-      { "id": 10533, "min": 2, "max": 2 },   //Blue egg
-      { "id": 10531, "min": 2, "max": 2 },   //Green egg
-      { "id": 10532, "min": 2, "max": 2 }   //Red egg
+    "ids": [ 5747 ],
+    "tables": [
+      {
+        "name": "Eggs",
+        "weight": 74,
+        "items": [
+          { "id": 10533, "min": 1, "max": 1, "weight": 5 },   // Blue egg
+          { "id": 10531, "min": 1, "max": 1, "weight": 5 },   // Green egg
+          { "id": 10532, "min": 1, "max": 1, "weight": 5 },   // Red egg
+          { "id": 10534, "min": 1, "max": 1, "weight": 1 }    // Yellow egg
+        ]
+      },
+      {
+        "name": "Hat",
+        "weight": 1,
+        "items": [
+          { "id": 10548, "min": 1, "max": 1, "weight": 2 },   // Fighter hat
+          { "id": 10551, "min": 1, "max": 1, "weight": 1 }   // Fighter torso
+        ]
+      }
     ]
   }
 ]
