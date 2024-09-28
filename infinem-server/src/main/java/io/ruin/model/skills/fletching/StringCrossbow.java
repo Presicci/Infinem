@@ -1,6 +1,7 @@
 package io.ruin.model.skills.fletching;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -56,7 +57,9 @@ public enum StringCrossbow {
                     if (crossbowString == null)
                         return;
                     crossbow.make(player, unstrung, crossbowString);
-                    event.delay(2);
+                    if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                        event.delay(2);
+                    }
                 }
             });
             ItemItemAction.register(crossbow.unstrung, CROSSBOW_STRING, (player, unstrung, crossbowString) -> {
