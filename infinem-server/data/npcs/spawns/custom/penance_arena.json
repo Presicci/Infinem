@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Penance Queen",
+    "id": 5775,
+    "x": 1885,
+    "y": 5405,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Penance Fighter",
+    "id": 5747,
+    "x": 1874,
+    "y": 5422,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Penance Fighter",
+    "id": 5747,
+    "x": 1880,
+    "y": 5423,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Penance Fighter",
+    "id": 5747,
+    "x": 1886,
+    "y": 5423,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Penance Fighter",
+    "id": 5747,
+    "x": 1892,
+    "y": 5423,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Penance Fighter",
+    "id": 5747,
+    "x": 1898,
+    "y": 5422,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

@@ -1,10 +1,24 @@
 [
   {
-    "ids": [ 1668, 5757, 5758, 5759, 5760, 5761, 5762, 5763, 5764, 5765 ],
-    "guaranteed": [
-      { "id": 10533, "min": 2, "max": 2 },   //Blue egg
-      { "id": 10531, "min": 2, "max": 2 },   //Green egg
-      { "id": 10532, "min": 2, "max": 2 }   //Red egg
+    "ids": [ 5765 ],
+    "tables": [
+      {
+        "name": "Eggs",
+        "weight": 149,
+        "items": [
+          { "id": 10533, "min": 1, "max": 1, "weight": 5 },   // Blue egg
+          { "id": 10531, "min": 1, "max": 1, "weight": 5 },   // Green egg
+          { "id": 10532, "min": 1, "max": 1, "weight": 5 },   // Red egg
+          { "id": 10534, "min": 1, "max": 1, "weight": 1 }    // Yellow egg
+        ]
+      },
+      {
+        "name": "Hat",
+        "weight": 1,
+        "items": [
+          { "id": 10550, "min": 1, "max": 1, "weight": 1 }   // Ranger hat
+        ]
+      }
     ]
   }
 ]
