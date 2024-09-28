@@ -41,6 +41,7 @@ public enum BossKillCounter {
     //MIMIC("Mimic"),
     //NEX("Nex"),
     OBOR("Obor"),
+    PENANCE_QUEEN("Penance Queen"),
     //PHANTOM_MUSPAH("Phantom Muspah"),
     //PHOSANIS_NIGHTMARE("Phosani's Nightmare"),
     SARACHNIS("Sarachnis"),
