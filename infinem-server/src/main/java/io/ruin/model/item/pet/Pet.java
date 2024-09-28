@@ -80,6 +80,7 @@ public enum Pet {
     LIL_CREATOR(25348, 3566, 5008, null),
     LIL_DESTRUCTOR(25350, 5008, 3566, null),
     TINY_TEMPOR(25602, 10562, null),
+    PENANCE_QUEEN(12703, 6674, null, 3000, 600),
 
     /**
      * CoX
@@ -148,7 +149,6 @@ public enum Pet {
     /**
      * Misc pets
      */
-    PENANCE_QUEEN(12703, 6674, null),
     BLOODHOUND(19730, 7232, null),
     CHOMPY_CHICK(13071, 4002, null),
     PHOENIX(20693, 7370, null),
@@ -308,7 +308,7 @@ public enum Pet {
             Pet.DARK_CORE, Pet.KRAKEN, Pet.SMOKE_DEVIL, Pet.SNAKELING_GREEN,
             Pet.PRINCE_BLACK_DRAGON, Pet.SCORPIAS_OFFSPRING, Pet.SKOTOS,
             Pet.SRARACHA, Pet.TZREK_JAD, Pet.VENENATIS_SPIDERLING, Pet.VETION_JR_PURPLE,
-            Pet.VORKI
+            Pet.VORKI, PENANCE_QUEEN
             //TODO Little nightmare, nexling
     );
 
@@ -568,6 +568,9 @@ public enum Pet {
                 break;
             case VORKI:
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Vorki pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VORKATH)) + " kill count!");
+                break;
+            case PENANCE_QUEEN:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Penance Queen pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.PENANCE_QUEEN)) + " kill count!");
                 break;
             default:
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " just unlocked the following pet: " + ItemDefinition.get(itemId).name);
@@ -1852,8 +1855,8 @@ public enum Pet {
             }
             case PENANCE_QUEEN: {
                 return player -> player.dialogue(
-                        new PlayerDialogue("Of all the high gamble rewards I could have won, I won you..."),
-                        new NPCDialogue(pet.npcId, "Keep trying, human. You'll never win that Dragon Chainbody.")
+                        new PlayerDialogue("Of all the rare drops I could have got, I got you..."),
+                        new NPCDialogue(pet.npcId, "Keep trying, human. You'll never get that Dragon Chainbody.")
                 );
             }
             case OLMLET: {
