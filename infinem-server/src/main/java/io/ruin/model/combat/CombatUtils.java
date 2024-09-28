@@ -188,6 +188,7 @@ public class CombatUtils {
      */
 
     public static void addXp(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int damageDealt) {
+        if (attackType == null) return;
         boolean multiplier = victim.npc != null;
         double xp = damageDealt * 4D;
         double monsterMod = 1.0;
