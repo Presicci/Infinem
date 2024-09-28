@@ -164,11 +164,11 @@ public enum SpellBook {
     ),
     ARCEUUS(
             HomeTeleport.ARCEUUS,
-            new TodoSpell("Basic Reanimation"),
+            new Reanimate(Reanimate.MonsterType.BASIC), // Goblin, monkey, imp, minotaur, scorpion, bear, unicorn
             new ArceuusTeleport(6, 10.0, MagicTeleportBounds.ARCEUUS_LIBRARY.getBounds(), Rune.LAW.toItem(1), Rune.EARTH.toItem(2)),  // Arceuus library
-            new TodoSpell("Adept Reanimation"),
-            new TodoSpell("Expert Reanimation"),
-            new TodoSpell("Master Reanimation"),
+            new Reanimate(Reanimate.MonsterType.ADEPT), //Dog, chaos druid, ogre, giant, elf, troll, horror
+            new Reanimate(Reanimate.MonsterType.EXPERT), //Kalphite, dagannoth, bloodveld, TzHaar, demon, hellhound
+            new Reanimate(Reanimate.MonsterType.MASTER), //Aviansie, abyssal demon, dragon
             new ArceuusTeleport(17, 16.0, MagicTeleportBounds.DRAYNOR_MANOR.getBounds(), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.WATER.toItem(1)),   // Draynor manor
             new TodoSpell("Empty Slot"),
             new ArceuusTeleport(28, 22.0, MagicTeleportBounds.MIND_ALTAR.getBounds(), Rune.LAW.toItem(1), Rune.MIND.toItem(2)),  // Mind altar

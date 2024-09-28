@@ -15,46 +15,63 @@ import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.stat.StatType;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Reanimate extends Spell {
 
-    public enum Monster {
-        GOBLIN(new int[]{13447, 13448}, "Ensouled goblin head", 3, 6.0, 130.0, 7018, Rune.BODY.toItem(2), Rune.NATURE.toItem(1)),
-        MONKEY(new int[]{13450, 13451}, "Ensouled monkey head", 7, 14.0, 182.0, 7019, Rune.BODY.toItem(3), Rune.NATURE.toItem(1)),
-        IMP(new int[]{13453, 13454}, "Ensouled imp head", 12, 24.0, 286.0, 7020, Rune.BODY.toItem(3), Rune.NATURE.toItem(2)),
-        MINOTAUR(new int[]{13453, 13454}, "Ensouled minotaur head", 16, 32.0, 364.0, 7021, Rune.BODY.toItem(4), Rune.NATURE.toItem(2)),
-        SCORPION(new int[]{13459, 13460}, "Ensouled scorpion head", 19, 38.0, 454.0, 7022, Rune.SOUL.toItem(1), Rune.NATURE.toItem(1)),
-        BEAR(new int[]{13462, 13463}, "Ensouled bear head", 21, 42.0, 480.0, 7023, Rune.SOUL.toItem(1), Rune.NATURE.toItem(1), Rune.BODY.toItem(1)),
-        UNICORN(new int[]{13465, 13466}, "Ensouled unicorn head", 22, 44.0, 494.0, 7024, Rune.SOUL.toItem(1), Rune.NATURE.toItem(1), Rune.BODY.toItem(2)),
-        DOG(new int[]{13468, 13469}, "Ensouled dog head", 26, 52.0, 520.0, 7025, Rune.SOUL.toItem(1), Rune.NATURE.toItem(2), Rune.BODY.toItem(2)),
-        CHAOS_DRUID(new int[]{13471, 13472}, "Ensouled chaos druid head", 30, 60.0, 584.0, 7026, Rune.SOUL.toItem(1), Rune.NATURE.toItem(2), Rune.BODY.toItem(3)),
-        GIANT(new int[]{13474, 13475}, "Ensouled giant head", 37, 74.0, 650.0, 7027, Rune.SOUL.toItem(1), Rune.NATURE.toItem(2), Rune.BODY.toItem(4)),
-        OGRE(new int[]{13477, 13478}, "Ensouled ogre head", 40, 80.0, 716.0, 7028, Rune.SOUL.toItem(1), Rune.NATURE.toItem(3), Rune.BODY.toItem(4)),
-        ELF(new int[]{13480, 13481}, "Ensouled elf head", 43, 86.0, 754.0, 7029, Rune.SOUL.toItem(2), Rune.NATURE.toItem(2), Rune.BODY.toItem(2)),
-        TROLL(new int[]{13483, 13484}, "Ensouled troll head", 46, 92.0, 780.0, 7030, Rune.SOUL.toItem(2), Rune.NATURE.toItem(2), Rune.BODY.toItem(3)),
-        HORROR(new int[]{13486, 13487}, "Ensouled horror head", 52, 104.0, 832.0, 7031, Rune.SOUL.toItem(2), Rune.NATURE.toItem(2), Rune.BODY.toItem(4)),
-        KALPHITE(new int[]{13489, 13490}, "Ensouled kalphite head", 57, 114.0, 884.0, 7032, Rune.SOUL.toItem(2), Rune.NATURE.toItem(3), Rune.BODY.toItem(4)),
-        DAGANNOTH(new int[]{13492, 13493}, "Ensouled dagannoth head", 62, 124.0, 936.0, 7033, Rune.SOUL.toItem(3), Rune.NATURE.toItem(3), Rune.BODY.toItem(4)),
-        BLOODVELD(new int[]{13495, 13496}, "Ensouled bloodveld head", 65, 130.0, 1040.0, 7034, Rune.SOUL.toItem(2), Rune.NATURE.toItem(2), Rune.BLOOD.toItem(1)),
-        TZHAAR(new int[]{13498, 13499}, "Ensouled tzhaar head", 69, 138.0, 1104.0, 7035, Rune.SOUL.toItem(2), Rune.NATURE.toItem(3), Rune.BLOOD.toItem(1)),
-        DEMON(new int[]{13501, 13502}, "Ensouled demon head", 72, 144.0, 1170.0, 7036, Rune.SOUL.toItem(2), Rune.NATURE.toItem(4), Rune.BLOOD.toItem(1)),
-        AVIANSIE(new int[]{13504, 13505}, "Ensouled aviansie head", 78, 156.0, 1234.0, 7037, Rune.SOUL.toItem(3), Rune.NATURE.toItem(4), Rune.BLOOD.toItem(1)),
-        ABYSSAL_CREATURE(new int[]{13507, 13508}, "Ensouled abyssal head", 85, 170.0, 1300.0, 7038, Rune.SOUL.toItem(4), Rune.NATURE.toItem(4), Rune.BLOOD.toItem(1)),
-        DRAGON(new int[]{13510, 13511}, "Ensouled dragon head", 93, 186.0, 1560.0, 7039, Rune.SOUL.toItem(4), Rune.NATURE.toItem(4), Rune.BLOOD.toItem(2));
+    public enum MonsterType {
+        BASIC(new Monster[]{Monster.GOBLIN, Monster.MONKEY, Monster.IMP, Monster.MINOTAUR, Monster.SCORPION, Monster.BEAR, Monster.UNICORN}, 16, 32, Rune.BODY.toItem(4), Rune.NATURE.toItem(2)),
+        ADEPT(new Monster[]{Monster.DOG, Monster.CHAOS_DRUID, Monster.OGRE, Monster.GIANT, Monster.ELF, Monster.TROLL, Monster.HORROR}, 41, 80, Rune.BODY.toItem(4), Rune.NATURE.toItem(3), Rune.SOUL.toItem(1)),
+        EXPERT(new Monster[]{Monster.KALPHITE, Monster.DAGANNOTH, Monster.BLOODVELD, Monster.TZHAAR, Monster.DEMON, Monster.HELLHOUND}, 72, 138, Rune.BLOOD.toItem(1), Rune.NATURE.toItem(3), Rune.SOUL.toItem(2)),
+        MASTER(new Monster[]{Monster.AVIANSIE, Monster.ABYSSAL_CREATURE, Monster.DRAGON}, 90, 170, Rune.BLOOD.toItem(2), Rune.NATURE.toItem(4), Rune.SOUL.toItem(4)),
+        ;
 
-        public final int[] headId;
-        public final int levelReq, reanimatedNPCId;
-        public final String headName;
-        public final double mageExp, prayerExp;
-        public Item[] runes;
+        public final Monster[] monsters;
+        public final int levelReq, mageExp;
+        public final Item[] runes;
 
-        Monster(int[] headId, String headName, int levelReq, double mageExp, double prayerExp, int reanimatedNPCId, Item... runes) {
-            this.headId = headId;
-            this.headName = headName;
+        MonsterType(Monster[] monsters, int levelReq, int mageExp, Item... runes) {
+            this.monsters = monsters;
             this.levelReq = levelReq;
             this.mageExp = mageExp;
+            this.runes = runes;
+        }
+    }
+
+    public enum Monster {
+        GOBLIN(new int[]{13447, 13448}, 130.0, 7018),
+        MONKEY(new int[]{13450, 13451}, 182.0, 7019),
+        IMP(new int[]{13453, 13454}, 286.0, 7020),
+        MINOTAUR(new int[]{13453, 13454}, 364.0, 7021),
+        SCORPION(new int[]{13459, 13460}, 454.0, 7022),
+        BEAR(new int[]{13462, 13463}, 480.0, 7023),
+        UNICORN(new int[]{13465, 13466}, 494.0, 7024),
+        DOG(new int[]{13468, 13469}, 520.0, 7025),
+        CHAOS_DRUID(new int[]{13471, 13472}, 584.0, 7026),
+        GIANT(new int[]{13474, 13475}, 650.0, 7027),
+        OGRE(new int[]{13477, 13478}, 716.0, 7028),
+        ELF(new int[]{13480, 13481}, 754.0, 7029),
+        TROLL(new int[]{13483, 13484}, 780.0, 7030),
+        HORROR(new int[]{13486, 13487}, 832.0, 7031),
+        KALPHITE(new int[]{13489, 13490}, 884.0, 7032),
+        DAGANNOTH(new int[]{13492, 13493}, 936.0, 7033),
+        BLOODVELD(new int[]{13495, 13496}, 1040.0, 7034),
+        TZHAAR(new int[]{13498, 13499}, 1104.0, 7035),
+        DEMON(new int[]{13501, 13502}, 1170.0, 7036),
+        HELLHOUND(new int[]{26996, 26997}, 1200.0, 11463),
+        AVIANSIE(new int[]{13504, 13505}, 1234.0, 7037),
+        ABYSSAL_CREATURE(new int[]{13507, 13508}, 1300.0, 7038),
+        DRAGON(new int[]{13510, 13511}, 1560.0, 7039);
+
+        public final int[] headIds;
+        public final int reanimatedNPCId;
+        public final double prayerExp;
+
+        Monster(int[] headIds, double prayerExp, int reanimatedNPCId) {
+            this.headIds = headIds;
             this.prayerExp = prayerExp;
             this.reanimatedNPCId = reanimatedNPCId;
-            this.runes = runes;
         }
     }
 
@@ -65,7 +82,7 @@ public class Reanimate extends Spell {
         Position oldPosition = new Position(player.getAbsX(), player.getAbsY(), 0);
         player.startEvent(event -> {
             player.lock();
-            player.step(-1, 0, StepType.FORCE_WALK);
+            player.getRouteFinder().routeSelf();
             event.delay(1);
             player.face(oldPosition.getX(), oldPosition.getY());
             event.delay(1);
@@ -90,26 +107,33 @@ public class Reanimate extends Spell {
         });
     }
 
-    public Reanimate(Monster monster) {
-        registerItem(monster.levelReq, monster.mageExp, true, monster.runes, (player, item) -> {
-                if (item.getId() != monster.headId[0] && item.getId() != monster.headId[1]) {
-                    player.dialogue(new ItemDialogue().one(monster.headId[0], "This spell cannot reanimate that item.<br> Its intended target is: <col=862013>" + monster.headName + "</col>."));
-                    return false;
-                }
-
-                if (!player.getPosition().inBounds(SPAWN_AREA)) {
-                    player.dialogue(new ItemDialogue().one(monster.headId[0], "The creature cannot be reanimated here. The power<br>of the crystals by the Dark Altar will increase the<br>potency of the spell."));
-                    return false;
-                }
-
-                if (player.npcTarget) {
-                    player.sendFilteredMessage("You need to kill the monster you already have before spawning another!");
-                    return false;
-                }
-
-                reanimate(player, monster, item);
+    public Reanimate(MonsterType monsterType) {
+        registerItem(monsterType.levelReq, monsterType.mageExp, true, monsterType.runes, (player, item) -> {
+            Monster monster = MONSTER_MAP.get(item.getId());
+            if (monster == null) {
+                player.dialogue(new ItemDialogue().one(item.getId(), "This spell cannot reanimate that item."));
+                return false;
+            }
+            if (!player.getPosition().inBounds(SPAWN_AREA)) {
+                player.dialogue(new ItemDialogue().one(monster.headIds[0], "The creature cannot be reanimated here. The power<br>of the crystals by the Dark Altar will increase the<br>potency of the spell."));
+                return false;
+            }
+            if (player.npcTarget) {
+                player.sendFilteredMessage("You need to kill the monster you already have before spawning another!");
+                return false;
+            }
+            reanimate(player, monster, item);
             return true;
         });
     }
 
+    private static final Map<Integer, Monster> MONSTER_MAP = new HashMap<>();
+
+    static {
+        for (Monster monster : Monster.values()) {
+            for (int headId : monster.headIds) {
+                MONSTER_MAP.put(headId, monster);
+            }
+        }
+    }
 }
