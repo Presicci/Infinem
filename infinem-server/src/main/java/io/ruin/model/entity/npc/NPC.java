@@ -113,8 +113,11 @@ public class NPC extends NPCAttributes {
     public List<NPC> localNpcs() {
         //ehh
         List<NPC> set = new ArrayList<>();
-        for(Player player : localPlayers)
-            set.addAll(player.localNpcs());
+        for (Player player : localPlayers) {
+            for (NPC npc : player.localNpcs()) {
+                if (!set.contains(npc)) set.add(npc);
+            }
+        }
         return set;
     }
 
