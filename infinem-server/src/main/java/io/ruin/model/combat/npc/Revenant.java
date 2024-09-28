@@ -51,7 +51,7 @@ public class Revenant extends NPCCombat {
         npc.animate(info.attack_animation);
         Hit hit = new Hit(npc, info.attack_style, null).randDamage(info.max_damage);
         if (braceletOfEthereumEffect(target))
-            hit.block();
+            hit.damage = (int) (hit.damage * 0.25);
         target.hit(hit);
     }
 
@@ -60,7 +60,7 @@ public class Revenant extends NPCCombat {
         int delay = MAGIC_ATTACK.send(npc, target);
         Hit hit = new Hit(npc, AttackStyle.MAGIC).randDamage(info.max_damage).clientDelay(delay);
         if (braceletOfEthereumEffect(target))
-            hit.block();
+            hit.damage = (int) (hit.damage * 0.25);
         hit.postDamage(t -> {
             if (hit.damage > 0) {
                 t.graphics(1454, 124, 0);
@@ -77,7 +77,7 @@ public class Revenant extends NPCCombat {
         int delay = RANGED_ATTACK.send(npc, target);
         Hit hit = new Hit(npc, AttackStyle.RANGED).randDamage(info.max_damage).clientDelay(delay);
         if (braceletOfEthereumEffect(target))
-            hit.block();
+            hit.damage = (int) (hit.damage * 0.25);
         target.hit(hit);
     }
 
