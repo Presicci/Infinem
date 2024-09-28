@@ -259,7 +259,7 @@ public abstract class NPCCombat extends Combat {
             if(npc.isRemoved())
                 return;
         }
-        npc.startEvent(event -> {
+        npc.addEvent(event -> {
             npc.lock();
             event.delay(1);
             if (info.death_animation != -1)
