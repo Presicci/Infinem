@@ -927,4 +927,8 @@ public class ChambersOfXeric {
     private boolean isComplete() {
         return raidStage == 4;
     }
+
+    public boolean inRaid(Player player) {
+        return map.isIn(player);
+    }
 }

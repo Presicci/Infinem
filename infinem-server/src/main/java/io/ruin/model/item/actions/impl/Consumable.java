@@ -1248,6 +1248,10 @@ public class Consumable {
             player.sendMessage("You can only drink this potion while dreaming.");
             return false;
         }
+        if (potion.ordinal() >= Potion.ELDER_MINUS.ordinal() && (player.raidsParty == null || !player.raidsParty.getRaid().inRaid(player))) {
+            player.sendMessage("You can only drink this potion while in a raid.");
+            return false;
+        }
         if(newId == -1 || (newId == 229 && player.hasAttribute(AttributeKey.BREAK_VIALS)))
             item.remove();
         else if (potion == Potion.GUTHIX_REST)
