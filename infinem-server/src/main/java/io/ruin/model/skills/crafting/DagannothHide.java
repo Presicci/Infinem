@@ -5,6 +5,7 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.scroll.DiaryScroll;
 import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -53,16 +54,17 @@ public enum DagannothHide {
         RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int made = 0;
+            int prodCount = 0;
             while (made++ < amount) {
                 if (!isNPC && player.getInventory().getAmount(Items.DAGANNOTH_HIDE) < hidesRequired) {
-                    return;
+                    break;
                 }
                 if (!isNPC && !player.getInventory().hasId(otherItem)) {
-                    return;
+                    break;
                 }
                 if (isNPC) {
                     if (player.getInventory().getAmount(995) < cost)
-                        return;
+                        break;
                     player.getInventory().remove(995, cost);
                 }
                 player.getInventory().remove(Items.DAGANNOTH_HIDE, hidesRequired);
@@ -76,9 +78,13 @@ public enum DagannothHide {
                     player.sendFilteredMessage("You make " + ItemDefinition.get(productId).descriptiveName + ".");
                     event.delay(2);
                 }
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
             if (isNPC) {
                 player.dialogue(new NPCDialogue(npc, "Here you are."));
+            } else {
+                ProductionMaster.extra(player, prodCount, productId, StatType.Crafting, 100 * hidesRequired * prodCount);
             }
         });
     }
