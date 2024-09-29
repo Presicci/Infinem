@@ -3,6 +3,7 @@ package io.ruin.model.skills.woodcutting;
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
 import io.ruin.model.activities.wilderness.Wilderness;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -56,12 +57,11 @@ public class Ent {
                 event.delay(3);
 
                 if (Woodcutting.successfullyCutTree(Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, null), Tree.ENTTRUNK, axe)) {
-                    player.getStats().addXp(StatType.Woodcutting, Tree.ENTTRUNK.experience, true);
-                    if (Wilderness.players.contains(player)) {
-                        player.getInventory().add(Ent.getEntLog(player, axe), 2);   // Double logs in wildy
-                    } else {
-                        player.getInventory().add(Ent.getEntLog(player, axe));
-                    }
+                    int amt = Wilderness.players.contains(player) ? 2 : 1;
+                    if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST))
+                        amt *= 2;
+                    player.getStats().addXp(StatType.Woodcutting, Tree.ENTTRUNK.experience * amt, true);
+                    player.getInventory().add(Ent.getEntLog(player, axe), amt);
                     Woodcutting.rollBirdNest(player, Tree.ENTTRUNK);
                     if (Random.rollDie(10, 1)) { // 10% chance per harvest of trunk leaving
                         npc.remove();
