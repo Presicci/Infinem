@@ -1,6 +1,7 @@
 package io.ruin.model.skills.crafting;
 
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -41,21 +42,25 @@ public enum Loom {
         RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int amt = amount;
+            int prodCount = 0;
             while(amt --> 0) {
                 if(player.getInventory().getAmount(item.before.getId()) < item.before.getAmount()) {
-                    return;
+                    break;
                 }
                 player.animate(894);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     event.delay(3);
                 }
                 if(player.getInventory().getAmount(item.before.getId()) < item.before.getAmount()) {
-                    return;
+                    break;
                 }
                 player.getInventory().remove(item.before);
                 player.getInventory().add(item.after);
                 player.getStats().addXp(StatType.Crafting, item.exp, true);
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
+            ProductionMaster.extra(player, prodCount, item.after.getId(), StatType.Crafting, item.exp * prodCount);
         });
     }
 

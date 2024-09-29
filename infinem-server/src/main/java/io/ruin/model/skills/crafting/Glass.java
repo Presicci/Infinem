@@ -2,6 +2,7 @@ package io.ruin.model.skills.crafting;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -51,9 +52,10 @@ public enum Glass {
         RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int amt = amount;
+            int prodCount = 0;
             while(amt --> 0) {
                 if (!player.getInventory().hasId(MOLTEN_GLASS))
-                    return;
+                    break;
                 player.animate(884);
                 player.getInventory().remove(MOLTEN_GLASS, 1);
                 player.getInventory().add(glass.itemID, 1);
@@ -62,7 +64,10 @@ public enum Glass {
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     event.delay(2);
                 }
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
+            ProductionMaster.extra(player, prodCount, glass.itemID, StatType.Crafting, glass.exp * prodCount);
         });
     }
 
