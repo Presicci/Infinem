@@ -576,11 +576,9 @@ public enum PickPocket {
                 npc.forceText("What do you think you're doing?");
                 npc.faceTemp(player);
                 npc.animate(pickpocket.stunAnimation);
-                player.hit(new Hit().randDamage(pickpocket.stunDamage).postDamage((hit) -> {
-                    if (!DodgyNecklace.test(player)) {
-                        hit.player.stun(pickpocket.stunSeconds, true);
-                    }
-                }));
+                if (!DodgyNecklace.test(player)) {
+                    player.hit(new Hit().randDamage(pickpocket.stunDamage).postDamage((hit) -> hit.player.stun(pickpocket.stunSeconds, true)));
+                }
             }
             BotPrevention.attemptBlock(player);
             player.unlock();
