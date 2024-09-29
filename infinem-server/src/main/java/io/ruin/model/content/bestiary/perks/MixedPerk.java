@@ -23,8 +23,12 @@ public abstract class MixedPerk extends BestiaryPerk {
     protected String getBreakpointString(int killCount) {
         int nextBreakpoint = getNextBreakpoint(killCount);
         if (nextBreakpoint <= 0) return "";
-        if (getBreakpoints().containsKey(getNextBreakpoint(killCount))) {
+        if (getBreakpoints().containsKey(nextBreakpoint)) {
             Double breakpointReward = getBreakpoints().get(nextBreakpoint);
+            int prevBreakpoint = getPreviousBreakpoint(killCount);
+            if (prevBreakpoint >= 0 && getBreakpoints().containsKey(prevBreakpoint)) {
+                breakpointReward -= getBreakpoints().get(prevBreakpoint);
+            }
             return (getInvertedPercentage() ? "-" + inverseDoubleToPercentage(breakpointReward) : "+" + new DecimalFormat("#").format(breakpointReward * 100f)) + "% at " + super.getBreakpointString(killCount);
         } else {
             double increment = getIncrement();
@@ -47,6 +51,12 @@ public abstract class MixedPerk extends BestiaryPerk {
         int incrementalKillCount = killCount - lastBreakpoint;
         if (incrementalKillCount < getInterval()) return chance;
         return chance + (getIncrement() * (int) (incrementalKillCount / getInterval()));
+    }
+
+    protected int getPreviousBreakpoint(int killCount) {
+        Map<Integer, Double> breakpoints = getBreakpoints();
+        Optional<Integer> breakpoint = breakpoints.keySet().stream().filter(b -> b < killCount).min(Comparator.reverseOrder());
+        return breakpoint.orElse(-1);
     }
 
     protected int getNextBreakpoint(int killCount) {
