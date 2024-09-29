@@ -32,6 +32,7 @@ public enum BestiaryEntryModifiers {
             entry -> {
                 entry.removePerk(ExtraDropPerk.class);
                 entry.removePerk(GoldPickupPerk.class);
+                entry.removePerk(RespawnPerk.class);
                 entry.addPerk(new BarrowsChestPerk());
             }
     );
