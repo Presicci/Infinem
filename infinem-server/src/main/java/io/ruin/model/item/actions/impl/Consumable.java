@@ -1,6 +1,7 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.map.Region;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
@@ -675,6 +676,10 @@ public class Consumable {
             return false;
         if(player.eatDelay.isDelayed() || player.karamDelay.isDelayed() || player.potDelay.isDelayed())
             return false;
+        if ((item.getId() == 10531 || item.getId() == 10532 || item.getId() == 10533) && !Region.get(7508).bounds.inBounds(player)) {
+            player.sendMessage("You can only eat this when fighting the penance queen.");
+            return false;
+        }
         if(DuelRule.NO_FOOD.isToggled(player)) {
             player.sendMessage("Food has been disabled for this duel!");
             return false;
