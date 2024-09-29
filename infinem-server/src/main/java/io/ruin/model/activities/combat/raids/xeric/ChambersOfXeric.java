@@ -144,6 +144,9 @@ public class ChambersOfXeric {
                 ));
             }
         });
+        ObjectAction.register(29778, 1, (player, obj) -> {
+            leaveRaid(player);
+        });
     }
 
     private static void leaveRaid(Player player) {
