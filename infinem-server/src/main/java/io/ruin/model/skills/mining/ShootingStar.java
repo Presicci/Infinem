@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.World;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -142,6 +143,8 @@ public enum ShootingStar {
                 }
                 if (Mining.canAttempt(attempts, pickaxe) && Random.get(100) <= chance(Mining.getEffectiveLevel(player))) {
                     int stardustQuantity = Random.rollPercent(currentStar.doubleDustChance) ? 2 : 1;
+                    if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST))
+                        stardustQuantity *= 2;
                     player.collectResource(new Item(STARDUST, stardustQuantity));
                     player.getInventory().add(STARDUST, stardustQuantity);
                     player.getCollectionLog().collect(STARDUST, stardustQuantity);
