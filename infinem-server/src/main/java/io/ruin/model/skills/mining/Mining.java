@@ -135,6 +135,8 @@ public class Mining {
                             amount *= 2;
                             player.sendFilteredMessage("You manage to mine an additional ore.");
                         }
+                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST))
+                            amount *= 2;
                         if (rockData.ordinal() <= Rock.ADAMANT.ordinal())
                             CelestialRing.removeChargeIfEquipped(player);
                         player.collectResource(new Item(id, amount));
