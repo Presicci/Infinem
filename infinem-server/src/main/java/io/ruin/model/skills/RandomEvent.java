@@ -179,6 +179,7 @@ public enum RandomEvent {
                 player.getCollectionLog().collect(costumePiece.getId());
                 player.getTaskManager().doLookupByUUID(1108);   // Get a Random Event
                 PlayerCounter.RANDOM_EVENTS.increment(player, 1);
+                player.getPacketSender().resetHintIcon(true);
                 return;
             }
         }
@@ -187,6 +188,7 @@ public enum RandomEvent {
         player.sendMessage("The stranger hands you a reward as he disappears...");
         player.getTaskManager().doLookupByUUID(1108);   // Get a Random Event
         PlayerCounter.RANDOM_EVENTS.increment(player, 1);
+        player.getPacketSender().resetHintIcon(true);
         if (randomReward.getId() == Items.FROG_TOKEN) player.getCollectionLog().collect(randomReward);
     }
 
@@ -337,6 +339,7 @@ public enum RandomEvent {
                     player.dialogue(new NPCDialogue(re.npcId, "You're no use to me, " + player.getName() + "."));
                     return;
                 }
+                player.getPacketSender().resetHintIcon(true);
                 player.dismissRandomEvent = true;
             }));
         }
