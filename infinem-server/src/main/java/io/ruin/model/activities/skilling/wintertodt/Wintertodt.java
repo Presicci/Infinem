@@ -243,7 +243,7 @@ public class Wintertodt { // TODO make hits not reset events
                 REGION.players.forEach(p -> {
                     if (Misc.getDistance(b.getObject().x + 1, b.getObject().y + 1, p.getAbsX(), p.getAbsY()) <= 2) {
                         p.sendMessage("The brazier is broken and shrapnel damages you.");
-                        p.hit(new Hit().randDamage(getBrazierAttackDamage(p)));
+                        p.hit(new Hit().randDamage(getBrazierAttackDamage(p)).setResetActions(false));
                     }
                 });
             }
@@ -276,7 +276,7 @@ public class Wintertodt { // TODO make hits not reset events
             REGION.players.forEach(p -> {
                 if (Misc.getDistance(p.getPosition(), baseX, baseY) <= 1) {
                     p.sendMessage("The freezing cold attack of the Wintertodt's magic hits you.");
-                    p.hit(new Hit().randDamage(getAreaAttackDamage(p)));
+                    p.hit(new Hit().randDamage(getAreaAttackDamage(p)).setResetActions(false));
                 }
             });
             event.delay(30);
