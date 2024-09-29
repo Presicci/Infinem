@@ -2,6 +2,7 @@ package io.ruin.model.skills.crafting;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -54,6 +55,7 @@ public enum Gem {
     static {
         for(Gem gem : values()) {
             SkillItem item = new SkillItem(gem.cutId).addAction((player, amount, event) -> {
+                int prodCount = 0;
                 while(amount-- > 0) {
                     if(!player.getInventory().hasId(CHISEL))
                         break;
@@ -64,7 +66,10 @@ public enum Gem {
                     if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                         event.delay(2);
                     }
+                    if (ProductionMaster.roll(player) && gem.ordinal() <= DRAGONSTONE.ordinal())
+                        prodCount++;
                 }
+                ProductionMaster.extra(player, prodCount, gem.cutId, StatType.Crafting, gem.xp * prodCount);
                 player.resetAnimation();
             });
             ItemItemAction.register(gem.uncutId, CHISEL, (player, uncutItem, chiselItem) -> {
