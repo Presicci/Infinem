@@ -3,6 +3,7 @@ package io.ruin.model.skills.crafting;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -140,6 +141,7 @@ public enum Mould {
          */
         SkillItem moltenGlass = new SkillItem(MOLTEN_GLASS).addAction((player, amount, event) -> {
             int amt = amount;
+            int prodCount = 0;
             while(amount-- > 0) {
                 Item sodaAsh = player.getInventory().findItem(SODA_ASH);
                 if(sodaAsh == null) {
@@ -166,7 +168,10 @@ public enum Mould {
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     event.delay(2);
                 }
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
+            ProductionMaster.extra(player, prodCount, MOLTEN_GLASS, StatType.Crafting, 10 * prodCount);
             player.resetAnimation();
         });
         ItemObjectAction.register(BUCKET_OF_SAND, "furnace", (player, item, obj) -> {
