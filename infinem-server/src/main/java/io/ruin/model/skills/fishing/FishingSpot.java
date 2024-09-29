@@ -244,13 +244,14 @@ public class FishingSpot {
                             player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(c.id) / 2, true);
                             player.sendMessage("Your infernal harpoon incinerates the " + c.name() + ".");
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                            amount *= 2;
                             if (player.getBank().hasRoomFor(c.id)) {
                                 player.getBank().add(c.id, amount);
                                 player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
                             } else {
                                 player.getInventory().addOrDrop(c.id, amount);
                             }
-                            player.getStats().addXp(StatType.Fishing, c.xp, true);
+                            player.getStats().addXp(StatType.Fishing, c.xp * 2, true);
                         } else {
                             player.getInventory().addOrDrop(c.id, amount);
                             player.getStats().addXp(StatType.Fishing, c.xp, true);
