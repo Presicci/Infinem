@@ -18,7 +18,7 @@ public class ProductionMaster {
     }
 
     public static void extra(Player player, int amt, int itemId, StatType stat, double experience) {
-        extra(player, amt, itemId, stat, experience);
+        extra(player, amt, itemId, stat, experience, null);
     }
 
     public static void extra(Player player, int amt, int itemId, StatType stat, double experience, TaskCategory category) {

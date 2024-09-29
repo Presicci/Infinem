@@ -1,6 +1,7 @@
 package io.ruin.model.skills.crafting;
 
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -40,10 +41,11 @@ public enum Amethyst {
         final int amt = amount;
         player.startEvent(event -> {
             int made = 0;
+            int prodCount = 0;
             while (made++ < amt) {
                 Item item = player.getInventory().findItem(AMETHYST);
                 if(item == null)
-                    return;
+                    break;
                 item.remove();
                 player.getInventory().add(crystal.itemID, crystal.amount);
                 player.animate(6295);
@@ -51,7 +53,10 @@ public enum Amethyst {
                 player.getStats().addXp(StatType.Crafting, crystal.exp, true);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER))
                     event.delay(2);
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
+            ProductionMaster.extra(player, prodCount * crystal.amount, crystal.itemID, StatType.Crafting, crystal.exp * prodCount);
         });
     }
 

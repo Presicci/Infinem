@@ -1,6 +1,7 @@
 package io.ruin.model.skills.crafting;
 
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -38,6 +39,7 @@ public enum Battlestaff {
     static {
         for (Battlestaff battlestaff : values()) {
             SkillItem item = new SkillItem(battlestaff.staffId).addAction((player, amount, event) -> {
+                int prodCount = 0;
                 while (amount-- > 0) {
                     Item staff = player.getInventory().findItem(BATTLE_STAFF);
                     if (staff == null)
@@ -45,6 +47,8 @@ public enum Battlestaff {
                     Item orb = player.getInventory().findItem(battlestaff.orbId);
                     if (orb == null)
                         return;
+                    if (ProductionMaster.roll(player))
+                        prodCount++;
                     if (player.getInventory().hasMultiple(staff.getId(), orb.getId())) {
                         battlestaff.make(player, staff, orb);
                         if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
@@ -55,6 +59,7 @@ public enum Battlestaff {
                     battlestaff.make(player, staff, orb);
                     break;
                 }
+                ProductionMaster.extra(player, prodCount, battlestaff.staffId, StatType.Crafting, battlestaff.exp * prodCount);
             });
             ItemItemAction.register(battlestaff.orbId, BATTLE_STAFF, (player, orb, staff) -> {
                 if(!player.getStats().check(StatType.Crafting, battlestaff.levelReq, "do craft this"))

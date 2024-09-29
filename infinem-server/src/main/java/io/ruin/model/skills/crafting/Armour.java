@@ -3,6 +3,7 @@ package io.ruin.model.skills.crafting;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -104,18 +105,19 @@ public enum Armour {
         final int amt = amount;
         player.startEvent(event -> {
             int made = 0;
+            int prodCount = 0;
             while (made++ < amt) {
                 Item thread = player.getInventory().findItem(THREAD);
                 if (thread == null) {
                     player.dialogue(new MessageDialogue("You need some thread to make anything out of "
                             + armourType.leatherType.leatherName + "."));
-                    return;
+                    break;
                 }
                 Item needle = player.getInventory().findItem(NEEDLE);
                 if (needle == null) {
                     player.dialogue(new MessageDialogue("You need a needle to work with "
                             + armourType.leatherType.leatherName + "."));
-                    return;
+                    break;
                 }
                 if ((made + 1) % 5 == 0) {
                     player.sendFilteredMessage("You use up a reel of your thread.");
@@ -131,7 +133,10 @@ public enum Armour {
                     player.sendFilteredMessage("You make " + armourType.leatherName + ".");
                     event.delay(2);
                 }
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
+            ProductionMaster.extra(player, prodCount, armourType.cutID, StatType.Crafting, armourType.exp * prodCount);
         });
     }
 
