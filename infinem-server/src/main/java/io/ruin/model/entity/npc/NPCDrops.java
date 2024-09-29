@@ -72,6 +72,11 @@ public class NPCDrops {
         }
 
         /*
+         * RDT roll
+         */
+        rollRareDropTable(killer, pKiller, dropPosition);
+
+        /*
          * Drop table loots
          */
         LootTable t = ConditionalNPCLootTable.testAndApplyAllModifications(pKiller, npc);
@@ -130,11 +135,6 @@ public class NPCDrops {
         } else {    // Prevents all these other rolls on npcs with no drops
             return;
         }
-
-        /*
-         * RDT roll
-         */
-        rollRareDropTable(killer, pKiller, dropPosition);
 
         /*
          * Handle the chaos elemental minor drops
