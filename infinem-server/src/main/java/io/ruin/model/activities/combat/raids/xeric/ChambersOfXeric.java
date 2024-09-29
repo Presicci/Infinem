@@ -180,6 +180,7 @@ public class ChambersOfXeric {
             Party.updatePartyStage(player, -1);
             //TabJournal.restore(player);
             player.getPacketSender().fadeIn();
+            player.getStats().restore(true);
             event.delay(1);
             player.unlock();
         });
