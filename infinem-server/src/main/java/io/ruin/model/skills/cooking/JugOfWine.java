@@ -1,7 +1,9 @@
 package io.ruin.model.skills.cooking;
 
+import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -22,6 +24,8 @@ public class JugOfWine {
                 return;
             }
             int amount = Math.min(primary.count(), secondary.count());
+            int prodCount = 0;
+            boolean prodMaster = player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER);
             while(amount --> 0) {
                 player.getInventory().remove(primary.getId(), 1);
                 player.getInventory().remove(secondary.getId(), 1);
@@ -29,11 +33,14 @@ public class JugOfWine {
                 player.getStats().addXp(StatType.Cooking, 200.0, true);
                 PlayerCounter.JUGS_OF_WINE_MADE.increment(player, 1);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.COOKITEM, ItemDefinition.get(JUG_OF_WINE).name);
-                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                if (ProductionMaster.roll(player))
+                    prodCount++;
+                if (!prodMaster) {
                     player.sendMessage("You squeeze the grapes into the jug. The wine begins to ferment.");
                     event.delay(2);
                 }
             }
+            ProductionMaster.extra(player, prodCount, JUG_OF_WINE, StatType.Cooking, 200 * prodCount, TaskCategory.COOKITEM);
         });
     }
 

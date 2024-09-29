@@ -1,6 +1,9 @@
 package io.ruin.model.skills.cooking;
 
+import io.ruin.api.utils.Random;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -67,16 +70,19 @@ public enum Churnable {
         }
         player.startEvent(event -> {
             int amt = amount;
+            int prodCount = 0;
+            double experience = 0;
+            boolean prodMaster = player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER);
             while(amt --> 0) {
                 Churnable churn = getIngredient(player, churnProduct);
                 if (churn == null)
-                    return;
+                    break;
                 player.animate(2793);
-                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                if (!prodMaster) {
                     event.delay(6);
                 }
                 if(!player.getInventory().hasId(churn.requiredItem)) {
-                    return;
+                    break;
                 }
                 if (churn.reqReplacement == -1) {
                     player.getInventory().remove(churn.requiredItem, 1);
@@ -86,8 +92,13 @@ public enum Churnable {
                     player.getInventory().add(churn.productId);
                     player.getInventory().addOrDrop(churn.reqReplacement, 1);
                 }
+                if (ProductionMaster.roll(player)) {
+                    prodCount++;
+                    experience += churn.cookingExperience;
+                }
                 player.getStats().addXp(StatType.Cooking, churn.cookingExperience, true);
             }
+            ProductionMaster.extra(player, prodCount, churnProduct.potentialAction.get(0).productId, StatType.Cooking, experience);
             player.resetAnimation();
         });
     }

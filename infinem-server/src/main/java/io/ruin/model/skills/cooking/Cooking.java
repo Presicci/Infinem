@@ -3,6 +3,7 @@ package io.ruin.model.skills.cooking;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -77,6 +78,8 @@ public class Cooking {
         RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             int amount = amountToCook;
+            int prodCount = 0;
+            boolean prodMaster = player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER);
             while (amount-- > 0) {
                 Item rawFood = player.getInventory().findItem(food.rawID);
                 if (rawFood == null) {
@@ -93,9 +96,11 @@ public class Cooking {
                         player.getInventory().addOrDrop(Items.SODA_ASH, 6);
                     } else {
                         rawFood.setId(food.cookedID);
+                        if (ProductionMaster.roll(player))
+                            prodCount++;
                     }
                     player.getStats().addXp(StatType.Cooking, food.experience * bonus(player, fire), true);
-                    player.sendFilteredMessage(cookingMessage(food));
+                    if (!prodMaster) player.sendFilteredMessage(cookingMessage(food));
                     PlayerCounter.COOKED_FOOD.increment(player, 1);
                     player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.COOKITEM, ItemDefinition.get(food.cookedID).name);
                     player.cookStreak++;
@@ -117,10 +122,11 @@ public class Cooking {
                     player.getInventory().addOrDrop(new Item(returnedSecondary));
                 if (fire)
                     PlayerCounter.COOKED_ON_FIRE.increment(player, 1);
-                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                if (!prodMaster) {
                     e.delay(4);
                 }
             }
+            ProductionMaster.extra(player, prodCount, food.cookedID, StatType.Cooking, food.experience * prodCount, TaskCategory.COOKITEM);
         });
     }
 
