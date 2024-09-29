@@ -11,6 +11,7 @@ import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.map.MapListener;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.object.GameObject;
@@ -103,6 +104,12 @@ public class PenanceArena {
         player.getStats().get(StatType.Hitpoints).restore();
     }
 
+    private static void removeEggs(Player player) {
+        for (int itemId : Arrays.asList(10531, 10532, 10533, 10534, 10535, 10536, 10537)) {
+            player.getInventory().remove(itemId, 28);
+        }
+    }
+
     static {
         // Entrance
         ObjectAction.register(20226, 2534, 3572, 0, "climb-down", (player, obj) -> {
@@ -113,9 +120,7 @@ public class PenanceArena {
         ObjectAction.register(20194, "climb-up", (player, obj) -> {
             player.animate(828);
             Traveling.fadeTravel(player, new Position(2535, 3572, 0));
-            for (int itemId : Arrays.asList(10531, 10532, 10533, 10534, 10535, 10536, 10537)) {
-                player.getInventory().remove(itemId, 28);
-            }
+            removeEggs(player);
         });
         // Horn
         ObjectAction.register(20247, "call", (player, obj) -> player.dialogue(
@@ -134,5 +139,7 @@ public class PenanceArena {
         ObjectAction.register(20150, "take-from", (player, obj) -> healPool(player));
         NPCAction.register(1657, "tutorial", (player, npc) -> player.dialogue(new NPCDialogue(npc, "Kill monsters in basement. That's it."), new PlayerDialogue("Okay.")));
         NPCAction.register(1656, "get-rewards", (player, npc) -> player.dialogue(new NPCDialogue(npc, "REWARDS!?!? NO! GET KILLING!"), new PlayerDialogue("...")));
+        // Remove eggs on leaving region
+        MapListener.registerRegion(7508).onExit((player, logout) -> removeEggs(player));
     }
 }
