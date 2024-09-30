@@ -127,6 +127,7 @@ public enum SetEffect {
             if (damage <= 0) {
                 return;
             }
+            player.getCombat().deadeyeExtraHit(hit, target);
             target.hit(new Hit(player, hit.attackStyle, hit.attackType).fixedDamage(damage).setAttackWeapon(null).ignoreDefence().ignorePrayer());
         }
     }, (player, hit) -> hit.attackStyle.isRanged(),

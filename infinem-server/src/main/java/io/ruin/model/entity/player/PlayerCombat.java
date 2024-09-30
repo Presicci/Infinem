@@ -1181,25 +1181,28 @@ public class PlayerCombat extends Combat {
             SetEffect.AHRIM.checkAndApply(player, target, hit);
             SetEffect.TORAG.checkAndApply(player, target, hit);
             SetEffect.KARIL_DAMNED.checkAndApply(player, target, hit);
-            if (target.isNpc() && player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(10) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
-                if (target.getHp() <= 0 || hit.attackWeapon == null) {
-                    return;
-                }
-                Hit secondHit = new Hit(player, hit.attackStyle, hit.attackType).randDamage(hit.maxDamage).setAttackWeapon(null).ignoreDefence().ignorePrayer();
-                RangedAmmo rangedAmmo = hit.rangedWeapon == null ? null : hit.rangedWeapon.rangedAmmo;
-                if(rangedAmmo != null && rangedAmmo.effect != null && rangedAmmo.effect.apply(target, secondHit))
-                    return;
-                if (target.isNpc() && player.getRelicManager().hasRelic(Relic.DEADEYE) && RangedAmmo.procDeadeyeBoltEffect(target, secondHit)) {
-                    return;
-                }
-                target.hit(secondHit);
-            }
+            deadeyeExtraHit(hit, target);
         }
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null)
                 item.getDef().postTargetDamage(player, item, hit, target);
         }
+    }
 
+    public void deadeyeExtraHit(Hit hit, Entity target) {
+        if (target.isNpc() && player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(10) && hit.attackStyle != null && hit.attackStyle.isRanged()) {
+            if (target.getHp() <= 0 || hit.attackWeapon == null) {
+                return;
+            }
+            Hit secondHit = new Hit(player, hit.attackStyle, hit.attackType).randDamage(hit.maxDamage).setAttackWeapon(null).ignoreDefence().ignorePrayer();
+            RangedAmmo rangedAmmo = hit.rangedWeapon == null ? null : hit.rangedWeapon.rangedAmmo;
+            if(rangedAmmo != null && rangedAmmo.effect != null && rangedAmmo.effect.apply(target, secondHit))
+                return;
+            if (target.isNpc() && player.getRelicManager().hasRelic(Relic.DEADEYE) && RangedAmmo.procDeadeyeBoltEffect(target, secondHit)) {
+                return;
+            }
+            target.hit(secondHit);
+        }
     }
 
     /**
