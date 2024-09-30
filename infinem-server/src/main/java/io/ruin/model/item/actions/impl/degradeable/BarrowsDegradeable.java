@@ -63,7 +63,9 @@ public enum BarrowsDegradeable {
         for (int id : Arrays.asList(newId, degradeableBaseId, degradeableBaseId + 1, degradeableBaseId + 2, degradeableBaseId + 3)) {
             ItemDefinition def = ItemDefinition.get(id);
             if (def.equipSlot == Equipment.SLOT_WEAPON) {
-                def.addPreTargetDefendListener((player, item, hit, target) -> removeCharge(item, 1));
+                def.addPreTargetDefendListener((player, item, hit, target) -> {
+                    if (hit.attackWeapon != null) removeCharge(item, 1);
+                });
             } else {
                 def.addPreDefendListener((player, item, hit) -> removeCharge(item, 1));
             }
