@@ -136,7 +136,7 @@ public enum Armour {
                 if (ProductionMaster.roll(player))
                     prodCount++;
             }
-            ProductionMaster.extra(player, prodCount, armourType.cutID, StatType.Crafting, armourType.exp * prodCount);
+            ProductionMaster.extra(player, prodCount, armourType.cutID, StatType.Crafting, armourType.exp * prodCount, TaskCategory.CRAFT_ARMOR);
         });
     }
 

@@ -67,7 +67,7 @@ public enum Glass {
                 if (ProductionMaster.roll(player))
                     prodCount++;
             }
-            ProductionMaster.extra(player, prodCount, glass.itemID, StatType.Crafting, glass.exp * prodCount);
+            ProductionMaster.extra(player, prodCount, glass.itemID, StatType.Crafting, glass.exp * prodCount, TaskCategory.BLOW_GLASS);
         });
     }
 

@@ -69,7 +69,7 @@ public enum Gem {
                     if (ProductionMaster.roll(player) && gem.ordinal() <= DRAGONSTONE.ordinal())
                         prodCount++;
                 }
-                ProductionMaster.extra(player, prodCount, gem.cutId, StatType.Crafting, gem.xp * prodCount);
+                ProductionMaster.extra(player, prodCount, gem.cutId, StatType.Crafting, gem.xp * prodCount, TaskCategory.CUT_GEM);
                 player.resetAnimation();
             });
             ItemItemAction.register(gem.uncutId, CHISEL, (player, uncutItem, chiselItem) -> {
