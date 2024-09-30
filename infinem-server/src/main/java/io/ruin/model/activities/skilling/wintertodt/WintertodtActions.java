@@ -278,7 +278,7 @@ public class WintertodtActions {
                 if (Random.rollDie(100, (int) (26 * hatchet.axeMultiplier))) {
                     player.collectResource(Wintertodt.BRUMA_ROOT, amount);
                     player.getInventory().add(Wintertodt.BRUMA_ROOT, amount);
-                    player.sendMessage("You get a bruma root.");
+                    player.sendFilteredMessage("You get a bruma root.");
                     player.getStats().addXp(StatType.Woodcutting, (player.getStats().get(StatType.Woodcutting).fixedLevel * 0.3) * amount, true);
                 }
             }
