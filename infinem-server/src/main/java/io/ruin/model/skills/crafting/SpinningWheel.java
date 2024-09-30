@@ -2,6 +2,7 @@ package io.ruin.model.skills.crafting;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -43,20 +44,24 @@ public enum SpinningWheel {
         RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int amt = amount;
+            int prodCount = 0;
             while(amt --> 0) {
                 if(!player.getInventory().hasId(item.before)) {
-                    return;
+                    break;
                 }
                 player.animate(894);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     event.delay(3);
                 }
                 if(!player.getInventory().hasId(item.before))
-                    return;
+                    break;
                 player.getInventory().remove(item.before, 1);
                 player.getInventory().add(item.after, 1);
                 player.getStats().addXp(StatType.Crafting, item.exp, true);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SPINNING_WHEEL, ItemDefinition.get(item.after).name);
+                if (ProductionMaster.roll(player))
+                    prodCount++;
+                ProductionMaster.extra(player, prodCount, item.after, StatType.Crafting, item.exp * prodCount, TaskCategory.SPINNING_WHEEL);
             }
         });
     }
