@@ -2,6 +2,7 @@ package io.ruin.model.skills.smithing;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
@@ -45,6 +46,7 @@ public class SmithItem {
         RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             int made = 0;
+            int prodCount = 0;
             while (true) {
                 int barId = ((SmithBar) player.getTemporaryAttribute("SMITH_BAR")).itemId;
                 ArrayList<Item> bars = player.getInventory().findItems(barId, barReq);
@@ -53,7 +55,7 @@ public class SmithItem {
                         player.sendMessage("You don't have enough bars to make that.");
                     else
                         player.sendMessage("You don't have enough bars to make anymore.");
-                    return;
+                    break;
                 }
                 if (made % 2 == 0)
                     player.animate(SmithBar.getHammerAnim(player));
@@ -64,11 +66,14 @@ public class SmithItem {
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SMITH_ITEM, ItemDefinition.get(makeId).name, makeAmount);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SMITH_BAR, ItemDefinition.get(makeId).name, barReq);
                 if (++made >= amount)
-                    return;
+                    break;
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     e.delay(2);
                 }
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
+            ProductionMaster.extra(player, prodCount * makeAmount, makeId, StatType.Fletching, xp * prodCount);
         });
     }
 
