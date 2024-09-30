@@ -71,8 +71,6 @@ public class PrayerAltar {
             player.animate(645);
             player.sendMessage("You pray at the altar, nothing interesting happens.");
         });
-        // Nardah statuette
-        ObjectAction.register(10389, 1, (player, obj) -> pray(player));
         // Entrana
         ObjectAction.register(10638, 1, (player, obj) -> pray(player));
         // Ancient pyramid altar
