@@ -2,6 +2,7 @@ package io.ruin.model.skills.crafting;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -89,12 +90,13 @@ public enum Pottery {
         RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int made = amount;
+            int prodCount = 0;
             while (made-- > 0) {
                 Item unfiredPottery = player.getInventory().findItem(pottery.unfired);
                 if (unfiredPottery == null) {
                     player.sendMessage("You don't have " + (made == (amount - 1) ? "any " : "anymore ") + pottery.name +
                             (pottery.unfired == Pottery.PIE_DISH.unfired ? "es" : "s") + " which need firing.");
-                    return;
+                    break;
                 }
 
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER))
@@ -111,7 +113,10 @@ public enum Pottery {
                     player.getTaskManager().doLookupByUUID(917);   // Mould and Fire a Plant Pot
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER))
                     event.delay(1);
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
+            ProductionMaster.extra(player, prodCount, pottery.fired, StatType.Crafting, pottery.firedExp * prodCount);
         });
     }
 
@@ -152,10 +157,10 @@ public enum Pottery {
                 while (amount-- > 0) {
                     Item softClay = player.getInventory().findItem(CLAY);
                     if (softClay == null)
-                        return;
+                        break;
                     Item wateringContainer = player.getInventory().findItem(waterContainers.full);
                     if (wateringContainer == null)
-                        return;
+                        break;
                     int maxAmount = Math.min(softClay.count(), wateringContainer.count());
                     if (maxAmount > 1) {
                         Pottery.makeSoftClay(player, softClay, wateringContainer, waterContainers.empty);
