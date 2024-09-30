@@ -69,6 +69,7 @@ public class RepairNPC {
                     item.setId(item.getDef().brokenFrom.fixedId);
                 } else if (repairedId > 0) {
                     item.setId(repairedId);
+                    item.removeCharges();
                 }
             }
             player.dialogue(new NPCDialogue(npc, "I've repaired all your items for you."));

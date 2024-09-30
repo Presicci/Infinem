@@ -69,8 +69,7 @@ public enum BarrowsDegradeable {
             }
             ItemAction.registerInventory(id, "check", (player, item) -> player.sendMessage("Your " + ItemDefinition.get(newId).name + " has " + item.getCharges() + " charges remaining."));
             ItemAction.registerEquipment(id, "check", (player, item) -> player.sendMessage("Your " + ItemDefinition.get(newId).name + " has " + item.getCharges() + " charges remaining."));
-            ItemDefinition.get(id).custom_values.put("DROP_PROMPT", new ItemDropPrompt("Dropping this item will break it.", this::destroy
-            ));
+            ItemDefinition.get(id).custom_values.put("DROP_PROMPT", new ItemDropPrompt("Dropping this item will break it.", this::destroy));
         }
         EquipAction.register(newId, (player -> {
             Item item = player.getEquipment().findItemIgnoringAttributes(newId, false);
