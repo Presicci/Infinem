@@ -2,6 +2,7 @@ package io.ruin.model.skills.herblore;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -262,18 +263,22 @@ public enum Potion {
      */
     private static void register(Potion potion, int primaryId, int[] secondaryIds) {
         SkillItem item = new SkillItem(potion.vialIds[2]).addAction((player, amount, event) -> {
+            int prodCount = 0;
             while (amount-- > 0) {
                 Item primaryItem = player.getInventory().findItem(primaryId);
                 if (primaryItem == null)
-                    return;
+                    break;
                 List<Item> secondaryItems = player.getInventory().collectOneOfEach(secondaryIds);
                 if (secondaryItems == null)
-                    return;
+                    break;
                 potion.mix(player, primaryItem, secondaryItems);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     event.delay(2);
                 }
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
+            ProductionMaster.extra(player, prodCount, potion.vialIds[1], StatType.Herblore, potion.xp * prodCount, TaskCategory.POTION);
         });
         for (int secondaryId : secondaryIds) {
             ItemItemAction.register(primaryId, secondaryId, (player, primary, secondary) -> {
