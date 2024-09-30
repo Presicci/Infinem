@@ -1,6 +1,8 @@
 package io.ruin.model.skills.fletching;
 
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -50,18 +52,22 @@ public enum Javelin {
                 while (amount-- > 0) {
                     Item shaft = player.getInventory().findItem(javelin.shaft);
                     if (shaft == null)
-                        return;
+                        break;
                     Item headItem = player.getInventory().findItem(javelin.head);
                     if (headItem == null)
-                        return;
+                        break;
                     int maxAmount = Math.min(shaft.getAmount(), headItem.getAmount());
                     int maxPossible = player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER) ? 150 : 15;
                     if (maxAmount > maxPossible) {
                         javelin.make(player, shaft, headItem, maxPossible);
+                        if (ProductionMaster.roll(player))
+                            ProductionMaster.extra(player, maxPossible, javelin.outcome, StatType.Fletching, javelin.exp * maxPossible);
                         event.delay(2);
                         continue;
                     }
                     javelin.make(player, shaft, headItem, maxAmount);
+                    if (ProductionMaster.roll(player))
+                        ProductionMaster.extra(player, maxAmount, javelin.outcome, StatType.Fletching, javelin.exp * maxAmount);
                     break;
                 }
             });

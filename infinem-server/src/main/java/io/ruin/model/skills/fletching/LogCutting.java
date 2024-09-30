@@ -2,6 +2,7 @@ package io.ruin.model.skills.fletching;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -89,6 +90,7 @@ public enum LogCutting {
         RandomEvent.attemptTrigger(player);
         player.startEvent(event -> {
             int made = 0;
+            int prodCount = 0;
             while (made++ < amount) {
                 Item knife = player.getInventory().findItem(Tool.KNIFE);
                 if (knife == null) {
@@ -112,7 +114,10 @@ public enum LogCutting {
                     player.sendFilteredMessage("You carefully cut the wood into " + log.name + ".");
                     event.delay(2);
                 }
+                if (ProductionMaster.roll(player))
+                    prodCount++;
             }
+            ProductionMaster.extra(player, prodCount * log.item.getAmount(), log.item.getId(), StatType.Fletching, log.exp * prodCount);
         });
     }
 
