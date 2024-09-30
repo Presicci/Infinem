@@ -51,6 +51,23 @@ public class Pickables {
                 if(Random.rollDie(6, 1))
                     remove(obj);
                 player.unlock();
+                if (this != NETTLES) {
+                    event.delay(2);
+                    while (obj.id == obj.originalId) {
+                        event.delay(1);
+                        if(player.getInventory().isFull()) {
+                            player.sendMessage("You can't carry any more " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
+                            return;
+                        }
+                        player.animate(827);
+                        event.delay(1);
+                        player.getInventory().add(itemId, 1);
+                        player.sendFilteredMessage("You pick some " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
+                        player.getStats().addXp(StatType.Farming, 1, false);
+                        if(Random.rollDie(6, 1))
+                            remove(obj);
+                    }
+                }
             });
         }
 
