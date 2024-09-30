@@ -108,7 +108,7 @@ public class PlayerPrayer {
         magicBoost += prayer.magicBoost;
         if(prayer.headIcon != -1)
             player.getAppearance().setPrayerIcon(prayer.headIcon);
-        prayer.config.set(player, 1);
+        prayer.config.setInstant(player, 1);
         player.privateSound(prayer.soundId);
     }
 
@@ -127,7 +127,7 @@ public class PlayerPrayer {
             drainSkip = 0;
             Config.QUICK_PRAYING.set(player, 0);
         }
-        prayer.config.set(player, 0);
+        prayer.config.setInstant(player, 0);
     }
 
     public void deactivateAll() {
