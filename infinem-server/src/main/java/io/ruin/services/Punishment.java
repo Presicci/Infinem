@@ -25,9 +25,12 @@ public class Punishment {
 
     public static void kick(Player p1, Player p2) {
         p1.sendMessage("Kicking " + p2.getName() + "...");
+        if (p2.isLocked()) {
+            p2.unlock();
+        }
         World.startEvent(e -> {
-//            while (p2.isLocked()) //TODO implement better
-//                e.delay(1); //wait
+            while (p2.isLocked())
+                e.delay(0); //wait
             if (!p2.isOnline())
                 return;
             p2.lock();
