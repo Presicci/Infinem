@@ -97,6 +97,12 @@
       "stock": 10000,
       "buy_price": -1,
       "sell_price": 10
+    },
+    { // $5 bond
+      "itemId": 32033,
+      "stock": 10000,
+      "buy_price": -1,
+      "sell_price": 100
     }
   ]
 }
