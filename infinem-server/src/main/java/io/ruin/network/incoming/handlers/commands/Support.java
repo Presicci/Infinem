@@ -1,6 +1,7 @@
 package io.ruin.network.incoming.handlers.commands;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.handlers.CommandHandler;
 import io.ruin.services.Punishment;
 
@@ -39,6 +40,14 @@ public class Support {
             }
             case "unmute": {
                 CommandHandler.forPlayer(player, query, "::unmute playerName", p2 -> Punishment.unmute(player, p2));
+                return true;
+            }
+            case "kickcentral": {
+                if (args == null || args.length < 1) {
+                    player.sendMessage("Syntax: ::kickcentral [userId]");
+                    return true;
+                }
+                CentralClient.sendLogout(Integer.parseInt(args[0]));
                 return true;
             }
         }
