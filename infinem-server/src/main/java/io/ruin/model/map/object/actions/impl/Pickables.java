@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
@@ -29,7 +30,7 @@ public class Pickables {
         }
 
         private void pick(Player player, GameObject obj) {
-            if(player.getInventory().isFull()) {
+            if(player.getInventory().isFull() && !player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
                 player.sendMessage("You can't carry any more " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                 return;
             }
@@ -45,7 +46,7 @@ public class Pickables {
                     player.unlock();
                     return;
                 }
-                player.getInventory().add(itemId, 1);
+                addItem(player);
                 player.sendFilteredMessage("You pick some " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                 player.getStats().addXp(StatType.Farming, 1, false);
                 if(Random.rollDie(6, 1))
@@ -55,13 +56,13 @@ public class Pickables {
                     event.delay(2);
                     while (obj.id == obj.originalId) {
                         event.delay(1);
-                        if(player.getInventory().isFull()) {
+                        if(player.getInventory().isFull() && !player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
                             player.sendMessage("You can't carry any more " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                             return;
                         }
                         player.animate(827);
                         event.delay(1);
-                        player.getInventory().add(itemId, 1);
+                        addItem(player);
                         player.sendFilteredMessage("You pick some " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                         player.getStats().addXp(StatType.Farming, 1, false);
                         if(Random.rollDie(6, 1))
@@ -69,6 +70,19 @@ public class Pickables {
                     }
                 }
             });
+        }
+
+        private void addItem(Player player) {
+            if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                if (player.getInventory().hasRoomFor(itemId)) {
+                    player.getInventory().addOrDrop(itemId, 2);
+                } else {
+                    player.getBank().add(itemId, 2);
+                    player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(itemId).name + " you would have gained, giving you a total of " + player.getBank().getAmount(itemId) + ".");
+                }
+            } else {
+                player.getInventory().add(itemId, 1);
+            }
         }
 
         private void remove(GameObject obj) {
