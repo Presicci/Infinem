@@ -26,7 +26,7 @@ public class ProductionMaster {
         if (amt <= 0) return;
         player.getStats().addXp(stat, experience, true);
         player.getBank().add(itemId, amt);
-        player.sendMessage("You make an extra " + amt + " x " + ItemDefinition.get(itemId).name + ", which are put into your bank.");
+        player.sendMessage("<col=09950f>You make an extra " + amt + " x " + ItemDefinition.get(itemId).name + ", which are put into your bank.");
         if (category != null) player.getTaskManager().doLookupByCategoryAndTrigger(category, ItemDefinition.get(itemId).name, amt);
     }
 }
