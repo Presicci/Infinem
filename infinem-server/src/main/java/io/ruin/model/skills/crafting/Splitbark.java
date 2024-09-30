@@ -3,6 +3,8 @@ package io.ruin.model.skills.crafting;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -58,14 +60,15 @@ public enum Splitbark {
         RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             int amount = amt;
+            int prodCount = 0;
             while (amount-- > 0) {
                 if (player.getInventory().getAmount(Items.FINE_CLOTH) < resourceCost || player.getInventory().getAmount(Items.BARK) < resourceCost) {
                     player.sendMessage("You've run out of materials.");
-                    return;
+                    break;
                 }
                 if (crafting && (!player.getInventory().hasId(Items.NEEDLE) || !player.getInventory().hasId(Items.THREAD))) {
                     player.sendMessage("You've run out of thread.");
-                    return;
+                    break;
                 }
                 player.getInventory().remove(Items.FINE_CLOTH, resourceCost);
                 player.getInventory().remove(Items.BARK, resourceCost);
@@ -77,12 +80,15 @@ public enum Splitbark {
                         player.sendFilteredMessage("You make " + ItemDefinition.get(productId).descriptiveName + ".");
                         e.delay(2);
                     }
+                    if (ProductionMaster.roll(player))
+                        prodCount++;
                 } else {
                     player.getInventory().remove(995, coinCost);
                     player.dialogue(new NPCDialogue(3232, "There you go, enjoy your new armour!"), new ActionDialogue(() -> jalarastMake(player)));
                     break;
                 }
             }
+            ProductionMaster.extra(player, prodCount, productId, StatType.Crafting, 62 * resourceCost * prodCount);
         });
     }
 
