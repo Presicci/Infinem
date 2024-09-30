@@ -180,7 +180,7 @@ public class SmeltBar {
                     experience += xp;
                 }
             }
-            ProductionMaster.extra(player, prodCount, bar.itemId, StatType.Fletching, experience, TaskCategory.SMELT_BAR);
+            ProductionMaster.extra(player, prodCount, bar.itemId, StatType.Smithing, experience, TaskCategory.SMELT_BAR);
         });
     }
 
@@ -225,7 +225,7 @@ public class SmeltBar {
                 while (amt-- > 0) {
                     if (!player.getInventory().hasId(ItemID.STEEL_BAR)) {
                         player.sendFilteredMessage("You've run out of steel bars'.");
-                        return;
+                        break;
                     }
                     player.animate(3243);
                     player.privateSound(2725);
@@ -243,6 +243,9 @@ public class SmeltBar {
                         player.getInventory().remove(ItemID.STEEL_BAR, amt);
                         player.getInventory().add(ItemID.CANNONBALL, 4 * amt);
                         player.getStats().addXp(StatType.Smithing, (6.4 * 4) * amt, true);
+                        int bonusRoll = Random.get(amt * 4);
+                        if (bonusRoll >= 4)
+                            ProductionMaster.extra(player, (bonusRoll / 4) * 4, ItemID.CANNONBALL, StatType.Smithing, 6.4 * (bonusRoll / 4) * amt);
                         amt = 0;
                     } else {
                         player.getInventory().remove(ItemID.STEEL_BAR, 1);
