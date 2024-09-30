@@ -11,91 +11,91 @@
     { // Exp lamp
       "itemId": 28800,
       "stock": 100,
-      "buy_price": 1,
+      "buy_price": -1,
       "sell_price": 1
     },
     { // Herb box
       "itemId": 11738,
       "stock": 100,
-      "buy_price": 5,
+      "buy_price": -1,
       "sell_price": 5
     },
     { // Bag of gems
       "itemId": 19473,
       "stock": 100,
-      "buy_price": 5,
+      "buy_price": -1,
       "sell_price": 5
     },
     { // Rune pouch
       "itemId": 12791,
       "stock": 100,
-      "buy_price": 50,
+      "buy_price": -1,
       "sell_price": 50
     },
     { // Coal bag
       "itemId": 12019,
       "stock": 100,
-      "buy_price": 25,
+      "buy_price": -1,
       "sell_price": 25
     },
     { // Gem bag
       "itemId": 12020,
       "stock": 100,
-      "buy_price": 25,
+      "buy_price": -1,
       "sell_price": 25
     },
     { // Herb sack
       "itemId": 13226,
       "stock": 100,
-      "buy_price": 25,
+      "buy_price": -1,
       "sell_price": 25
     },
     { // Ecumenical key
       "itemId": 11942,
       "stock": 10000,
-      "buy_price": 5,
+      "buy_price": -1,
       "sell_price": 5
     },
     { // Crystal key
       "itemId": 989,
       "stock": 10000,
-      "buy_price": 3,
+      "buy_price": -1,
       "sell_price": 3
     },
     { // Beginner clue
       "itemId": 24361,
       "stock": 10000,
-      "buy_price": 1,
+      "buy_price": -1,
       "sell_price": 1
     },
     { // Easy clue
       "itemId": 24362,
       "stock": 10000,
-      "buy_price": 2,
+      "buy_price": -1,
       "sell_price": 2
     },
     { // Medium clue
       "itemId": 24363,
       "stock": 10000,
-      "buy_price": 3,
+      "buy_price": -1,
       "sell_price": 3
     },
     { // Hard clue
       "itemId": 24364,
       "stock": 10000,
-      "buy_price": 4,
+      "buy_price": -1,
       "sell_price": 4
     },
     { // Elite clue
       "itemId": 24365,
       "stock": 10000,
-      "buy_price": 5,
+      "buy_price": -1,
       "sell_price": 5
     },
     { // Master clue
       "itemId": 24366,
       "stock": 10000,
-      "buy_price": 10,
+      "buy_price": -1,
       "sell_price": 10
     }
   ]
