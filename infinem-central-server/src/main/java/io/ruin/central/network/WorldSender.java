@@ -58,8 +58,8 @@ public class WorldSender {
         this.write(out);
     }
 
-    public void sendOnlineCheck(String name) {
-        OutBuffer out = new OutBuffer(Protocol.strLen(name) + 2).sendFixedPacket(4).addString(name);
+    public void sendOnlineCheck(int userId) {
+        OutBuffer out = new OutBuffer(5).sendFixedPacket(4).addInt(userId);
         this.write(out);
     }
 

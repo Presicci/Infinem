@@ -125,7 +125,7 @@ public class Server extends ServerWrapper {
         for (World world : worlds) {
             if (!world.hasPlayer(name)) continue;
             System.err.println(name + " is online in world " + world.id + "!");
-            world.sendOnlineCheck(name);
+            world.sendOnlineCheck(userId);
             return true;
         }
         return false;
