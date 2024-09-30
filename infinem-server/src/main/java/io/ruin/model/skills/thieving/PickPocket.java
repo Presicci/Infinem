@@ -1,6 +1,7 @@
 package io.ruin.model.skills.thieving;
 
 import io.ruin.api.utils.Random;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.Hit;
@@ -520,9 +521,18 @@ public enum PickPocket {
                         for (Item item : items) {
                             //  Coin pouch handling
                             if (item.getId() == 995 && pouchId != -1 && !hasGottenPouch) {
-                                player.getInventory().addOrDrop(pouchId, 1);
+                                if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) && Random.rollDie(4)) {
+                                    player.getInventory().addOrDrop(pouchId, 2);
+                                    player.sendFilteredMessage("<col=CD6007>Your relic doubles the pouches you receive.");
+                                } else {
+                                    player.getInventory().addOrDrop(pouchId, 1);
+                                }
                                 hasGottenPouch = true;  // Prevents getting multiple pouches per pickpocket
                             } else {
+                                if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) && Random.rollDie(4)) {
+                                    item.setAmount(item.getAmount() * 2);
+                                    player.sendFilteredMessage("<col=CD6007>Your relic doubles your loot: " + ItemDefinition.get(item.getId()).name);
+                                }
                                 int noted = item.getDef().notedId;
                                 if (noted > 0 && player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
                                     player.getInventory().addOrDrop(item.note());
