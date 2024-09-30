@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemID;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -125,7 +126,9 @@ public class SmeltBar {
         boolean useCoalBag = player.getInventory().hasId(CoalBag.COAL_BAG) || player.getInventory().hasId(CoalBag.OPEN_COAL_BAG);
         player.startEvent(event -> {
             int remaining = smeltAmount;
-            while (remaining-- > 0) {
+            int prodCount = 0;
+            double experience = 0;
+            outer : while (remaining-- > 0) {
                 int baggedCoalUsed = 0;
                 for (Item item : bar.smeltItems) {
                     int id = item.getId();
@@ -143,7 +146,7 @@ public class SmeltBar {
                             player.sendMessage("You don't have enough ore to make this.");
                         else
                             player.sendMessage("You've ran out of ores to continue smelting.");
-                        return;
+                        break outer;
                     }
                 }
                 player.animate(3243);
@@ -172,7 +175,12 @@ public class SmeltBar {
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER) && !Random.rollPercent(getExtraBarChance(player, bar))) {
                     event.delay(2);
                 }
+                if (ProductionMaster.roll(player)) {
+                    prodCount++;
+                    experience += xp;
+                }
             }
+            ProductionMaster.extra(player, prodCount, bar.itemId, StatType.Fletching, experience, TaskCategory.SMELT_BAR);
         });
     }
 
