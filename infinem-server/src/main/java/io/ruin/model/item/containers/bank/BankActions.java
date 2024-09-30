@@ -16,8 +16,10 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.handlers.CollectionBox;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.actions.impl.BloodyTokens;
+import io.ruin.model.item.actions.impl.LootingBagNote;
 import io.ruin.model.item.actions.impl.PlatinumToken;
 import io.ruin.model.item.actions.impl.tradepost.TradePost;
 import io.ruin.model.map.Position;
@@ -47,6 +49,7 @@ public class BankActions {
                     NPCAction.register(def.id, "collect", (p, n) -> TradePost.openCoffer(p));
                     bankerIds.add(def.id);
                 }
+                ItemNPCAction.register(24585, def.id, LootingBagNote::exchangeNote);
             });
             SpawnListener.forEach(npc -> {
                 if(bankerIds.contains(npc.getId())) {
@@ -144,6 +147,8 @@ public class BankActions {
 //                player.dialogue(new MessageDialogue("Use a banknote on the bank to convert it to an item."));
 //                return;
 //            }
+            if (item.getId() == 24585)
+                LootingBagNote.exchangeNote(player, item, null);
             if (def.isNote()) {
                 player.dialogue(new OptionsDialogue(
                         "Un-note the " + (item.getAmount() == 1 ? "banknote" : "banknotes") + "?",
