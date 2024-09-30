@@ -1076,6 +1076,7 @@ public class PlayerCombat extends Combat {
                 && player.getRelicManager().hasRelicEnalbed(Relic.JUGGERNAUT)
                 && Random.rollDie(10)) {
             hit.damage *= 2;
+            target.graphics(659);
         }
         if (target.npc != null && ChambersOfXeric.isRaiding(player))
             ChambersOfXeric.addDamagePoints(player, target.npc, hit.damage);
