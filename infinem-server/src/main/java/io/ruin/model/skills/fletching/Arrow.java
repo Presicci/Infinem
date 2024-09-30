@@ -2,6 +2,7 @@ package io.ruin.model.skills.fletching;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -66,18 +67,22 @@ public enum Arrow {
                 while (amount-- > 0) {
                     Item shaft = player.getInventory().findItem(arrow.shaft);
                     if (shaft == null)
-                        return;
+                        break;
                     Item tipItem = player.getInventory().findItem(arrow.tip);
                     if (tipItem == null)
-                        return;
+                        break;
                     int maxAmount = Math.min(shaft.getAmount(), tipItem.getAmount());
                     int maxPossible = player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER) ? 150 : 15;
                     if (maxAmount > maxPossible) {
                         arrow.make(player, shaft, tipItem, maxPossible);
+                        if (ProductionMaster.roll(player))
+                            ProductionMaster.extra(player, maxPossible, arrow.outcome, StatType.Fletching, arrow.exp * maxPossible, TaskCategory.FLETCH_AMMO);
                         event.delay(2);
                         continue;
                     }
                     arrow.make(player, shaft, tipItem, maxAmount);
+                    if (ProductionMaster.roll(player))
+                        ProductionMaster.extra(player, maxAmount, arrow.outcome, StatType.Fletching, arrow.exp * maxAmount, TaskCategory.FLETCH_AMMO);
                     break;
                 }
             });

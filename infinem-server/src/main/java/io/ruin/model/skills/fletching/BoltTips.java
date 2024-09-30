@@ -1,6 +1,8 @@
 package io.ruin.model.skills.fletching;
 
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -54,20 +56,24 @@ public enum BoltTips {
     static {
         for (BoltTips boltTips : values()) {
             SkillItem item = new SkillItem(boltTips.gem).addAction((player, amount, event) -> {
+                int prodCount = 0;
                 while (amount-- > 0) {
                     Item chisel = player.getInventory().findItem(Tool.CHISEL);
                     if (chisel == null)
-                        return;
+                        break;
                     Item gem = player.getInventory().findItem(boltTips.gem);
                     if (gem == null) {
                         player.sendMessage("You have run out of gems.");
                         break;
                     }
+                    if (ProductionMaster.roll(player))
+                        prodCount++;
                     boltTips.make(player, gem);
                     if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                         event.delay(4);
                     }
                 }
+                ProductionMaster.extra(player, prodCount * boltTips.amount, boltTips.boltTips, StatType.Fletching, boltTips.exp * boltTips.amount * prodCount);
             });
             ItemItemAction.register(boltTips.gem, Tool.CHISEL, (player, gem, chisel) -> {
                 if (!player.getStats().check(StatType.Fletching, boltTips.levelReq, "do that"))

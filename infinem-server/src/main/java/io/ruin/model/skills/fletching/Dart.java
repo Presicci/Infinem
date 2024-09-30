@@ -2,6 +2,7 @@ package io.ruin.model.skills.fletching;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
@@ -71,6 +72,8 @@ public enum Dart {
         player.getStats().addXp(StatType.Fletching, xp * toMake, true);
         player.sendFilteredMessage("You make " + toMake + " " + pluralName + ".");
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FLETCH_AMMO, ItemDefinition.get(finishedId).name, toMake);
+        if (ProductionMaster.roll(player))
+            ProductionMaster.extra(player, toMake, finishedId, StatType.Fletching, xp * toMake, TaskCategory.FLETCH_AMMO);
     }
 
     static {
