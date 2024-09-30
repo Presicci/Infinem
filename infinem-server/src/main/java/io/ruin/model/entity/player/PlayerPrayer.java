@@ -65,25 +65,26 @@ public class PlayerPrayer {
     }
 
     public void toggle(Prayer prayer) {
-        if(delayRequired()) {
-            //So on rs it delays but Idk a good way to do that... Idk if people will even notice...
-            prayer.config.update(player);
-            return;
-        }
-        if(isActive(prayer)) {
-            deactivate(prayer);
-            player.privateSound(2663);
-            return;
-        }
-        if(!checkPoints()) {
-            /* client sends sound & doesn't light up prayer */
-            return;
-        }
-        if(!allowPrayers()) {
-            prayer.config.set(player, 0);
-            return;
-        }
-        activate(prayer);
+        player.addEvent(e -> {
+            e.ignoreCombatReset();
+            while (delayRequired()) {
+                e.delay(1);
+            }
+            if(isActive(prayer)) {
+                deactivate(prayer);
+                player.privateSound(2663);
+                return;
+            }
+            if(!checkPoints()) {
+                /* client sends sound & doesn't light up prayer */
+                return;
+            }
+            if(!allowPrayers()) {
+                prayer.config.set(player, 0);
+                return;
+            }
+            activate(prayer);
+        });
     }
 
     private void activate(Prayer prayer) {
