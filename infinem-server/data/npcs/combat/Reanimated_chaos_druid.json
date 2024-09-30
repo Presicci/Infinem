@@ -4,13 +4,13 @@
     "handler": "",
     //Combat Info
     "hitpoints": 35,
-    "aggressive_level": 2,
-    "max_damage": 1,
+    "aggressive_level": 0,
+    "max_damage": 6,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 35.0,
+    "slayer_tasks": [ "Chaos Druids" ],
     //Combat Stats
     "attack": 8,
     "strength": 8,
@@ -24,11 +24,11 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": -15,
-    "slash_defence": -15,
-    "crush_defence": -15,
-    "magic_defence": -15,
-    "ranged_defence": -15,
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
