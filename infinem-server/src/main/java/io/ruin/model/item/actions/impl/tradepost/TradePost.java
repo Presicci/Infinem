@@ -17,6 +17,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.ItemSet;
+import io.ruin.model.item.actions.impl.tradepost.offer.TradePostOffer;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 import java.util.*;

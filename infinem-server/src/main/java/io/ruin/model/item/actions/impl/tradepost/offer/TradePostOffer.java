@@ -1,4 +1,4 @@
-package io.ruin.model.item.actions.impl.tradepost;
+package io.ruin.model.item.actions.impl.tradepost.offer;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.model.item.Item;

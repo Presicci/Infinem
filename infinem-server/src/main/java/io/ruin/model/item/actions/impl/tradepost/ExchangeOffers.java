@@ -8,6 +8,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.impl.tradepost.offer.TradePostOffer;
 
 import java.io.File;
 import java.io.IOException;
