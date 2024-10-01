@@ -3194,7 +3194,7 @@ public class Administrator {
             }
             case "removeitem": {
                 if (args == null || args.length < 3) {
-                    player.sendMessage("Syntax: ::removebankitem [playername] [item] [amt]");
+                    player.sendMessage("Syntax: ::removeitem [playername] [item] [amt]");
                     return true;
                 }
                 Player target = World.getPlayer(args[0]);
