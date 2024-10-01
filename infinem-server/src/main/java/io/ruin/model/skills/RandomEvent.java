@@ -304,6 +304,7 @@ public enum RandomEvent {
     }
 
     public static void attemptTrigger(Player player, int chance, double durationMultiplier) {
+        player.putTemporaryAttribute("LAST_XP", System.currentTimeMillis());
         if (player.randomEventNPC != null) return;    // Already spawned
         if (!Random.rollDie(chance)) return;
         if (!player.addTickEvent(new TickEvent(TickEventType.RANDOM_EVENT, 4000))) return;      // 40 minute cooldown
