@@ -43,7 +43,7 @@ public class Reanimate extends Spell {
         GOBLIN(new int[]{13447, 13448}, 130.0, 7018),
         MONKEY(new int[]{13450, 13451}, 182.0, 7019),
         IMP(new int[]{13453, 13454}, 286.0, 7020),
-        MINOTAUR(new int[]{13453, 13454}, 364.0, 7021),
+        MINOTAUR(new int[]{13456, 13457}, 364.0, 7021),
         SCORPION(new int[]{13459, 13460}, 454.0, 7022),
         BEAR(new int[]{13462, 13463}, 480.0, 7023),
         UNICORN(new int[]{13465, 13466}, 494.0, 7024),
