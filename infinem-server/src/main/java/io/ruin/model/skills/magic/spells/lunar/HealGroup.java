@@ -25,6 +25,18 @@ public class HealGroup extends Spell {
         };
         registerClick(95, 124, true, runes, ((player, integer) -> {
             List<Player> players = new ArrayList<>();
+            if(player.getDuel().stage >= 4) {
+                player.sendMessage("You can't use this right now.");
+                return false;
+            }
+            if (!player.inMulti()) {
+                player.sendMessage("This spell can only be cast in multi-combat zones.");
+                return false;
+            }
+            if (player.getHp() < (player.getMaxHp() / 9)) {
+                player.sendMessage("You need more health to cast this spell.");
+                return false;
+            }
             for (Entity target : player.localPlayers()) {
                 if (players.size() >= 5) {
                     break;
@@ -49,20 +61,8 @@ public class HealGroup extends Spell {
                 }
                 players.add(target.player);
             }
-            if(player.getDuel().stage >= 4) {
-                player.sendMessage("You can't use this right now.");
-                return false;
-            }
-            if (!player.inMulti()) {
-                player.sendMessage("This spell can only be cast in multi-combat zones.");
-                return false;
-            }
-            if (players.size() == 0) {
+            if (players.isEmpty()) {
                 player.sendMessage("There are no players in range to heal.");
-                return false;
-            }
-            if (player.getHp() < (player.getMaxHp() / 9)) {
-                player.sendMessage("You need more health to cast this spell.");
                 return false;
             }
             int health = (int) (player.getHp() * .75);
