@@ -40,6 +40,7 @@ import io.ruin.model.skills.construction.seat.Seat;
 import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.hunter.Birdhouse;
 import io.ruin.model.skills.hunter.traps.Trap;
+import io.ruin.model.skills.magic.spells.arceuus.Resurrection;
 import io.ruin.model.skills.magic.spells.lunar.TeleGroup;
 import io.ruin.model.skills.magic.spells.modern.Teleother;
 import io.ruin.utility.TickDelay;
@@ -82,6 +83,13 @@ public abstract class PlayerAttributes extends Entity {
     public int houseBuildPointX, houseBuildPointY, houseBuildPointZ;
     public Room[] houseViewerRooms;
     public Room houseViewerRoom;
+
+    /**
+     * Thralls
+     */
+    public Resurrection.Thrall thrall;
+    @Getter public TickDelay thrallSpawnDelay = new TickDelay();
+    @Getter public TickDelay thrallDespawnDelay = new TickDelay();
 
     /**
      * Clue scrolls

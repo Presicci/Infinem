@@ -1203,6 +1203,11 @@ public class Config {
      */
     public static final Config BESTIARY_SORT = varpbit(9334, true);
 
+    /**
+     * Thralls
+     */
+    public static final Config RESURRECT_THRALL_COOLDOWN = varpbit(12290, false);
+
 
     /**
      * Separator

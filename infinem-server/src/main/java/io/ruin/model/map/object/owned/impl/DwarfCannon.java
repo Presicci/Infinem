@@ -74,7 +74,7 @@ public class DwarfCannon extends OwnedObject {
     private boolean isOrnament;
     @Getter @Setter private CannonDirection cannonDirection = CannonDirection.NORTH;
 
-    private static final Bounds[] AREA_RESTRICTIONS = {
+    public static final Bounds[] AREA_RESTRICTIONS = {
             new Bounds(1600, 9984, 1727, 10111, -1), //catacomes of kourend
             new Bounds(1728, 5312, 1791, 5375, -1), //ancient cavern
             new Bounds(3281, 3158, 3304, 3178, -1), //alkarid palace

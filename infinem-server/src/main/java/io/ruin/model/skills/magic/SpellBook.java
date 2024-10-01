@@ -199,15 +199,15 @@ public enum SpellBook {
             new TodoSpell("Vile Vigour"),
             new TodoSpell("Dark Lure"),
             new TodoSpell("Death Charge"),
-            new TodoSpell("Resurrect Lesser Ghost"),
-            new TodoSpell("Resurrect Lesser Skeleton"),
-            new TodoSpell("Resurrect Lesser Zombie"),
-            new TodoSpell("Resurrect Superior Ghost"),
-            new TodoSpell("Resurrect Superior Skeleton"),
-            new TodoSpell("Resurrect Superior Zombie"),
-            new TodoSpell("Resurrect Greater Ghost"),
-            new TodoSpell("Resurrect Greater Skeleton"),
-            new TodoSpell("Resurrect Greater Zombie")
+            new Resurrection(Resurrection.Thralls.LESSER_GHOST),
+            new Resurrection(Resurrection.Thralls.LESSER_SKELETON),
+            new Resurrection(Resurrection.Thralls.LESSER_ZOMBIE),
+            new Resurrection(Resurrection.Thralls.SUPERIOR_GHOST),
+            new Resurrection(Resurrection.Thralls.SUPERIOR_SKELETON),
+            new Resurrection(Resurrection.Thralls.SUPERIOR_ZOMBIE),
+            new Resurrection(Resurrection.Thralls.GREATER_GHOST),
+            new Resurrection(Resurrection.Thralls.GREATER_SKELETON),
+            new Resurrection(Resurrection.Thralls.GREATER_ZOMBIE)
     );
 
     public final Spell[] spells;
