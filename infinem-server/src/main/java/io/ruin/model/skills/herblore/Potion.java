@@ -278,7 +278,7 @@ public enum Potion {
                 if (ProductionMaster.roll(player))
                     prodCount++;
             }
-            ProductionMaster.extra(player, prodCount, potion.vialIds[1], StatType.Herblore, potion.xp * prodCount, TaskCategory.POTION);
+            ProductionMaster.extra(player, prodCount, potion.vialIds[2], StatType.Herblore, potion.xp * prodCount, TaskCategory.POTION);
         });
         for (int secondaryId : secondaryIds) {
             ItemItemAction.register(primaryId, secondaryId, (player, primary, secondary) -> {
