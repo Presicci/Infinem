@@ -195,7 +195,7 @@ public enum RandomEvent {
     private void spawn(Player player, double durationMultiplier) {
         NPC npc = new NPC(npcId);
         player.randomEventNPC = npc;
-        player.randomEventJailDelay.delaySeconds((int) (240 * durationMultiplier));
+        player.randomEventJailDelay.delaySeconds((int) (360 * durationMultiplier));
         player.randomEventNpcShoutDelay.delaySeconds(10);
         player.sendMessage(Color.COOL_BLUE.wrap("Someone appears interested in your actions..."));
         npc.ownerId = player.getUserId();
