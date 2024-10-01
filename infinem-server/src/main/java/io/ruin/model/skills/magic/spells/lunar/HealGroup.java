@@ -79,6 +79,7 @@ public class HealGroup extends Spell {
             player.sendMessage("You transfer most of your health to those around you.");
             player.addTickEvent(new TickEvent(TickEventType.HEAL_GROUP, 150,
                     () -> player.sendMessage("Heal group can now be cast again.")));
+            player.getCombat().delayAttack(3);
             for (Player target : players) {
                 target.graphics(744, 120, 0);
                 target.player.sendMessage(player.getName() + " has healed you.");
