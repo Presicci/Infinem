@@ -71,7 +71,7 @@ public class HealGroup extends Spell {
                 player.sendMessage("There are no players in range to heal.");
                 return false;
             }
-            int health = (int) (player.getHp() * .75);
+            int health = (int) (player.getHp() * .75) + 5;
             Hit hit = new Hit().fixedDamage(health).ignoreDefence().ignorePrayer().ignoreAbsorption();
             player.hit(hit);
             player.animate(4409);
