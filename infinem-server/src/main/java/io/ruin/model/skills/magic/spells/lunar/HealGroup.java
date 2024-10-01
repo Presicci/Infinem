@@ -7,6 +7,8 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.process.tickevent.TickEvent;
+import io.ruin.process.tickevent.TickEventType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,10 @@ public class HealGroup extends Spell {
             }
             if (player.getHp() < (player.getMaxHp() / 9)) {
                 player.sendMessage("You need more health to cast this spell.");
+                return false;
+            }
+            if (player.isTickEventActive(TickEventType.HEAL_GROUP)) {
+                player.sendMessage("This spell is on cooldown.");
                 return false;
             }
             for (Entity target : player.localPlayers()) {
@@ -71,6 +77,8 @@ public class HealGroup extends Spell {
             player.animate(4409);
             player.publicSound(2886);
             player.sendMessage("You transfer most of your health to those around you.");
+            player.addTickEvent(new TickEvent(TickEventType.HEAL_GROUP, 150,
+                    () -> player.sendMessage("Heal group can now be cast again.")));
             for (Player target : players) {
                 target.graphics(744, 120, 0);
                 target.player.sendMessage(player.getName() + " has healed you.");
