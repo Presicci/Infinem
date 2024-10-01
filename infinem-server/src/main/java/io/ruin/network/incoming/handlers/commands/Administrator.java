@@ -84,6 +84,7 @@ import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.impl.PrayerAltar;
 import io.ruin.model.map.route.RouteFinder;
+import io.ruin.model.shop.Shop;
 import io.ruin.model.shop.ShopManager;
 import io.ruin.model.skills.construction.*;
 import io.ruin.model.skills.construction.actions.Costume;
@@ -3222,6 +3223,23 @@ public class Administrator {
                     brother.config.set(player, 0);
                 Config.BARROWS_CHEST.set(player, 0);
                 player.removeAttribute("BARROWS_CHEST_BROTHER");
+                return true;
+            }
+            case "scanshop": {
+                NPCDefinition.forEach(npc -> {
+                    if (npc == null) return;
+                    if (npc.shops == null) return;
+                    for (Shop shop : npc.shops) {
+                        shop.shopItems.forEach(item -> {
+                            if (item.getAmount() <= 0 || item.getPrice() <= 0) return;
+                            ItemDefinition def = ItemDefinition.get(item.getId());
+                            if (def.isNote()) def = def.fromNote();
+                            if (item.getPrice() < def.highAlchValue || item.getPrice() < def.lowAlchValue) {
+                                System.out.println(shop.title + " has stock with low price: " + item.getId() + " - " + item.getPrice() + "/" + def.highAlchValue + "/" + def.lowAlchValue);
+                            }
+                        });
+                    }
+                });
                 return true;
             }
         }
