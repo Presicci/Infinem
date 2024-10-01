@@ -2,11 +2,13 @@ package io.ruin.model.map.object.actions.impl.chests;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.utility.Color;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -86,6 +88,8 @@ public class LarransChest {
     static {
         ObjectAction.register(CHEST, 1, ((player, obj) -> openChest(player, false)));
         ObjectAction.register(BIGCHEST, 1, ((player, obj) -> openChest(player, true)));
+        ObjectAction.register(CHEST, 2, ((player, obj) -> player.sendMessage("Your Larran's chest count is: " + Color.RED.wrap("" + PlayerCounter.LARRANS_CHEST_OPENED.get(player)))));
+        ObjectAction.register(BIGCHEST, 2, ((player, obj) -> player.sendMessage("Your Larran's chest count is: " + Color.RED.wrap("" + PlayerCounter.LARRANS_CHEST_OPENED.get(player)))));
     }
 
     private static void openChest(Player player, boolean big) {
@@ -103,6 +107,7 @@ public class LarransChest {
             player.getInventory().addOrDrop(loot);
             player.getTaskManager().doDropLookup(loot);
             player.getCollectionLog().collect(loot);
+            player.sendFilteredMessage("You've opened " + Color.RED.wrap("" + PlayerCounter.LARRANS_CHEST_OPENED.increment(player, 1)) + " larran's chests.");
             player.getTaskManager().doLookupByUUID(864);    // Open One of Larran's Chests
             event.delay(1);
             player.unlock();
