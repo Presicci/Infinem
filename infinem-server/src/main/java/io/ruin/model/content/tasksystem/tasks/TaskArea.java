@@ -6,6 +6,7 @@ import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 
+import java.util.Arrays;
 import java.util.Map;
 
 /**
@@ -54,6 +55,13 @@ public enum TaskArea {
 
      public int getPointsTillTier(Player player, AreaTaskTier tier) {
           return Math.max(0, getPointThreshold(tier) - player.getTaskManager().getAreaTaskPoints(this.ordinal()));
+     }
+
+     public AreaTaskTier getHighestTier(Player player) {
+          for (AreaTaskTier tier : Arrays.asList(AreaTaskTier.ELITE, AreaTaskTier.HARD, AreaTaskTier.MEDIUM, AreaTaskTier.EASY)) {
+               if (hasTierUnlocked(player, tier)) return tier;
+          }
+          return null;
      }
 
      public boolean hasTierUnlocked(Player player, AreaTaskTier tier) {
