@@ -43,7 +43,7 @@ public class MonsterExamine extends Spell {
 
     private static void overview(Player player) {
         NPC examined = player.examineMonster;
-        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 20, "<col=ffb000>Stats<br><br>" +
+        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 20, "<col=ffb000>Stats<br>" +
                 "<col=bebebe>Combat level: " + examined.getDef().combatLevel + "<br>" +
                 "<col=bebebe>Hitpoints: " + examined.getMaxHp() + "<br>" +
                 "<col=bebebe>Attack: " + (int) examined.getCombat().getLevel(StatType.Attack) + "<br>" +
@@ -58,7 +58,7 @@ public class MonsterExamine extends Spell {
 
     private static void offensive(Player player) {
         NPC examined = player.examineMonster;
-        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 22, "<col=ffb000>Aggressive Stats<br><br>" +
+        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 22, "<col=ffb000>Aggressive Stats<br>" +
                 "<col=bebebe>Attack Rate: " + examined.getCombat().getInfo().attack_ticks + "<br>" +
                 "<col=bebebe>Stab: " + (int) examined.getCombat().getBonus(0) + "<br>" +
                 "<col=bebebe>Slash: " + (int) examined.getCombat().getBonus(1) + "<br>" +
@@ -70,7 +70,7 @@ public class MonsterExamine extends Spell {
 
     private static void defensive(Player player) {
         NPC examined = player.examineMonster;
-        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 24, "<col=ffb000>Defensive Stats<br><br>" +
+        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 24, "<col=ffb000>Defensive Stats<br>" +
                 "<col=bebebe>Stab: " + (int) examined.getCombat().getBonus(5) + "<br>" +
                 "<col=bebebe>Slash: " + (int) examined.getCombat().getBonus(6) + "<br>" +
                 "<col=bebebe>Crush: " + (int) examined.getCombat().getBonus(7) + "<br>" +
@@ -81,15 +81,21 @@ public class MonsterExamine extends Spell {
 
     private static void other(Player player) {
         NPC examined = player.examineMonster;
-        StringBuilder sb = new StringBuilder("<col=ffb000>Other Attributes<br><br>");
+        StringBuilder sb = new StringBuilder("<col=ffb000>Other Attributes<br>");
         sb.append("<col=bebebe>Is ").append(SlayerCreature.isSlayerCreature(examined) ? "not " : "").append("a slayer monster.<br>");
-        sb.append("<col=bebebe>Can ").append(examined.getCombat().getInfo().poison_immunity ? "Immune to poison." : "Can be poisoned.").append("<br>");
-        sb.append("<col=bebebe>Can ").append(examined.getCombat().getInfo().venom_immunity ? "Immune to venom." : "Can be envenomed.").append("<br>");
+        sb.append("<col=bebebe>").append(examined.getCombat().getInfo().poison_immunity ? "Immune to poison." : "Can be poisoned.").append("<br>");
+        sb.append("<col=bebebe>").append(examined.getCombat().getInfo().venom_immunity ? "Immune to venom." : "Can be envenomed.").append("<br>");
         if (examined.getDef().hasCustomValue("DRAGON")) {
             sb.append("<col=bebebe>Draconic.<br>");
         }
         if (examined.getDef().hasCustomValue("DEMON")) {
             sb.append("<col=bebebe>Demonic.<br>");
+        }
+        if (examined.getDef().hasCustomValue("SPECTRAL")) {
+            sb.append("<col=bebebe>Spectral.<br>");
+        }
+        if (examined.getDef().hasCustomValue("UNDEAD")) {
+            sb.append("<col=bebebe>Undead.<br>");
         }
         player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 26, sb.toString());
     }
