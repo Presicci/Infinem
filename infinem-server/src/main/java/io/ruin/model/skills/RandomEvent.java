@@ -221,7 +221,7 @@ public enum RandomEvent {
                     continue;
                 }
                 if (!player.randomEventJailDelay.isDelayed()) {
-                    if (System.currentTimeMillis() - player.getTemporaryAttributeIntOrZero("LAST_XP") < 60000) {
+                    if (System.currentTimeMillis() - player.getTemporaryAttributeIntOrZero("LAST_XP") < 120000) {
                         npc.forceText("Guards! Lets go, " + player.getName() + ".");
                         npc.lock();
                         player.lock();
