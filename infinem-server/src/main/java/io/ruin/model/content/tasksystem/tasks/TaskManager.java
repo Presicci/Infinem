@@ -5,6 +5,7 @@ import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.StringUtils;
+import io.ruin.model.content.tasksystem.areas.AreaConfig;
 import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.content.tasksystem.tasks.impl.DropAllTask;
 import io.ruin.model.entity.shared.listeners.LoginListener;
@@ -126,6 +127,7 @@ public class TaskManager {
         AreaTaskTier newTier = taskArea.getHighestTier(player);
         if (newTier != null && newTier != prevTier) {
             player.sendMessage("<col=990000><shad=000000>You've reached the " + StringUtils.capitalizeFirst(newTier.name().toLowerCase()) + " tier of unlocks in " + taskArea + "!");
+            AreaConfig.checkAll(player);
         }
         AreaTaskTier newGeneralTier = TaskArea.GENERAL.getHighestTier(player);
         if (newGeneralTier != null && newGeneralTier != prevGeneralTier) {
@@ -142,6 +144,8 @@ public class TaskManager {
     static {
         // Set completed task varps on login
         LoginListener.register(player -> player.getTaskManager().completeTasks.forEach(taskId -> completeTaskBit(player, taskId)));
+        // Check for configs that need to be set
+        LoginListener.register(AreaConfig::checkAll);
     }
 
     public void resetTasks() {
