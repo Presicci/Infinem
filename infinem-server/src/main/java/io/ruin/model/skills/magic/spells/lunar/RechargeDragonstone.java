@@ -1,5 +1,6 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
+import io.ruin.model.content.tasksystem.areas.AreaConfig;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
@@ -19,6 +20,9 @@ public class RechargeDragonstone extends Spell {
                 Rune.SOUL.toItem(1)
         };
         registerClick(78, 81, true, runes, (player, integer) -> {
+            if (!AreaConfig.FREMMY_HARD_LUNAR_SPELLS.checkUnlocked(player, "cast this spell.")) {
+                return false;
+            }
             player.startEvent(e -> {
                 int count = 0;
                 for (Item item : player.getInventory().getItems()) {

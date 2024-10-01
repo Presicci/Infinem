@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 public enum AreaConfig {
-    RECHARGE_DRAGONSTONE(TaskArea.FREMENNIK, AreaTaskTier.HARD, Config.varpbit(4533, false), 1);
+    FREMMY_HARD_LUNAR_SPELLS(TaskArea.FREMENNIK, AreaTaskTier.HARD, Config.varpbit(4533, false), 1);
 
     private final TaskArea area;
     private final AreaTaskTier tier;
@@ -20,6 +20,14 @@ public enum AreaConfig {
 
     private void activate(Player player) {
         config.set(player, activeValue);
+    }
+
+    public boolean checkUnlocked(Player player, String message) {
+        return area.checkTierUnlock(player, tier, message);
+    }
+
+    public boolean hasUnlocked(Player player) {
+        return config.get(player) == activeValue;
     }
 
     public static void checkAll(Player player) {

@@ -1,5 +1,6 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
+import io.ruin.model.content.tasksystem.areas.AreaConfig;
 import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
@@ -57,6 +58,9 @@ public class TanLeather extends Spell {
                 Rune.FIRE.toItem(5)
         };
         registerClick(78, 81, true, required, (p, i) -> {
+            if (!AreaConfig.FREMMY_HARD_LUNAR_SPELLS.checkUnlocked(p, "cast this spell.")) {
+                return false;
+            }
             if (i == 0) {
                 List<Item> items = p.getInventory().collectItems(Leather.COWHIDE.hide, Leather.GREEN_DRAGONHIDE.hide,
                         Leather.BLUE_DRAGONHIDE.hide, Leather.RED_DRAGONHIDE.hide, Leather.BLACK_DRAGONHIDE.hide);
