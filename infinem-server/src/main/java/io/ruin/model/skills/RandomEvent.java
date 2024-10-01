@@ -307,7 +307,7 @@ public enum RandomEvent {
         player.putTemporaryAttribute("LAST_XP", System.currentTimeMillis());
         if (player.randomEventNPC != null) return;    // Already spawned
         if (!Random.rollDie(chance)) return;
-        if (!player.addTickEvent(new TickEvent(TickEventType.RANDOM_EVENT, 4000))) return;      // 40 minute cooldown
+        if (!player.addTickEvent(new TickEvent(TickEventType.RANDOM_EVENT, 2500))) return;      // 25 minute cooldown
         Random.get(RandomEvent.values()).spawn(player, durationMultiplier);
     }
 
