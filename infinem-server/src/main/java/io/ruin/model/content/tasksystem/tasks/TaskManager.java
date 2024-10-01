@@ -108,8 +108,11 @@ public class TaskManager {
         if (completeTasks.contains(uuid))
             return;
         int pointGain = taskDifficulty.getPoints();
-        //taskPoints.put(taskArea.ordinal(), taskPoints.get(taskArea.ordinal()) + pointGain);
-        checkUnlocks(taskArea, pointGain);
+        AreaTaskTier prevGeneralTier = TaskArea.GENERAL.getHighestTier(player);
+        AreaTaskTier prevTier = taskArea.getHighestTier(player);
+        if (taskArea != TaskArea.GENERAL) {
+            AREA_POINTS[taskArea.ordinal() - 1].increment(player, pointGain / 10);
+        }
         int newPoints = Config.LEAGUE_POINTS.increment(player, pointGain);
         player.sendMessage("<col=990000>You've completed a task: " + taskName + "!");
         player.sendMessage("You now have " + newPoints + " task points.");
@@ -119,16 +122,14 @@ public class TaskManager {
                 + "<br><br>Points Earned: " + Color.WHITE.wrap(pointGain + ""));
         TabTask.refresh(player);
         completeTaskBit(player, uuid);
-    }
-
-    private void checkUnlocks(TaskArea area, int pointsGained) {
-        AreaTaskTier prevTier = area.getHighestTier(player);
-        if (area != TaskArea.GENERAL) {
-            AREA_POINTS[area.ordinal() - 1].increment(player, pointsGained / 10);
-        }
-        AreaTaskTier newTier = area.getHighestTier(player);
+        // Check for unlocks
+        AreaTaskTier newTier = taskArea.getHighestTier(player);
         if (newTier != null && newTier != prevTier) {
-            player.sendMessage("<col=990000><shad=000000>You've reached the " + StringUtils.capitalizeFirst(newTier.name().toLowerCase()) + " tier of unlocks in " + area + "!");
+            player.sendMessage("<col=990000><shad=000000>You've reached the " + StringUtils.capitalizeFirst(newTier.name().toLowerCase()) + " tier of unlocks in " + taskArea + "!");
+        }
+        AreaTaskTier newGeneralTier = TaskArea.GENERAL.getHighestTier(player);
+        if (newGeneralTier != null && newGeneralTier != prevGeneralTier) {
+            player.sendMessage("<col=990000><shad=000000>You've reached the " + StringUtils.capitalizeFirst(newTier.name().toLowerCase()) + " tier of general unlocks!");
         }
     }
 
