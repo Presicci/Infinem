@@ -371,7 +371,7 @@ public class TradePost {
                 return;
             }
             int finalAmount = amount;
-            player.dialogue(
+            player.dialogueKeepInterfaces(
                     new MessageDialogue("Are you sure you want to purchase: " + finalAmount + "x " + offer.getItem().getDef().name + " for a price of: " + formatPrice(price) + "?"),
                     new OptionsDialogue(
                             new Option("Yes", () -> {
