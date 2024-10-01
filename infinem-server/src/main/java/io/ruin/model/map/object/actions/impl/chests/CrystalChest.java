@@ -1,11 +1,13 @@
 package io.ruin.model.map.object.actions.impl.chests;
 
 import io.ruin.model.World;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.utility.Color;
 
 import java.util.List;
 
@@ -76,6 +78,7 @@ public class CrystalChest {
                 for(Item item : loot) {
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                 }
+                player.sendFilteredMessage("You've opened " + Color.RED.wrap("" + PlayerCounter.CRYSTAL_CHEST_OPENED.increment(player, 1)) + " crystal chests.");
                 player.getTaskManager().doLookupByUUID(453, 1); // Open the Crystal Chest
                 event.delay(1);
                 player.unlock();
