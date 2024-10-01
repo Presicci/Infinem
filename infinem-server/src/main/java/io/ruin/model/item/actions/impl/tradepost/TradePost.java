@@ -7,6 +7,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
@@ -37,8 +38,10 @@ public class TradePost {
     private String searchText;
     private TradePostSort sort = TradePostSort.AGE_ASCENDING;
 
-    @Expose
-    private List<TradePostOffer> tradePostOffers = new ArrayList<>();
+    // Old value, used for those that already had listings
+    @Expose private List<TradePostOffer> tradePostOffers = new ArrayList<>();
+
+    private List<TradePostOffer> offers = new ArrayList<>();
     private List<TradePostOffer> viewOffers = new ArrayList<>();
     @Expose
     private LinkedList<ExchangeHistory> exchangeHistory = new LinkedList<>();
@@ -88,7 +91,7 @@ public class TradePost {
     }
 
     private void promptCreateOffer(int itemId) {
-        if (tradePostOffers.size() >= MAX_MY_OFFERS) {
+        if (offers.size() >= MAX_MY_OFFERS) {
             player.sendMessage("You cannot create more sell offers.");
             return;
         }
@@ -98,7 +101,7 @@ public class TradePost {
             return;
         }
         final int unnotedId = !itemDefinition.isNote() ? itemId : itemDefinition.fromNote().id;
-        if (tradePostOffers.stream().anyMatch(offer -> offer.getItem().getId() == unnotedId)) {
+        if (offers.stream().anyMatch(offer -> offer.getItem().getId() == unnotedId)) {
             player.sendMessage("You are already selling this item.");
             return;
         }
@@ -119,44 +122,39 @@ public class TradePost {
     private void promptPrice(int itemId, int unnotedId, int amount) {
         player.integerInput("Enter price per item:", price -> {
             player.getInventory().remove(itemId, amount);
-            tradePostOffers.add(
-                    new TradePostOffer(
-                            player.getName(),
-                            new Item(unnotedId, amount),
-                            price,
-                            System.currentTimeMillis()
-                    )
-
-            );
+            TradePostOffer offer = new TradePostOffer(player.getName(), new Item(unnotedId, amount), price, System.currentTimeMillis());
+            ExchangeOffers.INSTANCE.addOffer(offer);
             updateMyOffers();
         });
     }
 
     private void promptAdjustOffer(int index) {
-        if (index >= tradePostOffers.size()) {
+        if (index >= offers.size()) {
             return;
         }
-
         player.integerInput("Enter price per item:", price -> {
-            TradePostOffer offer = tradePostOffers.get(index);
-            tradePostOffers.set(index,
-                    new TradePostOffer(
-                            player.getName(),
-                            new Item(offer.getItem().getId(), offer.getItem().getAmount()),
-                            price,
-                            offer.getTimestamp()
-                    )
-            );
+            TradePostOffer o = offers.get(index);
+            ExchangeOffers.INSTANCE.updatePrice(o, price);
             updateMyOffers();
         });
     }
 
     private void resetOffer(int index) {
-        if (index >= tradePostOffers.size()) {
+        if (index >= offers.size()) {
             return;
         }
-
-        TradePostOffer offer = tradePostOffers.remove(index);
+        TradePostOffer offerPreRefresh = offers.get(index);
+        updateMyOffers();
+        if (offers.size() <= index) {
+            player.sendMessage("That item has been sold.");
+            return;
+        }
+        TradePostOffer offer = offers.get(index);
+        if (offerPreRefresh.getItem().getId() != offer.getItem().getId()) {
+            player.sendMessage("That item has been sold.");
+            return;
+        }
+        ExchangeOffers.INSTANCE.removeOffer(offer);
         if (player.getInventory().hasRoomFor(offer.getItem())) {
             player.getInventory().add(offer.getItem().getId(), offer.getItem().getAmount());
         } else {
@@ -174,12 +172,13 @@ public class TradePost {
     }
 
     private void updateMyOffers() {
+        offers = ExchangeOffers.INSTANCE.fetchOffers(player);
         StringBuilder sb = new StringBuilder();
         for (int index = 0; index < MAX_MY_OFFERS; index++) {
-            if (index >= tradePostOffers.size()) {
+            if (index >= offers.size()) {
                 break;
             }
-            TradePostOffer offer = tradePostOffers.get(index);
+            TradePostOffer offer = offers.get(index);
             if (offer == null) break;
             String price = "<col=ffffff>" + (formatPrice(offer.getPricePerItem()) + " ea");
             String totalPrice = "<col=999999>" + formatPrice((long) offer.getPricePerItem() *
@@ -189,33 +188,32 @@ public class TradePost {
             sb.append(price);
             sb.append("|");
             sb.append(totalPrice);
-            if (index < tradePostOffers.size() - 1) {
+            if (index < offers.size() - 1) {
                 sb.append("|");
             }
             //updateMyOffer(index, index >= tradePostOffers.size() ? null : tradePostOffers.get(index));
         }
-        if (tradePostOffers.size() < MAX_MY_OFFERS) {
-            if (!tradePostOffers.isEmpty())
+        if (offers.size() < MAX_MY_OFFERS) {
+            if (!offers.isEmpty())
                 sb.append("|");
             sb.append("Open slot");
-            int emptyAmt = MAX_MY_OFFERS - tradePostOffers.size();
+            int emptyAmt = MAX_MY_OFFERS - offers.size();
             if (emptyAmt > 1)
                 sb.append(" x").append(emptyAmt);
             sb.append("|<col=ffffff>-|");
         }
         player.getPacketSender().sendClientScript(10075, "s", sb.toString());
         int slot = 2;
-        for (TradePostOffer offer : tradePostOffers) {
+        for (TradePostOffer offer : offers) {
             player.getPacketSender().sendClientScript(9006, "iiii", 1006 << 16 | 5, slot, offer.getItem().getId(), offer.getItem().getAmount());
             slot += 12;
         }
     }
 
     private List<TradePostOffer> findViewOffers() {
-        return World.getPlayerStream()
-                .flatMap(player -> player.getTradePost().tradePostOffers.stream())
-                .filter(offer -> {
+        return ExchangeOffers.INSTANCE.OFFERS.stream().filter(offer -> {
                     if (offer.getUsername().equalsIgnoreCase(player.getName())) return false;
+                    if (offer.getItem().getAmount() <= 0) return false;
                     if (searchText == null) {
                         return true;
                     }
@@ -346,73 +344,63 @@ public class TradePost {
             TradePostOffer offer = viewOffers.get(index);
             String sellerName = offer.getUsername();
             Player seller = World.getPlayer(sellerName);
-
-            if (Objects.isNull(seller) || !seller.isOnline()) {
-                player.sendMessage("That player is not online!");
-                return;
-            }
-
+            boolean online = !Objects.isNull(seller) && seller.isOnline();
             if (seller == player) {
                 player.sendMessage("You cannot buy items from yourself!");
                 return;
             }
-
-            if (amount < 1) {
-                player.sendMessage("You can't buy 0 of an item idiot.");
+            if (offer.getItem().getAmount() <= 0) {
+                player.sendMessage("That item is out of stock.");
                 return;
             }
-
+            if (amount < 1) {
+                player.sendMessage("You can't buy 0 of an item.");
+                return;
+            }
             if (amount > offer.getItem().getAmount()) {
                 amount = offer.getItem().getAmount();
             }
-
+            int pricePer = offer.getPricePerItem();
             long price = (long) offer.getPricePerItem() * amount;
-
             if (price > Integer.MAX_VALUE) {
                 player.sendMessage("You can't buy this many, do a lower amount");
                 return;
             }
-
             if (!player.getInventory().contains(COINS_995, (int) price)) {
                 player.sendMessage("You do not have enough coins to purchase this.");
                 return;
             }
-
             int finalAmount = amount;
             player.dialogue(
                     new MessageDialogue("Are you sure you want to purchase: " + finalAmount + "x " + offer.getItem().getDef().name + " for a price of: " + formatPrice(price) + "?"),
                     new OptionsDialogue(
                             new Option("Yes", () -> {
-
-                                if (!seller.isOnline()) {
-                                    player.sendMessage("That player is not online!");
-                                    return;
-                                }
-
                                 if (!player.getInventory().contains(COINS_995, (int) price)) {
                                     player.sendMessage("You do not have enough coins to purchase this amount.");
                                     player.closeDialogue();
                                     return;
                                 }
-
-                                Optional<TradePostOffer> sellersOffer = seller.getTradePost().tradePostOffers.stream().filter(toChange -> (toChange.getItem().getId() == offer.getItem().getId()) && (toChange.getItem().getAmount() >= finalAmount)).findAny();
-
+                                Optional<TradePostOffer> sellersOffer = ExchangeOffers.INSTANCE.OFFERS.stream().filter(o ->
+                                        o.getItem().getId() == offer.getItem().getId()
+                                                && o.getItem().getAmount() >= finalAmount
+                                                && o.getUsername().equalsIgnoreCase(offer.getUsername()))
+                                        .findAny();
                                 if (!sellersOffer.isPresent()) {
                                     player.sendMessage("This item has been removed or sold already!");
                                     player.closeDialogue();
                                     return;
                                 }
-
                                 sellersOffer.ifPresent(tradePostOffer ->  {
-
                                     int amountLeft = tradePostOffer.getItem().getAmount() - finalAmount;
-
                                     if (amountLeft < 0) {
                                         player.sendMessage("GRAND EXCHANGE [ERROR: 1] Contact a Developer!");
                                         player.closeDialogue();
                                         return;
                                     }
-
+                                    if (pricePer != tradePostOffer.getPricePerItem()) {
+                                        player.sendMessage("The price of this item has changed.");
+                                        return;
+                                    }
                                     player.getInventory().remove(COINS_995, (int) price);
                                     boolean bank = false;
                                     if (player.getInventory().hasRoomFor(offer.getItem().getId(), finalAmount)) {
@@ -421,43 +409,43 @@ public class TradePost {
                                         bank = true;
                                         player.getBank().add(offer.getItem().getId(), finalAmount);
                                     }
-                                    seller.getTradePost().coffer += price;
                                     boolean outOfStock = amountLeft == 0;
-
-                                    if (outOfStock) {
-                                        seller.getTradePost().tradePostOffers.remove(tradePostOffer);
-                                    } else {
-                                        TradePostOffer newOffer = new TradePostOffer(
+                                    //if (outOfStock) {
+                                        ExchangeOffers.INSTANCE.sold(tradePostOffer, finalAmount, online);
+                                   // } else {
+                                        /*TradePostOffer newOffer = new TradePostOffer(
                                                 offer.getUsername(),
                                                 new Item(offer.getItem().getId(), amountLeft),
                                                 offer.getPricePerItem(),
                                                 offer.getTimestamp()
                                         );
-                                        seller.getTradePost().tradePostOffers.set(seller.getTradePost().tradePostOffers.indexOf(tradePostOffer), newOffer);
-                                    }
-                                    seller.getTradePost().updateTradeHistory(new ExchangeHistory(offer.getItem().getId(), finalAmount, (int) price, ExchangeType.SELLING));
+                                        seller.getTradePost().tradePostOffers.set(seller.getTradePost().tradePostOffers.indexOf(tradePostOffer), newOffer);*/
+                                   // }
                                     player.getTradePost().updateTradeHistory(new ExchangeHistory(offer.getItem().getId(), finalAmount, (int) price, ExchangeType.BUYING));
                                     PlayerCounter.GE_BUYS.increment(player, 1);
-                                    PlayerCounter.GE_SALES.increment(seller, 1);
                                     if (price > 1000) {
                                         PlayerCounter.GE_SPENT.increment(player, (int) price/1000);
-                                        PlayerCounter.GE_PROFIT.increment(seller, (int) price/1000);
                                     }
-                                    if (outOfStock) {
-                                        seller.sendMessage("<col=00c203>" + "Grand Exchange: Finished selling all of " + offer.getItem().getDef().name + ".</col>");
-                                    } else {
-                                        seller.sendMessage("<col=00c203>" + "Grand Exchange: " + finalAmount + "/" + offer.getItem().getAmount() + " of " + offer.getItem().getDef().name + " sold.</col>");
-                                    }
-                                    seller.sendMessage("Current Coffer: " + formatPrice(seller.getTradePost().coffer));
                                     player.sendMessage("<col=ff0000>" + "You have purchased " + finalAmount + "x " + offer.getItem().getDef().name + " for a price of " + formatPrice(price) + ".</col>");
                                     if (bank) player.sendMessage("Your purchased item" + (finalAmount > 1 ? "s have " : " has ") + "been sent to your bank.");
                                     player.getTradePost().openViewOffers();
+                                    if (seller != null && seller.isOnline() && online) {
+                                        ExchangeOffers.INSTANCE.fetchOffers(seller);
+                                    }
                                 });
                             }),
                             new Option("No", player::closeDialogue)
                     )
             );
         });
+    }
+
+    public long getCofferAmount() {
+        return coffer;
+    }
+
+    public void addToCoffer(int amt) {
+        coffer += amt;
     }
 
     public void updateTradeHistory(ExchangeHistory record) {
@@ -503,7 +491,7 @@ public class TradePost {
         player.getPacketSender().sendClientScript(69, "ii", hidden ? 1 : 0, Interface.TRADING_POST_VIEW << 16 | (44 + (9 * index)));
     }
 
-    private static String formatPrice(long price) {
+    protected static String formatPrice(long price) {
         if (price > 9_999_999) {
             return NumberUtils.formatNumber(price / 1000_000) + "M";
         } else if (price > 99_999) {
@@ -650,5 +638,15 @@ public class TradePost {
             ObjectAction.register(objId, "history", (player, obj) -> player.getTradePost().openHistory());
             ObjectAction.register(objId, "collect", (player, obj) -> TradePost.openCoffer(player));
         }
+        LoginListener.register(p -> {
+            if (ExchangeOffers.INSTANCE.OFFERS == null) return;
+            if (!p.getTradePost().tradePostOffers.isEmpty()) {
+                ExchangeOffers.INSTANCE.OFFERS.addAll(p.getTradePost().tradePostOffers);
+                p.getTradePost().tradePostOffers = new ArrayList<>();
+            }
+            List<TradePostOffer> list = ExchangeOffers.INSTANCE.fetchOffers(p);
+            if (list.isEmpty()) return;
+            p.getTradePost().offers = list;
+        });
     }
 }
