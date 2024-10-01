@@ -3,6 +3,8 @@ package io.ruin.utility;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.route.routes.ProjectileRoute;
+import io.ruin.model.map.route.routes.TargetRoute;
 
 import java.security.SecureRandom;
 import java.util.List;
@@ -117,5 +119,13 @@ public class Misc {
             return quantity / 10000000000000L + "T";
         }
         return String.valueOf(quantity);
+    }
+
+    public static boolean withinReach(Position playerPos, Position otherPos, int distance) {
+        if (!TargetRoute.inTarget(playerPos.getX(), playerPos.getY(), 1, otherPos.getX(), otherPos.getY(), 1)
+                && TargetRoute.inRange(playerPos.getX(), playerPos.getY(), 1, otherPos.getX(), otherPos.getY(), 1, distance)
+                && ProjectileRoute.allow(playerPos.getX(), playerPos.getY(), playerPos.getZ(), 1, otherPos.getX(), otherPos.getY(), 1))
+            return true;
+        return playerPos.equals(otherPos);
     }
 }

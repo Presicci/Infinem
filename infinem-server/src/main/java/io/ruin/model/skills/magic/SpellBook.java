@@ -152,7 +152,7 @@ public enum SpellBook {
             new RechargeDragonstone(),
             new LunarTeleport(89, 96, MagicTeleportBounds.ICE_PLATEAU.getBounds(), Rune.LAW.toItem(3), Rune.ASTRAL.toItem(3), Rune.WATER.toItem(8)), // TODO add warning
             TeleGroup.ICE_PLATEAU.toSpell(),
-            new TodoSpell("Energy Transfer"),
+            new EnergyTransfer(),
             new TodoSpell("Heal Other"),
             new VengeanceOther(),
             new Vengeance(),
