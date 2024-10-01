@@ -65,14 +65,14 @@
     {
       "itemId": 24003,
       "stock": 50,
-      "buy_price": 275,
-      "sell_price": 500
+      "buy_price": 5500,
+      "sell_price": 10000
     },
     {
       "itemId": 24006,
       "stock": 50,
-      "buy_price": 275,
-      "sell_price": 500
+      "buy_price": 5500,
+      "sell_price": 10000
     },
     {
       "itemId": 24024,
