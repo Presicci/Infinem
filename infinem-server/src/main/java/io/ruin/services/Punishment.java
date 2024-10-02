@@ -83,6 +83,7 @@ public class Punishment {
             player.resetActions(true, true, true);
             Jail.startEvent(player);
         });
+        logRandomEventJail(player);
     }
 
 
@@ -181,4 +182,8 @@ public class Punishment {
         PunishmentEmbedMessage.sendDiscordMessage(victim.getName(), description);
     }
 
+    private static void logRandomEventJail(Player victim) {
+        String description = victim.getName() + " has been automatically jailed by a random event.";
+        PunishmentEmbedMessage.sendDiscordMessage(victim.getName(), description);
+    }
 }
