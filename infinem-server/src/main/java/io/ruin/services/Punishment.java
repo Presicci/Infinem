@@ -10,6 +10,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.network.central.CentralClient;
 import io.ruin.services.discord.DiscordConnection;
+import io.ruin.services.discord.impl.PunishmentEmbedMessage;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 
@@ -170,31 +171,14 @@ public class Punishment {
 
     private static void logPunishment(Player staff, Player victim, long time, String type, MessageEmbed.Field... fields) {
         String until;
-
         if (time == -1 || time == -2) {
             until = "Never (perm).";
         } else {
             until = TimeUtils.dateFormat.format(new Date(time))
                     + " (in " + TimeUtils.fromMs(time - System.currentTimeMillis(), false) + ")";
         }
-
-        EmbedBuilder builder = new EmbedBuilder();
-
-        builder.setTitle(String.format("%s has been %s by %s", victim.getName(), type, staff.getName()));
-        builder.addField("Name", victim.getName(), true);
-        builder.addField("Staff member", staff.getName(), true);
-        builder.addField("Punishment", StringUtils.capitalizeFirst(type), true);
-
-        if (time != -2)
-            builder.addField("Expires", until, true);
-
-        if (fields != null && fields.length > 0) {
-            for (MessageEmbed.Field field : fields) {
-                builder.addField(field);
-            }
-        }
-
-        DiscordConnection.post(DiscordConnection.CHANNEL_PUNISHMENTS, builder.build());
+        String description = victim.getName() + " has been " + type + " by " + staff.getName() + "." + (time != -2 ? " Expires " + until : "");
+        PunishmentEmbedMessage.sendDiscordMessage(victim.getName(), description);
     }
 
 }
