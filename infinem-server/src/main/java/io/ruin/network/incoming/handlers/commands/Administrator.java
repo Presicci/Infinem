@@ -2848,6 +2848,15 @@ public class Administrator {
                 Slayer.setBossTask(player, uuid);
                 return true;
             }
+            case "task": {
+                if (args == null || args.length < 1) {
+                    player.sendMessage("Syntax: ::task [id]");
+                    return false;
+                }
+                int amount = args.length >= 2 ? Integer.parseInt(args[1]) : 1;
+                player.getTaskManager().doLookupByUUID(Integer.parseInt(args[0]), amount, true);
+                return true;
+            }
             case "unlocktask": {
                 if (args.length < 1) {
                     player.sendMessage("Syntax: ::unlocktask [id]");
