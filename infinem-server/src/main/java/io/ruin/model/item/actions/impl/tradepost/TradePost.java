@@ -17,12 +17,14 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.ItemSet;
+import io.ruin.model.item.actions.impl.tradepost.offer.TradePostNPCOffer;
 import io.ruin.model.item.actions.impl.tradepost.offer.TradePostOffer;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
@@ -212,7 +214,7 @@ public class TradePost {
     }
 
     private List<TradePostOffer> findViewOffers() {
-        return ExchangeOffers.INSTANCE.OFFERS.stream().filter(offer -> {
+        return Stream.concat(ExchangeNPCOffers.INSTANCE.OFFERS.stream(), ExchangeOffers.INSTANCE.OFFERS.stream()).filter(offer -> {
                     if (offer.getUsername().equalsIgnoreCase(player.getName())) return false;
                     if (offer.getItem().getAmount() <= 0) return false;
                     if (searchText == null) {
@@ -234,6 +236,8 @@ public class TradePost {
                             return (int) (offerA.getTimestamp() - offerB.getTimestamp());
                         case AGE_ASCENDING:
                         default:
+                            if (offerB.getTimestamp() == 0) return -1;
+                            else if (offerA.getTimestamp() == 0) return 1;
                             return (int) (offerB.getTimestamp() - offerA.getTimestamp());
                     }
                 }).limit(MAX_VIEW_OFFERS)
@@ -343,9 +347,11 @@ public class TradePost {
         }
         player.integerInput("Amount to Buy:", amount -> {
             TradePostOffer offer = viewOffers.get(index);
+            boolean npcOffer = offer.getTimestamp() == 0;
             String sellerName = offer.getUsername();
-            Player seller = World.getPlayer(sellerName);
+            Player seller = npcOffer ? null : World.getPlayer(sellerName);
             boolean online = !Objects.isNull(seller) && seller.isOnline();
+            player.sendMessage(npcOffer + "");
             if (seller == player) {
                 player.sendMessage("You cannot buy items from yourself!");
                 return;
@@ -358,7 +364,7 @@ public class TradePost {
                 player.sendMessage("You can't buy 0 of an item.");
                 return;
             }
-            if (amount > offer.getItem().getAmount()) {
+            if (!npcOffer && amount > offer.getItem().getAmount()) {
                 amount = offer.getItem().getAmount();
             }
             int pricePer = offer.getPricePerItem();
@@ -381,14 +387,23 @@ public class TradePost {
                                     player.closeDialogue();
                                     return;
                                 }
-                                Optional<TradePostOffer> sellersOffer = ExchangeOffers.INSTANCE.OFFERS.stream().filter(o ->
-                                        o.getItem().getId() == offer.getItem().getId()
-                                                && o.getItem().getAmount() >= finalAmount
-                                                && o.getUsername().equalsIgnoreCase(offer.getUsername()))
-                                        .findAny();
-                                if (!sellersOffer.isPresent()) {
-                                    player.sendMessage("This item has been removed or sold already!");
-                                    player.closeDialogue();
+                                Optional<TradePostOffer> sellersOffer;
+                                if (!npcOffer) {
+                                    sellersOffer = ExchangeOffers.INSTANCE.OFFERS.stream().filter(o ->
+                                                    o.getItem().getId() == offer.getItem().getId()
+                                                            && o.getItem().getAmount() >= finalAmount
+                                                            && o.getUsername().equalsIgnoreCase(offer.getUsername()))
+                                            .findAny();
+                                    if (!sellersOffer.isPresent()) {
+                                        player.sendMessage("This item has been removed or sold already!");
+                                        player.closeDialogue();
+                                        return;
+                                    }
+                                } else {
+                                    buyFromNPC(ExchangeNPCOffers.INSTANCE.OFFERS.stream().filter(o ->
+                                                    o.getItem().getId() == offer.getItem().getId()
+                                                            && o.getUsername().equalsIgnoreCase(offer.getUsername()))
+                                            .findAny(), (int) price, finalAmount);
                                     return;
                                 }
                                 sellersOffer.ifPresent(tradePostOffer ->  {
@@ -441,6 +456,27 @@ public class TradePost {
         });
     }
 
+    private void buyFromNPC(Optional<TradePostNPCOffer> o, int price, int finalAmount) {
+        o.ifPresent(tradePostOffer ->  {
+            player.getInventory().remove(COINS_995, price);
+            boolean bank = false;
+            if (player.getInventory().hasRoomFor(tradePostOffer.getItem().getId(), finalAmount)) {
+                player.getInventory().add(tradePostOffer.getItem().getId(), finalAmount);
+            } else {
+                bank = true;
+                player.getBank().add(tradePostOffer.getItem().getId(), finalAmount);
+            }
+            player.getTradePost().updateTradeHistory(new ExchangeHistory(tradePostOffer.getItem().getId(), finalAmount, price, ExchangeType.BUYING));
+            /*PlayerCounter.GE_BUYS.increment(player, 1);
+            if (price > 1000) {
+                PlayerCounter.GE_SPENT.increment(player, price/1000);
+            }*/
+            player.sendMessage("<col=ff0000>" + "You have purchased " + finalAmount + "x " + tradePostOffer.getItem().getDef().name + " for a price of " + formatPrice(price) + ".</col>");
+            if (bank) player.sendMessage("Your purchased item" + (finalAmount > 1 ? "s have " : " has ") + "been sent to your bank.");
+            player.getTradePost().openViewOffers();
+        });
+    }
+
     public long getCofferAmount() {
         return coffer;
     }
@@ -475,7 +511,8 @@ public class TradePost {
             sb.append("|");
             sb.append(offer.getUsername());
             sb.append("|");
-            sb.append(formatAge(offer.getTimestamp()));
+            long timeStamp = offer.getTimestamp();
+            sb.append(timeStamp == 0 ? "NPC" : formatAge(offer.getTimestamp()));
             if (index < viewOffers.size() - 1) {
                 sb.append("|");
             }
