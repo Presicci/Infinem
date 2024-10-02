@@ -12,7 +12,7 @@ public class RareDropEmbedMessage {
             return;
         }
         try {
-            Webhook webhook = new Webhook(Constants.WEBHOOK_URL);
+            Webhook webhook = new Webhook(Constants.RARE_DROP_WEBHOOK_URL);
             Message message = new Message();
 
             Embed embedMessage = new Embed();
