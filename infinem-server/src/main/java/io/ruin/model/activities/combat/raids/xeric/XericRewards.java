@@ -145,7 +145,7 @@ public class XericRewards {
                     raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap("Special loot:")));
                 }
                 raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap(winner.getName() + " - ") + Color.RED.wrap(item.getDef().name)));
-                Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "[Rare Drop] "+winner.getName()+" Has just received "+item.getDef().name+" from Chambers of Xeric!");
+                Broadcast.DROP.sendNews(winner, Icon.INVENTORY_BAG, " just received " + item.getDef().descriptiveName + " from Chambers of Xeric!");
             }
         }
         // Regular drops
