@@ -1,0 +1,52 @@
+{
+  "OFFERS": [
+    {
+      "username": "Oziach",
+      "item": {
+        "id": 1127,  // Rune platebody
+        "amount": 1
+      },
+      "pricePerItem": 86000
+    },
+    {
+      "username": "Duke Horacio",
+      "item": {
+        "id": 1540,  // Anti-dragon shield
+        "amount": 1
+      },
+      "pricePerItem": 50
+    },
+    {
+      "username": "Zaff",
+      "item": {
+        "id": 1381,  // Staff of air
+        "amount": 1
+      },
+      "pricePerItem": 2000
+    },
+    {
+      "username": "Zaff",
+      "item": {
+        "id": 1383,  // Staff of water
+        "amount": 1
+      },
+      "pricePerItem": 2000
+    },
+    {
+      "username": "Zaff",
+      "item": {
+        "id": 1385,  // Staff of earth
+        "amount": 1
+      },
+      "pricePerItem": 2000
+    },
+    {
+      "username": "Zaff",
+      "item": {
+        "id": 1387,  // Staff of fire
+        "amount": 1
+      },
+      "pricePerItem": 2000
+    }
+  ]
+}
