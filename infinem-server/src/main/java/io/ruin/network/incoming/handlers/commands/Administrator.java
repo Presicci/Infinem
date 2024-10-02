@@ -72,6 +72,7 @@ import io.ruin.model.item.actions.impl.GoldCasket;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.actions.impl.ItemBreaking;
 import io.ruin.model.item.actions.impl.ItemImbue;
+import io.ruin.model.item.actions.impl.tradepost.ExchangeNPCOffers;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.item.containers.Equipment;
@@ -3240,6 +3241,10 @@ public class Administrator {
                         });
                     }
                 });
+                return true;
+            }
+            case "reloadnpcoffers": {
+                ExchangeNPCOffers.load();
                 return true;
             }
         }
