@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.killcount.KillCounterType;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.jewellery.XericsTalisman;
 import io.ruin.model.item.pet.Pet;
+import io.ruin.services.discord.impl.RareDropEmbedMessage;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.model.entity.player.killcount.KillCounter;
@@ -145,7 +146,9 @@ public class XericRewards {
                     raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap("Special loot:")));
                 }
                 raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap(winner.getName() + " - ") + Color.RED.wrap(item.getDef().name)));
-                Broadcast.DROP.sendNews(winner, Icon.INVENTORY_BAG, " just received " + item.getDef().descriptiveName + " from Chambers of Xeric!");
+                String message = winner.getName() + " just received " + item.getDef().descriptiveName;
+                Broadcast.DROP.sendNews(winner, Icon.INVENTORY_BAG, message + " from Chambers of Xeric!");
+                RareDropEmbedMessage.sendDiscordMessage(message, "Chambers of Xeric", item.getId());
             }
         }
         // Regular drops
