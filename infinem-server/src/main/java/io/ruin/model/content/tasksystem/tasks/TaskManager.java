@@ -135,10 +135,30 @@ public class TaskManager {
         }
     }
 
+    public void removeTask(String taskName, int uuid, TaskArea taskArea, TaskDifficulty difficulty) {
+        if (!completeTasks.contains(uuid))
+            return;
+        int pointsLost = difficulty.getPoints();
+        if (taskArea != TaskArea.GENERAL) {
+            AREA_POINTS[taskArea.ordinal() - 1].increment(player, -(pointsLost / 10));
+        }
+        Config.LEAGUE_POINTS.increment(player, -pointsLost);
+        completeTasks.remove(uuid);
+        Config.LEAGUE_TASKS_COMPLETED.set(player, completeTasks.size());
+        player.sendMessage("<col=990000>You have lost completion for task: " + taskName);
+        removeTaskBit(player, uuid);
+    }
+
     private static void completeTaskBit(Player player, int taskId) {
         int bit = taskId % 32;
         int varpIndex = taskId / 32;
         COMPLETED_TASKS[varpIndex].setBit(player, bit);
+    }
+
+    private static void removeTaskBit(Player player, int taskId) {
+        int bit = taskId % 32;
+        int varpIndex = taskId / 32;
+        COMPLETED_TASKS[varpIndex].removeBit(player, bit);
     }
 
     static {
