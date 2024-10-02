@@ -102,7 +102,6 @@ public class ExchangeOffers {
             String json = JsonUtils.GSON_EXPOSE_PRETTY.toJson(INSTANCE);
             File file = new File(PATH);
             Files.write(file.toPath(), json.getBytes());
-            System.out.println("Saved grand exchange data");
         } catch (IOException e) {
             System.err.println("Couldn't save grand exchange data. " + e.getMessage());
         }
@@ -114,10 +113,10 @@ public class ExchangeOffers {
             if (saveFile.exists()) {
                 String json = new String(Files.readAllBytes(saveFile.toPath()));
                 INSTANCE = GSON_LOADER.fromJson(json, ExchangeOffers.class);
-                System.out.println("Loaded grand exchange data");
+                System.out.println("Loaded grand exchange listings");
             }
         } catch (IOException e) {
-            System.err.println("Couldn't load persistent data. " + e.getMessage());
+            System.err.println("Couldn't load persistent listings. " + e.getMessage());
         }
         // Save every 30 minutes
         World.startEvent(e -> {
