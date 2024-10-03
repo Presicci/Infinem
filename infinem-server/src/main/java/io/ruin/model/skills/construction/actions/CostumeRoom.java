@@ -137,11 +137,16 @@ public class CostumeRoom {
         }
         player.getInventory().add(itemId, 1);
         int newAmount = pieces[pieceIndex].getAmount() - 1;
-        if (newAmount == 0)
+        if (newAmount == 0) {
             pieces[pieceIndex] = null;
-        else
+            boolean removeArray = Arrays.stream(pieces).noneMatch(Objects::nonNull);
+            if (removeArray) {
+                sets.remove(costume);
+            }
+        } else
             pieces[pieceIndex].setAmount(newAmount);
         cs.sendItems(player);
+
     }
 
     private static void withdrawSet(Player player, int slot) {
@@ -185,6 +190,10 @@ public class CostumeRoom {
                 stored[index] = null;
             }
             ++index;
+        }
+        boolean removeArray = Arrays.stream(stored).noneMatch(Objects::nonNull);
+        if (removeArray) {
+            storedSets.remove(costume);
         }
         type.sendItems(player);
     }
