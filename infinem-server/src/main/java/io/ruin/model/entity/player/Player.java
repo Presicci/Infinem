@@ -1577,8 +1577,7 @@ public class Player extends PlayerAttributes {
         }
 
         if (movement.hasMoved()) {
-            idleTicks = 0;
-            isIdle = false;
+            resetIdle();
         } else if (++idleTicks >= 1000 && !isIdle) {            // After 10 minutes, set to idle
             isIdle = true;
             if (getCombat().getTarget() != null)
@@ -1967,5 +1966,10 @@ public class Player extends PlayerAttributes {
 
     public boolean isFriendsWith(Player otherPlayer) {
         return onlineFriendNames.contains(otherPlayer.name);
+    }
+
+    public void resetIdle() {
+        idleTicks = 0;
+        isIdle = false;
     }
 }
