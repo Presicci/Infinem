@@ -208,8 +208,8 @@ public enum AreaShopItem {
     /*
      * Zeah
      */
+    KHAREDSTS_MEMOIRS(21760, TaskArea.ZEAH, AreaTaskTier.EASY, 1000),
     BOOK_OF_THE_DEAD(25818, TaskArea.ZEAH, AreaTaskTier.MEDIUM, 5000),
-    // Book of the dead, kharedst's memoirs
     // lunch by the lancalliums
     // jewellery of jubilation
     // a dark disposition
