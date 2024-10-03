@@ -599,7 +599,7 @@ public class PlayerCombat extends Combat {
         if (!rollAvaAttractor()
                 && !rollAvaAccumulator()
                 && !rollAvaAssembler()
-                && !player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2))
+                && (!player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)))
             dartAmount--;
         if(Random.rollDie(3, 2) && (!player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)))
             scalesAmount--;
