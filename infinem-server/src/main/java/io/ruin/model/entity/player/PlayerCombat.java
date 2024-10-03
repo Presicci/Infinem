@@ -635,6 +635,7 @@ public class PlayerCombat extends Combat {
                     continue;
                 } else {
                     ammo.incrementAmount(-1);
+                    return;
                 }
             } else {
                 if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2)) return;
