@@ -17,8 +17,7 @@ public class DragonPickaxeSpecial implements Special {
     public boolean handleActivation(Player player) {
         if(!player.getCombat().useSpecialEnergy(100))
             return false;
-        player.animate(2876);
-        player.graphics(479);
+        player.animate(7138);
         player.forceText("Smashing!");
         player.getStats().get(StatType.Mining).boost(3, 0);
         return true;
