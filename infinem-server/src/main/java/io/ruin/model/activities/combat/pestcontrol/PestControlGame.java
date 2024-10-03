@@ -270,7 +270,7 @@ public class PestControlGame {
 					Config.PEST_CONTROL_ACTIVITY.decrement(p, 1);
 			});
 		}
-		int portalSpawnFrequency = players.size() < 4 ? ((4 - players.size()) * 3) + 9 : 9;
+		int portalSpawnFrequency = players.size() < 4 ? ((4 - players.size()) * 3) + 18 : 18;
 		if (cycles % portalSpawnFrequency == 0) {
 			portals.stream().filter(PestPortal::alive).forEach(PestPortal::spawnPests);
 			//portals.stream().filter(PestPortal::alive).filter(PestPortal::shieldDropped).forEach(PestPortal::spawnPests);
