@@ -154,7 +154,7 @@ public enum CollectionLogEntry {
     MASTER_RARE(12046, CollectionLogCategory.CLUES, PlayerCounter.MASTER_CLUES_COMPLETED::get),
     SHARED(12002, CollectionLogCategory.CLUES, CollectionLog::addSumMultipleClues),
     // Minigames
-    BARABARIAN_ASSAULT(12005, CollectionLogCategory.MINIGAMES),
+    BARABARIAN_ASSAULT(12005, CollectionLogCategory.MINIGAMES, player -> KillCounter.getKillCount(player, BossKillCounter.PENANCE_QUEEN)),
     BRIMHAVEN_AGILITY(12043, CollectionLogCategory.MINIGAMES),
     CASTLE_WARS(12003, CollectionLogCategory.MINIGAMES),
     FISHING_TRAWLER(12009, CollectionLogCategory.MINIGAMES),
