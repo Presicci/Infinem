@@ -168,6 +168,7 @@ public class Vorkath extends NPCCombat {
             npc.transform(8059);
             attackCounter = 0;
             specialType = Random.rollDie(2, 1);
+            if (killer.player != null) killer.player.resetFreeze();
         };
         npc.hitListener = new HitListener().postDefend(this::postDefend);
     }
