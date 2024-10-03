@@ -1,6 +1,7 @@
 package io.ruin.model.activities.combat.pestcontrol;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.impl.npcs.npc_combat;
@@ -48,8 +49,10 @@ public class PestPortal {
 			if (attacker != null && attacker.isPlayer()) {
 				Player player = attacker.player;
 				if (player.pestGame != null && hit.damage > 0) {
-					player.pestActivityScore += hit.damage / 2;
+					player.pestActivityScore += hit.damage;
 				}
+				if (player.pestGame != null && Config.PEST_CONTROL_ACTIVITY.get(player) < 50)
+					Config.PEST_CONTROL_ACTIVITY.increment(player, 3);
 			}
 		});
 		npc.deathStartListener = (entity, killer, killHit) -> {

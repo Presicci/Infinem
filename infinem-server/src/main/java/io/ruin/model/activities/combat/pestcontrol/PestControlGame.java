@@ -11,6 +11,7 @@ import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.entity.shared.listeners.LogoutListener;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
@@ -113,6 +114,7 @@ public class PestControlGame {
 		players.forEach(player -> {
 			player.pestGame = this;
 			player.openInterface(InterfaceType.PRIMARY_OVERLAY, OVERLAY);
+			Config.PEST_CONTROL_ACTIVITY.set(player, 26);
 			player.getMovement().teleport(map.convertX(2656) + Random.get(3), map.convertY(2610) + Random.get(4));
 			player.teleportListener = p -> {
 				p.sendMessage("Spells of this kind are not allowed within the battlegrounds.");
@@ -208,7 +210,7 @@ public class PestControlGame {
 						"The void knight has fallen therefore you were not</br> " +
 								"presented with any points."));
 			} else {
-				if (p.pestActivityScore < 50) {
+				if (Config.PEST_CONTROL_ACTIVITY.get(p) <= 12) {
 					p.dialogue(new NPCDialogue(SQUIRE_ID,
 							"The knights noticed your lack of zeal in that battle and have not</br>" +
 									"presented you with any points."));
@@ -262,13 +264,10 @@ public class PestControlGame {
 			return;
 		}
 
-		if (cycles % 4 == 0) {
-			players.stream().filter(p -> p.pestActivityScore > 0).forEach(p -> {
-				if (p.pestActivityScore - 2 < 0) {
-					p.pestActivityScore = 0;
-				} else {
-					p.pestActivityScore -= 2;
-				}
+		if (cycles % 6 == 0) {
+			players.forEach(p -> {
+				if (Config.PEST_CONTROL_ACTIVITY.get(p) > 0)
+					Config.PEST_CONTROL_ACTIVITY.decrement(p, 1);
 			});
 		}
 		int portalSpawnFrequency = players.size() < 4 ? ((4 - players.size()) * 3) + 9 : 9;
@@ -306,7 +305,7 @@ public class PestControlGame {
 			int knightHp = knight.getHp();
 			p.getPacketSender().sendString(OVERLAY, 5, displayTimeFor(lifespan));
 			p.getPacketSender().sendString(OVERLAY, 6, knightHp > 70 ? "<col=00ff00>" + knightHp : "<col=ff0000>" + knightHp);
-			p.getPacketSender().sendString(OVERLAY, 7, p.pestActivityScore > 50 ? "<col=00ff00>" + p.pestActivityScore : "<col=ff0000>" + p.pestActivityScore);
+			p.getPacketSender().sendString(OVERLAY, 7, p.pestActivityScore + "");
 			portals.forEach(portal -> {
 				if (portal.dead) {
 					p.getPacketSender().sendString(OVERLAY, portal.widgetIdx, "<col=ff0000>0");
@@ -323,6 +322,7 @@ public class PestControlGame {
 	 */
 	private void clearActivityOf(Player player) {
 		player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
+		Config.PEST_CONTROL_ACTIVITY.set(player, 0);
 		player.pestGame = null;
 		player.pestActivityScore = 0;
 		player.teleportListener = null;

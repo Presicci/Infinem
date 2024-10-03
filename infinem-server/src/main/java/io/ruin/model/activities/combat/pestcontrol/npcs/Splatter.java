@@ -6,6 +6,7 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.HitListener;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.utility.Misc;
 
 import java.util.Arrays;
@@ -24,8 +25,10 @@ public class Splatter extends NPCCombat {
 			if (attacker != null && attacker.isPlayer()) {
 				Player player = attacker.player;
 				if (player.pestGame != null && hit.damage > 0) {
-					player.pestActivityScore += hit.damage / 2;
+					player.pestActivityScore += hit.damage;
 				}
+				if (player.pestGame != null && Config.PEST_CONTROL_ACTIVITY.get(player) < 50)
+					Config.PEST_CONTROL_ACTIVITY.increment(player, 2);
 			}
 		});
 	}

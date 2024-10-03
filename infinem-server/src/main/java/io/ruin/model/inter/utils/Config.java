@@ -1170,6 +1170,7 @@ public class Config {
     private static final Config MEIYERDITCH_BOAT = varpbit(2585, false).defaultValue(1);
     private static final Config YANILLE_HOUSE = varpbit(4153, false).defaultValue(2);
     private static final Config BURGH_DE_ROTT_BANK = varpbit(1977, false).defaultValue(1);
+    public static final Config PEST_CONTROL_ACTIVITY = varpbit(5662, false);
 
     /**
      * Elemental workshop
