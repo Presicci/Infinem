@@ -253,7 +253,21 @@ public class StatList {
                     : AreaReward.SLAYER_EXPERIENCE_75.hasReward(player) ? 1.075
                     : AreaReward.SLAYER_EXPERIENCE_50.hasReward(player) ? 1.05
                     : 1.025;
+        multi *= getDonatorExperienceMultiplier();
         return multi;
+    }
+
+    private double getDonatorExperienceMultiplier() {
+        if (player.isDiamond()) {
+            return 1.2;
+        } else if (player.isRuby()) {
+            return 1.15;
+        } else if (player.isEmerald()) {
+            return 1.10;
+        } else if (player.isSapphire()) {
+            return 1.05;
+        }
+        return 1;
     }
 
     private double getSkillingOutfitMultiplier(StatType statType) {
