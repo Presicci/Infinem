@@ -271,13 +271,13 @@ public class PestControlGame {
 			});
 		}
 		int portalSpawnFrequency = players.size() < 4 ? ((4 - players.size()) * 3) + 9 : 9;
-		if (cycles % 9 == 0) {
+		if (cycles % portalSpawnFrequency == 0) {
 			portals.stream().filter(PestPortal::alive).forEach(PestPortal::spawnPests);
 			//portals.stream().filter(PestPortal::alive).filter(PestPortal::shieldDropped).forEach(PestPortal::spawnPests);
 		}
 
 		int knightSpawnFrequency = players.size() < 4 ? ((4 - players.size()) * 6) + 14 : 14;
-		if (cycles % 14 == 0) {
+		if (cycles % knightSpawnFrequency == 0) {
 			spawnKnightPests();
 		}
 
