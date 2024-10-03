@@ -377,6 +377,10 @@ public class TradePost {
                 player.sendMessage("You do not have enough coins to purchase this.");
                 return;
             }
+            if (!player.getInventory().hasRoomFor(offer.getItem().getId(), amount) && !player.getBank().hasRoomFor(offer.getItem().getId(), amount)) {
+                player.sendMessage("Your bank is full.");
+                return;
+            }
             int finalAmount = amount;
             player.dialogueKeepInterfaces(
                     new MessageDialogue("Are you sure you want to purchase: " + finalAmount + "x " + offer.getItem().getDef().name + " for a price of: " + formatPrice(price) + "?"),
