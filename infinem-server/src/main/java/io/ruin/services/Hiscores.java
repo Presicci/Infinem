@@ -86,6 +86,7 @@ public class Hiscores {
         map.put("dagannoth_prime", KillCounter.getKillCount(player, BossKillCounter.DAG_PRIME));
         map.put("dagannoth_rex", KillCounter.getKillCount(player, BossKillCounter.DAG_REX));
         map.put("dagannoth_supreme", KillCounter.getKillCount(player, BossKillCounter.DAG_SUPREME));
+        map.put("deranged_archaeologist", KillCounter.getKillCount(player, BossKillCounter.DERANGED_ARCHAEOLOGIST));
         map.put("crazy_archaeologist", KillCounter.getKillCount(player, BossKillCounter.CRAZY_ARCHAEOLOGIST));
         map.put("general_graardor", KillCounter.getKillCount(player, BossKillCounter.GENERAL_GRAARDOR));
         map.put("giant_mole", KillCounter.getKillCount(player, BossKillCounter.GIANT_MOLE));
@@ -96,6 +97,7 @@ public class Hiscores {
         map.put("kreearra", KillCounter.getKillCount(player, BossKillCounter.KREEARRA));
         map.put("kril_tsutsaroth", KillCounter.getKillCount(player, BossKillCounter.KRIL_TSUTSAROTH));
         map.put("obor", KillCounter.getKillCount(player, BossKillCounter.OBOR));
+        map.put("penance_queen", KillCounter.getKillCount(player, BossKillCounter.PENANCE_QUEEN));
         map.put("sarachnis", KillCounter.getKillCount(player, BossKillCounter.SARACHNIS));
         map.put("scorpia", KillCounter.getKillCount(player, BossKillCounter.SCORPIA));
         map.put("skotizo", KillCounter.getKillCount(player, BossKillCounter.SKOTIZO));
