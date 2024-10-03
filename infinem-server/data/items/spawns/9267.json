@@ -1,47 +1,10 @@
 [
   {
-    "id": 995,
-    "amount": 4,
-    "x": 3097,
-    "y": 3578,
-    "z": 0
-  },
-  {
-    "id": 995,
-    "amount": 3,
-    "x": 3099,
-    "y": 3572,
-    "z": 0
-  },
-  {
-    "id": 995,
-    "amount": 2,
-    "x": 3098,
-    "y": 3564,
-    "z": 0
-  },
-  {
-    "id": 995,
-    "amount": 2,
-    "x": 3103,
-    "y": 3548,
-    "z": 0
-  },
-  {
-    "id": 995,
-    "amount": 2,
-    "x": 3108,
-    "y": 3534,
-    "z": 0
-  },
-
-
-  {
     "itemName": "Red spiders' eggs",
     "amount": 0,
     "id": 223,
-    "x": 3129,
-    "y": 9954,
+    "x": 2336,
+    "y": 3316,
     "z": 0,
     "respawnSeconds": 60
   },
@@ -49,8 +12,8 @@
     "itemName": "Red spiders' eggs",
     "amount": 0,
     "id": 223,
-    "x": 3128,
-    "y": 9956,
+    "x": 2338,
+    "y": 3314,
     "z": 0,
     "respawnSeconds": 60
   },
@@ -58,8 +21,8 @@
     "itemName": "Red spiders' eggs",
     "amount": 0,
     "id": 223,
-    "x": 3125,
-    "y": 9958,
+    "x": 2341,
+    "y": 3313,
     "z": 0,
     "respawnSeconds": 60
   },
@@ -67,8 +30,8 @@
     "itemName": "Red spiders' eggs",
     "amount": 0,
     "id": 223,
-    "x": 3116,
-    "y": 9951,
+    "x": 2343,
+    "y": 3313,
     "z": 0,
     "respawnSeconds": 60
   },
@@ -76,8 +39,8 @@
     "itemName": "Red spiders' eggs",
     "amount": 0,
     "id": 223,
-    "x": 3118,
-    "y": 9948,
+    "x": 2345,
+    "y": 3311,
     "z": 0,
     "respawnSeconds": 60
   },
@@ -85,8 +48,8 @@
     "itemName": "Red spiders' eggs",
     "amount": 0,
     "id": 223,
-    "x": 3119,
-    "y": 9949,
+    "x": 2340,
+    "y": 3310,
     "z": 0,
     "respawnSeconds": 60
   }
