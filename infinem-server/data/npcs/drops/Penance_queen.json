@@ -21,7 +21,7 @@
       },
       {
         "name": "Equipment",
-        "weight": 100,
+        "weight": 105,
         "items": [
           { "id": 892, "min": 75, "max": 125, "weight": 1800 },   // Rune arrows
           { "id": 1163, "min": 1, "max": 1, "weight": 1200 },   // Rune full helm
@@ -31,6 +31,7 @@
           { "id": 1359, "min": 1, "max": 1, "weight": 1500 },   // Rune axe
           { "id": 3054, "min": 1, "max": 1, "weight": 600 },   // Mystic lave staff
           { "id": 10564, "min": 1, "max": 1, "weight": 500 },   // Granite body
+          { "id": 10589, "min": 1, "max": 1, "weight": 600 },   // Granite helm
           { "id": 1149, "min": 1, "max": 1, "weight": 75 },   // Dragon med helm
           { "id": 2513, "min": 1, "max": 1, "weight": 4 }   // Dragon chainbody
         ]
