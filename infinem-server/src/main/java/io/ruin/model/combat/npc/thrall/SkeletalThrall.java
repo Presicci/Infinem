@@ -61,9 +61,6 @@ public class SkeletalThrall extends NPCCombat {
 
         // Create and apply the hit
         Hit hit = new Hit(player, AttackStyle.RANGED).randDamage(getMaxDamage()).ignoreDefence().clientDelay(delay).setAttackWeapon(ItemDefinition.get(Items.BRONZE_CROSSBOW));
-        if (target.isNpc() && player.getRelicManager().hasRelic(Relic.DEADEYE) && RangedAmmo.procDeadeyeBoltEffect(target, hit)) {
-            return true;
-        }
         target.hit(hit);
         return true;
     }
