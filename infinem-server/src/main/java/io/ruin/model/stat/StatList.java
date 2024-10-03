@@ -222,10 +222,23 @@ public class StatList {
             Broadcast.SKILL.sendNews(player, Icon.SKILL_ICON, player.getName() + " has just achieved level 99 in " + type.name() + "!");
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILL99, type.name());
             SkillAchievementEmbedMessage.sendDiscordMessage("99 " + type.name() + "!", player.getName() + " has just achieved level 99 in " + type.name() + "!", type);
+            if (isMaxed()) {
+                player.sendMessage("Congratulations, you've reached the highest possible total level of 2277!");
+                player.sendMessage("You may now purchase a max cape from Mac at home!");
+                Broadcast.SKILL.sendNews(player, Icon.MAX_CAPE, player.getName() + " has just achieved level 99 in every skill!");
+                SkillAchievementEmbedMessage.sendMaxMessage("Maxed!", player.getName() + " has just achieved level 99 in every skill!");
+            }
         }
         if(statId <= 6)
             player.getCombat().updateLevel();
         player.getTaskManager().doLevelUpLookup(newLevel, type == StatType.Hitpoints);
+    }
+
+    private boolean isMaxed() {
+        for (StatType type : StatType.values()) {
+            if (get(type).fixedLevel < 99) return false;
+        }
+        return true;
     }
 
     private double getExperienceMultiplier(StatType type) {

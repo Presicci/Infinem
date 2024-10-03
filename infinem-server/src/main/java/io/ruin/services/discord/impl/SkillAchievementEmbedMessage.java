@@ -45,4 +45,34 @@ public class SkillAchievementEmbedMessage {
             ServerWrapper.logError("Failed to send discord embed", e);
         }
     }
+
+    public static void sendMaxMessage(String title, String description) {
+        if (!World.isLive()){
+            return;
+        }
+        try {
+            Webhook webhook = new Webhook(Constants.SKILL_ACHIEVEMENT_WEBHOOK_URL);
+            Message message = new Message();
+
+            Embed embedMessage = new Embed();
+            embedMessage.setTitle(title);
+            embedMessage.setDescription(description);
+            embedMessage.setColor(14759147);
+
+            /*
+             * Thumbnail
+             */
+            Thumbnail thumbnail = new Thumbnail();
+            thumbnail.setUrl("https://oldschool.runescape.wiki/images/Max_cape_detail.png");
+            embedMessage.setThumbnail(thumbnail);
+
+            /*
+             * Fire the message
+             */
+            message.setEmbeds(embedMessage);
+            webhook.sendMessage(message.toJson());
+        } catch (Exception e) {
+            ServerWrapper.logError("Failed to send discord embed", e);
+        }
+    }
 }

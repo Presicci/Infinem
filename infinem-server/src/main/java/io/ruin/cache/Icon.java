@@ -218,7 +218,8 @@ public enum Icon {
     SKILL_ICON(209),
     INVENTORY_BAG(233),
     SMILY(51),
-    ACTIVITY_SPOTLIGHT(313)
+    ACTIVITY_SPOTLIGHT(313),
+    MAX_CAPE(245)
     ;
 
     public final int imgId;
