@@ -1426,6 +1426,9 @@ public class Player extends PlayerAttributes {
             return;
         if(logoutListener != null && logoutListener.attemptAction != null && !logoutListener.attemptAction.allow(this))
             return;
+        if (PartnerSlayer.hasPartner(this)) {
+            PartnerSlayer.removePartner(this);
+        }
         logoutStage = 1;
         packetSender.sendLogout();
     }
@@ -1580,8 +1583,8 @@ public class Player extends PlayerAttributes {
             isIdle = true;
             if (getCombat().getTarget() != null)
                 player.dialogue(new MessageDialogue("You are now idle and enemies will no longer be aggressive. Move to reset.").keepOpenWhenHit());
-        } else if (idleTicks >= 3000 && !player.isStaff()) {    // After 30 minutes, log player out
-            //attemptIdleLogout();
+        } else if (idleTicks >= 6000 && !player.isStaff()) {    // After 60 minutes, log player out
+            attemptIdleLogout();
         }
         for (Item item : equipment.getItems()) {
             if (item != null && item.getDef() != null)
