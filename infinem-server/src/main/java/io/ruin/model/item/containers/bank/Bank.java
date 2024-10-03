@@ -2,6 +2,7 @@ package io.ruin.model.item.containers.bank;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
+import io.ruin.model.entity.player.DonatorBenefits;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceAction;
@@ -66,7 +67,7 @@ public class Bank extends ItemContainerG<BankItem> {
         player.getPacketSender().sendAccessMask(Interface.BANK, 46, 1, 816, 2);
         player.getPacketSender().sendAccessMask(Interface.BANK, 49, 0, 3, 2);
         player.getPacketSender().sendString(Interface.BANK, 7, "" + getItems().length);
-        player.getPacketSender().sendString(Interface.BANK, 8, "800");
+        player.getPacketSender().sendString(Interface.BANK, 8, Integer.toString(DonatorBenefits.getBenefits(player).getBankSize()));
 
         sendWornItemBonuses();
 

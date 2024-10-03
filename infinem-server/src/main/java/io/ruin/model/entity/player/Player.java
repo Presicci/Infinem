@@ -1078,6 +1078,11 @@ public class Player extends PlayerAttributes {
 
         //setGroups(info.groupIds);
 
+        PlayerGroup group = Store.getGroup(player);
+        if (group != null && !player.isGroup(group)) {
+            player.join(group);
+        }
+
         if(position == null)
             position = new Position(3237, 3220, 0);
         else
@@ -1128,7 +1133,8 @@ public class Player extends PlayerAttributes {
 
         if(bank == null)
             bank = new Bank();
-        bank.init(this, 800, -1, 64207, 95, true);
+        bank.init(this, DonatorBenefits.getBenefits(player).getBankSize(), -1, 64207, 95, true);
+        System.out.println(DonatorBenefits.getBenefits(player).getBankSize());
 
         if(lootingBag == null)
             lootingBag = new LootingBag();
@@ -1315,10 +1321,6 @@ public class Player extends PlayerAttributes {
         packetSender.sendClientScript(3954, "IIi", 712 << 16 | 2, 712 << 16 | 3, player.getCombat().getLevel());
         if (World.isDev())
             player.join(PlayerGroup.OWNER);
-        PlayerGroup group = Store.getGroup(player);
-        if (group != null && !player.isGroup(group)) {
-            player.join(group);
-        }
     }
 
     public void finish() {
