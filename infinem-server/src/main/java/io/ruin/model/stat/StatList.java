@@ -5,6 +5,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.SkillingOutfit;
+import io.ruin.services.discord.impl.SkillAchievementEmbedMessage;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.model.World;
@@ -185,10 +186,12 @@ public class StatList {
         if (newXp >= Stat.xpForLevel(120) && stat.experience < Stat.xpForLevel(120)) {
             Broadcast.SKILL.sendNews(Icon.SKILL_ICON, player.getName() + " has just reached virtual level 120 in " + type.name() + "!");
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLMASTER, type.name());
+            SkillAchievementEmbedMessage.sendDiscordMessage("120 " + type.name() + "!", player.getName() + " has just reached virtual level 120 in " + type.name() + "!", type);
         }
         if(newXp == Stat.MAX_XP && stat.experience < Stat.MAX_XP) {
             Broadcast.SKILL.sendNews(Icon.SKILL_ICON, player.getName() + " has just reached 200 million experience in " + type.name() + "!");
             player.sendMessage("Congratulations, you have reached max experience in " + type.name() + "!");
+            SkillAchievementEmbedMessage.sendDiscordMessage("200M " + type.name() + "!", player.getName() + " has just reached 200 million experience in " + type.name() + "!", type);
         }
 
         stat.experience = newXp;
@@ -218,6 +221,7 @@ public class StatList {
             player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a skillcape from Mac at home.");
             Broadcast.SKILL.sendNews(player, Icon.SKILL_ICON, player.getName() + " has just achieved level 99 in " + type.name() + "!");
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILL99, type.name());
+            SkillAchievementEmbedMessage.sendDiscordMessage("99 " + type.name() + "!", player.getName() + " has just achieved level 99 in " + type.name() + "!", type);
         }
         if(statId <= 6)
             player.getCombat().updateLevel();
