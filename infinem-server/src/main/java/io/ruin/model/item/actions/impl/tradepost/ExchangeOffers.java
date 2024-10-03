@@ -118,7 +118,7 @@ public class ExchangeOffers {
         } catch (IOException e) {
             System.err.println("Couldn't load persistent listings. " + e.getMessage());
         }
-        // Save every 30 minutes
+        // Save every 5 minutes
         World.startEvent(e -> {
             while (true) {
                 e.delay(5000); // 5 minutes

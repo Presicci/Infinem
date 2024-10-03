@@ -223,6 +223,8 @@ public class TradePost {
 
                     return offer.getItem().getDef().name.toLowerCase().contains(searchText);
                 }).sorted((offerA, offerB) -> {
+                    if (offerB.getTimestamp() == 0) return -1;
+                    else if (offerA.getTimestamp() == 0) return 1;
                     switch (sort) {
                         case QUANT_DESCENDING:
                             return offerB.getItem().getAmount() - offerA.getItem().getAmount();
@@ -236,8 +238,6 @@ public class TradePost {
                             return (int) (offerA.getTimestamp() - offerB.getTimestamp());
                         case AGE_ASCENDING:
                         default:
-                            if (offerB.getTimestamp() == 0) return -1;
-                            else if (offerA.getTimestamp() == 0) return 1;
                             return (int) (offerB.getTimestamp() - offerA.getTimestamp());
                     }
                 }).limit(MAX_VIEW_OFFERS)
