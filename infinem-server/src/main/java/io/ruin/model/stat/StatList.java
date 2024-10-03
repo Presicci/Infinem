@@ -217,14 +217,14 @@ public class StatList {
         player.graphics(199, 124, 0); //todo add the new gfx !!
         player.sendMessage("You've just advanced " + type.descriptiveName + " level. You have reached level " + newLevel + ".");
         if(newLevel == 99) {
-            player.sendMessage(Color.ORANGE_RED.tag() + "Congratulations on achieving level 99 in " + type.name() + "!");
+            player.sendMessage("Congratulations, you've reached the highest possible " + type.name() + " level of 99!");
             player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a skillcape from Mac at home.");
             Broadcast.SKILL.sendNews(player, Icon.SKILL_ICON, player.getName() + " has just achieved level 99 in " + type.name() + "!");
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILL99, type.name());
             SkillAchievementEmbedMessage.sendDiscordMessage("99 " + type.name() + "!", player.getName() + " has just achieved level 99 in " + type.name() + "!", type);
             if (isMaxed()) {
                 player.sendMessage("Congratulations, you've reached the highest possible total level of 2277!");
-                player.sendMessage("You may now purchase a max cape from Mac at home!");
+                player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a max cape from Mac at home!");
                 Broadcast.SKILL.sendNews(player, Icon.MAX_CAPE, player.getName() + " has just achieved level 99 in every skill!");
                 SkillAchievementEmbedMessage.sendMaxMessage("Maxed!", player.getName() + " has just achieved level 99 in every skill!");
             }
