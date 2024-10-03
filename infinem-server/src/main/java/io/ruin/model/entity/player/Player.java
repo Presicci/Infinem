@@ -1134,7 +1134,6 @@ public class Player extends PlayerAttributes {
         if(bank == null)
             bank = new Bank();
         bank.init(this, DonatorBenefits.getBenefits(player).getBankSize(), -1, 64207, 95, true);
-        System.out.println(DonatorBenefits.getBenefits(player).getBankSize());
 
         if(lootingBag == null)
             lootingBag = new LootingBag();
