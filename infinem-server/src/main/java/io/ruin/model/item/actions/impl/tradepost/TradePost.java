@@ -681,6 +681,7 @@ public class TradePost {
             ObjectAction.register(objId, "collect", (player, obj) -> TradePost.openCoffer(player));
         }
         LoginListener.register(p -> {
+            if (ExchangeOffers.INSTANCE == null) return;
             if (ExchangeOffers.INSTANCE.OFFERS == null) return;
             if (!p.getTradePost().tradePostOffers.isEmpty()) {
                 ExchangeOffers.INSTANCE.OFFERS.addAll(p.getTradePost().tradePostOffers);
