@@ -17,6 +17,7 @@ import io.ruin.model.World;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
 import io.ruin.data.impl.dialogue.DialogueLoader;
+import io.ruin.model.item.actions.impl.tradepost.ExchangeOffers;
 import io.ruin.model.map.ClipUtils;
 import io.ruin.model.shop.ShopManager;
 import io.ruin.network.LoginDecoder;
@@ -250,6 +251,7 @@ public class Server extends ServerWrapper {
             nettyServer.shutdown();
 
             PersistentData.INSTANCE.save();
+            ExchangeOffers.INSTANCE.save();
 
             /*
              * Remove players
