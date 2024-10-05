@@ -18,6 +18,7 @@ public interface LoginListener {
     static void executeAll(Player player) {
         for(LoginListener listener : LISTENERS)
             listener.onLogin(player);
+        player.lastLogin = System.currentTimeMillis();
     }
 
 }

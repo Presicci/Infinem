@@ -545,6 +545,7 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Daily reset
      */
+    @Expose public long lastLogin;
     @Expose public String lastLoginDate; // would have used a LocalDate object for this but it doesn't serialize properly with the @Expose annotation
 
     @Expose public DailyTask[] dailyTasks = new DailyTask[3];
