@@ -38,7 +38,6 @@ public enum SetEffect {
     DHAROK((player, target, hit) -> {
         double damageMod = ((player.getMaxHp() - player.getHp()) / 100f) * (player.getMaxHp() / 100f);
         hit.boostDamage(damageMod);
-        player.sendMessage(damageMod + "");
     }, (player, hit) -> hit.attackStyle.isMelee(),
             new Piece(Equipment.SLOT_HAT, 4716, 4880, 4881, 4882, 4883),
             new Piece(Equipment.SLOT_CHEST, 4720, 4892, 4893, 4894, 4895),
