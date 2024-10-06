@@ -68,6 +68,9 @@ public class LargeMuttadile extends NPCCombat {
         follow(1);
     }
 
+    private boolean magicAttack;
+    private int attackCount;
+
     @Override
     public boolean attack() {
         if (!withinDistance(8))
@@ -76,7 +79,7 @@ public class LargeMuttadile extends NPCCombat {
             meleeAttack();
         else if (withinDistance(1))
             stompAttack();
-        else if (Random.rollDie(2, 1))
+        else if (magicAttack)
             magicAttack();
         else
             rangedAttack();
@@ -107,6 +110,10 @@ public class LargeMuttadile extends NPCCombat {
         npc.startEvent(event -> event.delay(1));
         Hit hit = new Hit(npc, AttackStyle.RANGED).randDamage(maxDamage).clientDelay(delay).ignorePrayer();
         target.hit(hit);
+        if (attackCount++ >= 3) {
+            magicAttack = true;
+            attackCount = 0;
+        }
     }
 
     private void magicAttack() {
@@ -118,6 +125,10 @@ public class LargeMuttadile extends NPCCombat {
         npc.startEvent(event -> event.delay(1));
         Hit hit = new Hit(npc, AttackStyle.MAGIC).randDamage(maxDamage).clientDelay(delay).ignorePrayer();
         target.hit(hit);
+        if (attackCount++ >= 3) {
+            magicAttack = false;
+            attackCount = 0;
+        }
     }
 
     @Override
