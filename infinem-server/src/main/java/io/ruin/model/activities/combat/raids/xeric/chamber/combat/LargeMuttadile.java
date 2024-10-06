@@ -110,7 +110,7 @@ public class LargeMuttadile extends NPCCombat {
     }
 
     private void magicAttack() {
-        int maxDamage = 45;
+        int maxDamage = 23;
         if (target.player != null && target.player.getPrayer().isActive(Prayer.PROTECT_FROM_MAGIC))
             maxDamage *= 0.6;
         npc.animate(7422);
