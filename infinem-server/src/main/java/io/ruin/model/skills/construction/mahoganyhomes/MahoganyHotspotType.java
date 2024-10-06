@@ -67,7 +67,7 @@ public enum MahoganyHotspotType {
         for (Buildable b : buildables) {
             player.getPacketSender().sendClientScript(1404, "iiisi", count++, b.getItemId(), b.getLevelReq(), b.getCreationMenuString(), b.hasLevelAndMaterials(player) ? 1 : 0);
         }
-        player.getPacketSender().sendClientScript(1406, "ii", count - 1, 1);
+        player.getPacketSender().sendClientScript(1406, "ii", count - 1, 0);
         player.getPacketSender().sendAccessMask(458, 2, 1, count - 1, 1);
         player.getPacketSender().sendClientScript(2157, "");
     }
