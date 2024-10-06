@@ -498,11 +498,6 @@ public class TradePost {
 
     private void updateViewOffers() {
         viewOffers = findViewOffers();
-
-        for (int index = 0; index < MAX_VIEW_OFFERS; index++) {
-            hideViewOffer(index, true);
-        }
-
         StringBuilder sb = new StringBuilder();
         for (int index = 0; index < viewOffers.size(); index++) {
             TradePostOffer offer = viewOffers.get(index);
@@ -527,10 +522,6 @@ public class TradePost {
             player.getPacketSender().sendClientScript(9006, "iiii", 1005 << 16 | 19, slot, offer.getItem().getId(), offer.getItem().getAmount());
             slot += 7;
         }
-    }
-
-    private void hideViewOffer(int index, boolean hidden) {
-        player.getPacketSender().sendClientScript(69, "ii", hidden ? 1 : 0, Interface.TRADING_POST_VIEW << 16 | (44 + (9 * index)));
     }
 
     protected static String formatPrice(long price) {
