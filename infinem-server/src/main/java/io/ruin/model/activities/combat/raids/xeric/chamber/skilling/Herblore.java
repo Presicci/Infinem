@@ -32,6 +32,7 @@ public class Herblore {
         PRAYER_ENHANCE(20908, 20912, new int[]{78, 65, 52}, new int[]{20972, 20968, 20964}),
         XERIC_ACID(20908, 20911, new int[]{78, 65, 52}, new int[]{20984, 20980, 20976}),
 
+        ANTIPOISON(20902, 20912, new int[]{90, 75, 60}, new int[]{25765, 25761, 25757}),
         /* overload */
         OVERLOAD(new int[][]{
                 {20924, 20936, 20948},
@@ -93,14 +94,14 @@ public class Herblore {
             return;
         }
 
-        selectPotion(player, potionTier, potion.herbId == 20905);
+        selectPotion(player, potionTier, potion.herbId);
     }
 
-    private static void selectPotion(Player player, int potionTier, boolean combatPotion) {
+    private static void selectPotion(Player player, int potionTier, int herbId) {
         /**
          * Combat potions
          */
-        if (combatPotion) {
+        if (herbId == 20905) {
             Item strinkhornMushroom = player.getInventory().findItem(20910);
             Item endarkenedJuice = player.getInventory().findItem(20911);
             Item cicely = player.getInventory().findItem(20912);
@@ -116,7 +117,7 @@ public class Herblore {
                 skillItemList.add(new SkillItem(Potions.TWISTED.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.TWISTED, potionTier, amount)));
             }
             SkillDialogue.make(player, skillItemList.toArray(new SkillItem[0]));
-        } else {
+        } else if (herbId == 20908) {
             /**
              * Restore potions
              */
@@ -134,6 +135,15 @@ public class Herblore {
             if (cicely != null) {
                 skillItemList.add(new SkillItem(Potions.PRAYER_ENHANCE.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.PRAYER_ENHANCE, potionTier, amount)));
             }
+            SkillDialogue.make(player, skillItemList.toArray(new SkillItem[0]));
+        } else {
+            Item cicely = player.getInventory().findItem(20912);
+
+            List<SkillItem> skillItemList = new ArrayList<>();
+            if (cicely != null) {
+                skillItemList.add(new SkillItem(Potions.ANTIPOISON.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.ANTIPOISON, potionTier, amount)));
+            }
+            skillItemList.add(new SkillItem(Potions.OVERLOAD.potionIds[potionTier]).addAction((p, amount, event) -> createOverload(p, Potions.OVERLOAD, potionTier, amount)));
             SkillDialogue.make(player, skillItemList.toArray(new SkillItem[0]));
         }
     }
