@@ -30,7 +30,7 @@ public class CheckpointChamber extends Chamber {
     };
 
     private static final int[] LOWER_RESPAWN = {
-            5, 11
+            15, 14
     };
 
     @Override
