@@ -85,7 +85,7 @@ public class SmallMuttadile extends NPCCombat {
     }
 
     private void rangedAttack() {
-        int maxDamage = 35;
+        int maxDamage = 30;
         if (target.player != null && target.player.getPrayer().isActive(Prayer.PROTECT_FROM_MISSILES))
             maxDamage *= 0.6;
         npc.animate(7421);
