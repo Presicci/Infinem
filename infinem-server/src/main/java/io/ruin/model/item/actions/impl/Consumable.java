@@ -1038,7 +1038,9 @@ public class Consumable {
             p.getStats().get(StatType.Ranged).drain(0.10);
             p.getStats().get(StatType.Magic).drain(0.10);
         });
-
+        registerPotion(Potion.ANTIPOISON_MINUS, p -> p.curePoison((90 * 1000) / 600));
+        registerPotion(Potion.ANTIPOISON_RAID, p -> p.curePoison((360 * 1000) / 600));
+        registerPotion(Potion.ANTIPOISON_PLUS, p -> p.curePoison((540 * 1000) / 600));
         registerPotion(Potion.OVERLOAD_MINUS, p -> {
             p.getStats().get(StatType.Attack).boost(4, 0.10);
             p.getStats().get(StatType.Strength).boost(4, 0.10);

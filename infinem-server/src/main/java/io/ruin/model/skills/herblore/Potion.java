@@ -111,6 +111,9 @@ public enum Potion {
     XERIC_AID_MINUS("xeric's aid (-)", true),
     XERIC_AID_REGULAR("xeric's aid ", true),
     XERIC_AID_PLUS("xeric's aid (+)", true),
+    ANTIPOISON_MINUS("antipoison (-)", true),
+    ANTIPOISON_RAID(25758, 25759, 25760, 25761, "antipoison", true),
+    ANTIPOISON_PLUS("antipoison (+)", true),
     OVERLOAD_MINUS("overload (-)", true),
     OVERLOAD_REGULAR("overload ", true),
     OVERLOAD_PLUS("overload (+)", true);
@@ -146,6 +149,16 @@ public enum Potion {
         this.primaryName = "";
         this.secondaryNames = new String[4];
         this.vialIds = new int[4];
+        this.raidsPotion = raidsPotion;
+    }
+
+    Potion(int oneDose, int twoDose, int threeDose, int fourDose, String potionName, boolean raidsPotion) {
+        this.lvlReq = -1;
+        this.xp = -1;
+        this.potionName = potionName;
+        this.primaryName = "";
+        this.secondaryNames = new String[4];
+        this.vialIds = new int[] {oneDose, twoDose, threeDose, fourDose};
         this.raidsPotion = raidsPotion;
     }
 
@@ -364,6 +377,7 @@ public enum Potion {
             int primaryId = -1;
             int[] secondaryIds = new int[potion.secondaryNames.length];
             for (ItemDefinition def : ItemDefinition.cached.values()) {
+                if (potion == ANTIPOISON_RAID) break;
                 if (def == null)
                     continue;
                 if (def.name.toLowerCase().startsWith(potion.potionName + "(") || def.name.toLowerCase().startsWith(potion.potionName + " (")) {
