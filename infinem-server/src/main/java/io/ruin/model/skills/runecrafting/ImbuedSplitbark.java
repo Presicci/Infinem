@@ -36,7 +36,6 @@ public enum ImbuedSplitbark {
     private final double experience;
 
     private void imbue(Player player, Item item) {
-        System.out.println("imbue");
         if (!player.hasAttribute(type.getAttributeKey())) {
             player.sendMessage("You don't have the knowledge to do this properly.");
             return;
