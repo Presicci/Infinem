@@ -12,6 +12,9 @@ import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Herblore {
 
     /**
@@ -90,10 +93,10 @@ public class Herblore {
             return;
         }
 
-        selectPotion(player, potion, potionTier, potion.herbId == 20905);
+        selectPotion(player, potionTier, potion.herbId == 20905);
     }
 
-    private static void selectPotion(Player player, Potions potion, int potionTier, boolean combatPotion) {
+    private static void selectPotion(Player player, int potionTier, boolean combatPotion) {
         /**
          * Combat potions
          */
@@ -102,33 +105,17 @@ public class Herblore {
             Item endarkenedJuice = player.getInventory().findItem(20911);
             Item cicely = player.getInventory().findItem(20912);
 
-            if (strinkhornMushroom != null && endarkenedJuice != null && cicely != null) {
-                SkillDialogue.make(player,
-                        new SkillItem(Potions.ELDER.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.ELDER, potionTier, amount)),
-                        new SkillItem(Potions.KODAI.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.KODAI, potionTier, amount)),
-                        new SkillItem(Potions.TWISTED.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.TWISTED, potionTier, amount))
-                );
-            } else if (strinkhornMushroom != null && endarkenedJuice != null) {
-                SkillDialogue.make(player,
-                        new SkillItem(Potions.ELDER.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.ELDER, potionTier, amount)),
-                        new SkillItem(Potions.KODAI.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.KODAI, potionTier, amount))
-                );
-            } else if (strinkhornMushroom != null && cicely != null) {
-                SkillDialogue.make(player,
-                        new SkillItem(Potions.ELDER.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.ELDER, potionTier, amount)),
-                        new SkillItem(Potions.TWISTED.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.TWISTED, potionTier, amount))
-                );
-            } else if (endarkenedJuice != null && cicely != null) {
-                SkillDialogue.make(player,
-                        new SkillItem(Potions.KODAI.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.KODAI, potionTier, amount)),
-                        new SkillItem(Potions.TWISTED.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.TWISTED, potionTier, amount))
-                );
-            } else {
-                if (player.getInventory().hasMultiple(potion.herbId, potion.secondaryId))
-                    SkillDialogue.make(player, new SkillItem(potion.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, potion, potionTier, amount)));
-                else
-                    createPotion(player, potion, potionTier, 1);
+            List<SkillItem> skillItemList = new ArrayList<>();
+            if (strinkhornMushroom != null) {
+                skillItemList.add(new SkillItem(Potions.ELDER.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.ELDER, potionTier, amount)));
             }
+            if (endarkenedJuice != null) {
+                skillItemList.add(new SkillItem(Potions.KODAI.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.KODAI, potionTier, amount)));
+            }
+            if (cicely != null) {
+                skillItemList.add(new SkillItem(Potions.TWISTED.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.TWISTED, potionTier, amount)));
+            }
+            SkillDialogue.make(player, skillItemList.toArray(new SkillItem[0]));
         } else {
             /**
              * Restore potions
@@ -137,33 +124,17 @@ public class Herblore {
             Item endarkenedJuice = player.getInventory().findItem(20911);
             Item cicely = player.getInventory().findItem(20912);
 
-            if (strinkhornMushroom != null && endarkenedJuice != null && cicely != null) {
-                SkillDialogue.make(player,
-                        new SkillItem(Potions.REVITALISATION.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.REVITALISATION, potionTier, amount)),
-                        new SkillItem(Potions.XERIC_ACID.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.XERIC_ACID, potionTier, amount)),
-                        new SkillItem(Potions.PRAYER_ENHANCE.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.PRAYER_ENHANCE, potionTier, amount))
-                );
-            } else if (strinkhornMushroom != null && endarkenedJuice != null) {
-                SkillDialogue.make(player,
-                        new SkillItem(Potions.REVITALISATION.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.REVITALISATION, potionTier, amount)),
-                        new SkillItem(Potions.XERIC_ACID.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.XERIC_ACID, potionTier, amount))
-                );
-            } else if (strinkhornMushroom != null && cicely != null) {
-                SkillDialogue.make(player,
-                        new SkillItem(Potions.REVITALISATION.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.REVITALISATION, potionTier, amount)),
-                        new SkillItem(Potions.PRAYER_ENHANCE.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.PRAYER_ENHANCE, potionTier, amount))
-                );
-            } else if (endarkenedJuice != null && cicely != null) {
-                SkillDialogue.make(player,
-                        new SkillItem(Potions.XERIC_ACID.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.XERIC_ACID, potionTier, amount)),
-                        new SkillItem(Potions.PRAYER_ENHANCE.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.PRAYER_ENHANCE, potionTier, amount))
-                );
-            } else {
-                if (player.getInventory().hasMultiple(potion.herbId, potion.secondaryId))
-                    SkillDialogue.make(player, new SkillItem(potion.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, potion, potionTier, amount)));
-                else
-                    createPotion(player, potion, potionTier, 1);
+            List<SkillItem> skillItemList = new ArrayList<>();
+            if (strinkhornMushroom != null) {
+                skillItemList.add(new SkillItem(Potions.REVITALISATION.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.REVITALISATION, potionTier, amount)));
             }
+            if (endarkenedJuice != null) {
+                skillItemList.add(new SkillItem(Potions.XERIC_ACID.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.XERIC_ACID, potionTier, amount)));
+            }
+            if (cicely != null) {
+                skillItemList.add(new SkillItem(Potions.PRAYER_ENHANCE.potionIds[potionTier]).addAction((p, amount, event) -> createPotion(p, Potions.PRAYER_ENHANCE, potionTier, amount)));
+            }
+            SkillDialogue.make(player, skillItemList.toArray(new SkillItem[0]));
         }
     }
 
