@@ -60,7 +60,7 @@ public class TradePost {
         if(player.getBankPin().requiresVerification(p -> openViewOffers()))
             return;
         player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_VIEW);
-        player.getPacketSender().sendAccessMask(1005, 19, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
+        player.getPacketSender().sendAccessMask(1005, 19, 0, 2000, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         player.closeInterface(InterfaceType.INVENTORY);
         changeInventoryAccess();
         resetSearch();
@@ -70,7 +70,7 @@ public class TradePost {
         if(player.getBankPin().requiresVerification(p -> openMyOffers()))
             return;
         player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_MY_OFFERS);
-        player.getPacketSender().sendAccessMask(1006, 5, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
+        player.getPacketSender().sendAccessMask(1006, 5, 0, 300, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         changeInventoryAccess();
         updateMyOffers();
     }
