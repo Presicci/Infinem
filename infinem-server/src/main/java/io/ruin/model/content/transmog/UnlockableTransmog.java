@@ -57,7 +57,7 @@ public enum UnlockableTransmog {
                 TRANSMOGS_BY_SLOT.put(t.slot, list);
             }
         }
-        LoginListener.register(player -> {
+        /*LoginListener.register(player -> {
             if (player.lastLogin >= NEWEST_LOAD_TIMESTAMP) return;
             for (UnlockableTransmog t : values()) {
                 if (player.getCollectionLog().hasCollected(t.getItemId())) {
@@ -78,6 +78,6 @@ public enum UnlockableTransmog {
                 player.getTransmogCollection().addToCollection(13342, false);
                 player.getTransmogCollection().addToCollection(13281, false);
             }
-        });
+        });*/
     }
 }
