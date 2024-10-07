@@ -234,7 +234,7 @@ public class StatList {
         player.getTaskManager().doLevelUpLookup(newLevel, type == StatType.Hitpoints);
     }
 
-    private boolean isMaxed() {
+    public boolean isMaxed() {
         for (StatType type : StatType.values()) {
             if (get(type).fixedLevel < 99) return false;
         }

@@ -1,5 +1,6 @@
 package io.ruin.model.inter.handlers;
 
+import io.ruin.model.content.transmog.TransmogInterface;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -26,7 +27,7 @@ public class TabEquipment {
             h.actions[24] = (OptionAction) (player, option) -> itemAction(player, option, Equipment.SLOT_RING);
             h.actions[25] = (OptionAction) (player, option) -> itemAction(player, option, Equipment.SLOT_AMMO);
             h.actions[1] = (SimpleAction) EquipmentStats::open;
-            //l0l oops h.actions[19] = (SimpleAction) p -> p.sendMessage("This feature will be added with the release of the Grand Exchange!");
+            h.actions[3] = (SimpleAction) TransmogInterface::open;
             h.actions[5] = (SimpleAction) IKODInterface::open;
             h.actions[7] = (SimpleAction) p -> {
                 if(p.pet == null)

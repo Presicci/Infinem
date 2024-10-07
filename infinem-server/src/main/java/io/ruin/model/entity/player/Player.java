@@ -9,6 +9,7 @@ import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.transmog.TransmogCollection;
 import io.ruin.model.inter.handlers.NotificationInterface;
 import io.ruin.model.skills.slayer.PartnerSlayer;
 import io.ruin.network.central.CentralSender;
@@ -835,6 +836,11 @@ public class Player extends PlayerAttributes {
     protected TeleportModeUpdate teleportModeUpdate;
 
     /**
+     * Transmogrification
+     */
+    @Expose @Getter private TransmogCollection transmogCollection;
+
+    /**
      * Items
      */
 
@@ -1235,6 +1241,10 @@ public class Player extends PlayerAttributes {
         if (bestiary == null)
             bestiary = new Bestiary(this);
         bestiary.setPlayer(this);
+
+        if (transmogCollection == null)
+            transmogCollection = new TransmogCollection();
+        transmogCollection.setPlayer(player);
 
         music = new MusicPlayer(this);
 

@@ -43,7 +43,6 @@ import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.content.ActivitySpotlight;
-import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.content.transportation.relics.DungeonHub;
@@ -60,6 +59,7 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.handlers.OptionScroll;
+import io.ruin.model.content.transmog.TransmogInterface;
 import io.ruin.model.inter.journal.dropviewer.DropViewer;
 import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.utils.Config;
@@ -67,7 +67,6 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.inter.utils.Unlock;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
-import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.GoldCasket;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.actions.impl.ItemBreaking;
@@ -83,7 +82,6 @@ import io.ruin.model.map.*;
 import io.ruin.model.map.dynamic.DynamicMap;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
-import io.ruin.model.map.object.actions.impl.PrayerAltar;
 import io.ruin.model.map.route.RouteFinder;
 import io.ruin.model.shop.Shop;
 import io.ruin.model.shop.ShopManager;
@@ -3254,6 +3252,10 @@ public class Administrator {
             }
             case "reloadnpcoffers": {
                 ExchangeNPCOffers.load();
+                return true;
+            }
+            case "transmog": {
+                TransmogInterface.open(player);
                 return true;
             }
         }

@@ -44,10 +44,23 @@ public class Wilderness {
     public static ArrayList<Player> players = new ArrayList<>(500);
 
     private static boolean checkActive(Player player) {
+        boolean wasIn = player.wildernessLevel > 0;
         if (player.wildernessLevel == -1 || player.getMovement().hasMoved()) {
             player.wildernessLevel = getLevel(player.getPosition());
-            if (player.wildernessLevel > 0) Config.IN_WILDERNESS.set(player, 1);
-            else Config.IN_WILDERNESS.set(player, 0);
+            if (player.wildernessLevel > 0) {
+                Config.IN_WILDERNESS.set(player, 1);
+                if (!wasIn && !player.getTransmogCollection().hasTransmogs()) {
+                    player.graphics(86);
+                    player.getAppearance().update();
+                }
+            }
+            else {
+                Config.IN_WILDERNESS.set(player, 0);
+                if (wasIn && !player.getTransmogCollection().hasTransmogs()) {
+                    player.graphics(86);
+                    player.getAppearance().update();
+                }
+            }
         }
         player.getBountyHunter().checkActive();
         return player.wildernessLevel > 0;

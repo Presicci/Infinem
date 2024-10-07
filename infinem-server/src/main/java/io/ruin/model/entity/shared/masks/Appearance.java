@@ -11,6 +11,8 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
 import lombok.Getter;
 
+import java.util.Map;
+
 public class Appearance extends UpdateMask {
 
     private Player player;
@@ -252,6 +254,21 @@ public class Appearance extends UpdateMask {
     private void append(Player player, OutBuffer out, int slot, int styleIndex) {
         if(styleIndex == 0 || styleIndex == 1 || styleIndex == 3) {
             Item item = player.getEquipment().get(slot);
+            // Transmogrification overrides
+            if (player.wildernessLevel <= 0) {
+                boolean finalItem = false;
+                if (player.isVisibleInterface(1011)) {
+                    int previewId = player.getTransmogCollection().getPreviewIdForSlot(slot);
+                    if (previewId != -2) {
+                        finalItem = true;
+                        if (previewId != -1) item = new Item(previewId);
+                    }
+                }
+                int transmogId = player.getTransmogCollection().getTransmogIdForSlot(slot);
+                if (!finalItem && transmogId != -1) {
+                    item = new Item(transmogId);
+                }
+            }
             boolean hide = false;
             if(item != null) {
                 if(styleIndex == 0)
@@ -267,6 +284,30 @@ public class Appearance extends UpdateMask {
                 out.addShort(256 + styles[styleIndex]);
         } else {
             int itemId = player.getEquipment().getId(slot);
+            // Transmogrification overrides
+            if (player.wildernessLevel <= 0) {
+                boolean finalItem = false;
+                if (player.isVisibleInterface(1011)) {
+                    int previewId = player.getTransmogCollection().getPreviewIdForSlot(slot);
+                    if (previewId != -2) {
+                        finalItem = true;
+                        if (previewId != -1) itemId = previewId;
+                    }
+                }
+                int transmogId = player.getTransmogCollection().getTransmogIdForSlot(slot);
+                if (!finalItem && transmogId != -1) {
+                    ItemDefinition def = ItemDefinition.get(transmogId);
+                    Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
+                    ItemDefinition weaponDef = weapon == null ? null : ItemDefinition.get(weapon.getId());
+                    if (slot == Equipment.SLOT_SHIELD) {
+                        if (weaponDef == null || !weaponDef.twoHanded) itemId = transmogId;
+                    } else if (slot == Equipment.SLOT_WEAPON) {
+                        if (weaponDef == null || weaponDef.weaponType == def.weaponType) itemId = transmogId;
+                    } else {
+                        itemId = transmogId;
+                    }
+                }
+            }
             if(itemId == -1) {
                 if(styleIndex == -1)
                     out.addByte(0);
