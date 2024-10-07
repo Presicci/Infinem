@@ -20,14 +20,17 @@ import static io.ruin.model.skills.Tool.SEED_DIBBER;
 
 public enum Farming {
 
-    NOXIFER(55, 20903, 20901, 29997, 30009),
-    GOLPAR(27, 20906, 20904, 29998, 30010),
-    BUCHU(39, 20909, 20907, 29999, 30011);
+    GOLPAR(27, 4, 10, 20906, 20904, 29998, 30010),
+    BUCHU(39, 6, 15, 20909, 20907, 29999, 30011),
+    NOXIFER(55, 12, 30, 20903, 20901, 29997, 30009);
 
     public final int levelReq, seedId, harvestId, objectIdStart, objectIdEnd;
+    private final double plantXp, harvestXp;
 
-    Farming(int levelReq, int seedId, int harvestId, int objectIdStart, int objectIdEnd) {
+    Farming(int levelReq, double plantXp, double harvestXp, int seedId, int harvestId, int objectIdStart, int objectIdEnd) {
         this.levelReq = levelReq;
+        this.plantXp = plantXp;
+        this.harvestXp = harvestXp;
         this.seedId = seedId;
         this.harvestId = harvestId;
         this.objectIdStart = objectIdStart;
@@ -62,7 +65,7 @@ public enum Farming {
             player.animate(2291);
             event.delay(2);
             player.getInventory().remove(patch.seedId, 1);
-            player.getStats().addXp(StatType.Farming, 6, false);
+            player.getStats().addXp(StatType.Farming, patch.plantXp, true);
             player.sendFilteredMessage("You plant the " + item.getDef().name + " in the herb patch.");
             growHerbPatch(object, patch.objectIdStart);
             player.unlock();
@@ -99,7 +102,7 @@ public enum Farming {
                 event.delay(2);
                 player.collectResource(patch.harvestId, 1);
                 player.getInventory().add(patch.harvestId, 1);
-                player.getStats().addXp(StatType.Farming, 15, false);
+                player.getStats().addXp(StatType.Farming, patch.harvestXp, true);
                 removeProduce(player, object);
                 if (!hasProduce(object)) {
                     object.setId(29765);
