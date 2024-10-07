@@ -20,6 +20,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
+import io.ruin.model.skills.magic.spells.arceuus.Resurrection;
 import io.ruin.model.skills.magic.spells.modern.*;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.StatType;
@@ -254,6 +255,8 @@ public class TargetSpell extends Spell {
         for(NPC npc : target.localNpcs()) {
             int npcIndex = npc.getClientIndex();
             if(npcIndex == entityIndex || npcIndex == targetIndex)
+                continue;
+            if (npc instanceof Resurrection.Thrall)
                 continue;
             boolean archmage = entity.isPlayer() && entity.player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE);
             if (targetCap == 5 && !npc.getPosition().isWithinDistance(target.getPosition(), 2)) {

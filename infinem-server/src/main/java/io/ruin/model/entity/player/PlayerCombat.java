@@ -8,6 +8,7 @@ import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
+import io.ruin.model.skills.magic.spells.arceuus.Resurrection;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
@@ -1863,6 +1864,8 @@ public class PlayerCombat extends Combat {
         for (NPC npc : target.localNpcs()) {
             int npcIndex = npc.getClientIndex();
             if (npcIndex == entityIndex || npcIndex == targetIndex)
+                continue;
+            if (npc instanceof Resurrection.Thrall)
                 continue;
             if (targetCap == 5 && !npc.getPosition().isWithinDistance(target.getPosition(), 3)) {
                 continue;
