@@ -77,11 +77,14 @@ public class BelladonnaPatch extends Patch {
 
     @Override
     public int calculateProduceAmount() {
-        int amount = Random.get(3, 5);
-        if (getCompost() == 2) { // supercompost bonus
-            amount += Random.get(0, 1);
+        int min = 6 + ((player.getStats().get(StatType.Farming).currentLevel - 60) / 10);
+        int amount = Random.get(min, 12);
+        if (getCompost() == 1) {
+            amount += Random.get(1, 2);
+        } else if (getCompost() == 2) { // supercompost bonus
+            amount += Random.get(2, 3);
         } else if (getCompost() == 3) { // ultracompost
-            amount += Random.get(1, 3);
+            amount += Random.get(3, 4);
         }
         return amount;
     }
