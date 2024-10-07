@@ -471,11 +471,7 @@ public abstract class Patch {
             player.sendFilteredMessage("<col=076900>Your Attas plant allow you to efficiently harvest the crop!");
             return false;
         }
-        if (data == PatchData.CATHERBY_HERB && AreaReward.CATHERBY_HERB_LIFE.hasReward(player) && Random.get() < 0.05) {
-            player.sendFilteredMessage("<col=076900>Your expertise in the Kandarin region allows you to efficiently harvest the crop!");
-            return false;
-        }
-        if (this instanceof HopsPatch || this instanceof HerbPatch) {
+        if (this instanceof HopsPatch) {
             switch (getCompost()) {
                 case 3: // Ultra
                     if (Random.get() < 0.15) {  // 15% chance for free harvest
