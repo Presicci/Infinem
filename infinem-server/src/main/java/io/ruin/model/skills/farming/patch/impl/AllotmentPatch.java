@@ -3,8 +3,11 @@ package io.ruin.model.skills.farming.patch.impl;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
+import io.ruin.model.content.tasksystem.areas.AreaShopItem;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.AllotmentCrop;
 import io.ruin.model.skills.farming.crop.impl.FlowerCrop;
@@ -171,6 +174,25 @@ public class AllotmentPatch extends Patch {
         });
     }
 
+    @Override
+    public boolean removeProduce() {
+        if (AreaShopItem.MAGIC_SECATEURS.hasUnlocked(player) && (player.getEquipment().getId(Equipment.SLOT_WEAPON) == 7409 || player.getInventory().contains(7409, 1)) && Random.get() < (0.1)) { // magic secateurs, save a "life"
+            player.sendFilteredMessage("<col=076900>Your magic secateurs allow you to efficiently harvest the crop!");
+            return false;
+        }
+        if (hasGrowingAttas() && Random.get() < 0.05) {
+            player.sendFilteredMessage("<col=076900>Your Attas plant allow you to efficiently harvest the crop!");
+            return false;
+        }
+        double saveChance = getPlantedCrop().getSaveProductChance(player);
+        if (Random.get(100) < saveChance) return false;
+        if (--getStatus().produceCount <= 0) {
+            getStatus().produceCount = 0;
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public boolean canPlant(Crop crop) {
@@ -201,11 +223,7 @@ public class AllotmentPatch extends Patch {
 
     @Override
     public int calculateProduceAmount() {
-        int amount = Random.get(8, 12);
-        if (getCompost() == 2) { // supercompost bonus
-            amount += Random.get(4, 8);
-        }
-        return amount;
+        return 3 + getCompost();
     }
 
     @Override

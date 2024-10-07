@@ -1,24 +1,26 @@
 package io.ruin.model.skills.farming.crop.impl;
 
 import io.ruin.api.utils.TimeUtils;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.skills.farming.crop.Crop;
+import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
 @AllArgsConstructor
 public enum AllotmentCrop implements Crop {
-    POTATO(5318, 1942, 1, 8, 9, 4, FlowerCrop.MARIGOLDS, new Item(Items.COMPOST, 2), 6, 281040, PlayerCounter.HARVESTED_POTATO, 562),
-    ONION(5319, 1957, 5, 9.5, 10.5, 4, FlowerCrop.MARIGOLDS, new Item(Items.POTATOES_10, 1), 13, 281040, PlayerCounter.HARVESTED_ONION, 562),
-    CABBAGE(5324, 1965, 7, 10, 11.5, 4, FlowerCrop.ROSEMARY, new Item(Items.ONIONS_10, 1), 20, 281040, PlayerCounter.HARVESTED_CABBAGE, 562),
-    TOMATO(5322, 1982, 12, 12.5, 14, 4, FlowerCrop.MARIGOLDS, new Item(Items.CABBAGES_10, 1), 27, 281040, PlayerCounter.HARVESTED_TOMATO, 562),
-    SWEETCORN(5320, 5986, 20, 17, 19, 6, null, new Item(Items.JUTE_FIBRE, 10), 34, 224832, PlayerCounter.HARVESTED_SWEETCORN, 449),
-    STRAWBERRY(5323, 5504, 31, 26, 29, 6, null, new Item(Items.APPLES_5, 1), 43, 187360, PlayerCounter.HARVESTED_STRAWBERRY, 374),
-    WATERMELON(5321, 5982, 47, 48.5, 54.5, 8, FlowerCrop.NASTURTIUM, new Item(Items.CURRY_LEAF, 10), 52, 160594, PlayerCounter.HARVESTED_WATERMELON, 321),
-    SNAPE_GRASS(22879, 231, 61, 82, 82, 7, null, new Item(Items.JANGERBERRIES, 5), 128, 173977, PlayerCounter.HARVESTED_SNAPE_GRASS, 347);
+    POTATO(5318, 1942, 1, 8, 9, 4, FlowerCrop.MARIGOLDS, new Item(Items.COMPOST, 2), 6, 281040, PlayerCounter.HARVESTED_POTATO, 562, 39.8, 70.7),
+    ONION(5319, 1957, 5, 9.5, 10.5, 4, FlowerCrop.MARIGOLDS, new Item(Items.POTATOES_10, 1), 13, 281040, PlayerCounter.HARVESTED_ONION, 562, 41.4, 70.7),
+    CABBAGE(5324, 1965, 7, 10, 11.5, 4, FlowerCrop.ROSEMARY, new Item(Items.ONIONS_10, 1), 20, 281040, PlayerCounter.HARVESTED_CABBAGE, 562, 42.2, 70.7),
+    TOMATO(5322, 1982, 12, 12.5, 14, 4, FlowerCrop.MARIGOLDS, new Item(Items.CABBAGES_10, 1), 27, 281040, PlayerCounter.HARVESTED_TOMATO, 562, 44.1, 70.7),
+    SWEETCORN(5320, 5986, 20, 17, 19, 6, null, new Item(Items.JUTE_FIBRE, 10), 34, 224832, PlayerCounter.HARVESTED_SWEETCORN, 449, 34.8, 70.7),
+    STRAWBERRY(5323, 5504, 31, 26, 29, 6, null, new Item(Items.APPLES_5, 1), 43, 187360, PlayerCounter.HARVESTED_STRAWBERRY, 374, 40.6, 70.7),
+    WATERMELON(5321, 5982, 47, 48.5, 54.5, 8, FlowerCrop.NASTURTIUM, new Item(Items.CURRY_LEAF, 10), 52, 160594, PlayerCounter.HARVESTED_WATERMELON, 321, 49.6, 70.7),
+    SNAPE_GRASS(22879, 231, 61, 82, 82, 7, null, new Item(Items.JANGERBERRIES, 5), 128, 173977, PlayerCounter.HARVESTED_SNAPE_GRASS, 347, 58.2, 76.6);
 
     private final int seedId, produceId, levelReq;
     private final double plantXP, harvestXP;
@@ -29,6 +31,7 @@ public enum AllotmentCrop implements Crop {
     private final int petOdds;
     private final PlayerCounter counter;
     private final int hesporiSeedChance;
+    private final double baseChance, maxChance;
 
     @Override
     public Item getPayment() {
@@ -107,5 +110,11 @@ public enum AllotmentCrop implements Crop {
     @Override
     public int getHesporiSeedChance() {
         return hesporiSeedChance;
+    }
+
+    public double getSaveProductChance(Player player) {
+        int lvl = player.getStats().get(StatType.Farming).currentLevel;
+        double perLevel = (maxChance - baseChance) / 99;
+        return baseChance + (lvl * perLevel);
     }
 }
