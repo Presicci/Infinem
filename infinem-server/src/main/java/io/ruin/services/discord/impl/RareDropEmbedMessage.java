@@ -37,4 +37,34 @@ public class RareDropEmbedMessage {
         }
     }
 
+    public static void sendPetDrop(String messageString, int itemId) {
+        if (!World.isLive()){
+            return;
+        }
+        try {
+            Webhook webhook = new Webhook(Constants.RARE_DROP_WEBHOOK_URL);
+            Message message = new Message();
+
+            Embed embedMessage = new Embed();
+            embedMessage.setTitle("Pet Drop!");
+            embedMessage.setDescription(messageString);
+            embedMessage.setColor(16520212);
+
+            /*
+             * Thumbnail
+             */
+            Thumbnail thumbnail = new Thumbnail();
+            thumbnail.setUrl("https://static.runelite.net/cache/item/icon/" + itemId + ".png");
+            embedMessage.setThumbnail(thumbnail);
+
+            /*
+             * Fire the message
+             */
+            message.setEmbeds(embedMessage);
+            webhook.sendMessage(message.toJson());
+        } catch (Exception e) {
+            ServerWrapper.logError("Failed to send discord embed", e);
+        }
+    }
+
 }
