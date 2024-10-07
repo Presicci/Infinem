@@ -70,6 +70,7 @@ public enum Farming {
     }
 
     private static void growHerbPatch(GameObject object, int patchId) {
+        object.putTemporaryAttribute("PRODUCE", 3);
         World.startEvent(event -> {
             for (int i = 0; i < 5; i++) {
                 object.setId(patchId + (3 * i));
@@ -79,7 +80,6 @@ public enum Farming {
     }
 
     private static void pickHerbPatch(Player player, GameObject object, Farming patch) {
-        AtomicInteger produceCount = new AtomicInteger(calculateProduceAmount(player));
         player.startEvent(event -> {
             if (!player.getInventory().contains(952, 1)) {
                 player.sendMessage("You'll need a spade to harvest your crops.");
@@ -100,8 +100,8 @@ public enum Farming {
                 player.collectResource(patch.harvestId, 1);
                 player.getInventory().add(patch.harvestId, 1);
                 player.getStats().addXp(StatType.Farming, 15, false);
-                produceCount.getAndDecrement();
-                if (Random.rollPercent(10) || produceCount.get() == 0) {
+                removeProduce(player, object);
+                if (!hasProduce(object)) {
                     object.setId(29765);
                     player.sendMessage("The herb patch is now empty.");
                     return;
@@ -111,13 +111,16 @@ public enum Farming {
         });
     }
 
-    public static int calculateProduceAmount(Player player) {
-        int amount = Random.get(8, 10);
-
-        if (FarmingSkillCape.wearingFarmingCape(player)) {
-            amount += Random.get(1, 2);
+    private static void removeProduce(Player player, GameObject object) {
+        int lvl = player.getStats().get(StatType.Farming).currentLevel;
+        double perLevel = (80.0 - 45.0) / 99;
+        if (Random.get(100) < 30.0 + (lvl * perLevel)) {
+            object.incrementTemporaryNumericAttribute("PRODUCE", -1);
         }
-        return amount;
+    }
+
+    private static boolean hasProduce(GameObject object) {
+        return object.getTemporaryAttributeIntOrZero("PRODUCE") > 0;
     }
 
     private static void inspectHerbPatch(Player player, GameObject object, Farming patch) {
