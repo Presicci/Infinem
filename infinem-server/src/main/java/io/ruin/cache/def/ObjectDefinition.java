@@ -462,10 +462,12 @@ public class ObjectDefinition {
         } else if (i == 78) {
             unknownOpcode78 = in.readUnsignedShort();
             unknownOpcode_78_79 = in.readUnsignedByte();
+            in.readUnsignedByte();  // New in 220
         } else if (i == 79) {
             anInt1548 = in.readUnsignedShort();
             anInt1571 = in.readUnsignedShort();
             unknownOpcode_78_79 = in.readUnsignedByte();
+            in.readUnsignedByte();  // New in 220
             int i_15_ = in.readUnsignedByte();
             anIntArray1597 = new int[i_15_];
             for (int i_16_ = 0; i_16_ < i_15_; i_16_++)
