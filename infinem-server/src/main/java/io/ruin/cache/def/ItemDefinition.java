@@ -307,11 +307,13 @@ public class ItemDefinition {
      */
 
     private void decode(InBuffer buffer) {
+        List<Integer> processedOpcodes = new ArrayList<>();
         for(;;) {
             int opcode = buffer.readUnsignedByte();
             if(opcode == 0)
                 break;
-            decode(buffer, opcode);
+            processedOpcodes.add(opcode);
+            decode(buffer, opcode, processedOpcodes.toArray(new Integer[0]));
         }
         if (id == Items.ONIONS_10)
             name = "Onions(10)";
@@ -345,7 +347,7 @@ public class ItemDefinition {
         }
     }
 
-    private void decode(InBuffer buffer, int opcode) {
+    private void decode(InBuffer buffer, int opcode, Integer[] opcodes) {
         if(opcode == 1)
             inventoryModel = buffer.readUnsignedShort();
         else if(opcode == 2)
@@ -477,7 +479,7 @@ public class ItemDefinition {
                     attributes.put(key, buffer.readInt());
             }
         } else
-            System.err.println("MISSING ITEM OPCODE " + opcode + " FOR ID " + id);
+            System.err.println("MISSING ITEM OPCODE " + opcode + " FOR ID " + id + " OPCODES: " + Arrays.toString(opcodes));
     }
 
     public int getOption(String... options) {
