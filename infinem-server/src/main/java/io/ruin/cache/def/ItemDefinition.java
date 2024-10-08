@@ -352,6 +352,8 @@ public class ItemDefinition {
             inventoryModel = buffer.readUnsignedShort();
         else if(opcode == 2)
             name = buffer.readString();
+        else if (opcode == 3)
+            buffer.readString();    // Examine
         else if(opcode == 4)
             zoom2d = buffer.readUnsignedShort();
         else if(opcode == 5)
