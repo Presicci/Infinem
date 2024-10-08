@@ -11,9 +11,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.actions.ObjectAction;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class ObjectDefinition {
@@ -152,11 +150,13 @@ public class ObjectDefinition {
     public int someDirection;
 
     private void decode(InBuffer in) {
+        List<Integer> processedOpcodes = new ArrayList<>();
         for (;;) {
             int opcode = in.readUnsignedByte();
             if (opcode == 0)
                 break;
-            decode(in, opcode);
+            processedOpcodes.add(opcode);
+            decode(in, opcode, processedOpcodes.toArray(new Integer[0]));
         }
         if (id == 50001) {
             //custom home altar
@@ -334,7 +334,7 @@ public class ObjectDefinition {
         }
     }
 
-    private void decode(InBuffer in, int i) {
+    private void decode(InBuffer in, int i, Integer[] opcodes) {
         if (i == 1) {
             int i_7_ = in.readUnsignedByte();
             if (i_7_ > 0) {
@@ -411,7 +411,7 @@ public class ObjectDefinition {
         } else if (i == 60) //this was removed
             mapMarkerId = in.readUnsignedShort();
         else if (i == 61)
-            in.readUnsignedShort();
+            in.readUnsignedShort(); // category?
         else if (i == 62)
             verticalFlip = true;
         else if (i == 64)
@@ -496,7 +496,7 @@ public class ObjectDefinition {
             }
         }
         else
-            System.err.println("MISSING OBJECT OPCODE " + i + " FOR ID " + id);
+            System.err.println("MISSING OBJECT OPCODE " + i + " FOR ID " + id + " OPCODES: " + Arrays.toString(opcodes));
     }
 
     public boolean isClippedDecoration() {
