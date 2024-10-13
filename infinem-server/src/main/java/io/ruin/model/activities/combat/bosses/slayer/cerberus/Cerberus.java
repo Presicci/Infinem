@@ -60,7 +60,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
         };
         npc.addEvent(event -> {
             while (true) {
-                if (ATTACK_STARTED && !npc.getCombat().isDead() && !npc.isHidden() && !npc.isRemoved()
+                if (ATTACK_STARTED && !isDead() && !npc.isHidden() && !npc.isRemoved()
                         && (npc.localPlayers().isEmpty())) {// no players in sight, reset
                     npc.getMovement().teleport(npc.spawnPosition);
                     npc.resetActions(true, true);
@@ -162,7 +162,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
                 World.sendGraphics(1246, 0, 0, pos.getX(), pos.getY(), pos.getZ());
                 event.delay(2);
                 for (int i = 0; i < 6; i++) {
-                    if (target == null)
+                    if (target == null || isDead() || npc.isHidden() || npc.isRemoved())
                         return;
                     if (target.getPosition().equals(pos)) {
                         target.hit(new Hit().randDamage(10, 15));
@@ -174,7 +174,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
                 }
                 World.sendGraphics(1247, 0, 0, pos.getX(), pos.getY(), pos.getZ());
                 event.delay(1);
-                if (target == null)
+                if (target == null || isDead() || npc.isHidden() || npc.isRemoved())
                     return;
                 if (target.getPosition().equals(pos)) {
                     target.hit(new Hit().randDamage(15, 18));
