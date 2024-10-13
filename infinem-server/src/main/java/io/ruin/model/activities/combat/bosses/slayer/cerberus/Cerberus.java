@@ -40,6 +40,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
     private static final Projectile SOUL_MAGIC_PROJECTILE = new Projectile(100, 31, 31, 15, 50, 0, 12, 11);
     private static final Projectile SOUL_MELEE_PROJECTILE = new Projectile(1248, 31, 31, 15, 50, 0, 12, 11);
     private static final List<Soul> souls = new ArrayList<>(3);
+    private static final List<NPC> spawnedSouls = new ArrayList<>(3);
 
     private Position[] soulSpawns;
 
@@ -193,6 +194,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
         for (int i = 0; i < 3; i++) {
             Soul s = souls.get(i);
             NPC soul = new NPC(s.npcId).spawn(soulSpawns[i].getX(), soulSpawns[i].getY(), soulSpawns[i].getZ(), Direction.SOUTH, 0);
+            spawnedSouls.add(soul);
             int soulIndex = i;
             soul.addEvent(event -> { // ah this was such a pain in the ass to make work on osrune... this is much easier
                 soul.step(0, -12, StepType.FORCE_WALK); // walk to position
@@ -207,6 +209,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
                 soul.faceNone(false);
                 soul.step(0, 10, StepType.FORCE_WALK);
                 event.waitForMovement(soul);
+                spawnedSouls.remove(soul);
                 soul.remove();
             });
         }
@@ -215,6 +218,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
     @Override
     public void startDeath(Hit killHit) {
         removeFireWallSpawns();
+        spawnedSouls.forEach(NPC::remove);    // Remove soul spawns on death
         super.startDeath(killHit);
     }
 
