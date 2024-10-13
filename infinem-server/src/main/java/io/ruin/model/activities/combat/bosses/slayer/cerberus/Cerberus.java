@@ -23,6 +23,15 @@ import java.util.function.BiConsumer;
 
 public class Cerberus extends NPCCombat { // todo - only allow attacking if on a slayer task
 
+    private boolean ATTACK_STARTED = false;
+    private static final int FIRE_WALL = 23105;
+    private static final int NORTH_REGION = 5140;
+    private static final int EAST_REGION = 5395;
+    private static final int WEST_REGION = 4883;
+    private FireWall[] FIRE_WALLS;
+    private static final FireWall[] NORTH_CERB = {new FireWall(FIRE_WALL, 1305, 1306, 0, 10, 0), new FireWall(FIRE_WALL, 1304, 1306, 0, 10, 0), new FireWall(FIRE_WALL, 1303, 1306, 0, 10, 0)}; //5140
+    private static final FireWall[] EAST_CERB = {new FireWall(FIRE_WALL, 1369, 1242, 0, 10, 0), new FireWall(FIRE_WALL, 1368, 1242, 0, 10, 0), new FireWall(FIRE_WALL, 1367, 1242, 0, 10, 0)}; //5395
+    private static final FireWall[] WEST_CERB = {new FireWall(FIRE_WALL, 1241, 1242, 0, 10, 0), new FireWall(FIRE_WALL, 1240, 1242, 0, 10, 0), new FireWall(FIRE_WALL, 1239, 1242, 0, 10, 0)}; //4883
 
     private static final Projectile MAGIC_PROJECTILE = new Projectile(1242, 65, 31, 25, 86, 20, 15, 220);
     private static final Projectile RANGED_PROJECTILE = new Projectile(1245, 65, 31, 25, 86, 20, 15, 220);
@@ -49,6 +58,18 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
           summonSoulsCooldown.reset();
           spreadLavaCooldown.reset();
         };
+        npc.addEvent(event -> {
+            while (true) {
+                if (ATTACK_STARTED && !npc.getCombat().isDead() && !npc.isHidden() && !npc.isRemoved()
+                        && (npc.localPlayers().isEmpty())) {// no players in sight, reset
+                    npc.getMovement().teleport(npc.spawnPosition);
+                    npc.resetActions(true, true);
+                    npc.getCombat().restore();
+                    removeFireWallSpawns();
+                }
+                event.delay(5);
+            }
+        });
     }
 
     @Override
@@ -60,6 +81,9 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
     public boolean attack() {
         if (!withinDistance(10))
             return false;
+        if (!ATTACK_STARTED) {
+            setFireWallSpawns();
+        }
         if (!comboAttackCooldown.isDelayed()) {
             comboAttack();
             return true;
@@ -186,6 +210,58 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
             });
         }
     }
+
+    @Override
+    public void startDeath(Hit killHit) {
+        removeFireWallSpawns();
+        super.startDeath(killHit);
+    }
+
+    private void setFireWallSpawns() {
+        switch (npc.getPosition().getRegion().id) {
+            case NORTH_REGION:
+                FIRE_WALLS = NORTH_CERB;
+                break;
+            case EAST_REGION:
+                FIRE_WALLS = EAST_CERB;
+                break;
+            case WEST_REGION:
+                FIRE_WALLS = WEST_CERB;
+                break;
+            default:
+                ATTACK_STARTED = true;
+                return;
+        }
+        if (FIRE_WALLS != null) {
+            for (FireWall fireWall : FIRE_WALLS) {
+                fireWall.spawn();
+                fireWall.startFirewallCheck();
+                fireWall.cerberusCombat = this;
+            }
+        }
+        ATTACK_STARTED = true;
+    }
+
+    private void removeFireWallSpawns() {
+        if (FIRE_WALLS != null) {
+            for (FireWall fireWall : FIRE_WALLS) {
+                fireWall.remove();
+            }
+        }
+        FIRE_WALLS = null;
+        ATTACK_STARTED = false;
+    }
+
+    protected void restartCerb(Player player) {
+        if (npc.getCombat() != null && !npc.getCombat().isDead() && npc.getCombat().getTarget() != null && npc.getCombat().getTarget().equals(player)) {
+            npc.getMovement().teleport(npc.spawnPosition);
+            npc.resetActions(true, true);
+            npc.getCombat().restore();
+        }
+        removeFireWallSpawns();
+    }
+
+
 
     private enum Soul {
         RANGED(5867, AttackStyle.RANGED, (npc, p) -> {
