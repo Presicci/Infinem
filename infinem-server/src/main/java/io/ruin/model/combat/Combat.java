@@ -15,7 +15,7 @@ public abstract class Combat {
      * Death
      */
 
-    @Setter @Getter
+    @Setter
     private boolean dead;
 
     @Getter @Setter
@@ -25,8 +25,7 @@ public abstract class Combat {
      * Target
      */
 
-    @Getter @Setter
-    protected Entity target;
+    @Getter @Setter protected Entity target;
 
     /**
      * Attacking
@@ -63,7 +62,10 @@ public abstract class Combat {
     }
 
     public boolean canAnimateDefence(int animTicks) {
-        return !isAttacking(lastAttackTickDelay + attackDelayTicks) || animTicks <= lastAttackTick - Server.currentTick();
+        if (!isAttacking(lastAttackTickDelay + attackDelayTicks) || animTicks <= lastAttackTick - Server.currentTick()) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -131,6 +133,10 @@ public abstract class Combat {
         return highestKiller;
     }
 
+    public boolean isDead() {
+        return dead;
+    }
+
     /**
      * Reset
      */
@@ -162,5 +168,4 @@ public abstract class Combat {
     public abstract double getDragonfireResistance();
 
     public abstract void faceTarget();
-
 }
