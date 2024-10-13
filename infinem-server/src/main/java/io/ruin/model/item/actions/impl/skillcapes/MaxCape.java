@@ -4,6 +4,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 
@@ -63,17 +64,23 @@ public class MaxCape {
         ));
     }
 
-    static {
-        ItemAction.registerEquipment(CAPE, "Warriors' Guild", (player, item) -> StrengthSkillCape.teleport(player));
-        ItemAction.registerEquipment(CAPE, "Crafting Guild", (player, item) -> CraftingSkillCape.teleport(player));
-        ItemAction.registerEquipment(CAPE, "Tele to POH", (player, item) -> ConstructionSkillCape.teleport(player));
-        ItemAction.registerEquipment(CAPE, "POH Portals", (player, item) -> ConstructionSkillCape.selectTeleport(player));
-        ItemAction.registerEquipment(CAPE, "Fishing Teleports", (player, item) -> fishingTeleports(player));
-        ItemAction.registerEquipment(CAPE, "spellbook", (player, item) -> MagicSkillcape.swapSelection(player));
-        ItemAction.registerEquipment(CAPE, "Features", (player, item) -> features(player));
-        ItemAction.registerEquipment(CAPE, "Other Teleports", (player, item) -> otherTeleports(player));
+    private static void registerCapeOptions(int itemId) {
+        ItemAction.registerEquipment(itemId, "Warriors' Guild", (player, item) -> StrengthSkillCape.teleport(player));
+        ItemAction.registerEquipment(itemId, "Crafting Guild", (player, item) -> CraftingSkillCape.teleport(player));
+        ItemAction.registerEquipment(itemId, "Tele to POH", (player, item) -> ConstructionSkillCape.teleport(player));
+        ItemAction.registerEquipment(itemId, "POH Portals", (player, item) -> ConstructionSkillCape.selectTeleport(player));
+        ItemAction.registerEquipment(itemId, "Fishing Teleports", (player, item) -> fishingTeleports(player));
+        ItemAction.registerEquipment(itemId, "spellbook", (player, item) -> MagicSkillcape.swapSelection(player));
+        ItemAction.registerEquipment(itemId, "Features", (player, item) -> features(player));
+        ItemAction.registerEquipment(itemId, "Other Teleports", (player, item) -> otherTeleports(player));
+        ItemAction.registerInventory(itemId, "Features", (player, item) -> features(player));
+        ItemAction.registerInventory(itemId, "Teleports", (player, item) -> teleports(player));
+    }
 
-        ItemAction.registerInventory(CAPE, "Features", (player, item) -> features(player));
-        ItemAction.registerInventory(CAPE, "Teleports", (player, item) -> teleports(player));
+    static {
+        registerCapeOptions(CAPE);
+        for (MaxCapeVariants.MaxCapes variants : MaxCapeVariants.MaxCapes.values()) {
+            registerCapeOptions(variants.newCapeId);
+        }
     }
 }
