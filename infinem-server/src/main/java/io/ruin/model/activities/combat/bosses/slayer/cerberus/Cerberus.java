@@ -74,7 +74,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
 
     @Override
     public void follow() {
-        follow(1);
+        follow(10);
     }
 
     @Override
