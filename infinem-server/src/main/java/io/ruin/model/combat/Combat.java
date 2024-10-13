@@ -15,15 +15,8 @@ public abstract class Combat {
      * Death
      */
 
+    @Setter @Getter
     private boolean dead;
-
-    public void setDead(boolean dead) {
-        this.dead = dead;
-    }
-
-    public boolean isDead() {
-        return dead;
-    }
 
     @Getter @Setter
     public boolean truelyDead;
@@ -32,15 +25,8 @@ public abstract class Combat {
      * Target
      */
 
+    @Getter @Setter
     protected Entity target;
-
-    public void setTarget(Entity target) {
-        this.target = target;
-    }
-
-    public Entity getTarget() {
-        return target;
-    }
 
     /**
      * Attacking
@@ -77,10 +63,7 @@ public abstract class Combat {
     }
 
     public boolean canAnimateDefence(int animTicks) {
-        if (!isAttacking(lastAttackTickDelay + attackDelayTicks) || animTicks <= lastAttackTick - Server.currentTick()) {
-            return true;
-        }
-        return false;
+        return !isAttacking(lastAttackTickDelay + attackDelayTicks) || animTicks <= lastAttackTick - Server.currentTick();
     }
 
     /**
