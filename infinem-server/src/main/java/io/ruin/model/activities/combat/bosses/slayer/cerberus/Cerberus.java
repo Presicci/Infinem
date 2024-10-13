@@ -1,4 +1,4 @@
-package io.ruin.model.activities.combat.bosses.slayer;
+package io.ruin.model.activities.combat.bosses.slayer.cerberus;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
@@ -189,13 +189,16 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
 
     private enum Soul {
         RANGED(5867, AttackStyle.RANGED, (npc, p) -> {
-            npc.animate(4503);
+            npc.animate(8530);
         }),
         MAGIC(5868, AttackStyle.MAGIC, (npc, p) -> {
-            npc.animate(4504);
+            npc.animate(8529);
             SOUL_MAGIC_PROJECTILE.send(npc, p);
         }),
-        MELEE(5869, AttackStyle.SLASH, SOUL_MELEE_PROJECTILE::send)
+        MELEE(5869, AttackStyle.SLASH, (npc, p) -> {
+            npc.animate(8528);
+            SOUL_MELEE_PROJECTILE.send(npc, p);
+        })
         ;
         int npcId;
         AttackStyle style;
