@@ -34,22 +34,22 @@ public class NightmareZoneRewards {
     }
 
     public static void imbueItem(Player player, int id) {
-        if (!player.getInventory().contains(id))
+        Item item = player.getInventory().findItemIgnoringAttributes(id, false);
+        if (item == null)
             return;
         ItemImbue imbue = ItemImbue.getImbue(id);
         if (imbue == null) {
             player.sendMessage("This item currently cannot be upgraded, if this is a mistake, please contact staff.");
             return;
         }
-        String name = new Item(id).getDef().name;
+        String name = item.getDef().name;
         int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
         if (points < imbue.nmzCost) {
             player.sendMessage("You must have at least " + NumberUtils.formatNumber(imbue.nmzCost) + " NMZ Points to upgrade your " + name);
             return;
         }
         Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -imbue.nmzCost);
-        player.getInventory().remove(id, 1);
-        player.getInventory().add(new Item(imbue.nmzImbue));
+        item.setId(imbue.nmzImbue);
         player.sendMessage("You have upgraded your " + name + " for " + NumberUtils.formatNumber(imbue.nmzCost) + " points.");
         refresh(player);
     }
