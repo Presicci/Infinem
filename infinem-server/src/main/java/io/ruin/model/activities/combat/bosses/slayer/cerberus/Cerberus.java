@@ -169,6 +169,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
                     } else if (Misc.getDistance(target.getPosition(), pos) == 1) {
                         target.hit(new Hit().fixedDamage(7));
                     }
+                    World.sendGraphics(1246, 0, 0, pos.getX(), pos.getY(), pos.getZ());
                     event.delay(2);
                 }
                 World.sendGraphics(1247, 0, 0, pos.getX(), pos.getY(), pos.getZ());
