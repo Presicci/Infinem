@@ -100,23 +100,23 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
         if (withinDistance(1) && Random.rollPercent(25)) {
             meleeAttack(true);
         } else if (Random.rollPercent(50)) {
-            magicAttack();
+            magicAttack(true);
         } else {
-            rangedAttack();
+            rangedAttack(true);
         }
         return true;
     }
 
-    private void rangedAttack() {
+    private void rangedAttack(boolean animate) {
         int delay = RANGED_PROJECTILE.send(npc, target);
-        npc.animate(4492);
+        if (animate) npc.animate(4492);
         target.hit(new Hit(npc, AttackStyle.RANGED, null).randDamage(info.max_damage).clientDelay(delay));
         target.graphics(1244, 100, delay);
     }
 
-    private void magicAttack() {
+    private void magicAttack(boolean animate) {
         int delay = MAGIC_PROJECTILE.send(npc, target);
-        npc.animate(4492);
+        if (animate) npc.animate(4492);
         Hit hit = new Hit(npc, AttackStyle.MAGIC, null)
                 .randDamage(info.max_damage)
                 .clientDelay(delay);
@@ -136,18 +136,18 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
     private void comboAttack() {
         npc.animate(4490); // triple attack
         delayAttack(3);
-        magicAttack();
+        magicAttack(false);
         npc.addEvent(event -> {
             event.delay(2);
             if (!canAttack(target))
                 return;
-            rangedAttack();
+            rangedAttack(false);
             event.delay(2);
             if (!canAttack(target))
                 return;
-            meleeAttack(false);
+            meleeAttack(true);
         });
-        comboAttackCooldown.delay(66); // ~40 seconds cooldown
+        //comboAttackCooldown.delay(66); // ~40 seconds cooldown
     }
 
     private void spreadLava() {
