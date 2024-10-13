@@ -23,7 +23,7 @@ public class Zygomite extends NPCCombat {
     private static final int[] SPRAYS = { 7421, 7422, 7423, 7424, 7425, 7426, 7427, 7428, 7429, 7430 };
 
     static {
-        for (int i : Arrays.asList(537, 1024)) {
+        for (int i : Arrays.asList(537, 1024, 7797)) {
             for (int sprayId : SPRAYS) {
                 ItemNPCAction.register(sprayId, i, (player, item, npc) -> spray(player, npc, true));
             }
