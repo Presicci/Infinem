@@ -184,8 +184,13 @@ public enum RandomEvent {
             }
         }
         Item randomReward = rewards.rollItem();
-        player.getInventory().addOrDrop(randomReward);
-        player.sendMessage("The stranger hands you a reward as he disappears...");
+        if (player.getInventory().hasFreeSlots(1)) {
+            player.getInventory().add(randomReward);
+            player.sendMessage("The stranger hands you a reward as he disappears...");
+        } else {
+            player.getBank().add(randomReward.getId());
+            player.sendMessage("The stranger adds a reward to your bank as he disappears...");
+        }
         player.getTaskManager().doLookupByUUID(1108);   // Get a Random Event
         PlayerCounter.RANDOM_EVENTS.increment(player, 1);
         player.getPacketSender().resetHintIcon(true);
