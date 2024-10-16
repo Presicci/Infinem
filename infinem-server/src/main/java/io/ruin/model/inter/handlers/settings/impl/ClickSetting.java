@@ -115,7 +115,7 @@ public enum ClickSetting {
     HIDE_ROOFS(4, 4, 193, Config.HIDE_ROOFS::toggle),
     ZOOMING_DISABLED(4, 5, 194, Config.ZOOMING_DISABLED::toggle),
     // Gameplay
-    ACCEPT_AID(5, 2, 204),
+    ACCEPT_AID(5, 2, 204, Config.ACCEPT_AID::toggle),
     SUPPLY_PILES(5, 3, 205),
     AUTO_EQUIP_WORN_ITEMS_FROM_GRAVESTONE(5, 4, 206),
     DEEP_WILDY_LEVEL(5, 5, 207),
