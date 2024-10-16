@@ -1,20 +1,42 @@
 package io.ruin.model.item.containers.bank;
 
+import io.ruin.model.combat.AttackType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceAction;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.OptionAction;
+import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.inter.handlers.TabEquipment;
 import io.ruin.model.inter.handlers.TabInventory;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
+
+import java.text.DecimalFormat;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 10/16/2024
  */
 public class BankEquipment {
+
+    protected static void sendStats(Player player) {
+        int[] bonuses = player.getEquipment().bonuses;
+        EquipmentStats.Stat[] stats = EquipmentStats.Stat.values();
+        int childID = 98;
+        for (int i = 0; i < bonuses.length; i++) {
+            int bonus = bonuses[i];
+            EquipmentStats.Stat stat = stats[i];
+            stat.sendString(player, bonus, Interface.BANK, childID);
+            childID += stat.skipChild ? 2 : 1;
+        }
+        player.getPacketSender().sendWeight((int) (player.getInventory().weight + player.getEquipment().weight));
+        DecimalFormat df = new DecimalFormat("0.0#");
+        int baseAttackSpeed = player.getCombat().weaponType.attackTicks;
+        int actualAttackSpeed = player.getCombat().getAttackType() == AttackType.RAPID_RANGED ? baseAttackSpeed - 1 : baseAttackSpeed;
+        player.getPacketSender().sendString(Interface.BANK, 132, "Base: " + df.format(baseAttackSpeed * 0.6));
+        player.getPacketSender().sendString(Interface.BANK, 133, "Actual: " + df.format(actualAttackSpeed * 0.6));
+    }
 
     private static void clickEquippedItem(Player player, int option, int equipmentSlot) {
         Item item = player.getEquipment().get(equipmentSlot);

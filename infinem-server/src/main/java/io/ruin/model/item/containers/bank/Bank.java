@@ -73,7 +73,7 @@ public class Bank extends ItemContainerG<BankItem> {
         player.getPacketSender().sendString(Interface.BANK, 5, "" + getItems().length);
         player.getPacketSender().sendString(Interface.BANK, 9, Integer.toString(DonatorBenefits.getBenefits(player).getBankSize()));
 
-        sendWornItemBonuses();
+        BankEquipment.sendStats(player);
 
         sendAll = true;
     }
@@ -935,10 +935,5 @@ public class Bank extends ItemContainerG<BankItem> {
                 p.getPacketSender().sendClientScript(917, "ii", -1, -1);
             };
         });
-
-    }
-
-    private void sendWornItemBonuses() {
-        EquipmentStats.update(player, Interface.BANK, 89);
     }
 }
