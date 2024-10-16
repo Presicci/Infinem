@@ -66,6 +66,8 @@ public class Settings {
                         if (menu == setting.getMenuIndex() && slot == setting.getChildIndex()) {
                             if (setting.getConsumer() != null)
                                 setting.getConsumer().accept(player);
+                            else
+                                player.sendMessage("This setting is not currently implemented.");
                             return;
                         }
                     }
@@ -74,6 +76,8 @@ public class Settings {
                         if (slot == setting.getSearchIndex()) {
                             if (setting.getConsumer() != null)
                                 setting.getConsumer().accept(player);
+                            else
+                                player.sendMessage("This setting is not currently implemented.");
                             return;
                         }
                     }
@@ -114,6 +118,8 @@ public class Settings {
                         if (menu == setting.getMenuIndex() && child == setting.getChildIndex()) {
                             if (setting.getConsumer() != null)
                                 setting.getConsumer().accept(player, dropSlot);
+                            else
+                                player.sendMessage("This setting is not currently implemented.");
                             return;
                         }
                     }
@@ -122,6 +128,8 @@ public class Settings {
                         if (child == setting.getSearchIndex()) {
                             if (setting.getConsumer() != null)
                                 setting.getConsumer().accept(player, dropSlot);
+                            else
+                                player.sendMessage("This setting is not currently implemented.");
                             return;
                         }
                     }
