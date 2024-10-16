@@ -20,113 +20,93 @@ import lombok.extern.slf4j.Slf4j;
 import io.ruin.update.HandshakeDecoder;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
 @Slf4j
 public class LoginDecoder extends MessageDecoder<Channel> {
 
-    private final FileStore fileStore;
 
-    public LoginDecoder(FileStore fileStore) {
+    private static final int BUILD_HASH = 225;
+    private static final int SUB_REVISION = 1;
+    private static final BigInteger EXPONENT = new BigInteger("83923922839219287732917015149195732073695536052984669036231778384894490439511932467277679466826619631057457711190000931928848746974072996674449163992099423404866521840525018174269929252811697346444185514151969525075984167323004389765704130745055780821036980587747264383960689940905074229888881011617738648897");
+    private static final BigInteger MODULUS = new BigInteger("94210824259843347324509385276594109263523823612210415282840685497179394322370180677069205378760490069724955139827325518162089726630921395369270393801925644637806226306156731189625154078707248525519618118185550146216513714101970726787284175941436804270501308516733103597242337227056455402809871503542425244523");
+
+    public LoginDecoder() {
         super(null, false);
-        this.fileStore = fileStore;
     }
 
     @Override
     protected void handle(Channel channel, InBuffer in, int opcode) {
         ServerWrapper.log(opcode + " Incoming: " + IPAddress.get(channel));
-        int clientType = 0;
-        if (opcode == HandshakeDecoder.OPCODE) {
-            HandshakeDecoder.handle(fileStore, channel, in, opcode);
-        } else if(opcode == 14) {
+        if (opcode == 14) {
             /*
              * Login handshake request
              */
             confirmHandshake(channel);
-        } else if(opcode == 16 || opcode == 18) {
+        } else if (opcode == 16 || opcode == 18) {
             /*
              * World login request
              */
-            int revision = in.readInt();
-            int subRevision = in.readInt();
-            if (subRevision != SUB_REVISION) {
-                /*
-                 * Invalid client version.
-                 */
-                Response.GAME_UPDATED.send(channel);
-                return;
-            }
+            LoginInfo loginInfo = decode(channel, in, World.id, opcode);
 
-            clientType = in.readUnsignedShort() & 3;
-
-            if (isAtWildernessLimitForIP(channel)) {
-                /*
-                 * Multiple of the same IP is already in the wilderness.
-                 */
-                Response.CONNECTION_LIMIT.send(channel);
-                return;
-            }
-            if (isMaxAllowedClients(channel)) {
-                /*
-                 * Multiple of the same IP Over 3
-                 */
-                Response.CONNECTION_LIMIT.send(channel);
-                return;
-            }
-            if(revision == BUILD_HASH) {
-                reconnecting = opcode == 18;
-                LoginInfo loginInfo = decode(channel, in, World.id);
-                if(loginInfo != null) {
-                    LoginWorker.add(new PlayerLogin(loginInfo));
-                }
-            } else {
-                /*
-                 * Invalid client version.
-                 */
-                Response.GAME_UPDATED.send(channel);
+            if (loginInfo != null) {
+                LoginWorker.add(new PlayerLogin(loginInfo));
             }
         }
     }
-
-    @Override
-    protected int getSize(int opcode) {
-        switch(opcode) {
-            case 14: return 0;          //login handshake request
-            case 16: return VAR_SHORT;  //world login request
-            case 18: return VAR_SHORT;  //world login request (from dc)
-            case HandshakeDecoder.OPCODE: return HandshakeDecoder.SIZE;
-        }
-        return UNHANDLED;
-    }
-
-    /**
-     * Separator
-     */
-
-    private static final int BUILD_HASH = 199;
-    private static final int SUB_REVISION = 1;
-    private static final int TFA_TRUST_OPCODE = 3;
-
-    private static final BigInteger EXPONENT = new BigInteger("83923922839219287732917015149195732073695536052984669036231778384894490439511932467277679466826619631057457711190000931928848746974072996674449163992099423404866521840525018174269929252811697346444185514151969525075984167323004389765704130745055780821036980587747264383960689940905074229888881011617738648897");
-
-    private static final BigInteger MODULUS = new BigInteger("94210824259843347324509385276594109263523823612210415282840685497179394322370180677069205378760490069724955139827325518162089726630921395369270393801925644637806226306156731189625154078707248525519618118185550146216513714101970726787284175941436804270501308516733103597242337227056455402809871503542425244523");
-
-    private static boolean reconnecting = false;
 
     private static void confirmHandshake(Channel channel) {
-        channel.writeAndFlush(Unpooled.buffer(9).writeByte(0).writeLong(Random.getLong()));
+        channel.writeAndFlush(Unpooled.buffer(9).writeByte(0).writeLong((long) (Math.random() * Long.MAX_VALUE)));
     }
 
-    private static LoginInfo decode(Channel channel, InBuffer in, int worldId) {
+    private static LoginInfo decode(Channel channel, InBuffer in, int worldId, int opcode) {
+        if (isAtWildernessLimitForIP(channel)) {
+            /*
+             * Multiple of the same IP is already in the wilderness.
+             */
+            Response.CONNECTION_LIMIT.send(channel);
+            return null;
+        }
+        if (isMaxAllowedClients(channel)) {
+            /*
+             * Multiple of the same IP Over 3
+             */
+            Response.CONNECTION_LIMIT.send(channel);
+            return null;
+        }
+
+        if (in.readInt() != BUILD_HASH) {
+            /**
+             * Invalid client version.
+             */
+            Response.GAME_UPDATED.send(channel);
+            return null;
+        }
+        int subRevision = in.readInt();
+        if (subRevision != SUB_REVISION) {
+            /*
+             * Invalid client sub-version.
+             */
+            Response.GAME_UPDATED.send(channel);
+            return null;
+        }
+
+        int confClientType = in.readByte() & 3;//Unknown 1 - PC, 2 - android, 3 - IOS ?
+
+        // Platform
+        in.readByte();
+        // ?
+        in.readByte();
+
         int secureBufLength = in.readUnsignedShort();
         byte[] rsaPayload = new byte[secureBufLength];
         in.readBytes(rsaPayload);
-        BigInteger rsaValue = new BigInteger(1, rsaPayload).modPow(EXPONENT, MODULUS);
-        InBuffer rsaBuffer = new InBuffer(rsaValue.toByteArray());
+        InBuffer rsaBuffer = new InBuffer(new BigInteger(rsaPayload).modPow(EXPONENT, MODULUS).toByteArray());
 
-        boolean successfulEncryption = rsaBuffer.readByte() == 1;
-        if(!successfulEncryption) {
+        int value = rsaBuffer.readByte();
+        if (value != 1) {
             /**
              * Invalid RSA header key.
              */
@@ -143,20 +123,20 @@ public class LoginDecoder extends MessageDecoder<Channel> {
         int tfaTrustHash = 0;
         String email = "";
         String password;
-        if (reconnecting) {
+        if (opcode == 18) {
             previousXteaKeys = new int[]{rsaBuffer.readInt(), rsaBuffer.readInt(), rsaBuffer.readInt(), rsaBuffer.readInt()};
             tfaCode = -1;
             password = null;
         } else {
-            int loginType = rsaBuffer.readUnsignedByte();
-            if (loginType == 0 || loginType == TFA_TRUST_OPCODE) {
+            int loginType = rsaBuffer.readByte();
+            if (loginType == 0 || loginType == 1) {
                 /**
                  * Login attempt with 2fa code
                  */
                 tfaCode = rsaBuffer.readMedium();
-                tfaTrust = loginType == TFA_TRUST_OPCODE;
+                tfaTrust = loginType == 1;
                 rsaBuffer.skip(1);
-            } else if (loginType == 1) {
+            } else if (loginType == 3) {
                 /**
                  * Login attempt with a 2fa trust key
                  */
@@ -166,14 +146,11 @@ public class LoginDecoder extends MessageDecoder<Channel> {
                  * No code no trust key
                  */
                 rsaBuffer.skip(4);
-            }/* else {
-             *//**
-             * Login attempt with email
-             *//*
-                email = rsaBuffer.readString();
-            }*/
+            } else {
+                rsaBuffer.skip(4);
+            }
 
-            rsaBuffer.skip(1);
+            rsaBuffer.readByte();
             password = rsaBuffer.readString();
         }
 
@@ -182,14 +159,6 @@ public class LoginDecoder extends MessageDecoder<Channel> {
         in = new InBuffer(bytes);
         in.decode(keys, 0, bytes.length);
 
-/*        int mac_length = in.readUnsignedByte();
-        byte[] mac_data = new byte[mac_length];
-        in.readBytes(mac_data);
-
-        StringBuilder sb = new StringBuilder();
-        for (int index = 0; index < mac_data.length; index++) {
-            sb.append(String.format("%02X%s", mac_data[index], (index < mac_length - 1) ? "-" : ""));
-        }*/
         String macAddress = "";//sb.toString();
         String uuid = "";//in.readString();
         String name = in.readString();
@@ -208,22 +177,17 @@ public class LoginDecoder extends MessageDecoder<Channel> {
         int clientHeight = in.readUnsignedShort();
 
         in.skip(24); //random.dat data
+
         in.readString(); //from params
         in.readInt(); //from params
 
+        in.readByte();
+
         /* device info */
-        int check = in.readUnsignedByte();
-        in.readUnsignedByte();
-        if (check != 8 ) {
-            /*
-             * Invalid login
-             */
-            Response.INVALID_LOGIN.send(channel);
-            return null;
-        }
+        int check = in.readByte();
         int osType = in.readUnsignedByte();
         int bit64 = in.readUnsignedByte();
-        int osVersionType = in.readUnsignedByte();
+        int osVersionType = in.readShort();
         //there is more, but we don't need it.
 
         /* skipping lots of data */
@@ -243,6 +207,16 @@ public class LoginDecoder extends MessageDecoder<Channel> {
             tfaTrustHash = osType << 24 | bit64 << 16 | osVersionType << 8 | Random.get(1, 254);
         }
         return new LoginInfo(channel, name, password, email, macAddress, uuid, tfaCode, tfaTrust, tfaTrustHash, worldId, keys);
+    }
+
+    @Override
+    protected int getSize(int opcode) {
+        switch(opcode) {
+            case 14: return 0;          //login handshake request
+            case 16: return VAR_SHORT;  //world login request
+            case 18: return VAR_SHORT;  //world login request (from dc)
+        }
+        return UNHANDLED;
     }
 
     /**

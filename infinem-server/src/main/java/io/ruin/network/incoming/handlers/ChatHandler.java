@@ -6,56 +6,67 @@ import io.ruin.api.utils.IPMute;
 import io.ruin.model.entity.player.Player;
 import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.Incoming;
+import io.ruin.network.ClientPacket;
 import io.ruin.services.Loggers;
 import io.ruin.services.Punishment;
-import io.ruin.utility.IdHolder;
+import io.ruin.utility.ClientPacketHolder;
 
 import java.util.Arrays;
 import java.util.List;
 
-@IdHolder(ids = {14})//@IdHolder(ids = {32})
+@ClientPacketHolder(packets = {ClientPacket.MESSAGE_PUBLIC})
 public class ChatHandler implements Incoming {
 
     @Override
     public void handle(Player player, InBuffer in, int opcode) {
-        boolean shadow = false;
-        if(IPMute.isIPMuted(player.getIp()) || Punishment.isMuted(player)) {
-            if(!player.shadowMute) {
+        if (IPMute.isIPMuted(player.getIp()) || Punishment.isMuted(player)) {
+            if (!player.shadowMute) {
                 player.sendMessage("You're muted and can't talk.");
                 return;
             }
-            shadow = true;
+            return;
         }
+        System.out.println(Arrays.toString(in.getPayload()));
+        int type = in.readUnsignedByte();
+        int color = in.readUnsignedByte();
+        int effect = in.readUnsignedByte();
+        byte[] pattern = null;
+        if (color >= 13 && color <= 20) {
+            pattern = new byte[color - 12];
+            in.readBytes(pattern);
+        }
+        int length = in.readUnsignedByte();
+        byte[] compressed = new byte[length];
+        in.readBytes(compressed);
 
-        int type = in.readByte();
-        int effects = in.readShort();
-        String message = Huffman.decrypt(in, 100);
-        if(message.isEmpty()) {
+        String message = Huffman.decompress(compressed, length);
+        System.out.println(type + ", " + color + ", " + effect + ", " + message + ", " + (pattern == null ? "none" : pattern.length));
+        if (message.isEmpty()) {
             /* how does this even happen? */
             return;
         }
 
         /*
-        * If player mentions any of these words don't send it.
-        */
+         * If player mentions any of these words don't send it.
+         */
         List<String> badWords = Arrays.asList("ikov", "roatz", "alora", "nigger");
-        for(String word : badWords) {
+        for (String word : badWords) {
             if (message.toLowerCase().contains(word)) {
                 return;
             }
         }
         player.sentMessages.add(message);
         if (player.sentMessages.size() > 20) player.sentMessages.poll();
-        if(type == 2) {
+        if (type == 2) {
             message = message.substring(1);
             CentralClient.sendClanMessage(player.getUserId(), player.getClientGroupId(), message);
             Loggers.logClanChat(player.getUserId(), player.getName(), player.getIp(), message);
             return;
         }
-        if(message.length() >= 3) {
+        if (message.length() >= 3) {
             char c1 = message.charAt(0);
             char c2 = message.charAt(1);
-            if((c1 == ':' && c2 == ':') || (c1 == ';' && c2 == ';')) {
+            if ((c1 == ':' && c2 == ':') || (c1 == ';' && c2 == ';')) {
                 CommandHandler.handle(player, message.substring(2));
                 return;
             }
@@ -64,8 +75,8 @@ public class ChatHandler implements Incoming {
                 return;
             }
         }
-        player.getChatUpdate().set(shadow, effects, player.getClientGroupId(), type, message);
-        Loggers.logPublicChat(player.getUserId(), player.getName(), player.getIp(), message, type, effects);
+        player.getChatUpdate().set(color, effect, player.getClientGroupId(), type, message);
+        Loggers.logPublicChat(player.getUserId(), player.getName(), player.getIp(), message, type, effect);
     }
 
 }

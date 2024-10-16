@@ -5,15 +5,16 @@ import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.network.incoming.Incoming;
+import io.ruin.network.ClientPacket;
 import io.ruin.services.Punishment;
 import io.ruin.services.discord.impl.AbuseReportEmbedMessage;
-import io.ruin.utility.IdHolder;
+import io.ruin.utility.ClientPacketHolder;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 1/16/2024
  */
-@IdHolder(ids = {94})
+@ClientPacketHolder(packets = {ClientPacket.SEND_SNAPSHOT})
 public class AbuseReportHandler implements Incoming {
     @Override
     public void handle(Player player, InBuffer in, int opcode) {

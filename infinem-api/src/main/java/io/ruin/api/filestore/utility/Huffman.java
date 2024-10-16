@@ -9,8 +9,15 @@ import java.util.Arrays;
 
 public class Huffman {
 
-    //from 113
-    private static final byte[] DATA = {22, 22, 22, 22, 22, 22, 21, 22, 22, 20, 22, 22, 22, 21, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 3, 8, 22, 16, 22, 16, 17, 7, 13, 13, 13, 16, 7, 10, 6, 16, 10, 11, 12, 12, 12, 12, 13, 13, 14, 14, 11, 14, 19, 15, 17, 8, 11, 9, 10, 10, 10, 10, 11, 10, 9, 7, 12, 11, 10, 10, 9, 10, 10, 12, 10, 9, 8, 12, 12, 9, 14, 8, 12, 17, 16, 17, 22, 13, 21, 4, 7, 6, 5, 3, 6, 6, 5, 4, 10, 7, 5, 6, 4, 4, 6, 10, 5, 4, 4, 5, 7, 6, 10, 6, 10, 22, 19, 22, 14, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 21, 22, 21, 22, 22, 22, 21, 22, 22};
+    private static final byte[] DATA = {22, 22, 22, 22, 22, 22, 21, 22, 22, 20, 22, 22, 22, 21, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22,
+            22, 22, 22, 22, 22, 22, 22, 3, 8, 22, 16, 22, 16, 17, 7, 13, 13, 13, 16, 7, 10, 6, 16, 10, 11, 12, 12, 12, 12, 13, 13, 14, 14,
+            11, 14, 19, 15, 17, 8, 11, 9, 10, 10, 10, 10, 11, 10, 9, 7, 12, 11, 10, 10, 9, 10, 10, 12, 10, 9, 8, 12, 12, 9, 14, 8, 12, 17,
+            16, 17, 22, 13, 21, 4, 7, 6, 5, 3, 6, 6, 5, 4, 10, 7, 5, 6, 4, 4, 6, 10, 5, 4, 4, 5, 7, 6, 10, 6, 10, 22, 19, 22, 14, 22, 22,
+            22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22,
+            22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22,
+            22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22,
+            22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 21, 22, 21, 22, 22, 22, 21, 22, 22
+    };
 
     public static void printData(FileStore fileStore) {
         IndexFile index = fileStore.get(10);
@@ -26,312 +33,361 @@ public class Huffman {
 
     private static final Huffman instance = new Huffman(DATA);
 
-    byte[] aByteArray732;
-    int[] anIntArray733;
-    int[] anIntArray734;
+    byte[] bits;
+    int[] masks;
+    int[] keys;
 
-    private Huffman(byte[] huffmanData) {
-        int i = huffmanData.length;
-        anIntArray733 = new int[i];
-        aByteArray732 = huffmanData;
-        int[] is_0_ = new int[33];
-        anIntArray734 = new int[8];
-        int i_1_ = 0;
-        for(int i_2_ = 0; i_2_ < i; i_2_++) {
-            int i_3_ = huffmanData[i_2_];
-            if(i_3_ != 0) {
-                int i_4_ = 1 << 32 - i_3_;
-                int i_5_ = is_0_[i_3_];
-                anIntArray733[i_2_] = i_5_;
-                int i_6_;
-                if((i_5_ & i_4_) != 0)
-                    i_6_ = is_0_[i_3_ - 1];
-                else {
-                    i_6_ = i_5_ | i_4_;
-                    for(int i_7_ = i_3_ - 1; i_7_ >= 1; i_7_--) {
-                        int i_8_ = is_0_[i_7_];
-                        if(i_5_ != i_8_)
-                            break;
-                        int i_9_ = 1 << 32 - i_7_;
-                        if((i_8_ & i_9_) != 0) {
-                            is_0_[i_7_] = is_0_[i_7_ - 1];
+    public Huffman(byte[] var1) {
+        int var2 = var1.length;
+        this.masks = new int[var2];
+        this.bits = var1;
+        int[] var3 = new int[33];
+        this.keys = new int[8];
+        int var4 = 0;
+
+        for (int var5 = 0; var5 < var2; ++var5) {
+            byte var6 = var1[var5];
+            if (var6 != 0) {
+                int var7 = 1 << 32 - var6;
+                int var8 = var3[var6];
+                this.masks[var5] = var8;
+                int var9;
+                int var10;
+                int var11;
+                int var12;
+                if ((var8 & var7) != 0) {
+                    var9 = var3[var6 - 1];
+                } else {
+                    var9 = var8 | var7;
+
+                    for (var10 = var6 - 1; var10 >= 1; --var10) {
+                        var11 = var3[var10];
+                        if (var8 != var11) {
                             break;
                         }
-                        is_0_[i_7_] = i_8_ | i_9_;
+
+                        var12 = 1 << 32 - var10;
+                        if ((var11 & var12) != 0) {
+                            var3[var10] = var3[var10 - 1];
+                            break;
+                        }
+
+                        var3[var10] = var11 | var12;
                     }
                 }
-                is_0_[i_3_] = i_6_;
-                for(int i_10_ = i_3_ + 1; i_10_ <= 32; i_10_++) {
-                    if(i_5_ == is_0_[i_10_])
-                        is_0_[i_10_] = i_6_;
-                }
-                int i_11_ = 0;
-                for(int i_12_ = 0; i_12_ < i_3_; i_12_++) {
-                    int i_13_ = -2147483648 >>> i_12_;
-                    if((i_5_ & i_13_) != 0) {
-                        if(anIntArray734[i_11_] == 0)
-                            anIntArray734[i_11_] = i_1_;
-                        i_11_ = anIntArray734[i_11_];
-                    } else
-                        i_11_++;
-                    if(i_11_ >= anIntArray734.length) {
-                        int[] is_14_ = new int[anIntArray734.length * 2];
-                        for(int i_15_ = 0; i_15_ < anIntArray734.length; i_15_++)
-                            is_14_[i_15_] = anIntArray734[i_15_];
-                        anIntArray734 = is_14_;
+
+                var3[var6] = var9;
+
+                for (var10 = var6 + 1; var10 <= 32; ++var10) {
+                    if (var8 == var3[var10]) {
+                        var3[var10] = var9;
                     }
-                    i_13_ >>>= 1;
                 }
-                anIntArray734[i_11_] = i_2_ ^ 0xffffffff;
-                if(i_11_ >= i_1_)
-                    i_1_ = i_11_ + 1;
+
+                var10 = 0;
+
+                for (var11 = 0; var11 < var6; ++var11) {
+                    var12 = Integer.MIN_VALUE >>> var11;
+                    if ((var8 & var12) != 0) {
+                        if (this.keys[var10] == 0) {
+                            this.keys[var10] = var4;
+                        }
+
+                        var10 = this.keys[var10];
+                    } else {
+                        ++var10;
+                    }
+
+                    if (var10 >= this.keys.length) {
+                        int[] var13 = new int[this.keys.length * 2];
+
+                        for (int var14 = 0; var14 < this.keys.length; ++var14) {
+                            var13[var14] = this.keys[var14];
+                        }
+
+                        this.keys = var13;
+                    }
+
+                    var12 >>>= 1;
+                }
+
+                this.keys[var10] = ~var5;
+                if (var10 >= var4) {
+                    var4 = var10 + 1;
+                }
             }
         }
+
     }
 
-    public int encrypt(byte[] is, int i, int i_20_, byte[] is_21_, int i_22_) {
-        int i_23_ = 0;
-        int i_24_ = i_22_ << 3;
-        for(i_20_ += i; i < i_20_; i++) {
-            int i_25_ = is[i] & 0xff;
-            int i_26_ = anIntArray733[i_25_];
-            int i_27_ = aByteArray732[i_25_];
-            if(i_27_ == 0)
-                throw new RuntimeException("");
-            int i_28_ = i_24_ >> 3;
-            int i_29_ = i_24_ & 0x7;
-            i_23_ &= -i_29_ >> 31;
-            int i_30_ = (i_29_ + i_27_ - 1 >> 3) + i_28_;
-            i_29_ += 24;
-            is_21_[i_28_] = (byte) (i_23_ |= i_26_ >>> i_29_);
-            if(i_28_ < i_30_) {
-                i_28_++;
-                i_29_ -= 8;
-                is_21_[i_28_] = (byte) (i_23_ = i_26_ >>> i_29_);
-                if(i_28_ < i_30_) {
-                    i_28_++;
-                    i_29_ -= 8;
-                    is_21_[i_28_] = (byte) (i_23_ = i_26_ >>> i_29_);
-                    if(i_28_ < i_30_) {
-                        i_28_++;
-                        i_29_ -= 8;
-                        is_21_[i_28_] = (byte) (i_23_ = i_26_ >>> i_29_);
-                        if(i_28_ < i_30_) {
-                            i_28_++;
-                            i_29_ -= 8;
-                            is_21_[i_28_] = (byte) (i_23_ = i_26_ << -i_29_);
+    int compress(byte[] charArray, int index, int charArraySize, byte[] outputArray, int offset) {
+        int var6 = 0;
+        int var7 = offset << 3;
+        for(charArraySize += index; index < charArraySize; ++index) {
+            int c = charArray[index] & 255;
+            int var9 = this.masks[c];
+            byte var10 = this.bits[c];
+            if(var10 == 0) {
+                throw new RuntimeException("" + c);
+            }
+            int var11 = var7 >> 3;
+            int var12 = var7 & 7;
+            var6 &= -var12 >> 31;
+            int var13 = (var10 + var12 - 1 >> 3) + var11;
+            var12 += 24;
+            outputArray[var11] = (byte)(var6 |= var9 >>> var12);
+            if(var11 < var13) {
+                ++var11;
+                var12 -= 8;
+                outputArray[var11] = (byte)(var6 = var9 >>> var12);
+                if(var11 < var13) {
+                    ++var11;
+                    var12 -= 8;
+                    outputArray[var11] = (byte)(var6 = var9 >>> var12);
+                    if(var11 < var13) {
+                        ++var11;
+                        var12 -= 8;
+                        outputArray[var11] = (byte)(var6 = var9 >>> var12);
+                        if(var11 < var13) {
+                            ++var11;
+                            var12 -= 8;
+                            outputArray[var11] = (byte)(var6 = var9 << -var12);
                         }
                     }
                 }
             }
-            i_24_ += i_27_;
+            var7 += var10;
         }
-        return (i_24_ + 7 >> 3) - i_22_;
+        return (var7 + 7 >> 3) - offset;
     }
 
-    public int decrypt(byte[] is, int i, byte[] is_31_, int i_32_, int i_33_) {
-        if(i_33_ == 0)
+    int decompress(byte[] var1, int var2, byte[] var3, int var4, int var5) {
+        if (var5 == 0) {
             return 0;
-        int i_34_ = 0;
-        i_33_ += i_32_;
-        int i_35_ = i;
-        for(; ; ) {
-            byte i_36_ = is[i_35_];
-            if(i_36_ >= 0)
-                i_34_++;
-            else
-                i_34_ = anIntArray734[i_34_];
-            int i_37_;
-            if((i_37_ = anIntArray734[i_34_]) < 0) {
-                is_31_[i_32_++] = (byte) (i_37_ ^ 0xffffffff);
-                if(i_32_ >= i_33_)
-                    break;
-                i_34_ = 0;
+        } else {
+            int var6 = 0;
+            var5 += var4;
+            int var7 = var2;
+            while (true) {
+                byte var8 = var1[var7];
+                if (var8 < 0) {
+                    var6 = this.keys[var6];
+                } else {
+                    ++var6;
+                }
+                int var9;
+                if ((var9 = this.keys[var6]) < 0) {
+                    var3[var4++] = (byte)(~var9);
+                    if (var4 >= var5) {
+                        break;
+                    }
+                    var6 = 0;
+                }
+                if ((var8 & 64) != 0) {
+                    var6 = this.keys[var6];
+                } else {
+                    ++var6;
+                }
+                if ((var9 = this.keys[var6]) < 0) {
+                    var3[var4++] = (byte)(~var9);
+                    if (var4 >= var5) {
+                        break;
+                    }
+                    var6 = 0;
+                }
+                if ((var8 & 32) != 0) {
+                    var6 = this.keys[var6];
+                } else {
+                    ++var6;
+                }
+                if ((var9 = this.keys[var6]) < 0) {
+                    var3[var4++] = (byte)(~var9);
+                    if (var4 >= var5) {
+                        break;
+                    }
+                    var6 = 0;
+                }
+                if ((var8 & 16) != 0) {
+                    var6 = this.keys[var6];
+                } else {
+                    ++var6;
+                }
+                if ((var9 = this.keys[var6]) < 0) {
+                    var3[var4++] = (byte)(~var9);
+                    if (var4 >= var5) {
+                        break;
+                    }
+                    var6 = 0;
+                }
+                if ((var8 & 8) != 0) {
+                    var6 = this.keys[var6];
+                } else {
+                    ++var6;
+                }
+                if ((var9 = this.keys[var6]) < 0) {
+                    var3[var4++] = (byte)(~var9);
+                    if (var4 >= var5) {
+                        break;
+                    }
+                    var6 = 0;
+                }
+                if ((var8 & 4) != 0) {
+                    var6 = this.keys[var6];
+                } else {
+                    ++var6;
+                }
+                if ((var9 = this.keys[var6]) < 0) {
+                    var3[var4++] = (byte)(~var9);
+                    if (var4 >= var5) {
+                        break;
+                    }
+                    var6 = 0;
+                }
+                if ((var8 & 2) != 0) {
+                    var6 = this.keys[var6];
+                } else {
+                    ++var6;
+                }
+                if ((var9 = this.keys[var6]) < 0) {
+                    var3[var4++] = (byte)(~var9);
+                    if (var4 >= var5) {
+                        break;
+                    }
+                    var6 = 0;
+                }
+                if ((var8 & 1) != 0) {
+                    var6 = this.keys[var6];
+                } else {
+                    ++var6;
+                }
+                if ((var9 = this.keys[var6]) < 0) {
+                    var3[var4++] = (byte)(~var9);
+                    if (var4 >= var5) {
+                        break;
+                    }
+                    var6 = 0;
+                }
+                ++var7;
             }
-            if((i_36_ & 0x40) != 0)
-                i_34_ = anIntArray734[i_34_];
-            else
-                i_34_++;
-            if((i_37_ = anIntArray734[i_34_]) < 0) {
-                is_31_[i_32_++] = (byte) (i_37_ ^ 0xffffffff);
-                if(i_32_ >= i_33_)
-                    break;
-                i_34_ = 0;
-            }
-            if((i_36_ & 0x20) != 0)
-                i_34_ = anIntArray734[i_34_];
-            else
-                i_34_++;
-            if((i_37_ = anIntArray734[i_34_]) < 0) {
-                is_31_[i_32_++] = (byte) (i_37_ ^ 0xffffffff);
-                if(i_32_ >= i_33_)
-                    break;
-                i_34_ = 0;
-            }
-            if((i_36_ & 0x10) != 0)
-                i_34_ = anIntArray734[i_34_];
-            else
-                i_34_++;
-            if((i_37_ = anIntArray734[i_34_]) < 0) {
-                is_31_[i_32_++] = (byte) (i_37_ ^ 0xffffffff);
-                if(i_32_ >= i_33_)
-                    break;
-                i_34_ = 0;
-            }
-            if((i_36_ & 0x8) != 0)
-                i_34_ = anIntArray734[i_34_];
-            else
-                i_34_++;
-            if((i_37_ = anIntArray734[i_34_]) < 0) {
-                is_31_[i_32_++] = (byte) (i_37_ ^ 0xffffffff);
-                if(i_32_ >= i_33_)
-                    break;
-                i_34_ = 0;
-            }
-            if((i_36_ & 0x4) != 0)
-                i_34_ = anIntArray734[i_34_];
-            else
-                i_34_++;
-            if((i_37_ = anIntArray734[i_34_]) < 0) {
-                is_31_[i_32_++] = (byte) (i_37_ ^ 0xffffffff);
-                if(i_32_ >= i_33_)
-                    break;
-                i_34_ = 0;
-            }
-            if((i_36_ & 0x2) != 0)
-                i_34_ = anIntArray734[i_34_];
-            else
-                i_34_++;
-            if((i_37_ = anIntArray734[i_34_]) < 0) {
-                is_31_[i_32_++] = (byte) (i_37_ ^ 0xffffffff);
-                if(i_32_ >= i_33_)
-                    break;
-                i_34_ = 0;
-            }
-            if((i_36_ & 0x1) != 0)
-                i_34_ = anIntArray734[i_34_];
-            else
-                i_34_++;
-            if((i_37_ = anIntArray734[i_34_]) < 0) {
-                is_31_[i_32_++] = (byte) (i_37_ ^ 0xffffffff);
-                if(i_32_ >= i_33_)
-                    break;
-                i_34_ = 0;
-            }
-            i_35_++;
+            return var7 + 1 - var2;
         }
-        return i_35_ + 1 - i;
     }
 
     /**
      * Static utils
      */
 
-    static char[] aCharArray1146 = {'\u20ac', '\0', '\u201a', '\u0192', '\u201e', '\u2026', '\u2020', '\u2021', '\u02c6', '\u2030', '\u0160', '\u2039', '\u0152', '\0', '\u017d', '\0', '\0', '\u2018', '\u2019', '\u201c', '\u201d', '\u2022', '\u2013', '\u2014', '\u02dc', '\u2122', '\u0161', '\u203a', '\u0153', '\0', '\u017e', '\u0178'};
+    static char[] cp1252AsciiExtension = new char[]{'€', '\u0000', '‚', 'ƒ', '„', '…', '†', '‡', 'ˆ', '‰', 'Š', '‹', 'Œ', '\u0000', 'Ž', '\u0000', '\u0000', '‘', '’', '“', '”', '•', '–', '—', '˜', '™', 'š', '›', 'œ', '\u0000', 'ž', 'Ÿ'};
 
-    public static int encrypt(OutBuffer out, String string) {
-        int i = out.position();
-        int i_0_ = string.length();
-        byte[] is = new byte[i_0_];
-        for(int i_1_ = 0; i_1_ < i_0_; i_1_++) {
-            char c = string.charAt(i_1_);
-            if((c <= 0 || c >= '\u0080') && (c < '\u00a0' || c > '\u00ff')) {
-                if(c == '\u20ac')
-                    is[i_1_] = (byte) -128;
-                else if(c == '\u201a')
-                    is[i_1_] = (byte) -126;
-                else if(c == '\u0192')
-                    is[i_1_] = (byte) -125;
-                else if(c == '\u201e')
-                    is[i_1_] = (byte) -124;
-                else if(c == '\u2026')
-                    is[i_1_] = (byte) -123;
-                else if(c == '\u2020')
-                    is[i_1_] = (byte) -122;
-                else if(c == '\u2021')
-                    is[i_1_] = (byte) -121;
-                else if(c == '\u02c6')
-                    is[i_1_] = (byte) -120;
-                else if(c == '\u2030')
-                    is[i_1_] = (byte) -119;
-                else if(c != '\u0160') {
-                    if(c == '\u2039')
-                        is[i_1_] = (byte) -117;
-                    else if(c == '\u0152')
-                        is[i_1_] = (byte) -116;
-                    else if(c == '\u017d')
-                        is[i_1_] = (byte) -114;
-                    else if(c == '\u2018')
-                        is[i_1_] = (byte) -111;
-                    else if(c == '\u2019')
-                        is[i_1_] = (byte) -110;
-                    else if(c == '\u201c')
-                        is[i_1_] = (byte) -109;
-                    else if(c == '\u201d')
-                        is[i_1_] = (byte) -108;
-                    else if(c == '\u2022')
-                        is[i_1_] = (byte) -107;
-                    else if(c == '\u2013')
-                        is[i_1_] = (byte) -106;
-                    else if(c == '\u2014')
-                        is[i_1_] = (byte) -105;
-                    else if(c == '\u02dc')
-                        is[i_1_] = (byte) -104;
-                    else if(c == '\u2122')
-                        is[i_1_] = (byte) -103;
-                    else if(c == '\u0161')
-                        is[i_1_] = (byte) -102;
-                    else if(c == '\u203a')
-                        is[i_1_] = (byte) -101;
-                    else if(c == '\u0153')
-                        is[i_1_] = (byte) -100;
-                    else if(c == '\u017e')
-                        is[i_1_] = (byte) -98;
-                    else if(c == '\u0178')
-                        is[i_1_] = (byte) -97;
-                    else
-                        is[i_1_] = (byte) 63;
-                } else
-                    is[i_1_] = (byte) -118;
-            } else
-                is[i_1_] = (byte) c;
-        }
-        out.addSmart(is.length);
-        out.resizeIfNeeded(out.position() + string.length() * 2); //added
-        int length = instance.encrypt(is, 0, is.length, out.payload(), out.position());
-        out.skip(length);
-        return out.position() - i;
-    }
-
-    public static String decrypt(InBuffer in, int maxLength) {
-        try {
-            int i = in.readSmart();
-            if(i > maxLength)
-                i = maxLength;
-            byte[] is = new byte[i];
-            int length = instance.decrypt(in.getPayload(), in.position(), is, 0, i);
-            in.skip(length);
-            return method1296(is, 0, i);
-        } catch(Exception exception) {
-            return "Cabbage";
-        }
-    }
-
-    public static String method1296(byte[] is, int i, int i_0_) {
-        char[] cs = new char[i_0_];
-        int i_1_ = 0;
-        for(int i_2_ = 0; i_2_ < i_0_; i_2_++) {
-            int i_3_ = is[i + i_2_] & 0xff;
-            if(i_3_ != 0) {
-                if(i_3_ >= 128 && i_3_ < 160) {
-                    int i_4_ = aCharArray1146[i_3_ - 128];
-                    if(i_4_ == 0)
-                        i_4_ = 63;
-                    i_3_ = i_4_;
-                }
-                cs[i_1_++] = (char) i_3_;
+    public static byte[] encrypt(String string) {
+        int size = string.length();
+        byte[] array = new byte[size];
+        for (int index = 0; index < size; ++index) {
+            char c = string.charAt(index);
+            if (c > 0 && c < 128 || c >= 160 && c <= 255) {
+                array[index] = (byte)c;
+            } else if (c == 8364) {
+                array[index] = -128;
+            } else if (c == 8218) {
+                array[index] = -126;
+            } else if (c == 402) {
+                array[index] = -125;
+            } else if (c == 8222) {
+                array[index] = -124;
+            } else if (c == 8230) {
+                array[index] = -123;
+            } else if (c == 8224) {
+                array[index] = -122;
+            } else if (c == 8225) {
+                array[index] = -121;
+            } else if (c == 710) {
+                array[index] = -120;
+            } else if (c == 8240) {
+                array[index] = -119;
+            } else if (c == 352) {
+                array[index] = -118;
+            } else if (c == 8249) {
+                array[index] = -117;
+            } else if (c == 338) {
+                array[index] = -116;
+            } else if (c == 381) {
+                array[index] = -114;
+            } else if (c == 8216) {
+                array[index] = -111;
+            } else if (c == 8217) {
+                array[index] = -110;
+            } else if (c == 8220) {
+                array[index] = -109;
+            } else if (c == 8221) {
+                array[index] = -108;
+            } else if (c == 8226) {
+                array[index] = -107;
+            } else if (c == 8211) {
+                array[index] = -106;
+            } else if (c == 8212) {
+                array[index] = -105;
+            } else if (c == 732) {
+                array[index] = -104;
+            } else if (c == 8482) {
+                array[index] = -103;
+            } else if (c == 353) {
+                array[index] = -102;
+            } else if (c == 8250) {
+                array[index] = -101;
+            } else if (c == 339) {
+                array[index] = -100;
+            } else if (c == 382) {
+                array[index] = -98;
+            } else if (c == 376) {
+                array[index] = -97;
+            } else {
+                array[index] = 63;
             }
         }
-        return new String(cs, 0, i_1_);
+        return array;
+    }
+
+    public static String decompress(byte[] compressed, int length) {
+        byte[] decompressed = new byte[length];
+
+        instance.decompress(compressed, 0, decompressed, 0, length);
+
+        return decodeStringCp1252(decompressed, 0, length);
+    }
+
+    public static byte[] compressString(String string) {
+        OutBuffer out = new OutBuffer(255);
+        byte[] array = encrypt(string);
+        out.addSmart(array.length);
+        out.resizeIfNeeded(out.position() + array.length * 2);
+        int length = Huffman.compressString(array, 0, array.length, out.payload(), out.position());
+        out.skip(length);
+        return out.toByteArray();
+    }
+
+    public static int compressString(byte[] charArray, int startingIndex, int charArraySize, byte[] outputArray, int offset) {
+        return instance.compress(charArray, startingIndex, charArraySize, outputArray, offset);
+    }
+
+    public static String decodeStringCp1252(byte[] var0, int var1, int var2) {
+        char[] var3 = new char[var2];
+        int var4 = 0;
+
+        for (int var5 = 0; var5 < var2; ++var5) {
+            int var6 = var0[var5 + var1] & 255;
+            if (var6 != 0) {
+                if (var6 >= 128 && var6 < 160) {
+                    char var7 = cp1252AsciiExtension[var6 - 128];
+                    if (var7 == 0) {
+                        var7 = '?';
+                    }
+
+                    var6 = var7;
+                }
+
+                var3[var4++] = (char)var6;
+            }
+        }
+        return new String(var3, 0, var4);
     }
 }

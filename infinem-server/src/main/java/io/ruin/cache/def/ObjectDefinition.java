@@ -479,6 +479,7 @@ public class ObjectDefinition {
         else if (i == 83)
             in.readUnsignedShort();
         else if (i == 89); // setRandomizeAnimStart(true);
+        else if (i == 90); // setDeferAnimChange(true);
         else if (i == 249) {
             int length = in.readUnsignedByte();
 

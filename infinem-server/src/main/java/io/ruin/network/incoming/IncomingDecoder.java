@@ -6,6 +6,7 @@ import io.ruin.api.netty.Message;
 import io.ruin.api.netty.MessageDecoder;
 import io.ruin.api.utils.ISAACCipher;
 import io.ruin.model.entity.player.Player;
+import io.ruin.network.ClientPacket;
 
 public class IncomingDecoder extends MessageDecoder<Player> {
 
@@ -39,9 +40,7 @@ public class IncomingDecoder extends MessageDecoder<Player> {
 
     @Override
     protected int getSize(int opcode) {
-        if(opcode < 0 || opcode >= Incoming.SIZES.length)
-            return UNHANDLED;
-        return Incoming.SIZES[opcode];
+        return ClientPacket.getPacketSize(opcode);
     }
 
     public boolean timeout() {

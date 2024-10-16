@@ -26,13 +26,13 @@ public class TeleportModeUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        out.addByteA(mode);
+        out.addByteSub(mode);
     }
 
     @Override
     public int get(boolean playerUpdate) {
         if (!playerUpdate) throw new UnsupportedOperationException("only for players...");
-        return 512;
+        return 2048;
     }
 
 }

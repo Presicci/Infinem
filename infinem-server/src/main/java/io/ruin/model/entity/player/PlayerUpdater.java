@@ -1,10 +1,12 @@
 package io.ruin.model.entity.player;
 
 import io.ruin.api.buffer.OutBuffer;
+import io.ruin.api.protocol.ServerPacket;
 import io.ruin.model.World;
 import io.ruin.model.entity.shared.UpdateMask;
 import io.ruin.model.map.Region;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class PlayerUpdater {
@@ -48,7 +50,7 @@ public class PlayerUpdater {
     }
 
     public void process() {
-        OutBuffer out = new OutBuffer(0xff).sendVarShortPacket(47);
+        OutBuffer out = new OutBuffer(0xff).sendVarShortPacket(ServerPacket.PLAYER_INFO.getPacketId());
         /**
          * Local
          */
@@ -115,6 +117,8 @@ public class PlayerUpdater {
         if(updateRegion) {
             updateRegion = false;
             player.getPacketSender().sendRegion(false);
+            //if worldentity != -1?
+            //player.getPacketSender().sendWorldEntity();
             player.getPacketSender().write(out);
             Region.update(player);
 
@@ -167,7 +171,7 @@ public class PlayerUpdater {
             updateType = 2;
         else if(localPlayer.getMovement().getWalkDirection() != -1)
             updateType = 1;
-        return updateMaskData << 16 | updateType;
+        return updateMaskData << 8 | updateType;
     }
 
     private boolean writeLocalUpdate(OutBuffer out, Player localPlayer, int updateHash) {
@@ -194,7 +198,7 @@ public class PlayerUpdater {
         /**
          * Update masks
          */
-        int maskData = (updateHash >> 16) & 0xffff;
+        int maskData = (updateHash >> 8) & 0xffffff;
         if(maskData != 0) {
             out.addBits(1, 1);
             writeMasks(localPlayer, maskData);
@@ -333,19 +337,28 @@ public class PlayerUpdater {
      */
 
     private void writeMasks(Player localPlayer, int maskData) {
-        boolean shortLength = maskData > 0xff;
+        System.out.println("writemasks");
+        int smallMask = 8;
+        int largeMask = 1024;
 
-        if(shortLength)
-            maskData |= 4;
+        if ((maskData & ~0xFF) != 0) {
+            maskData |= smallMask;
+        }
+        if ((maskData & ~0xFFFF) != 0) {
+            maskData |= largeMask;
+        }
 
         maskBuffer.addByte(maskData);
-
-        if(shortLength)
-            maskBuffer.addByte(maskData >> 8);
+        if ((maskData & smallMask) != 0) {
+            maskBuffer.addByte(maskData >>> 8);
+        }
+        if ((maskData & largeMask) != 0) {
+            maskBuffer.addByte(maskData >>> 16);
+        }
 
         for(UpdateMask updateMask : localPlayer.getMasks()) {
             if((maskData & updateMask.get(true)) != 0) {
-                //System.out.println("Player mask " + maskData + " for " + localPlayer.getName() + " type " + updateMask);
+                System.out.println("Player mask " + maskData + " for " + localPlayer.getName() + " type " + updateMask);
                 updateMask.send(maskBuffer, true);
                 updateMask.setSent(true);
             }

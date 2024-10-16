@@ -14,12 +14,10 @@ import java.io.FileNotFoundException;
 @Slf4j
 public class Js5Decoder extends MessageDecoder<Channel> {
 
-    private final FileStore fileStore;
     private int encryptionValue;
 
-    public Js5Decoder(FileStore fileStore) {
+    public Js5Decoder() {
         super(null, false);
-        this.fileStore = fileStore;
     }
 
     @Override
@@ -29,20 +27,8 @@ public class Js5Decoder extends MessageDecoder<Channel> {
             int archiveId = in.readUnsignedShort();
             boolean priority = opcode == 1;
             try {
-                OutBuffer fileBuffer = CacheManager.get(fileStore, index, archiveId, priority);
-                if (fileBuffer == null) {
-                    throw new FileNotFoundException();
-                }
-                byte[] data = fileBuffer.toByteArray();
-                if (index == 255 && archiveId == 255) {
-                    channel.writeAndFlush(fileBuffer.toBuffer(), channel.voidPromise());
-                } else {
-                    if (encryptionValue != 0)
-                        for (int dataIndex = 0; dataIndex < data.length; dataIndex++) {
-                            data[dataIndex] ^= encryptionValue;
-                        }
-                    channel.writeAndFlush(Unpooled.wrappedBuffer(data), channel.voidPromise());
-                }
+                OutBuffer fileBuffer = CacheManager.get(index, archiveId, priority, this.encryptionValue);
+                channel.writeAndFlush((Object) fileBuffer.toBuffer());
             } catch (Exception e) {
                 System.err.println("Invalid File Request (" + index + "," + archiveId + "," + priority + ") from: " + IPAddress.get(channel));
                 channel.close();

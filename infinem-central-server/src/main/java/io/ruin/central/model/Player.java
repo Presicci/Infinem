@@ -3,7 +3,7 @@ package io.ruin.central.model;
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.filestore.utility.Huffman;
 import io.ruin.api.protocol.Protocol;
-import io.ruin.api.utils.FileUtils;
+import io.ruin.api.protocol.ServerPacket;
 import io.ruin.api.utils.Random;
 import io.ruin.central.Server;
 import io.ruin.central.model.social.SocialList;
@@ -63,7 +63,8 @@ public class Player {
     }
 
     public void sendPrivacy(int privacy) {
-        OutBuffer out = new OutBuffer(2).sendFixedPacket(12).addByte(privacy);
+        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.SET_PRIVATECHATMODE.getPacketId())
+                .addByte(privacy);
         this.write(out);
     }
 
@@ -76,7 +77,7 @@ public class Player {
     }
 
     private void sendFriends(SocialMember ... friends) {
-        OutBuffer out = new OutBuffer(friends == null ? 3 : 255).sendVarShortPacket(17);
+        OutBuffer out = new OutBuffer(friends == null ? 3 : 255).sendVarShortPacket(ServerPacket.UPDATE_FRIENDLIST.getPacketId());
         if (friends != null) {
             for (SocialMember friend : friends) {
                 if (friend == null) continue;
@@ -96,7 +97,7 @@ public class Player {
     }
 
     private void sendIgnores(SocialMember ... ignores) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(7);
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(ServerPacket.UPDATE_IGNORELIST.getPacketId());
         if (ignores != null) {
             for (SocialMember ignore : ignores) {
                 if (ignore == null) continue;
@@ -114,13 +115,14 @@ public class Player {
     }
 
     public void sendReceivePM(String fromName, int fromRank, String message) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(21)
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(ServerPacket.MESSAGE_PRIVATE.getPacketId())
                 .addString(fromName);
         for (int i = 0; i < 5; ++i) {
             out.addByte(Random.get(255));
         }
-        out.addByte(fromRank);
-        Huffman.encrypt(out, message);
+        out.addByte(0);
+        byte[] stringArray = Huffman.compressString(message);
+        out.addBytes(stringArray, 0, stringArray.length);
         this.write(out);
     }
 

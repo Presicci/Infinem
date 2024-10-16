@@ -127,11 +127,15 @@ public class NPCDefinition {
     public int walkAnimation = -1;
     public int walkLeftAnimation = -1;
     public int walkRightAnimation = -1;
-    public boolean aBool3573 = false;
+    public boolean isFollower = false;
+    public boolean isLowPriorityFollowerOps = false;
     public String[] options = new String[5];
+    public int height = -1;
+    public int[] stats = {1, 1, 1, 1, 1, 1};
     public int combatLevel = -1;
     public boolean hasRenderPriority = false;
-    public int headIcon = -1;
+    public int[] headIconArchiveIds;
+    public short[] headIconSpriteIndex;
     public int rotation = 32;
     public int[] showIds;
     public boolean isClickable = true;
@@ -256,13 +260,13 @@ public class NPCDefinition {
             options[1] = "Trade";
         } else if(id == 8300) { //Ranalph Devere Melee
             copy(3966);
-            headIcon = 0;
+            //headIcon = 0;
         } else if(id == 8301) { //Ranalph Devere Range
             copy(3966);
-            headIcon = 1;
+            //headIcon = 1;
         } else if(id == 8302) { //Ranalph Devere Mage
             copy(3966);
-            headIcon = 2;
+            //headIcon = 2;
         } else if (id == 5314) {
             name = "Wizard Cromperty";
         } else if (id == 2897) {
@@ -416,8 +420,20 @@ public class NPCDefinition {
         } else if(var2 == 60) {
             int var4 = var1.readUnsignedByte();
             models_2 = new int[var4];
-            for(int var5 = 0; var5 < var4; var5++)
+            for (int var5 = 0; var5 < var4; var5++)
                 models_2[var5] = var1.readUnsignedShort();
+        } else if (var2 == 74) {
+            stats[0] = var1.readUnsignedShort();
+        } else if (var2 == 75) {
+            stats[1] = var1.readUnsignedShort();
+        } else if (var2 == 76) {
+            stats[2] = var1.readUnsignedShort();
+        } else if (var2 == 77) {
+            stats[3] = var1.readUnsignedShort();
+        } else if (var2 == 78) {
+            stats[4] = var1.readUnsignedShort();
+        } else if (var2 == 79) {
+            stats[5] = var1.readUnsignedShort();
         } else if(var2 == 93)
             isMinimapVisible = false;
         else if(var2 == 95)
@@ -432,9 +448,29 @@ public class NPCDefinition {
             ambient = var1.readByte();
         else if(var2 == 101)
             contrast = var1.readByte() * 5;
-        else if(var2 == 102)
-            headIcon = var1.readUnsignedShort();
-        else if(var2 == 103)
+        else if(var2 == 102) {
+            int mask = var1.readUnsignedByte();
+            int length = 0;
+
+            int bit = mask;
+            while (bit != 0) {
+                length++;
+                bit >>= 1;
+            }
+
+            this.headIconArchiveIds = new int[length];
+            this.headIconSpriteIndex = new short[length];
+
+            for (int id = 0; id < length; ++id) {
+                if ((mask & 1 << id) == 0) {
+                    this.headIconArchiveIds[id] = -1;
+                    this.headIconSpriteIndex[id] = -1;
+                } else {
+                    this.headIconArchiveIds[id] = var1.readBigSmart();
+                    this.headIconSpriteIndex[id] = (short) var1.readUnsignedSmartSub();
+                }
+            }
+        } else if(var2 == 103)
             rotation = var1.readUnsignedShort();
         else if(var2 == 106 || var2 == 118) {
             varpbitId = var1.readUnsignedShort();
@@ -461,9 +497,10 @@ public class NPCDefinition {
             isClickable = false;
         else if (var2 == 109)
             aBool3588 = false;
-        else if (var2 == 111)
-            aBool3573 = true;
-        else if (var2 == 114) {
+        else if (var2 == 111) {
+            isFollower = true;
+            isLowPriorityFollowerOps = true;
+        } else if (var2 == 114) {
             runSequence = var1.readUnsignedShort();
         } else if (var2 == 115) {
             runSequence = var1.readUnsignedShort();
@@ -477,7 +514,13 @@ public class NPCDefinition {
             crawlBackSequence = var1.readUnsignedShort();
             crawlLeftSequence = var1.readUnsignedShort();
             crawlRightSequence = var1.readUnsignedShort();
-        } else if (var2 == 249) {
+        } else if (var2 == 122)
+            isFollower = true;
+        else if (var2 == 123)
+            isLowPriorityFollowerOps = true;
+        else if (var2 == 124)
+            height = var1.readUnsignedShort();
+        else if (var2 == 249) {
             int size = var1.readUnsignedByte();
             if (attributes == null)
                 attributes = new HashMap<>();
@@ -509,11 +552,13 @@ public class NPCDefinition {
             walkAnimation = otherDef.walkAnimation;
             walkLeftAnimation = otherDef.walkLeftAnimation;
             walkRightAnimation = otherDef.walkRightAnimation;
-            aBool3573 = otherDef.aBool3573;
+            isFollower = otherDef.isFollower;
+            isLowPriorityFollowerOps = otherDef.isLowPriorityFollowerOps;
             options = otherDef.options == null ? null : otherDef.options.clone();
             combatLevel = otherDef.combatLevel;
             hasRenderPriority = otherDef.hasRenderPriority;
-            headIcon = otherDef.headIcon;
+            headIconArchiveIds = otherDef.headIconArchiveIds;
+            headIconSpriteIndex = otherDef.headIconSpriteIndex;
             rotation = otherDef.rotation;
             showIds = otherDef.showIds == null ? null : otherDef.showIds.clone();
             isClickable = otherDef.isClickable;

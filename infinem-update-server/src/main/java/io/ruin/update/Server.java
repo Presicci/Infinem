@@ -29,8 +29,13 @@ public class Server extends ServerWrapper {
                 logError("Failed to load server settings!", e);
                 throw e;
             }
-            System.out.println("Initiating file store...");
-            fileStore = new FileStore(properties.getProperty("cache_path"));
+            try {
+                System.out.println("Initiating file store...");
+                fileStore = new FileStore(properties.getProperty("cache_path"));
+            } catch (Exception e) {
+                logError("Failed to initialize file store!", e);
+                return;
+            }
 /*            FileWatcherService watcherService = new FileWatcherService(new File(properties.getProperty("cache_path")));
             watcherService.onFileModified(watchEvent -> {
                try {

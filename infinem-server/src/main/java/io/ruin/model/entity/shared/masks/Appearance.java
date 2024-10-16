@@ -11,8 +11,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
 import lombok.Getter;
 
-import java.util.Map;
-
 public class Appearance extends UpdateMask {
 
     private Player player;
@@ -212,6 +210,21 @@ public class Appearance extends UpdateMask {
                 append(player, data, Equipment.SLOT_HAT, 1);
 
             }
+
+            // write the base appearance with no items worn
+            data.addByte(0);
+            data.addByte(0);
+            data.addByte(0);
+            data.addByte(0);
+            data.addShort(styles[2] | 0x100);
+            data.addShort(styles[3] | 0x100);
+            data.addShort(styles[5] | 0x100);
+            data.addShort(styles[0] | 0x100);
+            data.addByte(0);
+            data.addShort(styles[4] | 0x100);
+            data.addShort(styles[6] | 0x100);
+            data.addShort(styles[1] | 0x100);
+
             for(int color : colors)
                 data.addByte(color);
             int[] renders;
@@ -226,7 +239,7 @@ public class Appearance extends UpdateMask {
             }
             for(int id : renders)
                 data.addShort(id);
-            data.writeStringCp1252NullTerminated(player.getName());
+            data.addString(player.getName());
            /* if (player.getTitle() == null) { //TODO: Custom Edits
                 data.addString("");
                 data.addString("");
@@ -245,10 +258,16 @@ public class Appearance extends UpdateMask {
             data.addShort(0); // skillLevel
             data.addByte(0); // isHidden if this == 1
             data.addShort(0); // Vex (clan hub) shit.
+
+            for (int i = 0; i < 3; i++) {
+                data.addString("");
+            }
+
+            data.addByte(gender);
         }
-        int length = data.position();
-        out.addByte(length);
-        out.addBytesSpecial(data.payload(), 0, length);
+        out.addByteNeg(data.position());
+        System.out.println(data.position());
+        out.addBytesSpecial(data.payload(), 0, data.position());
     }
 
     private void append(Player player, OutBuffer out, int slot, int styleIndex) {
@@ -315,13 +334,13 @@ public class Appearance extends UpdateMask {
                     out.addShort(256 + styles[styleIndex]);
                 return;
             }
-            out.addShort(512 + itemId);
+            out.addShort(2048 + itemId);
         }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return 2;
+        return 32;
     }
 
 }

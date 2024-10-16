@@ -9,11 +9,12 @@ import java.util.HashMap;
 
 public class CacheManager {
 
-    private static final HashMap<Long, OutBuffer> cachedBuffers = new HashMap<>(1000);
+    private static final HashMap<Long, OutBuffer> cachedBuffers = new HashMap(1000);
 
-    public static synchronized OutBuffer get(FileStore fs, int index, int archiveId, boolean priority) throws IOException {
+    public static synchronized OutBuffer get(int index, int archiveId, boolean priority, int encryptionValue) throws IOException {
         int storedType = priority ? index : index + 256;
         long hash = (long) archiveId + ((long) storedType << 32);
+        FileStore fs = Server.fileStore;
         HashMap<Long, OutBuffer> map = cachedBuffers;
         OutBuffer cached = map.get(hash);
         if (cached != null) {
@@ -78,4 +79,3 @@ public class CacheManager {
         return cached;
     }
 }
-

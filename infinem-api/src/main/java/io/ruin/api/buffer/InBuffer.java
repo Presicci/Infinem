@@ -49,28 +49,28 @@ public class InBuffer {
         return readByte() & 0xff;
     }
 
-    public byte readByteA() {
+    public byte readByteAdd() {
         return (byte) (readByte() - 128);
     }
 
-    public int readUnsignedByteA() {
-        return readByteA() & 0xff;
+    public int readUnsignedByteAdd() {
+        return readByteAdd() & 0xff;
     }
 
-    public byte readByteC() {
+    public byte readByteNeg() {
         return (byte) -readByte();
     }
 
-    public int readUnsignedByteC() {
-        return readByteC() & 0xff;
+    public int readUnsignedByteNeg() {
+        return readByteNeg() & 0xff;
     }
 
-    public int readByteS() {
+    public int readByteSub() {
         return (byte) (128 - readByte());
     }
 
-    public int readUnsignedByteS() {
-        return readByteS() & 0xff;
+    public int readUnsignedByteSub() {
+        return readByteSub() & 0xff;
     }
 
     public int readShort() {
@@ -90,16 +90,16 @@ public class InBuffer {
         return (this.readUnsignedByte() << 16) + (this.readUnsignedByte() << 8) + this.readUnsignedByte();
     }
 
-    public int readShortA() {
-        int i = (readUnsignedByte() << 8) + readUnsignedByteA();
+    public int readShortAdd() {
+        int i = (readUnsignedByte() << 8) + readUnsignedByteAdd();
         if(i > 32767) {
             i -= 0x10000;
         }
         return i;
     }
 
-    public int readUnsignedShortA() {
-        return (readUnsignedByte() << 8) + readUnsignedByteA();
+    public int readUnsignedShortAdd() {
+        return readUnsignedByteAdd() + (readUnsignedByte() << 8);
     }
 
     public int readLEShort() {
@@ -114,16 +114,16 @@ public class InBuffer {
         return readUnsignedByte() + (readUnsignedByte() << 8);
     }
 
-    public int readLEShortA() {
-        int i = readUnsignedByteA() + (readUnsignedByte() << 8);
+    public int readLEShortAdd() {
+        int i = readUnsignedByteAdd() + (readUnsignedByte() << 8);
         if(i > 32767) {
             i -= 0x10000;
         }
         return i;
     }
 
-    public int readUnsignedLEShortA() {
-        return readUnsignedByteA() + (readUnsignedByte() << 8);
+    public int readUnsignedLEShortAdd() {
+        return (readUnsignedByte() << 8) + readUnsignedByteAdd();
     }
 
     public int readIntME() {
@@ -138,11 +138,11 @@ public class InBuffer {
         return (readUnsignedByte() << 24) + (readUnsignedByte() << 16) + (readUnsignedByte() << 8) + readUnsignedByte();
     }
 
-    public int readInt1() {
+    public int readMInt() {
         return (readUnsignedByte() << 8) + readUnsignedByte() + (readUnsignedByte() << 24) + (readUnsignedByte() << 16);
     }
 
-    public int readInt2() {
+    public int readIMInt() {
         return (readUnsignedByte() << 16) + (readUnsignedByte() << 24) + readUnsignedByte() + (readUnsignedByte() << 8);
     }
 
@@ -287,5 +287,10 @@ public class InBuffer {
     {
         int peek = this.peek() & 0xFF;
         return peek < 128 ? this.readUnsignedByte() : this.readUnsignedShort() - 0x8000;
+    }
+
+    public int readUnsignedSmartSub() {
+        int peek = this.peek() & 0xFF;
+        return peek < 128 ? this.readUnsignedByte() : this.readUnsignedShort() - 32769;
     }
 }

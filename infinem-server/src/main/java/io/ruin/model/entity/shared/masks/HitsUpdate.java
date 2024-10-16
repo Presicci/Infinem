@@ -9,6 +9,21 @@ import java.util.ArrayList;
 
 public class HitsUpdate extends UpdateMask {
 
+    /**
+     * Ratio calc
+     */
+    private static final int[][] RATIO_DATA = {
+            {30, 30},       //0
+            {100, 100},     //1
+            {120, 120},     //2
+            {160, 160},     //3
+            {120, 120},     //4
+            {60, 60},       //5
+            {100, 100},     //6
+            {100, 100},     //7
+            {120, 120},     //8
+    };
+
     private final ArrayList<Splat> splats = new ArrayList<>(4);
 
     public int hpBarType;
@@ -22,7 +37,7 @@ public class HitsUpdate extends UpdateMask {
     private boolean forceSend = false;
 
     public void add(Hit hit, int curHp, int maxHp) {
-        if(splats.size() < 6)
+        if (splats.size() < 6)
             splats.add(new Splat(hit.type.ordinal(), hit.damage, 0));
         this.hpBarRatio = toRatio(hpBarType, curHp, maxHp);
         this.curHp = curHp;
@@ -52,42 +67,34 @@ public class HitsUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        if(playerUpdate)
-            out.addByteA(splats.size());
+        if (playerUpdate)
+            out.addByteNeg(splats.size());
         else
-            out.addByteS(splats.size());
-        for(Splat splat : splats) {
+            out.addByteSub(splats.size()); // ?
+        for (Splat splat : splats) {
             out.addSmart(splat.type);
             out.addSmart(splat.damage);
             out.addSmart(splat.delay);
         }
 
-        if(playerUpdate)
-            out.addByte(1); //hp bar count
+        if (playerUpdate)
+            out.addByteAdd(1); // Hp bar count
         else
-            out.addByteA(1); //hp bar count
+            out.addByteAdd(1); // Hp bar count ?
         out.addSmart(hpBarType);
-        int timespan = 0;
-        out.addSmart(timespan);
-        if (timespan != 0x7FFF) {
-            out.addSmart(0); //hp bar delay
-            if (playerUpdate)
-                out.addByteA(hpBarRatio);
-            else
-                out.addByteC(hpBarRatio);
-            if (timespan > 0) {
-                int destinationFillAmount = hpBarRatio;
-                if (playerUpdate)
-                    out.addByteS(destinationFillAmount);
-                else
-                    out.addByteA(destinationFillAmount);
-            }
-        }
+        out.addSmart(0); // Second bar type
+        out.addSmart(0); // Hp bar delay
+        if (playerUpdate) {
+            out.addByte(hpBarRatio);
+            // if second smart is greater than 0, out.addByteS
+        } else
+            out.addByte(hpBarRatio);
+            // if second smart is greater than 0, out.addByteA
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 1 : 2;
+        return playerUpdate ? 128 : 128;
     }
 
     private static final class Splat {
@@ -104,24 +111,9 @@ public class HitsUpdate extends UpdateMask {
 
     }
 
-    /**
-     * Ratio calc
-     */
-    private static final int[][] RATIO_DATA = {
-            {30, 30},       //0
-            {100, 100},     //1
-            {120, 120},     //2
-            {160, 160},     //3
-            {120, 120},     //4
-            {60, 60},       //5
-            {100, 100},     //6
-            {100, 100},     //7
-            {120, 120},     //8
-    };
-
     private static int toRatio(int type, int min, int max) {
         int ratio = (Math.min(min, max) * RATIO_DATA[type][0]) / max;
-        if(ratio == 0 && min > 0)
+        if (ratio == 0 && min > 0)
             ratio = 1;
         return ratio;
     }

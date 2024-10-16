@@ -60,13 +60,30 @@ public class TabInventory {
             item.examine(player);
             return;
         }
-        int i = option - 1;
-        if(i < 0 || i >= 5)
-            return;
         ItemDefinition def = item.getDef();
+        switch (option) {
+            case 1:
+                option = def.getShiftIndex();
+                break;
+            case 2:
+                option = 1;
+                break;
+            case 3:
+                option = 2;
+                break;
+            case 4:
+                option = 3;
+                break;
+            case 6:
+                option = 4;
+                break;
+            case 7:
+                option = 5;
+                break;
+        }
         ItemAction[] actions = def.inventoryActions;
         if(actions != null) {
-            ItemAction action = actions[i];
+            ItemAction action = actions[option - 1];
             if(action != null) {
                 action.handle(player, item);
                 return;
@@ -104,10 +121,11 @@ public class TabInventory {
             }
             ItemDropPrompt dropPrompt = def.getCustomValueOrDefault("DROP_PROMPT", null);
             if (dropPrompt != null) {
+                int finalOption = option;
                 player.dialogue(
                         new YesNoDialogue("Are you sure you want to do this?", dropPrompt.getMessage(), item.getId(), 1, () -> {
                             dropPrompt.getAction().accept(item);
-                            drop(player, item, option);
+                            drop(player, item, finalOption);
                         })
                 );
             } else {

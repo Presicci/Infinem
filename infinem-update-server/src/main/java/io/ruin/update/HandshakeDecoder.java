@@ -7,9 +7,12 @@ import io.ruin.api.filestore.FileStore;
 import io.ruin.api.netty.MessageDecoder;
 import io.ruin.api.protocol.Response;
 
+import java.util.Arrays;
+
 public class HandshakeDecoder extends MessageDecoder<Channel> {
 
-    public static int REVISION = 199;
+    private static final int SUB_BUILD = 1;
+    public static int REVISION = 225;
     public static final int OPCODE = 15;
     public static final int SIZE = 4;
 
@@ -29,9 +32,13 @@ public class HandshakeDecoder extends MessageDecoder<Channel> {
         switch(opcode) {
             case OPCODE:
                 int clientBuild = in.readInt();
+                in.readInt();
+                in.readInt();
+                in.readInt();
+                in.readInt();
                 if (clientBuild == REVISION) {
-                    channel.writeAndFlush(new OutBuffer(REVISION).addByte(0).toBuffer(), channel.voidPromise());
-                    channel.pipeline().replace("decoder", "decoder", new Js5Decoder(fileStore));
+                    channel.writeAndFlush(new OutBuffer(SUB_BUILD).addByte(0).toBuffer());
+                    channel.pipeline().replace("decoder", "decoder", new Js5Decoder());
                     return;
                 }
                 Response.GAME_UPDATED.send(channel);
@@ -46,7 +53,7 @@ public class HandshakeDecoder extends MessageDecoder<Channel> {
     protected int getSize(int opcode) {
         switch (opcode) {
             case OPCODE: {
-                return SIZE;
+                return 20;
             }
         }
         return -3;

@@ -1,16 +1,17 @@
 package io.ruin.model.entity.shared.masks;
 
 import io.ruin.api.buffer.OutBuffer;
+import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.shared.UpdateMask;
 
 public class EntityDirectionUpdate extends UpdateMask {
 
-    public int direction = -1;
+    public Entity target;
     private boolean update;
     private int stage;
 
-    public void set(int direction, boolean temporary) {
-        this.direction = direction;
+    public void set(Entity target, boolean temporary) {
+        this.target = target;
         this.stage = (temporary ? 1 : 0);
         this.update = true;
         setSent(false);
@@ -27,7 +28,7 @@ public class EntityDirectionUpdate extends UpdateMask {
             /**
              * Remove
              */
-            set(-1, false);
+            set(null, false);
         }
     }
 
@@ -50,20 +51,27 @@ public class EntityDirectionUpdate extends UpdateMask {
 
     @Override
     public boolean hasUpdate(boolean added) {
-        return update || (added && direction != -1);
+        return update || (added && target != null);
     }
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        if(playerUpdate)
-            out.addShortA(direction);
-        else
-            out.addShort(direction);
+        int index = 0xFFFFFF;
+        if (target != null) {
+            index = target.getClientIndex();
+        }
+        if (playerUpdate) {
+            out.addLEShortAdd(index & 0xffff);
+            out.addByteNeg(index >> 16);
+        } else {
+            out.addLEShortAdd(index & 0xffff);
+            out.addByteNeg(index >> 16);
+        }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 8 : 8;
+        return playerUpdate ? 64 : 16;
     }
 
 }

@@ -138,6 +138,26 @@ public class NPC extends NPCAttributes {
     }
 
     /**
+     * Masks - Combat level
+     */
+
+    private CombatLevelUpdate combatLevelUpdate;
+
+    public void setCombatLevelUpdate(int level) {
+        combatLevelUpdate.set(level);
+    }
+
+    /**
+     * Masks - NPC Overrides
+     */
+
+    protected NPCOverrideUpdate npcOverrideUpdate;
+
+    public NPCOverrideUpdate override() {
+        return npcOverrideUpdate;
+    }
+
+    /**
      * Movement
      */
 
@@ -262,12 +282,16 @@ public class NPC extends NPCAttributes {
         this.movement = new NPCMovement(this);
         this.masks = new UpdateMask[]{
                 transformUpdate = new TransformUpdate(),
-                animationUpdate = new AnimationUpdate(),
-                mapDirectionUpdate = new MapDirectionUpdate(),
-                graphicsUpdate = new GraphicsUpdate(),
                 forceTextUpdate = new ForceTextUpdate(),
+                mapDirectionUpdate = new MapDirectionUpdate(),
+                animationUpdate = new AnimationUpdate(),
                 entityDirectionUpdate = new EntityDirectionUpdate(),
+                npcOverrideUpdate = new NPCOverrideUpdate(),
+                combatLevelUpdate = new CombatLevelUpdate(),
+                modelRecolorUpdate = new ModelRecolorUpdate(),
+                graphicsUpdate = new GraphicsUpdate(),
                 hitsUpdate = new HitsUpdate(),
+                forceMovementUpdate = new ForceMovementUpdate(),
         };
     }
 

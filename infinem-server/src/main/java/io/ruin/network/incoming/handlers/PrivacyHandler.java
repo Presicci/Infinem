@@ -4,9 +4,10 @@ import io.ruin.api.buffer.InBuffer;
 import io.ruin.model.entity.player.Player;
 import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.Incoming;
-import io.ruin.utility.IdHolder;
+import io.ruin.network.ClientPacket;
+import io.ruin.utility.ClientPacketHolder;
 
-@IdHolder(ids = {46})//@IdHolder(ids = {21})
+@ClientPacketHolder(packets = {ClientPacket.CHAT_SETFILTER})
 public class PrivacyHandler implements Incoming {
 
     @Override

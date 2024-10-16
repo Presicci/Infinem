@@ -76,7 +76,7 @@ public class Region {
                 for(int x = 0; x < 64; x++) {
                     for(int y = 0; y < 64; y++) {
                         for(; ; ) {
-                            int i = mapIn.readUnsignedShort() & 0xFF;
+                            int i = mapIn.readShort() & 0xFFFF;
                             if(i == 0)
                                 break;
                             if(i == 1) {
@@ -128,31 +128,31 @@ public class Region {
             InBuffer landIn = new InBuffer(landscapeData);
             int objectId = -1;
             for(; ; ) {
-                int idOffset = landIn.readUnsignedIntSmartShortCompat();
+                int idOffset = landIn.readSmart2();
                 if(idOffset == 0)
                     break;
                 objectId += idOffset;
                 int position = 0;
                 for(; ; ) {
-                    int positionOffset = landIn.readUnsignedShortSmart();
+                    int positionOffset = landIn.readSmart();
                     if(positionOffset == 0)
                         break;
                     position += positionOffset - 1;
-                    int localY = position & 0x3f;
                     int localX = (position >> 6) & 0x3f;
+                    int localY = position & 0x3f;
                     int height = position >> 12;
 
-                    int attributes = landIn.readUnsignedByte();
+                    int attributes = landIn.readByte() & 0xFF;
                     int type = attributes >> 2;
                     int direction = attributes & 0x3;
 
                     if((tileData[1][localX][localY] & 0x2) == 2)
                         height--;
-                    if(height >= 0) {
+                    if(height >= 0 && height <= 3) {
                         int absX = baseX + localX;
                         int absY = baseY + localY;
-                        GameObject obj = new GameObject(objectId, absX, absY, height, type, direction);
-                        getTile(absX, absY, height, true).addObject(obj);
+                        GameObject obj = new GameObject(objectId, absX, absY, height % 4, type, direction);
+                        getTile(absX, absY, height % 4, true).addObject(obj);
                         BankActions.markTiles(obj);
                     }
                 }

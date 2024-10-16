@@ -3,9 +3,10 @@ package io.ruin.network.incoming.handlers;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.model.entity.player.Player;
 import io.ruin.network.incoming.Incoming;
-import io.ruin.utility.IdHolder;
+import io.ruin.network.ClientPacket;
+import io.ruin.utility.ClientPacketHolder;
 
-@IdHolder(ids = {67})//@IdHolder(ids = {57})
+@ClientPacketHolder(packets = {ClientPacket.CLOSE_MODAL})
 public class CloseInterfaceHandler implements Incoming {
 
     @Override

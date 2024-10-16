@@ -8,68 +8,71 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.network.incoming.Incoming;
+import io.ruin.network.ClientPacket;
+import io.ruin.utility.ClientPacketHolder;
 import io.ruin.utility.DebugMessage;
-import io.ruin.utility.IdHolder;
 
 import java.util.Arrays;
 
-@IdHolder(ids={69, 72, 37, 41, 9, 50})//@IdHolder(ids={51, 6, 42, 95, 50, 36 })
+@ClientPacketHolder(packets = {
+        ClientPacket.OPLOC1, ClientPacket.OPLOC2, ClientPacket.OPLOC3,
+        ClientPacket.OPLOC4, ClientPacket.OPLOC5, ClientPacket.OPLOCE})
 public class ObjectActionHandler implements Incoming {
 
     @Override
     public void handle(Player player, InBuffer in, int opcode) {
-        if(player.isLocked())
+        if (player.isLocked())
             return;
         player.resetIdle();
         int option = OPTIONS[opcode];
         if (option != 6)
             player.resetActions(true, true, true);
-        if(option == 1) {
-            int ctrlRun = in.readByteC();
-            int x = in.readShortA();
-            int y = in.readLEShort();
+        if (option == 1) {
+            int x = in.readUnsignedLEShortAdd();
             int id = in.readUnsignedShort();
+            int y = in.readUnsignedShort();
+            int ctrlRun = in.readByteSub();
             player.removeTemporaryAttribute(TricksterAgility.KEY);
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
-        if(option == 2) {
+        if (option == 2) {
+            int y = in.readUnsignedShort();
+            int id = in.readUnsignedLEShortAdd();
+            int ctrlRun = in.readByteNeg();
+            int x = in.readUnsignedLEShort();
+            handleAction(player, option, id, x, y, ctrlRun);
+            return;
+        }
+        if (option == 3) {
+            int y = in.readUnsignedShort();
             int id = in.readUnsignedLEShort();
-            int y = in.readShortA();
-            int x = in.readLEShort();
-            int ctrlRun = in.readByteA();
+            int ctrlRun = in.readByteSub();
+            int x = in.readUnsignedLEShortAdd();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
-        if(option == 3) {
-            int ctrlRun = in.readByteA();
-            int id = in.readUnsignedLEShortA();
-            int y = in.readLEShortA();
-            int x = in.readLEShort();
+        if (option == 4) {
+            int y = in.readUnsignedShort();
+            int x = in.readUnsignedLEShort();
+            int ctrlRun = in.readByteNeg();
+            int id = in.readUnsignedLEShortAdd();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
-        if(option == 4) {
-            int x = in.readLEShortA();
-            int ctrlRun = in.readByteA();
-            int id = in.readUnsignedLEShort();
-            int y = in.readShortA();
+        if (option == 5) {
+            int y = in.readUnsignedLEShortAdd();
+            int ctrlRun = in.readByteAdd();
+            int x = in.readUnsignedLEShort();
+            int id = in.readUnsignedLEShortAdd();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
-        if(option == 5) {
-            int x = in.readLEShort();
-            int y = in.readShortA();
+        if (option == 6) {
             int id = in.readUnsignedShort();
-            int ctrlRun = in.readByte();
-            handleAction(player, option, id, x, y, ctrlRun);
-            return;
-        }
-        if(option == 6) {
-            int id = in.readUnsignedShortA();
             ObjectDefinition def = ObjectDefinition.get(id);
-            if(def != null) {
-                if(player.debug) {
+            if (def != null) {
+                if (player.debug) {
                     DebugMessage debug = new DebugMessage()
                             .add("id", id)
                             .add("name", def.name)
@@ -80,7 +83,7 @@ public class ObjectActionHandler implements Incoming {
                 }
                 def.examine(player);
             } else {
-                if(player.debug) {
+                if (player.debug) {
                     player.sendFilteredMessage("[ObjectAction] Object with ID: " + id + " is null.");
                 }
             }
@@ -90,20 +93,21 @@ public class ObjectActionHandler implements Incoming {
     }
 
     public static void handleAction(Player player, int option, int objectId, int objectX, int objectY, int ctrlRun) {
-        if(objectId == -1) {
-            if(player.debug) {
+        System.out.println(objectId + ": " + objectX + ", " + objectY);
+        if (objectId == -1) {
+            if (player.debug) {
                 player.sendFilteredMessage("[ObjectAction] ObjectId is -1. Option=" + option);
             }
             return;
         }
         GameObject gameObject = Tile.getObject(objectId, objectX, objectY, player.getPosition().getZ());
-        if(gameObject == null) {
-            if(player.debug) {
+        if (gameObject == null) {
+            if (player.debug) {
                 player.sendFilteredMessage("[ObjectAction] Object with ID: " + objectId + " is null. Option=" + option);
             }
             return;
         }
-        if(player.debug) {
+        if (player.debug) {
             DebugMessage debug = new DebugMessage()
                     .add("option", option)
                     .add("id", gameObject.id)
@@ -122,15 +126,15 @@ public class ObjectActionHandler implements Incoming {
         player.getRouteFinder().routeObject(gameObject, () -> {
             player.getPacketSender().resetMapFlag();
             int i = option - 1;
-            if(i < 0 || i >= 5)
+            if (i < 0 || i >= 5)
                 return;
             ObjectAction action = null;
             ObjectAction[] actions = gameObject.actions;
-            if(actions != null)
+            if (actions != null)
                 action = actions[i];
-            if(action == null && (actions = gameObject.getDef().defaultActions) != null)
+            if (action == null && (actions = gameObject.getDef().defaultActions) != null)
                 action = actions[i];
-            if(action != null) {
+            if (action != null) {
                 action.handle(player, gameObject);
                 return;
             }

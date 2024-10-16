@@ -59,11 +59,11 @@ public abstract class MessageDecoder<T> extends ByteToMessageDecoder {
         if(size == VAR_BYTE) {
             if(buffer.readableBytes() < 1)
                 return;
-            size = buffer.readUnsignedByte();
+            size = buffer.readByte() & 0xff;
         } else if(size == VAR_SHORT) {
             if(buffer.readableBytes() < 2)
                 return;
-            size = buffer.readUnsignedShort();
+            size = buffer.readShort() & 0xffff;
         } else if(size == VAR_INT) {
             if(buffer.readableBytes() < 4)
                 return;

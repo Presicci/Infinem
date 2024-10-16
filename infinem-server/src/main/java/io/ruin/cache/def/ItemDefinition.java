@@ -267,12 +267,14 @@ public class ItemDefinition {
     public int value = 1;
     public boolean members = false;
     public String[] groundOptions = {null, null, "Take", null, null};
+    public String[][] subops;
     public String[] inventoryOptions = {null, null, null, null, "Drop"};
     public int notedId = -1;
     public int notedTemplateId = -1;
     public int ambient = 0;
     public int contrast = 0;
     public int team = 0;
+    public int shiftIndex = -1;
     public boolean grandExchange = false;
     public int placeholderMainId = -1;
     public int placeholderTemplateId = -1;
@@ -416,7 +418,31 @@ public class ItemDefinition {
                 textureReplace[i_3_] = (short) buffer.readUnsignedShort();
             }
         } else if (opcode == 42) {
-            buffer.readByte(); // shiftClickDropIndex
+            shiftIndex = buffer.readByte();
+        } else if (opcode == 43) {
+            int opId = buffer.readUnsignedByte();
+            if (subops == null)
+            {
+                subops = new String[5][];
+            }
+            boolean valid = opId >= 0 && opId < 5;
+            if (valid && subops[opId] == null)
+            {
+                subops[opId] = new String[20];
+            }
+            while (true)
+            {
+                int subopId = buffer.readUnsignedByte() - 1;
+                if (subopId == -1)
+                {
+                    break;
+                }
+                String op = buffer.readString();
+                if (valid && subopId >= 0 && subopId < 20)
+                {
+                    subops[opId][subopId] = op;
+                }
+            }
         } else if(opcode == 65)
             grandExchange = true;
         else if (opcode == 75) // weight
@@ -675,8 +701,27 @@ public class ItemDefinition {
             onDrop.accept(item);
     }
 
+    public int getShiftIndex() {
+        if (shiftIndex == -1 || inventoryOptions == null) {
+            return -1;
+        }
+        if (shiftIndex < 0) {
+            return (inventoryOptions[4].equalsIgnoreCase("drop") ? 5 : -1);
+        }
+        if (inventoryOptions[this.shiftIndex] != null) {
+            return shiftIndex + 1;
+        }
+        return -1;
+    }
+
     public <T> T getCustomValueOrDefault(String key, T defaultValue) {
         Object value = custom_values.get(key);
         return value == null ? defaultValue : (T) value;
+    }
+
+    public void examine(Player player) {
+        if (examine == null)
+            return;
+        player.sendMessage(examine);
     }
 }

@@ -8,7 +8,7 @@ public class Archive {
 
     private static final GZIP gzip = new GZIP();
 
-    public int nameHash;
+    protected int nameHash;
     protected int crc;
     protected int revision;
     protected int fileCount;
@@ -17,15 +17,15 @@ public class Archive {
 
     protected static byte[] decompress(byte[] archive, int[] keys) {
         InBuffer in = new InBuffer(archive);
-        if(keys != null) {
-            if(keys.length != 4)
+        if (keys != null) {
+            if (keys.length != 4)
                 throw new RuntimeException("Invalid keys length!");
             in.decode(keys, 5, archive.length);
         }
         int compression = in.readUnsignedByte();
         int compressedLength = in.readInt();
         //todo - probably a check of this length like the check below
-        if(compression == 0) {
+        if (compression == 0) {
             /**
              * Uncompressed
              */
@@ -34,10 +34,10 @@ public class Archive {
             return data;
         }
         int length = in.readInt();
-        if(length < 0 || length > 100000000) //todo - make sure this length is valid for osrs
-            throw new RuntimeException("Invalid archive length! " + length);
+        if (length < 0 || length > 100000000) //todo - make sure this length is valid for osrs
+            throw new RuntimeException("Invalid archive length!");
         byte[] data = new byte[length];
-        if(compression != 1) {
+        if (compression != 1) {
             /**
              * Gzip
              */

@@ -165,7 +165,7 @@ public class GroundItem {
         remove();
     }
 
-    private int getDespawnTime() {
+    public int getDespawnTime() {
         return Tile.get(x, y, z, true).region.dynamicData != null ? 60 : 2;
     }
 

@@ -1,14 +1,14 @@
 package io.ruin.api.filestore.utility;
 
 public final class BZIP {
-    
+
     private static int[] anIntArray367;
 
     private static Class167 aClass167_2306 = new Class167();
 
     public static int method3143(byte[] var0, int var1, byte[] var2, int var3, int var4) {
         Class167 var5 = aClass167_2306;
-        synchronized(aClass167_2306) {
+        synchronized (aClass167_2306) {
             aClass167_2306.aByteArray2330 = var2;
             aClass167_2306.anInt2331 = var4;
             aClass167_2306.aByteArray2345 = var0;
@@ -51,12 +51,12 @@ public final class BZIP {
         int[] var24 = null;
         int[] var25 = null;
         var0.anInt2341 = 1;
-        if(anIntArray367 == null)
+        if (anIntArray367 == null)
             anIntArray367 = new int[var0.anInt2341 * 100000];
         boolean var26 = true;
-        while(var26) {
+        while (var26) {
             byte var1 = method3140(var0);
-            if(var1 == 23)
+            if (var1 == 23)
                 break;
             var1 = method3140(var0);
             var1 = method3140(var0);
@@ -68,7 +68,7 @@ public final class BZIP {
             var1 = method3140(var0);
             var1 = method3140(var0);
             var1 = method3141(var0);
-            if(var1 == 0) {
+            if (var1 == 0) {
                 /* empty */
             }
             var0.anInt2342 = 0;
@@ -78,20 +78,20 @@ public final class BZIP {
             var0.anInt2342 = var0.anInt2342 << 8 | var1 & 0xff;
             var1 = method3140(var0);
             var0.anInt2342 = var0.anInt2342 << 8 | var1 & 0xff;
-            for(int var36 = 0; var36 < 16; var36++) {
+            for (int var36 = 0; var36 < 16; var36++) {
                 var1 = method3141(var0);
-                if(var1 == 1)
+                if (var1 == 1)
                     var0.aBoolArray2336[var36] = true;
                 else
                     var0.aBoolArray2336[var36] = false;
             }
-            for(int var36 = 0; var36 < 256; var36++)
+            for (int var36 = 0; var36 < 256; var36++)
                 var0.aBoolArray2358[var36] = false;
-            for(int var36 = 0; var36 < 16; var36++) {
-                if(var0.aBoolArray2336[var36]) {
-                    for(int var37 = 0; var37 < 16; var37++) {
+            for (int var36 = 0; var36 < 16; var36++) {
+                if (var0.aBoolArray2336[var36]) {
+                    for (int var37 = 0; var37 < 16; var37++) {
                         var1 = method3141(var0);
-                        if(var1 == 1)
+                        if (var1 == 1)
                             var0.aBoolArray2358[var37 + var36 * 16] = true;
                     }
                 }
@@ -101,11 +101,11 @@ public final class BZIP {
             int var40 = method3142(3, var0);
             int var41 = method3142(15, var0);
             int var36 = 0;
-            while(var36 < var41) {
+            while (var36 < var41) {
                 int var37 = 0;
-                for(; ; ) {
+                for (; ; ) {
                     var1 = method3141(var0);
-                    if(var1 == 0) {
+                    if (var1 == 0) {
                         var0.aByteArray2326[var36] = (byte) var37;
                         var36++;
                         break;
@@ -115,47 +115,47 @@ public final class BZIP {
             }
             byte[] var27 = new byte[6];
             byte var29 = 0;
-            while(var29 < var40) {
+            while (var29 < var40) {
                 byte[] is = var27;
                 byte i = var29;
                 byte i_0_ = var29;
                 var29++;
                 is[i] = i_0_;
             }
-            for(var36 = 0; var36 < var41; var36++) {
+            for (var36 = 0; var36 < var41; var36++) {
                 var29 = var0.aByteArray2326[var36];
                 byte var28 = var27[var29];
-                for(/**/; var29 > 0; var29--)
+                for (/**/; var29 > 0; var29--)
                     var27[var29] = var27[var29 - 1];
                 var27[0] = var28;
                 var0.aByteArray2354[var36] = var28;
             }
-            for(int var38 = 0; var38 < var40; var38++) {
+            for (int var38 = 0; var38 < var40; var38++) {
                 int var50 = method3142(5, var0);
                 var36 = 0;
-                while(var36 < var39) {
-                    for(; ; ) {
+                while (var36 < var39) {
+                    for (; ; ) {
                         var1 = method3141(var0);
-                        if(var1 == 0) {
+                        if (var1 == 0) {
                             var0.aByteArrayArray2356[var38][var36] = (byte) var50;
                             var36++;
                             break;
                         }
                         var1 = method3141(var0);
-                        if(var1 == 0)
+                        if (var1 == 0)
                             var50++;
                         else
                             var50--;
                     }
                 }
             }
-            for(int var38 = 0; var38 < var40; var38++) {
+            for (int var38 = 0; var38 < var40; var38++) {
                 byte var2 = 32;
                 byte var3 = 0;
-                for(var36 = 0; var36 < var39; var36++) {
-                    if(var0.aByteArrayArray2356[var38][var36] > var3)
+                for (var36 = 0; var36 < var39; var36++) {
+                    if (var0.aByteArrayArray2356[var38][var36] > var3)
                         var3 = var0.aByteArrayArray2356[var38][var36];
-                    if(var0.aByteArrayArray2356[var38][var36] < var2)
+                    if (var0.aByteArrayArray2356[var38][var36] < var2)
                         var2 = var0.aByteArrayArray2356[var38][var36];
                 }
                 method3144(var0.anIntArrayArray2357[var38], var0.anIntArrayArray2362[var38], var0.anIntArrayArray2359[var38], var0.aByteArrayArray2356[var38], var2, var3, var39);
@@ -164,18 +164,18 @@ public final class BZIP {
             int var42 = var0.anInt2337 + 1;
             int var43 = -1;
             byte var44 = 0;
-            for(var36 = 0; var36 <= 255; var36++)
+            for (var36 = 0; var36 <= 255; var36++)
                 var0.anIntArray2324[var36] = 0;
             int var56 = 4095;
-            for(int var35 = 15; var35 >= 0; var35--) {
-                for(int var55 = 15; var55 >= 0; var55--) {
+            for (int var35 = 15; var35 >= 0; var35--) {
+                for (int var55 = 15; var55 >= 0; var55--) {
                     var0.aByteArray2344[var56] = (byte) (var35 * 16 + var55);
                     var56--;
                 }
                 var0.anIntArray2353[var35] = var56 + 1;
             }
             int var47 = 0;
-            if(var44 == 0) {
+            if (var44 == 0) {
                 var43++;
                 var44 = (byte) 50;
                 byte var54 = var0.aByteArray2354[var43];
@@ -188,25 +188,25 @@ public final class BZIP {
             int var51 = var22;
             byte var53;
             int var52;
-            for(var52 = method3142(var22, var0); var52 > var23[var51]; var52 = var52 << 1 | var53) {
+            for (var52 = method3142(var22, var0); var52 > var23[var51]; var52 = var52 << 1 | var53) {
                 var51++;
                 var53 = method3141(var0);
             }
             int var46 = var25[var52 - var24[var51]];
-            while(var46 != var42) {
-                if(var46 != 0 && var46 != 1) {
+            while (var46 != var42) {
+                if (var46 != 0 && var46 != 1) {
                     int var33 = var46 - 1;
-                    if(var33 < 16) {
+                    if (var33 < 16) {
                         int var30 = var0.anIntArray2353[0];
                         var1 = var0.aByteArray2344[var30 + var33];
-                        for(/**/; var33 > 3; var33 -= 4) {
+                        for (/**/; var33 > 3; var33 -= 4) {
                             int var34 = var30 + var33;
                             var0.aByteArray2344[var34] = var0.aByteArray2344[var34 - 1];
                             var0.aByteArray2344[var34 - 1] = var0.aByteArray2344[var34 - 2];
                             var0.aByteArray2344[var34 - 2] = var0.aByteArray2344[var34 - 3];
                             var0.aByteArray2344[var34 - 3] = var0.aByteArray2344[var34 - 4];
                         }
-                        for(/**/; var33 > 0; var33--)
+                        for (/**/; var33 > 0; var33--)
                             var0.aByteArray2344[var30 + var33] = var0.aByteArray2344[var30 + var33 - 1];
                         var0.aByteArray2344[var30] = var1;
                     } else {
@@ -214,19 +214,19 @@ public final class BZIP {
                         int var32 = var33 % 16;
                         int var30 = var0.anIntArray2353[var31] + var32;
                         var1 = var0.aByteArray2344[var30];
-                        for(/**/; var30 > var0.anIntArray2353[var31]; var30--)
+                        for (/**/; var30 > var0.anIntArray2353[var31]; var30--)
                             var0.aByteArray2344[var30] = var0.aByteArray2344[var30 - 1];
                         var0.anIntArray2353[var31]++;
-                        for(/**/; var31 > 0; var31--) {
+                        for (/**/; var31 > 0; var31--) {
                             var0.anIntArray2353[var31]--;
                             var0.aByteArray2344[var0.anIntArray2353[var31]] = (var0.aByteArray2344[var0.anIntArray2353[var31 - 1] + 16 - 1]);
                         }
                         var0.anIntArray2353[0]--;
                         var0.aByteArray2344[var0.anIntArray2353[0]] = var1;
-                        if(var0.anIntArray2353[0] == 0) {
+                        if (var0.anIntArray2353[0] == 0) {
                             var56 = 4095;
-                            for(int var35 = 15; var35 >= 0; var35--) {
-                                for(int var55 = 15; var55 >= 0; var55--) {
+                            for (int var35 = 15; var35 >= 0; var35--) {
+                                for (int var55 = 15; var55 >= 0; var55--) {
                                     var0.aByteArray2344[var56] = (var0.aByteArray2344[(var0.anIntArray2353[var35] + var55)]);
                                     var56--;
                                 }
@@ -237,7 +237,7 @@ public final class BZIP {
                     var0.anIntArray2324[(var0.aByteArray2351[var1 & 0xff] & 0xff)]++;
                     anIntArray367[var47] = var0.aByteArray2351[var1 & 0xff] & 0xff;
                     var47++;
-                    if(var45 == 0) {
+                    if (var45 == 0) {
                         var43++;
                         var45 = 50;
                         byte var54 = var0.aByteArray2354[var43];
@@ -248,7 +248,7 @@ public final class BZIP {
                     }
                     var45--;
                     var51 = var22;
-                    for(var52 = method3142(var22, var0); var52 > var23[var51]; var52 = var52 << 1 | var53) {
+                    for (var52 = method3142(var22, var0); var52 > var23[var51]; var52 = var52 << 1 | var53) {
                         var51++;
                         var53 = method3141(var0);
                     }
@@ -257,12 +257,12 @@ public final class BZIP {
                     int var48 = -1;
                     int var49 = 1;
                     do {
-                        if(var46 == 0)
+                        if (var46 == 0)
                             var48 += var49;
-                        else if(var46 == 1)
+                        else if (var46 == 1)
                             var48 += var49 * 2;
                         var49 *= 2;
-                        if(var45 == 0) {
+                        if (var45 == 0) {
                             var43++;
                             var45 = 50;
                             byte var54 = var0.aByteArray2354[var43];
@@ -273,16 +273,16 @@ public final class BZIP {
                         }
                         var45--;
                         var51 = var22;
-                        for(var52 = method3142(var22, var0); var52 > var23[var51]; var52 = var52 << 1 | var53) {
+                        for (var52 = method3142(var22, var0); var52 > var23[var51]; var52 = var52 << 1 | var53) {
                             var51++;
                             var53 = method3141(var0);
                         }
                         var46 = var25[var52 - var24[var51]];
-                    } while(var46 == 0 || var46 == 1);
+                    } while (var46 == 0 || var46 == 1);
                     var48++;
                     var1 = (var0.aByteArray2351[(var0.aByteArray2344[var0.anIntArray2353[0]] & 0xff)]);
                     var0.anIntArray2324[var1 & 0xff] += var48;
-                    for(/**/; var48 > 0; var48--) {
+                    for (/**/; var48 > 0; var48--) {
                         anIntArray367[var47] = var1 & 0xff;
                         var47++;
                     }
@@ -291,11 +291,11 @@ public final class BZIP {
             var0.anInt2333 = 0;
             var0.aByte2355 = (byte) 0;
             var0.anIntArray2347[0] = 0;
-            for(var36 = 1; var36 <= 256; var36++)
+            for (var36 = 1; var36 <= 256; var36++)
                 var0.anIntArray2347[var36] = var0.anIntArray2324[var36 - 1];
-            for(var36 = 1; var36 <= 256; var36++)
+            for (var36 = 1; var36 <= 256; var36++)
                 var0.anIntArray2347[var36] += var0.anIntArray2347[var36 - 1];
-            for(var36 = 0; var36 < var47; var36++) {
+            for (var36 = 0; var36 < var47; var36++) {
                 var1 = (byte) (anIntArray367[var36] & 0xff);
                 anIntArray367[var0.anIntArray2347[var1 & 0xff]] |= var36 << 8;
                 var0.anIntArray2347[var1 & 0xff]++;
@@ -308,7 +308,7 @@ public final class BZIP {
             var0.anInt2346++;
             var0.anInt2361 = var47;
             method3138(var0);
-            if(var0.anInt2346 == var0.anInt2361 + 1 && var0.anInt2333 == 0)
+            if (var0.anInt2346 == var0.anInt2361 + 1 && var0.anInt2333 == 0)
                 var26 = true;
             else
                 var26 = false;
@@ -320,13 +320,13 @@ public final class BZIP {
     }
 
     static int method3142(int var0, Class167 var1) {
-        while(var1.anInt2340 < var0) {
+        while (var1.anInt2340 < var0) {
             var1.anInt2339 = (var1.anInt2339 << 8 | var1.aByteArray2330[var1.anInt2331] & 0xff);
             var1.anInt2340 += 8;
             var1.anInt2331++;
             var1.anInt2332++;
-            if(var1.anInt2332 == 0) {
-		        /* empty */
+            if (var1.anInt2332 == 0) {
+                /* empty */
             }
         }
         int var3 = var1.anInt2339 >> var1.anInt2340 - var0 & (1 << var0) - 1;
@@ -340,8 +340,8 @@ public final class BZIP {
 
     static void method3146(Class167 var0) {
         var0.anInt2337 = 0;
-        for(int var1 = 0; var1 < 256; var1++) {
-            if(var0.aBoolArray2358[var1]) {
+        for (int var1 = 0; var1 < 256; var1++) {
+            if (var0.aBoolArray2358[var1]) {
                 var0.aByteArray2351[var0.anInt2337] = (byte) var1;
                 var0.anInt2337++;
             }
@@ -350,29 +350,29 @@ public final class BZIP {
 
     static void method3144(int[] var0, int[] var1, int[] var2, byte[] var3, int var4, int var5, int var6) {
         int var7 = 0;
-        for(int var8 = var4; var8 <= var5; var8++) {
-            for(int var9 = 0; var9 < var6; var9++) {
-                if(var8 == var3[var9]) {
+        for (int var8 = var4; var8 <= var5; var8++) {
+            for (int var9 = 0; var9 < var6; var9++) {
+                if (var8 == var3[var9]) {
                     var2[var7] = var9;
                     var7++;
                 }
             }
         }
-        for(int var8 = 0; var8 < 23; var8++)
+        for (int var8 = 0; var8 < 23; var8++)
             var1[var8] = 0;
-        for(int var8 = 0; var8 < var6; var8++)
+        for (int var8 = 0; var8 < var6; var8++)
             var1[var3[var8] + 1]++;
-        for(int var8 = 1; var8 < 23; var8++)
+        for (int var8 = 1; var8 < 23; var8++)
             var1[var8] += var1[var8 - 1];
-        for(int var8 = 0; var8 < 23; var8++)
+        for (int var8 = 0; var8 < 23; var8++)
             var0[var8] = 0;
         int var10 = 0;
-        for(int var8 = var4; var8 <= var5; var8++) {
+        for (int var8 = var4; var8 <= var5; var8++) {
             var10 += var1[var8 + 1] - var1[var8];
             var0[var8] = var10 - 1;
             var10 <<= 1;
         }
-        for(int var8 = var4 + 1; var8 <= var5; var8++)
+        for (int var8 = var4 + 1; var8 <= var5; var8++)
             var1[var8] = (var0[var8 - 1] + 1 << 1) - var1[var8];
     }
 
@@ -388,13 +388,13 @@ public final class BZIP {
         int var10 = var0.anInt2335;
         int var12 = var0.anInt2361 + 1;
         while_33_:
-        for(; ; ) {
-            if(var3 > 0) {
-                for(; ; ) {
-                    if(var10 == 0)
+        for (; ; ) {
+            if (var3 > 0) {
+                for (; ; ) {
+                    if (var10 == 0)
                         break while_33_;
-                    if(var3 == 1) {
-                        if(var10 == 0)
+                    if (var3 == 1) {
+                        if (var10 == 0)
                             var3 = 1;
                         else {
                             var8[var9] = var2;
@@ -411,9 +411,9 @@ public final class BZIP {
                 }
             }
             boolean var14 = true;
-            while(var14) {
+            while (var14) {
                 var14 = false;
-                if(var4 == var12) {
+                if (var4 == var12) {
                     var3 = 0;
                     break while_33_;
                 }
@@ -422,9 +422,9 @@ public final class BZIP {
                 byte var1 = (byte) (var7 & 0xff);
                 var7 >>= 8;
                 var4++;
-                if(var1 != var5) {
+                if (var1 != var5) {
                     var5 = var1;
-                    if(var10 == 0) {
+                    if (var10 == 0) {
                         var3 = 1;
                         break while_33_;
                     }
@@ -432,8 +432,8 @@ public final class BZIP {
                     var9++;
                     var10--;
                     var14 = true;
-                } else if(var4 == var12) {
-                    if(var10 == 0) {
+                } else if (var4 == var12) {
+                    if (var10 == 0) {
                         var3 = 1;
                         break while_33_;
                     }
@@ -447,16 +447,16 @@ public final class BZIP {
             var7 = var6[var7];
             byte var1 = (byte) (var7 & 0xff);
             var7 >>= 8;
-            if(++var4 != var12) {
-                if(var1 != var5)
+            if (++var4 != var12) {
+                if (var1 != var5)
                     var5 = var1;
                 else {
                     var3 = 3;
                     var7 = var6[var7];
                     var1 = (byte) (var7 & 0xff);
                     var7 >>= 8;
-                    if(++var4 != var12) {
-                        if(var1 != var5)
+                    if (++var4 != var12) {
+                        if (var1 != var5)
                             var5 = var1;
                         else {
                             var7 = var6[var7];
@@ -475,8 +475,8 @@ public final class BZIP {
         }
         int var13 = var0.anInt2352;
         var0.anInt2352 += var10 - var10;
-        if(var0.anInt2352 >= var13) {
-	        /* empty */
+        if (var0.anInt2352 >= var13) {
+            /* empty */
         }
         var0.aByte2355 = var2;
         var0.anInt2333 = var3;

@@ -804,6 +804,12 @@ public class Player extends PlayerAttributes {
     }
 
     /**
+     * World Entity updating
+     */
+
+    @Getter private PlayerWorldEntityUpdater worldEntityUpdater;
+
+    /**
      * Movement
      */
 
@@ -829,7 +835,7 @@ public class Player extends PlayerAttributes {
 
     @Getter private ChatUpdate chatUpdate;
 
-    protected ForceMovementUpdate forceMovementUpdate;
+    private EntityActionsUpdate actionsUpdate;
 
     protected MovementModeUpdate movementModeUpdate;
 
@@ -1096,35 +1102,39 @@ public class Player extends PlayerAttributes {
         lastPosition = position.copy();
 
         decoder = new IncomingDecoder(new ISAACCipher(info.keys));
+        int[] keysCopy = Arrays.copyOf(info.keys, info.keys.length);
         for(int i = 0; i < 4; i++)
-            info.keys[i] += 50;
-        packetSender = new PacketSender(this, new ISAACCipher(info.keys));
+            keysCopy[i] += 50;
+        packetSender = new PacketSender(this, new ISAACCipher(keysCopy));
 
         updater = new PlayerUpdater(this);
         npcUpdater = new PlayerNPCUpdater(this);
+        worldEntityUpdater = new PlayerWorldEntityUpdater(this);
         movement = new PlayerMovement(this);
 
         if(appearance == null)
             appearance = new Appearance();
         appearance.setPlayer(this);
 
-        masks = new UpdateMask[]{ //order same way as client reads
-                teleportModeUpdate = new TeleportModeUpdate(),
-                forceMovementUpdate = new ForceMovementUpdate(),
+        masks = new UpdateMask[]{ // Order same way as client reads
                 movementModeUpdate = new MovementModeUpdate(),
+                actionsUpdate = new EntityActionsUpdate(),
+                graphicsUpdate = new GraphicsUpdate(),
+                teleportModeUpdate = new TeleportModeUpdate(),
+                appearance,
+                hitsUpdate = new HitsUpdate(),
+                chatUpdate = new ChatUpdate(),
+                forceMovementUpdate = new ForceMovementUpdate(),
+                entityDirectionUpdate = new EntityDirectionUpdate(),
                 animationUpdate = new AnimationUpdate(),
                 forceTextUpdate = new ForceTextUpdate(),
-                entityDirectionUpdate = new EntityDirectionUpdate(),
-                chatUpdate = new ChatUpdate(),
-                graphicsUpdate = new GraphicsUpdate(),
-                appearance,
                 mapDirectionUpdate = new MapDirectionUpdate(),
-                hitsUpdate = new HitsUpdate(),
+                modelRecolorUpdate = new ModelRecolorUpdate()
         };
 
         if(inventory == null)
             inventory = new Inventory();
-        inventory.init(this, 28, Interface.INVENTORY, 0, 93, false);
+        inventory.init(this, 28, -1, -1, 93, false);
         inventory.sendAll = true;
 
         if(equipment == null)
@@ -1256,6 +1266,7 @@ public class Player extends PlayerAttributes {
      * Start & Finish
      */
     public void start() {
+
         combat.start();
         movement.sendEnergy(-1);
         getCombat().resetTb();
@@ -1318,6 +1329,7 @@ public class Player extends PlayerAttributes {
         if (lastLoginDate == null || LocalDate.parse(lastLoginDate).isBefore(LocalDate.now())) {
             dailyReset();
         }
+
         packetSender.sendVarp(1737, -2147483648);
         packetSender.sendClientScript(1105, "i", 1);
         packetSender.sendClientScript(423, "s", name);

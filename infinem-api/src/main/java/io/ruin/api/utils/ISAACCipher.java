@@ -10,7 +10,7 @@ public class ISAACCipher {
     int[] rsl = new int[256];
 
     public ISAACCipher(int[] is) {
-        for(int i = 0; i < is.length; i++)
+        for (int i = 0; i < is.length; i++)
             rsl[i] = is[i];
         init();
     }
@@ -24,7 +24,7 @@ public class ISAACCipher {
         int i_8_ = -1640531527;
         int i_9_ = -1640531527;
         int i_10_ = -1640531527;
-        for(int i_11_ = 0; i_11_ < 4; i_11_++) {
+        for (int i_11_ = 0; i_11_ < 4; i_11_++) {
             i_10_ ^= i_9_ << 11;
             i_7_ += i_10_;
             i_9_ += i_8_;
@@ -50,7 +50,7 @@ public class ISAACCipher {
             i_8_ += i;
             i_10_ += i_9_;
         }
-        for(int i_12_ = 0; i_12_ < 256; i_12_ += 8) {
+        for (int i_12_ = 0; i_12_ < 256; i_12_ += 8) {
             i_10_ += rsl[i_12_];
             i_9_ += rsl[i_12_ + 1];
             i_8_ += rsl[i_12_ + 2];
@@ -92,7 +92,7 @@ public class ISAACCipher {
             mem[i_12_ + 6] = i_4_;
             mem[i_12_ + 7] = i;
         }
-        for(int i_13_ = 0; i_13_ < 256; i_13_ += 8) {
+        for (int i_13_ = 0; i_13_ < 256; i_13_ += 8) {
             i_10_ += mem[i_13_];
             i_9_ += mem[i_13_ + 1];
             i_8_ += mem[i_13_ + 2];
@@ -139,7 +139,7 @@ public class ISAACCipher {
     }
 
     public final int readKey() {
-        if(--count + 1 == 0) {
+        if (--count + 1 == 0) {
             isaac();
             count = 255;
         }
@@ -148,14 +148,14 @@ public class ISAACCipher {
 
     final void isaac() {
         anInt568 += ++anInt564;
-        for(int i = 0; i < 256; i++) {
+        for (int i = 0; i < 256; i++) {
             int i_2_ = mem[i];
-            if((i & 0x2) != 0) {
-                if((i & 0x1) == 0)
+            if ((i & 0x2) != 0) {
+                if ((i & 0x1) == 0)
                     anInt563 ^= anInt563 << 2;
                 else
                     anInt563 ^= anInt563 >>> 16;
-            } else if((i & 0x1) == 0)
+            } else if ((i & 0x1) == 0)
                 anInt563 ^= anInt563 << 13;
             else
                 anInt563 ^= anInt563 >>> 6;

@@ -234,21 +234,28 @@ public class OutBuffer {
         return this;
     }
 
+    public OutBuffer addBytesReverse(byte[] bytes, int offset, int length) {
+        resizeIfNeeded(position + (length - offset));
+        for(int i = length-1; i >= 0; i--)
+            payload[position++] = (byte) (bytes[i + offset] - 128);
+        return this;
+    }
+
     public OutBuffer addByte(int b) {
         return setByte(position++, b);
     }
 
-    public OutBuffer addByteA(int b) {
+    public OutBuffer addByteAdd(int b) {
         addByte(b + 128);
         return this;
     }
 
-    public OutBuffer addByteC(int b) {
+    public OutBuffer addByteNeg(int b) {
         addByte(-b);
         return this;
     }
 
-    public OutBuffer addByteS(int b) {
+    public OutBuffer addByteSub(int b) {
         addByte(128 - b);
         return this;
     }
@@ -259,7 +266,7 @@ public class OutBuffer {
         return this;
     }
 
-    public OutBuffer addShortA(int s) {
+    public OutBuffer addShortAdd(int s) {
         addByte(s >> 8);
         addByte(s + 128);
         return this;
@@ -271,7 +278,7 @@ public class OutBuffer {
         return this;
     }
 
-    public OutBuffer addLEShortA(int s) {
+    public OutBuffer addLEShortAdd(int s) {
         addByte(s + 128);
         addByte(s >> 8);
         return this;
@@ -281,6 +288,20 @@ public class OutBuffer {
         addByte(i >> 16);
         addByte(i >> 8);
         addByte(i);
+        return this;
+    }
+
+    public OutBuffer addMedium_alt1(int i) {
+        addByte(i >> 16);
+        addByte(i);
+        addByte(i >> 8);
+        return this;
+    }
+
+    public OutBuffer addLEMedium(int i) {
+        addByte(i);
+        addByte(i >> 8);
+        addByte(i >> 16);
         return this;
     }
 
@@ -299,19 +320,19 @@ public class OutBuffer {
         return this;
     }
 
-    public OutBuffer addInt1(int i) {
-        addByte(i >> 8);
-        addByte(i);
-        addByte(i >> 24);
+    public OutBuffer addMEInt(int i) {
         addByte(i >> 16);
+        addByte(i >> 24);
+        addByte(i);
+        addByte(i >> 8);
         return this;
     }
 
-    public OutBuffer addInt2(int i) {
-        addByte(i >> 16);
-        addByte(i >> 24);
-        addByte(i);
+    public OutBuffer addIMEInt(int i) {
         addByte(i >> 8);
+        addByte(i);
+        addByte(i >> 24);
+        addByte(i >> 16);
         return this;
     }
 

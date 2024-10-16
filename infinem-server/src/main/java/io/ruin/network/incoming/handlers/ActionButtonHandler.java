@@ -8,14 +8,19 @@ import io.ruin.model.inter.InterfaceAction;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.item.Item;
 import io.ruin.network.incoming.Incoming;
+import io.ruin.network.ClientPacket;
+import io.ruin.utility.ClientPacketHolder;
 import io.ruin.utility.DebugMessage;
-import io.ruin.utility.IdHolder;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ActionButtonHandler {
 
-    @IdHolder(ids = {39, 104, 83, 10, 98, 28, 51, 23, 92, 31})//@IdHolder(ids = {60, 65, 73, 10, 20, 16, 87, 19, 29, 2})
+    @ClientPacketHolder(packets = {
+            ClientPacket.IF_BUTTON1, ClientPacket.IF_BUTTON2, ClientPacket.IF_BUTTON3,
+            ClientPacket.IF_BUTTON4, ClientPacket.IF_BUTTON5, ClientPacket.IF_BUTTON6,
+            ClientPacket.IF_BUTTON7, ClientPacket.IF_BUTTON8, ClientPacket.IF_BUTTON9,
+            ClientPacket.IF_BUTTON10})
     public static final class DefaultHandler implements Incoming {
 
         @Override
@@ -29,49 +34,49 @@ public class ActionButtonHandler {
 
     }
 
-    @IdHolder(ids={47, 54, 78, 56, 2, 38})//@IdHolder(ids = {88, 70, 5, 14, 76, 28})
+    @ClientPacketHolder(packets = {})
     public static final class InventoryHandler implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
             int option = OPTIONS[opcode];
-            if(option == 1) {
+            if (option == 1) {
                 int interfaceHash = in.readIntME();
                 int itemId = in.readShort();
-                int slot = in.readLEShortA();
+                int slot = in.readLEShortAdd();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
-            if(option == 2) {
-                int slot = in.readShortA();
+            if (option == 2) {
+                int slot = in.readShortAdd();
                 int itemId = in.readShort();
                 int interfaceHash = in.readInt();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
-            if(option == 3) {
-                int slot = in.readLEShortA();
+            if (option == 3) {
+                int slot = in.readLEShortAdd();
                 int interfaceHash = in.readIntME();
                 int itemId = in.readShort();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
-            if(option == 4) {
+            if (option == 4) {
                 int slot = in.readShort();
-                int itemId = in.readLEShortA();
-                int interfaceHash = in.readInt1();
+                int itemId = in.readLEShortAdd();
+                int interfaceHash = in.readMInt();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
-            if(option == 5) {
+            if (option == 5) {
                 int itemId = in.readShort();
-                int interfaceHash = in.readInt1();
-                int slot = in.readLEShortA();
+                int interfaceHash = in.readMInt();
+                int slot = in.readLEShortAdd();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
-            if(option == 6) {
-                int itemId = in.readShortA();
+            if (option == 6) {
+                int itemId = in.readShortAdd();
                 int interfaceHash = in.readLEInt();
                 int slot = in.readShort();
                 handleAction(player, 10, interfaceHash, slot, itemId, false);
@@ -82,12 +87,12 @@ public class ActionButtonHandler {
 
     }
 
-    @IdHolder(ids = {33})//@IdHolder(ids = {1})
+    @ClientPacketHolder(packets = {ClientPacket.RESUME_PAUSEBUTTON})
     public static final class DialogueHandler implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int slot = in.readLEShort();
+            int slot = in.readUnsignedShortAdd();
             int interfaceHash = in.readIntME();
             if (GameEventProcessor.resumeWith(player, slot)) {
                 return;
@@ -97,7 +102,7 @@ public class ActionButtonHandler {
 
     }
 
-    @IdHolder(ids = {22})//@IdHolder(ids = {99})
+    @ClientPacketHolder(packets = {ClientPacket.WIDGET_TYPE})
     public static final class OtherHandler implements Incoming {
 
         @Override
@@ -111,13 +116,13 @@ public class ActionButtonHandler {
     public static void handleAction(Player player, int option, int interfaceHash, int slot, int itemId, boolean dialogue) {
         int interfaceId = interfaceHash >> 16;
         int childId = interfaceHash & 0xffff;
-        if(childId == 65535)
+        if (childId == 65535)
             childId = -1;
-        if(slot == 65535)
+        if (slot == 65535)
             slot = -1;
-        if(itemId == 65535)
+        if (itemId == 65535)
             itemId = -1;
-        if(player.debug) {
+        if (player.debug) {
             DebugMessage debug = new DebugMessage()
                     .add("option", option)
                     .add("inter", interfaceId)
@@ -126,7 +131,8 @@ public class ActionButtonHandler {
                     .add("item", itemId);
             player.sendFilteredMessage("[ActionButton] " + debug.toString());
         }
-        if(player.hasTemporaryAttribute("TUTORIAL") && interfaceId != Interface.LOGOUT && !dialogue && interfaceId != Interface.IRON_MAN_SETTINGS && interfaceId != Interface.APPEARANCE_CUSTOMIZATION)
+        System.out.println("inter: " + interfaceId + ", child: " + childId + ", slot: " + slot + ", option: " + option);
+        if (player.hasTemporaryAttribute("TUTORIAL") && interfaceId != Interface.LOGOUT && !dialogue && interfaceId != Interface.IRON_MAN_SETTINGS && interfaceId != Interface.APPEARANCE_CUSTOMIZATION)
             return;
         // Inventory
         if (option == 10 && interfaceId == 149 && itemId != -1) {
@@ -139,7 +145,7 @@ public class ActionButtonHandler {
             return;
         }
         InterfaceAction action = InterfaceHandler.getAction(player, interfaceId, childId);
-        if(action != null)
+        if (action != null)
             action.handleClick(player, option, slot, itemId);
     }
 

@@ -29,7 +29,7 @@ public class CoreWorker extends World {
     }
 
     public static void process() {
-        for(Stage stage : Stage.values()) {
+        for (Stage stage : Stage.values()) {
             processStage = stage;
             processStage.runnable.run();
         }
@@ -48,28 +48,28 @@ public class CoreWorker extends World {
 
     private static void index() {
         /**
-         * Npc indexing
-         */
-        npcs.resetCount();
-        for(NPC npc : npcs.entityList) {
-            if(npc != null)
-                npcs.index(npc);
-        }
-        /**
          * Player indexing
          */
         players.resetCount();
-        for(Player player : players.entityList) {
+        for (Player player : players.entityList) {
             if (player != null)
                 players.index(player);
+        }
+        /**
+         * Npc indexing
+         */
+        npcs.resetCount();
+        for (NPC npc : npcs.entityList) {
+            if (npc != null)
+                npcs.index(npc);
         }
         /*
          * Scrambling
          */
-        if(--scrambleTicks <= 0) {
+        if (--scrambleTicks <= 0) {
             scrambleTicks = Random.get(40, 60);
-            npcs.scramble();
             players.scramble();
+            npcs.scramble();
         }
     }
 
@@ -78,28 +78,28 @@ public class CoreWorker extends World {
      */
     private static void logic() {
         GameEventProcessor.pulse();
-        for(NPC npc : npcs) {
-            try {
-                npc.processed = true;
-                npc.process();
-            } catch(Throwable t) {
-                Server.logError("", t);
-            }
-        }
-        for(Player player : players) {
+        for (Player player : players) {
             try {
                 player.checkLogout();
-            } catch(Throwable t) {
+            } catch (Throwable t) {
                 Server.logError("", t);
             }
         }
-        for(Player player : players) {
+        for (Player player : players) {
             try {
-                if(player.isOnline()) {
+                if (player.isOnline()) {
                     player.processed = true;
                     player.process();
                 }
-            } catch(Throwable t) {
+            } catch (Throwable t) {
+                Server.logError("", t);
+            }
+        }
+        for (NPC npc : npcs) {
+            try {
+                npc.processed = true;
+                npc.process();
+            } catch (Throwable t) {
                 Server.logError("", t);
             }
         }
@@ -117,33 +117,34 @@ public class CoreWorker extends World {
      */
 
     private static void update() {
-        for(NPC npc : npcs) {
+        for (Player player : players) {
             try {
-                npc.resetUpdates();
-                npc.processed = false;
-            } catch(Throwable t) {
-                Server.logError("", t);
-            }
-        }
-        for(Player player : players) {
-            try {
-                if(player.isOnline()) {
+                if (player.isOnline()) {
                     player.getUpdater().process();
                     player.getNpcUpdater().process();
+                    //player.getWorldEntityUpdater().process();
                     TargetOverlay.process(player);
                     player.sendVarps();
                 }
-            } catch(Throwable t) {
+            } catch (Throwable t) {
                 Server.logError("", t);
             }
         }
-        for(Player player : players) {
+        for (Player player : players) {
             try {
-                if(player.isOnline())
+                if (player.isOnline())
                     player.resetUpdates();
                 player.getChannel().flush();
                 player.processed = false;
-            } catch(Throwable t) {
+            } catch (Throwable t) {
+                Server.logError("", t);
+            }
+        }
+        for (NPC npc : npcs) {
+            try {
+                npc.resetUpdates();
+                npc.processed = false;
+            } catch (Throwable t) {
                 Server.logError("", t);
             }
         }

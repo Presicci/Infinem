@@ -3,9 +3,10 @@ package io.ruin.network.incoming.handlers;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.model.entity.player.Player;
 import io.ruin.network.incoming.Incoming;
-import io.ruin.utility.IdHolder;
+import io.ruin.network.ClientPacket;
+import io.ruin.utility.ClientPacketHolder;
 
-@IdHolder(ids = {89})//@IdHolder(ids = {13})
+@ClientPacketHolder(packets = {ClientPacket.MAP_BUILD_COMPLETE})
 public class RegionUpdateHandler implements Incoming {
 
     @Override

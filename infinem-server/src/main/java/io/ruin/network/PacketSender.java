@@ -5,6 +5,7 @@ import io.ruin.Server;
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.protocol.Protocol;
 import io.ruin.api.protocol.login.LoginInfo;
+import io.ruin.api.protocol.ServerPacket;
 import io.ruin.api.utils.ISAACCipher;
 import io.ruin.cache.def.InterfaceDefinition;
 import io.ruin.model.World;
@@ -12,9 +13,7 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.ai.AIPlayer;
 import io.ruin.model.inter.*;
-//import io.ruin.model.inter.handlers.BuyCredits;
 import io.ruin.model.inter.handlers.NotificationInterface;
-import io.ruin.model.inter.journal.JournalCategory;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Region;
@@ -23,7 +22,9 @@ import io.ruin.model.shop.ShopItem;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.function.Function;
 
 @Slf4j
@@ -44,6 +45,9 @@ public class PacketSender {
         }
         if(!Thread.currentThread().getName().equals("server-worker #1"))
             Server.logError(player.getName() + " wrote packet off main thread!", new Throwable());
+        int opcode = out.payload()[0] & 0xff;;
+        ServerPacket packet = ServerPacket.getPacketByOpcode(opcode);
+        System.out.println("Client outgoing: " + opcode + (packet == null ? "" : " - " + packet) + " - " + Arrays.toString(out.payload()));
         player.getChannel().write(out.encode(cipher).toBuffer());
     }
 
@@ -55,9 +59,9 @@ public class PacketSender {
         if (player instanceof AIPlayer) {
             return;
         }
-        OutBuffer out = new OutBuffer(12);
-        out.addByte(2);
-        out.addByte(13);
+        OutBuffer out = new OutBuffer(40).sendFixedPacket(2);
+
+        out.addByte(37);
 
         if (info.tfaTrust) {
             out.addByte(1);
@@ -69,18 +73,29 @@ public class PacketSender {
         }
 
         out.addByte((World.isDev() || player.isAdmin()) ? 2 : player.isModerator() ? 1 : 0) // staffModLevel
-                .addByte(1) // playerMod
+                .addByte(0) // Pmod if == 1
                 .addShort(player.getIndex())
-                .addByte(1); // field608
+                .addByte(0) // Friends/ignores container size. 0 = 200, 1 = 400. OSRS allows 400 for members, 200 for F2P.
+                .addLong(player.getUserId())
+                .addLong(player.getUserId())
+                .addLong(-1);
         player.getChannel().write(out.toBuffer()); //no encryption needed!
 
         sendRegion(true);
+        //sendActiveWorld();
+        //sendNPCUpdateOrigin();
         Region.update(player);
     }
 
     public void sendLogout() {
-        OutBuffer out = new OutBuffer(1).sendFixedPacket(29);
-        player.getChannel().writeAndFlush(out.encode(cipher).toBuffer()).addListener(ChannelFutureListener.CLOSE);
+        try {
+            OutBuffer out = new OutBuffer(1).sendFixedPacket(ServerPacket.LOGOUT_FULL.getPacketId());
+            if (player.getChannel().isActive())
+                player.getChannel().writeAndFlush(out.encode(cipher).toBuffer()).addListener(ChannelFutureListener.CLOSE);
+        } catch (RejectedExecutionException ex) {
+            ex.printStackTrace();
+            //for shutdown loop problem
+        }
     }
 
     public void sendRegion(boolean login) {
@@ -96,10 +111,9 @@ public class PacketSender {
             /**
              * Regular map
              */
-            out.sendVarShortPacket(94);
+            out.sendVarShortPacket(ServerPacket.REBUILD_NORMAL.getPacketId());
             if (login)
                 player.getUpdater().init(out);
-
             if (dynamic) {
                 /**
                  * Dynamic region must be sent after regular region on login. //todo check if this is still the case in 171 since they changed how this packet is sent
@@ -108,10 +122,12 @@ public class PacketSender {
                 chunkX = chunkY = 0;
             }
 
-            out.addShort(chunkY);
             out.addShort(chunkX);
+            out.addShort(0); //UNUSED
+            out.addLEShort(chunkY);
             int countPos = out.position();
             out.addShort(0);
+
             boolean forceSend = false; //Resets the landscape client sided
             if ((chunkX / 8 == 48 || chunkX / 8 == 49) && chunkY / 8 == 48)
                 forceSend = true;
@@ -140,12 +156,13 @@ public class PacketSender {
             /**
              * Dynamic map
              */
-            out.sendVarShortPacket(79)
-                    .addLEShortA(chunkY)
-                    .addByte(0) //force refresh
-                    .addShort(chunkX);
+            out.sendVarShortPacket(ServerPacket.REBUILD_REGION.getPacketId())
+                    .addShort(chunkY)
+                    .addShort(chunkX)
+                    .addByteNeg(0); //force refresh;
 
             int startPos = out.position();
+
             out.addShort(0);
 
             ArrayList<Integer> chunkRegionIds = new ArrayList<>();
@@ -192,6 +209,68 @@ public class PacketSender {
         write(out);
     }
 
+    public void sendWorldEntity() {
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(ServerPacket.REBUILD_WORLDENTITY.getPacketId());
+        out.addShort(-1);
+        out.addShort(0);
+        out.addShort(0);
+
+        Position position = player.getPosition();
+        Region region = player.lastRegion = position.getRegion();
+        int chunkX = position.getChunkX();
+        int chunkY = position.getChunkY();
+        int depth = Region.CLIENT_SIZE >> 4;
+        int startPos = out.position();
+        out.addShort(0);
+        ArrayList<Integer> chunkRegionIds = new ArrayList<>();
+        out.initBitAccess();
+        for (int pointZ = 0; pointZ < 4; pointZ++) {
+            for (int xCalc = (chunkX - depth); xCalc <= (chunkX + depth); xCalc++) {
+                for (int yCalc = (chunkY - depth); yCalc <= (chunkY + depth); yCalc++) {
+                    Region r = Region.LOADED[(xCalc / 8) << 8 | (yCalc / 8)];
+                    if (r == null || r.dynamicData == null || r.dynamicIndex != region.dynamicIndex) {
+                        out.addBits(1, 0);
+                        continue;
+                    }
+                    int[] chunkData = r.dynamicData[pointZ][xCalc % 8][yCalc % 8];
+                    int chunkHash = chunkData[0];
+                    int chunkRegionId = chunkData[1];
+                    if (chunkHash == 0 || chunkRegionId == 0) {
+                        out.addBits(1, 0);
+                        continue;
+                    }
+                    out.addBits(1, 1);
+                    out.addBits(26, chunkHash);
+                    if (!chunkRegionIds.contains(chunkRegionId))
+                        chunkRegionIds.add(chunkRegionId);
+                    if (!player.getRegions().contains(r))
+                        player.addRegion(r);
+                }
+            }
+        }
+        out.finishBitAccess();
+
+        int endPos = out.position();
+        out.position(startPos);
+        out.addShort(chunkRegionIds.size());
+        out.position(endPos);
+
+        for (int id : chunkRegionIds) {
+            Region r = Region.LOADED[id];
+            if (r.keys == null)
+                out.skip(16);
+            else
+                out.addInt(r.keys[0]).addInt(r.keys[1]).addInt(r.keys[2]).addInt(r.keys[3]);
+        }
+        write(out);
+        /*
+        buffer.p2(message.index)
+        buffer.p2(message.baseX)
+        buffer.p2(message.baseZ)
+        encodeRegion(buffer, message.zones)
+         */
+    }
+
     public void sendModelInformation(int parentId, int childId, int zoom, int rotationX, int rotationY) {
         if (!InterfaceDefinition.valid(parentId, childId)) {
             new Exception("INVALID sendModelInformation " + parentId + ":" + childId).printStackTrace();
@@ -199,7 +278,7 @@ public class PacketSender {
         }
         OutBuffer out = new OutBuffer(11).sendFixedPacket(36)
                 .addLEShort(rotationX)
-                .addShortA(rotationY)
+                .addShortAdd(rotationY)
                 .addLEInt(parentId << 16 | childId)
                 .addLEShort(zoom);
         write(out);
@@ -208,23 +287,13 @@ public class PacketSender {
     public void sendGameFrame(int id) {
         player.setGameFrameId(id);
         OutBuffer out = new OutBuffer(3)
-                .sendFixedPacket(62)
+                .sendFixedPacket(ServerPacket.IF_OPENTOP.getPacketId())
                 .addShort(id);
         write(out);
     }
 
-    public void refreshGameFrame() {
-        OutBuffer out = new OutBuffer(1).sendFixedPacket(33);
-        write(out);
-    }
-    //TODO: 184 Revision Fix Custom Packet
     public void sendUrl(String url, boolean copy) {
-        OutBuffer out = new OutBuffer(Protocol.strLen(url) + 3)
-                .sendVarShortPacket(58)
-                .startEncrypt()
-                .writeStringCp1252NullTerminated(url)
-                .stopEncrypt();
-        write(out);
+        sendClientScript(1081, "sii", url, 1, 1);
     }
 
     public void sendInterface(int interfaceId, int parentId, int childId, int overlayType) {
@@ -235,10 +304,10 @@ public class PacketSender {
             return;
         }
         player.setVisibleInterface(interfaceId, parentId, childId);
-        OutBuffer out = new OutBuffer(8).sendFixedPacket(53)
-                .addShortA(interfaceId)
-                .addInt(parentId << 16 | childId)
-                .addByteC(overlayType);
+        OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.IF_OPENSUB.getPacketId())
+                .addLEShortAdd(interfaceId)
+                .addIMEInt(parentId << 16 | childId)
+                .addByteSub(overlayType);
         write(out);
     }
 
@@ -248,8 +317,8 @@ public class PacketSender {
             return;
         }
         OutBuffer out = new OutBuffer(7).sendFixedPacket(74)
-                .addInt1(parentId << 16 | childId)
-                .addShortA(modelId);
+                .addMEInt(parentId << 16 | childId)
+                .addShortAdd(modelId);
         write(out);
     }
 
@@ -259,7 +328,7 @@ public class PacketSender {
             return;
         }
         player.removeVisibleInterface(parentId, childId);
-        OutBuffer out = new OutBuffer(5).sendFixedPacket(78)
+        OutBuffer out = new OutBuffer(5).sendFixedPacket(ServerPacket.IF_CLOSESUB.getPacketId())
                 .addInt(parentId << 16 | childId);
         write(out);
     }
@@ -270,9 +339,9 @@ public class PacketSender {
             return;
         }
         player.moveVisibleInterface(fromParentId, fromChildId, toParentId, toChildId);
-        OutBuffer out = new OutBuffer(9).sendFixedPacket(45)
-                .addInt(toParentId << 16 | toChildId)
-                .addInt(fromParentId << 16 | fromChildId);
+        OutBuffer out = new OutBuffer(9).sendFixedPacket(ServerPacket.IF_MOVESUB.getPacketId())
+                .addIMEInt(toParentId << 16 | toChildId)
+                .addMEInt(fromParentId << 16 | fromChildId);
         write(out);
     }
 
@@ -282,8 +351,8 @@ public class PacketSender {
             return;
         }
         OutBuffer out = new OutBuffer(3 + 4 + Protocol.strLen(string))
-                .sendVarShortPacket(23)
-                .writeStringCp1252NullTerminated(string)
+                .sendVarShortPacket(ServerPacket.IF_SETTEXT.getPacketId())
+                .addString(string)
                 .addInt(interfaceId << 16 | childId);
         write(out);
     }
@@ -293,9 +362,9 @@ public class PacketSender {
             new Exception("INVALID setHidden " + interfaceId + ":" + childId + " (hide=" + hide + ")").printStackTrace();
             return;
         }
-        OutBuffer out = new OutBuffer(6).sendFixedPacket(8)
-                .addByteC(hide ? 1 : 0)
-                .addInt(interfaceId << 16 | childId);
+        OutBuffer out = new OutBuffer(6).sendFixedPacket(ServerPacket.IF_SETHIDE.getPacketId())
+                .addByteSub(hide ? 1 : 0)
+                .addIMEInt(interfaceId << 16 | childId);
         write(out);
     }
 
@@ -304,10 +373,10 @@ public class PacketSender {
             new Exception("INVALID sendItem " + parentId + ":" + childId + " (itemId=" + itemId + ", amount=" + amount + ")").printStackTrace();
             return;
         }
-        OutBuffer out = new OutBuffer(11).sendFixedPacket(11)
-                .addInt1(parentId << 16 | childId)
-                .addInt2(amount)
-                .addLEShort(itemId);
+        OutBuffer out = new OutBuffer(11).sendFixedPacket(ServerPacket.IF_SETOBJECT.getPacketId())
+                .addLEShort(itemId)
+                .addIMEInt(amount)
+                .addLEInt(parentId << 16 | childId);
         write(out);
     }
 
@@ -316,10 +385,11 @@ public class PacketSender {
             new Exception("INVALID setAlignment " + parentId + ":" + childId + " (x=" + x + ", y=" + y + ")").printStackTrace();
             return;
         }
-        OutBuffer out = new OutBuffer(9).sendFixedPacket(68)
-                .addShort(x)
-                .addShortA(y)
-                .addInt(parentId << 16 | childId);
+        OutBuffer out = new OutBuffer(9).sendFixedPacket(ServerPacket.IF_SETPOSITION.getPacketId())
+                .addLEShort(y)
+                .addIMEInt(parentId << 16 | childId)
+                .addShortAdd(x)
+        ;
         write(out);
     }
 
@@ -365,11 +435,11 @@ public class PacketSender {
             return;
         }
         int mask = AccessMasks.combine(masks);
-        OutBuffer out = new OutBuffer(13).sendFixedPacket(91)
-                .addInt(interfaceId << 16 | childParentId)
-                .addLEInt(mask)
+        OutBuffer out = new OutBuffer(13).sendFixedPacket(ServerPacket.IF_SETEVENTS.getPacketId())
+                .addShort(minChildId)
                 .addLEShort(maxChildId)
-                .addLEShortA(minChildId);
+                .addMEInt(interfaceId << 16 | childParentId)
+                .addInt(mask);
         write(out);
     }
 
@@ -390,8 +460,8 @@ public class PacketSender {
         } else {
             out = new OutBuffer(3 + Protocol.strLen(args.toString()) + (params.length * 4));
         }
-        out.sendVarShortPacket(92);
-        out.writeStringCp1252NullTerminated(args.toString());
+        out.sendVarShortPacket(ServerPacket.RUNCLIENTSCRIPT.getPacketId());
+        out.addString(args.toString());
         if (params != null) {
             for (int i = params.length - 1; i >= 0; i--) {
                 Object param = params[i];
@@ -407,8 +477,8 @@ public class PacketSender {
 
     public void sendClientScript(int id, String type, Object... params) {
         OutBuffer out = new OutBuffer(3 + Protocol.strLen(type) + (params.length * 4))
-                .sendVarShortPacket(92)
-                .writeStringCp1252NullTerminated(type);
+                .sendVarShortPacket(ServerPacket.RUNCLIENTSCRIPT.getPacketId())
+                .addString(type);
         for (int i = type.length() - 1; i >= 0; i--) {
             Object param = params[i];
             if (param instanceof String)
@@ -422,8 +492,8 @@ public class PacketSender {
 
     public void sendSystemUpdate(int time) {
         OutBuffer out = new OutBuffer(3)
-                .sendFixedPacket(20)
-                .addLEShortA(time * 50 / 30);
+                .sendFixedPacket(ServerPacket.UPDATE_REBOOT_TIMER.getPacketId())
+                .addShortAdd(time * 50 / 30);
         write(out);
     }
 
@@ -506,9 +576,13 @@ public class PacketSender {
             id = 0;
         OutBuffer out;
         if (value < Byte.MIN_VALUE || value > Byte.MAX_VALUE)
-            out = new OutBuffer(7).sendFixedPacket(31).addLEShortA(id).addLEInt(value);
+            out = new OutBuffer(7).sendFixedPacket(ServerPacket.VARP_LARGE.getPacketId())
+                    .addShortAdd(id)
+                    .addIMEInt(value);
         else
-            out = new OutBuffer(4).sendFixedPacket(44).addShort(id).addByteC(value);
+            out = new OutBuffer(4).sendFixedPacket(ServerPacket.VARP_SMALL.getPacketId())
+                    .addByteSub(value)
+                    .addLEShortAdd(id);
         write(out);
     }
 
@@ -530,59 +604,70 @@ public class PacketSender {
     }
 
     public void sendItems(int interfaceHash, int containerId, Item[] items, int length) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(13)
+        OutBuffer out = new OutBuffer(10 + (length * 10)).sendVarShortPacket(ServerPacket.UPDATE_INV_FULL.getPacketId())
                 .addInt(interfaceHash)
                 .addShort(containerId)
                 .addShort(length);
         for (int slot = 0; slot < length; slot++) {
             Item item = items[slot];
-            int amount = item == null || item.getId() < 0 ? 0 : item.getAmount();
-            if (amount < 255) {
-                out.addByteC(amount);
+            if (item == null || item.getId() < 0) {
+                out.addByteNeg(0);
+                out.addLEShortAdd(0);
             } else {
-                out.addByteC(255);
-                out.addLEInt(amount);
+                if (item.getAmount() < 255) {
+                    out.addByteNeg(item.getAmount());
+                } else {
+                    out.addByteNeg(255);
+                    out.addIMEInt(item.getAmount());
+                }
+                out.addLEShortAdd(item.getId() + 1);
             }
-            out.addShortA(item == null || item.getId() < 0 ? 0 : item.getId() + 1);
         }
         write(out);
     }
 
     public void sendShopItems(int interfaceHash, int containerId, ShopItem[] items, int length) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(13)
+        OutBuffer out = new OutBuffer(10 + (length * 10)).sendVarShortPacket(ServerPacket.UPDATE_INV_FULL.getPacketId())
                 .addInt(interfaceHash)
                 .addShort(containerId)
                 .addShort(length);
-        for (int slot = 0; slot < length; slot++) {
+        for (int slot = 0; slot < items.length; slot++) {
             ShopItem item = items[slot];
-            int amount = item == null || item.getDisplayId(player) < 0 ? 0 : item.getAmount();
-            if (amount < 255) {
-                out.addByteC(amount);
+            if (item == null || item.getId() < 0) {
+                out.addByteNeg(0);
+                out.addLEShortAdd(0);
             } else {
-                out.addByteC(255);
-                out.addLEInt(amount);
+                if (item.getAmount() < 255) {
+                    out.addByteNeg(item.getAmount());
+                } else {
+                    out.addByteNeg(255);
+                    out.addIMEInt(item.getAmount());
+                }
+                out.addLEShortAdd(item.getId() + 1);
             }
-            out.addShortA(item == null || item.getDisplayId(player) < 0 ? 0 : item.getDisplayId(player) + 1);
         }
         write(out);
     }
 
     public void updateItems(int interfaceHash, int containerId, Item[] items, boolean[] updatedSlots, int updatedCount) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(69).addInt(interfaceHash).addShort(containerId);
+        OutBuffer out = new OutBuffer(10 + (updatedCount * 10)).sendVarShortPacket(ServerPacket.UPDATE_INV_PARTIAL.getPacketId())
+                .addInt(interfaceHash)
+                .addShort(containerId);
         for (int slot = 0; slot < items.length; slot++) {
             if (updatedSlots[slot]) {
                 Item item = items[slot];
                 out.addSmart(slot);
-                int id = item == null || item.getId() < 0 ? 0 : item.getId() + 1;
-                out.addShort(id);
-                if (id != 0) {
-                    int amount = item.getId() < 0 ? 0 : item.getAmount();
-                    if (amount < 255) {
-                        out.addByte(amount);
+                if (item == null || item.getId() < 0) {
+                    out.addShort(0);
+                } else {
+                    out.addShort(item.getId() + 1);
+                    if (item.getAmount() < 255) {
+                        out.addByte(item.getAmount());
                     } else {
                         out.addByte(255);
-                        out.addInt(amount);
+                        out.addInt(item.getAmount());
                     }
+
                 }
             }
         }
@@ -590,66 +675,61 @@ public class PacketSender {
     }
 
     public void updateItems(int interfaceHash, int containerId, ShopItem[] items, boolean[] updatedSlots, int updatedCount) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(69)
+        OutBuffer out = new OutBuffer(10 + (updatedCount * 10)).sendVarShortPacket(ServerPacket.UPDATE_INV_PARTIAL.getPacketId())
                 .addInt(interfaceHash)
                 .addShort(containerId);
         for (int slot = 0; slot < items.length; slot++) {
             if (updatedSlots[slot]) {
                 ShopItem item = items[slot];
                 out.addSmart(slot);
-                int id = item == null || item.getDisplayId(player) < 0 ? 0 : item.getDisplayId(player) + 1;
-                out.addShort(id);
-                if (id != 0) {
-                    int amount = item.getDisplayId(player) < 0 ? 0 : item.getAmount();
-                    if (amount < 255) {
-                        out.addByte(amount);
+                if (item == null || item.getId() < 0) {
+                    out.addShort(0);
+                } else {
+                    out.addShort(item.getId() + 1);
+                    if (item.getAmount() < 255) {
+                        out.addByte(item.getAmount());
                     } else {
                         out.addByte(255);
-                        out.addInt(amount);
+                        out.addInt(item.getAmount());
                     }
+
                 }
             }
         }
         write(out);
     }
 
-    public void unlinkItems(int containerId) {
-        OutBuffer out = new OutBuffer(3).sendFixedPacket(49)
-                .addLEShortA(containerId);
-        write(out);
-    }
-
     public void sendStat(int id, int currentLevel, int experience) {
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(19)
-                .addByteS(currentLevel)
-                .addInt2(experience)
-                .addByteS(id);
+        OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.UPDATE_STAT.getPacketId())
+                .addMEInt(experience)
+                .addByteSub(id)
+                .addByteNeg(currentLevel) // Boosted level
+                .addByteAdd(currentLevel);
         write(out);
     }
 
     public void sendRunEnergy(int energy) {
-        OutBuffer out = new OutBuffer(2).sendFixedPacket(73)
-                .addByte(energy);
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.UPDATE_RUNENERGY.getPacketId())
+                .addShort(energy * 100);
         write(out);
     }
 
     public void sendWeight(int weight) {
-        OutBuffer out = new OutBuffer(3).sendFixedPacket(26)
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.UPDATE_RUNWEIGHT.getPacketId())
                 .addShort(weight);
         write(out);
     }
 
     public void sendPlayerAction(String name, boolean top, int option) {
-        OutBuffer out = new OutBuffer(4 + Protocol.strLen(name)).sendVarBytePacket(2)
-                .writeStringCp1252NullTerminated(name)
+        OutBuffer out = new OutBuffer(4 + Protocol.strLen(name)).sendVarBytePacket(ServerPacket.SET_PLAYER_OP.getPacketId())
+                .addByteNeg(option)
                 .addByte(top ? 1 : 0)
-                .addByte(option);
+                .addString(name);
         write(out);
     }
 
     public void worldHop(String host, int id, int flags) {
-        if (true) return;
-        OutBuffer out = new OutBuffer(50).sendFixedPacket(76)
+        OutBuffer out = new OutBuffer(50).sendFixedPacket(ServerPacket.EVENT_WORLDHOP.getPacketId())
                 .addString(host)
                 .addShort(id)
                 .addInt(flags);
@@ -657,25 +737,35 @@ public class PacketSender {
     }
 
     public void resetMapFlag() {
-        OutBuffer out = new OutBuffer(3).sendFixedPacket(32)
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.SET_MAP_FLAG.getPacketId())
                 .addByte(-1)
                 .addByte(-1);
         write(out);
     }
 
-    public void clearChunks() {
-        OutBuffer out = new OutBuffer(3).sendFixedPacket(10)
-                .addByteA(96) // was -1
-                .addByteS(96); // was -1
+    public void setMapFlag(int x, int y) {
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.SET_MAP_FLAG.getPacketId())
+                .addByte(Position.getLocal(x, player.getPosition().getFirstChunkX()))
+                .addByte(Position.getLocal(y, player.getPosition().getFirstChunkY()));
+
         write(out);
+    }
+
+    public void clearChunks() {
+        /*OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.UPDATE_ZONE_FULL_FOLLOWS.getPacketId())
+                .addByteC(-1)
+                .addByte(-1);
+        write(out);TODO wtf is this?*/
     }
 
     public void clearChunk(int chunkAbsX, int chunkAbsY) {
         int x = Position.getLocal(chunkAbsX, player.getPosition().getFirstChunkX());
         int y = Position.getLocal(chunkAbsY, player.getPosition().getFirstChunkY());
-        OutBuffer out = new OutBuffer(3).sendFixedPacket(10)
-                .addByteA(y)
-                .addByteS(x);
+        int z = player.getHeight();
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.UPDATE_ZONE_FULL_FOLLOWS.getPacketId())
+                .addByteAdd(x)
+                .addByteSub(z)
+                .addByteSub(y);
         write(out);
     }
 
@@ -689,93 +779,116 @@ public class PacketSender {
         int playerLocalX = Position.getLocal(chunkAbsX, player.getPosition().getFirstChunkX());
         int playerLocalY = Position.getLocal(chunkAbsY, player.getPosition().getFirstChunkY());
         if (playerLocalX >= 0 && playerLocalX < 104 && playerLocalY >= 0 && playerLocalY < 104) {
-            write(new OutBuffer(3).sendFixedPacket(18).addByteC(playerLocalX).addByteC(playerLocalY));
+            write(new OutBuffer(4).sendFixedPacket(ServerPacket.UPDATE_ZONE_PARTIAL_FOLLOWS.getPacketId())
+                    .addByte(playerLocalX)
+                    .addByteAdd(z)
+                    .addByteAdd(playerLocalY));
             write(write.apply((targetLocalX & 0x7) << 4 | (targetLocalY & 0x7)));
         }
     }
 
     public void sendGroundItem(GroundItem groundItem) {
         sendMapPacket(groundItem.x, groundItem.y, groundItem.z, offsetHash ->
-                new OutBuffer(6).sendFixedPacket(86)
-                        .addShort(groundItem.amount)
-                        .addShort(groundItem.id)
-                        .addByteA(offsetHash)
+                new OutBuffer(16).sendFixedPacket(ServerPacket.OBJ_ADD.getPacketId())
+                        .addLEShort((groundItem.getDespawnTime() * 1000) / 600)   // despawn time TODO
+                        .addByteSub(offsetHash)
+                        .addLEShortAdd(groundItem.id)
+                        .addLEShort(0)// visible time TODO
+                        .addByte(0)// private TODO
+                        .addByte(31) //OPFILTER TODO
+                        .addByteSub(groundItem.activeOwner)// ownership
+                        .addLEInt(groundItem.amount)
+        );
+    }
+
+    public void sendUpdateGroundItem(GroundItem groundItem, int oldAmount) {
+        sendMapPacket(groundItem.x, groundItem.y, groundItem.z, offsetHash ->
+                new OutBuffer(14).sendFixedPacket(ServerPacket.OBJ_COUNT.getPacketId())
+                        .addByteSub(offsetHash)
+                        .addInt(groundItem.amount)
+                        .addLEShortAdd(groundItem.id)
+                        .addIMEInt(oldAmount)
         );
     }
 
     public void sendRemoveGroundItem(GroundItem groundItem) {
         sendMapPacket(groundItem.x, groundItem.y, groundItem.z, offsetHash ->
-                new OutBuffer(4).sendFixedPacket(61)
-                        .addShortA(groundItem.id)
-                        .addByte(offsetHash)
+                new OutBuffer(8).sendFixedPacket(ServerPacket.OBJ_DEL.getPacketId())
+                        .addShort(groundItem.id)
+                        .addByteSub(offsetHash)
+                        .addIMEInt(groundItem.amount)
         );
     }
 
     public void sendCreateObject(int id, int x, int y, int z, int type, int dir) {
         sendMapPacket(x, y, z, offsetHash ->
-                new OutBuffer(5).sendFixedPacket(0)
-                        .addShort(id)
-                        .addByteS(offsetHash)
-                        .addByte(type << 2 | dir)
+                new OutBuffer(6).sendFixedPacket(ServerPacket.LOC_ADD_CHANGE.getPacketId())
+                        .addShortAdd(id)
+                        .addByteNeg(31)
+                        .addByteNeg(type << 2 | dir)
+                        .addByteNeg(offsetHash)
         );
     }
 
     public void sendRemoveObject(int x, int y, int z, int type, int dir) {
         sendMapPacket(x, y, z, offsetHash ->
-                new OutBuffer(3).sendFixedPacket(52)
-                        .addByteS(type << 2 | dir)
+                new OutBuffer(3).sendFixedPacket(ServerPacket.LOC_DEL.getPacketId())
                         .addByte(offsetHash)
+                        .addByte(type << 2 | dir)
         );
     }
 
     public void sendObjectAnimation(int x, int y, int z, int type, int dir, int animationId) {
         sendMapPacket(x, y, z, offsetHash ->
-                new OutBuffer(5).sendFixedPacket(75)
-                        .addByteS(offsetHash)
+                new OutBuffer(5).sendFixedPacket(ServerPacket.LOC_ANIM.getPacketId())
+                        .addByteSub(type << 2 | dir)
+                        .addByte(offsetHash)
                         .addLEShort(animationId)
-                        .addByteA(type << 2 | dir)
         );
     }
 
     public void sendProjectile(int projectileId, int startX, int startY, int destX, int destY, int targetIndex, int startHeight, int endHeight, int delay, int duration, int curve, int something) {
         sendMapPacket(startX, startY, player.getHeight(), offsetHash ->
-                new OutBuffer(16).sendFixedPacket(34)
-                        .addByte(destX - startX)
-                        .addLEShort(targetIndex)
-                        .addByteA(curve)//slope
+                new OutBuffer(22).sendFixedPacket(ServerPacket.MAP_PROJANIM.getPacketId())
+                        .addShort(projectileId)
+                        .addByteNeg(endHeight)
+                        .addLEMedium(targetIndex)
+                        .addShortAdd(something)// progress
+                        .addShort(duration)
                         .addByte(offsetHash)
-                        .addByteA(endHeight)
-                        .addByteS(something)
-                        .addShortA(duration)//cycleEnd
-                        .addShortA(projectileId)
-                        .addByteS(destY - startY)
-                        .addByteA(startHeight)
-                        .addShortA(delay)//cycleStart
+                        .addMedium_alt1(0)// source index
+                        .addByteAdd(curve)
+                        .addByte(startHeight)
+                        .addByteSub(destX - startX)
+                        .addShortAdd(delay)
+                        .addByte(destY - startY)
         );
     }
 
     public void sendGraphics(int id, int height, int delay, int x, int y, int z) {
         sendMapPacket(x, y, z, offsetHash ->
-                new OutBuffer(7).sendFixedPacket(80)
-                        .addShort(delay)
-                        .addShortA(id)
-                        .addByteA(offsetHash)
-                        .addByte(height)
+                new OutBuffer(7).sendFixedPacket(ServerPacket.MAP_ANIM.getPacketId())
+                        .addByteSub(offsetHash)
+                        .addShortAdd(id)
+                        .addByteSub(height)
+                        .addShortAdd(delay)
         );
     }
 
     public void sendAreaSound(int id, int type, int delay, int x, int y, int distance) {
-        sendMapPacket(x, y, player.getHeight(), offsetHash ->
-                new OutBuffer(6).sendFixedPacket(88)
-                        .addShort(id)
-                        .addByte(distance << 4 | type)
-                        .addByteS(offsetHash)
-                        .addByteS(delay)
-        );
+        /*sendMapPacket(x, y, player.getHeight(), offsetHash ->
+                new OutBuffer(8).sendFixedPacket(ServerPacket.SOUND_AREA.getPacketId())
+                        .addByte(distance << 4)
+                        .addShortAdd(id)
+                        .addByteSub(1) // drop off range
+                        .addByteSub(type) // loops
+                        .addByte(delay)
+                        .addByteAdd(offsetHash)
+        );*/
     }
 
     public void sendSoundEffect(int id, int type, int delay) {
-        OutBuffer out = new OutBuffer(6).sendFixedPacket(81)
+        OutBuffer out = new OutBuffer(6).sendFixedPacket(ServerPacket.SYNTH_SOUND.getPacketId())
                 .addShort(id)
                 .addByte(type)
                 .addShort(delay);
@@ -783,26 +896,8 @@ public class PacketSender {
     }
 
     public void sendMusic(int id) {
-        OutBuffer out = new OutBuffer(3).sendFixedPacket(28)
-                .addShortA(id);
-        write(out);
-    }
-    //TODO: 184 Revision Fix Custom Packet
-    public void sendJournal(int type, List<JournalCategory> categories) {
-        /*OutBuffer out = new OutBuffer(255).sendVarShortPacket(87)
-                .addByte(type);
-        for(JournalCategory category : categories) {
-            out.addString(category.name);
-            out.addSmart(category.count);
-        }
-        write(out);*/
-    }
-    //TODO: 184 Revision Fix Custom Packet
-    public void sendJournalEntry(int childId, String text, int colorIndex) {
-        /*OutBuffer out = new OutBuffer(2 + Protocol.strLen(text) + 1).sendVarBytePacket(88)
-                .addSmart(childId)
-                .addString(text)
-                .addByte(colorIndex);
+        /*OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.MIDI_SONG.getPacketId())
+                .addShort(id);
         write(out);*/
     }
 
@@ -893,33 +988,33 @@ public class PacketSender {
     }
 
     public void sendPlayerHead(int parentId, int childId) {
-        OutBuffer out = new OutBuffer(5).sendFixedPacket(77)
-                .addLEInt(parentId << 16 | childId);
+        OutBuffer out = new OutBuffer(5).sendFixedPacket(ServerPacket.IF_SETPLAYERHEAD.getPacketId())
+                .addIMEInt(parentId << 16 | childId);
         write(out);
     }
 
     public void sendNpcHead(int parentId, int childId, int npcId) {
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(85)
-                .addInt(parentId << 16 | childId)
-                .addLEShortA(npcId);
+        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.IF_SETNPCHEAD.getPacketId())
+                .addLEShort(npcId)
+                .addLEInt(parentId << 16 | childId);
         write(out);
     }
 
     public void animateInterface(int parentId, int childId, int animationId) {
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(63)
+        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.IF_SETANIM.getPacketId())
                 .addShort(animationId)
-                .addInt1(parentId << 16 | childId);
+                .addMEInt(parentId << 16 | childId);
         write(out);
     }
 
     public void sendMapState(int state) {
-        OutBuffer out = new OutBuffer(2).sendFixedPacket(76)
+        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.MINIMAP_TOGGLE.getPacketId())
                 .addByte(state);
         write(out);
     }
 
     public void sendHintIcon(Entity target) {
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(25)
+        OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.HINT_ARROW.getPacketId())
                 .addByte(target.player == null ? 1 : 10)
                 .addShort(target.getIndex())
                 .skip(3);
@@ -927,25 +1022,25 @@ public class PacketSender {
     }
 
     public void sendHintIcon(int x, int y) {
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(25)
+        OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.HINT_ARROW.getPacketId())
                 .addByte(2)
                 .addShort(x)
                 .addShort(y)
-                .addByte(1);
+                .addByte(1);    // height
         write(out);
     }
 
     public void sendHintIcon(Position position) {
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(25)
+        OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.HINT_ARROW.getPacketId())
                 .addByte(2)
                 .addShort(position.getX())
                 .addShort(position.getY())
-                .addByte(1);
+                .addByte(1);    // height
         write(out);
     }
 
     public void resetHintIcon(boolean npcType) {
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(25)
+        OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.HINT_ARROW.getPacketId())
                 .addByte(npcType ? 1 : 10)
                 .addShort(-1)
                 .skip(3);
@@ -956,7 +1051,7 @@ public class PacketSender {
         Position pos = new Position(x, y, 0);
         int posX = pos.getSceneX(player.getPosition());
         int posY = pos.getSceneY(player.getPosition());
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(50)
+        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_LOOKAT2.getPacketId())
                 .addByte(posX)
                 .addByte(posY)
                 .addShort(cameraHeight)
@@ -969,7 +1064,7 @@ public class PacketSender {
         Position pos = new Position(x, y, 0);
         int posX = pos.getSceneX(player.getPosition());
         int posY = pos.getSceneY(player.getPosition());
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(39)
+        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_SETANGLE.getPacketId())
                 .addByte(posX)
                 .addByte(posY)
                 .addShort(cameraHeight)
@@ -982,7 +1077,7 @@ public class PacketSender {
      * @param shakeType 0 shakes X, 1 shakes Z, 2 shakes Y, 3 shakes Yaw, 4 shakes Pitch
      */
     public void shakeCamera(int shakeType, int intensity) {
-        OutBuffer out = new OutBuffer(5).sendFixedPacket(24)
+        OutBuffer out = new OutBuffer(5).sendFixedPacket(ServerPacket.CAM_SHAKE.getPacketId())
                 .addByte(shakeType)
                 .addByte(intensity)
                 .addByte(intensity)
@@ -991,8 +1086,62 @@ public class PacketSender {
     }
 
     public void resetCamera() {
-        OutBuffer out = new OutBuffer(1).sendFixedPacket(87);
+        OutBuffer out = new OutBuffer(1).sendFixedPacket(ServerPacket.CAM_RESET.getPacketId());
         write(out);
     }
 
+    public void sendActiveWorld() {
+        OutBuffer out = new OutBuffer(5).sendFixedPacket(ServerPacket.SET_ACTIVE_WORLD.getPacketId())
+                .addByte(0)
+                .addShort(0)
+                .addByte(player.getHeight());
+        write(out);
+    }
+
+    public void sendNPCUpdateOrigin() {
+        //int x = Position.getLocal(chunkAbsX, player.getPosition().getFirstChunkX());
+        //int y = Position.getLocal(chunkAbsY, player.getPosition().getFirstChunkY());
+        System.out.println(Position.getLocal(player.getAbsX(), player.getPosition().getFirstChunkX()));
+        System.out.println(Position.getLocal(player.getAbsY(), player.getPosition().getFirstChunkY()));
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.SET_NPC_UPDATE_ORIGIN.getPacketId())
+                //.addByte(player.getAbsX() * (player.getPosition().getFirstChunkX() - 6))
+                //.addByte(player.getAbsY() * (player.getPosition().getFirstChunkY() - 6))
+                .addByte(Position.getLocal(player.getAbsX(), player.getPosition().getFirstChunkX()))
+                .addByte(Position.getLocal(player.getAbsY(), player.getPosition().getFirstChunkY()))
+                //.addByte(player.getAbsX() * (player.getPosition().getFirstChunkX() - 6))
+                //.addByte(player.getAbsY() * (player.getPosition().getFirstChunkY() - 6))
+                //.addByte(player.getAbsX() - ((player.getAbsX() >> 3) - 6) << 3)
+                //.addByte(player.getAbsY() - ((player.getAbsY() >> 3) - 6) << 3)
+                //.addByte(0)
+                //.addByte(0)
+        ;
+        write(out);
+    }
+
+    public void rebuildWorldEntities() {
+        OutBuffer out = new OutBuffer(9).sendVarShortPacket(ServerPacket.REBUILD_WORLDENTITY.getPacketId())
+                .addShort(0)
+                .addShort(0)
+                .addShort(0)
+                .addShort(0);
+        write(out);
+    }
+
+    public void hideObjectOptions(boolean state) {
+        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.HIDEOBJOPS.getPacketId())
+                .addByte(state ? 1 : 0);
+        write(out);
+    }
+
+    public void hideNPCOptions(boolean state) {
+        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.HIDENPCOPS.getPacketId())
+                .addByte(state ? 1 : 0);
+        write(out);
+    }
+
+    public void hideGroundItemOptions(boolean state) {
+        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.HIDELOCOPS.getPacketId())
+                .addByte(state ? 1 : 0);
+        write(out);
+    }
 }

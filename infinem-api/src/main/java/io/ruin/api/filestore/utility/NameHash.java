@@ -5,67 +5,67 @@ public class NameHash {
     public static int get(String string) {
         int length = string.length();
         int hash = 0;
-        for(int i = 0; i < length; i++)
+        for (int i = 0; i < length; i++)
             hash = (hash << 5) - hash + method1529(string.charAt(i));
         return hash;
     }
 
     public static byte method1529(char var0) {
         byte var2;
-        if((var0 <= 0 || var0 >= '\u0080') && (var0 < '\u00a0' || var0 > '\u00ff')) {
-            if(var0 == '\u20ac')
+        if ((var0 <= 0 || var0 >= '\u0080') && (var0 < '\u00a0' || var0 > '\u00ff')) {
+            if (var0 == '\u20ac')
                 var2 = (byte) -128;
-            else if(var0 == '\u201a')
+            else if (var0 == '\u201a')
                 var2 = (byte) -126;
-            else if(var0 == '\u0192')
+            else if (var0 == '\u0192')
                 var2 = (byte) -125;
-            else if(var0 == '\u201e')
+            else if (var0 == '\u201e')
                 var2 = (byte) -124;
-            else if(var0 == '\u2026')
+            else if (var0 == '\u2026')
                 var2 = (byte) -123;
-            else if(var0 == '\u2020')
+            else if (var0 == '\u2020')
                 var2 = (byte) -122;
-            else if(var0 == '\u2021')
+            else if (var0 == '\u2021')
                 var2 = (byte) -121;
-            else if(var0 == '\u02c6')
+            else if (var0 == '\u02c6')
                 var2 = (byte) -120;
-            else if(var0 == '\u2030')
+            else if (var0 == '\u2030')
                 var2 = (byte) -119;
-            else if(var0 == '\u0160')
+            else if (var0 == '\u0160')
                 var2 = (byte) -118;
-            else if(var0 == '\u2039')
+            else if (var0 == '\u2039')
                 var2 = (byte) -117;
-            else if(var0 == '\u0152')
+            else if (var0 == '\u0152')
                 var2 = (byte) -116;
-            else if(var0 == '\u017d')
+            else if (var0 == '\u017d')
                 var2 = (byte) -114;
-            else if(var0 == '\u2018')
+            else if (var0 == '\u2018')
                 var2 = (byte) -111;
-            else if(var0 == '\u2019')
+            else if (var0 == '\u2019')
                 var2 = (byte) -110;
-            else if(var0 == '\u201c')
+            else if (var0 == '\u201c')
                 var2 = (byte) -109;
-            else if(var0 == '\u201d')
+            else if (var0 == '\u201d')
                 var2 = (byte) -108;
-            else if(var0 == '\u2022')
+            else if (var0 == '\u2022')
                 var2 = (byte) -107;
-            else if(var0 == '\u2013')
+            else if (var0 == '\u2013')
                 var2 = (byte) -106;
-            else if(var0 == '\u2014')
+            else if (var0 == '\u2014')
                 var2 = (byte) -105;
-            else if(var0 == '\u02dc')
+            else if (var0 == '\u02dc')
                 var2 = (byte) -104;
-            else if(var0 == '\u2122')
+            else if (var0 == '\u2122')
                 var2 = (byte) -103;
-            else if(var0 == '\u0161')
+            else if (var0 == '\u0161')
                 var2 = (byte) -102;
-            else if(var0 == '\u203a')
+            else if (var0 == '\u203a')
                 var2 = (byte) -101;
-            else if(var0 == '\u0153')
+            else if (var0 == '\u0153')
                 var2 = (byte) -100;
-            else if(var0 == '\u017e')
+            else if (var0 == '\u017e')
                 var2 = (byte) -98;
-            else if(var0 == '\u0178')
+            else if (var0 == '\u0178')
                 var2 = (byte) -97;
             else
                 var2 = (byte) 63;

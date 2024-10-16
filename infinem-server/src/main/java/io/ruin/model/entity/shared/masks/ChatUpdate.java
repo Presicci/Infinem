@@ -5,9 +5,13 @@ import io.ruin.api.filestore.utility.Huffman;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.entity.shared.UpdateMask;
 
+import java.util.Arrays;
+
 public class ChatUpdate extends UpdateMask {
 
     private boolean shadow;
+
+    private int color;
 
     private int type;
 
@@ -15,42 +19,42 @@ public class ChatUpdate extends UpdateMask {
 
     private int rankId;
 
-    private byte[] messageData;
+    private String message;
 
-    public void set(boolean shadow, int effects, int rankId, int type, String message) {
-        this.shadow = shadow;
+    public void set(int color, int effects, int rankId, int type, String message) {
+        this.color = color;
         this.effects = effects;
         this.rankId = rankId;
         this.type = type;
-        message = StringUtils.fixCaps(message);
-        OutBuffer out = new OutBuffer(255);
-        Huffman.encrypt(out, message);
-        this.messageData = out.toByteArray();
+        this.message = message;
     }
 
     @Override
     public void reset() {
-        messageData = null;
+        message = null;
     }
 
     @Override
     public boolean hasUpdate(boolean added) {
-        return messageData != null;
+        return message != null;
     }
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        out.addShortA(effects);
-        out.addByteA(rankId);
-        out.addByte(type); // 1 if autochatting
-        int length = messageData.length;
-        out.addByteC(length);
-        out.addBytesSpecial(messageData, 0, length);
+        out.addByte(color);
+        out.addByte(effects);
+        out.addByteNeg(0);
+        out.addByteAdd(type);
+        byte[] stringArray = Huffman.compressString(message);
+        out.addByteSub(stringArray.length);
+        System.out.println(Arrays.toString(stringArray));
+        out.addBytesReverse(stringArray, 0, stringArray.length);
+        //pattern
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return 64;
+        return 8192;
     }
 
 }

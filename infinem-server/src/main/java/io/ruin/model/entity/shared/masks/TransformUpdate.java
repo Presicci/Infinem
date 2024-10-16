@@ -23,7 +23,7 @@ public class TransformUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        out.addLEShort(id);
+        out.addShortAdd(id);
     }
 
     @Override

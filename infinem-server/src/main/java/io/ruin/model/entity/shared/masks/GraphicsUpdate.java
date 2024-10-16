@@ -2,43 +2,62 @@ package io.ruin.model.entity.shared.masks;
 
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.model.entity.shared.UpdateMask;
+import lombok.AllArgsConstructor;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class GraphicsUpdate extends UpdateMask {
 
-    private int id = -2;
+    @AllArgsConstructor
+    public static class SpotAnim {
+        public int id, height, delay;
+    }
 
-    private int height, delay;
+    private final Map<Integer, SpotAnim> pending = new HashMap<>();
 
     public void set(int id, int height, int delay) {
-        this.id = id;
-        this.height = height;
-        this.delay = delay;
+        set(0, id, height, delay);
+    }
+
+    public void set(int slot, int id, int height, int delay) {
+        pending.put(slot, new SpotAnim(id, height, delay));
     }
 
     @Override
     public void reset() {
-        id = -2;
+        pending.clear();
     }
 
     @Override
     public boolean hasUpdate(boolean added) {
-        return id != -2;
+        return !pending.isEmpty();
     }
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        if(playerUpdate) {
-            out.addLEShort(id);
-            out.addInt(height << 16 | delay);
+        if (playerUpdate) {
+            out.addByteSub(pending.size());
+            for (Map.Entry<Integer, SpotAnim> entry : pending.entrySet()) {
+                SpotAnim spotAnim = entry.getValue();
+                out.addByteNeg(entry.getKey());
+                out.addShort(spotAnim.id);
+                out.addIMEInt(spotAnim.delay | (spotAnim.height << 16));
+            }
         } else {
-            out.addShort(id);
-            out.addInt(height << 16 | delay);
+            out.addByteAdd(pending.size());
+            for (Map.Entry<Integer, SpotAnim> entry : pending.entrySet()) {
+                SpotAnim spotAnim = entry.getValue();
+                out.addByteSub(entry.getKey());
+                out.addShortAdd(spotAnim.id);
+                out.addInt(spotAnim.height << 16 | spotAnim.delay);
+            }
         }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 2048 : 32;
+        return playerUpdate ? 65536 : 262144;
     }
 
 }

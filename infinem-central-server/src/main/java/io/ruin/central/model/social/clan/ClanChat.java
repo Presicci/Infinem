@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.filestore.utility.Huffman;
 import io.ruin.api.protocol.Protocol;
+import io.ruin.api.protocol.ServerPacket;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.central.Server;
@@ -11,7 +12,6 @@ import io.ruin.central.model.Player;
 import io.ruin.central.model.social.SocialList;
 import io.ruin.central.model.social.SocialMember;
 import io.ruin.central.model.social.SocialRank;
-import io.ruin.central.utility.XenUser;
 
 import java.util.HashMap;
 
@@ -19,11 +19,16 @@ public class ClanChat extends ClanContainer {
 
     public SocialList parent;
     private String owner;
-    @ Expose private String lastName = "";
-    @ Expose public String name;
-    @ Expose public SocialRank enterRank = null;
-    @ Expose public SocialRank talkRank = null;
-    @ Expose public SocialRank kickRank = SocialRank.CORPORAL;
+    @Expose
+    private String lastName = "";
+    @Expose
+    public String name;
+    @Expose
+    public SocialRank enterRank = null;
+    @Expose
+    public SocialRank talkRank = null;
+    @Expose
+    public SocialRank kickRank = SocialRank.CORPORAL;
     public ClanChat active;
     private boolean joining;
     private HashMap<Integer, Long> kicked;
@@ -66,8 +71,8 @@ public class ClanChat extends ClanContainer {
 
     public void sendString(Player player, int interfaceId, int childId, String string) {
         OutBuffer out = new OutBuffer(3 + 4 + Protocol.strLen(string))
-                .sendVarShortPacket(23)
-                .writeStringCp1252NullTerminated(string)
+                .sendVarShortPacket(ServerPacket.IF_SETTEXT.getPacketId())
+                .addString(string)
                 .addInt(interfaceId << 16 | childId);
         player.write(out);
     }
@@ -130,7 +135,7 @@ public class ClanChat extends ClanContainer {
             }
             if (!Character.isLetterOrDigit(s.charAt(i))) {
                 if (i + 1 < s.length()) {
-                    s = String.format("%s%s%s", s.subSequence(0, i+1), Character.toUpperCase(s.charAt(i + 1)), s.substring(i+2));
+                    s = String.format("%s%s%s", s.subSequence(0, i + 1), Character.toUpperCase(s.charAt(i + 1)), s.substring(i + 2));
                 }
             }
         }
@@ -248,25 +253,26 @@ public class ClanChat extends ClanContainer {
     }
 
     private OutBuffer getMessageBuffer(String senderName, int rankId, String message) {
-        OutBuffer out = new OutBuffer(255).sendVarBytePacket(22);
+        OutBuffer out = new OutBuffer(255).sendVarBytePacket(ServerPacket.MESSAGE_FRIENDS_CHAT.getPacketId());
         out.addString(senderName);
         out.addLong(StringUtils.stringToLong(this.name));
         for (int i = 0; i < 5; ++i) {
             out.addByte(Random.get(255));
         }
-        out.addByte(rankId);
-        Huffman.encrypt(out, message);
+        out.addByte(0);
+        byte[] stringArray = Huffman.compressString(message);
+        out.addBytes(stringArray, 0, stringArray.length);
         return out;
     }
 
     private OutBuffer getBuffer(int type) {
         if (type == 0) {
-            return new OutBuffer(3).sendVarShortPacket(42);
+            return new OutBuffer(3).sendVarShortPacket(ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_FULL_V1.getPacketId());
         }
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(42).
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_FULL_V1.getPacketId()).
                 addString(this.owner).
-                addLong(StringUtils.stringToLong(this.name)).//addString(this.name).
-                        addByte(ClanChat.getRankId(this.kickRank));
+                addLong(StringUtils.stringToLong(this.name)).
+                addByte(ClanChat.getRankId(this.kickRank));
         if (type == 2) {
             out.addByte(255);
             return out;
@@ -277,7 +283,7 @@ public class ClanChat extends ClanContainer {
             out.addString(member.name);
             out.addShort(member.worldId);
             out.addByte(this.getRankId(member.name));
-            out.addByte(0);
+            out.addString(member.lastName);
         }
         return out;
     }

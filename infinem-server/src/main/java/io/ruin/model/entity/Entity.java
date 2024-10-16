@@ -68,7 +68,7 @@ public abstract class Entity extends TemporaryAttributesHolder {
 
     public int getClientIndex() {
         if(player != null)
-            return index + 32768;
+            return index + 65536;
         return index;
     }
 
@@ -300,6 +300,22 @@ public abstract class Entity extends TemporaryAttributesHolder {
     }
 
     /**
+     * Masks - Model recolor
+     */
+
+    protected ModelRecolorUpdate modelRecolorUpdate;
+
+    public void setModelRecolorUpdate(int startTick, int endTick, int hue, int saturation, int lightness, int alpha) {
+        modelRecolorUpdate.set(startTick, endTick, hue, saturation, lightness, alpha);
+    }
+
+    /**
+     * Masks - Forced movement
+     */
+
+    public ForceMovementUpdate forceMovementUpdate;
+
+    /**
      * Masks - Animations
      */
 
@@ -413,18 +429,18 @@ public abstract class Entity extends TemporaryAttributesHolder {
     private void face(int absX, int absY, int xLength, int yLength) {
         int faceX = (absX * 2) + xLength;
         int faceY = (absY * 2) + yLength;
-        if(player != null) {
+        if (player != null) {
             int anInt1783 = (position.getBaseLocalX() << 7) | (size << 6);
             int anInt1770 = (position.getBaseLocalY() << 7) | (size << 6);
             int baseRegionX = (position.getFirstChunkX() - 6) * 8;
             int baseRegionY = (position.getFirstChunkY() - 6) * 8;
             int i_35_ = (anInt1783 - (faceX - baseRegionX - baseRegionX) * 64);
             int i_36_ = (anInt1770 - (faceY - baseRegionY - baseRegionY) * 64);
-            if(i_35_ != 0 || i_36_ != 0)
+            if (i_35_ != 0 || i_36_ != 0)
                 mapDirectionUpdate.set((int) (Math.atan2((double) i_35_, (double) i_36_) * 325.949) & 0x7ff);
             return;
         }
-        mapDirectionUpdate.set(faceX, faceY);
+        mapDirectionUpdate.set(absX + xLength / 2, absY + yLength / 2, false);
     }
 
     public void face(Entity target) {
@@ -436,18 +452,16 @@ public abstract class Entity extends TemporaryAttributesHolder {
     }
 
     private void face(Entity target, boolean temp) {
-        int direction = entityDirectionUpdate.direction;
-        int newDirection = target == null ? -1 : target.getClientIndex();
-        if(direction == newDirection && !temp)
+        Entity currentTarget = entityDirectionUpdate.target;
+        if (target == currentTarget && !temp)
             return;
         if (isNpc() && StaticFacingNPC.NPCS.contains(npc.getId()))
             return;
-        entityDirectionUpdate.set(newDirection, temp);
+        entityDirectionUpdate.set(target, temp);
     }
 
     public void faceNone(boolean delay) {
-        int direction = entityDirectionUpdate.direction;
-        if(direction == -1)
+        if (entityDirectionUpdate.target == null)
             return;
         entityDirectionUpdate.remove(delay);
     }
@@ -725,6 +739,8 @@ public abstract class Entity extends TemporaryAttributesHolder {
 
     protected void processHits() {
         if(isStunned())
+            return;
+        if (getCombat() == null)
             return;
         checkPoison();
         if(queuedHits != null && !queuedHits.isEmpty()) {

@@ -7,45 +7,29 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.network.incoming.Incoming;
+import io.ruin.network.ClientPacket;
+import io.ruin.utility.ClientPacketHolder;
 import io.ruin.utility.DebugMessage;
-import io.ruin.utility.IdHolder;
-
-import java.util.Arrays;
 
 public class InterfaceOnObjectHandler {
 
-    @IdHolder(ids = {43})//@IdHolder(ids = {46})
-    public static final class FromItem implements Incoming {
-        @Override
-        public void handle(Player player, InBuffer in, int opcode) {
-            int interfaceHash = in.readInt();
-            int itemSlot = in.readShort();
-            int objectX = in.readLEShortA();
-            int objectY = in.readShort();
-            int objectId = in.readUnsignedShort();
-            int ctrlRun = in.readByteS();
-            int itemId = in.readShort();
-            handleAction(player, interfaceHash, itemSlot, itemId, objectId, objectX, objectY, ctrlRun);
-        }
-    }
-
-    @IdHolder(ids = {102})//@IdHolder(ids = {68})
+    @ClientPacketHolder(packets = {ClientPacket.OPLOCT})
     public static final class FromInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int objectId = in.readLEShortA();
-            int objectY = in.readShort();
-            int objectX = in.readLEShort();
-            int slot = in.readLEShort();
+            int objectId = in.readUnsignedLEShort();
+            int itemId = in.readUnsignedShortAdd();
+            int slot = in.readUnsignedShort();
+            int objectY = in.readUnsignedLEShortAdd();
+            int objectX = in.readUnsignedLEShort();
+            int interfaceHash = in.readLEInt();
             int ctrlRun = in.readByte();
-            int itemId = in.readLEShort();
-            int interfaceHash = in.readInt();
             handleAction(player, interfaceHash, slot, itemId, objectId, objectX, objectY, ctrlRun);
         }
     }
 
     private static void handleAction(Player player, int interfaceHash, int slot, int itemId, int objectId, int objectX, int objectY, int ctrlRun) {
-        if(player.debug) {
+        if (player.debug) {
             DebugMessage debug = new DebugMessage()
                     .add("interfaceHash", interfaceHash)
                     .add("slot", slot)
@@ -55,13 +39,13 @@ public class InterfaceOnObjectHandler {
                     .add("objectY", objectY);
             player.sendFilteredMessage("[ObjectAction] " + debug.toString());
         }
-        if(player.isLocked())
+        if (player.isLocked())
             return;
         player.resetActions(true, true, true);
-        if(objectId == -1)
+        if (objectId == -1)
             return;
         GameObject gameObject = Tile.getObject(objectId, objectX, objectY, player.getPosition().getZ());
-        if(gameObject == null)
+        if (gameObject == null)
             return;
         player.getMovement().setCtrlRun(ctrlRun == 1);
         player.getRouteFinder().routeObject(gameObject, () -> action(player, interfaceHash, slot, itemId, gameObject));
@@ -69,11 +53,11 @@ public class InterfaceOnObjectHandler {
 
     private static void action(Player player, int interfaceHash, int slot, int itemId, GameObject gameObject) {
         InterfaceAction action = InterfaceHandler.getAction(player, interfaceHash);
-        if(action == null)
+        if (action == null)
             return;
-        if(slot == 65535)
+        if (slot == 65535)
             slot = -1;
-        if(itemId == 65535)
+        if (itemId == 65535)
             itemId = -1;
         action.handleOnObject(player, slot, itemId, gameObject);
     }

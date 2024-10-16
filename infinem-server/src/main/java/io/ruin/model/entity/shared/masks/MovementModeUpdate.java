@@ -28,13 +28,13 @@ public class MovementModeUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        out.addByteS(mode);
+        out.addByteNeg(mode);
     }
 
     @Override
     public int get(boolean playerUpdate) {
         if (!playerUpdate) throw new UnsupportedOperationException("only for players...");
-        return 8192;
+        return 256;
     }
 
 }

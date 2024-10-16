@@ -18,41 +18,26 @@ import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.incoming.Incoming;
+import io.ruin.network.ClientPacket;
+import io.ruin.utility.ClientPacketHolder;
 import io.ruin.utility.DebugMessage;
-import io.ruin.utility.IdHolder;
 
 public class InterfaceOnGroundItemHandler {
 
-    @IdHolder(ids = {20})//@IdHolder(ids = {39}) //todo@@
-    public static final class FromItem implements Incoming {
-        @Override
-        public void handle(Player player, InBuffer in, int opcode) {
-            int y = in.readLEShort();
-            int interfaceHash = in.readInt1();
-            int x = in.readLEShortA();
-            int slot = in.readLEShortA();
-            int groundItemId = in.readLEShort();
-            int itemId = in.readShort();
-            int ctrlRun = in.readByteC();
-            handleAction(player, interfaceHash, slot, itemId, groundItemId, x, y, ctrlRun);
-        }
-    }
 
-
-
-    @IdHolder(ids = {3})//@IdHolder(ids = {0}) //todo@@
+    @ClientPacketHolder(packets = {ClientPacket.OPOBJT})
     public static final class FromInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int slot = in.readLEShortA();
-            int interfaceHash = in.readInt();
-            int groundItemId = in.readLEShort();
-            int y = in.readShort();
-            int x = in.readLEShort();
-            int ctrlRun = in.readByteS();
-            int itemId = in.readLEShort();
+            int ctrlRun = in.readUnsignedByte();
+            int groundItemId = in.readLEShortAdd();
+            int interfaceHash = in.readIntME();
+            int itemId = in.readUnsignedLEShort();
+            int x = in.readUnsignedLEShort();
+            int slot = in.readUnsignedShortAdd();
+            int y = in.readUnsignedShortAdd();
             int telegrabHash = 14286872;
-            if(interfaceHash == telegrabHash) {
+            if (interfaceHash == telegrabHash) {
                 handleTelegrab(player, groundItemId, x, y, ctrlRun == 1);
             } else {
                 handleAction(player, interfaceHash, slot, itemId, groundItemId, x, y, ctrlRun);
@@ -62,7 +47,7 @@ public class InterfaceOnGroundItemHandler {
 
 
     public static boolean withinReach(int absX, int absY, int height, int targetX, int targetY, int distance) {
-        if(!TargetRoute.inTarget(absX, absY, 1, targetX, targetY, 1)
+        if (!TargetRoute.inTarget(absX, absY, 1, targetX, targetY, 1)
                 && TargetRoute.inRange(absX, absY, 1, targetX, targetY, 1, distance)
                 && ProjectileRoute.allow(absX, absY, height, 1, targetX, targetY, 1)) {
             return true;
@@ -77,7 +62,7 @@ public class InterfaceOnGroundItemHandler {
         if (!player.getStats().check(StatType.Magic, 33, "cast this spell"))
             return;
         RuneRemoval r = RuneRemoval.get(player, new Item[]{Rune.AIR.toItem(1), Rune.LAW.toItem(1)});
-        if(r == null) {
+        if (r == null) {
             player.sendMessage("You don't have the runes to cast this spell. You need 1 air and 1 law rune.");
             return;
         }
@@ -87,10 +72,10 @@ public class InterfaceOnGroundItemHandler {
         if (!groundItem.check(player))
             return;
         player.getMovement().setCtrlRun(ctrlRun);
-        player.getRouteFinder().routeGroundItem(groundItem  , distance -> player.getMovement().reset());
-        RouteType route = player.getRouteFinder().routeAbsolute(groundItem.x  , groundItem.y);
+        player.getRouteFinder().routeGroundItem(groundItem, distance -> player.getMovement().reset());
+        RouteType route = player.getRouteFinder().routeAbsolute(groundItem.x, groundItem.y);
         player.startEvent(event -> {
-            if(!(player.getPosition().getX() == targetX && player.getPosition().getY() == targetY && player.getPosition().getZ() == groundItem.z)) {
+            if (!(player.getPosition().getX() == targetX && player.getPosition().getY() == targetY && player.getPosition().getZ() == groundItem.z)) {
                 while (!withinReach(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), targetX, targetY, 7) || !player.getPosition().isWithinDistance(new Position(targetX, targetY, z), 7)) {
                     if (route.finished(player.getPosition())) {
                         if (!route.reachable) {
@@ -102,9 +87,9 @@ public class InterfaceOnGroundItemHandler {
                     event.delay(1);
                 }
             }
-            if(tile == null)
+            if (tile == null)
                 return;
-            if(groundItem == null)
+            if (groundItem == null)
                 return;
             if (groundItem.tile == null) {
                 return;
@@ -124,7 +109,7 @@ public class InterfaceOnGroundItemHandler {
             player.getMovement().reset();
             event.delay(2);
             player.unlock();
-            if(groundItem.isRemoved()) {
+            if (groundItem.isRemoved()) {
                 player.sendMessage("It's gone!");
                 return;
             }
@@ -138,18 +123,18 @@ public class InterfaceOnGroundItemHandler {
     }
 
     private static void handleAction(Player player, int interfaceHash, int slot, int itemId, int groundItemId, int x, int y, int ctrlRun) {
-        if(player.isLocked())
+        if (player.isLocked())
             return;
         player.resetActions(true, true, true);
         int z = player.getHeight();
         Tile tile = Tile.get(x, y, z, false);
-        if(tile == null)
+        if (tile == null)
             return;
         GroundItem groundItem = tile.getPickupItem(groundItemId, player.getUserId());
-        if(groundItem == null)
+        if (groundItem == null)
             return;
         player.getMovement().setCtrlRun(ctrlRun == 1);
-        player.getRouteFinder().routeGroundItem(groundItem  , distance -> action(player, interfaceHash, slot, itemId, groundItem, distance));
+        player.getRouteFinder().routeGroundItem(groundItem, distance -> action(player, interfaceHash, slot, itemId, groundItem, distance));
         if (player.debug) {
             DebugMessage debug = new DebugMessage();
             debug.add("groundItemId", groundItemId);
@@ -164,11 +149,11 @@ public class InterfaceOnGroundItemHandler {
 
     private static void action(Player player, int interfaceHash, int slot, int itemId, GroundItem groundItem, int distance) {
         InterfaceAction action = InterfaceHandler.getAction(player, interfaceHash);
-        if(action == null)
+        if (action == null)
             return;
-        if(slot == 65535)
+        if (slot == 65535)
             slot = -1;
-        if(itemId == 65535)
+        if (itemId == 65535)
             itemId = -1;
         action.handleOnGroundItem(player, slot, itemId, groundItem, distance);
     }

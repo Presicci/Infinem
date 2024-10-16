@@ -12,6 +12,8 @@ public class MapDirectionUpdate extends UpdateMask {
 
     private int faceX = -1, faceY = -1;
 
+    private boolean instant = false;
+
     public void set(Player player, int faceX, int faceY) {
         int size = player.getSize();
         int anInt1783 = (player.getPosition().getBaseLocalX() << 7) | (size << 6);
@@ -20,8 +22,8 @@ public class MapDirectionUpdate extends UpdateMask {
         int baseRegionY = (player.getPosition().getFirstChunkY() - 6) * 8;
         int i_35_ = (anInt1783 - (faceX - baseRegionX - baseRegionX) * 64);
         int i_36_ = (anInt1770 - (faceY - baseRegionY - baseRegionY) * 64);
-        if(i_35_ != 0 || i_36_ != 0)
-            direction = (int) (Math.atan2((double) i_35_, (double) i_36_) * 325.949) & 0x7ff;
+        if (i_35_ != 0 || i_36_ != 0)
+            direction = (int) (Math.atan2(i_35_, i_36_) * 325.949) & 0x7ff;
     }
 
     //only for players!
@@ -31,9 +33,10 @@ public class MapDirectionUpdate extends UpdateMask {
     }
 
     //only for npcs!
-    public void set(int faceX, int faceY) {
+    public void set(int faceX, int faceY, boolean instant) {
         this.faceX = faceX;
         this.faceY = faceY;
+        this.instant = instant;
         this.update = true;
     }
 
@@ -49,17 +52,18 @@ public class MapDirectionUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        if(playerUpdate) {
-            out.addLEShort(direction);
+        if (playerUpdate) {
+            out.addShortAdd(direction);
         } else {
-            out.addShortA(faceX);
-            out.addShortA(faceY);
+            out.addShort(faceX);
+            out.addLEShort(faceY);
+            out.addByteNeg(instant ? 1 : 0);
         }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 128 : 1;
+        return playerUpdate ? 2 : 8;
     }
 
 }
