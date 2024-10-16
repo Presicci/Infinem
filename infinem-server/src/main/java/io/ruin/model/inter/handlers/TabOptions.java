@@ -7,6 +7,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
+import io.ruin.model.inter.handlers.settings.Settings;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.skills.construction.HouseViewer;
 import io.ruin.network.incoming.handlers.DisplayHandler;

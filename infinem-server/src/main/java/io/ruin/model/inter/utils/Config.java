@@ -118,9 +118,9 @@ public class Config {
             varp(2996, true).defaultValue(0),   // Friend
             varp(2997, true).defaultValue(0),   // Clan
             varp(3060, true).defaultValue(0),   // Clan guest
-            //varp(3192, true).defaultValue(0),   // Clan broadcast
-            //varp(3191, true).defaultValue(0),   // Iron group chat
-            //varp(3193, true).defaultValue(0),   // Iron group broadcast
+            varp(3192, true).defaultValue(0),   // Clan broadcast
+            varp(3191, true).defaultValue(0),   // Iron group chat
+            varp(3193, true).defaultValue(0),   // Iron group broadcast
             varp(2998, true).defaultValue(0),   // Trade request
             varp(2999, true).defaultValue(0)    // Challenge request
     };
@@ -132,9 +132,9 @@ public class Config {
             varp(3004, true).defaultValue(0),   // Friend
             varp(3005, true).defaultValue(0),   // Clan
             varp(3061, true).defaultValue(0),   // Clan guest
-            //varp(3195, true).defaultValue(0),   // Clan broadcast
-            //varp(3194, true).defaultValue(0),   // Iron group chat
-            //varp(3196, true).defaultValue(0),   // Iron group broadcast
+            varp(3195, true).defaultValue(0),   // Clan broadcast
+            varp(3194, true).defaultValue(0),   // Iron group chat
+            varp(3196, true).defaultValue(0),   // Iron group broadcast
             varp(3006, true).defaultValue(0),   // Trade request
             varp(3007, true).defaultValue(0)    // Challenge request
     };
