@@ -18,6 +18,59 @@ import java.util.List;
  */
 @Getter
 public enum MagicTablet {
+    ENCHANT_SAPPHIRE(new MagicTabletType[]{MagicTabletType.OAK, MagicTabletType.OAK_EAGLE, MagicTabletType.OAK_DEMON, MagicTabletType.TEAK_EAGLE, MagicTabletType.TEAK_DEMON,
+            MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MAHOGANY_DEMON, MagicTabletType.MARBLE_LECTERN},
+            7, 17.5, Items.ENCHANT_SAPPHIRE,
+            new Item(Items.SOFT_CLAY), new Item(Items.COSMIC_RUNE), new Item(Items.WATER_RUNE)),
+    BONES_TO_BANANAS(new MagicTabletType[]{MagicTabletType.OAK_DEMON, MagicTabletType.TEAK_DEMON, MagicTabletType.MAHOGANY_DEMON, MagicTabletType.MARBLE_LECTERN},
+            15, 25, Items.BONES_TO_BANANAS,
+            new Item(Items.SOFT_CLAY), new Item(Items.NATURE_RUNE), new Item(Items.WATER_RUNE, 2), new Item(Items.EARTH_RUNE, 2)),
+    VARROCK_TELEPORT(new MagicTabletType[]{MagicTabletType.OAK, MagicTabletType.OAK_EAGLE, MagicTabletType.OAK_DEMON, MagicTabletType.TEAK_EAGLE, MagicTabletType.TEAK_DEMON,
+            MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MAHOGANY_DEMON, MagicTabletType.MARBLE_LECTERN},
+            25, 35, Items.VARROCK_TELEPORT,
+            new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE), new Item(Items.AIR_RUNE, 3), new Item(Items.FIRE_RUNE)),
+    ENCHANT_EMERALD(new MagicTabletType[]{MagicTabletType.OAK_DEMON, MagicTabletType.TEAK_DEMON, MagicTabletType.MAHOGANY_DEMON, MagicTabletType.MARBLE_LECTERN},
+            27, 27.8, Items.ENCHANT_EMERALD,
+            new Item(Items.SOFT_CLAY), new Item(Items.COSMIC_RUNE), new Item(Items.AIR_RUNE, 3)),
+    LUMBRIDGE_TELEPORT(new MagicTabletType[]{MagicTabletType.OAK_EAGLE, MagicTabletType.TEAK_EAGLE, MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MARBLE_LECTERN},
+            31, 41, Items.LUMBRIDGE_TELEPORT,
+            new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE), new Item(Items.AIR_RUNE, 3), new Item(Items.EARTH_RUNE)),
+    FALADOR_TELEPORT(new MagicTabletType[]{MagicTabletType.OAK_EAGLE, MagicTabletType.TEAK_EAGLE, MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MARBLE_LECTERN},
+            37, 48, Items.FALADOR_TELEPORT,
+            new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE), new Item(Items.AIR_RUNE, 3), new Item(Items.WATER_RUNE)),
+    HOUSE_TELEPORT(new MagicTabletType[]{MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MARBLE_LECTERN},
+            40, 30, 8013,
+            new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE), new Item(Items.AIR_RUNE), new Item(Items.EARTH_RUNE)),
+    CAMELOT_TELEPORT(new MagicTabletType[]{MagicTabletType.TEAK_EAGLE, MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MARBLE_LECTERN},
+            45, 55.5, Items.FALADOR_TELEPORT,
+            new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE), new Item(Items.AIR_RUNE, 5)),
+    KOUREND_TELEPORT(new MagicTabletType[]{MagicTabletType.TEAK_EAGLE, MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MARBLE_LECTERN},
+            48, 58, Items.KOUREND_TELEPORT,
+            new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE, 2), new Item(Items.WATER_RUNE), new Item(Items.FIRE_RUNE)),
+    ENCHANT_RUBY(new MagicTabletType[]{MagicTabletType.TEAK_DEMON, MagicTabletType.MAHOGANY_DEMON, MagicTabletType.MARBLE_LECTERN},
+            49, 44.5, Items.ENCHANT_RUBY,
+            new Item(Items.SOFT_CLAY), new Item(Items.COSMIC_RUNE), new Item(Items.FIRE_RUNE, 5)),
+    ARDOUGNE_TELEPORT(new MagicTabletType[]{MagicTabletType.TEAK_EAGLE, MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MARBLE_LECTERN},
+            51, 61, Items.ARDOUGNE_TELEPORT,
+            new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE, 2), new Item(Items.WATER_RUNE, 2)),
+    CIVITAS_FORTIS_TELEPORT(new MagicTabletType[]{MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MARBLE_LECTERN},
+            54, 64, 28824,
+            new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE, 2), new Item(Items.EARTH_RUNE), new Item(Items.FIRE_RUNE)),
+    ENCHANT_DIAMOND(new MagicTabletType[]{MagicTabletType.TEAK_DEMON, MagicTabletType.MAHOGANY_DEMON, MagicTabletType.MARBLE_LECTERN},
+            57, 50.3, Items.ENCHANT_DIAMOND,
+            new Item(Items.SOFT_CLAY), new Item(Items.COSMIC_RUNE), new Item(Items.EARTH_RUNE, 10)),
+    WATCHTOWER_TELEPORT(new MagicTabletType[]{MagicTabletType.MAHOGANY_EAGLE, MagicTabletType.MARBLE_LECTERN},
+            58, 68, Items.WATCHTOWER_TELEPORT,
+            new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE, 2), new Item(Items.EARTH_RUNE, 2)),
+    BONES_TO_PEACHES(new MagicTabletType[]{MagicTabletType.MAHOGANY_DEMON, MagicTabletType.MARBLE_LECTERN},
+            60, 35.5, Items.BONES_TO_PEACHES,
+            new Item(Items.SOFT_CLAY), new Item(Items.NATURE_RUNE, 2), new Item(Items.WATER_RUNE, 4), new Item(Items.EARTH_RUNE, 4)),
+    ENCHANT_DRAGONSTONE(new MagicTabletType[]{MagicTabletType.MAHOGANY_DEMON, MagicTabletType.MARBLE_LECTERN},
+            68, 58.5, Items.ENCHANT_DRAGONSTN,
+            new Item(Items.SOFT_CLAY), new Item(Items.COSMIC_RUNE), new Item(Items.WATER_RUNE, 15), new Item(Items.EARTH_RUNE, 15)),
+    ENCHANT_ONYX(new MagicTabletType[]{MagicTabletType.MAHOGANY_DEMON, MagicTabletType.MARBLE_LECTERN},
+            87, 73, Items.ENCHANT_ONYX,
+            new Item(Items.SOFT_CLAY), new Item(Items.COSMIC_RUNE), new Item(Items.FIRE_RUNE, 20), new Item(Items.EARTH_RUNE, 20)),
     // Ancient
     PADDEWA(MagicTabletType.ANCIENT, 54, 64, Items.PADDEWWA_TELEPORT,
             new Item(Items.SOFT_CLAY), new Item(Items.LAW_RUNE, 2), new Item(Items.AIR_RUNE), new Item(Items.FIRE_RUNE)),
@@ -76,13 +129,23 @@ public enum MagicTablet {
     APE_ATOLL(MagicTabletType.ARCEUUS, 90, 100, 19631,
             new Item(Items.DARK_ESSENCE_BLOCK), new Item(Items.LAW_RUNE, 2), new Item(Items.SOUL_RUNE, 2), new Item(Items.BLOOD_RUNE, 2));
 
-    private final MagicTabletType type;
-    private final int levelRequirement, experience, productId;
+    private final MagicTabletType[] types;
+    private final int levelRequirement, productId;
+    private final double experience;
     private final Item baseItem;
     private final Item[] runes;
 
-    MagicTablet(MagicTabletType type, int levelRequirement, int experience, int productId, Item baseItem, Item... runes) {
-        this.type = type;
+    MagicTablet(MagicTabletType type, int levelRequirement, double experience, int productId, Item baseItem, Item... runes) {
+        this.types = new MagicTabletType[]{type};
+        this.levelRequirement = levelRequirement;
+        this.experience = experience;
+        this.productId = productId;
+        this.baseItem = baseItem;
+        this.runes = runes;
+    }
+
+    MagicTablet(MagicTabletType[] types, int levelRequirement, double experience, int productId, Item baseItem, Item... runes) {
+        this.types = types;
         this.levelRequirement = levelRequirement;
         this.experience = experience;
         this.productId = productId;
@@ -128,6 +191,14 @@ public enum MagicTablet {
         });
     }
 
+    private static final List<MagicTablet> OAK_TABLETS = new ArrayList<>();
+    private static final List<MagicTablet> OAK_EAGLE_TABLETS = new ArrayList<>();
+    private static final List<MagicTablet> OAK_DEMON_TABLETS = new ArrayList<>();
+    private static final List<MagicTablet> TEAK_EAGLE_TABLETS = new ArrayList<>();
+    private static final List<MagicTablet> TEAK_DEMON_TABLETS = new ArrayList<>();
+    private static final List<MagicTablet> MAHOGANY_EAGLE_TABLETS = new ArrayList<>();
+    private static final List<MagicTablet> MAHOGANY_DEMON_TABLETS = new ArrayList<>();
+    private static final List<MagicTablet> MARBLE_LECTERN_TABLETS = new ArrayList<>();
     private static final List<MagicTablet> ANCIENT_TABLETS = new ArrayList<>();
     private static final List<MagicTablet> LUNAR_TABLETS = new ArrayList<>();
     private static final List<MagicTablet> ARCEUUS_TABLETS = new ArrayList<>();
@@ -135,6 +206,22 @@ public enum MagicTablet {
     public static List<MagicTablet> getTablets(MagicTabletType type) {
         switch (type) {
             default:
+                return OAK_TABLETS;
+            case OAK_EAGLE:
+                return OAK_EAGLE_TABLETS;
+            case OAK_DEMON:
+                return OAK_DEMON_TABLETS;
+            case TEAK_EAGLE:
+                return TEAK_EAGLE_TABLETS;
+            case TEAK_DEMON:
+                return TEAK_DEMON_TABLETS;
+            case MAHOGANY_EAGLE:
+                return MAHOGANY_EAGLE_TABLETS;
+            case MAHOGANY_DEMON:
+                return MAHOGANY_DEMON_TABLETS;
+            case MARBLE_LECTERN:
+                return MARBLE_LECTERN_TABLETS;
+            case ANCIENT:
                 return ANCIENT_TABLETS;
             case LUNAR:
                 return LUNAR_TABLETS;
@@ -145,9 +232,19 @@ public enum MagicTablet {
 
     static {
         for (MagicTablet tablet : values()) {
-            if (tablet.type == MagicTabletType.ANCIENT) ANCIENT_TABLETS.add(tablet);
-            if (tablet.type == MagicTabletType.LUNAR) LUNAR_TABLETS.add(tablet);
-            if (tablet.type == MagicTabletType.ARCEUUS) ARCEUUS_TABLETS.add(tablet);
+            for (MagicTabletType type : tablet.types) {
+                if (type == MagicTabletType.OAK) OAK_TABLETS.add(tablet);
+                if (type == MagicTabletType.OAK_EAGLE) OAK_EAGLE_TABLETS.add(tablet);
+                if (type == MagicTabletType.OAK_DEMON) OAK_DEMON_TABLETS.add(tablet);
+                if (type == MagicTabletType.TEAK_EAGLE) TEAK_EAGLE_TABLETS.add(tablet);
+                if (type == MagicTabletType.TEAK_DEMON) TEAK_DEMON_TABLETS.add(tablet);
+                if (type == MagicTabletType.MAHOGANY_EAGLE) MAHOGANY_EAGLE_TABLETS.add(tablet);
+                if (type == MagicTabletType.MAHOGANY_DEMON) MAHOGANY_DEMON_TABLETS.add(tablet);
+                if (type == MagicTabletType.MARBLE_LECTERN) MARBLE_LECTERN_TABLETS.add(tablet);
+                if (type == MagicTabletType.ANCIENT) ANCIENT_TABLETS.add(tablet);
+                if (type == MagicTabletType.LUNAR) LUNAR_TABLETS.add(tablet);
+                if (type == MagicTabletType.ARCEUUS) ARCEUUS_TABLETS.add(tablet);
+            }
         }
     }
 }

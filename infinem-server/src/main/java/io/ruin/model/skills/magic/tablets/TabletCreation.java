@@ -21,7 +21,7 @@ public class TabletCreation {
     private static final Config LECTERN_TYPE = Config.varpbit(10599, false);
     private static final Config LECTERN_SELECTION = Config.varpbit(10600, false);
 
-    private static void open(Player player, MagicTabletType type) {
+    public static void open(Player player, MagicTabletType type) {
         LECTERN_TYPE.set(player, type.getVbIndex());
         TABLET_SET.set(player, type.getTabletEnum());
         player.openInterface(InterfaceType.MAIN, 403);
