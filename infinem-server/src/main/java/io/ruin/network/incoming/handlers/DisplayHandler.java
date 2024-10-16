@@ -164,7 +164,7 @@ public class DisplayHandler implements Incoming {
                 AccessMasks.ClickOp8, AccessMasks.ClickOp9, AccessMasks.ClickOp10, AccessMasks.UseOnGroundItem, AccessMasks.UseOnNpc, AccessMasks.UseOnObject,
                 AccessMasks.UseOnPlayer, AccessMasks.UseOnComponent, AccessMasks.DragDepth1, AccessMasks.DragTargetable, AccessMasks.ComponentTargetable);
         ps.sendAccessMask(Interface.MUSIC_PLAYER, 5, 0, 726, AccessMasks.ClickOp1, AccessMasks.ClickOp2);
-        ps.sendAccessMask(Interface.MODERN_SPELL_BOOK, 195, 0, 6, AccessMasks.ClickOp1);
+        ps.sendAccessMask(Interface.MODERN_SPELL_BOOK, 198, 0, 6, AccessMasks.ClickOp1);
         ps.sendAccessMask(Interface.OPTIONS, 38, 1, 5, AccessMasks.ClickOp1);
         ps.sendAccessMask(Interface.OPTIONS, 39, 1, 4, AccessMasks.ClickOp1);
         ps.sendAccessMask(Interface.OPTIONS, 41, 1, 3, AccessMasks.ClickOp1);

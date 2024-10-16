@@ -242,9 +242,10 @@ public enum SpellBook {
     private static final Config GREAT_BRAIN_ROBBERY_UNLOCK = Config.varp(980, false).defaultValue(130);
 
     static {
-        SpellBook.MODERN.spellIdOffset = 5;
-        SpellBook.ANCIENT.spellIdOffset = 75;
-        SpellBook.LUNAR.spellIdOffset = 100;
-        SpellBook.ARCEUUS.spellIdOffset = 144;
+        SpellBook.MODERN.spellIdOffset = 7;
+        SpellBook.ANCIENT.spellIdOffset = 103;
+        SpellBook.LUNAR.spellIdOffset = 104;
+        SpellBook.ARCEUUS.spellIdOffset = 148
+        ;
     }
 }

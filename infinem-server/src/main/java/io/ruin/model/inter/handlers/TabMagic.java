@@ -21,17 +21,21 @@ public class TabMagic {
                 for(int i = 0; i < book.spells.length; i++)
                     h.actions[book.spellIdOffset + i] = createAction(book, book.spells[i]);
             }
-            h.actions[194] = (DefaultAction) (player, option, slot, itemId) -> {
-                if(slot == 0)
+            h.actions[198] = (DefaultAction) (player, option, slot, itemId) -> {
+                if (slot == 0)
                     Config.SHOW_COMBAT_SPELLS.toggle(player);
-                if(slot == 1)
+                if (slot == 1)
                     Config.SHOW_TELEPORT_SPELLS.toggle(player);
-                if(slot == 2)
+                if (slot == 2)
                     Config.SHOW_UTILITY_SPELLS.toggle(player);
-                if(slot == 3)
+                if (slot == 3)
                     Config.SHOW_SPELLS_LACK_LEVEL.toggle(player);
-                if(slot == 4)
+                if (slot == 4)
                     Config.SHOW_SPELLS_LACK_RUNES.toggle(player);
+                if (slot == 5)
+                    Config.SHOW_SPELLS_LACK_REQS.toggle(player);
+                if (slot == 6)
+                    Config.SPELL_RESIZING.toggle(player);
             };
         });
     }
