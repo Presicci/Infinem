@@ -1,5 +1,6 @@
 package io.ruin.model.inter.handlers;
 
+import io.ruin.model.combat.AttackType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -8,6 +9,8 @@ import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
+
+import java.text.DecimalFormat;
 
 public class EquipmentStats {
 
@@ -98,6 +101,11 @@ public class EquipmentStats {
             childID += stat.skipChild ? 2 : 1;
         }
         player.getPacketSender().sendWeight((int) (player.getInventory().weight + player.getEquipment().weight));
+        DecimalFormat df = new DecimalFormat("0.0#");
+        int baseAttackSpeed = player.getCombat().weaponType.attackTicks;
+        int actualAttackSpeed = player.getCombat().getAttackType() == AttackType.RAPID_RANGED ? baseAttackSpeed - 1 : baseAttackSpeed;
+        player.getPacketSender().sendString(84, 53, "Base: " + df.format(baseAttackSpeed * 0.6));
+        player.getPacketSender().sendString(84, 54, "Actual: " + df.format(actualAttackSpeed * 0.6));
     }
 
     public static String asBonus(int value, boolean percent) {
