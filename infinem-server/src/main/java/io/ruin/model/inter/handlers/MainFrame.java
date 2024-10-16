@@ -17,20 +17,20 @@ public class MainFrame {
 
     static {
         InterfaceHandler.register(Interface.ORBS, h -> {
-            h.actions[1] = (OptionAction) XpCounter::select;
-            h.actions[15] = (OptionAction) (p, option) -> {
+            h.actions[5] = (OptionAction) XpCounter::select;
+            h.actions[19] = (OptionAction) (p, option) -> {
                 if(option == 1)
                     p.getPrayer().toggleQuickPrayers();
                 else
                     TabPrayer.setupQuickPrayers(p, true);
             };
-            h.actions[23] = (SimpleAction) p -> p.getMovement().toggleRunning();
-            h.actions[48] = (SimpleAction) p -> {
+            h.actions[27] = (SimpleAction) p -> p.getMovement().toggleRunning();
+            h.actions[53] = (SimpleAction) p -> {
                 p.getPacketSender().sendClientScript(1749, "c", p.getPosition().getTileHash());
                 p.openInterface(InterfaceType.WORLD_MAP, Interface.WORLD_MAP);
                 p.getPacketSender().sendAccessMask(595, 17, 0, 4, 2);
             };
-            h.actions[31] = (SimpleAction) p -> p.getCombat().toggleSpecial();
+            h.actions[35] = (SimpleAction) p -> p.getCombat().toggleSpecial();
         });
         InterfaceHandler.register(Interface.CHAT_BAR, h -> {
             h.actions[7] = (OptionAction) (player, option) -> {
