@@ -295,7 +295,7 @@ public class JournalTab {
             } else
                 Config.QUEST_ACTIVE_TAB.set(player, tab.ordinal());
         }*/
-        player.getPacketSender().sendInterface(tab.getId(), 629, 33, 1);
+        player.getPacketSender().sendInterface(tab.getId(), 629, 28, 1);
         Config.ACTIVE_QUEST_TAB.set(player, tab.ordinal());
         updateTab(player, tab);
     }
