@@ -88,22 +88,24 @@ public class DisplayHandler implements Incoming {
         }
         openInterface(player, Interface.CHAT_BAR, 96, 1);
         openInterface(player, COMBAT_OPTIONS, 76, 1);
-        openInterface(player, Interface.SKILLS, 77, 1);//skills tab
-        openInterface(player, Interface.INVENTORY, 79, 1);//inventory
-        openInterface(player, Interface.EQUIPMENT, 80, 1);//equipment tab
-        openInterface(player, Interface.PRAYER, 81, 1);//prayer tab
-        openInterface(player, Interface.MODERN_SPELL_BOOK, 82, 1);//magic spellbook
-        openInterface(player, Interface.CLAN_CHAT, 83, 1);//side channels
-        openInterface(player, Interface.ACCOUNT_MANAGEMENT, 84, 1);//account management
-        openInterface(player, Interface.LOGOUT, 86, 1);//logout tab
-        openInterface(player, Interface.SCROLL, 87, 1);//settings side
-        openInterface(player, Interface.EMOTE, 88, 1);//emote tab
-        openInterface(player, Interface.MUSIC_PLAYER, 89, 1);//music tab
+        openInterface(player, Interface.SKILLS, 77, 1);
         openInterface(player, Interface.QUEST_TAB, 78, 1);
+        openInterface(player, Interface.INVENTORY, 79, 1);
+        openInterface(player, Interface.EQUIPMENT, 80, 1);
+        openInterface(player, Interface.PRAYER, 81, 1);
+        openInterface(player, Interface.MODERN_SPELL_BOOK, 82, 1);
+        openInterface(player, Interface.CLAN_CHAT, 83, 1);
+        openInterface(player, Interface.ACCOUNT_MANAGEMENT, 84, 1);
+        openInterface(player, Config.FRIENDS_AND_IGNORE_TOGGLE.get(player) == 0 ? Interface.FRIENDS_LIST : Interface.IGNORE_LIST, 85, 1);
+        openInterface(player, Interface.LOGOUT, 86, 1);
+        openInterface(player, Interface.OPTIONS, 87, 1);
+        openInterface(player, Interface.EMOTE, 88, 1);
+        openInterface(player, Interface.MUSIC_PLAYER, 89, 1);
+
         openInterface(player, 163, 93, 1);//private chat overlay
         openInterface(player, Interface.ORBS, 33, 1);//stat orbs
         openInterface(player, 303, 2, 1);//hp hud
-        openInterface(player, Config.FRIENDS_AND_IGNORE_TOGGLE.get(player) == 0 ? Interface.FRIENDS_LIST : Interface.IGNORE_LIST, 85, 1);//Friends/Ignores
+
 
         sendInitialAccessMasks(player);
         /*int tabChildOffset = DEFAULT_SCREEN_CHILD_OFFSET;
