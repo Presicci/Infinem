@@ -17,11 +17,13 @@ import java.util.List;
 // Modern tablet creation is handled in skills.construction.actions.Study
 public class TabletCreation {
 
+    private static final Config TABLET_SET = Config.varp(4074, false);
     private static final Config LECTERN_TYPE = Config.varpbit(10599, false);
     private static final Config LECTERN_SELECTION = Config.varpbit(10600, false);
 
     private static void open(Player player, MagicTabletType type) {
         LECTERN_TYPE.set(player, type.getVbIndex());
+        TABLET_SET.set(player, type.getTabletEnum());
         player.openInterface(InterfaceType.MAIN, 403);
     }
 
@@ -44,14 +46,14 @@ public class TabletCreation {
         ObjectAction.register(40358, "study", (player, obj) -> open(player, MagicTabletType.LUNAR));
         ObjectAction.register(28802, "study", (player, obj) -> open(player, MagicTabletType.ARCEUUS));
         InterfaceHandler.register(403, h -> {
-            h.actions[4] = (SimpleAction) player -> Config.IQ.set(player, 1);
-            h.actions[5] = (SimpleAction) player -> Config.IQ.set(player, 5);
-            h.actions[6] = (SimpleAction) player -> Config.IQ.set(player, 10);
-            h.actions[7] = (SimpleAction) player -> player.integerInput("Enter amount:", amt -> Config.IQ.set(player, amt));
-            h.actions[8] = (SimpleAction) player -> Config.IQ.set(player, 28);
-            h.actions[13] = (SimpleAction) TabletCreation::create;
-            for (int index = 14; index <= 24; index++) {
-                int slot = index - 13;
+            h.actions[5] = (SimpleAction) player -> Config.IQ.set(player, 1);
+            h.actions[6] = (SimpleAction) player -> Config.IQ.set(player, 5);
+            h.actions[7] = (SimpleAction) player -> Config.IQ.set(player, 10);
+            h.actions[8] = (SimpleAction) player -> player.integerInput("Enter amount:", amt -> Config.IQ.set(player, amt));
+            h.actions[9] = (SimpleAction) player -> Config.IQ.set(player, 28);
+            h.actions[14] = (SimpleAction) TabletCreation::create;
+            for (int index = 19; index <= 39; index++) {
+                int slot = index - 18;
                 h.actions[index] = (SimpleAction) player -> LECTERN_SELECTION.set(player, slot);
             }
         });

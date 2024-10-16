@@ -10,11 +10,13 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum MagicTabletType {
-    ANCIENT(1),
-    LUNAR(2),
-    ARCEUUS(3);
+    MODERN(0, 5271),
+    ANCIENT(1, 3256),
+    LUNAR(2, 3253),
+    ARCEUUS(3, 2628);
 
     private final int vbIndex;
+    private final int tabletEnum;
 
     public static MagicTabletType getType(int index) {
         for (MagicTabletType type : values()) {
