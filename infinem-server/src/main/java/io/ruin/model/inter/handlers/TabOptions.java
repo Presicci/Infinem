@@ -23,10 +23,7 @@ public class TabOptions {
             /**
              * Display
              */
-            h.actions[41] = (DefaultAction) (p, option, slot, itemId) -> {
-                Config.SIDE_PANELS.setInstant(p, slot == 3 ? 1 : 0);
-                DisplayHandler.setDisplayMode(p, slot);
-            };
+            h.actions[41] = (DefaultAction) (p, option, slot, itemId) -> DisplayHandler.updateGameframe(p, slot);
 
             /**
              * Brightness

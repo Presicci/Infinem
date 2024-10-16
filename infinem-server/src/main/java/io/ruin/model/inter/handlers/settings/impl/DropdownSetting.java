@@ -33,10 +33,7 @@ public enum DropdownSetting {
     KEYBIND_13(3, 36, 184, (player, i) -> keybind(player, i, 12)),
     KEYBIND_14(3, 37, 185, (player, i) -> keybind(player, i, 13)),
     PRONOUNS(5, 1, 203),
-    DISPLAY(6, 1, 235, (player, i) -> {
-        Config.SIDE_PANELS.setInstant(player, i == 2 ? 1 : 0);
-        DisplayHandler.setDisplayMode(player, i + 1);
-    }),
+    DISPLAY(6, 1, 235, (player, i) -> DisplayHandler.updateGameframe(player, i == 2 ? 1 : i == 5 ? 2 : 3)),
     QUEST_LIST_SORTING(6, 25, 259),
     SHOW_QUESTS_LACK_REQUIREMENTS(6, 26, 260),
     SHOW_QUESTS_LACK_RECOMMENDED(6, 27, 261),

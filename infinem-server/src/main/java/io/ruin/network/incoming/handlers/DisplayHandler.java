@@ -27,7 +27,7 @@ public class DisplayHandler implements Incoming {
         int canvasHeight = in.readShort();
         if (!player.hasDisplay()) {
             player.setDisplayMode(displayMode);
-            sendDisplay(player, displayMode);
+            sendDisplay(player);
             player.start();
             player.setOnline(true);
             if (Config.XP_COUNTER_SHOWN.get(player) == 1)
@@ -43,48 +43,14 @@ public class DisplayHandler implements Incoming {
 
     public static final int DEFAULT_SCREEN_CHILD_OFFSET = 7;
 
-    public static void setDisplayMode(Player p, int displayMode) {
-        /*if (displayMode == 2 && Config.SIDE_PANELS.get(p) == 1) displayMode = 3;
-        if (p.getDisplayMode() == displayMode) return;
-        p.setDisplayMode(displayMode);
-        p.closeInterface(InterfaceType.MAIN_STRETCHED);
-        PacketSender ps = p.getPacketSender();
-
-        Map<Integer, Integer> oldComponents = getToplevelComponents(p).getValuesAsInts();
-
-        ps.sendGameFrame(getGameFrameFor(displayMode));
-        ps.sendClientScript(3998, "i", displayMode - 1);
-        Map<Integer, Integer> newComponents = getToplevelComponents(p).getValuesAsInts();
-        moveSubInterfaces(oldComponents, newComponents, p);
-        ps.sendAccessMask(Interface.OPTIONS, 39, 0, 21, AccessMasks.ClickOp1);
-        ps.sendAccessMask(Interface.OPTIONS, 53, 0, 21, AccessMasks.ClickOp1);
-        ps.sendAccessMask(Interface.OPTIONS, 67, 0, 21, AccessMasks.ClickOp1);
-        ps.sendAccessMask(Interface.OPTIONS, 79, 1, 5, AccessMasks.ClickOp1);
-        ps.sendAccessMask(Interface.OPTIONS, 80, 1, 4, AccessMasks.ClickOp1);
-        ps.sendAccessMask(Interface.OPTIONS, 82, 1, 3, AccessMasks.ClickOp1);
-        ps.sendAccessMask(Interface.OPTIONS, 23, 0, 21, AccessMasks.ClickOp1);
-        ps.sendAccessMask(Interface.OPTIONS, 81, 1, 5, AccessMasks.ClickOp1);
-        ps.sendAccessMask(Interface.EMOTE, 1, 0, 47, 2);
-        ps.sendAccessMask(Interface.MUSIC_PLAYER, 3, 0, 665, 6);
-        ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);
-
-        ps.sendClientScript(3970, "IIi", 46661634, 46661635, (int) TimeUnit.MILLISECONDS.toMinutes(p.playTime * Server.tickMs()));
-
-        if (Config.ASK_TIME_PLAYED.get(p) == 0)
-            Config.varpbit(12933, false).set(p, 1); // if 1 then it shows time played.*/
-    }
-
-    private static void sendDisplay(Player player, int displayMode) {
-        if (displayMode == 2 && Config.SIDE_PANELS.get(player) == 1) displayMode = 3;
+    private static void sendDisplay(Player player) {
         PacketSender ps = player.getPacketSender();
         if (player.isFixedScreen()) {
             ps.sendGameFrame(548);
         } else if (Config.SIDE_PANELS.get(player) == 0) {
             ps.sendGameFrame(164);
-            //player.getPacketSender().sendInterface(Interface.CHAT_BAR, 164, 91, 1);
         } else {
             ps.sendGameFrame(161);
-            //player.getPacketSender().sendInterface(Interface.CHAT_BAR, 161, 96, 1);
         }
         openInterface(player, Interface.CHAT_BAR, 96, 1);
         openInterface(player, COMBAT_OPTIONS, 76, 1);
@@ -101,48 +67,11 @@ public class DisplayHandler implements Incoming {
         openInterface(player, Interface.OPTIONS, 87, 1);
         openInterface(player, Interface.EMOTE, 88, 1);
         openInterface(player, Interface.MUSIC_PLAYER, 89, 1);
-
         openInterface(player, 163, 93, 1);//private chat overlay
         openInterface(player, Interface.ORBS, 33, 1);//stat orbs
         openInterface(player, 303, 2, 1);//hp hud
 
-
         sendInitialAccessMasks(player);
-        /*int tabChildOffset = DEFAULT_SCREEN_CHILD_OFFSET;
-        if (Config.DATA_ORBS.get(player) == 0)
-            ps.sendInterface(160, 165, 24 + tabChildOffset, 1);
-
-
-        ps.sendInterface(Interface.SKILLS, 165, 9 + tabChildOffset, 1);
-        ps.sendInterface(Interface.QUEST_TAB, 165, 10 + tabChildOffset, 1);
-        ps.sendInterface(Interface.QUEST, Interface.QUEST_TAB, 33, 1);
-        ps.sendInterface(Interface.INVENTORY, 165, 11 + tabChildOffset, 1);
-        ps.sendInterface(Interface.EQUIPMENT, 165, 12 + tabChildOffset, 1);
-        ps.sendInterface(Interface.PRAYER, 165, 13 + tabChildOffset, 1);
-        ps.sendInterface(Interface.MAGIC_BOOK, 165, 14 + tabChildOffset, 1);
-
-        ps.sendInterface(Interface.ACCOUNT_MANAGEMENT, 165, 16 + tabChildOffset, 1);
-        ps.sendInterface(Config.FRIENDS_AND_IGNORE_TOGGLE.get(player) == 0 ? Interface.FRIENDS_LIST : Interface.IGNORE_LIST, 165, 17 + tabChildOffset, 1);
-        ps.sendInterface(Interface.LOGOUT, 165, 18 + tabChildOffset, 1);
-        ps.sendInterface(Interface.OPTIONS, 165, 19 + tabChildOffset, 1);
-        ps.sendInterface(Interface.EMOTE, 165, 20 + tabChildOffset, 1);
-        ps.sendInterface(Interface.MUSIC_PLAYER, 165, 21 + tabChildOffset, 1);
-        ps.sendInterface(Interface.CLAN_CHAT, 165, 15 + tabChildOffset, 1);
-        //ps.sendInterface(Interface.CLAN_CHAT, Interface.SOCIAL_TAB, 7, 1);
-        ps.sendInterface(COMBAT_OPTIONS, 165, 8 + tabChildOffset, 1);*/
-
-        /**
-         * Unlocks
-         */
-        /*ps.sendAccessMask(Interface.QUEST, 6, 0, 22, 2);
-        ps.sendAccessMask(Interface.QUEST, 7, 0, 128, 2);
-        ps.sendAccessMask(Interface.QUEST, 8, 0, 14, 2);
-        // ps.sendAccessMask(Interface.OPTIONS, 106, 1, 4, 2);
-        //ps.sendAccessMask(Interface.OPTIONS, 107, 1, 4, 2);
-        ps.sendAccessMask(Interface.EMOTE, 1, 0, 50, 2);
-        ps.sendAccessMask(Interface.MUSIC_PLAYER, 3, 0, 665, 6);
-        ps.sendAccessMask(Interface.MAGIC_BOOK, 194, 0, 5, 2);
-        ps.sendAccessMask(Interface.CHAT_BAR, 59, 0, 1, 2);*/
     }
 
     public static void sendInitialAccessMasks(Player player) {
@@ -170,6 +99,46 @@ public class DisplayHandler implements Incoming {
         ps.sendAccessMask(Interface.OPTIONS, 41, 1, 3, AccessMasks.ClickOp1);
     }
 
+    public static void openInterface(Player player, int interfaceId, int resizableComponent, int overlayType) {
+        int gameframe = player.getGameFrameId();
+        int childId = -1;
+
+        if (gameframe == 161) {
+            childId = resizableComponent;
+        } else {
+            EnumDefinition enumDef = getToplevelComponents(player);
+
+            assert enumDef != null;
+
+            final Map<Integer, Integer> ints = enumDef.getValuesAsInts();
+            assert ints != null;
+            final int key = 161 << 16 | resizableComponent;
+
+            assert ints.containsKey(key);
+
+            childId = ints.get(key) & 0xFFFF;
+        }
+
+        if (childId == -1) {
+            System.out.println("DisplayHandler: Invalid interface opened: " + interfaceId);
+            return;
+        }
+
+        player.getPacketSender().sendInterface(interfaceId, gameframe, childId, overlayType);
+    }
+
+    public static void updateGameframe(Player player, int gameframeIndex) {
+        Map<Integer, Integer> oldComponents = getToplevelComponents(player).getValuesAsInts();
+
+        player.setDisplayMode(gameframeIndex);
+        Config.SIDE_PANELS.setInstant(player, gameframeIndex == 3 ? 1 : 0);
+        player.getPacketSender().sendGameFrame(getGameFrameFor(gameframeIndex));
+
+        Map<Integer, Integer> newComponents = getToplevelComponents(player).getValuesAsInts();
+
+        moveSubInterfaces(oldComponents, newComponents, player);
+    }
+
     public static void updateDisplay(Player player) {
         Map<Integer, Integer> oldComponents = getToplevelComponents(player).getValuesAsInts();
 
@@ -177,19 +146,6 @@ public class DisplayHandler implements Incoming {
         if (player.isFixedScreen()) {
             ps.sendGameFrame(548);
         } else if (Config.SIDE_PANELS.get(player) == 0) {
-            ps.sendGameFrame(164);
-        } else {
-            ps.sendGameFrame(161);
-        }
-
-        Map<Integer, Integer> newComponents = getToplevelComponents(player).getValuesAsInts();
-        moveSubInterfaces(oldComponents, newComponents, player);
-    }
-
-    public static void updateResizedTabs(Player player) {
-        Map<Integer, Integer> oldComponents = getToplevelComponents(player).getValuesAsInts();
-        PacketSender ps = player.getPacketSender();
-        if (player.getGameFrameId() == 161) {
             ps.sendGameFrame(164);
         } else {
             ps.sendGameFrame(161);
@@ -220,34 +176,6 @@ public class DisplayHandler implements Incoming {
                 ps.moveInterface(from >> 16, from & 0xffff, to >> 16, to & 0xffff);
             }
         }
-    }
-
-    public static void openInterface(Player player, int interfaceId, int resizableComponent, int overlayType) {
-        int gameframe = player.getGameFrameId();
-        int childId = -1;
-
-        if (gameframe == 161) {
-            childId = resizableComponent;
-        } else {
-            EnumDefinition enumDef = getToplevelComponents(player);
-
-            assert enumDef != null;
-
-            final Map<Integer, Integer> ints = enumDef.getValuesAsInts();
-            assert ints != null;
-            final int key = 161 << 16 | resizableComponent;
-
-            assert ints.containsKey(key);
-
-            childId = ints.get(key) & 0xFFFF;
-        }
-
-        if (childId == -1) {
-            System.out.println("DisplayHandler: Invalid interface opened: " + interfaceId);
-            return;
-        }
-
-        player.getPacketSender().sendInterface(interfaceId, gameframe, childId, overlayType);
     }
 
     public static int getGameFrameFor(int displayMode) {
