@@ -279,7 +279,7 @@ public class CollectionLog {
 
             //h.actions[20] = (SimpleAction) p -> handleCombatAchievementsButton(p);
 
-            h.actions[79] = (SimpleAction) CollectionLog::handleClose;
+            h.actions[81] = (SimpleAction) CollectionLog::handleClose;
 
             for (int index = 41; index < 69; index++) {
                 h.actions[index] = (SimpleAction) player -> {

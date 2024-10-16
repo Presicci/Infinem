@@ -14,11 +14,11 @@ import java.util.*;
 
 @Getter
 public enum CollectionLogCategory {
-    BOSS(471, 36, new int[]{10, 11, 12, 29}, 40697866, 40697867, 40697868, 40697869),
-    RAIDS(472, 2, new int[]{14, 15, 16}, 40697870, 40697871, 40697872, 40697878),
+    BOSS(471, 48, new int[]{10, 11, 12, 29}, 40697866, 40697867, 40697868, 40697869),
+    RAIDS(472, 3, new int[]{14, 15, 16}, 40697870, 40697871, 40697872, 40697878),
     CLUES(473, 9, new int[]{22, 30, 31}, 40697879, 40697887, 40697888, 40697880),
-    MINIGAMES(474, 17, new int[]{25, 26, 35}, 40697881, 40697882, 40697891, 40697883),
-    OTHER(475, 21, new int[]{27, 32, 33}, 40697884, 40697889, 40697890, 40697885);
+    MINIGAMES(474, 19, new int[]{25, 26, 35}, 40697881, 40697882, 40697891, 40697883),
+    OTHER(475, 25, new int[]{27, 32, 33}, 40697884, 40697889, 40697890, 40697885);
 
     @Getter private final int categoryStruct;
     private final int count;
@@ -70,7 +70,7 @@ public enum CollectionLogCategory {
         }
         if (collectedCount >= itemIds.length) {
             CollectionLogEntry entry = entries.get(slot);
-            if (entry != null) entry.getGreenLogVarbit().set(player, 1);
+            if (entry != null && entry.getGreenLogVarbit() != null) entry.getGreenLogVarbit().set(player, 1);
         }
         player.getPacketSender().sendItems(-1, -1, 620, container);
     }
