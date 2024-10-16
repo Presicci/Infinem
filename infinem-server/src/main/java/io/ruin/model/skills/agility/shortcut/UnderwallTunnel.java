@@ -20,8 +20,8 @@ public enum UnderwallTunnel {
     GRAND_EXCHANGE_NW(16530, new Position(3141, 3513, 0), "climb-into", (player, obj) -> shortcutNWToSE(player, obj, 21)),
     FALADOR_SOUTH(16528, new Position(2948, 3312, 0), "climb-into", (player, obj) -> shortcut(player, 26, Direction.SOUTH)),
     FALADOR_NORTH(16527, new Position(2948, 3310, 0), "climb-into", (player, obj) -> shortcut(player, 26, Direction.NORTH)),
-    DRAYNOR_WEST(19036, new Position(3069, 3260, 0), "climb-into", (player, obj) -> shortcut(player, 42, Direction.WEST, 5)),
-    DRAYNOR_EAST(19032, new Position(3066, 3260, 0), "climb-into", (player, obj) -> shortcut(player, 42, Direction.EAST, 5)),
+    DRAYNOR_WEST(19036, new Position(3069, 3257, 0), "climb-into", (player, obj) -> shortcut(player, 42, Direction.WEST, 5)),
+    DRAYNOR_EAST(19032, new Position(3067, 3257, 0), "climb-into", (player, obj) -> shortcut(player, 42, Direction.EAST, 5)),
 
     ;
 
