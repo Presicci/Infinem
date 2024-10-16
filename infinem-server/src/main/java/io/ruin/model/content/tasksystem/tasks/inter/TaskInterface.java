@@ -25,7 +25,7 @@ public class TaskInterface {
 
     public static void openTaskInterface(Player player) {
         player.getPacketSender().sendClientScript(10203, "s", player.getTaskManager().generateInProgressString());
-        player.openInterface(InterfaceType.MAIN, 657);
+        player.openInterface(InterfaceType.WORLD_MAP, 657);
         player.getPacketSender().sendAccessMask(657, 27, 0, 16, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(657, 32, 0, 6, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(657, 33, 0, 25, AccessMasks.ClickOp1);
@@ -59,7 +59,7 @@ public class TaskInterface {
     }
 
     static {
-        InterfaceHandler.register(Interface.TASKS, (h -> {
+        /*InterfaceHandler.register(Interface.TASKS, (h -> {
             h.actions[9] = (OptionAction) (player, option) -> {
                 if (option == 1) {
                     player.stringInput("Search:", search -> {
@@ -99,6 +99,6 @@ public class TaskInterface {
             h.actions[33] = (SlotAction) (player, slot) -> TYPE_FILTER.set(player, slot - 1);
             h.actions[34] = (SlotAction) (player, slot) -> AREA_FILTER.set(player, slot - 1);
             h.actions[35] = (SlotAction) (player, slot) -> COMPLETED_FILTER.set(player, slot - 1);
-        }));
+        }));*/
     }
 }
