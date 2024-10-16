@@ -72,19 +72,39 @@ public interface ObjectAction {
     }
 
     static void register(int objectId, Position position, String option, ObjectAction action) {
-        register(Tile.getObject(objectId, position.getX(), position.getY(), position.getZ()), option, action);
+        try {
+            register(Tile.getObject(objectId, position.getX(), position.getY(), position.getZ()), option, action);
+        } catch (NullPointerException e) {
+            System.err.println("ObjectAction registration error: " + objectId + ", " + position + ", " + option);
+            throw e;
+        }
     }
 
     static void register(int objectId, int x, int y, int z, int option, ObjectAction action) {
-        register(Tile.getObject(objectId, x, y, z), option, action);
+        try {
+            register(Tile.getObject(objectId, x, y, z), option, action);
+        } catch (NullPointerException e) {
+            System.err.println("ObjectAction registration error: " + objectId + ", " + x + ", " + ", " + y + ", " + z + ", " + option);
+            throw e;
+        }
     }
 
     static boolean register(int objectId, int x, int y, int z, String optionName, ObjectAction action) {
-        return register(Tile.getObject(objectId, x, y, z), optionName, action);
+        try {
+            return register(Tile.getObject(objectId, x, y, z), optionName, action);
+        } catch (NullPointerException e) {
+            System.err.println("ObjectAction registration error: " + objectId + ", " + x + ", " + ", " + y + ", " + z + ", " + optionName);
+            throw e;
+        }
     }
 
     static void register(int objectId, int x, int y, int z, Consumer<ObjectAction[]> actionsConsumer) {
-        register(Tile.getObject(objectId, x, y, z), actionsConsumer);
+        try {
+            register(Tile.getObject(objectId, x, y, z), actionsConsumer);
+        } catch (NullPointerException e) {
+            System.err.println("ObjectAction registration error: " + objectId + ", " + x + ", " + ", " + y + ", " + z);
+            throw e;
+        }
     }
 
     /**
@@ -97,7 +117,7 @@ public interface ObjectAction {
         obj.actions[option - 1] = action;
     }
 
-    static boolean register(GameObject obj, String optionName, ObjectAction action) {
+    static boolean register(GameObject obj, String optionName, ObjectAction action) throws NullPointerException {
         int option = obj.getDef().getOption(optionName);
         if(option == -1)
             return false;
