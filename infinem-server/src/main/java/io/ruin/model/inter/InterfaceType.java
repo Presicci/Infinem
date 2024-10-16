@@ -29,6 +29,10 @@ public enum InterfaceType {
             85,
             true
     ),
+    SIDE_PRAYER(
+            81,
+            true
+    ),
     CHATBOX(
             162,
             565,

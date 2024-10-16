@@ -143,21 +143,11 @@ public enum Prayer {
         p.rangedAttackBoost = 0.05;
         p.rangedStrengthBoost = 0.05;
     }),
-    MYSTIC_WILL(4123, 2670, p -> {
-        p.level = 9;
-        p.drain = 3;
-        p.magicBoost = 0.05;
-    }),
     HAWK_EYE(4124, 2666, p -> {
         p.level = 26;
         p.drain = 6;
         p.rangedAttackBoost = 0.10;
         p.rangedStrengthBoost = 0.10;
-    }),
-    MYSTIC_LORE(4125, 2668, p -> {
-        p.level = 27;
-        p.drain = 6;
-        p.magicBoost = 0.10;
     }),
     EAGLE_EYE(4126, 2665, p -> {
         p.level = 44;
@@ -165,26 +155,20 @@ public enum Prayer {
         p.rangedAttackBoost = 0.15;
         p.rangedStrengthBoost = 0.15;
     }),
+    MYSTIC_WILL(4123, 2670, p -> {
+        p.level = 9;
+        p.drain = 3;
+        p.magicBoost = 0.05;
+    }),
+    MYSTIC_LORE(4125, 2668, p -> {
+        p.level = 27;
+        p.drain = 6;
+        p.magicBoost = 0.10;
+    }),
     MYSTIC_MIGHT(4127, 2669, p -> {
         p.level = 45;
         p.drain = 12;
         p.magicBoost = 0.15;
-    }),
-    CHIVALRY(4128, 3826, p -> {
-        p.level = 60;
-        p.drain = 24;
-        p.attackBoost = 0.15;
-        p.defenceBoost = 0.20;
-        p.strengthBoost = 0.18;
-        p.activationCheck = player -> player.getStats().checkFixed(StatType.Defence, 65, "use this prayer");
-    }),
-    PIETY(4129, 3825, p -> {
-        p.level = 70;
-        p.drain = 24;
-        p.attackBoost = 0.20;
-        p.defenceBoost = 0.25;
-        p.strengthBoost = 0.23;
-        p.activationCheck = player -> player.getStats().checkFixed(StatType.Defence, 70, "use this prayer");
     }),
     RIGOUR(5464, 2685, p -> {
         p.level = 74;
@@ -204,6 +188,22 @@ public enum Prayer {
             }
             return true;
         };
+    }),
+    CHIVALRY(4128, 3826, p -> {
+        p.level = 60;
+        p.drain = 24;
+        p.attackBoost = 0.15;
+        p.defenceBoost = 0.20;
+        p.strengthBoost = 0.18;
+        p.activationCheck = player -> player.getStats().checkFixed(StatType.Defence, 65, "use this prayer");
+    }),
+    PIETY(4129, 3825, p -> {
+        p.level = 70;
+        p.drain = 24;
+        p.attackBoost = 0.20;
+        p.defenceBoost = 0.25;
+        p.strengthBoost = 0.23;
+        p.activationCheck = player -> player.getStats().checkFixed(StatType.Defence, 70, "use this prayer");
     }),
     AUGURY(5465, 2670, p -> {
         p.level = 77;
