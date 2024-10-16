@@ -6,43 +6,45 @@ import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
+import io.ruin.model.skills.magic.MagicTeleportBounds;
 import io.ruin.model.skills.magic.spells.HomeTeleport;
 
 public enum TeleportTab {
 
     //Normal
-    VARROCK(8007, 3212, 3423, 0),
-    LUMBRIDGE(8008, 3222, 3218, 0),
-    FALADOR(8009, 2965, 3380, 0),
-    CAMELOT(8010, 2757, 3479, 0),
-    ARDOUGNE(8011, 2662, 3307, 0),
-    WATCHTOWER(8012, 2549, 3114, 2),
+    VARROCK(8007, MagicTeleportBounds.VARROCK.getBounds()),
+    LUMBRIDGE(8008, MagicTeleportBounds.LUMBRIDGE.getBounds()),
+    FALADOR(8009, MagicTeleportBounds.FALADOR.getBounds()),
+    CAMELOT(8010, MagicTeleportBounds.CAMELOT.getBounds()),
+    ARDOUGNE(8011, MagicTeleportBounds.ARDOUGNE.getBounds()),
+    WATCHTOWER(8012, MagicTeleportBounds.WATCHTOWER.getBounds()),
 
     //Ancient Magicks
-    ANNAKARL(12775, 3288, 3886, 0),
-    CARRALLANGAR(12776, 3161, 3667, 0),
-    DAREEYAK(12777, 2966, 3696, 0),
-    GHORROCK(12778, 2972, 3872, 0),
-    KHARYRLL(12779, 3494, 3473, 0),
-    LASSAR(12780, 3003, 3471, 0),
-    PADDEWWA(12781, 3097, 9882, 0),
-    SENNTISTEN(12782, 3349, 3346, 0),
+    ANNAKARL(12775, MagicTeleportBounds.ANNAKARL.getBounds()),
+    CARRALLANGAR(12776, MagicTeleportBounds.CARRALLANGAR.getBounds()),
+    DAREEYAK(12777, MagicTeleportBounds.DAREEYAK.getBounds()),
+    GHORROCK(12778, MagicTeleportBounds.GHORROCK.getBounds()),
+    KHARYRLL(12779, MagicTeleportBounds.KHARYLL.getBounds()),
+    LASSAR(12780, MagicTeleportBounds.LASSAR.getBounds()),
+    PADDEWWA(12781, MagicTeleportBounds.PADDEWWA.getBounds()),
+    SENNTISTEN(12782, MagicTeleportBounds.SENNTISTEN.getBounds()),
 
     // Wilderness crabs
     WILDERNESS_CRABS(24251, 3349, 3782, 0),
 
     //Arceuus
-    LUMBRIDGE_GRAVEYARD(19613, 3240, 3195, 0),
-    DRAYNOR_MANOR(19615, 3109, 3350, 0),
-    MIND_ALTAR(19617, 2981, 3510, 0),
-    SALVE_GRAVEYARD(19619, 3431, 3460, 0),
-    FENKENSTRAIN(19621, 3549, 3529, 0),
-    WEST_ARDOUGNE(19623, 3502, 3292, 0),
-    HARMONY_ISLAND(19625, 3798, 2865, 0),
-    CEMENTERY(19627, 2979, 3763, 0),
-    BARROWS(19629, 3564, 3312, 0),
-    APE_ATOLL(19631, 3212, 3424, 0),
+    ARCEUUS_LIBRARY(19613, MagicTeleportBounds.ARCEUUS_LIBRARY.getBounds()),
+    DRAYNOR_MANOR(19615, MagicTeleportBounds.DRAYNOR_MANOR.getBounds()),
+    MIND_ALTAR(19617, MagicTeleportBounds.MIND_ALTAR.getBounds()),
+    SALVE_GRAVEYARD(19619, MagicTeleportBounds.SALVE_GRAVEYARD.getBounds()),
+    FENKENSTRAIN(19621, MagicTeleportBounds.FENKENSTRAINS_CASTLE.getBounds()),
+    WEST_ARDOUGNE(19623, MagicTeleportBounds.WEST_ARDOUGNE.getBounds()),
+    HARMONY_ISLAND(19625, MagicTeleportBounds.HARMONY_ISLAND.getBounds()),
+    CEMENTERY(19627, MagicTeleportBounds.CEMETARY.getBounds()),
+    BARROWS(19629, MagicTeleportBounds.BARROWS.getBounds()),
+    APE_ATOLL(19631, MagicTeleportBounds.APE_ATOLL_DUNGEON.getBounds()),
 
     //Redirected
     RIMMINGTON(11741, 2954, 3224, 0),
@@ -55,13 +57,17 @@ public enum TeleportTab {
     HOSIDIUS(19651, 1744, 3517, 0),
     PRIFDDINAS(23771, 3239, 6075, 0);
 
-    public final int id, x, y, z;
+    public final int id;
+    public final Bounds teleportBounds;
+
+    TeleportTab(int id, Bounds teleportBounds) {
+        this.id = id;
+        this.teleportBounds = teleportBounds;
+    }
 
     TeleportTab(int id, int x, int y, int z) {
         this.id = id;
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        this.teleportBounds = new Bounds(new Position(x, y, z), 0);
     }
 
     public static void tabletTeleport(Player player, Item item, Position destination) {
@@ -86,7 +92,7 @@ public enum TeleportTab {
             player.animate(4071);
             player.graphics(678);
             event.delay(2);
-            player.getMovement().teleport(x, y, z);
+            player.getMovement().teleport(teleportBounds.randomPosition());
         });
     }
 
