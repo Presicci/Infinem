@@ -40,6 +40,33 @@ public class TabPrayer {
                     h.actions[prayer.ordinal() + 9] = (SimpleAction) p -> p.getPrayer().toggle(prayer);
                 }
             }
+            // Filters
+            h.actions[42] = (DefaultAction) (player, option, slot, itemId) -> {
+                switch (slot) {
+                    case 0:
+                        int newValue = Config.PRAYER_FILTER_LOWER_TIERS.toggle(player);
+                        if (Config.PRAYER_FILTER_LOWER_TIERS_MULTI_PRAYER.get(player) != newValue) {
+                            Config.PRAYER_FILTER_LOWER_TIERS_MULTI_PRAYER.toggle(player);
+                        }
+                        break;
+                    case 1:
+                        if (Config.PRAYER_FILTER_LOWER_TIERS.get(player) == 0) {
+                            player.sendMessage("This option can only be toggled when the \"Show lower tiers of tiered prayers\" is off.");
+                            return;
+                        }
+                        Config.PRAYER_FILTER_LOWER_TIERS_MULTI_PRAYER.toggle(player);
+                        break;
+                    case 2:
+                        Config.PRAYER_FILTER_RAPID_HEALING.toggle(player);
+                        break;
+                    case 3:
+                        Config.PRAYER_FILTER_LEVEL.toggle(player);
+                        break;
+                    case 4:
+                        Config.PRAYER_FILTER_REQUIREMENT.toggle(player);
+                        break;
+                }
+            };
         });
         InterfaceHandler.register(Interface.QUICK_PRAYER, h -> {
             h.actions[4] = (SlotAction) (p, slot) -> {
@@ -48,6 +75,7 @@ public class TabPrayer {
                     p.getPrayer().toggleQuickPrayer(prayer);
             };
             h.actions[5] = (SimpleAction) p -> setupQuickPrayers(p, false);
+            h.closedAction = (player, integer) -> player.getPacketSender().sendAccessMask(Interface.PRAYER, 42, 0, 4, AccessMasks.ClickOp1);
         });
     }
 

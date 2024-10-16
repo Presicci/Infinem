@@ -377,18 +377,17 @@ public class Config {
     /**
      * Prayer
      */
-
     public static final Config QUICK_PRAYERS_ACTIVE = varpbit(4102, false);
-
     public static final Config QUICK_PRAYING = varpbit(4103, false);
-
     public static final Config CHIVALRY_PIETY_UNLOCK = varpbit(3909, false).defaultValue(8);
-
     public static final Config RIGOUR_UNLOCK = varpbit(5451, true);
-
     public static final Config AUGURY_UNLOCK = varpbit(5452, true);
-
     public static final Config PRESERVE_UNLOCK = varpbit(5453, true);
+    public static final Config PRAYER_FILTER_LOWER_TIERS = varpbit(6574, true);
+    public static final Config PRAYER_FILTER_LOWER_TIERS_MULTI_PRAYER = varpbit(6575, true);
+    public static final Config PRAYER_FILTER_RAPID_HEALING = varpbit(6576, true);
+    public static final Config PRAYER_FILTER_LEVEL = varpbit(6577, true);
+    public static final Config PRAYER_FILTER_REQUIREMENT = varpbit(6578, true);
 
     /**
      * Runecrafting
