@@ -55,6 +55,8 @@ public class Bank extends ItemContainerG<BankItem> {
         player.openInterface(InterfaceType.INVENTORY, Interface.BANK_INVENTORY);
         // Inventory
         player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 3, 0, 27, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4, AccessMasks.ClickOp5, AccessMasks.ClickOp6, AccessMasks.ClickOp7, AccessMasks.ClickOp8, AccessMasks.ClickOp9, AccessMasks.ClickOp10, AccessMasks.DragDepth1, AccessMasks.DragTargetable);
+        // Equipment inventory
+        player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 4, 0, 27, AccessMasks.ClickOp1, AccessMasks.ClickOp9, AccessMasks.ClickOp10, AccessMasks.DragDepth1, AccessMasks.DragTargetable);
         // Bank container
         player.getPacketSender().sendAccessMask(Interface.BANK, 13, 0, 1219, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4, AccessMasks.ClickOp5, AccessMasks.ClickOp6, AccessMasks.ClickOp7, AccessMasks.ClickOp8, AccessMasks.ClickOp9, AccessMasks.ClickOp10, AccessMasks.DragDepth2, AccessMasks.DragTargetable);
         // Empty slots at end of tabs
