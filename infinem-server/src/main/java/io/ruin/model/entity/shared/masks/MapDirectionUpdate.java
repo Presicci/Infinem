@@ -51,7 +51,7 @@ public class MapDirectionUpdate extends UpdateMask {
     }
 
     @Override
-    public void send(OutBuffer out, boolean playerUpdate) {
+    public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         if (playerUpdate) {
             out.addShortAdd(direction);
         } else {

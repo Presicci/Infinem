@@ -2,6 +2,7 @@ package io.ruin.model.entity.shared.masks;
 
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
 
 public class EntityDirectionUpdate extends UpdateMask {
@@ -55,7 +56,7 @@ public class EntityDirectionUpdate extends UpdateMask {
     }
 
     @Override
-    public void send(OutBuffer out, boolean playerUpdate) {
+    public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         int index = 0xFFFFFF;
         if (target != null) {
             index = target.getClientIndex();

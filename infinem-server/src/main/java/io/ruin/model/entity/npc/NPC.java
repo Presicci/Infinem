@@ -290,7 +290,7 @@ public class NPC extends NPCAttributes {
                 combatLevelUpdate = new CombatLevelUpdate(),
                 modelRecolorUpdate = new ModelRecolorUpdate(),
                 graphicsUpdate = new GraphicsUpdate(),
-                hitsUpdate = new HitsUpdate(),
+                hitsUpdate = new HitsUpdate(this),
                 forceMovementUpdate = new ForceMovementUpdate(),
         };
     }

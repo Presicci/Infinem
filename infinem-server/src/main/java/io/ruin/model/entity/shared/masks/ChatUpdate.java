@@ -3,6 +3,7 @@ package io.ruin.model.entity.shared.masks;
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.filestore.utility.Huffman;
 import io.ruin.api.utils.StringUtils;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
 
 import java.util.Arrays;
@@ -40,7 +41,7 @@ public class ChatUpdate extends UpdateMask {
     }
 
     @Override
-    public void send(OutBuffer out, boolean playerUpdate) {
+    public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         out.addByte(color);
         out.addByte(effects);
         out.addByteNeg(0);

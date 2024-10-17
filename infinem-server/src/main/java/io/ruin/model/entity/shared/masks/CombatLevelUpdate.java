@@ -1,6 +1,7 @@
 package io.ruin.model.entity.shared.masks;
 
 import io.ruin.api.buffer.OutBuffer;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
 
 /**
@@ -26,7 +27,7 @@ public class CombatLevelUpdate extends UpdateMask {
     }
 
     @Override
-    public void send(OutBuffer out, boolean playerUpdate) {
+    public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         out.addLEInt(level);
     }
 

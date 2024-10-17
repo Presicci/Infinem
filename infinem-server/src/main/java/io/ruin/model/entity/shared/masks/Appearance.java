@@ -185,7 +185,7 @@ public class Appearance extends UpdateMask {
     }
 
     @Override
-    public void send(OutBuffer out, boolean playerUpdate) {
+    public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         if(data.position() == 0) {
             data.addByte(gender);
             data.addByte(skullIcon);

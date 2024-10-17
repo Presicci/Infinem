@@ -359,7 +359,7 @@ public class PlayerUpdater {
         for(UpdateMask updateMask : localPlayer.getMasks()) {
             if((maskData & updateMask.get(true)) != 0) {
                 System.out.println("Player mask " + maskData + " for " + localPlayer.getName() + " type " + updateMask);
-                updateMask.send(maskBuffer, true);
+                updateMask.send(maskBuffer, true, player);
                 updateMask.setSent(true);
             }
         }

@@ -1,6 +1,7 @@
 package io.ruin.model.entity.shared;
 
 import io.ruin.api.buffer.OutBuffer;
+import io.ruin.model.entity.player.Player;
 
 public abstract class UpdateMask {
 
@@ -18,7 +19,7 @@ public abstract class UpdateMask {
 
     public abstract boolean hasUpdate(boolean justAdded);
 
-    public abstract void send(OutBuffer out, boolean playerUpdate);
+    public abstract void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer);
 
     public abstract int get(boolean playerUpdate);
 

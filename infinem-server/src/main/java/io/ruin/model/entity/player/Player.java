@@ -1122,7 +1122,7 @@ public class Player extends PlayerAttributes {
                 graphicsUpdate = new GraphicsUpdate(),
                 teleportModeUpdate = new TeleportModeUpdate(),
                 appearance,
-                hitsUpdate = new HitsUpdate(),
+                hitsUpdate = new HitsUpdate(this),
                 chatUpdate = new ChatUpdate(),
                 forceMovementUpdate = new ForceMovementUpdate(),
                 entityDirectionUpdate = new EntityDirectionUpdate(),

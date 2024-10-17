@@ -204,7 +204,7 @@ public class PlayerNPCUpdater {
 
         for (UpdateMask updateMask : npc.getMasks()) {
             if ((maskData & updateMask.get(false)) != 0) {
-                updateMask.send(maskBuffer, false);
+                updateMask.send(maskBuffer, false, player);
                 updateMask.setSent(true);
             }
         }

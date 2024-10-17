@@ -1,6 +1,7 @@
 package io.ruin.model.entity.shared.masks;
 
 import io.ruin.api.buffer.OutBuffer;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
 
 /**
@@ -34,7 +35,7 @@ public class NPCOverrideUpdate extends UpdateMask {
     private final static int LOCAL_PLAYER_BIT = 1 << 4;
 
     @Override
-    public void send(OutBuffer out, boolean playerUpdate) {
+    public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         if (resetModels) {
             out.addByteNeg(1);
             return;
