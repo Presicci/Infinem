@@ -68,22 +68,22 @@ public class NPCDialogue extends Dialogue {
         message = message.replace("[lad/lass]", player.getAppearance().isMale() ? "lad" : "lass");
         message = message.replace("[craftsman/craftswoman]", player.getAppearance().isMale() ? "craftsman" : "craftswoman");
         player.openInterface(InterfaceType.CHATBOX, Interface.NPC_DIALOGUE);
-        player.getPacketSender().sendNpcHead(Interface.NPC_DIALOGUE, 6, npcDefinition.id);
-        player.getPacketSender().animateInterface(Interface.NPC_DIALOGUE, 6, animationId);
-        player.getPacketSender().sendString(Interface.NPC_DIALOGUE, 3, npcDefinition.name);
-        player.getPacketSender().sendString(Interface.NPC_DIALOGUE, 5, message);
-        player.getPacketSender().setTextStyle(Interface.NPC_DIALOGUE, 5, 1, 1, lineHeight);
-        player.getPacketSender().sendAccessMask(Interface.NPC_DIALOGUE, 4, -1, -1, 1);
+        player.getPacketSender().sendNpcHead(Interface.NPC_DIALOGUE, 2, npcDefinition.id);
+        player.getPacketSender().animateInterface(Interface.NPC_DIALOGUE, 2, animationId);
+        player.getPacketSender().sendString(Interface.NPC_DIALOGUE, 4, npcDefinition.name);
+        player.getPacketSender().sendString(Interface.NPC_DIALOGUE, 6, message);
+        player.getPacketSender().setTextStyle(Interface.NPC_DIALOGUE, 6, 1, 1, lineHeight);
+        player.getPacketSender().sendAccessMask(Interface.NPC_DIALOGUE, 5, -1, -1, 1);
         if (hideContinue)
-            player.getPacketSender().setHidden(Interface.NPC_DIALOGUE, 4, true);
+            player.getPacketSender().setHidden(Interface.NPC_DIALOGUE, 5, true);
         else
-            player.getPacketSender().sendString(Interface.NPC_DIALOGUE, 4, "Click here to continue");
+            player.getPacketSender().sendString(Interface.NPC_DIALOGUE, 5, "Click here to continue");
         if (onDialogueOpened != null)
             onDialogueOpened.run();
     }
 
     static {
-        InterfaceHandler.register(Interface.NPC_DIALOGUE, h -> h.actions[4] = (SimpleAction) player -> {
+        InterfaceHandler.register(Interface.NPC_DIALOGUE, h -> h.actions[5] = (SimpleAction) player -> {
             player.continueDialogue();
             player.onDialogueContinued();
         });
