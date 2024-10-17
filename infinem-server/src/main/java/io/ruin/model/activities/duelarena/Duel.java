@@ -911,7 +911,7 @@ public class Duel extends ItemContainer {
     };
 
     static {
-        InterfaceHandler.register(Interface.DUEL_ARENA_RULES, h -> {
+        /*InterfaceHandler.register(Interface.DUEL_ARENA_RULES, h -> {
             h.actions[103] = (SimpleAction) p -> {
                 if(p.acceptDelay.isDelayed())
                     return;
@@ -929,7 +929,7 @@ public class Duel extends ItemContainer {
             h.actions[108] = (SimpleAction) p -> p.getDuel().saveSettings();
             h.actions[110] = (SimpleAction) p -> p.getDuel().loadSettings(true);
             h.actions[109] = (SimpleAction) p -> p.getDuel().loadSettings(false);
-        });
+        });*/
 
         InterfaceHandler.register(Interface.DUEL_ARENA_STAKE, h -> {
             h.actions[18] = (DefaultAction) (p, option, slot, itemId) -> {
