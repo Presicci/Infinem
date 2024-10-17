@@ -44,6 +44,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.content.transportation.relics.DungeonHub;
 import io.ruin.model.content.upgrade.ItemEffect;
@@ -3261,6 +3262,10 @@ public class Administrator {
             }
             case "tasks": {
                 TaskInterface.openTaskInterface(player);
+                return true;
+            }
+            case "relics": {
+                RelicInterface.open(player);
                 return true;
             }
         }
