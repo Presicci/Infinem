@@ -3,9 +3,8 @@ package io.ruin.model.skills.magic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabCombat;
 import io.ruin.model.inter.utils.Config;
-import io.ruin.model.map.Bounds;
-import io.ruin.model.map.Position;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.model.skills.magic.spells.BlankSpell;
 import io.ruin.model.skills.magic.spells.BountyTeleport;
 import io.ruin.model.skills.magic.spells.HomeTeleport;
 import io.ruin.model.skills.magic.spells.TodoSpell;
@@ -22,6 +21,7 @@ public enum SpellBook {
             new Confuse(),
             new EnchantCrossbowBolt(),
             new WaterStrike(),
+            new BlankSpell(),
             new JewelleryEnchant(JewelleryEnchant.EnchantLevel.ONE),
             new EarthStrike(),
             new Weaken(),
@@ -45,12 +45,14 @@ public enum SpellBook {
             new SuperheatItem(),
             ModernTeleport.CAMELOT_TELEPORT,
             new WaterBlast(),
+            ModernTeleport.KOUREND_TELEPORT,
             new JewelleryEnchant(JewelleryEnchant.EnchantLevel.THREE),
             new IbanBlast(),
             new Snare(),
             new MagicDart(),
             ModernTeleport.ARDOUGNE_TELEPORT,
             new EarthBlast(),
+            new TodoSpell("Varlamore teleport"),
             new Alchemy(false),
             new ChargeOrb(ChargeOrb.ChargeSpell.CHARGE_WATER),
             new JewelleryEnchant(JewelleryEnchant.EnchantLevel.FOUR),
@@ -69,7 +71,6 @@ public enum SpellBook {
             new ChargeOrb(ChargeOrb.ChargeSpell.CHARGE_AIR),
             new Vulnerability(),
             new JewelleryEnchant(JewelleryEnchant.EnchantLevel.FIVE),
-            ModernTeleport.KOUREND_TELEPORT,
             new EarthWave(),
             new Enfeeble(),
             Teleother.LUMBRIDGE.toSpell(),
