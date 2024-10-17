@@ -3,7 +3,11 @@ package io.ruin.model.entity.shared.masks;
 import io.ruin.Server;
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
+import io.ruin.model.inter.utils.Config;
+import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
 
@@ -36,9 +40,15 @@ public class HitsUpdate extends UpdateMask {
 
     private boolean forceSend = false;
 
+    private final Entity defender;
+
+    public HitsUpdate(Entity entity) {
+        defender = entity;
+    }
+
     public void add(Hit hit, int curHp, int maxHp) {
         if (splats.size() < 6)
-            splats.add(new Splat(hit.type.ordinal(), hit.damage, 0));
+            splats.add(new Splat(hit.type.activeId, hit.type.tintedId, hit.damage, 0, hit.attacker));
         this.hpBarRatio = toRatio(hpBarType, curHp, maxHp);
         this.curHp = curHp;
         this.maxHp = maxHp;
@@ -66,13 +76,18 @@ public class HitsUpdate extends UpdateMask {
     }
 
     @Override
-    public void send(OutBuffer out, boolean playerUpdate) {
+    public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         if (playerUpdate)
             out.addByteNeg(splats.size());
         else
             out.addByteSub(splats.size()); // ?
+        boolean tinting = receivingPlayer != null && Config.HITSPLAT_TINTING.get(receivingPlayer) == 0;
         for (Splat splat : splats) {
-            out.addSmart(splat.type);
+            if (!tinting || (splat.attacker == receivingPlayer || defender == receivingPlayer)) {
+                out.addSmart(splat.id);
+            } else {
+                out.addSmart(splat.tintedId);
+            }
             out.addSmart(splat.damage);
             out.addSmart(splat.delay);
         }
@@ -97,18 +112,10 @@ public class HitsUpdate extends UpdateMask {
         return playerUpdate ? 128 : 128;
     }
 
+    @AllArgsConstructor
     private static final class Splat {
-
-        private int type, damage;
-
-        private int delay;
-
-        public Splat(int type, int damage, int delay) {
-            this.type = type;
-            this.damage = damage;
-            this.delay = delay;
-        }
-
+        private final int id, tintedId, damage, delay;
+        private final Entity attacker;
     }
 
     private static int toRatio(int type, int min, int max) {

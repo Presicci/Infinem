@@ -16,7 +16,7 @@ import java.util.function.Predicate;
  */
 public enum ClickSetting {
     CLEAR_HIGHLIGHTED_NPCS(0, 21, 21),
-    HITSPLAT_TINTING(0, 41, 41),
+    HITSPLAT_TINTING(0, 41, 41, Config.HITSPLAT_TINTING::toggle),
     MAX_HIT_HITSPLATS(0, 42, 42),
     MAX_HIT_HITSPLATS_THRESHOLD(0, 43, 43),
     BOSS_HEALTH_OVERLAY(0, 46, 46),

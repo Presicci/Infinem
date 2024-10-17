@@ -1209,6 +1209,11 @@ public class Config {
      */
     public static final Config RESURRECT_THRALL_COOLDOWN = varpbit(12290, false);
 
+    /**
+     * Hitsplats
+     */
+    public static final Config HITSPLAT_TINTING = varpbit(10236, true);
+
 
     /**
      * Separator
