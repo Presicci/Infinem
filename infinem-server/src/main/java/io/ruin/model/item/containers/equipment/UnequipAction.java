@@ -13,6 +13,7 @@ public interface UnequipAction {
 
     static void register(int itemId, UnequipAction action) {
         ItemDefinition def = ItemDefinition.get(itemId);
+        if (def == null) return;
         def.unequipAction = action;
     }
 }

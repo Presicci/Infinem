@@ -25,6 +25,7 @@ public class item_info {
                 rs = statement.executeQuery();
                 while (rs.next()) {
                     ItemDefinition def = ItemDefinition.get(rs.getInt("id"));
+                    if (def == null) continue;
                     def.tradeable = rs.getInt("tradeable") == 1;
                     def.examine = rs.getString("examine");
                     def.weightInventory = rs.getInt("weight");

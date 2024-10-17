@@ -13,6 +13,7 @@ public interface EquipAction {
 
     static void register(int itemId, EquipAction action) {
         ItemDefinition def = ItemDefinition.get(itemId);
+        if (def == null) return;
         def.equipAction = action;
     }
 }
