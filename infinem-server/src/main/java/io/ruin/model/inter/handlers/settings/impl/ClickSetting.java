@@ -213,14 +213,14 @@ public enum ClickSetting {
     GE_SELL_OFFER_WARNING(7, 41, 387),
     // Popout
     // Infinem
-    MAP_KEY(9, 1, -1, Config.MAP_KEY_OPEN_BY_DEFAULT::toggle),
-    BESTIARY_KC(9, 3, -1, Config.BESTIARY_KC::toggle),
-    BESTIARY_NEW_ENTRY(9, 4, -1, Config.BESTIARY_NEW_ENTRY::toggle),
-    INFO_BROADCAST(9, 6, -1, Config.INFORMATION_BROADCASTS::toggle),
-    SKILL_BROADCAST(9, 7, -1, Config.SKILLING_BROADCASTS::toggle),
-    DROP_BROADCAST(9, 8, -1, Config.DROP_BROADCASTS::toggle),
-    FRIEND_BROADCAST(9, 9, -1, Config.FRIEND_BROADCASTS::toggle),
-    ACTIVITY_SPOTLIGHT_BROADCAST(9, 10, -1, Config.ACTIVITY_SPOTLIGHT_BROADCAST::toggle);
+    MAP_KEY(8, 1, 389, Config.MAP_KEY_OPEN_BY_DEFAULT::toggle),
+    BESTIARY_KC(8, 3, 391, Config.BESTIARY_KC::toggle),
+    BESTIARY_NEW_ENTRY(8, 4, 392, Config.BESTIARY_NEW_ENTRY::toggle),
+    INFO_BROADCAST(8, 6, 394, Config.INFORMATION_BROADCASTS::toggle),
+    SKILL_BROADCAST(8, 7, 395, Config.SKILLING_BROADCASTS::toggle),
+    DROP_BROADCAST(8, 8, 396, Config.DROP_BROADCASTS::toggle),
+    FRIEND_BROADCAST(8, 9, 397, Config.FRIEND_BROADCASTS::toggle),
+    ACTIVITY_SPOTLIGHT_BROADCAST(8, 10, 398, Config.ACTIVITY_SPOTLIGHT_BROADCAST::toggle);
 
     @Getter private final int menuIndex, childIndex, searchIndex;
     @Getter private final Consumer<Player> consumer;
