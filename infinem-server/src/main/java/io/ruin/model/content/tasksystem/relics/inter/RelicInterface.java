@@ -60,8 +60,10 @@ public class RelicInterface {
 
     public static void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.RELICS);
-        player.getPacketSender().sendAccessMask(Interface.RELICS, 12, 0, 100, AccessMasks.ClickOp1);
-        player.getPacketSender().sendAccessMask(Interface.RELICS, 32, 9, 16, AccessMasks.ClickOp1);
+        // Relics
+        player.getPacketSender().sendAccessMask(Interface.RELICS, 22, 0, 100, AccessMasks.ClickOp1);
+        // Navigation drop down
+        player.getPacketSender().sendAccessMask(Interface.RELICS, 6, 9, 16, AccessMasks.ClickOp1);
     }
 
     private static int getRelicStatus(Player player, Relic relic) {
@@ -79,23 +81,25 @@ public class RelicInterface {
         int relicStruct = relic.getStruct();
         player.getPacketSender().sendClientScript(
                 3193,
-                "iiiiiiiiiiiiiiiiiii",
-                Interface.RELICS << 16 | 6,  // widget0 - hide then dont unhide
-                Interface.RELICS << 16 | 16, // widget1 - parent of overlay
-                Interface.RELICS << 16 | 13,   // widget2 - hide
-                Interface.RELICS << 16 | 28, // widget3 - sprite
-                Interface.RELICS << 16 | 17,   // widget4 - relic name
-                Interface.RELICS << 16 | 22,   // widget5 - Relic Effect:
-                Interface.RELICS << 16 | 23,   // widget6 - relic description
-                Interface.RELICS << 16 | 26,   // widget7 - select button
-                Interface.RELICS << 16 | 27,   // widget8 - back button
-                Interface.RELICS << 16 | 33,   // arg9 - confirmation window component?
-                Interface.RELICS << 16 | 36,   // widget10 - confirmation title?
-                Interface.RELICS << 16 | 37,   // widget11 - confirmation window text
-                Interface.RELICS << 16 | 38,   // widget12 - confirm button
-                Interface.RELICS << 16 | 39,   // widget13 - cancel button
-                Interface.RELICS << 16 | 44,   // widget14 - Passive Effect:
-                Interface.RELICS << 16 | 45,   // widget15 - passive
+                "iiiiiiiiiiiiiiiiiiiii",
+                Interface.RELICS << 16 | 14,  // widget0 - hide then dont unhide
+                Interface.RELICS << 16 | 52,   // unhides when clicking back button
+                Interface.RELICS << 16 | 27,   // widget1 - parent of overlay
+                Interface.RELICS << 16 | 24,   // widget2 - hide
+                Interface.RELICS << 16 | 43,   // widget3 - sprite
+                Interface.RELICS << 16 | 33,   // widget4 - relic name
+                Interface.RELICS << 16 | 38,   // widget5 - Relic Effect:
+                Interface.RELICS << 16 | 39,   // widget6 - relic description
+                Interface.RELICS << 16 | 44,   // widget7 - select button
+                Interface.RELICS << 16 | 46,   // widget8 - back button
+                Interface.RELICS << 16 | 12,   // arg9 - confirmation window component?
+                Interface.RELICS << 16 | 48,   // widget10 - confirmation title?
+                Interface.RELICS << 16 | 49,   // widget11 - confirmation window text
+                Interface.RELICS << 16 | 50,   // widget12 - confirm button
+                Interface.RELICS << 16 | 51,   // widget13 - cancel button
+                Interface.RELICS << 16 | 55,   // widget14 - Passive Effect:
+                Interface.RELICS << 16 | 56,   // widget15 - passive
+                Interface.RELICS << 16 | 21,   // unhides when clicking back button
                 getRelicStatus(player, relic.getRelic()),   // arg16 - 2 if player can take the relic, 0 if cant, 1 if already have relic, 3 if need tier before
                 relicStruct,   // arg17 - relic struct
                 RelicManager.getPassiveStruct(relic.getRelic().getTier())   // arg18 - passive effect struct
@@ -121,9 +125,9 @@ public class RelicInterface {
 
     static {
         InterfaceHandler.register(Interface.RELICS, h -> {
-            h.actions[12] = (SlotAction) RelicInterface::clickRelic;
-            h.actions[32] = (SlotAction) RelicInterface::navigation;
-            h.actions[38] = (SimpleAction) RelicInterface::confirm;
+            h.actions[22] = (SlotAction) RelicInterface::clickRelic;
+            h.actions[6] = (SlotAction) RelicInterface::navigation;
+            h.actions[50] = (SimpleAction) RelicInterface::confirm;
         });
     }
 }
