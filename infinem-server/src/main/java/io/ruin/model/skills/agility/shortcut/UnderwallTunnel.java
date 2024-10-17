@@ -93,7 +93,7 @@ public enum UnderwallTunnel {
         for (UnderwallTunnel tunnel : values()) {
             ObjectAction.register(tunnel.objectId, tunnel.objectPos, tunnel.option, tunnel.action);
         }
-        Tile.getObject(19036, 3069, 3260, 0).nearPosition = (player, object) -> new Position(3070, 3260, 0);
-        Tile.getObject(19032, 3066, 3260, 0).nearPosition = (player, object) -> new Position(3065, 3260, 0);
+        Tile.getObject(19036, 3069, 3257, 0).nearPosition = (player, object) -> new Position(3070, 3257, 0);
+        Tile.getObject(19032, 3067, 3257, 0).nearPosition = (player, object) -> new Position(3066, 3257, 0);
     }
 }

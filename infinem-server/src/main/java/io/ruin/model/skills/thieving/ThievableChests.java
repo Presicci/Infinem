@@ -184,7 +184,7 @@ public class ThievableChests {
                         new LootItem(Items.DRAGONSTONE_NOTE, 2, 4),
                         new LootItem(24364, 1, 2)   // Hard clue
                 ),
-                new Position[]{new Position(3297, 3940), new Position(3287, 3946), new Position(3283, 3946)}
+                new Position[]{new Position(3288, 3938), new Position(3287, 3946), new Position(3283, 3946)}
         );
 
         public final int objectId;
