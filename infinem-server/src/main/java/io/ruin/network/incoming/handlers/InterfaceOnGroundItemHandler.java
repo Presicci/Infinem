@@ -30,8 +30,8 @@ public class InterfaceOnGroundItemHandler {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
             int ctrlRun = in.readUnsignedByte();
-            int groundItemId = in.readLEShortAdd();
-            int interfaceHash = in.readIntME();
+            int groundItemId = in.readUnsignedLEShortAdd();
+            int interfaceHash = in.readIMInt();
             int itemId = in.readUnsignedLEShort();
             int x = in.readUnsignedLEShort();
             int slot = in.readUnsignedShortAdd();
