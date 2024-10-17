@@ -31,8 +31,8 @@ public class IncomingDecoder extends MessageDecoder<Player> {
     protected void handle(Player player, InBuffer in, int opcode) {
         Incoming handler = Incoming.HANDLERS[opcode];
         if(handler == null) {
-            if(player.debug)
-                player.sendFilteredMessage("Unhandled incoming opcode: " + opcode);
+            //if(player.debug)
+                //player.sendFilteredMessage("Unhandled incoming opcode: " + opcode);
             return;
         }
         handler.handle(player, in, opcode);

@@ -29,7 +29,6 @@ public interface Incoming {
             } else if (cpHolder != null) {
                 int option = 1;
                 for(ClientPacket packet : cpHolder.packets()) {
-                    System.out.println("Registering " + packet.packetId + " to " + incoming);
                     HANDLERS[packet.packetId] = incoming;
                     OPTIONS[packet.packetId] = option++;
                 }

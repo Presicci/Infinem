@@ -47,7 +47,7 @@ public class PacketSender {
             Server.logError(player.getName() + " wrote packet off main thread!", new Throwable());
         int opcode = out.payload()[0] & 0xff;;
         ServerPacket packet = ServerPacket.getPacketByOpcode(opcode);
-        System.out.println("Client outgoing: " + opcode + (packet == null ? "" : " - " + packet) + " - " + Arrays.toString(out.payload()));
+        //System.out.println("Client outgoing: " + opcode + (packet == null ? "" : " - " + packet) + " - " + Arrays.toString(out.payload()));
         player.getChannel().write(out.encode(cipher).toBuffer());
     }
 
@@ -1099,21 +1099,9 @@ public class PacketSender {
     }
 
     public void sendNPCUpdateOrigin() {
-        //int x = Position.getLocal(chunkAbsX, player.getPosition().getFirstChunkX());
-        //int y = Position.getLocal(chunkAbsY, player.getPosition().getFirstChunkY());
-        System.out.println(Position.getLocal(player.getAbsX(), player.getPosition().getFirstChunkX()));
-        System.out.println(Position.getLocal(player.getAbsY(), player.getPosition().getFirstChunkY()));
         OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.SET_NPC_UPDATE_ORIGIN.getPacketId())
-                //.addByte(player.getAbsX() * (player.getPosition().getFirstChunkX() - 6))
-                //.addByte(player.getAbsY() * (player.getPosition().getFirstChunkY() - 6))
                 .addByte(Position.getLocal(player.getAbsX(), player.getPosition().getFirstChunkX()))
                 .addByte(Position.getLocal(player.getAbsY(), player.getPosition().getFirstChunkY()))
-                //.addByte(player.getAbsX() * (player.getPosition().getFirstChunkX() - 6))
-                //.addByte(player.getAbsY() * (player.getPosition().getFirstChunkY() - 6))
-                //.addByte(player.getAbsX() - ((player.getAbsX() >> 3) - 6) << 3)
-                //.addByte(player.getAbsY() - ((player.getAbsY() >> 3) - 6) << 3)
-                //.addByte(0)
-                //.addByte(0)
         ;
         write(out);
     }
