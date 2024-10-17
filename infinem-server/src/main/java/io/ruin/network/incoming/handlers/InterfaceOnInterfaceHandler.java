@@ -49,7 +49,7 @@ public class InterfaceOnInterfaceHandler {
             toItemId = -1;
 
         if (player.debug) {
-            player.sendFilteredMessage("[DragItem]");
+            player.sendFilteredMessage("[InterfaceOnInterface]");
             DebugMessage debug = new DebugMessage()
                     .add("inter", fromInterfaceId)
                     .add("child", fromChildId)
