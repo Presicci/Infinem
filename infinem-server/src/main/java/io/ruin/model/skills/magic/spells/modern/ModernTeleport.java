@@ -26,6 +26,7 @@ public class ModernTeleport extends Spell {
     public static final ModernTeleport CAMELOT_TELEPORT = new ModernTeleport(45, 55.5, new Bounds[] { MagicTeleportBounds.CAMELOT.getBounds(), MagicTeleportBounds.CAMELOT_SEERS.getBounds() },
             player -> AreaReward.SEERS_TELEPORT.checkReward(player, "cast this teleport."), Config.varpbit(4560, true), "Camelot", "Seers' Village", Rune.LAW.toItem(1), Rune.AIR.toItem(5));
     public static final ModernTeleport ARDOUGNE_TELEPORT = new ModernTeleport(51, 61.0, MagicTeleportBounds.ARDOUGNE.getBounds(), Rune.LAW.toItem(2), Rune.WATER.toItem(2));
+    public static final ModernTeleport VARLAMORE = new ModernTeleport(54, 64.0, MagicTeleportBounds.VARLAMORE.getBounds(), Rune.LAW.toItem(2), Rune.FIRE.toItem(1), Rune.EARTH.toItem(1));
     public static final ModernTeleport WATCHTOWER_TELEPORT = new ModernTeleport(58, 68.0, new Bounds[] { MagicTeleportBounds.WATCHTOWER.getBounds(), MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds() },
             player -> AreaReward.YANILLE_TELEPORT.checkReward(player, "cast this teleport."), Config.varpbit(4548, true), "Watchtower", "Yanille", Rune.LAW.toItem(2), Rune.EARTH.toItem(2));
     public static final ModernTeleport TROLLHEIM_TELEPORT = new ModernTeleport(61, 71.0, MagicTeleportBounds.TROLLHEIM.getBounds(), Rune.LAW.toItem(2), Rune.FIRE.toItem(2));

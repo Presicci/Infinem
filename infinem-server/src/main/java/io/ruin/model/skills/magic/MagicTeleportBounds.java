@@ -25,6 +25,7 @@ public enum MagicTeleportBounds {
     TROLLHEIM(new Bounds(2890, 3678, 2893, 3680, 0)),
     APE_ATOLL(new Bounds(2784, 2785, 2785, 2786, 0)),
     KOUREND(new Bounds(1644, 3672, 1642, 3674, 0)),
+    VARLAMORE(new Bounds(1678, 3131, 1683, 3134, 0)),
 
     // Ancient Spellbook
     PADDEWWA(new Bounds(3098, 9881, 3095, 9884, 0)),

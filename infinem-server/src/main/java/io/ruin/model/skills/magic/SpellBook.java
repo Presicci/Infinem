@@ -52,7 +52,7 @@ public enum SpellBook {
             new MagicDart(),
             ModernTeleport.ARDOUGNE_TELEPORT,
             new EarthBlast(),
-            new TodoSpell("Varlamore teleport"),
+            ModernTeleport.VARLAMORE,
             new Alchemy(false),
             new ChargeOrb(ChargeOrb.ChargeSpell.CHARGE_WATER),
             new JewelleryEnchant(JewelleryEnchant.EnchantLevel.FOUR),
