@@ -47,8 +47,10 @@ public class HitsUpdate extends UpdateMask {
     }
 
     public void add(Hit hit, int curHp, int maxHp) {
-        if (splats.size() < 6)
-            splats.add(new Splat(hit.type.activeId, hit.type.tintedId, hit.damage, 0, hit.attacker));
+        if (splats.size() < 6) {
+            int splatMax = hit.minDamage == hit.maxDamage ? 0 : hit.maxDamage;
+            splats.add(new Splat(hit.type.activeId, hit.type.tintedId, hit.type.maxId, hit.damage, splatMax, 0, hit.attacker));
+        }
         this.hpBarRatio = toRatio(hpBarType, curHp, maxHp);
         this.curHp = curHp;
         this.maxHp = maxHp;
@@ -57,7 +59,7 @@ public class HitsUpdate extends UpdateMask {
 
     public void add(int id, Player player) {
         if (splats.size() < 6)
-            splats.add(new Splat(id, id, 1, 0, player));
+            splats.add(new Splat(id, id, id, 1, 0, 0, player));
         this.curHp = 1;
         this.maxHp = 1;
         this.hpBarRatio = toRatio(hpBarType, curHp, maxHp);
@@ -91,9 +93,16 @@ public class HitsUpdate extends UpdateMask {
         else
             out.addByteSub(splats.size()); // ?
         boolean tinting = receivingPlayer != null && Config.HITSPLAT_TINTING.get(receivingPlayer) == 0;
+        boolean maxHits = receivingPlayer != null && Config.MAX_HIT_HITSPLAT.get(receivingPlayer) == 0;
+        int maxHitThreshold = receivingPlayer == null ? 10 : Config.MAX_HIT_HITSPLATS_MINIMUM_THRESHOLD.get(receivingPlayer);
+        maxHitThreshold = maxHitThreshold == 0 ? 10 : maxHitThreshold;
         for (Splat splat : splats) {
             if (!tinting || (splat.attacker == receivingPlayer || defender == receivingPlayer)) {
-                out.addSmart(splat.id);
+                if (!maxHits || splat.maxDamage < maxHitThreshold || splat.damage == 0 || splat.damage != splat.maxDamage) {
+                    out.addSmart(splat.id);
+                } else {
+                    out.addSmart(splat.maxHitId);
+                }
             } else {
                 out.addSmart(splat.tintedId);
             }
@@ -123,7 +132,7 @@ public class HitsUpdate extends UpdateMask {
 
     @AllArgsConstructor
     private static final class Splat {
-        private final int id, tintedId, damage, delay;
+        private final int id, tintedId, maxHitId, damage, maxDamage, delay;
         private final Entity attacker;
     }
 

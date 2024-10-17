@@ -1213,6 +1213,8 @@ public class Config {
      * Hitsplats
      */
     public static final Config HITSPLAT_TINTING = varpbit(10236, true);
+    public static final Config MAX_HIT_HITSPLAT = varpbit(14196, true);
+    public static final Config MAX_HIT_HITSPLATS_MINIMUM_THRESHOLD = varpbit(14195, true);
 
 
     /**

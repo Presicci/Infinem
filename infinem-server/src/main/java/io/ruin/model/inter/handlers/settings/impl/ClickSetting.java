@@ -17,8 +17,11 @@ import java.util.function.Predicate;
 public enum ClickSetting {
     CLEAR_HIGHLIGHTED_NPCS(0, 21, 21),
     HITSPLAT_TINTING(0, 41, 41, Config.HITSPLAT_TINTING::toggle),
-    MAX_HIT_HITSPLATS(0, 42, 42),
-    MAX_HIT_HITSPLATS_THRESHOLD(0, 43, 43),
+    MAX_HIT_HITSPLATS(0, 42, 42, Config.MAX_HIT_HITSPLAT::toggle),
+    MAX_HIT_HITSPLATS_THRESHOLD(0, 43, 43,  (player ->
+            player.integerInput("Set value threshold for max hits (2-500):", (i) ->
+                    Config.MAX_HIT_HITSPLATS_MINIMUM_THRESHOLD.set(player, Math.max(2, Math.min(500, i))))
+    )),
     BOSS_HEALTH_OVERLAY(0, 46, 46),
     BOSS_HEALTH_OVERLAY_NAME(0, 48, 48),
     BOSS_HEALTH_OVERLAY_COMPACT(0, 50, 50),
