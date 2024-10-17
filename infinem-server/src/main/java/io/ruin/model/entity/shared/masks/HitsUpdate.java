@@ -55,6 +55,15 @@ public class HitsUpdate extends UpdateMask {
         this.removeAt = Server.getEnd(10);
     }
 
+    public void add(int id, Player player) {
+        if (splats.size() < 6)
+            splats.add(new Splat(id, id, 1, 0, player));
+        this.curHp = 1;
+        this.maxHp = 1;
+        this.hpBarRatio = toRatio(hpBarType, curHp, maxHp);
+        this.removeAt = Server.getEnd(10);
+    }
+
 
     /**
      * For showing HP bar without any hits

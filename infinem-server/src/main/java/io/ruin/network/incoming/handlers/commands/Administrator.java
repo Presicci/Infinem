@@ -829,7 +829,8 @@ public class Administrator {
                 return true;
             }
             case "hittype": {
-                player.hit(new Hit(HitType.values()[Integer.parseInt(args[0])]).fixedDamage(1).delay(0));
+                player.hitsUpdate.add(Integer.parseInt(args[0]), player);
+                //player.hit(new Hit(HitType.values()[Integer.parseInt(args[0])]).fixedDamage(1).delay(0));
                 return true;
             }
 
@@ -3256,6 +3257,10 @@ public class Administrator {
             }
             case "transmog": {
                 TransmogInterface.open(player);
+                return true;
+            }
+            case "tasks": {
+                TaskInterface.openTaskInterface(player);
                 return true;
             }
         }
