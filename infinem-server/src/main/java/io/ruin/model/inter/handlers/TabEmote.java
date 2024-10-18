@@ -11,6 +11,7 @@ import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Tile;
+import io.ruin.model.stat.StatType;
 import lombok.var;
 
 public enum TabEmote {
@@ -160,52 +161,12 @@ public enum TabEmote {
 
     private static int skillCapeAnim(Player player) {
         int capeId = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        if (capeId == 9747 || capeId == 9748) //Attack
-            return 4959;
-        if (capeId == 9753 || capeId == 9754) //Defence
-            return 4961;
-        if (capeId == 9750 || capeId == 9751) //Strength
-            return 4981;
-        if (capeId == 9768 || capeId == 9769) //Hitpoints
-            return 4971;
-        if (capeId == 9756 || capeId == 9757) //Ranged
-            return 4973;
-        if (capeId == 9762 || capeId == 9763) //Magic
-            return 4939;
-        if (capeId == 9759 || capeId == 9760) //Prayer
-            return 4979;
-        if (capeId == 9801 || capeId == 9802) //Cooking
-            return 4955;
-        if (capeId == 9807 || capeId == 9808) //Woodcutting
-            return 4957;
-        if (capeId == 9783 || capeId == 9784) //Fletching
-            return 4937;
-        if (capeId == 9798 || capeId == 9799) //Fishing
-            return 4951;
-        if (capeId == 9804 || capeId == 9805) //Firemaking
-            return 4975;
-        if (capeId == 9780 || capeId == 9781) //Crafting
-            return 4949;
-        if (capeId == 9795 || capeId == 9796) //Smithing
-            return 4943;
-        if (capeId == 9792 || capeId == 9793) //Mining
-            return 4941;
-        if (capeId == 9774 || capeId == 9775) //Herblore
-            return 4969;
-        if (capeId == 9771 || capeId == 9772) //Agility
-            return 4977;
-        if (capeId == 9777 || capeId == 9778) //Thieving
-            return 4965;
-        if (capeId == 9786 || capeId == 9787) //Slayer
-            return 4967;
-        if (capeId == 9810 || capeId == 9811) //Farming
-            return 4963;
-        if (capeId == 9765 || capeId == 9766) //Runecrafting
-            return 4947;
-        if (capeId == 9789 || capeId == 9790) //Construction
-            return 4953;
-        if (capeId == 9948 || capeId == 9949) //Hunter
-            return 5158;
+        for (StatType statType : StatType.values()) {
+            if (capeId == statType.regularCapeId
+                    || capeId == statType.trimmedCapeId
+                    || capeId == statType.masterCapeId)
+                return statType.emoteId;
+        }
         if (capeId == 9813) //Quest
             return 4945;
         if (capeId == 13069) //Achievement
