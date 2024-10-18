@@ -104,7 +104,7 @@ public class KonarData {
         BRIMHAVEN_DUNGEON("Brimhaven Dungeon", new Bounds(2625, 9404, 2751, 9599, -1)),
         ABYSSAL_AREA("Abyssal Area", new Bounds(3007, 4863, 3071, 4926, -1)),
         MYTHS_GUILD_DUNGEON("Myths' Guild Dungeon", new Bounds(1876, 8960, 2072, 9085, -1)),
-        WATERBIRTH_ISLAND("Waterbirth Island", Bounds.fromRegions(9886, 10142, 7236, 7748, 7492, 7236, 11589, 11588)),
+        WATERBIRTH_ISLAND("Waterbirth Island", 9886, 10142, 7236, 7748, 7492, 7236, 11589, 11588),
         GODWARS_DUNGEON("Godwars Dungeon", new Bounds(2816, 5255, 2942, 5370, -1)),
         BRINE_RAT_CAVERN("Brine Rat Cavern", new Bounds(2686, 10116, 2751, 10175, -1)),
         SMOKE_DUNGEON("Smoke Dungeon", new Bounds(3168, 9344, 3326, 9404, -1)),
