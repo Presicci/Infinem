@@ -1,5 +1,7 @@
 package io.ruin.model.item.actions.impl.chargable;
 
+import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.item.Items;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
@@ -88,6 +90,7 @@ public class CrawsBow {
     }
 
     public static boolean consumeCharge(Player player, Item item) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2)) return true;
         int currentCharges = AttributeExtensions.getCharges(item);
         if (currentCharges <= 1000) {
             player.sendMessage(Color.DARK_RED.wrap("Your weapon has run out of revenant ether!"));
