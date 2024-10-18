@@ -29,7 +29,7 @@ public class CrawsBow {
         ItemItemAction.register(CHARGED, REVENANT_ETHER, CrawsBow::charge);
         ItemItemAction.register(UNCHARGED, REVENANT_ETHER, CrawsBow::charge);
         ItemDefinition.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
-            consumeCharge(player, item);
+            if (hit.attackWeapon != null) consumeCharge(player, item);
             if (hit.attackStyle != null && hit.attackStyle.isRanged() && target.npc != null && player.wildernessLevel > 0) {
                 hit.boostAttack(0.5);               // 50% accuracy increase
                 hit.boostDamage(0.5);    // 50% damage increase
