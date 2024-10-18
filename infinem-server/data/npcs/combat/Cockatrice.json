@@ -4,7 +4,7 @@
     "handler": "io.ruin.model.combat.npc.slayer.Cockatrice",
     //Combat Info
     "hitpoints": 37,
-    "aggressive_level": 74,
+    "aggressive_level": 0,
     "max_damage": 5,
     "attack_style": "CRUSH",
     //Slayer Info
