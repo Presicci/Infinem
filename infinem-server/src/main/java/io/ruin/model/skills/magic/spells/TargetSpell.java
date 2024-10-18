@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells;
 
 import io.ruin.api.utils.Random;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.activities.wilderness.MageArena;
 import io.ruin.model.combat.npc.MaxHitDummy;
@@ -203,6 +204,7 @@ public class TargetSpell extends Spell {
                 .randDamage(maxDamage)
                 .clientDelay(projectileDuration, 16)
                 .setAttackSpell(this);
+        if (primaryCast) hit.setAttackWeapon(ItemDefinition.get(1));
         hit.postDamage(t -> {
             if(hit.isBlocked()) {
                 t.graphics(85, 124, 0);
