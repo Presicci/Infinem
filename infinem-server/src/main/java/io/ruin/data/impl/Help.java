@@ -29,12 +29,10 @@ public class Help extends DataFile {
         Option[] options = new Option[entries.size()];
         for(int i = 0; i < entries.size(); i++) {
             Entry entry = entries.get(i);
-            Option option = new Option("<col=735a28>" + (i + 1) + ".</col> " + entry.title, p -> p.sendScroll("<col=880000>" + entry.title, entry.message));
-            if(entry.key != null && !entry.key.isEmpty())
-                SCROLL_MAP.put(entry.key, option);
+            Option option = new Option("<col=735a28>" + (i + 1) + ".</col> " + entry.title, p -> p.openUrl(entry.link));
             options[i] = option;
         }
-        SCROLL = new OptionScroll(World.type.getWorldName() + " Help", false, options);
+        SCROLL = new OptionScroll(World.type.getWorldName() + " Guides", false, options);
         return entries;
     }
 
@@ -61,9 +59,8 @@ public class Help extends DataFile {
     }
 
     private static final class Entry {
-        @Expose public String key;
         @Expose public String title;
-        @Expose public String[] message;
+        @Expose public String link;
     }
 
 }
