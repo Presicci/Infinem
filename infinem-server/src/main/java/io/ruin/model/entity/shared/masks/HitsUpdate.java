@@ -98,7 +98,7 @@ public class HitsUpdate extends UpdateMask {
         maxHitThreshold = maxHitThreshold == 0 ? 10 : maxHitThreshold;
         for (Splat splat : splats) {
             if (!tinting || (splat.attacker == receivingPlayer || defender == receivingPlayer)) {
-                if (!maxHits || splat.maxDamage < maxHitThreshold || splat.damage == 0 || splat.damage != splat.maxDamage) {
+                if (!maxHits || splat.maxDamage < maxHitThreshold || splat.damage == 0 || (splat.damage != splat.maxDamage && splat.damage != splat.maxDamage * 2)) {
                     out.addSmart(splat.id);
                 } else {
                     out.addSmart(splat.maxHitId);
