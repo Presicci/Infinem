@@ -100,6 +100,7 @@ import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.mining.Pickaxe;
 import io.ruin.model.skills.mining.Rock;
 import io.ruin.model.skills.mining.ShootingStar;
+import io.ruin.model.skills.slayer.KonarData;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -3256,6 +3257,14 @@ public class Administrator {
             }
             case "transmog": {
                 TransmogInterface.open(player);
+                return true;
+            }
+            case "testkonar": {
+                if (args == null || args.length < 1) {
+                    player.sendMessage("Syntax: ::testkonar [TaskLocation ordinal]");
+                    return true;
+                }
+                player.sendMessage("Inside: " + KonarData.TaskLocation.values()[Integer.parseInt(args[0])].inside(player.getPosition()));
                 return true;
             }
         }
