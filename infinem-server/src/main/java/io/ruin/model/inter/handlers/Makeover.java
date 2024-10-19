@@ -145,6 +145,61 @@ public class Makeover {
         }
     }
 
+    private static void confirm(Player player) {
+        boolean male = player.getTemporaryAttribute(AttributeKey.SELECTED_GENDER);
+        int skinColor = player.getTemporaryAttributeIntOrZero(AttributeKey.SELECTED_SKIN_COLOR);
+        int npcId = 1306;
+        if (male == player.getAppearance().isMale() && skinColor == player.getAppearance().colors[4]) {
+            player.sendMessage("You haven't changed anything yet.");
+            return;
+        }
+        if (!player.getInventory().contains(995, PRICE)) {
+            player.closeInterface(InterfaceType.MAIN);
+            player.dialogue(new NPCDialogue(npcId, "You don't have enough money for a makeover."));
+            return;
+        }
+        if (skinColor >= 8) {
+            switch (skinColor) {
+                case 8:
+                    if (!player.hasAttribute("GREEN_SKIN")) {
+                        player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                        return;
+                    }
+                    break;
+                case 9:
+                    if (!player.hasAttribute("BLACK_SKIN")) {
+                        player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                        return;
+                    }
+                    break;
+                case 10:
+                    if (!player.hasAttribute("WHITE_SKIN")) {
+                        player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                        return;
+                    }
+                    break;
+                case 11:
+                    if (!player.hasAttribute("BLUE_SKIN")) {
+                        player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                        return;
+                    }
+                    break;
+                case 12:
+                    if (!player.hasAttribute("PURPLE_SKIN")) {
+                        player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                        return;
+                    }
+                    break;
+            }
+        }
+        player.getAppearance().setGender(male ? 0 : 1);
+        Style.Companion.updateAll(player);
+        player.getAppearance().modifyColor((byte) 4, (byte) skinColor);
+        player.getInventory().remove(995, PRICE);
+        player.closeInterface(InterfaceType.MAIN);
+        randomConfirmationDialogue(player, npcId);
+    }
+
     private static void open(Player player, NPC npc) {
         player.putTemporaryAttribute(AttributeKey.SELECTED_GENDER, player.getAppearance().isMale());
         player.putTemporaryAttribute(AttributeKey.SELECTED_SKIN_COLOR, player.getAppearance().colors[4]);
@@ -154,7 +209,7 @@ public class Makeover {
         Config.varpbit(4804, false).set(player, 1);
         Config.varpbit(6007, false).set(player, 1);
         player.openInterface(InterfaceType.MAIN, Interface.MAKE_OVER_MAGE);
-        player.getPacketSender().sendAccessMask(Interface.MAKE_OVER_MAGE, 9, 0, 12, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(Interface.MAKE_OVER_MAGE, 13, 0, 12, AccessMasks.ClickOp1);
         player.getPacketSender().sendString(Interface.MAKE_OVER_MAGE, 10, "CONFIRM - (" + (PRICE == 0 ? "Free!" : NumberUtils.formatNumber(PRICE) + " coins") + ")");
     }
 
@@ -181,69 +236,17 @@ public class Makeover {
                 player.getPacketSender().sendVarp(261, 0);
                 player.putTemporaryAttribute(AttributeKey.SELECTED_GENDER, true);
             };
-            h.actions[6] = (SimpleAction) (player) -> {
+            h.actions[8] = (SimpleAction) (player) -> {
                 player.getPacketSender().sendVarp(261, 1);
                 player.putTemporaryAttribute(AttributeKey.SELECTED_GENDER, false);
             };
-            h.actions[9] = (DefaultAction)  (player, option, slot, itemId) -> {
+            h.actions[13] = (DefaultAction)  (player, option, slot, itemId) -> {
                 int value = slot == 0 ? 7 : slot >= 8 && slot <= 12 ? slot : slot - 1;
                 player.getPacketSender().sendVarp(262, value);
                 player.putTemporaryAttribute(AttributeKey.SELECTED_SKIN_COLOR, value);
             };
-            h.actions[10] = (SimpleAction) (player) -> {
-                boolean male = player.getTemporaryAttribute(AttributeKey.SELECTED_GENDER);
-                int skinColor = player.getTemporaryAttributeIntOrZero(AttributeKey.SELECTED_SKIN_COLOR);
-                int npcId = 1306;
-                if (male == player.getAppearance().isMale() && skinColor == player.getAppearance().colors[4]) {
-                    player.sendMessage("You haven't changed anything yet.");
-                    return;
-                }
-                if (!player.getInventory().contains(995, PRICE)) {
-                    player.closeInterface(InterfaceType.MAIN);
-                    player.dialogue(new NPCDialogue(npcId, "You don't have enough money for a makeover."));
-                    return;
-                }
-                if (skinColor >= 8) {
-                    switch (skinColor) {
-                        case 8:
-                            if (!player.hasAttribute("GREEN_SKIN")) {
-                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
-                                return;
-                            }
-                            break;
-                        case 9:
-                            if (!player.hasAttribute("BLACK_SKIN")) {
-                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
-                                return;
-                            }
-                            break;
-                        case 10:
-                            if (!player.hasAttribute("WHITE_SKIN")) {
-                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
-                                return;
-                            }
-                            break;
-                        case 11:
-                            if (!player.hasAttribute("BLUE_SKIN")) {
-                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
-                                return;
-                            }
-                            break;
-                        case 12:
-                            if (!player.hasAttribute("PURPLE_SKIN")) {
-                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
-                                return;
-                            }
-                            break;
-                    }
-                }
-                player.getAppearance().setGender(male ? 0 : 1);
-                Style.Companion.updateAll(player);
-                player.getAppearance().modifyColor((byte) 4, (byte) skinColor);
-                player.getInventory().remove(995, PRICE);
-                player.closeInterface(InterfaceType.MAIN);
-                randomConfirmationDialogue(player, npcId);
-            };
+            h.actions[17] = (SimpleAction) Makeover::confirm;
+            h.actions[18] = (SimpleAction) Makeover::confirm;
         });
     }
 }
