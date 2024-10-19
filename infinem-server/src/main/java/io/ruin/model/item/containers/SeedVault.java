@@ -296,11 +296,11 @@ public class SeedVault extends ItemContainer {
                         vault.withdraw(item, 5);
                     else if (option == 4)
                         vault.withdraw(item, 10);
-                    else if (option == 5)
-                        player.integerInput("Enter amount:", amt -> vault.withdraw(item, amt));
                     else if (option == 6)
-                        vault.withdraw(item, Integer.MAX_VALUE);
+                        player.integerInput("Enter amount:", amt -> vault.withdraw(item, amt));
                     else if (option == 7)
+                        vault.withdraw(item, Integer.MAX_VALUE);
+                    else if (option == 8)
                         vault.favorite(slot);
                     else
                         item.examine(player);
@@ -345,9 +345,9 @@ public class SeedVault extends ItemContainer {
                     vault.deposit(item, 5);
                 else if (option == 4)
                     vault.deposit(item, 10);
-                else if (option == 5)
-                    player.integerInput("Enter amount:", amt -> vault.deposit(item, amt));
                 else if (option == 6)
+                    player.integerInput("Enter amount:", amt -> vault.deposit(item, amt));
+                else if (option == 7)
                     vault.deposit(item, Integer.MAX_VALUE);
                 else
                     item.examine(player);

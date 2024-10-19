@@ -1160,7 +1160,7 @@ public class Player extends PlayerAttributes {
 
         if(seedVault == null)
             seedVault = new SeedVault();
-        seedVault.init(this, 90, 631, 15, 626, true);
+        seedVault.init(this, 91, -1, 0, 626, true);
 
         if(runePouch == null)
             runePouch = new RunePouch();
