@@ -1197,7 +1197,7 @@ public class PlayerCombat extends Combat {
             if (target.getHp() <= 0 || hit.attackWeapon == null) {
                 return;
             }
-            Hit secondHit = new Hit(player, hit.attackStyle, hit.attackType).randDamage(hit.maxDamage).setAttackWeapon(null).ignoreDefence().ignorePrayer();
+            Hit secondHit = new Hit(player, hit.attackStyle, hit.attackType).randDamage(hit.maxDamage).setAttackWeapon(null).keepCharges().ignoreDefence().ignorePrayer();
             RangedAmmo rangedAmmo = hit.rangedWeapon == null ? null : hit.rangedWeapon.rangedAmmo;
             if(rangedAmmo != null && rangedAmmo.effect != null && rangedAmmo.effect.apply(target, secondHit))
                 return;

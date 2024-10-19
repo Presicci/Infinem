@@ -204,7 +204,7 @@ public class TargetSpell extends Spell {
                 .randDamage(maxDamage)
                 .clientDelay(projectileDuration, 16)
                 .setAttackSpell(this);
-        if (primaryCast) hit.setAttackWeapon(ItemDefinition.get(1));
+        if (!primaryCast) hit.keepCharges();
         hit.postDamage(t -> {
             if(hit.isBlocked()) {
                 t.graphics(85, 124, 0);

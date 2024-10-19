@@ -28,6 +28,8 @@ public class Hit {
 
 	public AttackType attackType;
 
+	public boolean keepCharges = false;
+
 	public Hit setResetActions(boolean resetActions) {
 		this.resetActions = resetActions;
 		return this;
@@ -74,6 +76,11 @@ public class Hit {
 
 	public Hit clientDelay(int delay) {
 		return clientDelay(delay, 16);
+	}
+
+	public Hit keepCharges() {
+		this.keepCharges = true;
+		return this;
 	}
 
 	/**
