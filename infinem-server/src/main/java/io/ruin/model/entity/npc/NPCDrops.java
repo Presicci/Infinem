@@ -10,6 +10,7 @@ import io.ruin.model.activities.shadesofmortton.FuneralPyre;
 import io.ruin.model.content.bestiary.perks.impl.GoldPickupPerk;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.item.actions.impl.storage.LootingBag;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.ConditionalNPCLootTable;
 import io.ruin.utility.Color;
@@ -424,7 +425,7 @@ public class NPCDrops {
         if (npc.wildernessSpawnLevel <= 0) return;
         int chance = Math.max(3, Math.min(15, 40 - npc.getDef().combatLevel));
         if (Random.rollDie(chance)) {
-            if (pKiller.findItem(Items.LOOTING_BAG, true) == null && pKiller.findItem(22586, true) == null) {
+            if (!LootingBag.hasLootingBag(pKiller)) {
                 handleDrop(killer, dropPosition, pKiller, new Item(Items.LOOTING_BAG));
             }
         }

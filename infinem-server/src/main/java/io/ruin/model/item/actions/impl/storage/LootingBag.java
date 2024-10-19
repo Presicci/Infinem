@@ -11,6 +11,7 @@ import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.map.ground.GroundItem;
@@ -86,6 +87,10 @@ public class LootingBag extends ItemContainer {
         );
     }
 
+
+    public static boolean hasLootingBag(Player player) {
+        return player.findItem(Items.LOOTING_BAG, true) != null || player.findItem(22586, true) != null;
+    }
     static {
         InterfaceHandler.register(Interface.LOOTING_BAG, h -> {
             h.actions[2] = (SimpleAction) p -> {
