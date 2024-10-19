@@ -107,20 +107,21 @@ public enum GameMode {
 
     static {
         InterfaceHandler.register(215, h -> {
-            h.actions[10] = (SimpleAction) p -> Config.IRONMAN_MODE.set(p, 0);
-            h.actions[11] = (SimpleAction) p -> {
+            h.actions[7] = (SimpleAction) p -> Config.IRONMAN_MODE.set(p, 0);
+            h.actions[9] = (SimpleAction) p -> {
                 Config.IRONMAN_MODE.set(p, 1);
                 changeForumsGroup(p, IRONMAN.groupId);
             };
-            h.actions[12] = (SimpleAction) p -> {
+            h.actions[10] = (SimpleAction) p -> {
                 Config.IRONMAN_MODE.set(p, 3);
                 changeForumsGroup(p, HARDCORE_IRONMAN.groupId);
             };
-            h.actions[13] = (SimpleAction) p -> {
+            h.actions[11] = (SimpleAction) p -> {
                 Config.IRONMAN_MODE.set(p, 2);
                 changeForumsGroup(p, ULTIMATE_IRONMAN.groupId);
             };
-
+            h.actions[13] = (SimpleAction) p -> p.sendMessage("Group Ironman is not available yet.");
+            h.actions[32] = (SimpleAction) p -> p.sendMessage("Group Ironman is not available yet.");
         });
     }
 }
