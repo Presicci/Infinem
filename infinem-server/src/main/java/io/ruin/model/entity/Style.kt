@@ -11,23 +11,18 @@ enum class Style(
     val appearanceIndex: Int,
     val childNext: Int, val childPrevious: Int
 ) {
-    HAIR(0,  13, 12),
-    // jaw doesnt exist for female
-    JAW(1,  17, 16),
-    TORSO(2,  20, 21),
-    ARMS(3,  24, 25),
-    HANDS(4, 29, 28),
-    LEGS(5,  33, 32),
-    FEET(6,  37, 36)
-    ;
+    HAIR(0,  15, 16),
+    JAW(1,  19, 20),
+    TORSO(2,  23, 24),
+    ARMS(3,  27, 28),
+    HANDS(4, 31, 32),
+    LEGS(5,  35, 36),
+    FEET(6,  39, 40);
 
     fun bodyPart(male: Boolean): Int? {
         return if (male) {
             this.appearanceIndex
         } else {
-            if (this == JAW) {
-                return null;
-            }
             7 + this.appearanceIndex
         }
     }
@@ -90,9 +85,6 @@ enum class Style(
     }
 
     fun isAvailable(male: Boolean): Boolean {
-        if (!male && this == JAW) {
-            return false
-        }
         return true
     }
 
