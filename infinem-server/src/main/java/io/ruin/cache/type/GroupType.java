@@ -26,7 +26,9 @@ public enum GroupType {
     HITMARK(32),
     HITBAR(33),
     STRUCT(34),
-    MAP_LABELS(35);
+    MAP_LABELS(35),
+    DBROW(38),
+    DBTABLE(39);
 
     GroupType(int id) {
         this.id = id;

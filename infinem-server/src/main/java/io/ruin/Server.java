@@ -9,6 +9,9 @@ import io.ruin.api.netty.NettyServer;
 import io.ruin.api.process.ProcessWorker;
 import io.ruin.api.utils.*;
 import io.ruin.cache.def.*;
+import io.ruin.cache.def.db.DBRowDefinition;
+import io.ruin.cache.def.db.DBTableDefinition;
+import io.ruin.cache.def.db.DBTableIndexDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.data.impl.items.item_info;
 import io.ruin.data.impl.login_set;
@@ -137,6 +140,9 @@ public class Server extends ServerWrapper {
             ItemDefinition.load();
             NPCDefinition.load();
             ObjectDefinition.load();
+            DBRowDefinition.load();
+            DBTableDefinition.load();
+            DBTableIndexDefinition.load();
             DataFile.load();
             DialogueLoader.loadDialogues();
 

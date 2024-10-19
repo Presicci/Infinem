@@ -32,6 +32,7 @@ public enum ArchiveType {
     WORLDMAPGEOGRAPHY(18),
     WORLDMAPDATA(19),
     WORLDMAPGROUND(20),
+    DBTABLEINDEX(21),
     REFERENCE(255);
 
     private final int id;

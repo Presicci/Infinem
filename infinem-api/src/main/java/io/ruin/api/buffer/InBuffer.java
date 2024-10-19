@@ -293,4 +293,18 @@ public class InBuffer {
         int peek = this.peek() & 0xFF;
         return peek < 128 ? this.readUnsignedByte() : this.readUnsignedShort() - 32769;
     }
+
+    public int readVarInt2()
+    {
+        int value = 0;
+        int bits = 0;
+        int read;
+        do
+        {
+            read = readUnsignedByte();
+            value |= (read & 0x7F) << bits;
+            bits += 7;
+        } while (read > 127);
+        return value;
+    }
 }
