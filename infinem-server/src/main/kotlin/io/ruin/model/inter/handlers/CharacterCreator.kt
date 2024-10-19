@@ -3,6 +3,7 @@ package io.ruin.model.inter.handlers
 import io.ruin.model.entity.player.Style
 import io.ruin.model.inter.InterfaceHandler
 import io.ruin.model.inter.actions.DefaultAction
+import io.ruin.model.inter.actions.SlotAction
 import io.ruin.model.inter.utils.Config
 
 object CharacterCreator {
@@ -116,6 +117,10 @@ object CharacterCreator {
             h.actions[74] = DefaultAction { p, _, _, _ ->
                 p.appearance.update()
                 p.closeInterfaces()
+            }
+
+            h.actions[78] = SlotAction { p, i ->
+                Config.PRONOUNS.set(p, i)
             }
         }
     }
