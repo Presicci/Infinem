@@ -135,6 +135,9 @@ public enum SlayerCreature {
     BLACK_KNIGHTS(119, 1, 1, "black knights"),
     PIRATES(120, 1, 1, "pirates"),
     SOURHOGS(121, 1, 30, "sourhogs"),
+    WARPED_CREATURES(122, 56, 1, "warped creatures", (p, s) -> Config.WARPED_REALITY.get(p) != 0),
+    LESSER_NAGUA(123, 48, 1, "lesser nagua"),
+    ARAXYTES(124, 92, 1, "araxytes"),
 
     BOSSES(98, 1, 1, "boss", (p, s) -> Config.LIKE_A_BOSS.get(p) != 0);
 
