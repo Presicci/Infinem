@@ -32,7 +32,7 @@ public enum DropdownSetting {
     KEYBIND_12(3, 35, 183, (player, i) -> keybind(player, i, 11)),
     KEYBIND_13(3, 36, 184, (player, i) -> keybind(player, i, 12)),
     KEYBIND_14(3, 37, 185, (player, i) -> keybind(player, i, 13)),
-    PRONOUNS(5, 1, 203),
+    PRONOUNS(5, 1, 203, Config.PRONOUNS::set),
     DISPLAY(6, 1, 235, (player, i) -> DisplayHandler.updateGameframe(player, i == 2 ? 1 : i == 5 ? 2 : 3)),
     QUEST_LIST_SORTING(6, 25, 259),
     SHOW_QUESTS_LACK_REQUIREMENTS(6, 26, 260),

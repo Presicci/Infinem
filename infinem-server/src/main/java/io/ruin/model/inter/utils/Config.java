@@ -50,64 +50,36 @@ public class Config {
     /**
      * Default options
      */
-
+    public static final Config PRONOUNS = varpbit(10988, true);
     public static final Config BRIGHTNESS = varp(166, true).defaultValue(50);
-
     public static final Config MUSIC_VOLUME = varp(168, true);
-
     public static final Config SOUND_EFFECT_VOLUME = varp(169, true);
-
     public static final Config AREA_SOUND_EFFECT_VOLUME = varp(872, true);
-
     public static final Config MUSIC_MUTED = varpbit(9666, true);
-
     public static final Config SOUND_EFFECT_MUTED = varpbit(9674, true);
-
     public static final Config AREA_SOUND_EFFECT_MUTED = varpbit(9675, true);
-
     public static final Config MUSIC_UNLOCK_MESSAGE = varpbit(10078, true).defaultValue(1);
-
     public static final Config CHAT_EFFECTS = varp(171, true);
-
     public static final Config SPLIT_PRIVATE_CHAT = varp(287, true).defaultValue(1);
-
     public static final Config HIDE_PRIVATE_CHAT = varpbit(4089, true);
-
     public static final Config PROFANITY_FILTER = varp(1074, true);
-
     public static final Config FRIEND_NOTIFICATION_TIMEOUT = varpbit(1627, true);
-
     public static final Config SETTINGS_SEARCH = varpbit(9638, false);
-
     public static final Config CHAT_COLOR = varpbit(9656, false);
-
     public static final Config CHAT_COLOR1 = varpbit(9657, false);
-
     public static final Config CHAT_COLOR2 = varpbit(12284, false);
-
     public static final Config HIDE_ROOFS = varpbit(12378, true).defaultValue(1);
-
     public static final Config PET_OPTIONS = varpbit(5599, true);
-
     public static final Config MOUSE_BUTTONS = varp(170, true);
-
     public static final Config MOUSE_CAMERA = varpbit(4134, true);
-
     public static final Config SHIFT_DROP = varpbit(5542, true);
-
     public static final Config PLAYER_ATTACK_OPTION = varp(1107, true).forceSend();
-
     public static final Config NPC_ATTACK_OPTION = varp(1306, true).forceSend();
-
     public static final Config ACCEPT_AID = varpbit(4180, true);
-
     public static final Config RUNNING = varp(173, true).defaultValue(1);
-
     public static final Config DISPLAY_NAME = varp(1055, true);
     public static final Config HAS_DISPLAY_NAME = varpbit(8199, true).defaultValue(1).forceSend();
-
     public static final Config COLLECTION_LOG_SETTINGS = varpbit(11959, true).defaultValue(3);
-
     public static final Config ALCH_UNTRADEABLES = varpbit(6092, true).defaultValue(1);
     public static final Config ALCH_THRESHOLD = varpbit(6091, true).defaultValue(1000);
     public static final Config[] OPAQUE_CHAT_COLORS = {
@@ -1220,7 +1192,6 @@ public class Config {
     public static final Config HITSPLAT_TINTING = varpbit(10236, true);
     public static final Config MAX_HIT_HITSPLAT = varpbit(14196, true);
     public static final Config MAX_HIT_HITSPLATS_MINIMUM_THRESHOLD = varpbit(14195, true).defaultValue(10);
-
 
     /**
      * Separator
