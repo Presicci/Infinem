@@ -383,7 +383,7 @@ public enum SlayerUnlock {
             new Tuple<>(48, Config.BLEED_ME_DRY), new Tuple<>(41, Config.SMELL_YA_LATER), new Tuple<>(94, Config.BIRDS_OF_A_FEATHER),
             new Tuple<>(93, Config.I_REALLY_MITH_YOU), new Tuple<>(80, Config.HORRORIFIC), new Tuple<>(72, Config.WYVER_NOTHER_ONE),
             new Tuple<>(46, Config.GET_SMASHED), new Tuple<>(52, Config.NECHS_PLEASE), new Tuple<>(92, Config.KRACK_ON),
-            new Tuple<>(34, Config.MORE_AT_STAKE), new Tuple<>(107, Config.REVENENENENENANTS)
+            new Tuple<>(34, Config.MORE_AT_STAKE), new Tuple<>(107, Config.REVENENENENENANTS), new Tuple<>(124, Config.MORE_EYES_THAN_SENSE)
     );
 
     private enum ShopItem {
