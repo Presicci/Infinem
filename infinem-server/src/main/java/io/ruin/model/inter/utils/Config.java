@@ -530,6 +530,11 @@ public class Config {
     public static final Config TWISTED_VISION = varpbit(10104, true);
     public static final Config ACTUAL_VAMPYRE_SLAYER = varpbit(10388, true);
     public static final Config TASK_STORAGE = varpbit(12442, true);
+    public static final Config I_WILDY_MORE_SLAYER = varpbit(13636, true);
+    public static final Config REVENENENENENANTS = varpbit(14822, true);
+    public static final Config WARPED_REALITY = varpbit(15286, true);
+    public static final Config MORE_EYES_THAN_SENSE = varpbit(11022, true);
+    public static final Config EYE_SEE_YOU = varpbit(11023, true);
 
     public static final Config SLAYER_POINTS = varpbit(4068, true);
     public static final Config SLAYER_MASTER = varpbit(4067, true);
