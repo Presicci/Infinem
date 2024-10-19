@@ -1,15 +1,17 @@
 package io.ruin.model.inter;
 
+import com.google.common.collect.Maps;
 import io.ruin.cache.def.InterfaceDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.actions.SimpleAction;
 
+import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class InterfaceHandler {
 
-    public static final InterfaceHandler[] HANDLERS = new InterfaceHandler[InterfaceDefinition.COUNTS == null ? 712 : InterfaceDefinition.COUNTS.length];
+    public static final Map<Integer, InterfaceHandler> handlers = Maps.newConcurrentMap();
 
     public static final InterfaceHandler EMPTY_HANDLER = new InterfaceHandler();
 
@@ -27,13 +29,11 @@ public class InterfaceHandler {
     protected InterfaceHandler(int id) {
         this.id = id;
         this.actions = new InterfaceAction[InterfaceDefinition.COUNTS[id]];
-        HANDLERS[id] = this;
     }
 
     public static void register(int interfaceId, Consumer<InterfaceHandler> consumer) {
-        InterfaceHandler handler = new InterfaceHandler(interfaceId);
+        InterfaceHandler handler = handlers.computeIfAbsent(interfaceId, InterfaceHandler::new);
         consumer.accept(handler);
-        HANDLERS[interfaceId] = handler;
     }
 
     public void action(int childID, InterfaceAction action) {
@@ -61,12 +61,12 @@ public class InterfaceHandler {
     }
 
     public static InterfaceAction getAction(Player player, int interfaceId, int childId) {
-        if(interfaceId < 0 || interfaceId >= HANDLERS.length)
+        if(interfaceId < 0 || interfaceId >= InterfaceDefinition.COUNTS.length)
             return null;
         if(!player.isVisibleInterface(interfaceId)) {
             return null;
         }
-        InterfaceHandler handler = HANDLERS[interfaceId];
+        InterfaceHandler handler = handlers.get(interfaceId);
         if(handler == null)
             return null;
         if(childId < 0 || childId >= handler.actions.length)

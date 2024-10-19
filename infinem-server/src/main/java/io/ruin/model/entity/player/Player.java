@@ -488,7 +488,7 @@ public class Player extends PlayerAttributes {
     }
 
     public void openInterface(InterfaceType type, int interfaceId) {
-        openInterface(type, interfaceId, InterfaceHandler.HANDLERS[interfaceId]);
+        openInterface(type, interfaceId, InterfaceHandler.handlers.getOrDefault(interfaceId, InterfaceHandler.EMPTY_HANDLER));
     }
 
     public void setInterfaceUnderlay(int color, int transparency) {
