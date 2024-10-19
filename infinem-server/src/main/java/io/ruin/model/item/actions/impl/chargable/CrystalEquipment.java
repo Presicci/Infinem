@@ -190,6 +190,7 @@ public enum CrystalEquipment {
             }
             if (Arrays.stream(CRYSTAL_WEAPONS).anyMatch(e -> e == equipment)) {
                 ItemDefinition.get(equipment.activeId).addPreTargetDefendListener((player, item, hit, target) -> {
+                    if (hit.keepCharges) return;
                     if (equipment == BOW && player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) && Random.rollDie(2)) return;
                     equipment.removeCharge(player, item);
                 });

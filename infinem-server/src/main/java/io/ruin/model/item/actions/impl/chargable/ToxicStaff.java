@@ -48,6 +48,7 @@ public class ToxicStaff {
         ItemDefinition.get(CHARGED).addPostTargetDefendListener((player, item, hit, target) -> {
             if(hit.attackSpell != null && Random.rollDie(4, 1))
                 target.envenom(6);
+            if (hit.keepCharges) return;
             int charges = getScalesAmount(item);
             if(--charges <= 0)
                 item.setId(UNCHARGED);

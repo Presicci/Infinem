@@ -1857,7 +1857,7 @@ public class PlayerCombat extends Combat {
                 continue;
             if (!player.getCombat().canAttack(plr, false))
                 continue;
-            plr.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
+            plr.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef).keepCharges());
             if (++targetCount >= targetCap)
                 break;
         }
@@ -1876,7 +1876,7 @@ public class PlayerCombat extends Combat {
                 continue;
             if (!player.getCombat().canAttack(npc, false))
                 continue;
-            npc.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
+            npc.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef).keepCharges());
             if (++targetCount >= targetCap)
                 break;
         }

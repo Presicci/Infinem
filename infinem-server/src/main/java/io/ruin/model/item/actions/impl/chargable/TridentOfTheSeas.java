@@ -50,6 +50,7 @@ public class TridentOfTheSeas {
     }
 
     private static void consumeCharge(Player player, Item item, Hit hit, Entity entity) {
+        if (hit.keepCharges) return;
         if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(10, 5)) return;
         if (item.getId() == FULLY_CHARGED) {
             item.setId(CHARGED);
