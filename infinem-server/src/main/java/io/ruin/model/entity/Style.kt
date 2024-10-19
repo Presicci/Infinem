@@ -135,7 +135,9 @@ enum class Style(
             for (value in values) {
                 if (value.isAvailable(male)) {
                     // when switches male -> female available index might not be found
-                    val index = value.selectedAvailableIdentityKitIndex(player) ?: 0
+                    var index = value.selectedAvailableIdentityKitIndex(player) ?: 0
+                    if (value == JAW) index = 4;
+                    if (value == HAIR) index = 3;
                     value.updateAppearance(player, index)
                 } else {
                     value.markAppearanceEmpty(player)
