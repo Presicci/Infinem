@@ -10,6 +10,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.item.actions.impl.storage.LootingBag;
 
 import java.util.*;
 
@@ -334,7 +335,6 @@ public enum SlayerUnlock {
         itemID = item.id;
         itemPrice = item.price;
         itemAmount = item.buyAmount;
-
         if (option == 10) {
             player.sendMessage(ItemDefinition.get(itemID).examine);
             return;
@@ -342,6 +342,10 @@ public enum SlayerUnlock {
         int pts = Config.SLAYER_POINTS.get(player);
         if (pts < itemPrice) {
             player.sendMessage("You don't have enough slayer points to buy that.");
+            return;
+        }
+        if (slot == 5 && LootingBag.hasLootingBag(player)) {
+            player.sendMessage("You can only have one looting bag.");
             return;
         }
         int amount = ((option == 2) ? 1 : ((option == 3) ? 5 : 10));
@@ -385,7 +389,8 @@ public enum SlayerUnlock {
         BROAD_BOLTS(11875, 35, 250),    // Broad bolts
         BROAD_ARROWS(4160, 35, 250),    // Broad arrows
         HERB_SACK(13226, 750, 1),       // Herb sack
-        RUNE_POUCH(12791, 1250, 1);      // Rune pouch
+        RUNE_POUCH(12791, 1250, 1),     // Rune pouch
+        LOOTING_BAG(11941, 10, 1);      // Looting bag
 
         public final int id, price, buyAmount;
 
