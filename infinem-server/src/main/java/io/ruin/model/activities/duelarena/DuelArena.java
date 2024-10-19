@@ -24,7 +24,7 @@ public class DuelArena {
         player.deathStartListener = DuelArena::deathStart;
         player.deathEndListener = DuelArena::deathEnd;
         player.setAction(1, PlayerAction.CHALLENGE);
-        player.openInterface(InterfaceType.PRIMARY_OVERLAY, Interface.DUEL_ARENA_CHALLENGE);
+        //player.openInterface(InterfaceType.PRIMARY_OVERLAY, Interface.DUEL_ARENA_CHALLENGE);
     }
 
     private static void exited(Player player, boolean logout) {
@@ -35,7 +35,7 @@ public class DuelArena {
             player.deathStartListener = null;
             player.deathEndListener = null;
             player.setAction(1, null);
-            player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
+            //player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
         }
         player.getDuel().lose(true);
     }
