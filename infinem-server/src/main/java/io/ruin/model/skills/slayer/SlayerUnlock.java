@@ -351,8 +351,10 @@ public enum SlayerUnlock {
         int amount = ((option == 2) ? 1 : ((option == 3) ? 5 : 10));
         if (ItemDefinition.get(itemID).stackable && !player.getInventory().hasRoomFor(itemID)) {
             player.sendMessage("Not enough space in your inventory.");
+            return;
         } else if (!ItemDefinition.get(itemID).stackable && player.getInventory().isFull()) {
             player.sendMessage("Not enough space in your inventory.");
+            return;
         }
         amount = Math.min(amount, pts / itemPrice);
         player.getInventory().add(itemID, amount * itemAmount);
