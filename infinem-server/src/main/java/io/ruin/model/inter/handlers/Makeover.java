@@ -148,8 +148,11 @@ public class Makeover {
     private static void confirm(Player player) {
         boolean male = player.getTemporaryAttribute(AttributeKey.SELECTED_GENDER);
         int skinColor = player.getTemporaryAttributeIntOrZero(AttributeKey.SELECTED_SKIN_COLOR);
+        int pronoun = player.getTemporaryAttributeIntOrZero("SELECTED_PRONOUN");
         int npcId = 1306;
-        if (male == player.getAppearance().isMale() && skinColor == player.getAppearance().colors[4]) {
+        if (male == player.getAppearance().isMale()
+                && skinColor == player.getAppearance().colors[4]
+                && pronoun == Config.PRONOUNS.get(player)) {
             player.sendMessage("You haven't changed anything yet.");
             return;
         }
@@ -195,6 +198,7 @@ public class Makeover {
         player.getAppearance().setGender(male ? 0 : 1);
         Style.Companion.updateAll(player);
         player.getAppearance().modifyColor((byte) 4, (byte) skinColor);
+        Config.PRONOUNS.set(player, pronoun);
         player.getInventory().remove(995, PRICE);
         player.closeInterface(InterfaceType.MAIN);
         randomConfirmationDialogue(player, npcId);
@@ -205,6 +209,7 @@ public class Makeover {
         player.putTemporaryAttribute(AttributeKey.SELECTED_SKIN_COLOR, player.getAppearance().colors[4]);
         player.getPacketSender().sendVarp(261, player.getAppearance().isMale() ? 0 : 1);
         player.getPacketSender().sendVarp(262, player.getAppearance().colors[4]);
+        player.getPacketSender().sendVarp(263, Config.PRONOUNS.get(player));
         Config.varpbit(4803, false).set(player, 1);
         Config.varpbit(4804, false).set(player, 1);
         Config.varpbit(6007, false).set(player, 1);
@@ -232,13 +237,21 @@ public class Makeover {
 
 
         InterfaceHandler.register(Interface.MAKE_OVER_MAGE, h -> {
-            h.actions[2] = (SimpleAction) (player) -> {
+            h.actions[2] = (SimpleAction) player -> {
                 player.getPacketSender().sendVarp(261, 0);
                 player.putTemporaryAttribute(AttributeKey.SELECTED_GENDER, true);
+                if (Config.PRONOUNS.get(player) != 2) {
+                    player.getPacketSender().sendVarp(263, 0);
+                    player.putTemporaryAttribute("SELECTED_PRONOUN", 0);
+                }
             };
-            h.actions[8] = (SimpleAction) (player) -> {
+            h.actions[8] = (SimpleAction) player -> {
                 player.getPacketSender().sendVarp(261, 1);
                 player.putTemporaryAttribute(AttributeKey.SELECTED_GENDER, false);
+                if (Config.PRONOUNS.get(player) != 2) {
+                    player.getPacketSender().sendVarp(263, 1);
+                    player.putTemporaryAttribute("SELECTED_PRONOUN", 1);
+                }
             };
             h.actions[13] = (DefaultAction)  (player, option, slot, itemId) -> {
                 int value = slot == 0 ? 7 : slot >= 8 && slot <= 12 ? slot : slot - 1;
@@ -247,6 +260,18 @@ public class Makeover {
             };
             h.actions[17] = (SimpleAction) Makeover::confirm;
             h.actions[18] = (SimpleAction) Makeover::confirm;
+            h.actions[21] = (SimpleAction) player -> {
+                player.getPacketSender().sendVarp(263, 0);
+                player.putTemporaryAttribute("SELECTED_PRONOUN", 0);
+            };
+            h.actions[24] = (SimpleAction) player -> {
+                player.getPacketSender().sendVarp(263, 2);
+                player.putTemporaryAttribute("SELECTED_PRONOUN", 2);
+            };
+            h.actions[27] = (SimpleAction) player -> {
+                player.getPacketSender().sendVarp(263, 1);
+                player.putTemporaryAttribute("SELECTED_PRONOUN", 1);
+            };
         });
     }
 }
