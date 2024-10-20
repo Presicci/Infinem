@@ -55,7 +55,6 @@ public class TabOptions {
 
         static {
             InterfaceHandler.register(Interface.HOUSE_OPTIONS, h -> {
-                h.actions[21] = (SimpleAction) p -> p.closeInterface(InterfaceType.INVENTORY_OVERLAY);
                 h.actions[1] = (SimpleAction) HouseViewer::open;
                 h.actions[5] = (SimpleAction) p -> {
                     if (p.getBankPin().requiresVerification(player -> setBuildingMode(player, 1)))
@@ -63,24 +62,26 @@ public class TabOptions {
                     setBuildingMode(p, 1);
                 };
                 h.actions[6] = (SimpleAction) p -> setBuildingMode(p, 0);
-                h.actions[12] = (SimpleAction) p -> Config.RENDER_DOORS_MODE.set(p, 0);
-                h.actions[14] = (SimpleAction) p -> Config.RENDER_DOORS_MODE.set(p, 1);
-                h.actions[16] = (SimpleAction) p -> Config.RENDER_DOORS_MODE.set(p, 2);
                 h.actions[8] = (SimpleAction) p -> Config.TELEPORT_INSIDE.set(p, 0);
                 h.actions[9] = (SimpleAction) p -> Config.TELEPORT_INSIDE.set(p, 1);
-                h.actions[17] = (SimpleAction) p -> {
+                //h.actions[11] = (SimpleAction) p -> DEFAULT_BUILD_MODE TRUE
+                //h.actions[12] = (SimpleAction) p -> DEFAULT_BUILD_MODE FALSE
+                h.actions[14] = (SimpleAction) p -> Config.RENDER_DOORS_MODE.set(p, 0);
+                h.actions[17] = (SimpleAction) p -> Config.RENDER_DOORS_MODE.set(p, 1);
+                h.actions[19] = (SimpleAction) p -> Config.RENDER_DOORS_MODE.set(p, 2);
+                h.actions[20] = (SimpleAction) p -> {
                     if (!p.isInOwnHouse())
                         p.sendMessage("You're not in your house.");
                     else
                         p.house.expelGuests();
                 };
-                h.actions[18] = (SimpleAction) p -> {
+                h.actions[21] = (SimpleAction) p -> {
                     if (p.getCurrentHouse() == null)
                         p.sendMessage("You're not in a house.");
                     else
                         p.getCurrentHouse().leave(p);
                 };
-                h.actions[19] = (SimpleAction) p -> {
+                h.actions[22] = (SimpleAction) p -> {
                     if (!p.isInOwnHouse()) {
                         p.sendMessage("You're not in your house.");
                         return;
@@ -91,6 +92,7 @@ public class TabOptions {
                     }
                     p.house.callServant();
                 };
+                h.actions[24] = (SimpleAction) p -> p.closeInterface(InterfaceType.INVENTORY_OVERLAY);
             });
         }
 
