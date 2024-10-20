@@ -313,16 +313,14 @@ public class GroundItem {
         }
     }
 
-    public void sendUpdate() {
+    public void sendUpdate(int oldAmount) {
         for(Player player : tile.region.players) {
             if(activeOwner == -1) {
-                player.getPacketSender().sendRemoveGroundItem(this);
-                player.getPacketSender().sendGroundItem(this);
+                player.getPacketSender().sendUpdateGroundItem(this, oldAmount);
                 continue;
             }
             if(activeOwner == player.getUserId()) {
-                player.getPacketSender().sendRemoveGroundItem(this);
-                player.getPacketSender().sendGroundItem(this);
+                player.getPacketSender().sendUpdateGroundItem(this, oldAmount);
                 return;
             }
         }

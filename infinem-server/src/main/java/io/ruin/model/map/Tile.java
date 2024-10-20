@@ -213,8 +213,9 @@ public class Tile {
         if(ItemDefinition.get(groundItem.id).stackable) {
             GroundItem stack = getItem(groundItem.id, groundItem.activeOwner);
             if(stack != null) {
+                int oldAmount = stack.amount;
                 stack.amount = NumberUtils.intSum(stack.amount, groundItem.amount);
-                stack.sendUpdate();
+                stack.sendUpdate(oldAmount);
                 return;
             }
             if(groundItems == null)
