@@ -268,12 +268,13 @@ public class HouseViewer { // mostly just converted jordan's code to work with m
 
     static {
         InterfaceHandler.register(Interface.CONSTRUCTION_HOUSE_VIEWER, h -> {
+            h.actions[5] = (DefaultAction) (p, option, slot, itemId) -> addMoveRoom(p, slot, option == 1);
             for(int i = 6; i <= 38; i++) {
                 final int index = i - 6;
                 h.actions[i] = (SimpleAction) p -> viewRoom(p, index);
             }
             h.actions[42] = (SimpleAction) HouseViewer::toPortal;
-            h.actions[59] = (DefaultAction) (p, option, slot, itemId) -> addMoveRoom(p, slot, option == 1);
+            //h.actions[59] = (DefaultAction) (p, option, slot, itemId) -> addMoveRoom(p, slot, option == 1);
             h.actions[60] = (SimpleAction) HouseViewer::rotate;
             h.actions[61] = (SimpleAction) p -> rotate(p, true);
             h.actions[62] = (SimpleAction) p -> rotate(p, false);
