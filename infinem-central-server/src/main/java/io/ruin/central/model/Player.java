@@ -120,7 +120,7 @@ public class Player {
         for (int i = 0; i < 5; ++i) {
             out.addByte(Random.get(255));
         }
-        out.addByte(0);
+        out.addByte(fromRank);
         byte[] stringArray = Huffman.compressString(message);
         out.addBytes(stringArray, 0, stringArray.length);
         this.write(out);

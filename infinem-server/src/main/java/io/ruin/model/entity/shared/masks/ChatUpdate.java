@@ -47,7 +47,7 @@ public class ChatUpdate extends UpdateMask {
     public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         out.addByte(color);
         out.addByte(effects);
-        out.addByteNeg(0);
+        out.addByteNeg(rankId);
         out.addByteAdd(type);
         byte[] stringArray = Huffman.compressString(message);
         out.addByteSub(stringArray.length);

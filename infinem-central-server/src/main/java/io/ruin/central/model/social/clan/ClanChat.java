@@ -259,7 +259,7 @@ public class ClanChat extends ClanContainer {
         for (int i = 0; i < 5; ++i) {
             out.addByte(Random.get(255));
         }
-        out.addByte(0);
+        out.addByte(rankId);
         byte[] stringArray = Huffman.compressString(message);
         out.addBytes(stringArray, 0, stringArray.length);
         return out;
