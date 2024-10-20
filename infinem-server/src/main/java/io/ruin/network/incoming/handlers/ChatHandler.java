@@ -75,7 +75,7 @@ public class ChatHandler implements Incoming {
                 return;
             }
         }
-        player.getChatUpdate().set(color, effect, player.getClientGroupId(), type, message);
+        player.getChatUpdate().set(color, effect, player.getClientGroupId(), type, message, pattern);
         Loggers.logPublicChat(player.getUserId(), player.getName(), player.getIp(), message, type, effect);
     }
 
