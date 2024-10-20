@@ -38,7 +38,7 @@ public class MenagerieRoom extends Room {
                 Room room = player.getCurrentRoom();
                 if (room instanceof MenagerieRoom) {
                     MenagerieRoom menagerie = (MenagerieRoom) room;
-                    menagerie.withdrawPet(player, slot - 48);
+                    menagerie.withdrawPet(player, slot - 62);
                 }
             };
             h.actions[9] = (SimpleAction) (player) -> {

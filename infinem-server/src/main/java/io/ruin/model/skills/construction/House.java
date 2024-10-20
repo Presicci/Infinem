@@ -53,7 +53,7 @@ public class House {
         if (owner == null) {
             return;
         }
-        petContainer.init(owner, 40, 211, 7,517, false);
+        petContainer.init(owner, 40, -1, 63785,517, false);
     }
 
     public static final int MAX_DIMENSION = 8;
