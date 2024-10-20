@@ -27,6 +27,33 @@
     "walkRange": 3
   },
   {
+    "name": "Ice giant",
+    "id": 2088,
+    "x": 2818,
+    "y": 3515,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice giant",
+    "id": 2089,
+    "x": 2814,
+    "y": 3512,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice giant",
+    "id": 2085,
+    "x": 2810,
+    "y": 3505,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
     "name": "White wolf",
     "id": 108,
     "x": 2830,
