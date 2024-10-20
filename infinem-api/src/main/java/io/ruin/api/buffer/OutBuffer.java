@@ -135,7 +135,12 @@ public class OutBuffer {
     private int type;
 
     public OutBuffer sendFixedPacket(int opcode) {
-        addByte(opcode);
+        if (opcode < 128) {
+            addByte(opcode);
+        } else {
+            addByte(opcode >> 8 | 128);
+            addByte(opcode & 255);
+        }
         type = FIXED_TYPE;
         return this;
     }
@@ -170,8 +175,14 @@ public class OutBuffer {
     }
 
     public OutBuffer encode(ISAACCipher cipher) {
-        if(cipher != null)
-            payload[0] += (byte) cipher.readKey();
+        if(cipher != null) {
+            if ((payload[0] & 0xff) >= 128) {
+                payload[0] += (byte) cipher.readKey();
+                payload[1] += (byte) cipher.readKey();
+            } else {
+                payload[0] += (byte) cipher.readKey();
+            }
+        }
         if(type == VAR_BYTE_TYPE) {
             int size = position - (sizePosition + 1);
             setByte(sizePosition, size);

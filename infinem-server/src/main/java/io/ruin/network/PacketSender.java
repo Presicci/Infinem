@@ -878,7 +878,7 @@ public class PacketSender {
     public void sendAreaSound(int id, int type, int delay, int x, int y, int distance) {
         /*sendMapPacket(x, y, player.getHeight(), offsetHash ->
                 new OutBuffer(8).sendFixedPacket(ServerPacket.SOUND_AREA.getPacketId())
-                        .addByte(distance << 4)
+                        .addByte(distance)
                         .addShortAdd(id)
                         .addByteSub(1) // drop off range
                         .addByteSub(type) // loops
@@ -1091,9 +1091,9 @@ public class PacketSender {
     }
 
     public void sendActiveWorld() {
-        OutBuffer out = new OutBuffer(5).sendFixedPacket(ServerPacket.SET_ACTIVE_WORLD.getPacketId())
-                .addByte(0)
-                .addShort(0)
+        OutBuffer out = new OutBuffer(6).sendFixedPacket(ServerPacket.SET_ACTIVE_WORLD.getPacketId())
+                .addByte(0)     // 0 for top level, 1 for world entity
+                .addShort(0)    // WorldID
                 .addByte(player.getHeight());
         write(out);
     }
