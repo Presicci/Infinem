@@ -108,7 +108,7 @@ public class BodyTypeInterface {
         } else {
             int index = (slot - 10) / 2;
             MakeoverType type = MakeoverType.values()[index];
-            MakeoverInterface.open(player, type);
+            MakeoverInterface.open(player, type, null);
         }
     }
 

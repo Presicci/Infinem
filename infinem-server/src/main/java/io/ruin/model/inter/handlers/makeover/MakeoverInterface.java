@@ -102,9 +102,10 @@ public class MakeoverInterface {
         player.putTemporaryAttribute(ORIGINAL_COLOR_KEY, player.getAppearance().colors[type.getColorIndex()]);
         NPC npc = player.getTemporaryAttributeOrDefault(NPC_KEY, null);
         if (npc != null) {
-            System.out.println(npc.getId());
             if (npc.getId() == 534 && (type == MakeoverType.TOP || type == MakeoverType.LEGS || type == MakeoverType.ARMS))
                 player.getTaskManager().doLookupByUUID(908, 1); // Change Clothes at Thessalia's Makeovers in Varrock
+            if (npc.getId() == 1305 && (type == MakeoverType.HAIR || type == MakeoverType.FACIAL_HAIR))
+                player.getTaskManager().doLookupByUUID(435, 1); // Get a Haircut at the Barber in Falador
         }
     }
 

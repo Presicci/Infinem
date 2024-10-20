@@ -6,7 +6,9 @@ import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
-import io.ruin.model.inter.handlers.Hairdresser;
+import io.ruin.model.entity.npc.actions.Hairdresser;
+import io.ruin.model.inter.handlers.makeover.MakeoverInterface;
+import io.ruin.model.inter.handlers.makeover.MakeoverType;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.construction.Buildable;
@@ -17,6 +19,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 
 import static io.ruin.cache.ItemID.COINS_995;
+import static io.ruin.cache.ItemID.MAKEOVER_VOUCHER;
 
 public class Bedroom {
 
@@ -25,8 +28,8 @@ public class Bedroom {
                 Buildable.TEAK_DRESSER.getBuiltObjects()[0], Buildable.FANCY_TEAK_DRESSER.getBuiltObjects()[0], Buildable.MAHOGANY_DRESSER.getBuiltObjects()[0],
                 Buildable.GILDED_DRESSER.getBuiltObjects()[0])) {
             ObjectAction.register(obj, "preen", (player, object) -> player.dialogue(new PlayerDialogue("Damn, I look good!")));
-            ObjectAction.register(obj, "haircut", (player, object) -> Hairdresser.open(player, -1, true));
-            ObjectAction.register(obj, "shave", (player, object) -> Hairdresser.open(player, -1, false));
+            ObjectAction.register(obj, "haircut", (player, object) -> MakeoverInterface.open(player, MakeoverType.HAIR, null));
+            ObjectAction.register(obj, "shave", (player, object) -> MakeoverInterface.open(player, MakeoverType.FACIAL_HAIR, null));
         }
         for (int obj : Arrays.asList(Buildable.OAK_CLOCK.getBuiltObjects()[0], Buildable.TEAK_CLOCK.getBuiltObjects()[0], Buildable.GILDED_CLOCK.getBuiltObjects()[0])) {
             ObjectAction.register(obj, "read", (player, object) -> checkTime(player));
