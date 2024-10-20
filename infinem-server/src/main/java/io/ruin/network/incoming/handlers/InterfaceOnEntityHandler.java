@@ -77,7 +77,7 @@ public class InterfaceOnEntityHandler {
         player.resetActions(true, true, true);
         player.face(target);
         player.getMovement().setCtrlRun(ctrlRun == 1);
-        if(itemId == -1)
+        if(itemId == -1 || (target.isNpc() && target.npc.getDef().custom_values.containsKey("ITEM_ON_NPC_SKIP_MOVE_CHECK")))
             action(player, target, interfaceHash, slot, itemId);
         else
             TargetRoute.set(player, target, () -> action(player, target, interfaceHash, slot, itemId));
