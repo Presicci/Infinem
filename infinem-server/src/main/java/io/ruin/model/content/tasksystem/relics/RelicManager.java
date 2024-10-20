@@ -16,8 +16,8 @@ import java.util.List;
  */
 public class RelicManager {
 
-    // 1 = twisted, 2 = trailblazer, 3 = infinem, 4 = trailblazer II
-    private static final Config RELIC_SET = Config.varpbit(10032, false).defaultValue(3);
+    // 1 = infinem, 2 = trailblazer, 3 = shatter relics, 4 = trailblazer II
+    private static final Config RELIC_SET = Config.varpbit(10032, false).defaultValue(1);
 
     public static final int[] TIER_REQUIREMENTS = {
             0,      // Tier 1
