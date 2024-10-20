@@ -117,6 +117,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
         Tile.getObject(19044, 3755, 5673, 0); // TODO ladder
 
         Tile.getObject(26674, 3748, 5672, 0).skipReachCheck = p -> p.equals(3749, 5672) || p.equals(3748, 5673);
+        Tile.getObject(26674, 3755, 5677, 0).skipReachCheck = p -> p.equals(3754, 5677) || p.equals(3755, 5676) || p.equals(3756, 5677);
         ObjectAction.register(26674, "deposit", (player, obj) -> addToHopper(player));
         ObjectAction.register(STRUT_1, 1, (p, obj) -> strutInteract(p, obj, WHEEL_1));
         ObjectAction.register(STRUT_2, 1, (p, obj) -> strutInteract(p, obj, WHEEL_2));
