@@ -80,7 +80,6 @@ public class MakeoverInterface {
             player.getAppearance().styles[styleIndex] = styleId;
             player.getAppearance().update();
         }
-        player.setInterfaceUnderlay(-1, -1);
     }
 
     private static void clickColor(Player player, int slot) {
@@ -132,7 +131,10 @@ public class MakeoverInterface {
             h.actions[27] = (SimpleAction) MakeoverInterface::apply;
             h.actions[28] = (SimpleAction) MakeoverInterface::confirm;
             h.actions[31] = (SlotAction) MakeoverInterface::clickMakeoverType;
-            h.closedAction = (player, integer) -> resetAppearance(player);
+            h.closedAction = (player, integer) -> {
+                player.setInterfaceUnderlay(-1, -1);
+                resetAppearance(player);
+            };
         });
     }
 }
