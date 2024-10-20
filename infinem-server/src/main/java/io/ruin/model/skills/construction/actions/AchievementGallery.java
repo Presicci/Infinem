@@ -98,6 +98,10 @@ public class AchievementGallery {
         }
 
         public void teleport(Player player) {
+            if (this == FORTIS_COLOSSEUM) {
+                player.sendMessage("You can't use this teleport.");
+                return;
+            }
             player.getMovement().startTeleport(event -> {
                 player.animate(714);
                 player.graphics(111, 92, 0);
