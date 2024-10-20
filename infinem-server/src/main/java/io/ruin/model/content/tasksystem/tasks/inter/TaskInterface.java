@@ -26,11 +26,17 @@ public class TaskInterface {
     public static void openTaskInterface(Player player) {
         player.getPacketSender().sendClientScript(10203, "s", player.getTaskManager().generateInProgressString());
         player.openInterface(InterfaceType.WORLD_MAP, 657);
+        player.getPacketSender().sendAccessMask(657, 6, 9, 18, AccessMasks.ClickOp1);   // Navigation buttons
         player.getPacketSender().sendAccessMask(657, 27, 0, 16, AccessMasks.ClickOp1);
-        player.getPacketSender().sendAccessMask(657, 32, 0, 6, AccessMasks.ClickOp1);
-        player.getPacketSender().sendAccessMask(657, 33, 0, 25, AccessMasks.ClickOp1);
-        player.getPacketSender().sendAccessMask(657, 34, 0, 12, AccessMasks.ClickOp1);
-        player.getPacketSender().sendAccessMask(657, 35, 0, 3, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(657, 35, 0, 6, AccessMasks.ClickOp1);   // Tier filter dropdown
+        player.getPacketSender().sendAccessMask(657, 36, 0, 25, AccessMasks.ClickOp1);  // Type filter dropdown
+        player.getPacketSender().sendAccessMask(657, 37, 0, 12, AccessMasks.ClickOp1);  // Area filter dropdown
+        player.getPacketSender().sendAccessMask(657, 39, 0, 3, AccessMasks.ClickOp1);   // Completed filter dropdown
+    }
+
+    private static void close(Player player) {
+        player.closeInterface(InterfaceType.WORLD_MAP);
+        player.getPacketSender().sendClientScript(101, "i", 11);
     }
 
     private static void navigation(Player player, int slot) {
@@ -92,13 +98,14 @@ public class TaskInterface {
                 Config.TASK_INTERFACE_SORT.set(player, slot - 1);
                 player.getTaskManager().sendTasksToInterface();
             };
-        }));
-        InterfaceHandler.register(657, (h -> {
-            h.actions[27] = (SlotAction) TaskInterface::navigation;;
-            h.actions[32] = (SlotAction) (player, slot) -> TIER_FILTER.set(player, slot - 1);
-            h.actions[33] = (SlotAction) (player, slot) -> TYPE_FILTER.set(player, slot - 1);
-            h.actions[34] = (SlotAction) (player, slot) -> AREA_FILTER.set(player, slot - 1);
-            h.actions[35] = (SlotAction) (player, slot) -> COMPLETED_FILTER.set(player, slot - 1);
         }));*/
+        InterfaceHandler.register(657, (h -> {
+            h.actions[3] = (SimpleAction) TaskInterface::close;
+            h.actions[6] = (SlotAction) TaskInterface::navigation;
+            h.actions[35] = (SlotAction) (player, slot) -> TIER_FILTER.set(player, slot - 1);
+            h.actions[36] = (SlotAction) (player, slot) -> TYPE_FILTER.set(player, slot - 1);
+            h.actions[37] = (SlotAction) (player, slot) -> AREA_FILTER.set(player, slot - 1);
+            h.actions[39] = (SlotAction) (player, slot) -> COMPLETED_FILTER.set(player, slot - 1);
+        }));
     }
 }
