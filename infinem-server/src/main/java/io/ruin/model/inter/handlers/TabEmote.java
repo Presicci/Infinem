@@ -66,7 +66,7 @@ public enum TabEmote {
     EXPLORE(49, -1, -1),
     RELIC_UNLOCK(50, -1, -1),
     // Custom for clue
-    BULL_ROARER(51, 908, 81);
+    BULL_ROARER(-1, 908, 81);
 
     public final int slot, animationID, gfxId;
 
@@ -132,12 +132,12 @@ public enum TabEmote {
     }
 
     static {
-        InterfaceHandler.register(Interface.EMOTE, h -> h.actions[1] = (SlotAction) (p, slot) -> {
+        InterfaceHandler.register(Interface.EMOTE, h -> h.actions[2] = (SlotAction) (p, slot) -> {
             TabEmote[] emotes = values();
             if(slot < 0 || slot >= emotes.length)
                 return;
             TabEmote emote = emotes[slot];
-            if(emote == null)
+            if(emote == null || emote.slot == -1)
                 return;
             emote.perform(p);
         });
