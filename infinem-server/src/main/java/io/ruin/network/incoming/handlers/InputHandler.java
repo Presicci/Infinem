@@ -38,7 +38,6 @@ public class InputHandler implements Incoming {
                 }
             }
         } else if (opcode == ClientPacket.RESUME_NAMEDIALOG.packetId || opcode == ClientPacket.RESUME_STRINGDIALOG.packetId) {
-            int length = in.readByte();
             String returnVal = in.readString();
             Consumer<String> consumer = player.consumerString;
             if (consumer != null) {
