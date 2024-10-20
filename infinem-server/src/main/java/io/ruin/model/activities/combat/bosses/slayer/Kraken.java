@@ -5,7 +5,10 @@ import io.ruin.model.combat.npc.slayer.CaveKraken;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.RespawnListener;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.map.Projectile;
 
 import java.util.ArrayList;
@@ -68,6 +71,12 @@ public class Kraken extends CaveKraken {
         super.preTargetDefend(hit, entity);
         hit.ignorePrayer();
     }
+    
+    private void awakenTentacles(Player player) {
+        tentacles.forEach(tent -> {
+            tent.hit(new Hit(player).fixedDamage(1).ignoreDefence().ignorePrayer());
+        });
+    }
 
     @Override
     protected int getWhirlpoolId() {
@@ -87,5 +96,28 @@ public class Kraken extends CaveKraken {
     @Override
     protected int getHitGfx() {
         return 157;
+    }
+
+    private static final Projectile FISHING_EXPLOSIVE_PROJECTILE = new Projectile(49, 40, 0, 5, 0, 10, 8, 11);
+    
+    static {
+        NPCDefinition.get(496).custom_values.put("ITEM_ON_NPC_SKIP_MOVE_CHECK", 1);
+        ItemNPCAction.register(6664, 496, (player, item, kraken) -> {
+            if (!player.getCombat().canAttack(kraken, true)) return;
+            player.startEvent(e -> {
+                player.lock();
+                player.animate(864);    // TODO get a better anim
+                player.graphics(50);
+                e.delay(1);
+                player.getInventory().remove(Items.FISHING_EXPLOSIVE, 1);
+                FISHING_EXPLOSIVE_PROJECTILE.send(player, kraken.getCentrePosition());
+                e.delay(1);
+                Kraken combat = (Kraken) kraken.getCombat();
+                combat.awakenTentacles(player);
+                e.delay(1);
+                kraken.hit(new Hit(player).fixedDamage(1).ignoreDefence().ignorePrayer());
+                player.unlock();
+            });
+        });
     }
 }
