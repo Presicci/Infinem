@@ -1,5 +1,6 @@
 package io.ruin.model.combat.npc.slayer;
 
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
@@ -14,6 +15,7 @@ public class Gargoyle extends NPCCombat {
 
     static {
         for (int i : Arrays.asList(412, 413, 1543)) {
+            NPCDefinition.get(i).custom_values.put("ITEM_ON_NPC_SKIP_MOVE_CHECK", 21754);
             ItemNPCAction.register(4162, i, (player, item, npc) -> smash(player, npc, true));
             ItemNPCAction.register(21754, i, (player, item, npc) -> throwingSmash(player, npc));
         }
