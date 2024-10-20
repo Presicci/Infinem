@@ -3,6 +3,7 @@ package io.ruin.model.inter.handlers.makeover;
 import io.ruin.cache.def.EnumDefinition;
 import io.ruin.cache.def.db.DBRowDefinition;
 import io.ruin.model.World;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.InterfaceHandler;
@@ -21,11 +22,13 @@ public class MakeoverInterface {
 
     private static final String ORIGINAL_STYLE_KEY = "ORIGINAL_STYLE";
     private static final String ORIGINAL_COLOR_KEY = "ORIGINAL_COLOR";
+    private static final String NPC_KEY = "MAKEOVER_NPC";
     private static final String TYPE_KEY = "MAKEOVER_TYPE";
     private static final String STYLE_KEY = "SELECTED_STYLE";
     private static final String COLOR_KEY = "SELECTED_COLOR";
 
-    public static void open(Player player, MakeoverType type) {
+    public static void open(Player player, MakeoverType type, NPC npc) {
+        player.putTemporaryAttribute(NPC_KEY, npc);
         player.setInterfaceUnderlay(-1, -2);
         INTERFACE_TYPE.setInstant(player, type.ordinal());
         player.openInterface(InterfaceType.MAIN, 516);
@@ -55,7 +58,7 @@ public class MakeoverInterface {
         if (originalStyle != -1) {
             player.getAppearance().styles[type.getStyle().getAppearanceIndex()] = originalStyle;
         }
-        if (originalColor != -1) {
+        if (type.getColorIndex() != -1 && originalColor != -1) {
             player.getAppearance().colors[type.getColorIndex()] = originalColor;
         }
         player.getAppearance().update();
@@ -97,13 +100,16 @@ public class MakeoverInterface {
         if (type == null) return;
         player.putTemporaryAttribute(ORIGINAL_STYLE_KEY, player.getAppearance().styles[type.getStyle().getAppearanceIndex()]);
         player.putTemporaryAttribute(ORIGINAL_COLOR_KEY, player.getAppearance().colors[type.getColorIndex()]);
+        NPC npc = player.getTemporaryAttributeOrDefault(NPC_KEY, null);
+        if (npc != null) {
+            System.out.println(npc.getId());
+            if (npc.getId() == 534 && (type == MakeoverType.TOP || type == MakeoverType.LEGS || type == MakeoverType.ARMS))
+                player.getTaskManager().doLookupByUUID(908, 1); // Change Clothes at Thessalia's Makeovers in Varrock
+        }
     }
 
     private static void confirm(Player player) {
-        MakeoverType type = player.getTemporaryAttributeOrDefault(TYPE_KEY, null);
-        if (type == null) return;
-        player.putTemporaryAttribute(ORIGINAL_STYLE_KEY, player.getAppearance().styles[type.getStyle().getAppearanceIndex()]);
-        player.putTemporaryAttribute(ORIGINAL_COLOR_KEY, player.getAppearance().colors[type.getColorIndex()]);
+        apply(player);
         player.closeInterface(InterfaceType.MAIN);
     }
 
@@ -114,7 +120,7 @@ public class MakeoverInterface {
             int index = (slot - 10) / 2;
             MakeoverType type = MakeoverType.values()[index];
             resetAppearance(player);
-            open(player, type);
+            open(player, type, null);
         }
     }
 
