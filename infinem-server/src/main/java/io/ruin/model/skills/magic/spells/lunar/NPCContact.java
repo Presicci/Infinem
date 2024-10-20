@@ -75,28 +75,28 @@ public class NPCContact extends Spell {
 
     static {
         InterfaceHandler.register(Interface.NPC_CONTACT, h -> {
-            h.actions[3] = (SimpleAction) NPCContact::defaultDialogue;  // Honest Jimmy
-            h.actions[6] = (SimpleAction) NPCContact::defaultDialogue;  // Bert the Sandman
-            h.actions[9] = (SimpleAction) NPCContact::defaultDialogue;  // Advisor Ghrim
-            h.actions[12] = (SimpleAction) NPCContact::defaultDialogue; // Dark Mage
-            h.actions[15] = (SimpleAction) NPCContact::defaultDialogue; // Lanthus
-            h.actions[18] = (SimpleAction) NPCContact::defaultDialogue; // Spria
-            h.actions[19] = (SimpleAction) player -> startDialogue(player, DIALOGUES[0]); // Turael
-            h.actions[22] = (SimpleAction) player -> startDialogue(player, DIALOGUES[1]); // Mazchna
-            h.actions[25] = (SimpleAction) player -> startDialogue(player, DIALOGUES[2]); // Vannaka
-            h.actions[28] = (SimpleAction) player -> startDialogue(player, DIALOGUES[3]); // Chaeldar
-            h.actions[31] = (SimpleAction) player -> startDialogue(player, DIALOGUES[4]); // Nieve
-            h.actions[34] = (SimpleAction) player -> startDialogue(player, DIALOGUES[5]); // Duradel
-            h.actions[38] = (SimpleAction) player -> startDialogue(player, DIALOGUES[6]); // Krystilia
-            h.actions[37] = (SimpleAction) player -> startDialogue(player, DIALOGUES[7]); // Konar
-            h.actions[41] = (SimpleAction) NPCContact::defaultDialogue; // Murphy
-            h.actions[44] = (SimpleAction) NPCContact::defaultDialogue; // Cyrisus
-            h.actions[47] = (SimpleAction) NPCContact::defaultDialogue; // Smoggy
-            h.actions[50] = (SimpleAction) NPCContact::defaultDialogue; // Ginea
-            h.actions[53] = (SimpleAction) NPCContact::defaultDialogue; // Watson
-            h.actions[56] = (SimpleAction) NPCContact::defaultDialogue; // Barbarian Guard
-            h.actions[62] = (SimpleAction) player -> startDialogue(player, Amy::npcContactDialogue);
-            h.actions[59] = (SimpleAction) NPCContact::randomDialogue;
+            h.actions[5] = (SimpleAction) NPCContact::defaultDialogue;  // Honest Jimmy
+            h.actions[8] = (SimpleAction) NPCContact::defaultDialogue;  // Bert the Sandman
+            h.actions[11] = (SimpleAction) NPCContact::defaultDialogue;  // Advisor Ghrim
+            h.actions[14] = (SimpleAction) NPCContact::defaultDialogue; // Dark Mage
+            h.actions[17] = (SimpleAction) NPCContact::defaultDialogue; // Lanthus
+            h.actions[20] = (SimpleAction) NPCContact::defaultDialogue; // Spria
+            h.actions[21] = (SimpleAction) player -> startDialogue(player, DIALOGUES[0]); // Turael
+            h.actions[24] = (SimpleAction) player -> startDialogue(player, DIALOGUES[1]); // Mazchna
+            h.actions[27] = (SimpleAction) player -> startDialogue(player, DIALOGUES[2]); // Vannaka
+            h.actions[30] = (SimpleAction) player -> startDialogue(player, DIALOGUES[3]); // Chaeldar
+            h.actions[33] = (SimpleAction) player -> startDialogue(player, DIALOGUES[4]); // Nieve
+            h.actions[36] = (SimpleAction) player -> startDialogue(player, DIALOGUES[5]); // Duradel
+            h.actions[40] = (SimpleAction) player -> startDialogue(player, DIALOGUES[6]); // Krystilia
+            h.actions[39] = (SimpleAction) player -> startDialogue(player, DIALOGUES[7]); // Konar
+            h.actions[43] = (SimpleAction) NPCContact::defaultDialogue; // Murphy
+            h.actions[46] = (SimpleAction) NPCContact::defaultDialogue; // Cyrisus
+            h.actions[49] = (SimpleAction) NPCContact::defaultDialogue; // Smoggy
+            h.actions[52] = (SimpleAction) NPCContact::defaultDialogue; // Ginea
+            h.actions[55] = (SimpleAction) NPCContact::defaultDialogue; // Watson
+            h.actions[58] = (SimpleAction) NPCContact::defaultDialogue; // Barbarian Guard
+            h.actions[64] = (SimpleAction) player -> startDialogue(player, Amy::npcContactDialogue);
+            h.actions[61] = (SimpleAction) NPCContact::randomDialogue;
         });
     }
 }
