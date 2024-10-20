@@ -153,7 +153,7 @@ public class CostumeRoom {
         CostumeStorage type = player.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
         if (type == null)
             return;
-        slot /= 36;
+        slot /= 42;
         if (slot < 0 || slot > type.getCostumes().length) {
             throw new IllegalArgumentException(""+slot);
         }
@@ -161,6 +161,7 @@ public class CostumeRoom {
         if (storedSets == null)
             throw new IllegalArgumentException();
         Costume costume = type.getCostumes()[slot];
+        player.sendMessage("" + costume);
         Item[] stored = storedSets.get(costume);
         if (stored == null) {
             return;
@@ -434,7 +435,7 @@ public class CostumeRoom {
     static {
         InterfaceHandler.register(675, h -> {
             h.actions[4] = (DefaultAction) (p, option, slot, itemId) -> {
-                if (slot % 36 == 0) {
+                if (slot % 42 == 0) {
                     withdrawSet(p, slot);
                     return;
                 }
