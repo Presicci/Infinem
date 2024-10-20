@@ -1,17 +1,8 @@
-package io.ruin.model.inter.handlers;
+package io.ruin.model.entity.npc.actions.varrock;
 
-import io.ruin.api.utils.NumberUtils;
-import io.ruin.api.utils.Random;
-import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.player.Style;
-import io.ruin.model.inter.AccessMasks;
-import io.ruin.model.inter.Interface;
-import io.ruin.model.inter.InterfaceHandler;
-import io.ruin.model.inter.InterfaceType;
-import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -25,7 +16,7 @@ import io.ruin.model.item.Items;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 7/16/2023
  */
-public class ThessaliaMakeover {
+public class Thessalia {
 
     private static final int PRICE = 0;
 
@@ -87,7 +78,7 @@ public class ThessaliaMakeover {
     }
 
     static {
-        NPCAction.registerIncludeVariants(534, "talk-to", ThessaliaMakeover::dialogue);
+        NPCAction.registerIncludeVariants(534, "talk-to", Thessalia::dialogue);
         NPCAction.registerIncludeVariants(534, "makeover", ((player, npc) -> player.dialogue(new OptionsDialogue("What would you like to change?",
                 new Option("Topwear",  () -> MakeoverInterface.open(player, MakeoverType.TOP, npc)),
                 new Option("Legwear", () -> MakeoverInterface.open(player, MakeoverType.LEGS, npc))
