@@ -81,7 +81,7 @@ public class HouseViewer { // mostly just converted jordan's code to work with m
 
     private static void toPortal(Player player) {
         player.closeInterface(InterfaceType.MAIN);
-        player.getMovement().teleport(player.house.getEntryPosition());
+        player.getMovement().teleport(player.house.localToAbs(player.house.getEntryPosition()));
     }
 
     private static int gridPos(Player player) {
