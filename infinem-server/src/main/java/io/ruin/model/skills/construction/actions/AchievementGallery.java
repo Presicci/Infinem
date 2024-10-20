@@ -56,6 +56,7 @@ public class AchievementGallery {
         DUEL_ARENA(JewelleryTeleportBounds.DUEL_ARENA.getBounds()),
         CASTLE_WARS(JewelleryTeleportBounds.CASTLE_WARS.getBounds()),
         FEROX_ENCLAVE(JewelleryTeleportBounds.FEROX_ENCLAVE.getBounds()),
+        FORTIS_COLOSSEUM(JewelleryTeleportBounds.FORTIS_COLOSSEUM.getBounds()),
 
         //Games necklace
         BURTHORPE(JewelleryTeleportBounds.BURTHORPE.getBounds()),

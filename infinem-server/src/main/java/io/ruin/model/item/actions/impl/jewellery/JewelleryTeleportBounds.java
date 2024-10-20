@@ -56,6 +56,7 @@ public enum JewelleryTeleportBounds {
     DUEL_ARENA(new Bounds(3313, 3233, 3317, 3236, 0)),
     CASTLE_WARS(new Bounds(2441, 3088, 2443, 3091, 0)),
     FEROX_ENCLAVE(new Bounds(3150, 3634, 3151, 3635, 0)),
+    FORTIS_COLOSSEUM(new Bounds(1792, 3106, 1794, 3107, 0)),
 
     // Skills Necklace
     FISHING_GUILD(new Bounds(2610, 3390, 2614, 3393, 0)),
