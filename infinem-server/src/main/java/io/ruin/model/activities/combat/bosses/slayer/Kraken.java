@@ -101,7 +101,7 @@ public class Kraken extends CaveKraken {
     private static final Projectile FISHING_EXPLOSIVE_PROJECTILE = new Projectile(49, 40, 0, 5, 0, 10, 8, 11);
     
     static {
-        NPCDefinition.get(496).custom_values.put("ITEM_ON_NPC_SKIP_MOVE_CHECK", 1);
+        NPCDefinition.get(496).custom_values.put("ITEM_ON_NPC_SKIP_MOVE_CHECK", 6664);
         ItemNPCAction.register(6664, 496, (player, item, kraken) -> {
             if (!player.getCombat().canAttack(kraken, true)) return;
             player.startEvent(e -> {
