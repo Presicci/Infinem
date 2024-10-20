@@ -17,13 +17,13 @@ public class InterfaceOnObjectHandler {
     public static final class FromInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int objectId = in.readUnsignedLEShort();
-            int itemId = in.readUnsignedShortAdd();
-            int slot = in.readUnsignedShort();
-            int objectY = in.readUnsignedLEShortAdd();
+            int ctrlRun = in.readUnsignedByteAdd();
+            int objectId = in.readUnsignedShortAdd();
+            int itemId = in.readUnsignedShort();
+            int objectY = in.readUnsignedLEShort();
             int objectX = in.readUnsignedLEShort();
             int interfaceHash = in.readLEInt();
-            int ctrlRun = in.readByte();
+            int slot = in.readUnsignedLEShort();
             handleAction(player, interfaceHash, slot, itemId, objectId, objectX, objectY, ctrlRun);
         }
     }
