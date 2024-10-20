@@ -47,20 +47,20 @@ public class TabStats {
         });
 
         InterfaceHandler.register(Interface.SKILL_GUIDE, h -> {
-            h.actions[11] = (SimpleAction) p -> selectCategory(p, 0);
-            h.actions[12] = (SimpleAction) p -> selectCategory(p, 1);
-            h.actions[13] = (SimpleAction) p -> selectCategory(p, 2);
-            h.actions[14] = (SimpleAction) p -> selectCategory(p, 3);
-            h.actions[15] = (SimpleAction) p -> selectCategory(p, 4);
-            h.actions[16] = (SimpleAction) p -> selectCategory(p, 5);
-            h.actions[17] = (SimpleAction) p -> selectCategory(p, 6);
-            h.actions[18] = (SimpleAction) p -> selectCategory(p, 7);
-            h.actions[19] = (SimpleAction) p -> selectCategory(p, 8);
-            h.actions[20] = (SimpleAction) p -> selectCategory(p, 9);
-            h.actions[21] = (SimpleAction) p -> selectCategory(p, 10);
-            h.actions[22] = (SimpleAction) p -> selectCategory(p, 11);
-            h.actions[23] = (SimpleAction) p -> selectCategory(p, 12);
-            h.actions[24] = (SimpleAction) p -> selectCategory(p, 13);
+            h.actions[13] = (SimpleAction) p -> selectCategory(p, 0);
+            h.actions[14] = (SimpleAction) p -> selectCategory(p, 1);
+            h.actions[15] = (SimpleAction) p -> selectCategory(p, 2);
+            h.actions[16] = (SimpleAction) p -> selectCategory(p, 3);
+            h.actions[17] = (SimpleAction) p -> selectCategory(p, 4);
+            h.actions[18] = (SimpleAction) p -> selectCategory(p, 5);
+            h.actions[19] = (SimpleAction) p -> selectCategory(p, 6);
+            h.actions[20] = (SimpleAction) p -> selectCategory(p, 7);
+            h.actions[21] = (SimpleAction) p -> selectCategory(p, 8);
+            h.actions[22] = (SimpleAction) p -> selectCategory(p, 9);
+            h.actions[23] = (SimpleAction) p -> selectCategory(p, 10);
+            h.actions[24] = (SimpleAction) p -> selectCategory(p, 11);
+            h.actions[25] = (SimpleAction) p -> selectCategory(p, 12);
+            h.actions[26] = (SimpleAction) p -> selectCategory(p, 13);
         });
     }
 
