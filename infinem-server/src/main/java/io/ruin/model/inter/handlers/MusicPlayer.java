@@ -47,7 +47,7 @@ public class MusicPlayer {
      * Whether the music player is currently stopped or not.
      */
     @Getter @Setter
-    private transient boolean stopped;
+    private transient boolean stopped = false;
 
     private static List<RegionMusic> regionMusicList = null;
 
@@ -225,11 +225,12 @@ public class MusicPlayer {
             return;
         }
         if (++ticks >= nextSongAtTicks) {
+            Song currentSong = currentlyPlaying;
             resetCurrent();
             ticks = 0;
             if (Config.MUSIC_PREFERENCE.get(player) == 2) {
                 playRandomTrack();
-            } else if (Config.MUSIC_LOOP.get(player) == 0) {
+            } else if (Config.MUSIC_LOOP.get(player) == 0 && currentSong != null) {
                 stopped = true;
             } else {
                 Song current = currentlyPlaying;
