@@ -36,6 +36,7 @@ import io.ruin.model.activities.combat.barrows.BarrowsBrother;
 import io.ruin.model.activities.combat.barrows.BarrowsRewards;
 import io.ruin.model.activities.combat.inferno.Inferno;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
+import io.ruin.model.activities.combat.raids.xeric.XericRewards;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;
 import io.ruin.model.activities.combat.raids.xeric.chamber.ChamberDefinition;
 import io.ruin.model.activities.combat.raids.xeric.party.Party;
@@ -3266,6 +3267,14 @@ public class Administrator {
             }
             case "relics": {
                 RelicInterface.open(player);
+                return true;
+            }
+            case "testcoxrewards": {
+                player.getRaidRewards().add(4151);
+                player.getRaidRewards().add(995, 1000);
+                player.openInterface(InterfaceType.MAIN, Interface.RAID_REWARDS);
+                player.getRaidRewards().sendUpdates();
+                new Unlock(Interface.RAID_REWARDS, 5, 0, 2).unlockMultiple(player, 0, 9);
                 return true;
             }
         }
