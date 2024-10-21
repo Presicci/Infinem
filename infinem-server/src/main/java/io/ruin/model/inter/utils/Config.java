@@ -239,7 +239,7 @@ public class Config {
             varp(4411, true)
     };
 
-    public static final Config MUSIC_PREFERENCE = varp(18, true);
+    public static final Config MUSIC_PREFERENCE = varp(18, false).defaultValue(1);
 
     public static final Config MUSIC_LOOP = varpbit(4137, true);
 
