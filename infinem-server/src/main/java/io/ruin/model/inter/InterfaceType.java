@@ -61,7 +61,7 @@ public enum InterfaceType {
             true
     ),
     PRIMARY_OVERLAY( //castle wars wait lobby, duel challenge area, gnomeball, puro puro imp view, mage training arena, lms lobby, tut
-            1,
+            8,
             true
     ),
     TARGET_OVERLAY( //kinda guessing it uses this, doesn't really matter, as long as it has it's own type..
