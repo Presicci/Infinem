@@ -88,7 +88,7 @@ public class TabStats {
             player.openInterface(InterfaceType.MAIN, Interface.SKILL_GUIDE);
         } else {
             player.openInterface(InterfaceType.WORLD_MAP, 860);
-            player.getPacketSender().sendClientScript(1902, "ii", statType.ordinal(), 0);   // Stat index, tab index
+            player.getPacketSender().sendClientScript(1902, "ii", statType.clientId, 0);   // Stat index, tab index
         }
     }
 
