@@ -146,7 +146,7 @@ public enum CostumeStorage {
     public void open(Player player, int clueScrollLevel, Buildable buildable) {
         if (player.getBankPin().requiresVerification(p -> open(p, clueScrollLevel, buildable)))
             return;
-        player.openInterface(InterfaceType.MAIN_STRETCHED, 675);
+        player.openResizeableInterface(InterfaceType.MAIN, 675);
         changeInventoryAccess(player);
         if (this == BEGINNER_TREASURE_TRAILS || this == EASY_TREASURE_TRAILS || this == MEDIUM_TREASURE_TRAILS
                 || this == HARD_TREASURE_TRAILS || this == ELITE_TREASURE_TRAILS || this == MASTER_TREASURE_TRAILS) {
@@ -165,7 +165,7 @@ public enum CostumeStorage {
         if (player.isVisibleInterface(674)) {
             return;
         }
-        player.openInterface(InterfaceType.INVENTORY, 674);
+        player.openResizeableInterface(InterfaceType.INVENTORY, 674);
         player.getPacketSender().sendClientScript(149, "iiiiiisssss", 44171264, 93, 4, 7, 1, -1, "Store<col=ff9040>", "", "", "", "");
         player.getPacketSender().sendAccessMask(674, 0, 0, 27, 1086);
     }

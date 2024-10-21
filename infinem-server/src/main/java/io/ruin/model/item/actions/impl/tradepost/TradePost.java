@@ -59,7 +59,7 @@ public class TradePost {
     public void openViewOffers() {
         if(player.getBankPin().requiresVerification(p -> openViewOffers()))
             return;
-        player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_VIEW);
+        player.openResizeableInterface(InterfaceType.MAIN, Interface.TRADING_POST_VIEW);
         player.getPacketSender().sendAccessMask(1005, 19, 0, 2000, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         player.closeInterface(InterfaceType.INVENTORY);
         changeInventoryAccess();
@@ -69,7 +69,7 @@ public class TradePost {
     public void openMyOffers() {
         if(player.getBankPin().requiresVerification(p -> openMyOffers()))
             return;
-        player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_MY_OFFERS);
+        player.openResizeableInterface(InterfaceType.MAIN, Interface.TRADING_POST_MY_OFFERS);
         player.getPacketSender().sendAccessMask(1006, 5, 0, 300, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         changeInventoryAccess();
         updateMyOffers();
@@ -168,7 +168,7 @@ public class TradePost {
     }
 
     private void changeInventoryAccess() {
-        player.openInterface(InterfaceType.INVENTORY, Interface.TRADING_POST_INVENTORY);
+        player.openResizeableInterface(InterfaceType.INVENTORY, Interface.TRADING_POST_INVENTORY);
         player.getPacketSender().sendClientScript(149, "IviiiIsssss", Interface.TRADING_POST_INVENTORY << 16, 93, 4, 7, 0, -1,
                 "Select", "", "", "", "");
         player.getPacketSender().sendAccessMask(Interface.TRADING_POST_INVENTORY, 0, 0, 27, 1086);

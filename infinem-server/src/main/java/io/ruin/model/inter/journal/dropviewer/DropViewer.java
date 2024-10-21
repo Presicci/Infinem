@@ -28,7 +28,7 @@ public class DropViewer {
     protected static final HashMap<Integer, LinkedHashSet<DropViewerEntry>> NON_NPC_DROPS = new HashMap<>();
 
     public static void open(Player player) {
-        player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.DROP_VIEWER);
+        player.openResizeableInterface(InterfaceType.MAIN, Interface.DROP_VIEWER);
         if (player.getTemporaryAttribute(AttributeKey.DROP_VIEWER_RESULTS) == null) {
             player.putTemporaryAttribute(AttributeKey.DROP_VIEWER_RESULTS, new ArrayList<>(Arrays.asList(
                     new DropViewerEntry(5886), new DropViewerEntry(5862), new DropViewerEntry(319),

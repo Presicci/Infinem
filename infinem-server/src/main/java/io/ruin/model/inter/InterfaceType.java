@@ -13,10 +13,6 @@ public enum InterfaceType {
             16,
             false
     ),
-    MAIN_STRETCHED(
-            16,
-            false
-    ),
     INVENTORY(
             74,
             false

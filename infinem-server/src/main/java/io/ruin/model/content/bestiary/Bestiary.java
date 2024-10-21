@@ -161,7 +161,7 @@ public class Bestiary {
         String entryName = orderedEntries.toArray(new String[0])[index];
         currentEntry = getBestiaryEntry(entryName);
         displayedPerks = currentEntry.getSortedPerks();
-        player.openInterface(InterfaceType.MAIN_STRETCHED, 1010);
+        player.openResizeableInterface(InterfaceType.MAIN, 1010);
         player.getPacketSender().sendString(1010, 7, StringUtils.capitalizeFirst(entryName));
         player.getPacketSender().sendClientScript(10070, "is", getKillCount(entryName), currentEntry.generateRewardString());
         player.getPacketSender().sendAccessMask(1010, 3, 0, 100, AccessMasks.ClickOp1);

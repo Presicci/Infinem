@@ -50,9 +50,8 @@ public class Bank extends ItemContainerG<BankItem> {
         if (player.getBankPin().requiresVerification(p -> open()))
             return;
         //player.getPacketSender().sendClientScript(917, "ii", -1, -2147483648);
-        player.setInterfaceUnderlay(-1, -2);
-        player.openInterface(InterfaceType.MAIN, Interface.BANK);
-        player.openInterface(InterfaceType.INVENTORY, Interface.BANK_INVENTORY);
+        player.openResizeableInterface(InterfaceType.MAIN, Interface.BANK);
+        player.openResizeableInterface(InterfaceType.INVENTORY, Interface.BANK_INVENTORY);
         // Inventory
         player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 3, 0, 27, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4, AccessMasks.ClickOp5, AccessMasks.ClickOp6, AccessMasks.ClickOp7, AccessMasks.ClickOp8, AccessMasks.ClickOp9, AccessMasks.ClickOp10, AccessMasks.DragDepth1, AccessMasks.DragTargetable);
         // Equipment inventory

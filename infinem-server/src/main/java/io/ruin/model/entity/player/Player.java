@@ -479,15 +479,20 @@ public class Player extends PlayerAttributes {
         InterfaceHandler activeHandler = activeInterfaceHandlers[type.ordinal()];
         if(activeHandler != null && activeHandler.closedAction != null)
             activeHandler.closedAction.accept(this, interfaceId);
-        if (type == InterfaceType.MAIN || type == InterfaceType.MAIN_STRETCHED) {
+        if (type == InterfaceType.MAIN) {
             closeInterface(InterfaceType.MAIN);
-            closeInterface(InterfaceType.MAIN_STRETCHED);
         }
         type.open(this, interfaceId);
         activeInterfaceHandlers[type.ordinal()] = handler == null ? InterfaceHandler.EMPTY_HANDLER : handler;
     }
 
     public void openInterface(InterfaceType type, int interfaceId) {
+        player.setInterfaceUnderlay(-1, -1);
+        openInterface(type, interfaceId, InterfaceHandler.handlers.getOrDefault(interfaceId, InterfaceHandler.EMPTY_HANDLER));
+    }
+
+    public void openResizeableInterface(InterfaceType type, int interfaceId) {
+        player.setInterfaceUnderlay(-1, -2);
         openInterface(type, interfaceId, InterfaceHandler.handlers.getOrDefault(interfaceId, InterfaceHandler.EMPTY_HANDLER));
     }
 
