@@ -83,7 +83,7 @@ public class DisplayHandler implements Incoming {
         //ps.sendAccessMask(261, 106, 1, 4, 2);
         //ps.sendAccessMask(261, 107, 1, 4, 2);
         ps.sendAccessMask(Interface.EMOTE, 2, 0, 52, 2);
-        ps.sendAccessMask(Interface.MUSIC_PLAYER, 6, 0, 580, 6);
+        ps.sendAccessMask(Interface.MUSIC_PLAYER, 6, 0, 789, 6);
         ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);
         // Prayer filters
         ps.sendAccessMask(Interface.PRAYER, 42, 0, 4, AccessMasks.ClickOp1);

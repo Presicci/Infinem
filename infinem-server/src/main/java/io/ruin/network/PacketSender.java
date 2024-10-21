@@ -896,9 +896,17 @@ public class PacketSender {
     }
 
     public void sendMusic(int id) {
-        /*OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.MIDI_SONG.getPacketId())
-                .addShort(id);
-        write(out);*/
+        sendMusic(id, 0, 0, 0, 0);
+    }
+
+    public void sendMusic(int id, int fadeOutDelay, int fadeOutSpeed, int fadeInDelay, int fadeInSpeed) {
+        OutBuffer out = new OutBuffer(11).sendFixedPacket(ServerPacket.MIDI_SONG.getPacketId())
+                .addShortAdd(fadeOutDelay)
+                .addLEShortAdd(fadeOutSpeed)
+                .addLEShort(fadeInDelay)
+                .addLEShortAdd(id)
+                .addShortAdd(fadeInSpeed);
+        write(out);
     }
 
     //TODO: 184 Revision Fix Custom Packet

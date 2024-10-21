@@ -3,13 +3,15 @@ package io.ruin.model.inter.handlers;
 import io.ruin.Server;
 import io.ruin.api.utils.JsonUtils;
 import io.ruin.cache.def.EnumDefinition;
+import io.ruin.cache.def.db.impl.music.MusicDB;
+import io.ruin.cache.def.db.impl.music.Song;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.utils.Config;
-import io.ruin.model.map.Music;
+import io.ruin.model.map.RegionMusic;
 import io.ruin.model.map.Region;
 import io.ruin.utility.Utils;
 import lombok.Getter;
@@ -26,60 +28,72 @@ public class MusicPlayer {
         this.player = player;
     }
 
-    /** The given player who owns this handler. */
+    /**
+     * The given player who owns this handler.
+     */
     private final transient Player player;
 
-    /** The music track that's currently playing. */
-    private transient Music currentlyPlaying;
+    /**
+     * The music track that's currently playing.
+     */
+    private transient Song currentlyPlaying;
 
-    /** The amount of ticks the current song has played for, and the amount of ticks at which this song ends. */
+    /**
+     * The amount of ticks the current song has played for, and the amount of ticks at which this song ends.
+     */
     private transient int ticks, nextSongAtTicks;
 
-    /** Whether the music player is currently stopped or not. */
-    @Getter @Setter private transient boolean stopped;
+    /**
+     * Whether the music player is currently stopped or not.
+     */
+    @Getter @Setter
+    private transient boolean stopped;
 
-    private static List<Music> musicList = null;
+    private static List<RegionMusic> regionMusicList = null;
 
     static {
         try {
-            musicList = JsonUtils.fromJson(JsonUtils.fromFile(new File(Server.dataFolder.getAbsolutePath() + "/music.json")), List.class, Music.class);
+            regionMusicList = JsonUtils.fromJson(JsonUtils.fromFile(new File(Server.dataFolder.getAbsolutePath() + "/music.json")), List.class, RegionMusic.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        assert musicList != null;
-        for (Music music : musicList) {
-            Music.map.put(music.getName(), music);
-
-            List<Integer> regionIds = music.getRegionIds();
+        assert regionMusicList != null;
+        for (RegionMusic regionMusic : regionMusicList) {
+            RegionMusic.map.put(regionMusic.getName(), regionMusic);
+            if (!MusicDB.ROWS_BY_NAME.containsKey(regionMusic.getName().toLowerCase())) {
+                System.out.println("Missing: " + regionMusic.getName());
+            }
+            List<Integer> regionIds = regionMusic.getRegionIds();
             if (regionIds != null) {
                 for (int region : regionIds) {
                     if (region <= Region.LOADED.length - 1) {
-                        Region.get(region).getMusicTracks().add(music);
+                        Region.get(region).getRegionMusicTracks().add(regionMusic);
                     }
                 }
             }
         }
         InterfaceHandler.register(Interface.MUSIC_PLAYER, h -> {
-            h.actions[3] = (DefaultAction) (p, option, slot, item) -> {
+            h.actions[6] = (DefaultAction) (p, option, slot, item) -> {
                 if (option == 1) {
                     if (!p.getMusic().play(slot)) {
                         p.sendMessage("You have not unlocked this piece of music yet!");
+                    } else {
+                        if (Config.MUSIC_PREFERENCE.get(p) == 1) {
+                            Config.MUSIC_PREFERENCE.set(p, 0);
+                        }
                     }
                 } else {
                     p.getMusic().sendUnlockHint(slot);
                 }
             };
-            h.actions[7] = (SimpleAction) p -> {
+            h.actions[10] = (SimpleAction) p -> {
                 Config.MUSIC_PREFERENCE.set(p, 1);
             };
-            h.actions[9] = (SimpleAction) p -> {
+            h.actions[13] = (SimpleAction) p -> {
                 Config.MUSIC_PREFERENCE.set(p, 0);
             };
-            h.actions[11] = (SimpleAction) p -> {
-                if(Config.MUSIC_LOOP.toggle(p) == 1)
-                    p.sendMessage("Music looping is now enabled.");
-                else
-                    p.sendMessage("Music looping now disabled.");
+            h.actions[16] = (SimpleAction) p -> {
+                Config.MUSIC_PREFERENCE.set(p, 2);
             };
         });
     }
@@ -89,52 +103,56 @@ public class MusicPlayer {
         player.getPacketSender().sendMusic(-1);
     }
 
-    /** Restarts the currently playing track again(after setting music volume from 0 to > 0) */
+    /**
+     * Restarts the currently playing track again(after setting music volume from 0 to > 0)
+     */
     public void restartCurrent() {
-        val music = currentlyPlaying;
-        if (music == null) {
+        Song song = currentlyPlaying;
+        if (song == null) {
             return;
         }
         if (stopped)
             stopped = false;
-        nextSongAtTicks = music.getDuration();
-        currentlyPlaying = music;
+        nextSongAtTicks = song.getDuration();
         ticks = 0;
     }
 
-    /** Plays a random track in the current region. */
+    /**
+     * Plays a random track in the current region.
+     */
     private void playRandomTrackInRegion() {
-        val list = player.getPosition().getRegion().getMusicTracks();
-        for (Music music : list) {
-        }
+        Set<RegionMusic> list = player.getPosition().getRegion().getRegionMusicTracks();
         if (list == null || list.isEmpty()) {
             return;
         }
-        val randomTrack = Utils.getRandomCollectionElement(list);
-        if (randomTrack == currentlyPlaying) {
+        Song song = Utils.getRandomCollectionElement(list).getSong();
+        if (song == currentlyPlaying) {
             return;
         }
-        val slot = EnumDefinition.get(812).getValuesAsKeysStrings().get(randomTrack.getName()) - 1;
-        play(slot);
+        play(song.getSlot());
     }
 
-    /** Plays a random track in the current region. */
+    /**
+     * Plays a random track in the current region.
+     */
     private void playRandomTrack() {
-        int slot = new Random().nextInt(musicList.size());
+        int slot = new Random().nextInt(regionMusicList.size());
         while (!isUnlocked(slot)) {
-            slot = new Random().nextInt(musicList.size());
+            slot = new Random().nextInt(regionMusicList.size());
         }
         play(slot);
     }
 
-    /** Unlocks all the music tracks associated with the given region id. */
-    public void unlock(final int regionId) {
-        val list = Region.get(regionId).getMusicTracks();
+    /**
+     * Unlocks all the music tracks associated with the given region id.
+     */
+    public void unlock(int regionId) {
+        Set<RegionMusic> list = Region.get(regionId).getRegionMusicTracks();
         if (list == null || list.isEmpty()) {
             return;
         }
-        for (val music : list) {
-            unlock(music, false);
+        for (RegionMusic music : list) {
+            unlock(music.getSong(), false);
         }
         if (Config.MUSIC_PREFERENCE.get(player) == 0) {
             return;
@@ -142,25 +160,22 @@ public class MusicPlayer {
         playRandomTrackInRegion();
     }
 
-    public void unlock(final Music music) {
-        unlock(music, true);
+    public void unlock(RegionMusic regionMusic) {
+        unlock(regionMusic.getSong(), true);
     }
 
-    public void unlock(final Music music, final boolean play) {
+    public void unlock(Song song, boolean play) {
         try {
-            val slot = EnumDefinition.get(812).getValuesAsKeysStrings().get(music.getName()) - 1;
-            val musicIndex = EnumDefinition.get(819).getIntValuesArray()[slot];
-            val index = (musicIndex >> 14) - 1;
-            if (index >= Config.MUSIC_UNLOCKS.length) {
+            int index = song.getVarpIndex();
+            if (index >= Config.MUSIC_UNLOCKS.length || index < 0) {
                 return;
             }
-
-            val varp = Config.MUSIC_UNLOCKS[index];
-            val value = varp.get(player);
-            if (!isUnlocked(slot)) {
-                varp.set(player, value | (1 << (musicIndex & 0x3FFF)));
+            Config varp = Config.MUSIC_UNLOCKS[index];
+            int currentValue = varp.get(player);
+            if (!isUnlocked(song)) {
+                varp.set(player, currentValue | (1 << song.getBit()));
                 if (Config.MUSIC_UNLOCK_MESSAGE.get(player) == 0) {
-                    player.sendFilteredMessage("<col=ff0000>You have unlocked a new music track: " + music.getName());
+                    player.sendFilteredMessage("<col=ff0000>You have unlocked a new music track: " + song.getName());
                 }
                 //val unlocked = player.getEmotesHandler().isUnlocked(Emote.AIR_GUITAR);
                 //if (!unlocked && unlockedMusicCount() >= 500) {
@@ -169,33 +184,38 @@ public class MusicPlayer {
                 // }
             }
             if (play) {
-                if (currentlyPlaying == music) {
+                if (currentlyPlaying == song) {
                     return;
                 }
-                play(slot);
+                play(song);
             }
         } catch (Exception e) {
-            System.out.println("Error unlocking music - " + music.getName() + ": " + music.getMusicId());
+            System.out.println("Error unlocking music - " + song.getName() + ": " + song.getId());
         }
 
     }
 
-    /** Whether the track at the given slot is unlocked or not. */
-    private boolean isUnlocked(final int slot) {
-        val randomSong = EnumDefinition.get(819).getIntValuesArray()[slot];
-        if (randomSong == -1) {
-            return true;
-        }
-        val index = (randomSong >> 14) - 1;
+    /**
+     * Whether the track at the given slot is unlocked or not.
+     */
+    private boolean isUnlocked(Song song) {
+        int index = song.getVarpIndex();
+        if (index == -1) return true;
         if (index >= Config.MUSIC_UNLOCKS.length) {
             return false;
         }
-        val value = Config.MUSIC_UNLOCKS[index].get(player);
-        val bitshift = randomSong & 0x3fff;
+        int value = Config.MUSIC_UNLOCKS[index].get(player);
+        int bitshift = song.getBit();
         return (value & (1 << bitshift)) != 0;
     }
 
-    /** Processes the music player. */
+    private boolean isUnlocked(int slot) {
+        return isUnlocked(MusicDB.ROWS.get(slot));
+    }
+
+    /**
+     * Processes the music player.
+     */
     public void processMusicPlayer() {
         if (stopped) {
             return;
@@ -203,18 +223,15 @@ public class MusicPlayer {
         if (++ticks >= nextSongAtTicks) {
             resetCurrent();
             ticks = 0;
-            if (Config.MUSIC_LOOP.get(player) != 1) {   // LOOP off
-                if (Config.MUSIC_PREFERENCE.get(player) == 1) { // on AUTO
-                    playRandomTrack();  // basically shuffle, add option for this if people want
-                } else {
-                    stopped = true;
-                }
+            if (Config.MUSIC_PREFERENCE.get(player) == 2) {
+                playRandomTrack();
+            } else if (Config.MUSIC_LOOP.get(player) == 0) {
+                stopped = true;
             } else {
-                val current = currentlyPlaying;
+                Song current = currentlyPlaying;
                 currentlyPlaying = null;
                 if (current != null) {
-                    val slot = EnumDefinition.get(812).getValuesAsKeysStrings().get(current.getName()) - 1;
-                    play(slot);
+                    play(current.getSlot());
                 } else {
                     playRandomTrackInRegion();
                 }
@@ -222,39 +239,39 @@ public class MusicPlayer {
         }
     }
 
-    /** Sends the hint for the music track at the given slot. */
-    public void sendUnlockHint(final int slotId) {
-        val musicName = EnumDefinition.get(812).getStringValuesArray()[slotId];
-        val music = Music.map.get(musicName);
-        if (music == null) {
-            return;
-        }
-        player.sendMessage((!isUnlocked(slotId) ? "This track unlocks " : "This track was unlocked ") + music.getHint().replace("unlocked ", ""));
+    /**
+     * Sends the hint for the music track at the given slot.
+     */
+    public void sendUnlockHint(int slot) {
+        Song song = MusicDB.getSongBySlot(slot);
+        player.sendMessage((!isUnlocked(song) ? "This track unlocks " : "This track was unlocked ") + song.getUnlockHint().replace("unlocked ", ""));
     }
 
-    /** Resets the current music by stopping it client-sided. */
+    /**
+     * Resets the current music by stopping it client-sided.
+     */
     private void resetCurrent() {
         player.getPacketSender().sendMusic(-1);
     }
 
     public boolean play(int slot) {
-        if (!isUnlocked(slot)) {
+        return play(MusicDB.ROWS.get(slot));
+    }
+
+    public boolean play(Song song) {
+        if (!isUnlocked(song)) {
             return false;
         }
-        String musicName = EnumDefinition.get(812).getStringValuesArray()[slot];
-        Music music = Music.map.get(musicName);
-        if (music == null) {
-            return false;
-        }
-        if (currentlyPlaying == music) {
+        String musicName = song.getName();
+        if (currentlyPlaying == song) {
             resetCurrent();
         }
-        nextSongAtTicks = music.getDuration();
+        nextSongAtTicks = song.getDuration();
         ticks = 0;
-        currentlyPlaying = music;
+        currentlyPlaying = song;
         stopped = false;
-        player.getPacketSender().sendMusic(music.getMusicId());
-        player.getPacketSender().sendString(Interface.MUSIC_PLAYER, 6, musicName);
+        player.getPacketSender().sendMusic(song.getId());
+        player.getPacketSender().sendString(Interface.MUSIC_PLAYER, 9, musicName);
         //TreasureTrail.playSong(player, music.getName());
         return true;
     }

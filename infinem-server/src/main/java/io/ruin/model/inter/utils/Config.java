@@ -231,10 +231,12 @@ public class Config {
             varp(1338, true),
             varp(1681, true),
             varp(2065, true),
-            //varp(2237, true),
-            //varp(2950, true),
-            //varp(3418, true),
-            //varp(3575, true),
+            varp(2237, true),
+            varp(2950, true),
+            varp(3418, true),
+            varp(3575, true),
+            varp(4066, true),
+            varp(4411, true)
     };
 
     public static final Config MUSIC_PREFERENCE = varp(18, true);

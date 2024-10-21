@@ -26,7 +26,7 @@ public class DBRowDefinition {
             if (data != null)
                 def.decode(new InBuffer(data));
             LOADED[id] = def;
-            System.out.println("[DBRow]" + id + ": " + Arrays.deepToString(def.columnTypes) + " --- " + Arrays.deepToString(def.columnValues));
+            System.out.println("[DBRow]" + def);
         }
     }
 
@@ -43,6 +43,12 @@ public class DBRowDefinition {
 
     public DBRowDefinition(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "DBRow{" + "id=" + id + ", tableId=" + tableId + ", types=" + Arrays.deepToString(columnTypes) + ", values=" + Arrays.deepToString(columnValues) + "}";
     }
 
     public void decode(InBuffer in) {

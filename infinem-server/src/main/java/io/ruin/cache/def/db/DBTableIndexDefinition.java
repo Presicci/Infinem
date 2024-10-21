@@ -26,6 +26,7 @@ public class DBTableIndexDefinition {
                 if (data != null)
                     row.decode(new InBuffer(data));
                 indexes.put(archiveId << 16 | fileId, row);
+                System.out.println("[DBTableIndex] " + archiveId + ", " + fileId + ": " + Arrays.toString(row.tupleTypes) + " --- " + row.tupleIndexes);
             }
         }
     }
@@ -38,6 +39,22 @@ public class DBTableIndexDefinition {
     public DBTableIndexDefinition(int tableId, int columnId) {
         this.tableId = tableId;
         this.columnId = columnId;
+    }
+
+    public List<Integer> getRowsByInteger(int index) {
+        return getRowsByInteger(0, index);
+    }
+
+    public List<Integer> getRowsByInteger(int tableIndex, int index) {
+        if (index < 0 || index > tupleIndexes.size()) {
+            System.err.println("[DBTableIndex " + tableId + ", " + columnId + " - " + tableIndex + "] - Requested row at index " + index + ", but index does not exist." );
+            return Collections.emptyList();
+        }
+        if (tupleTypes[0] != BaseVarType.INTEGER) {
+            System.err.println("[DBTableIndex " + tableId + ", " + columnId + " - " + tableIndex + "] - Requested row at index " + index + ", but index is not type Integer." );
+            return Collections.emptyList();
+        }
+        return tupleIndexes.get(tableIndex).get(index);
     }
 
     private void decode(InBuffer in) {
@@ -81,5 +98,13 @@ public class DBTableIndexDefinition {
                 return in.readString();
         }
         return null;
+    }
+
+    public static DBTableIndexDefinition get(int tableId) {
+        return indexes.get(tableId << 16);
+    }
+
+    public static DBTableIndexDefinition get(int tableId, int columnId) {
+        return indexes.get(tableId << 16 | columnId + 1);
     }
 }

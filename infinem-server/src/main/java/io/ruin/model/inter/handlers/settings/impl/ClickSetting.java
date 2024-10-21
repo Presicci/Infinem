@@ -32,7 +32,7 @@ public enum ClickSetting {
     ELITE_CLUE_SCROLL_WARNING(0, 70, 70),
     MASTER_CLUE_SCROLL_WARNING(0, 71, 71),
     // Audio
-    MUSIC_LOOPING(1, 7, 88),
+    MUSIC_LOOPING(1, 7, 88, Config.MUSIC_LOOP::toggle),
     MUSIC_UNLOCK_MESSAGE(1, 5, 89, Config.MUSIC_UNLOCK_MESSAGE::toggle),
     // Chat
     PROFANITY_FILTER(2, 1, 92, Config.PROFANITY_FILTER::toggle),
