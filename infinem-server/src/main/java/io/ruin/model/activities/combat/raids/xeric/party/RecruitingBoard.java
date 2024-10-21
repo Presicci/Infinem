@@ -4,6 +4,8 @@ import io.ruin.Server;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerAction;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -21,10 +23,15 @@ import io.ruin.model.stat.StatType;
 import java.util.ArrayList;
 import java.util.List;
 
-import static io.ruin.model.stat.StatType.CLIENT_ORDER;
-
 public class RecruitingBoard {
 
+    /**private static final StatType[] CLIENT_ORDER = new StatType[] {
+            StatType.Magic, StatType.Attack, StatType.Defence, StatType.Strength, StatType.Hitpoints,
+            StatType.Ranged, StatType.Fishing, StatType.Firemaking, StatType.Woodcutting, StatType.Smithing,
+            StatType.Cooking, StatType.Thieving, StatType.Mining, StatType.Runecrafting, StatType.Agility,
+            StatType.Prayer, StatType.Herblore, StatType.Fletching, StatType.Slayer, StatType.Crafting,
+            StatType.Construction, StatType.Farming, StatType.Hunter
+    };*/
     private static final Bounds BOUNDS = new Bounds(1215, 3541, 1277, 3581, 0);
     public static List<Player> ADVERTISED_PARTIES = new ArrayList<>(50);
 
@@ -40,7 +47,7 @@ public class RecruitingBoard {
                     else
                         displayParty(player, player.raidsParty);
             };
-            h.actions[14] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[15] = (DefaultAction) (player, option, slot, itemId) -> {
                 if (slot < ADVERTISED_PARTIES.size() && ADVERTISED_PARTIES.get(slot) != null) {
                     Player partyLeader = ADVERTISED_PARTIES.get(slot);
                     displayParty(player, partyLeader.raidsParty);
@@ -70,7 +77,11 @@ public class RecruitingBoard {
                 if (slot == 7)
                     setPreferredSetting(player, "skill total", Config.RAIDS_PREFERRED_SKILL_TOTAL, 33, 2277);
                 if (slot == 8)
+                    player.sendMessage("Scaling is not currently available.");
+                if (slot == 9)
                     player.sendMessage("Challenge mode is not currently available.");
+                if (slot == 10)
+                    player.sendMessage("Large raids are not currently available.");
             };
         });
     }
@@ -81,10 +92,12 @@ public class RecruitingBoard {
             if (i < ADVERTISED_PARTIES.size() && ADVERTISED_PARTIES.get(i) != null) {
                 Player partyHost = ADVERTISED_PARTIES.get(i);
                 String partyInformation = "<col=ffffff>" + partyHost.getName() + "</col>" + "|" +
-                        (partyHost.raidsParty.getMembers().size() + 1) + "|" +
+                        partyHost.raidsParty.getMembers().size() + "|" +
                         Config.RAIDS_PREFERRED_PARTY_SIZE.get(partyHost) + "|" +
                         Config.RAIDS_PREFERRED_COMBAT_LEVEL.get(partyHost) + "|" +
                         Config.RAIDS_PREFERRED_SKILL_TOTAL.get(partyHost) + "|" +
+                        0 + "|" +   // Scaling
+                        0 + "|" +   // Challenge mode
                         (Server.currentTick() - partyHost.advertisementStartTick) + "|";
                 player.getPacketSender().sendClientScript(1566, "is", i, partyInformation);
             } else {
@@ -246,7 +259,8 @@ public class RecruitingBoard {
         leaderInformation.append("<col=ffffff>").append(partyLeader.getName()).append("</col>").append("|");
         leaderInformation.append(partyLeader.getCombat().getLevel()).append("|");
         leaderInformation.append(partyLeader.getStats().totalLevel).append("|");
-        for (StatType stat : CLIENT_ORDER)
+        leaderInformation.append(KillCounter.getKillCount(partyLeader, BossKillCounter.COX)).append("|");
+        for (StatType stat : StatType.CLIENT_ORDER)
             leaderInformation.append(partyLeader.getStats().get(stat).fixedLevel).append("|");
         player.getPacketSender().sendClientScript(1517, "is", 0, leaderInformation.toString());
 
@@ -259,7 +273,8 @@ public class RecruitingBoard {
                 memberInformation.append("<col=9f9f9f>").append(party.getMembers().get(i).getName()).append("</col>").append("|");
                 memberInformation.append(party.getMembers().get(i).getCombat().getLevel()).append("|");
                 memberInformation.append(party.getMembers().get(i).getStats().totalLevel).append("|");
-                for (StatType stat : CLIENT_ORDER)
+                memberInformation.append(KillCounter.getKillCount(party.getMembers().get(i), BossKillCounter.COX)).append("|");
+                for (StatType stat : StatType.CLIENT_ORDER)
                     memberInformation.append(party.getMembers().get(i).getStats().get(stat).fixedLevel).append("|");
                 player.getPacketSender().sendClientScript(1517, "is", i + 1, memberInformation.toString());
             }
