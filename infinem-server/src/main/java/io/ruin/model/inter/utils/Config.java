@@ -114,6 +114,7 @@ public class Config {
             varp(3008, true).defaultValue(0),   // Private
             varp(3009, true).defaultValue(0)    // Broadcast
     };
+    public static final Config NEW_SKILL_GUIDE = Config.varpbit(15321, true);
 
     /**
      * Advanced options

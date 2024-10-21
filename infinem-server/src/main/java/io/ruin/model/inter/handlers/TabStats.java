@@ -1,6 +1,7 @@
 package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
@@ -45,7 +46,6 @@ public class TabStats {
             h.actions[22] = (OptionAction) (player, option) -> handleStat(player, StatType.Woodcutting);
             h.actions[23] = (OptionAction) (player, option) -> handleStat(player, StatType.Farming);
         });
-
         InterfaceHandler.register(Interface.SKILL_GUIDE, h -> {
             h.actions[13] = (SimpleAction) p -> selectCategory(p, 0);
             h.actions[14] = (SimpleAction) p -> selectCategory(p, 1);
@@ -61,6 +61,9 @@ public class TabStats {
             h.actions[24] = (SimpleAction) p -> selectCategory(p, 11);
             h.actions[25] = (SimpleAction) p -> selectCategory(p, 12);
             h.actions[26] = (SimpleAction) p -> selectCategory(p, 13);
+        });
+        InterfaceHandler.register(860, h -> {
+            h.actions[4] = (SimpleAction) player -> player.closeInterface(InterfaceType.WORLD_MAP);;
         });
     }
 
@@ -79,10 +82,14 @@ public class TabStats {
     }
 
     public static void openGuide(Player player, StatType statType, int category) {
-        Config.SKILL_GUIDE_STAT.set(player, statType.clientId);
-        Config.SKILL_GUIDE_CAT.set(player, category);
-        //player.getPacketSender().sendClientScript(917, "ii", 4600861, 80);
-        player.openInterface(InterfaceType.MAIN, Interface.SKILL_GUIDE);
+        if (Config.NEW_SKILL_GUIDE.get(player) == 0) {
+            Config.SKILL_GUIDE_STAT.set(player, statType.clientId);
+            Config.SKILL_GUIDE_CAT.set(player, category);
+            player.openInterface(InterfaceType.MAIN, Interface.SKILL_GUIDE);
+        } else {
+            player.openInterface(InterfaceType.WORLD_MAP, 860);
+            player.getPacketSender().sendClientScript(1902, "ii", statType.ordinal(), 0);   // Stat index, tab index
+        }
     }
 
     private static void selectCategory(Player player, int category) {
