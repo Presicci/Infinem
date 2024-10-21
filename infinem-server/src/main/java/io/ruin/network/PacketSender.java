@@ -82,8 +82,7 @@ public class PacketSender {
         player.getChannel().write(out.toBuffer()); //no encryption needed!
 
         sendRegion(true);
-        //sendActiveWorld();
-        //sendNPCUpdateOrigin();
+        sendActiveWorld();
         Region.update(player);
     }
 
