@@ -26,11 +26,11 @@ public class DiaryScroll {
         player.openInterface(InterfaceType.MAIN, Interface.DIARY_SCROLL);
         player.getPacketSender().sendClientScript(2498, "i", 1);
         for (int index = 0; index < size; index++) {
-            if (index > 174)
+            if (index > 199)
                 break;
-            player.getPacketSender().sendString(Interface.DIARY_SCROLL, index + 4, lines.get(index));
+            player.getPacketSender().sendString(Interface.DIARY_SCROLL, index + 10, lines.get(index));
         }
-        player.getPacketSender().sendString(Interface.DIARY_SCROLL, 2, title);
+        player.getPacketSender().sendString(Interface.DIARY_SCROLL, 4, title);
         if (size >= 10) {
             player.getPacketSender().sendClientScript(2523, "ii", 1, size);
         }
