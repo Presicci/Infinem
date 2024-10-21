@@ -73,7 +73,7 @@ public enum ServerPacket {
     LOGOUT_FULL(59, 0),
     PLAYER_ANIM_SPECIFIC(60, 3),
     UPDATE_FRIENDLIST(61, -2),
-    CAM_LOOKAT2(62, 6), //  TODO BUFFER
+    CAM_SETANGLE(62, 6),
     FRIENDLIST_LOADED(63, 0),
     IF_SETANGLE(64, 10),
     IF_SETANIM(65, 6), //  TODO TEST
@@ -147,11 +147,7 @@ public enum ServerPacket {
     HIDELOCOPS(133, 1),
     WORLDENTITY_INFO(134, -2),
     PROJANIM_SPECIFIC(135, 22),
-    UNKNOWN_STRING(136, -1),
-
-
-    CAM_SETANGLE(137, 6),   // Used but belongs to already used CAM packet
-    ;
+    UNKNOWN_STRING(136, -1);
 
     private final int packetId, packetSize;
 

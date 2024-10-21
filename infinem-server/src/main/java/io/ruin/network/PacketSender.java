@@ -22,7 +22,6 @@ import io.ruin.model.shop.ShopItem;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.function.Function;
@@ -1058,7 +1057,7 @@ public class PacketSender {
         Position pos = new Position(x, y, 0);
         int posX = pos.getSceneX(player.getPosition());
         int posY = pos.getSceneY(player.getPosition());
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_LOOKAT2.getPacketId())
+        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_SETANGLE.getPacketId())
                 .addByte(posX)
                 .addByte(posY)
                 .addShort(cameraHeight)
@@ -1071,7 +1070,7 @@ public class PacketSender {
         Position pos = new Position(x, y, 0);
         int posX = pos.getSceneX(player.getPosition());
         int posY = pos.getSceneY(player.getPosition());
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_SETANGLE.getPacketId())
+        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_MOVETO.getPacketId())
                 .addByte(posX)
                 .addByte(posY)
                 .addShort(cameraHeight)
