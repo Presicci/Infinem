@@ -270,7 +270,7 @@ public class MusicPlayer {
         ticks = 0;
         currentlyPlaying = song;
         stopped = false;
-        player.getPacketSender().sendMusic(song.getId());
+        player.getPacketSender().sendMusic(song.getId(), 0, 60, 60, 0);
         player.getPacketSender().sendString(Interface.MUSIC_PLAYER, 9, musicName);
         //TreasureTrail.playSong(player, music.getName());
         return true;
