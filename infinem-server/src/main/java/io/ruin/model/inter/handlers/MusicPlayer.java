@@ -113,6 +113,10 @@ public class MusicPlayer {
         }
         if (stopped)
             stopped = false;
+        else {
+            player.getPacketSender().sendMusic(song.getId(), 0, 0, 0, 0);
+            player.getPacketSender().sendString(Interface.MUSIC_PLAYER, 9, song.getName());
+        }
         nextSongAtTicks = song.getDuration();
         ticks = 0;
     }

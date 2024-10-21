@@ -99,6 +99,7 @@ public class DisplayHandler implements Incoming {
         ps.sendAccessMask(Interface.OPTIONS, 38, 1, 5, AccessMasks.ClickOp1);
         ps.sendAccessMask(Interface.OPTIONS, 39, 1, 4, AccessMasks.ClickOp1);
         ps.sendAccessMask(Interface.OPTIONS, 41, 1, 3, AccessMasks.ClickOp1);
+        ps.sendAccessMask(Interface.OPTIONS, 104, 0, 21, AccessMasks.ClickOp1);
     }
 
     public static void openInterface(Player player, int interfaceId, int resizableComponent, int overlayType) {

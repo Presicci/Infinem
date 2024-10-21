@@ -43,6 +43,14 @@ public class TabOptions {
             /**
              * Audio
              */
+            h.actions[104] = (SlotAction) (player, i) -> {
+                if (i != 0) {
+                    if (Config.MUSIC_VOLUME.get(player) == 0) {
+                        player.getMusic().restartCurrent();
+                    }
+                }
+                Config.MUSIC_VOLUME.set(player, i);
+            };
             h.actions[121] = (SimpleAction) Config.MUSIC_UNLOCK_MESSAGE::toggle;
         });
     }
