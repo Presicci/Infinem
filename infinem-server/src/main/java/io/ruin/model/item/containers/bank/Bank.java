@@ -56,6 +56,7 @@ public class Bank extends ItemContainerG<BankItem> {
         player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 3, 0, 27, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4, AccessMasks.ClickOp5, AccessMasks.ClickOp6, AccessMasks.ClickOp7, AccessMasks.ClickOp8, AccessMasks.ClickOp9, AccessMasks.ClickOp10, AccessMasks.DragDepth1, AccessMasks.DragTargetable);
         // Equipment inventory
         player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 4, 0, 27, AccessMasks.ClickOp1, AccessMasks.ClickOp9, AccessMasks.ClickOp10, AccessMasks.DragDepth1, AccessMasks.DragTargetable);
+        player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 11, 0, 27, AccessMasks.ClickOp1, AccessMasks.ClickOp9, AccessMasks.ClickOp10, AccessMasks.DragDepth1, AccessMasks.DragTargetable);
         // Bank container
         player.getPacketSender().sendAccessMask(Interface.BANK, 13, 0, 1219, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4, AccessMasks.ClickOp5, AccessMasks.ClickOp6, AccessMasks.ClickOp7, AccessMasks.ClickOp8, AccessMasks.ClickOp9, AccessMasks.ClickOp10, AccessMasks.DragDepth2, AccessMasks.DragTargetable);
         // Empty slots at end of tabs
@@ -827,7 +828,7 @@ public class Bank extends ItemContainerG<BankItem> {
             /**
              * Looting bag
              */
-            h.actions[8] = (SimpleAction) p -> {
+            h.actions[6] = (SimpleAction) p -> {
                 boolean messaged = false;
                 for (Item item : p.getLootingBag().getItems()) {
                     if (item != null) {
@@ -835,7 +836,7 @@ public class Bank extends ItemContainerG<BankItem> {
                     }
                 }
             };
-            h.actions[13] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[11] = (DefaultAction) (player, option, slot, itemId) -> {
                 Item item = player.getLootingBag().get(slot, itemId);
                 if(item == null)
                     return;
