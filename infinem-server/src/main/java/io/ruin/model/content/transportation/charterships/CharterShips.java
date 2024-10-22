@@ -44,8 +44,8 @@ public class CharterShips {
             player.sendMessage("You are already here!");
             return;
         }
-        if (ship != CharterPoints.CRANDOR)
-            Config.CHARTER_PREVIOUS.set(player, ship.ordinal() + 1);
+        //if (ship != CharterPoints.CRANDOR)
+        //    Config.CHARTER_PREVIOUS.set(player, ship.ordinal() + 1);
         Traveling.fadeTravel(player, ship.pos);
         player.closeInterface(InterfaceType.MAIN);
         if (ship == CharterPoints.MOS_LEHARMLESS) {
