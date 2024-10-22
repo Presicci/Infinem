@@ -32,8 +32,10 @@ public class CharterShips {
         Config.varp(365, false).set(player, 2);         // Unlocks shipyard
         Config.varp(150, false).set(player, 160);       // Unlocks shipyard
         Config.varp(328, false).set(player, 15);        // Unlocks port tyras
-        //Config.varp(176, false).set(player, 2);         // Unlocks crandor
+        //Config.varp(176, false).set(player, 2);               // Unlocks crandor
         Config.varpbit(9016, false).set(player, 200);   // Unlocks prif
+        Config.varpbit(4897, false).set(player, 1);     // unlocks kourend
+        //Config.varpbit(9650, false).set(player, 1);           // unlocks varlamore
         player.openInterface(InterfaceType.MAIN, Interface.CHARTER);
     }
 
