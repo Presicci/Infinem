@@ -133,6 +133,7 @@ public class DisplayHandler implements Incoming {
     public static void updateGameframe(Player player, int gameframeIndex) {
         Map<Integer, Integer> oldComponents = getToplevelComponents(player).getValuesAsInts();
 
+        player.getPacketSender().sendClientScript(3998, "i", gameframeIndex == 1 ? 0 : 1);
         player.setDisplayMode(gameframeIndex);
         Config.SIDE_PANELS.setInstant(player, gameframeIndex == 3 ? 1 : 0);
         player.getPacketSender().sendGameFrame(getGameFrameFor(gameframeIndex));
@@ -148,7 +149,7 @@ public class DisplayHandler implements Incoming {
         PacketSender ps = player.getPacketSender();
         if (player.isFixedScreen()) {
             ps.sendGameFrame(548);
-        } else if (Config.SIDE_PANELS.get(player) == 0) {
+        } else if (Config.SIDE_PANELS.get(player) == 1) {
             ps.sendGameFrame(164);
         } else {
             ps.sendGameFrame(161);
@@ -179,6 +180,7 @@ public class DisplayHandler implements Incoming {
                 ps.moveInterface(from >> 16, from & 0xffff, to >> 16, to & 0xffff);
             }
         }
+        sendInitialAccessMasks(player);
     }
 
     public static int getGameFrameFor(int displayMode) {
