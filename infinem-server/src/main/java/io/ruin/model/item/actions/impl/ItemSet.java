@@ -80,6 +80,11 @@ public class ItemSet {
             h.actions[2] = (DefaultAction) (p, option, slot, itemId) -> {
                 if(slot < 0 || slot >= sets.length)
                     return;
+                // Founder packs
+                if (slot >= 103 && slot <= 105) {
+                    p.sendMessage("You can't pack that item set.");
+                    return;
+                }
                 if(option == 1) {
                     sets[slot].select(p);
                     return;
@@ -92,6 +97,10 @@ public class ItemSet {
                 Item item = p.getInventory().get(slot, itemId);
                 if(item == null)
                     return;
+                if (item.getId() >= 26554 && item.getId() <= 26562) {
+                    p.sendMessage("To unpack that, left-click it from your inventory.");
+                    return;
+                }
                 if(option == 1) {
                     ItemSet set = item.getDef().itemSet;
                     if(set != null)
@@ -115,7 +124,7 @@ public class ItemSet {
     public static void open(Player player) {
         player.openInterface(InterfaceType.MAIN, 451);
         player.openInterface(InterfaceType.INVENTORY, 430);
-        player.getPacketSender().sendAccessMask(Interface.ITEM_SETS, 2, 0, 84, 1026);
+        player.getPacketSender().sendAccessMask(Interface.ITEM_SETS, 2, 0, 109, 1026);
         player.getPacketSender().sendAccessMask(Interface.ITEM_SETS_INV, 0, 0, 27, 1026);
     }
 
