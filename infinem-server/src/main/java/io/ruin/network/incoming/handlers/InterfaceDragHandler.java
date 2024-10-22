@@ -17,9 +17,9 @@ public class InterfaceDragHandler {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
             int draggedWidgetHash = in.readLEInt();
-            int draggedOnItemId = in.readUnsignedShort();
+            int draggedOnItemId = in.readUnsignedLEShort();
             int fromSlot = in.readUnsignedLEShortAdd();
-            int draggedItemId = in.readUnsignedLEShort();
+            int draggedItemId = in.readUnsignedShort();
             int toSlot = in.readUnsignedLEShort();
             int draggedOnWidgetHash = in.readLEInt();
             handleDrag(player, draggedWidgetHash, fromSlot, draggedItemId, draggedOnWidgetHash, toSlot, draggedOnItemId);
