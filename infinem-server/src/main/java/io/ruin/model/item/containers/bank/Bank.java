@@ -8,7 +8,6 @@ import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
-import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.inter.handlers.TabInventory;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -66,6 +65,8 @@ public class Bank extends ItemContainerG<BankItem> {
         // Tabs
         player.getPacketSender().sendAccessMask(Interface.BANK, 11, 10, 10, AccessMasks.ClickOp1, AccessMasks.ClickOp7, AccessMasks.DragTargetable);
         player.getPacketSender().sendAccessMask(Interface.BANK, 11, 11, 19, AccessMasks.ClickOp1, AccessMasks.ClickOp6, AccessMasks.ClickOp7, AccessMasks.DragDepth1, AccessMasks.DragTargetable);
+        // Incinerator
+        player.getPacketSender().sendAccessMask(Interface.BANK, 50, 0, 1219, ClickOp1);
 
         player.getPacketSender().sendAccessMask(Interface.BANK, 47, 1, 816, 2);
         player.getPacketSender().sendAccessMask(Interface.BANK, 50, 0, 3, AccessMasks.ClickOp1);
@@ -393,8 +394,9 @@ public class Bank extends ItemContainerG<BankItem> {
 
     private void incinerate(int slot, int itemId) {
         BankItem item = get(slot - 1, itemId);
-        if(item == null)
+        if(item == null) {
             return;
+        }
         setBlank(item);
     }
 
@@ -721,7 +723,7 @@ public class Bank extends ItemContainerG<BankItem> {
             h.actions[40] = (SimpleAction) Config.BANK_ALWAYS_PLACEHOLDERS::toggle;
             h.actions[44] = (SimpleAction) p -> p.getBank().deposit(p.getInventory(), true);
             h.actions[46] = (SimpleAction) p -> p.getBank().deposit(p.getEquipment(), true);
-            h.actions[47] = (DefaultAction) (p, option, slot, itemId) -> p.getBank().incinerate(slot, itemId);
+            h.actions[50] = (DefaultAction) (p, option, slot, itemId) -> p.getBank().incinerate(slot, itemId);
             h.actions[56] = (SimpleAction) Config.BANK_INCINERATOR::toggle;
             h.actions[57] = (SimpleAction) Config.BANK_TUTORIAL_BUTTON::toggle;
             h.actions[60] = (SimpleAction) p -> Config.BANK_INVENTORY_OPTIONS.set(p, 1);
