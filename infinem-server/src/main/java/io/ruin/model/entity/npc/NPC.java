@@ -8,6 +8,7 @@ import io.ruin.model.combat.npc.basic.BasicArcherCombat;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
 import io.ruin.model.entity.shared.listeners.DeathListener;
@@ -578,5 +579,30 @@ public class NPC extends NPCAttributes {
 
     public TaskOnlyNPC getTaskOnlyNPC() {
         return getTemporaryAttribute(AttributeKey.TASK_ONLY);
+    }
+
+    public ArrayList<Entity> getPossibleTargets() {
+        return getPossibleTargets(14, true, false);
+    }
+
+    public ArrayList<Entity> getPossibleTargets(int distance, boolean players, boolean npcs) {
+        ArrayList<Entity> possibleTargets = new ArrayList<Entity>();
+        if (players) {
+            for (Player player : World.players) {
+                if (player == null || player.getCombat().isDead() || player.getPosition().distance(this.getCentrePosition()) > distance) {
+                    continue;
+                }
+                possibleTargets.add(player);
+            }
+        }
+        if (npcs) {
+            for (NPC npc : World.npcs) {
+                if (npc == null || npc == this || npc.getCombat().isDead() || npc.getCentrePosition().distance(this.getCentrePosition()) > distance) {
+                    continue;
+                }
+                possibleTargets.add(npc);
+            }
+        }
+        return possibleTargets;
     }
 }
