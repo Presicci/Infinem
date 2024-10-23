@@ -4753,5 +4753,15 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
+  },
+
+  {
+    "name": "null",
+    "id": 1334,
+    "x": 1498,
+    "y": 3403,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]

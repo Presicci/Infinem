@@ -1265,5 +1265,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Trader Crewmember",
+    "id": 1334,
+    "x": 1807,
+    "y": 3677,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
