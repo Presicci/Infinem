@@ -347,7 +347,7 @@ public class SlayerMaster {
         int master = Config.SLAYER_MASTER.get(player);
         switch (master) {
             case 2:
-                return 402;
+                return 13620;
             case 3:
                 return 403;
             case 4:
@@ -355,7 +355,7 @@ public class SlayerMaster {
             case 5:
                 return 6797;
             case 6:
-                return 405;
+                return 13622;
             case 7:
                 return 7663;
             case 8:
@@ -363,7 +363,7 @@ public class SlayerMaster {
             case 9:
                 return 6798;
             default:
-                return 401;
+                return 13618;
         }
     }
 

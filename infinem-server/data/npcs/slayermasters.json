@@ -1,7 +1,7 @@
 [
   {
 	// Turael
-	"npcId": 401,
+	"npcId": 13618,
 	"defs": [
 		{
 			"weighing": 8,
@@ -175,7 +175,7 @@
   },
   {
 	// Mazchna
-	"npcId": 402,
+	"npcId": 13620,
 	"defs": [
 		{
 			"weighing": 8,
@@ -1523,7 +1523,7 @@
   },
   {
 	// Duradel
-	"npcId": 405,
+	"npcId": 13622,
 	"defs": [
 		{
 			"weighing": 7,
