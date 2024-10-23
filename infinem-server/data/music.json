@@ -27,11 +27,7 @@
     "name": "Lazy Wabbit",
     "hint": "unlocked during an Easter holiday event.",
     "musicId": 2502,
-    "duration": 292,
-    "regionIds": [
-      8771, 
-	  8772
-    ]
+    "duration": 292
   },
   {
     "name": "Autumn Voyage",
@@ -395,13 +391,12 @@
     ]
   },
   {
-    "name": "Duel Arena",
+    "name": "The Emir's Arena",
     "hint": "unlocked at the Duel Arena.",
     "musicId": 47,
     "duration": 402,
     "regionIds": [
-      13362,
-      13618
+      13362
     ]
   },
   {
@@ -1882,7 +1877,7 @@
     "duration": 488
   },
   {
-    "name": "Magic, Magic, Magic",
+    "name": "Magic\t Magic\t Magic",
     "hint": "unlocked during Tower of Life.",
     "musicId": 235,
     "duration": 490
@@ -1894,7 +1889,7 @@
     "duration": 352
   },
   {
-    "name": "Work, Work, Work",
+    "name": "Work\t Work\t Work",
     "hint": "unlocked during the Tower of Life quest.",
     "musicId": 237,
     "duration": 534,
@@ -3430,7 +3425,7 @@
     "duration": 422
   },
   {
-    "name": "Maws, Jaws & Claws",
+    "name": "Maws Jaws & Claws",
     "hint": "unlocked during the fight with Cerberus in its lair.",
     "musicId": 439,
     "duration": 574
