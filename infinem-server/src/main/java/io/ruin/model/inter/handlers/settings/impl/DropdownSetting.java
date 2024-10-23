@@ -12,12 +12,13 @@ import java.util.function.BiConsumer;
  * Created on 10/15/2024
  */
 public enum DropdownSetting {
-    BOSS_OVERLAY_DISPLAY_TYPE(0, 49, 49),
-    LMS_FOG_COLOR(0, 61, 61),
-    MUSIC_AREA_MODE(1, 6, 87),
-    HIT_SOUNDS(1, 9, 90),
+    BOSS_OVERLAY_DISPLAY_TYPE(0, 49, 49),   // VB 14708 0, 1
+    LMS_FOG_COLOR(0, 61, 61),   // VB 11865, 0 -> 5
+    MUSIC_AREA_MODE(1, 6, 87),  // VB 12233, 0, 1
+    HIT_SOUNDS(1, 9, 90),   // VB 10731 0, 1
     PLAYER_ATTACK_OPTION(3, 3, 151, Config.PLAYER_ATTACK_OPTION::set),
     NPC_ATTACK_OPTION(3, 4, 152, Config.NPC_ATTACK_OPTION::set),
+    // CTRL CLICK TO INVERT RUN --- VB 13132 0 = always, 1 = walk->run only, 2 = run->walk only, 3 = always
     KEYBIND_1(3, 24, 172, (player, i) -> keybind(player, i, 0)),
     KEYBIND_2(3, 25, 173, (player, i) -> keybind(player, i, 1)),
     KEYBIND_3(3, 26, 174, (player, i) -> keybind(player, i, 2)),
@@ -34,9 +35,9 @@ public enum DropdownSetting {
     KEYBIND_14(3, 37, 185, (player, i) -> keybind(player, i, 13)),
     PRONOUNS(5, 1, 203, Config.PRONOUNS::set),
     DISPLAY(6, 1, 235, (player, i) -> DisplayHandler.updateGameframe(player, i == 2 ? 1 : i == 5 ? 2 : 3)),
-    QUEST_LIST_SORTING(6, 25, 259),
-    SHOW_QUESTS_LACK_REQUIREMENTS(6, 26, 260),
-    SHOW_QUESTS_LACK_RECOMMENDED(6, 27, 261),
+    QUEST_LIST_SORTING(6, 25, 259), // VB 13772
+    SHOW_QUESTS_LACK_REQUIREMENTS(6, 26, 260),  // VB 13778
+    SHOW_QUESTS_LACK_RECOMMENDED(6, 27, 261),   // VB 13779
     QUEST_LIST_TEXT_SIZE(6, 34, 268),
     CHATBOX_SCROLLBAR(6, 52, 286, Config.CHATBOX_SCROLLBAR::set),
     SIDE_PANEL_BORDER(6, 53, 287);
