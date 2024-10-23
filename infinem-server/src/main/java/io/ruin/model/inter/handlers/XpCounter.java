@@ -13,7 +13,7 @@ import io.ruin.model.stat.StatType;
 public class XpCounter {
 
     public static void sendCounter(Player player) {
-        int childId = player.isFixedScreen() ? 16 : 9;
+        int childId = player.isFixedScreen() ? 33 : 9;
         player.getPacketSender().sendInterface(122, player.getGameFrameId(), childId, 1);
     }
 
@@ -23,7 +23,7 @@ public class XpCounter {
              * Toggle
              */
             boolean enabled = Config.XP_COUNTER_SHOWN.toggle(player) == 1;
-            int childId = player.isFixedScreen() ? 16 : 9;
+            int childId = player.isFixedScreen() ? 33 : 9;
             if(enabled) {
                 player.getPacketSender().sendInterface(122, player.getGameFrameId(), childId, 1);
             } else {
