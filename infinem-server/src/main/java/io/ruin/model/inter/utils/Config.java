@@ -727,7 +727,7 @@ public class Config {
     /**
      * Chatbox interface setting
      */
-    public static final Config CHATBOX_INTERFACE_USE_FULL_FRAME = varpbit(5983, false);
+    public static final Config CHATBOX_INTERFACE_USE_FULL_FRAME = varpbit(10670, false);
 
     /**
      * Master scroll book
