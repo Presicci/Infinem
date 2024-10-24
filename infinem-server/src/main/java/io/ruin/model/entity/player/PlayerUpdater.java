@@ -225,6 +225,9 @@ public class PlayerUpdater {
                 out.addBits(1, 1);
                 out.addBits(30,  ((diffZ & 0x3) << 28) | ((diffX & 0x3fff) << 14) | (diffY & 0x3fff));
             }
+            if (diffZ != 0) {
+                player.getPacketSender().sendActiveWorld();
+            }
             globalRegionHashes[localPlayer.getIndex()] = localPlayer.getPosition().getRegionHash();
         } else if(updateType == 2) {
             out.addBits(2, 2);
