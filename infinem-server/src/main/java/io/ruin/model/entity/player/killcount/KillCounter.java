@@ -47,30 +47,7 @@ public class KillCounter {
     }
 
     public static void openOwnBoss(Player player) {
-        StringBuilder names = new StringBuilder();
-        StringBuilder totalCounts = new StringBuilder();
-        StringBuilder streaks = new StringBuilder();
-        for (BossKillCounter boss : BossKillCounter.values()) {
-            KillCounter kc = player.getAttribute(boss.name());
-            if (kc == null) {
-                names.append(boss.name);
-                totalCounts.append(0);
-                streaks.append(0);
-            } else {
-                if (boss.name == null) {
-                    names.append("null");
-                } else {
-                    names.append(boss.name);
-                }
-                totalCounts.append(NumberUtils.formatNumber(kc.getKills()));
-                streaks.append(NumberUtils.formatNumber(kc.getStreak()));
-            }
-            names.append("|");
-            totalCounts.append("|");
-            streaks.append("|");
-        }
-        player.putTemporaryAttribute("KILL_COUNTER_LIST", "BOSS");
-        open(player, player, BossKillCounter.values().length, names, totalCounts, streaks, "Boss Kill Log");
+        openBoss(player, player);
     }
 
     public static void openBoss(Player player, Player killer) {
@@ -78,7 +55,7 @@ public class KillCounter {
         StringBuilder totalCounts = new StringBuilder();
         StringBuilder streaks = new StringBuilder();
         for (BossKillCounter boss : BossKillCounter.values()) {
-            KillCounter kc = killer.getAttribute(boss + "_KC");
+            KillCounter kc = getKillCounter(killer, boss);
             if (kc == null) {
                 names.append(boss.name);
                 totalCounts.append(0);
@@ -100,30 +77,7 @@ public class KillCounter {
     }
 
     public static void openOwnSlayer(Player player) {
-        StringBuilder names = new StringBuilder();
-        StringBuilder totalCounts = new StringBuilder();
-        StringBuilder streaks = new StringBuilder();
-        for (SlayerKillCounter monster : SlayerKillCounter.values()) {
-            KillCounter kc = player.killCounterMap.get(monster.name());
-            if (kc == null) {
-                names.append(monster.name);
-                totalCounts.append(0);
-                streaks.append(0);
-            } else {
-                if (monster.name == null) {
-                    names.append("null");
-                } else {
-                    names.append(monster.name);
-                }
-                totalCounts.append(NumberUtils.formatNumber(kc.getKills()));
-                streaks.append(NumberUtils.formatNumber(kc.getStreak()));
-            }
-            names.append("|");
-            totalCounts.append("|");
-            streaks.append("|");
-        }
-        player.putTemporaryAttribute("KILL_COUNTER_LIST", "SLAYER");
-        open(player, player, SlayerKillCounter.values().length, names, totalCounts, streaks, "Slayer Kill Log");
+        openSlayer(player, player);
     }
 
     public static void openSlayer(Player player, Player killer) {
@@ -131,7 +85,7 @@ public class KillCounter {
         StringBuilder totalCounts = new StringBuilder();
         StringBuilder streaks = new StringBuilder();
         for (SlayerKillCounter monster : SlayerKillCounter.values()) {
-            KillCounter kc = killer.killCounterMap.get(monster.name());
+            KillCounter kc = getKillCounter(killer, monster);
             if (kc == null) {
                 names.append(monster.name);
                 totalCounts.append(0);
