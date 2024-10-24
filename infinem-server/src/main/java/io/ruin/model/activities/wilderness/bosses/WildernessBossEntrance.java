@@ -116,8 +116,9 @@ public class WildernessBossEntrance {
     private static void checkFee(Player player) {
         final int cost = ENTRANCE_FEE - (player.getAttributeIntOrZero(KILL_DISCOUNT) * (ENTRANCE_FEE / 5));
         player.dialogue(
-                new ItemDialogue().one(995, "The base entry fee for these caves is " + ENTRANCE_FEE + " coins, which "
+                new ItemDialogue().one(995, "The base entry fee for these caves is " + NumberUtils.formatNumber(ENTRANCE_FEE) + " coins, which "
                                 + (player.hasAttribute(PAID_KEY) ? "you have paid." : "can be paid from your inventory or bank.")
+                                + "Killing wilderness bosses will reduce the fee by " + NumberUtils.formatNumber(ENTRANCE_FEE / 5) + "."
                                 + " You have "
                                 + (player.getAttributeIntOrZero(KILL_DISCOUNT) > 0 ? "a " + cost : "no discount towards your next fee."
                         )
@@ -127,7 +128,7 @@ public class WildernessBossEntrance {
     private static void peekCave(Player player, GameObject object, Cave cave) {
         final int kc = bossKillCounts(player, cave);
         if (kc < 20) {
-            player.sendMessage("You don't know this cave well enough to glean any useful information. You feel that you'll be more successful once you've killed whatever is inside, " + (20 - kc) + " times.");
+            player.sendMessage("You don't know this cave well enough to glean any useful information. You feel that you'll be more successful once you've killed the boss inside, " + (20 - kc) + " more times.");
             return;
         }
         int count = (int) cave.getExitLocation().getRegion().players.stream().count();
@@ -144,7 +145,7 @@ public class WildernessBossEntrance {
         if (player.getInventory().contains(995, cost)) {
             player.getInventory().remove(995, cost);
         } else {
-            player.sendMessage(Color.RED.wrap("You enter the cave and " + cost + " coins are taken from your bank to pay the entry fee."));
+            player.sendMessage(Color.RED.wrap("You enter the cave and " + NumberUtils.formatNumber(cost) + " coins are taken from your bank to pay the entry fee."));
             player.getBank().remove(995, cost);
         }
         player.putAttribute(PAID_KEY, 1);
