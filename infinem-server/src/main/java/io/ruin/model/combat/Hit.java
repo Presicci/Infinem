@@ -10,8 +10,10 @@ import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.skills.magic.spells.TargetSpell;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import lombok.Getter;
 
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class Hit {
@@ -481,5 +483,33 @@ public class Hit {
 
 	public boolean givesExperience() {
 		return experience;
+	}
+
+	/**
+	 * Attributes
+	 */
+	private Map<String, Object> attributes;
+
+	public void putAttribute(final String key, final Object value) {
+		if (attributes == null) {
+			attributes = new Object2ObjectOpenHashMap<>();
+		}
+		attributes.put(key, value);
+	}
+
+	public Hit onLand(final Consumer<Hit> consumer) {
+		putAttribute("on_hit_land", consumer);
+		return this;
+	}
+
+	public Consumer<Hit> getOnLandConsumer() {
+		if (attributes == null) {
+			return null;
+		}
+		final Object attachment = attributes.get("on_hit_land");
+		if (attachment instanceof Consumer) {
+			return (Consumer<Hit>) attachment;
+		}
+		return null;
 	}
 }

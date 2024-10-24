@@ -11,7 +11,7 @@ import java.util.Objects;
 public enum BossKillCounter {
     ABYSSAL_SIRE("Abyssal Sire"),
     ALCHEMICAL_HYDRA("Alchemical Hydra"),
-    //Artio
+    ARTIO("Artio"),
     BARROWS("Barrows Chests"),
     BRYOPHYTA("Bryophyta"),
     CALLISTO("Callisto"),
@@ -72,12 +72,18 @@ public enum BossKillCounter {
 
     BossKillCounter(String name) {
         this.name = name;
-        NPCDefinition.cached.values().stream().filter(Objects::nonNull)
-                .filter(def -> def.name.toLowerCase().contains(name.toLowerCase()))
-                .forEach(def -> def.killCounterType = new KillCounterType(this));
     }
 
     public KillCounterType getCounter() {
         return new KillCounterType(this);
+    }
+
+    static {
+        for (BossKillCounter counter : values()) {
+            if (counter == CALLISTO) continue;
+            NPCDefinition.cached.values().stream().filter(Objects::nonNull)
+                    .filter(def -> def.name.toLowerCase().contains(counter.name.toLowerCase()))
+                    .forEach(def -> def.killCounterType = new KillCounterType(counter));
+        }
     }
 }

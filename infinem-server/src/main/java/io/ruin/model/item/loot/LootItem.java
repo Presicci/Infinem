@@ -30,6 +30,13 @@ public class LootItem {
         this(id, minAmount, maxAmount, weight, null);
     }
 
+    public LootItem(int id, int amount, int weight, boolean noted) {
+        this.id = noted ? ItemDefinition.get(id).notedId : id;
+        this.min = amount;
+        this.max = amount;
+        this.weight = weight;
+    }
+
     public LootItem(int id, int amount, int weight, Map<String, String> attributes) {
         this.id = id;
         this.min = amount;

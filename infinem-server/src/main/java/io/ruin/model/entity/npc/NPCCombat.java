@@ -387,6 +387,17 @@ public abstract class NPCCombat extends Combat {
         return stats[statType.ordinal()];
     }
 
+    public int getHitpointsAsPercentage() {
+        int currentHealth = stats[StatType.Hitpoints.ordinal()].currentLevel;
+        int maxHealth = stats[StatType.Hitpoints.ordinal()].fixedLevel;
+
+        if (maxHealth == 0) {
+            throw new IllegalArgumentException("Fixed level should not be zero to avoid division by zero.");
+        }
+
+        return (int) (((double) currentHealth / maxHealth) * 100);
+    }
+
     @Override
     public double getBonus(int bonusType) {
         return bonusType >= bonuses.length ? 0 : bonuses[bonusType];

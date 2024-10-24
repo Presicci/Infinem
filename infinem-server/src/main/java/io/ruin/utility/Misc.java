@@ -7,6 +7,7 @@ import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.model.map.route.routes.TargetRoute;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -127,5 +128,58 @@ public class Misc {
                 && ProjectileRoute.allow(playerPos.getX(), playerPos.getY(), playerPos.getZ(), 1, otherPos.getX(), otherPos.getY(), 1))
             return true;
         return playerPos.equals(otherPos);
+    }
+
+    public static int getMoveDirection(final int xOffset, final int yOffset) {
+        if (xOffset < 0) {
+            if (yOffset < 0) {
+                return 0;
+            } else if (yOffset > 0) {
+                return 5;
+            } else {
+                return 3;
+            }
+        } else if (xOffset > 0) {
+            if (yOffset < 0) {
+                return 2;
+            } else if (yOffset > 0) {
+                return 7;
+            } else {
+                return 4;
+            }
+        } else {
+            if (yOffset < 0) {
+                return 1;
+            } else if (yOffset > 0) {
+                return 6;
+            } else {
+                return -1;
+            }
+        }
+    }
+
+    public static List<Position> calculateLine(int x1, int y1, final int x2, final int y2, final int plane) {
+        final List<Position> tiles = new ArrayList<>();
+        final int dx = Math.abs(x2 - x1);
+        final int dy = Math.abs(y2 - y1);
+        final int sx = (x1 < x2) ? 1 : -1;
+        final int sy = (y1 < y2) ? 1 : -1;
+        int err = dx - dy;
+        while (true) {
+            tiles.add(new Position(x1, y1, plane));
+            if (x1 == x2 && y1 == y2) {
+                break;
+            }
+            final int e2 = 2 * err;
+            if (e2 > -dy) {
+                err = err - dy;
+                x1 = x1 + sx;
+            }
+            if (e2 < dx) {
+                err = err + dx;
+                y1 = y1 + sy;
+            }
+        }
+        return tiles;
     }
 }

@@ -463,11 +463,6 @@ public class NPCDrops {
                 { new Item(1620, 5), new Item(1618, 5) }    // Uncut ruby and uncut diamond
         });
 
-        put("callisto", new Item[][] {
-                { new Item(1620, 20), new Item(1618, 10) },    // Uncut ruby and uncut diamond
-                { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
-        });
-
         put("chaos fanatic", new Item[][] {
                 { new Item(1622, 6), new Item(1624, 4) },    // Uncut emerald and uncut sapphire
                 { new Item(1035), new Item(1033) }    // Zamorak monk top and zamorak monk bottom

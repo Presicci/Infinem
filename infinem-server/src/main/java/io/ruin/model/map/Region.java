@@ -1,10 +1,8 @@
 package io.ruin.model.map;
 
-import com.google.common.collect.Maps;
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
-import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.containers.bank.BankActions;
 import io.ruin.model.map.object.GameObject;
@@ -13,7 +11,6 @@ import io.ruin.model.skills.construction.House;
 import lombok.Getter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -65,7 +62,7 @@ public class Region {
     public boolean empty;
 
     @Getter
-    private final Set<Music> musicTracks = new HashSet<>();
+    private final Set<RegionMusic> regionMusicTracks = new HashSet<>();
 
     public void init() { //not my favorite design, let's come back to this one day..
         byte[][][] tileData = new byte[4][64][64];
@@ -201,6 +198,13 @@ public class Region {
         return ((absX >> 6) << 8) | absY >> 6;
     }
 
+    public int getId() {
+        if (dynamicData != null) {
+            return dynamicData[0][0][0][1];
+        }
+        return id;
+    }
+
     public static int getClipping(int x, int y, int z) {
         Region region = Region.get(x, y);
         if(region.empty)
@@ -232,7 +236,7 @@ public class Region {
                 tile.destroy();
             activeTiles.clear();
         }
-        musicTracks.clear();
+        regionMusicTracks.clear();
         tiles = null;
         dynamicIndex = -1;
         dynamicData = null;

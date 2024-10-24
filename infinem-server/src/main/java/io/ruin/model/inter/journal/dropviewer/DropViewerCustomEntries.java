@@ -8,6 +8,7 @@ import io.ruin.model.activities.combat.pestcontrol.rewards.PCReward;
 import io.ruin.model.activities.combat.raids.xeric.XericRewards;
 import io.ruin.model.activities.shadesofmortton.FuneralPyre;
 import io.ruin.model.activities.shadesofmortton.ShadeChest;
+import io.ruin.model.activities.wilderness.bosses.callisto.CallistoDropTable;
 import io.ruin.model.entity.npc.actions.misc.Wyson;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.BirdNest;
@@ -189,6 +190,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Gold Crimson Chest (SoM)", ShadeChest.GOLD_CRIMSON.getLootTable()),
             new DropViewerEntry("Gold Black Chest (SoM)", ShadeChest.GOLD_BLACK.getLootTable()),
             new DropViewerEntry("Gold Purple Chest (SoM)", ShadeChest.GOLD_PURPLE.getLootTable()),
-            new DropViewerEntry("Wintertodt Crate", WintertodtCrate.TABLE)
+            new DropViewerEntry("Wintertodt Crate", WintertodtCrate.TABLE),
+            new DropViewerEntry("Callisto", true, CallistoDropTable.REGULAR, CallistoDropTable.UNIQUE)
     ).collect(Collectors.toCollection(ArrayList::new));
 }
