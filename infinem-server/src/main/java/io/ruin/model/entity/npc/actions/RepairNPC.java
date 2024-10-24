@@ -8,12 +8,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.ItemAction;
-import io.ruin.model.item.actions.ItemItemAction;
-import io.ruin.model.item.actions.ItemNPCAction;
-import io.ruin.model.item.actions.impl.ItemBreaking;
 import io.ruin.model.item.actions.impl.degradeable.BarrowsDegradeable;
-import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +16,6 @@ import java.util.Map;
 import java.util.Set;
 
 import static io.ruin.cache.ItemID.COINS_995;
-import static io.ruin.cache.NpcID.BOB_2812;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
