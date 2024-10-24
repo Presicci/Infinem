@@ -71,7 +71,7 @@ public abstract class MessageDecoder<T> extends ByteToMessageDecoder {
         } else if(size == UNHANDLED) {
             byte[] data = new byte[buffer.readableBytes()];
             buffer.readBytes(data);
-            ServerWrapper.logWarning("Unhandled packet size for opcode: " + opcode + " ip: " + IPAddress.get(ctx.channel()) + ", buff: " + Arrays.toString(data));
+            ServerWrapper.logWarning("[" + this + "]Unhandled packet size for opcode: " + opcode + " ip: " + IPAddress.get(ctx.channel()) + ", buff: " + Arrays.toString(data));
             ctx.close();
             return;
         }
@@ -84,7 +84,7 @@ public abstract class MessageDecoder<T> extends ByteToMessageDecoder {
         try {
             byte[] payload = new byte[size];
             buffer.readBytes(payload);
-            if(messages != null) {
+            if (messages != null) {
                 /**
                  * Queue
                  */
