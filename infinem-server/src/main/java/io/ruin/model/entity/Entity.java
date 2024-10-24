@@ -779,6 +779,10 @@ public abstract class Entity extends TemporaryAttributesHolder {
                             });
                         }
                     }
+                    final Consumer<Hit> consumer = hit. getOnLandConsumer();
+                    if (consumer != null) {
+                        consumer.accept(hit);
+                    }
                 }
             }
             queuedHits.removeIf(hit -> hit.removed);
