@@ -9,6 +9,7 @@ import io.ruin.model.activities.combat.raids.xeric.XericRewards;
 import io.ruin.model.activities.shadesofmortton.FuneralPyre;
 import io.ruin.model.activities.shadesofmortton.ShadeChest;
 import io.ruin.model.activities.wilderness.bosses.callisto.CallistoDropTable;
+import io.ruin.model.activities.wilderness.bosses.vetion.VetionDropTable;
 import io.ruin.model.entity.npc.actions.misc.Wyson;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.BirdNest;
@@ -18,6 +19,7 @@ import io.ruin.model.item.actions.impl.WintertodtCrate;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.loot.RareDropTable;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.map.object.actions.impl.PyreSite;
 import io.ruin.model.map.object.actions.impl.chests.*;
 import io.ruin.model.skills.RandomEvent;
@@ -191,6 +193,6 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Gold Black Chest (SoM)", ShadeChest.GOLD_BLACK.getLootTable()),
             new DropViewerEntry("Gold Purple Chest (SoM)", ShadeChest.GOLD_PURPLE.getLootTable()),
             new DropViewerEntry("Wintertodt Crate", WintertodtCrate.TABLE),
-            new DropViewerEntry("Callisto", true, CallistoDropTable.REGULAR, CallistoDropTable.UNIQUE)
+            new DropViewerEntry("Callisto", new DropViewerResultPet(Pet.CALLISTO_CUB, 1500), true, CallistoDropTable.REGULAR, CallistoDropTable.UNIQUE)
     ).collect(Collectors.toCollection(ArrayList::new));
 }

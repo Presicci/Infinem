@@ -13,6 +13,7 @@ import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.map.*;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
@@ -292,7 +293,7 @@ public class Callisto extends NPCCombat {
         // Iterate over up to 10 valid players
         for (int playerLoop = 0; playerLoop < players.size() && playerLoop < 10; playerLoop++) {
             final Player p = players.get(playerLoop);
-            BossKillCounter.CALLISTO.getCounter().increment(p);
+            int killCount = BossKillCounter.CALLISTO.getCounter().increment(p);
 
             if (playerLoop == 0) {
                 new GroundItem(Items.BIG_BONES, 1).owner(p).position(tile).spawn();
@@ -319,8 +320,11 @@ public class Callisto extends NPCCombat {
             p.getCollectionLog().collect(item);
 
             // Pet chance
-            if (Random.rollDie(500, 1)) {
-                //Pet.CALLISTO_CUB.unlockBossDrop(p, p.callistoKills.getKills());
+            int dropAverage = (int) (1500 * (2D - quantityMultiplier));
+            int threshold = 500;
+            int numerator = npc.getDef().killCounterType != null ? (npc.getDef().killCounterType.getKills(p) / threshold) + 1 : 1;
+            if (Random.rollDie(dropAverage, numerator)) {
+                Pet.CALLISTO_CUB.unlock(p);
             }
         }
 

@@ -10,6 +10,7 @@ import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.behavior.FightingNPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.impl.MonkeyGreeGree;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.map.*;
 import io.ruin.model.map.route.routes.DumbRoute;
 import io.ruin.model.map.route.routes.TargetRoute;
@@ -276,7 +277,8 @@ public abstract class NPCCombat extends Combat {
                 Slayer.handleNPCKilled(killer.player, npc);
                 if (npc.getDef().killCounterType != null)
                     npc.getDef().killCounterType.increment(killer.player);
-                if(info.pet != null) {
+                if (info.pet != null
+                        && info.pet != Pet.CALLISTO_CUB) {
                     int dropAverage = info.pet.dropAverage;
                     if (npc.getId() == 6619) {  // Manual override for chaos fanatic sharing boss pet w/ chaos ele
                         dropAverage = 1000;

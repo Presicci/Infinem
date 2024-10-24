@@ -8,9 +8,11 @@ import io.ruin.model.item.loot.LootTable;
  * Created on 6/1/2023
  */
 public class DropViewerEntry {
+
     public int id;
     public String name;
     public LootTable table;
+    public DropViewerResultPet pet;
 
     public DropViewerEntry(int npcId) {
         this.id = npcId;
@@ -23,6 +25,10 @@ public class DropViewerEntry {
     }
 
     public DropViewerEntry(String name, boolean preserveWeight, LootTable... tables) {
+        this(name, null, preserveWeight, tables);
+    }
+
+    public DropViewerEntry(String name, DropViewerResultPet pet, boolean preserveWeight, LootTable... tables) {
         LootTable finalTable = new LootTable();
         for (LootTable table : tables) {
             for (LootTable.ItemsTable iTable : table.tables) {
@@ -31,5 +37,6 @@ public class DropViewerEntry {
         }
         this.name = name;
         this.table = finalTable;
+        this.pet = pet;
     }
 }

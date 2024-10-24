@@ -73,6 +73,10 @@ public class DropViewer {
         displayDrops(petDrop, player, id, name, def.lootTable);
     }
 
+    private static void displayDrops(Player player, DropViewerResultPet pet, String name, LootTable lootTable) {
+        displayDrops(pet, player, -1, name, lootTable);
+    }
+
     private static void displayDrops(Player player, String name, LootTable lootTable) {
         displayDrops(null, player, -1, name, lootTable);
     }
@@ -85,6 +89,7 @@ public class DropViewer {
     }
 
     protected static int getDropChance(int itemId, LootTable lootTable) {
+        if (lootTable == null) return -1;
         if (lootTable.guaranteed != null) {
             Optional<LootItem> item = Arrays.stream(lootTable.guaranteed).filter(i -> i.id == itemId).findFirst();
             if (item.isPresent()) return 1;
@@ -248,7 +253,11 @@ public class DropViewer {
         DropViewerEntry result = results.get(slot);
         player.getPacketSender().setHidden(Interface.DROP_VIEWER, 32, true);
         if (result.table != null) {
-            displayDrops(player, result.name, result.table);
+            if (result.pet != null) {
+                displayDrops(player, result.pet, result.name, result.table);
+            } else {
+                displayDrops(player, result.name, result.table);
+            }
         } else {
             displayDrops(player, result.id, result.name);
         }
