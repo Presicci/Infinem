@@ -330,7 +330,7 @@ public class NPCDrops {
              * Global Broadcast
              */
             if(item.lootBroadcast != null || item.getDef().dropAnnounce) {
-                getRareDropAnnounce(pKiller, item);
+                getRareDropAnnounce(pKiller, item, npc);
             }
 
             double chance = pKiller.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(NotedDropPerk.class, 0);
@@ -378,7 +378,7 @@ public class NPCDrops {
         return false;
     }
 
-    private void getRareDropAnnounce(Player pKiller, Item item) {
+    public static void getRareDropAnnounce(Player pKiller, Item item, NPC npc) {
         int amount = item.getAmount();
         String message = pKiller.getName() + " just received ";
         if(amount > 1)

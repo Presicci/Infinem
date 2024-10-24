@@ -303,7 +303,7 @@ public class Callisto extends NPCCombat {
                     Item item = CallistoDropTable.rollUnique();
                     new GroundItem(item).owner(p).position(tile).spawn();
                     p.getCollectionLog().collect(item);
-                    Broadcast(p, item);
+                    NPCDrops.getRareDropAnnounce(p, item, npc);
                     uniqueGiven = true;
                 } else {
                     trigger -= playerDamage; //remove the current player's damage contribution from the trigger value
@@ -315,7 +315,6 @@ public class Callisto extends NPCCombat {
             // Roll regular tables for the players
             Item item = CallistoDropTable.rollRegular();
             item.setAmount((int) Math.ceil((double) item.getAmount() * quantityMultiplier));
-            System.out.println(p.getName() + ": " + quantityMultiplier + " - " + item.getAmount());
             new GroundItem(item).owner(p).position(tile).spawn();
             p.getCollectionLog().collect(item);
 
@@ -331,17 +330,9 @@ public class Callisto extends NPCCombat {
             Item item = CallistoDropTable.rollUnique();
             new GroundItem(item).owner(p).position(tile).spawn();
             p.getCollectionLog().collect(item);
-            Broadcast(p, item);
+            NPCDrops.getRareDropAnnounce(p, item, npc);
         }
 
         damageMap.clear();
     }
-
-    private void Broadcast(Player p, Item item) {
-        //String message = p.getName() + " just received an " + item.getDef().name + " from Callisto at KC " + (NumberUtils.formatNumber(p.callistoKills.getKills())) + "!";
-        //Broadcast.WORLD.sendNews(Icon.ANNOUNCEMENT, message);
-        //DiscordLink.sendMessageWithEmbedToChannel(DiscordLink.CHANNEL_RARE_DROPS, "Rare drop received!", message, "https://static.runelite.net/cache/item/icon/" + item.getId() + ".png");
-    }
-
-
 }
