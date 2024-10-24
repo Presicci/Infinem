@@ -19,7 +19,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 
 import static io.ruin.cache.ItemID.COINS_995;
-import static io.ruin.cache.ItemID.MAKEOVER_VOUCHER;
 
 public class Bedroom {
 

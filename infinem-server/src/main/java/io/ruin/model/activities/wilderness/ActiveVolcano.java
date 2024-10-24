@@ -22,8 +22,6 @@ import io.ruin.utility.Broadcast;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-import static io.ruin.cache.ItemID.BLOOD_FRAGMENT;
-
 public class ActiveVolcano {
 
     private static boolean DISABLED = true;
@@ -190,7 +188,7 @@ public class ActiveVolcano {
 
     private static void mine(Player player) {
         player.startEvent(event -> {
-            if (player.getInventory().isFull() && !player.getInventory().hasId(BLOOD_FRAGMENT)) {
+            /*if (player.getInventory().isFull() && !player.getInventory().hasId(BLOOD_FRAGMENT)) {
                 player.dialogue(new MessageDialogue("Your inventory is too full to do this."));
                 return;
             }
@@ -220,7 +218,7 @@ public class ActiveVolcano {
                 if (Random.rollDie(10, 1))
                     fallingLava(player, player.getPosition().copy());
                 event.delay(Random.get(3, 8));
-            }
+            }*/
         });
     }
 
