@@ -1,0 +1,20 @@
+[
+  {
+    "id": 6609,
+    "x": 3356,
+    "y": 10326,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9,
+    "name": "Callisto"
+  },
+  {
+    "id": 11992,
+    "x": 1758,
+    "y": 11543,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 20,
+    "name": "Artio"
+  }
+]
