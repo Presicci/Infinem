@@ -325,6 +325,7 @@ public enum Pet {
     private int findRoamId() {
         NPCDefinition baseDef = NPCDefinition.get(npcId);
         for (NPCDefinition def : NPCDefinition.cached.values()) {
+            if (baseDef == null) break;
             if (def == null || def.id == baseDef.id || def.name == null || def.options == null || !def.name.equalsIgnoreCase(baseDef.name)) {
                 continue;
             }
@@ -584,6 +585,8 @@ public enum Pet {
 
     static {
         for (Pet pet : values()) {
+            if (ItemDefinition.get(pet.itemId) == null)
+                System.err.println("No item def for pet: " + pet);
             ItemDefinition.get(pet.itemId).pet = pet;
             NPCDefinition.get(pet.npcId).occupyTiles = false;
             NPCDefinition.get(pet.npcId).ignoreOccupiedTiles = true;
