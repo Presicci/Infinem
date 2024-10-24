@@ -3753,24 +3753,6 @@
     "walkRange": 4
   },
   {
-    "name": "Callisto",
-    "id": 6609,
-    "x": 3291,
-    "y": 3843,
-    "z": 0,
-    "direction": "ne",
-    "walkRange": 8
-  },
-  {
-    "name": "Venenatis",
-    "id": 6610,
-    "x": 3339,
-    "y": 3741,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
     "name": "Chaos Fanatic",
     "id": 6619,
     "x": 2980,
@@ -3796,15 +3778,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 23
-  },
-  {
-    "name": "Vet\u0027ion",
-    "id": 6611,
-    "x": 3229,
-    "y": 3787,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 10
   },
   {
     "name": "Scorpia\u0027s offspring",
