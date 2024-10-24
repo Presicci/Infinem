@@ -76,9 +76,9 @@ public enum ServerPacket {
     CAM_SETANGLE(62, 6),
     FRIENDLIST_LOADED(63, 0),
     IF_SETANGLE(64, 10),
-    IF_SETANIM(65, 6), //  TODO TEST
+    IF_SETANIM(65, 6),
     CAM_RESET(66, 0),
-    LOGOUT(67, 1),  // Not sure which to use between this and logout full, also change names
+    LOGOUT(67, 1),
     UPDATE_RUNENERGY(68, 2),
     REFLECTION_CHECKER(69, -2),
     CAM_MOVETO_EASED(70, 8),
@@ -98,7 +98,7 @@ public enum ServerPacket {
     URL_OPEN(84, -2),
     HEATMAP_TOGGLE(85, 1),
     MESSAGE_CLANCHANNEL_SYSTEM(86, -1),
-    IF_SETPOSITION(87, 8),//  TODO TEST
+    IF_SETPOSITION(87, 8),
     VARCLAN_DISABLE(88, 0),
     IF_SETPLAYERMODEL_SELF(89, 5),
     IF_SETMODEL(90, 6),
@@ -114,7 +114,7 @@ public enum ServerPacket {
     HISCORE_REPLY(100, -2),
     MINIMAP_TOGGLE(101, 1),
     IF_SETEVENTS(102, 12),
-    HINT_ARROW(103, 6),//  TODO TEST
+    HINT_ARROW(103, 6),
     OCULUS_SYNC(104, 4),
     NPC_INFO_SMALL(105, -2),
     IF_OPENSUB(106, 7),
