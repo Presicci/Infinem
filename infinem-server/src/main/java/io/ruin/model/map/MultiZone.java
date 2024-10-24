@@ -106,6 +106,7 @@ public class MultiZone {
                 6710,   // Charcoal burners
                 6992, 6993, // Mole lair
                 9552,   // Fight pits
+                7508,   // Penance queen arena
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
@@ -124,7 +125,8 @@ public class MultiZone {
                 9048, // Skotizo lair
                 10536, // Pest Control battlegrounds
                 13470, 13469, 13726, 13725,  // Wildy slayer dungeon
-                7508,   // Penance queen arena
+
+                13215, 13473, 13727, 13472, // Wilderness Bosses & Escape Cave
         };
         for(int regionId : regions)
             set(true, Bounds.fromRegion(regionId));
