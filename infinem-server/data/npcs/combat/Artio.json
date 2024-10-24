@@ -1,40 +1,40 @@
 [
-  { // Callisto (470)
-    "ids": [ 6503, 6609 ],
+  { // Artio (329)
+    "ids": [ 11992 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.callisto.Callisto",
     //Combat Info
-    "hitpoints": 1000,
-    "aggressive_level": 940,
-    "max_damage": 60,
+    "hitpoints": 450,
+    "aggressive_level": 658,
+    "max_damage": 50,
     "attack_style": "CRUSH",
     "pet": "CALLISTO_CUB",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 1300.0,
+    "slayer_xp": 518.0,
     "slayer_tasks": [ "Callisto", "Bears" ],
     //Combat Stats
-    "attack": 350,
-    "strength": 300,
-    "defence": 225,
-    "ranged": 200,
-    "magic": 140,
+    "attack": 250,
+    "strength": 270,
+    "defence": 150,
+    "ranged": 120,
+    "magic": 90,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
     "crush_attack": 0,
     "magic_attack": 0,
-    "ranged_attack": 100,
+    "ranged_attack": 60,
     //Defensive Stats
-    "stab_defence": 150,
-    "slash_defence": 130,
-    "crush_defence": 125,
+    "stab_defence": 125,
+    "slash_defence": 110,
+    "crush_defence": 110,
     "magic_defence": 0,
-    "ranged_defence": 50,
+    "ranged_defence": 40,
     //Immunites
     "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 5,
     "death_ticks": 5,
     "respawn_ticks": 11,
     //Animations
@@ -42,7 +42,7 @@
     "attack_animation": -1,
     "defend_animation": -1,
     "death_animation": 10017,
-	//Other
-	"local_loot": true
+    //Other
+    "local_loot": true
   }
 ]
