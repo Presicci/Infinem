@@ -112,7 +112,7 @@ public class BestiaryDef {
                 "dessous", "dessous (hard)", "flambeed", "flambeed (hard)", "black demon (hard)", "the kendal", "the kendal (hard)", "the untouchable", "the untouchable (hard)", "nazastarool", "nazastarool (hard)",
                 "gelatinnoth mother", "gelatinnoth mother (hard)", "damis", "damis (hard)", "dagannoth mother", "dagannoth mother (hard)", "sand snake", "sand snake (hard)", "tanglefoot", "tanglefoot (hard)",
                 "dessourt", "dessourt (hard)", "agrith-na-na", "agrith-na-na (hard)", "chronozon", "chronozon (hard)", "slagilith", "slagilith (hard)", "count draynor", "count draynor (hard)", "giant roc", "giant roc (hard)",
-                "karamel", "karamel (hard)", "skeleton hellhound", "skeleton hellhound (hard)", "treus dayth", "treus dayth (hard)", "ice troll king", "ice troll king (hard)",
+                "karamel", "karamel (hard)", "treus dayth", "treus dayth (hard)", "ice troll king", "ice troll king (hard)",
                 "barrelchest", "barrelchest (hard)", "trapped soul", "trapped soul (hard)", "bouncer", "bouncer (hard)", "culinaromancer", "culinaromancer (hard)",
                 "me", "me (hard)", "jungle demon", "jungle demon (hard)", "giant scarab", "giant scarab (hard)", "black knight titan", "black knight titan (hard)", "the everlasting", "the everlasting (hard)", "moss guardian", "moss guardian (hard)",
         });
@@ -192,6 +192,11 @@ public class BestiaryDef {
         put("night beast", "dark beast");
         put("nuclear smoke devil", "smoke devil");
         put("colossal hydra", "hydra");                 //
+    }};
+
+    public static Map<Integer, String> REPLACEMENTS_BY_ID = new HashMap<Integer,String>() {{
+        put(5054, "nightmares");
+        put(6326, "nightmares");
     }};
 
     private static final Set<String> BOSS = new HashSet<String>() {{
@@ -393,6 +398,11 @@ public class BestiaryDef {
             // Replace entry name for some outliers
             for (Map.Entry<String, String> replacement : REPLACEMENTS.entrySet()) {
                 if (name.equalsIgnoreCase(replacement.getKey())) {
+                    name = replacement.getValue();
+                }
+            }
+            for (Map.Entry<Integer, String> replacement : REPLACEMENTS_BY_ID.entrySet()) {
+                if (e.id == replacement.getKey()) {
                     name = replacement.getValue();
                 }
             }
