@@ -16,5 +16,23 @@
     "direction": "S",
     "walkRange": 20,
     "name": "Artio"
+  },
+  {
+    "id": 6611,
+    "x": 3294,
+    "y": 10201,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 9,
+    "name": "Vet\u0027ion"
+  },
+  {
+    "id": 11993,
+    "x": 1886,
+    "y": 11545,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 20,
+    "name": "Calvar\u0027ion"
   }
 ]

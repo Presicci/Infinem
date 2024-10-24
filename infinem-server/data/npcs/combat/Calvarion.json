@@ -1,22 +1,22 @@
 [
-  { // Vet\u0027ion (454)
-    "ids": [ 6611 ],
+  { // Calvar\u0027ion (264)
+    "ids": [ 11993 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.vetion.Vetion",
     //Combat Info
-    "hitpoints": 255,
-    "aggressive_level": 908,
-    "max_damage": 44,
+    "hitpoints": 150,
+    "aggressive_level": 528,
+    "max_damage": 26,
     "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 624.0,
+    "slayer_xp": 322.5,
     "slayer_tasks": [ "Vet\u0027ion", "Skeletons" ],
     //Combat Stats
-    "attack": 430,
-    "strength": 430,
-    "defence": 395,
+    "attack": 250,
+    "strength": 250,
+    "defence": 225,
     "ranged": 1,
-    "magic": 300,
+    "magic": 178,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -24,44 +24,45 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 201,
-    "slash_defence": 200,
+    "stab_defence": 130,
+    "slash_defence": 128,
     "crush_defence": -10,
-    "magic_defence": 250,
-    "ranged_defence": 270,
+    "magic_defence": 198,
+    "ranged_defence": 211,
     //Immunites
     "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 5,
     "death_ticks": 5,
-    "respawn_ticks": 15,
+    "respawn_ticks": 14,
     //Animations
     "spawn_animation": -1,  // 9977
     "attack_animation": 9971,
     "defend_animation": -1,
     "death_animation": 9980,
-	//Other
-	"local_loot": true
+    //Other
+    "local_loot": true
   },
-  { // Vet\u0027ion Reborn (454)
-    "ids": [ 6612 ],
+  { // Calvar\u0027ion Reborn (264)
+    "ids": [ 11994 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.vetion.Vetion",
     //Combat Info
-    "hitpoints": 255,
-    "aggressive_level": 908,
-    "max_damage": 44,
+    "hitpoints": 150,
+    "aggressive_level": 528,
+    "max_damage": 26,
     "attack_style": "SLASH",
+    "pet": "VETION_JR_PURPLE",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 322.0,
+    "slayer_xp": 322.5,
     "slayer_tasks": [ "Vet\u0027ion", "Skeletons" ],
     //Combat Stats
-    "attack": 430,
-    "strength": 430,
-    "defence": 395,
+    "attack": 250,
+    "strength": 250,
+    "defence": 225,
     "ranged": 1,
-    "magic": 300,
+    "magic": 178,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -69,24 +70,24 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 201,
-    "slash_defence": 200,
+    "stab_defence": 130,
+    "slash_defence": 128,
     "crush_defence": -10,
-    "magic_defence": 250,
-    "ranged_defence": 270,
+    "magic_defence": 198,
+    "ranged_defence": 211,
     //Immunites
     "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 5,
     "death_ticks": 5,
-    "respawn_ticks": 15,
+    "respawn_ticks": 14,
     //Animations
     "spawn_animation": -1,  // 9977
     "attack_animation": 9971,
     "defend_animation": -1,
     "death_animation": 9980,
-	//Other
-	"local_loot": true
+    //Other
+    "local_loot": true
   }
 ]

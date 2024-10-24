@@ -503,10 +503,6 @@ public class NPCDrops {
                 { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
         });
 
-        put("vet'ion", new Item[][] {
-                { new Item(1620, 20), new Item(1618, 10) },    // Uncut ruby and uncut diamond
-                { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
-        });
     }};
 
     private List<Item> getGroupDrop(Item item) {

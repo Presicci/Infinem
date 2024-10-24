@@ -277,8 +277,7 @@ public abstract class NPCCombat extends Combat {
                 Slayer.handleNPCKilled(killer.player, npc);
                 if (npc.getDef().killCounterType != null)
                     npc.getDef().killCounterType.increment(killer.player);
-                if (info.pet != null
-                        && info.pet != Pet.CALLISTO_CUB) {
+                if (info.pet != null) {
                     int dropAverage = info.pet.dropAverage;
                     if (npc.getId() == 6619) {  // Manual override for chaos fanatic sharing boss pet w/ chaos ele
                         dropAverage = 1000;

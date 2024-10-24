@@ -322,7 +322,7 @@ public class Callisto extends NPCCombat {
             // Pet chance
             int dropAverage = (int) (1500 * (2D - quantityMultiplier));
             int threshold = 500;
-            int numerator = npc.getDef().killCounterType != null ? (npc.getDef().killCounterType.getKills(p) / threshold) + 1 : 1;
+            int numerator = (killCount / threshold) + 1;
             if (Random.rollDie(dropAverage, numerator)) {
                 Pet.CALLISTO_CUB.unlock(p);
             }

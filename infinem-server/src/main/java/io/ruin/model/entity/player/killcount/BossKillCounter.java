@@ -15,7 +15,7 @@ public enum BossKillCounter {
     BARROWS("Barrows Chests"),
     BRYOPHYTA("Bryophyta"),
     CALLISTO("Callisto"),
-    //Calvar'ion
+    CALVARION("Calvar'ion"),
     CERBERUS("Cerberus"),
     COX("Chambers of Xeric"),
     //COX_CHALLENGE("Chambers of Xeric: Challenge Mode"),

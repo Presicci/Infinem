@@ -193,6 +193,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Gold Black Chest (SoM)", ShadeChest.GOLD_BLACK.getLootTable()),
             new DropViewerEntry("Gold Purple Chest (SoM)", ShadeChest.GOLD_PURPLE.getLootTable()),
             new DropViewerEntry("Wintertodt Crate", WintertodtCrate.TABLE),
-            new DropViewerEntry("Callisto", new DropViewerResultPet(Pet.CALLISTO_CUB, 1500), true, CallistoDropTable.REGULAR, CallistoDropTable.UNIQUE)
+            new DropViewerEntry("Callisto", new DropViewerResultPet(Pet.CALLISTO_CUB, 1500), true, CallistoDropTable.REGULAR, CallistoDropTable.UNIQUE),
+            new DropViewerEntry("Vet'ion", new DropViewerResultPet(Pet.VETION_JR_PURPLE, 1500), true, VetionDropTable.REGULAR, VetionDropTable.UNIQUE)
     ).collect(Collectors.toCollection(ArrayList::new));
 }
