@@ -336,14 +336,14 @@ public class RouteFinder {
             entity.getMovement().reset();
             return false;
         }
-        if (entity.player != null) {
+        //if (entity.player != null) {
             //if (entity.player.getTileman() != null) {
             //    if (!entity.player.getTileman().processTileMove(new Position(stepX, stepY, entity.getPosition().getZ()))) {
             //        entity.player.sendMessage("You need to earn more experience to unlock more tiles.");
             //        return false;
             //    }
             //}
-        }
+        //}
 
         if(entity.getMovement().stepType == StepType.NORMAL) {
             if(entity.player != null) {
