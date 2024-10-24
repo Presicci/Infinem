@@ -45,7 +45,6 @@ public class PartnerSlayer {
         }
         if (target.isLocked() || target.getCombat().isDefending(5)
                 || target.hasOpenInterface(InterfaceType.MAIN)
-                || target.hasOpenInterface(InterfaceType.MAIN_STRETCHED)
                 || target.hasOpenInterface(InterfaceType.CHATBOX)) {
             player.dialogueKeepInterfaces(new MessageDialogue("That player is currently busy."));
             return;
