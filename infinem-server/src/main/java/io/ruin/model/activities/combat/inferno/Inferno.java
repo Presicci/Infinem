@@ -188,6 +188,7 @@ public class Inferno {
                     player.getInventory().addOrDrop(21295, 1);
                     player.getInventory().addOrDrop(6529, 16440);
                     player.getCollectionLog().collect(21295);
+                    player.getTransmogCollection().addToCollection(21295, true);
                     player.getTaskManager().doLookupByCategory(TaskCategory.INFERNO, 1, true);
                     Broadcast.WORLD.sendNews(player, Icon.GOLD_STAR, player.getName() + " has defeated the Inferno.");
                 }
