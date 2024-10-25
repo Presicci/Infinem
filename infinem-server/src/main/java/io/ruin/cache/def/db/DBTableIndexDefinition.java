@@ -26,7 +26,7 @@ public class DBTableIndexDefinition {
                 if (data != null)
                     row.decode(new InBuffer(data));
                 indexes.put(archiveId << 16 | fileId, row);
-                System.out.println("[DBTableIndex] " + archiveId + ", " + fileId + ": " + Arrays.toString(row.tupleTypes) + " --- " + row.tupleIndexes);
+                //System.out.println("[DBTableIndex] " + archiveId + ", " + fileId + ": " + Arrays.toString(row.tupleTypes) + " --- " + row.tupleIndexes);
             }
         }
     }

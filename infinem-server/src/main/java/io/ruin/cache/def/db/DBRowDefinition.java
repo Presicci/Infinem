@@ -26,7 +26,7 @@ public class DBRowDefinition {
             if (data != null)
                 def.decode(new InBuffer(data));
             LOADED[id] = def;
-            System.out.println("[DBRow]" + def);
+            //System.out.println("[DBRow]" + def);
         }
     }
 

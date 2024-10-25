@@ -28,7 +28,7 @@ public class DBTableDefinition implements CacheDefinition {
             if (data != null)
                 def.decode(new InBuffer(data));
             LOADED[id] = def;
-            System.out.println("[DBTable]" + id + ": " + Arrays.deepToString(def.types) + " --- " + Arrays.deepToString(def.defaultColumnValues));
+            //System.out.println("[DBTable]" + id + ": " + Arrays.deepToString(def.types) + " --- " + Arrays.deepToString(def.defaultColumnValues));
         }
     }
 
