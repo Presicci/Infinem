@@ -137,6 +137,7 @@ public class FightCaves {
                     player.getInventory().addOrDrop(6570, 1);
                     player.getInventory().addOrDrop(6529, tokkul + 4000);
                     player.getCollectionLog().collect(6570);
+                    player.getTransmogCollection().addToCollection(6570, true);
                     player.getTaskManager().doLookupByCategory(TaskCategory.FIGHTCAVES, 1, true);
                 }
             }
