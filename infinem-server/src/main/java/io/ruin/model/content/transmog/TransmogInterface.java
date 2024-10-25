@@ -1,6 +1,7 @@
 package io.ruin.model.content.transmog;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -44,6 +45,12 @@ public class TransmogInterface {
         sendTransmogList(player);
         send(player);
         player.getAppearance().update();
+        player.startEvent(e -> {
+            while (player.isVisibleInterface(1011)) {
+                World.sendGraphics(2372, 0, 0, player.getPosition());
+                e.delay(1);
+            }
+        });
     }
 
     public static void sendTransmogList(Player player) {
