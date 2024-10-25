@@ -27,7 +27,7 @@ public class TabEquipment {
             h.actions[24] = (OptionAction) (player, option) -> itemAction(player, option, Equipment.SLOT_RING);
             h.actions[25] = (OptionAction) (player, option) -> itemAction(player, option, Equipment.SLOT_AMMO);
             h.actions[1] = (SimpleAction) EquipmentStats::open;
-            //h.actions[3] = (SimpleAction) TransmogInterface::open;
+            h.actions[3] = (SimpleAction) TransmogInterface::open;
             h.actions[5] = (SimpleAction) IKODInterface::open;
             h.actions[7] = (SimpleAction) p -> {
                 if(p.pet == null)

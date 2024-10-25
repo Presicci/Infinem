@@ -274,7 +274,7 @@ public class Appearance extends UpdateMask {
         if(styleIndex == 0 || styleIndex == 1 || styleIndex == 3) {
             Item item = player.getEquipment().get(slot);
             // Transmogrification overrides
-            /*if (player.wildernessLevel <= 0) {
+            if (player.wildernessLevel <= 0) {
                 boolean finalItem = false;
                 if (player.isVisibleInterface(1011)) {
                     int previewId = player.getTransmogCollection().getPreviewIdForSlot(slot);
@@ -287,7 +287,7 @@ public class Appearance extends UpdateMask {
                 if (!finalItem && transmogId != -1) {
                     item = new Item(transmogId);
                 }
-            }*/
+            }
             boolean hide = false;
             if(item != null) {
                 if(styleIndex == 0)
@@ -304,7 +304,7 @@ public class Appearance extends UpdateMask {
         } else {
             int itemId = player.getEquipment().getId(slot);
             // Transmogrification overrides
-            /*if (player.wildernessLevel <= 0) {
+            if (player.wildernessLevel <= 0) {
                 boolean finalItem = false;
                 if (player.isVisibleInterface(1011)) {
                     int previewId = player.getTransmogCollection().getPreviewIdForSlot(slot);
@@ -326,7 +326,7 @@ public class Appearance extends UpdateMask {
                         itemId = transmogId;
                     }
                 }
-            }*/
+            }
             if(itemId == -1) {
                 if(styleIndex == -1)
                     out.addByte(0);
