@@ -8,6 +8,7 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.model.content.tasksystem.areas.AreaConfig;
 import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.content.tasksystem.tasks.impl.DropAllTask;
+import io.ruin.model.content.transmog.UnlockableTransmog;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.NPCDefinition;
@@ -128,6 +129,7 @@ public class TaskManager {
         if (newTier != null && newTier != prevTier) {
             player.sendMessage("<col=990000><shad=000000>You've reached the " + StringUtils.capitalizeFirst(newTier.name().toLowerCase()) + " tier of unlocks in " + taskArea + "!");
             AreaConfig.checkAll(player);
+            UnlockableTransmog.unlockAreaTransmogs(player, taskArea);
         }
         AreaTaskTier newGeneralTier = TaskArea.GENERAL.getHighestTier(player);
         if (newGeneralTier != null && newGeneralTier != prevGeneralTier) {

@@ -1,6 +1,5 @@
 package io.ruin.model.content.transmog;
 
-import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.entity.player.Player;
@@ -8,7 +7,6 @@ import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.item.Items;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
-import io.ruin.utility.Color;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -99,6 +97,17 @@ public enum UnlockableTransmog {
     public static final Map<TransmogSlot, List<UnlockableTransmog>> TRANSMOGS_BY_SLOT = new HashMap<>();
     public static final Map<Integer, UnlockableTransmog> TRANSMOGS_BY_ID = new HashMap<>();
     public static final Map<TaskArea, List<UnlockableTransmog>> REGION_UNLOCKABLES = new HashMap<>();
+
+    public static void unlockAreaTransmogs(Player player, TaskArea taskarea) {
+        if (REGION_UNLOCKABLES.containsKey(taskarea)) {
+            List<UnlockableTransmog> areaTransmogs = REGION_UNLOCKABLES.get(taskarea);
+            for (UnlockableTransmog t : areaTransmogs) {
+                if (taskarea.hasTierUnlocked(player, t.taskAreaTier)) {
+                    t.unlock(player, true);
+                }
+            }
+        }
+    }
 
     static {
         for (UnlockableTransmog t : values()) {
