@@ -42,6 +42,7 @@ public enum MonkeyBackpack {
         }
         item.setId(itemId);
         player.getCollectionLog().collectIfNotCollected(item);
+        player.getTransmogCollection().addToCollection(item.getId(), true);
     }
 
     private void transformScroll(Player player, Item item) {
