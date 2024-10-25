@@ -23,6 +23,16 @@ import java.util.stream.Collectors;
 public class TransmogInterface {
 
     public static void open(Player player) {
+        if (player.getCombat().isDefending(16)) {
+            player.sendMessage("You can't open your transmogrifications while in combat.");
+            return;
+        }
+        if (player.wildernessLevel > 0 || player.pvpAttackZone) {
+            player.sendMessage("You can't open your transmogrifications in the wilderness.");
+            return;
+        }
+        if (player.isLocked())
+            return;
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
         player.openInterface(InterfaceType.MAIN, 1011);
         // Title dropdown
