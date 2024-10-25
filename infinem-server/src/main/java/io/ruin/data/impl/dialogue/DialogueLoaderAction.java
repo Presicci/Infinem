@@ -60,6 +60,7 @@ public enum DialogueLoaderAction {
                                     if (player.getInventory().hasId(coffin.getLockId())) {
                                         player.getInventory().remove(coffin.getLockId(), 1);
                                         coffinItem.setId(coffin.getCoffinId());
+                                        player.getTransmogCollection().addToCollection(coffin.getCoffinId(), true);
                                         player.dialogue(
                                                 new ItemDialogue().two(coffin.getLockId(), 25457, "You hand over the coffin and lock to Dampe."),
                                                 new MessageDialogue("You hear him clumsily attach the lock to the coffin."),
