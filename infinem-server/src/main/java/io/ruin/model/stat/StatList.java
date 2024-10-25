@@ -187,6 +187,7 @@ public class StatList {
             Broadcast.SKILL.sendNews(Icon.SKILL_ICON, player.getName() + " has just reached virtual level 120 in " + type.name() + "!");
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLMASTER, type.name());
             SkillAchievementEmbedMessage.sendDiscordMessage("120 " + type.name() + "!", player.getName() + " has just reached virtual level 120 in " + type.name() + "!", type);
+            player.getTransmogCollection().addToCollection(type.masterCapeId, true);
         }
         if(newXp == Stat.MAX_XP && stat.experience < Stat.MAX_XP) {
             Broadcast.SKILL.sendNews(Icon.SKILL_ICON, player.getName() + " has just reached 200 million experience in " + type.name() + "!");
@@ -222,11 +223,16 @@ public class StatList {
             Broadcast.SKILL.sendNews(player, Icon.SKILL_ICON, player.getName() + " has just achieved level 99 in " + type.name() + "!");
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILL99, type.name());
             SkillAchievementEmbedMessage.sendDiscordMessage("99 " + type.name() + "!", player.getName() + " has just achieved level 99 in " + type.name() + "!", type);
+            player.getTransmogCollection().addToCollection(type.regularCapeId, true);
+            player.getTransmogCollection().addToCollection(type.trimmedCapeId, true);
+            player.getTransmogCollection().addToCollection(type.hoodId, true);
             if (isMaxed()) {
                 player.sendMessage("Congratulations, you've reached the highest possible total level of 2277!");
                 player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a max cape from Mac at home!");
                 Broadcast.SKILL.sendNews(player, Icon.MAX_CAPE, player.getName() + " has just achieved level 99 in every skill!");
                 SkillAchievementEmbedMessage.sendMaxMessage("Maxed!", player.getName() + " has just achieved level 99 in every skill!");
+                player.getTransmogCollection().addToCollection(13342, true);
+                player.getTransmogCollection().addToCollection(13281, true);
             }
         }
         if(statId <= 6)
