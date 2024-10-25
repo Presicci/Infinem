@@ -201,9 +201,9 @@ public enum Icon {
      * And theres more
      */
     RED_INFO_BADGE(83),
-    YELLOW_INFO_BADGE(84),
+    YELLOW_INFO_BADGE(113),
     MYSTERY_BOX(33),
-    BLUE_INFO_BADGE(85),
+    BLUE_INFO_BADGE(111),
     GREEN_INFO_BADGE(86),
     WILDERNESS(46),
     ANNOUNCEMENT(55),
@@ -215,11 +215,11 @@ public enum Icon {
     CROSSED_SWORDS(31),
     SKULL(9),
     PET(67),
-    SKILL_ICON(209),
-    INVENTORY_BAG(233),
-    SMILY(51),
-    ACTIVITY_SPOTLIGHT(313),
-    MAX_CAPE(245)
+    SKILL_ICON(217),
+    INVENTORY_BAG(242),
+    SMILY(32),
+    ACTIVITY_SPOTLIGHT(322),
+    MAX_CAPE(254)
     ;
 
     public final int imgId;
