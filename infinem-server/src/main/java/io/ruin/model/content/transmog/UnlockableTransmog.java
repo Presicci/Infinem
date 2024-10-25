@@ -95,6 +95,7 @@ public enum UnlockableTransmog {
         player.getTransmogCollection().addToCollection(itemId, showNotification);
     }
 
+    public static final List<Integer> UNLOCKABLE_TRANSMOG_IDS = new ArrayList<>();
     public static final Map<TransmogSlot, List<UnlockableTransmog>> TRANSMOGS_BY_SLOT = new HashMap<>();
     public static final Map<Integer, UnlockableTransmog> TRANSMOGS_BY_ID = new HashMap<>();
     public static final Map<TaskArea, List<UnlockableTransmog>> REGION_UNLOCKABLES = new HashMap<>();
@@ -102,6 +103,7 @@ public enum UnlockableTransmog {
     static {
         for (UnlockableTransmog t : values()) {
             TRANSMOGS_BY_ID.put(t.getItemId(), t);
+            UNLOCKABLE_TRANSMOG_IDS.add(t.getItemId());
             if (TRANSMOGS_BY_SLOT.containsKey(t.slot)) {
                 TRANSMOGS_BY_SLOT.get(t.slot).add(t);
             } else {
@@ -112,6 +114,12 @@ public enum UnlockableTransmog {
             if (t.taskArea != null && t.taskAreaTier != null) {
                 REGION_UNLOCKABLES.computeIfAbsent(t.taskArea, area -> new ArrayList<>()).add(t);
             }
+        }
+        for (StatType type : StatType.values()) {
+            UNLOCKABLE_TRANSMOG_IDS.add(type.regularCapeId);
+            UNLOCKABLE_TRANSMOG_IDS.add(type.trimmedCapeId);
+            UNLOCKABLE_TRANSMOG_IDS.add(type.masterCapeId);
+            UNLOCKABLE_TRANSMOG_IDS.add(type.hoodId);
         }
         LoginListener.register(player -> {
             if (player.lastLogin <= 1 /* TODO Timestamp when deploying */) {

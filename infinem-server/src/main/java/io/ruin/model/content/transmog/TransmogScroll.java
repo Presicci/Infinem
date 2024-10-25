@@ -35,6 +35,10 @@ public class TransmogScroll {
             player.dialogue(new ItemDialogue().one(item.getId(), "You already have this item in your transmog collection."));
             return;
         }
+        if (UnlockableTransmog.UNLOCKABLE_TRANSMOG_IDS.contains(item.getId())) {
+            player.getTransmogCollection().addToCollection(item.getId(), true);
+            return;
+        }
         player.dialogue(new OptionsDialogue("Would you like to add " + item.getDef().name + " to your transmog collection?",
                 new Option("Yes", () -> {
                     if (player.getInventory().remove(32040, 1) > 0) {
