@@ -81,6 +81,7 @@ public enum MonkeyBackpack {
                     player.lock();
                     player.animate(827);
                     e.delay(1);
+                    player.getTransmogCollection().addToCollection(19556, true);
                     player.getInventory().add(19556);
                     player.dialogue(new ItemDialogue().one(19556, "There's a sweet little monkey hiding in the warm crate. You gently pick it up."));
                     player.unlock();
