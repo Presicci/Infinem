@@ -99,7 +99,7 @@ public class RelicInterface {
                 Interface.RELICS << 16 | 51,   // widget13 - cancel button
                 Interface.RELICS << 16 | 55,   // widget14 - Passive Effect:
                 Interface.RELICS << 16 | 56,   // widget15 - passive
-                Interface.RELICS << 16 | 21,   // unhides when clicking back button
+                Interface.RELICS << 16 | 23,   // unhides when clicking back button
                 getRelicStatus(player, relic.getRelic()),   // arg16 - 2 if player can take the relic, 0 if cant, 1 if already have relic, 3 if need tier before
                 relicStruct,   // arg17 - relic struct
                 RelicManager.getPassiveStruct(relic.getRelic().getTier())   // arg18 - passive effect struct
