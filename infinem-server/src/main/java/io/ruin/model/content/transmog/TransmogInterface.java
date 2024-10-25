@@ -29,6 +29,8 @@ public class TransmogInterface {
         player.getPacketSender().sendAccessMask(1011, 42, 0, 200, 2);
         // Filter dropdown
         player.getPacketSender().sendAccessMask(1011, 46, 0, 20, 2);
+        // Hide title selection for now
+        player.getPacketSender().setHidden(1011, 25, true);
         sendTransmogList(player);
         send(player);
         player.getAppearance().update();
