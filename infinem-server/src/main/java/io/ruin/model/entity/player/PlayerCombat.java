@@ -214,6 +214,8 @@ public class PlayerCombat extends Combat {
             return true;
         if(target.player != null && BloodyChest.hasBloodyKey(target.player))
             return true;
+        if (lastAttacker != null && lastAttacker.isNpc() && Arrays.stream(Resurrection.Thralls.values()).anyMatch(e -> e.npcId == lastAttacker.npc.getId()))
+            return true;
         //if(entity == player.getBountyHunter().target)
         //    return true;
         //^This is how RS works, but people weren't liking this.. And it's kind of bad for a smaller pk scene.

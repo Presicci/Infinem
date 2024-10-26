@@ -165,10 +165,16 @@ public abstract class NPCCombat extends Combat {
     }
 
     public boolean multiCheck(Entity target) {
+        Player player = World.getPlayer(npc.ownerId, true);
+        if (player != null)
+            return true;
         return npc.inMulti() || target.getCombat().allowPj(npc) || singlePlusCheck(target);
     }
 
     public boolean singlePlusCheck(Entity target) {
+        Player player = World.getPlayer(npc.ownerId, true);
+        if (player != null)
+            return true;
         return npc.inSinglePlus() && (target.getCombat().lastAttacker != null && !target.getCombat().lastAttacker.isPlayer());
     }
 
