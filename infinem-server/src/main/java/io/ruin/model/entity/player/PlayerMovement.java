@@ -112,6 +112,9 @@ public class PlayerMovement extends Movement {
     }
 
     private boolean isRunning() {
+        if (player.runDelay.isDelayed()) {
+            return false;
+        }
         return player.energyUnits > 0 && (ctrlRun || Config.RUNNING.get(player) == 1);
     }
 

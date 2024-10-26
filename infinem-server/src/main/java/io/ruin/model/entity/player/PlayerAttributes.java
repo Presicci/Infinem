@@ -124,6 +124,8 @@ public abstract class PlayerAttributes extends Entity {
 
     public TickDelay potDelay = new TickDelay();
 
+    public TickDelay runDelay = new TickDelay();
+
     public TickDelay emoteDelay = new TickDelay();
 
     public Teleother teleotherActive;
