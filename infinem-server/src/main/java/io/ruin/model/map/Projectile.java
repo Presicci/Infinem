@@ -15,6 +15,19 @@ import java.util.Map;
 
 public class Projectile {
 
+    /**
+     * Right angle in degrees.
+     */
+    private static final int RIGHT_ANGLE = 90;
+    /**
+     * The right angle in client.
+     */
+    private static final int CLIENT_RIGHT_ANGLE = 64;
+    /**
+     * The ratio used to modify projectile angle for the client.
+     */
+    private static final float ANGLE_RATIO = (float) RIGHT_ANGLE / CLIENT_RIGHT_ANGLE;
+
     private int gfxId;
 
     private int startHeight, endHeight;
@@ -50,6 +63,17 @@ public class Projectile {
         this.durationIncrement = durationIncrement;
         this.curve = curve;
         this.idk = idk;
+    }
+
+    public Projectile(int gfxId, int startHeight, int endHeight, int delay, int lengthAdjustment, int durationIncrement, int angle, int distOffset, boolean newStyle) {
+        this.gfxId = gfxId;
+        this.startHeight = startHeight;
+        this.endHeight = endHeight;
+        this.delay = delay;
+        this.durationStart = delay + lengthAdjustment + (1 * durationIncrement);
+        this.durationIncrement = durationIncrement;
+        this.curve = angle > 0 ? (Math.round(Math.min(RIGHT_ANGLE, angle) / ANGLE_RATIO)) : (Byte.MAX_VALUE - Math.round(-Math.min(RIGHT_ANGLE, angle) / ANGLE_RATIO));
+        this.idk = distOffset;
     }
 
     public Projectile skipTravel() {

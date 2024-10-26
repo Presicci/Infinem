@@ -3,6 +3,7 @@ package io.ruin.model.entity.player;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.ItemID;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
@@ -355,6 +356,20 @@ public class PlayerCombat extends Combat {
             }
             updateLastAttack(4);
         }
+        if (weaponDef.id == ItemID.THAMMARONS_SCEPTRE || weaponDef.id == ItemID.ACCURSED_SCEPTRE) {
+            boolean thammaronsSceptre = weaponDef.id == ItemID.THAMMARONS_SCEPTRE;
+            player.animate(1167);
+            target.graphics(78, 60, 70);
+            target.publicSound(1460, 0, 76);
+            player.publicSound(178);
+            int duration = new Projectile(thammaronsSceptre ? 2340 : 2337, 30, 23, 46, 0, 10, 10, 64, true).send(player, target);
+            Hit hit = new Hit(player, AttackStyle.MAGIC, getAttackType())
+                    .randDamage(getThammaronSceptreMaxDamage(thammaronsSceptre ? 8 : 6))
+                    .clientDelay(duration)
+                    .setAttackWeapon(weaponDef);
+            target.hit(hit);
+            updateLastAttack(5);
+        }
     }
 
     public int getCorruptedStaffMaxDamage() {
@@ -367,6 +382,12 @@ public class PlayerCombat extends Combat {
         if (swamp)
             base += 3;
         return (int) Math.round((Math.max(base, base + (Math.max(0, player.getStats().get(StatType.Magic).currentLevel - 75)) / 3)) * (1 + (player.getEquipment().bonuses[EquipmentStats.MAGIC_DAMAGE] / 100.0)));
+    }
+
+    public int getThammaronSceptreMaxDamage(int minus) {
+        int base = (player.getStats().get(StatType.Magic).currentLevel / 3) - minus;
+
+        return (int) Math.floor(base * (1 + (player.getEquipment().bonuses[EquipmentStats.MAGIC_DAMAGE] / 100.0)));
     }
 
     private void attackAnim() {

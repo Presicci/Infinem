@@ -1,5 +1,6 @@
 package io.ruin.model.inter.handlers;
 
+import io.ruin.cache.ItemID;
 import io.ruin.model.combat.SetEffect;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -248,8 +249,8 @@ public class TabCombat {
                 case 12796: // Mystic steam staff (or)
                 case 21198: // Lava battlestaff (or)
                 case 21200: // Mystic lava staff (or)
-                case 22552: // Thammaron's (u)
-                case 22555: // Thammaron's
+                case ItemID.THAMMARONS_SCEPTRE_AU:
+                case ItemID.THAMMARONS_SCEPTRE_A:
                     return -1;
                 default:
                     return null;
