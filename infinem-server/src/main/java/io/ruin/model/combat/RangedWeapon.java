@@ -55,6 +55,7 @@ public enum RangedWeapon {
     STARTER_BOW(new RangedData(19, 1104, Projectile.arrow(10))),
     CRYSTAL_BOW(new RangedData(250, Projectile.arrow(249))),
     CRAWS_BOW(new RangedData(1611, Projectile.arrow(1574))),
+    WEBWEAVER_BOW(new RangedData(2283, Projectile.arrow(2282))),
     /**
      * Fired (ammo)
      */
