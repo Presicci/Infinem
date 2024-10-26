@@ -91,7 +91,13 @@ public class SinglePlusZone {
          * By bounds
          */
         Bounds[] bounds = {
-
+                // Wilderness agility course
+                new Bounds(2988, 3934, 3006, 3946, 0),
+                new Bounds(2992, 3946, 3008, 3948, 0),
+                new Bounds(2993, 3949, 3008, 3950, 0),
+                new Bounds(2992, 3950, 3008, 3950, 0),
+                new Bounds(2991, 3951, 3008, 3952, 0),
+                new Bounds(2990, 3952, 3009, 3966, 0)
         };
         for (Bounds b : bounds)
             set(true, b);
