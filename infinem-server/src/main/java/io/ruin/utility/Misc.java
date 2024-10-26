@@ -1,5 +1,6 @@
 package io.ruin.utility;
 
+import io.ruin.Server;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
@@ -181,5 +182,9 @@ public class Misc {
             }
         }
         return tiles;
+    }
+
+    public static int clientDelayToTicks(int delay) {
+        return Math.max(1, (delay * 16) / Server.tickMs());
     }
 }

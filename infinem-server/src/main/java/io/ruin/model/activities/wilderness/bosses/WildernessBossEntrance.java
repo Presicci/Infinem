@@ -167,14 +167,16 @@ public class WildernessBossEntrance {
         switch (cave) {
             case VENENATIS_DUNGEON_ENTRANCE:
                 return BossKillCounter.VENENATIS.getCounter().getKills(player);
-            //case SPINDEL_DUNGEON_ENTRANCE -> player.spindelKills.getKills();
+            case SPINDEL_DUNGEON_ENTRANCE:
+                return BossKillCounter.SPINDEL.getCounter().getKills(player);
             case CALLISTO_DUNGEON_ENTRANCE:
                 return BossKillCounter.CALLISTO.getCounter().getKills(player);
             case ARTIO_DUNGEON_ENTRANCE:
                 return BossKillCounter.ARTIO.getCounter().getKills(player);
             case VETION_DUNGEON_ENTRANCE:
                 return BossKillCounter.VETION.getCounter().getKills(player);
-            //case CALVARION_DUNGEON_ENTRANCE -> player.calvarionKills.getKills();
+            case CALVARION_DUNGEON_ENTRANCE:
+                return BossKillCounter.CALVARION.getCounter().getKills(player);
             default:
                 return 0;
         }

@@ -1,22 +1,23 @@
 [
-  { // Venenatis (464)
-    "ids": [ 6610 ],
+  { // Spindel (302)
+    "ids": [ 11998 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.venenatis.Venenatis",
     //Combat Info
-    "hitpoints": 850,
-    "aggressive_level": 928,
-    "max_damage": 35,
+    "hitpoints": 515,
+    "aggressive_level": 604,
+    "max_damage": 31,
     "attack_style": "STAB",
+    "pet": "VENENATIS_SPIDERLING",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 956.2,
+    "slayer_xp": 541.0,
     "slayer_tasks": [ "Venenatis", "Spiders" ],
     //Combat Stats
-    "attack": 300,
-    "strength": 200,
-    "defence": 321,
-    "ranged": 350,
-    "magic": 300,
+    "attack": 200,
+    "strength": 130,
+    "defence": 225,
+    "ranged": 286,
+    "magic": 235,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -24,24 +25,24 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 100,
-    "slash_defence": 100,
+    "stab_defence": 70,
+    "slash_defence": 70,
     "crush_defence": 10,
-    "magic_defence": 300,
-    "ranged_defence": 150,
+    "magic_defence": 205,
+    "ranged_defence": 103,
     //Immunites
     "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 5,
-    "respawn_ticks": 10,
+    "respawn_ticks": 9,
     //Animations
     "spawn_animation": 9993,
     "attack_animation": 9991,
     "defend_animation": -1,
     "death_animation": 9992,
-	//Other
-	"local_loot": true
+    //Other
+    "local_loot": true
   }
 ]

@@ -34,5 +34,23 @@
     "direction": "S",
     "walkRange": 20,
     "name": "Calvar\u0027ion"
+  },
+  {
+    "id": 6610,
+    "x": 3421,
+    "y": 10201,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 9,
+    "name": "Venenatis"
+  },
+  {
+    "id": 11998,
+    "x": 1630,
+    "y": 11548,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 15,
+    "name": "Spindel"
   }
 ]

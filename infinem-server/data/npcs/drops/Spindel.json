@@ -1,0 +1,97 @@
+[
+  {
+    "ids": [ 11998 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Uniques",
+        "weight": 61958,
+        "items": [
+          { "id": 7158, "min": 1, "max": 1, "weight": 2790 },   //Dragon 2h sword
+          { "id": 11920, "min": 1, "max": 1, "weight": 2790 },   //Dragon pickaxe
+          { "id": 27670, "min": 1, "max": 1, "weight": 1620 },   //Fangs of venenatis
+          { "id": 12605, "min": 1, "max": 1, "weight": 1400 },   //Treasonous ring
+          { "id": 27687, "min": 1, "max": 1, "weight": 1100 }   //Voidwaker gem
+        ]
+      },
+      {
+        "name": "Food and potions",
+        "weight": 499503,
+        "items": [
+          { "id": 11936, "min": 8, "max": 8, "weight": 39100 },   //Dark crab
+          { "id": 3024, "min": 3, "max": 3, "weight": 39100 }   //Super restore(4)
+        ]
+      },
+      {
+        "name": "Weapons and armour",
+        "weight": 998360,
+        "items": [
+          { "id": 868, "min": 30, "max": 30, "weight": 39100 },   //Rune knife
+          { "id": 1275, "min": 1, "max": 1, "weight": 93800 },   //Rune pickaxe
+          { "id": 1319, "min": 1, "max": 1, "weight": 23399 }   //Rune 2h sword
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 1497870,
+        "items": [
+          { "id": 562, "min": 180, "max": 180, "weight": 54700 },   //Chaos rune
+          { "id": 565, "min": 150, "max": 150, "weight": 54700 },   //Blood rune
+          { "id": 560, "min": 220, "max": 220, "weight": 54700 },   //Death rune
+          { "id": 2, "min": 200, "max": 200, "weight": 31300 },   //Cannonball
+          { "id": 9243, "min": 60, "max": 60, "weight": 39100 }   //Diamond bolts (e)
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 1846813,
+        "items": [
+          { "id": 1618, "min": 9, "max": 9, "weight": 62500 },   //Uncut diamond (noted)
+          { "id": 1631, "min": 1, "max": 1, "weight": 15600 },   //Uncut dragonstone
+          { "id": 1620, "min": 18, "max": 18, "weight": 7810 },   //Uncut ruby (noted)
+          { "id": 445, "min": 180, "max": 180, "weight": 46900 },   //Gold ore (noted)
+          { "id": 1514, "min": 60, "max": 60, "weight": 39100 },   //Magic logs (noted)
+          { "id": 224, "min": 250, "max": 250, "weight": 23399 },   //Red spiders' eggs (noted)
+          { "id": 226, "min": 18, "max": 18, "weight": 39100 },   //Limpwurt root (noted)
+          { "id": 9194, "min": 35, "max": 35, "weight": 39100 },   //Onyx bolt tips
+          { "id": 3052, "min": 60, "max": 60, "weight": 7810 },   //Grimy snapdragon (noted)
+          { "id": 238, "min": 60, "max": 60, "weight": 7810 }   //Unicorn horn (noted)
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 1546594,
+        "items": [
+          { "id": 995, "min": 14000, "max": 14000, "weight": 163999 },   //Coins
+          { "id": 11940, "min": 200, "max": 200, "weight": 7810 },   //Dark fishing bait
+          { "id": 5316, "min": 1, "max": 1, "weight": 7810 },   //Magic seed
+          { "id": 5289, "min": 1, "max": 1, "weight": 7810 },   //Palm tree seed
+          { "id": 6035, "min": 60, "max": 60, "weight": 31300 },   //Supercompost (noted)
+          { "id": 5953, "min": 6, "max": 6, "weight": 23399 }   //Antidote++(4) (noted)
+        ]
+      },
+      {
+        "name": "Secondary supply roll",
+        "weight": 3548898,
+        "items": [
+          { "id": 24592, "min": 5, "max": 6, "weight": 92600 },   //Blighted anglerfish
+          { "id": 24595, "min": 5, "max": 6, "weight": 92600 },   //Blighted karambwan
+          { "id": 24601, "min": 3, "max": 4, "weight": 92600 },   //Blighted super restore(3)
+          { "id": 24598, "min": 3, "max": 4, "weight": 92600 },   //Blighted super restore(4)
+          { "id": 171, "min": 2, "max": 3, "weight": 92600 },   //Ranging potion(2)
+          { "id": 12699, "min": 2, "max": 3, "weight": 92600 }   //Super combat potion(2)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 1341376,
+        "items": [
+          { "id": 464, "min": 1, "max": 1, "weight": 200000 },   //Strange fruit
+          { "id": 12073, "min": 1, "max": 1, "weight": 10000 }   //Clue scroll (elite)
+        ]
+      }
+    ]
+  }
+]

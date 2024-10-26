@@ -9,6 +9,7 @@ import io.ruin.model.activities.combat.raids.xeric.XericRewards;
 import io.ruin.model.activities.shadesofmortton.FuneralPyre;
 import io.ruin.model.activities.shadesofmortton.ShadeChest;
 import io.ruin.model.activities.wilderness.bosses.callisto.CallistoDropTable;
+import io.ruin.model.activities.wilderness.bosses.venenatis.VenenatisDropTable;
 import io.ruin.model.activities.wilderness.bosses.vetion.VetionDropTable;
 import io.ruin.model.entity.npc.actions.misc.Wyson;
 import io.ruin.model.item.Items;
@@ -194,6 +195,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Gold Purple Chest (SoM)", ShadeChest.GOLD_PURPLE.getLootTable()),
             new DropViewerEntry("Wintertodt Crate", WintertodtCrate.TABLE),
             new DropViewerEntry("Callisto", new DropViewerResultPet(Pet.CALLISTO_CUB, 1500), true, CallistoDropTable.REGULAR, CallistoDropTable.UNIQUE),
-            new DropViewerEntry("Vet'ion", new DropViewerResultPet(Pet.VETION_JR_PURPLE, 1500), true, VetionDropTable.REGULAR, VetionDropTable.UNIQUE)
+            new DropViewerEntry("Vet'ion", new DropViewerResultPet(Pet.VETION_JR_PURPLE, 1500), true, VetionDropTable.REGULAR, VetionDropTable.UNIQUE),
+            new DropViewerEntry("Venenatis", new DropViewerResultPet(Pet.VENENATIS_SPIDERLING, 1500), true, VenenatisDropTable.REGULAR, VenenatisDropTable.UNIQUE)
     ).collect(Collectors.toCollection(ArrayList::new));
 }

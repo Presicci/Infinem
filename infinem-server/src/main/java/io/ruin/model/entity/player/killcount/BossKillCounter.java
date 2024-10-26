@@ -47,7 +47,7 @@ public enum BossKillCounter {
     SARACHNIS("Sarachnis"),
     SCORPIA("Scorpia"),
     SKOTIZO("Skotizo"),
-    //SPINDEL
+    SPINDEL("Spindel"),
     //TEMPEROSS("Tempeross"),
     //THE_CORRUPTED_GAUNTLET("The Corrupted Gauntlet"),
     //THE_GAUNTLET("The Gauntlet"),

@@ -314,6 +314,10 @@ public class NPC extends NPCAttributes {
         return spawn(position.getX(), position.getY(), position.getZ(), Direction.SOUTH, 0);
     }
 
+    public NPC spawn(Position position, Direction direction, int walkRange) {
+        return spawn(position.getX(), position.getY(), position.getZ(), direction, walkRange);
+    }
+
     public NPC spawn(int x, int y, int z) {
         return spawn(x, y, z, Direction.SOUTH, 0);
     }

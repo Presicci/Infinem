@@ -193,6 +193,11 @@ public class Hit {
 		return this;
 	}
 
+	public Hit ignorePrayer(boolean ignore) {
+		prayerIgnored = ignore;
+		return this;
+	}
+
 	public Hit ignoreAbsorption() {
 		absorptionIgnored = true;
 		return this;
