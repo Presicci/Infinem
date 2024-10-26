@@ -7,6 +7,7 @@ import io.ruin.api.utils.ServerWrapper;
 import io.ruin.data.DataFile;
 import io.ruin.model.map.MultiZone;
 import io.ruin.model.map.Region;
+import io.ruin.model.map.SinglePlusZone;
 import io.ruin.model.map.dynamic.DynamicMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -83,6 +84,7 @@ public class region_keys extends DataFile {
         }
 
         MultiZone.load();
+        SinglePlusZone.load();
         DynamicMap.load();
         return keys;
     }

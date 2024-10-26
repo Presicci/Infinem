@@ -216,6 +216,7 @@ public class PlayerMovement extends Movement {
         }
         player.getUpdater().updateRegion = player.getPosition().updateRegion();
         player.checkMulti();
+        player.checkSinglePlus();
         Tile.occupy(player);
     }
 

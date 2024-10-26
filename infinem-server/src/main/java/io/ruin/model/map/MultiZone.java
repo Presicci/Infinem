@@ -121,11 +121,9 @@ public class MultiZone {
                 9043, //Inferno
                 12107, //Abyss
                 9619, //Smoke devil dungeon
-                12960, 12958, 12957,
                 9048, // Skotizo lair
                 10536, // Pest Control battlegrounds
                 13470, 13469, 13726, 13725,  // Wildy slayer dungeon
-
                 13215, 13473, 13727, 13472, // Wilderness Bosses & Escape Cave
         };
         for(int regionId : regions)
@@ -225,9 +223,9 @@ public class MultiZone {
                 new Bounds(3264, 5152, 3400, 5727, -1),
 
                 /* Revs caves */
-                new Bounds(3233, 10229, 3235, 10231, -1),
-                new Bounds(3136, 10061, 3263, 10228, -1),
-                new Bounds(3208, 10048, 3263, 10082, -1),
+                //new Bounds(3233, 10229, 3235, 10231, -1),
+                //new Bounds(3136, 10061, 3263, 10228, -1),
+                //new Bounds(3208, 10048, 3263, 10082, -1),
 
                 new Bounds(1357, 10193, 1378, 10220, 1),
 

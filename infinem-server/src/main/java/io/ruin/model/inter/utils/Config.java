@@ -421,6 +421,8 @@ public class Config {
 
     public static final Config MULTI_ZONE = varpbit(4605, false);
 
+    public static final Config SINGLE_PLUS_ZONE = varpbit(5961, false);
+
     public static final Config MY_TRADE_MODIFIED = varpbit(4374, false);
 
     public static final Config OTHER_TRADE_MODIFIED = varpbit(4375, false);

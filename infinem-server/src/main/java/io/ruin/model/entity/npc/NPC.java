@@ -341,6 +341,7 @@ public class NPC extends NPCAttributes {
         setIndex(World.npcs.add(this, 0));
         this.wildernessSpawnLevel = Wilderness.getLevel(spawnPosition);
         checkMulti();
+        checkSinglePlus();
         Tile.occupy(this);
         if (combat != null && combat.info != null && combat.info.spawn_animation != -1)
             animate(combat.info.spawn_animation);

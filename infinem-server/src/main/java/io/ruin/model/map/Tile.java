@@ -325,21 +325,14 @@ public class Tile {
     public List<Consumer<Player>> digAction;
 
     public List<BiConsumer<Player, TabEmote>> emoteAction;
-
     public boolean multi;
-
+    public boolean singlePlus;
     public boolean roofExists;
-
     public boolean nearBank;
-
     public boolean allowDrop = true;
-
     public int playerCount, npcCount;
-
     public int wildernessLevel;
-
     public boolean safePVPInstance = false;
-
     public int playerLastTile;
 
     private List<Consumer<Entity>> triggers;

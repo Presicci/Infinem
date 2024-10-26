@@ -132,6 +132,7 @@ public class DynamicMap {
                     Tile newTile = Tile.get(newTileX, newTileY, chunk.pointZ, true);
                     newTile.clipping = localTargetTile.defaultClipping;
                     newTile.multi = localTargetTile.multi;
+                    newTile.singlePlus = localTargetTile.singlePlus;
                     newTile.roofExists = localTargetTile.roofExists;
                     newTile.nearBank = localTargetTile.nearBank;
                     if(localTargetTile.gameObjects != null) {

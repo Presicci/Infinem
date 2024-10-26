@@ -210,6 +210,8 @@ public class PlayerCombat extends Combat {
     public boolean multiCheck(Entity target, boolean message) {
         if(target.inMulti())
             return true;
+        if(target.inSinglePlus() && allowSinglePlus(player, target))
+            return true;
         if(target.player != null && BloodyChest.hasBloodyKey(target.player))
             return true;
         //if(entity == player.getBountyHunter().target)

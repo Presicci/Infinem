@@ -1264,6 +1264,7 @@ public class Player extends PlayerAttributes {
         music = new MusicPlayer(this);
 
         checkMulti();
+        checkSinglePlus();
         Tile.occupy(this);
     }
 

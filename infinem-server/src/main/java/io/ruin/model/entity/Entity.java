@@ -189,8 +189,8 @@ public abstract class Entity extends TemporaryAttributesHolder {
     /**
      * Multi
      */
-
     private boolean multi;
+    private boolean singlePlus;
     private boolean ignoreMulti;
 
     public void setIgnoreMulti(boolean ignoreMulti) {
@@ -208,8 +208,23 @@ public abstract class Entity extends TemporaryAttributesHolder {
             Config.MULTI_ZONE.set(player, multi ? 1 : 0);
     }
 
+    public void checkSinglePlus() {
+        Tile tile = Tile.get(getAbsX(), getAbsY(), getHeight());
+        boolean inSinglePlus = tile != null && tile.singlePlus;
+        if (singlePlus == inSinglePlus)
+            return;
+        singlePlus = inSinglePlus;
+        if (player != null) {
+            Config.SINGLE_PLUS_ZONE.set(player, singlePlus ? 1 : 0);
+        }
+    }
+
     public boolean inMulti() {
         return multi;
+    }
+
+    public boolean inSinglePlus() {
+        return singlePlus;
     }
 
     /**

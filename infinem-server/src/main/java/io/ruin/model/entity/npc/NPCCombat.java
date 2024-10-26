@@ -2,6 +2,7 @@ package io.ruin.model.entity.npc;
 
 import io.ruin.api.utils.Random;
 import io.ruin.data.impl.npcs.npc_combat;
+import io.ruin.model.World;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.combat.*;
 import io.ruin.model.content.bestiary.perks.impl.RespawnPerk;
@@ -164,7 +165,11 @@ public abstract class NPCCombat extends Combat {
     }
 
     public boolean multiCheck(Entity target) {
-        return npc.inMulti() || target.getCombat().allowPj(npc);
+        return npc.inMulti() || target.getCombat().allowPj(npc) || singlePlusCheck(target);
+    }
+
+    public boolean singlePlusCheck(Entity target) {
+        return npc.inSinglePlus() && (target.getCombat().lastAttacker != null && !target.getCombat().lastAttacker.isPlayer());
     }
 
     protected Hit basicAttack() {
