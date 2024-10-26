@@ -129,7 +129,6 @@ public class Vetion extends NPCCombat {
                 drop(npc.getCentrePosition());
             }
         };
-        npc.setIgnoreMulti(true);
         NPCDefinition.get(NpcID.SKELETON_HELLHOUND).occupyTiles = false;
         NPCDefinition.get(NpcID.GREATER_SKELETON_HELLHOUND).occupyTiles = false;
     }
@@ -435,7 +434,6 @@ public class Vetion extends NPCCombat {
         NPC hellhound = new NPC(npcId);
         hellhounds.add(hellhound);
         hellhound.spawn(tile);
-        hellhound.setIgnoreMulti(true);
         if (target != null) {
             hellhound.getCombat().setTarget(target);
             hellhound.face(target);
