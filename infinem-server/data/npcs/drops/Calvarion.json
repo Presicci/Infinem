@@ -7,7 +7,7 @@
     "tables": [
       {
         "name": "Unique",
-        "weight": 97197,
+        "weight": 72197,
         "items": [
           { "id": 7158, "min": 1, "max": 1, "weight": 2790 },   //Dragon 2h sword
           { "id": 11920, "min": 1, "max": 1, "weight": 2790 },   //Dragon pickaxe
@@ -87,7 +87,7 @@
       },
       {
         "name": "Tertiary",
-        "weight": 125014,
+        "weight": 96014,
         "items": [
           { "id": 10976, "min": 1, "max": 1, "weight": 2500 },   //Long bone
           { "id": 10977, "min": 1, "max": 1, "weight": 200 },   //Curved bone

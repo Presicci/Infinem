@@ -173,6 +173,7 @@ public class LootTable {
             for(ItemsTable table : tables) {
                 if (!table.name.equalsIgnoreCase("tertiary")
                         && !table.name.equalsIgnoreCase("secondary")
+                        && !table.name.equalsIgnoreCase("secondary supply roll")
                         && !CommonTables.secondaryTableNames.contains(table.name)) {
                     totalWeight += table.weight;
                 }
@@ -262,6 +263,7 @@ public class LootTable {
                 if (table.name != null
                         && (table.name.equalsIgnoreCase("tertiary")
                         || table.name.equalsIgnoreCase("secondary")
+                        || table.name.equalsIgnoreCase("secondary supply roll")
                         || CommonTables.secondaryTableNames.contains(table.name))) {
                     double tableRand = Random.get() * totalWeight;
                     if (tableRand <= table.weight) {
