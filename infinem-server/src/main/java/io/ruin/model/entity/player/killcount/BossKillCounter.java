@@ -47,7 +47,7 @@ public enum BossKillCounter {
     SARACHNIS("Sarachnis"),
     SCORPIA("Scorpia"),
     SKOTIZO("Skotizo"),
-    SPINDEL("Spindel"),
+    SPINDEL("Spindel", true),
     //TEMPEROSS("Tempeross"),
     //THE_CORRUPTED_GAUNTLET("The Corrupted Gauntlet"),
     //THE_GAUNTLET("The Gauntlet"),
@@ -61,7 +61,7 @@ public enum BossKillCounter {
     //TOA("Tombs of Amascut: Expert Mode"),
     ZUK("TzKal-Zuk"),
     JAD("TzTok-Jad"),
-    VENENATIS("Venenatis"),
+    VENENATIS("Venenatis", true),
     VETION("Vet'ion"),
     VORKATH("Vorkath"),
     WINTERTODT("Wintertodt"),
@@ -69,9 +69,15 @@ public enum BossKillCounter {
     ZULRAH("Zulrah");
 
     public final String name;
+    private final boolean exactName;
 
     BossKillCounter(String name) {
+        this(name, false);
+    }
+
+    BossKillCounter(String name, boolean exactName) {
         this.name = name;
+        this.exactName = exactName;
     }
 
     public KillCounterType getCounter() {
@@ -82,7 +88,9 @@ public enum BossKillCounter {
         for (BossKillCounter counter : values()) {
             if (counter == CALLISTO) continue;
             NPCDefinition.cached.values().stream().filter(Objects::nonNull)
-                    .filter(def -> def.name.toLowerCase().contains(counter.name.toLowerCase()))
+                    .filter(def -> counter.exactName
+                            ? def.name.equalsIgnoreCase(counter.name)
+                            : def.name.toLowerCase().contains(counter.name.toLowerCase()))
                     .forEach(def -> def.killCounterType = new KillCounterType(counter));
         }
     }
