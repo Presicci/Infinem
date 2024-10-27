@@ -487,7 +487,7 @@ public enum Pet {
                 message = player.getName() + " has received the Baby Mole pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.GIANT_MOLE)) + " kill count!";
                 break;
             case CALLISTO_CUB:
-                message = player.getName() + " has received the Callisto Cub pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.CALLISTO)) + " kill count!";
+                message = player.getName() + " has received the Callisto Cub pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.CALLISTO) + KillCounter.getKillCount(player, BossKillCounter.ARTIO)) + " kill count!";
                 break;
             case HELLPUPPY:
                 message = player.getName() + " has received the Hell Puppy pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.CERBERUS)) + " kill count!";
@@ -568,10 +568,10 @@ public enum Pet {
                 message = player.getName() + " has received the Tzrek-Jad pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.JAD)) + " kill count!";
                 break;
             case VENENATIS_SPIDERLING:
-                message = player.getName() + " has received the Venenatis Spiderling pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VENENATIS)) + " kill count!";
+                message = player.getName() + " has received the Venenatis Spiderling pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VENENATIS) + KillCounter.getKillCount(player, BossKillCounter.SPINDEL)) + " kill count!";
                 break;
             case VETION_JR_PURPLE:
-                message = player.getName() + " has received the Vet'ion Jr. pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VETION)) + " kill count!";
+                message = player.getName() + " has received the Vet'ion Jr. pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VETION) + KillCounter.getKillCount(player, BossKillCounter.CALVARION)) + " kill count!";
                 break;
             case VORKI:
                 message = player.getName() + " has received the Vorki pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VORKATH)) + " kill count!";
