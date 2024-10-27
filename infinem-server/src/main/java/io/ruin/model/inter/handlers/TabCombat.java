@@ -51,9 +51,11 @@ public class TabCombat {
     }
 
     public static void updateAutocast(Player player, boolean login) {
-        if(login) {
-            int index = Config.AUTOCAST.get(player);
-            player.getCombat().autocastSpell = TargetSpell.AUTOCASTS[index];
+        if (login) {    // Restore the player's autocast on login, if they still can autocast
+            Integer autocastId = getAutocastId(player);
+            if (autocastId != null && Config.AUTOCAST_SET.get(player) == autocastId) {
+                player.getCombat().autocastSpell = TargetSpell.AUTOCASTS[Config.AUTOCAST.get(player)];
+            }
         } else {
             if(player.isVisibleInterface(Interface.AUTOCAST_SELECTION))
                 open(player, Interface.COMBAT_OPTIONS);

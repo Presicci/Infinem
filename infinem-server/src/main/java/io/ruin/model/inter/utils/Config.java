@@ -407,7 +407,7 @@ public class Config {
 
     public static final Config DEFENSIVE_CAST = varpbit(2668, true);
 
-    public static final Config AUTOCAST_SET = varp(664, false);
+    public static final Config AUTOCAST_SET = varp(664, true);
 
     public static final Config SMITHING_TYPE = varpbit(3216, false);
 
