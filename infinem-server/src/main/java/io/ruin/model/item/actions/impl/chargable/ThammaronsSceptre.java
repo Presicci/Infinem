@@ -65,11 +65,11 @@ public enum ThammaronsSceptre {
             ItemDefinition.get(sceptre.chargedId).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) ThammaronsSceptre::canAttack);
             ItemDefinition.get(sceptre.attunedChargedId).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) ThammaronsSceptre::canAttack);
             ItemDefinition.get(sceptre.unchargedId).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) (player, item) -> {
-                player.sendMessage("Your Thammaron's sceptre has no charges remaining.");
+                player.sendMessage("Your sceptre has no charges remaining.");
                 return false;
             });
             ItemDefinition.get(sceptre.attunedUnchargedId).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) (player, item) -> {
-                player.sendMessage("Your Thammaron's sceptre has no charges remaining.");
+                player.sendMessage("Your sceptre has no charges remaining.");
                 return false;
             });
         }

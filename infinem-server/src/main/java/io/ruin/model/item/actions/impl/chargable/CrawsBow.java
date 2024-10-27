@@ -1,7 +1,9 @@
 package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.combat.Hit;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.entity.Entity;
 import io.ruin.model.item.Items;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
@@ -11,45 +13,55 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
+import lombok.AllArgsConstructor;
 
 import java.util.function.BiPredicate;
 
-public class CrawsBow {
+@AllArgsConstructor
+public enum CrawsBow {
+    CRAWS_BOW(22550, 22547),
+    WEBWEAVER_BOW(27655, 27652);
 
-    private static final int CHARGED = 22550;
-    private static final int UNCHARGED = 22547;
+    private final int chargedId;
+    private final int unchargedId;
 
     private static final int MAX_AMOUNT = 16000;
     private static final int REVENANT_ETHER = 21820;
     private static final int ACTIVATION_AMOUNT = 1000;
 
     static {
-        ItemAction.registerInventory(CHARGED, "check", CrawsBow::check);
-        ItemAction.registerEquipment(CHARGED, "check", CrawsBow::check);
-        ItemAction.registerInventory(CHARGED, "uncharge", CrawsBow::uncharge);
-        ItemAction.registerInventory(UNCHARGED, "dismantle", CrawsBow::dismantle);
-        ItemItemAction.register(CHARGED, REVENANT_ETHER, CrawsBow::charge);
-        ItemItemAction.register(UNCHARGED, REVENANT_ETHER, CrawsBow::charge);
-        ItemDefinition.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
-            if (!hit.keepCharges) consumeCharge(player, item);
-            if (hit.attackStyle != null && hit.attackStyle.isRanged() && target.npc != null && player.wildernessLevel > 0) {
-                hit.boostAttack(0.5);               // 50% accuracy increase
-                hit.boostDamage(0.5);    // 50% damage increase
-            }
-        });
-        ItemDefinition.get(CHARGED).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) (player, item) -> {
-            int currentCharges = AttributeExtensions.getCharges(item);
-            if (currentCharges > 1000) {
-                return true;
-            } else {
-                player.sendMessage("Your Craw's bow has no charges remaining.");
+        for (CrawsBow bow : CrawsBow.values()) {
+            ItemAction.registerInventory(bow.chargedId, "check", CrawsBow::check);
+            ItemAction.registerEquipment(bow.chargedId, "check", CrawsBow::check);
+            ItemAction.registerInventory(bow.chargedId, "uncharge", (player, item) -> uncharge(player, item, bow));
+            ItemAction.registerInventory(bow.unchargedId, "dismantle", CrawsBow::dismantle);
+            ItemItemAction.register(bow.chargedId, REVENANT_ETHER, (player, primary, secondary) -> charge(player, primary, secondary, bow));
+            ItemItemAction.register(bow.unchargedId, REVENANT_ETHER, (player, primary, secondary) -> charge(player, primary, secondary, bow));
+            ItemDefinition.get(bow.chargedId).addPreTargetDefendListener(CrawsBow::boost);
+            ItemDefinition.get(bow.chargedId).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) CrawsBow::canAttack);
+            ItemDefinition.get(bow.unchargedId).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) (player, item) -> {
+                player.sendMessage("Your bow has no charges remaining.");
                 return false;
-            }
-        });
-        ItemDefinition.get(UNCHARGED).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) (player, item) -> {
-            player.sendMessage("Your Craw's bow has no charges remaining.");
+            });
+        }
+    }
+
+    private static void boost(Player player, Item item, Hit hit, Entity target) {
+        if (hit.attackStyle != null && hit.attackStyle.isRanged() && target.npc != null && player.wildernessLevel > 0) {
+            hit.boostAttack(0.5);               // 50% accuracy increase
+            hit.boostDamage(0.5);               // 50% damage increase
+        }
+        if (!hit.keepCharges) consumeCharge(player, item);
+    }
+
+    private static boolean canAttack(Player player, Item item) {
+        int currentCharges = AttributeExtensions.getCharges(item);
+        if (currentCharges > 1000) {
+            return true;
+        } else {
+            player.sendMessage("Your bow has no charges remaining.");
             return false;
-        });
+        }
     }
 
     private static void check(Player player, Item bow) {
@@ -57,35 +69,37 @@ public class CrawsBow {
         player.sendMessage("Your bow has " + (etherAmount) + " charge" + (etherAmount <= 1 ? "" : "s") + " left powering it.");
     }
 
-    private static void charge(Player player, Item crawsBow, Item etherItem) {
+    private static void charge(Player player, Item crawsBow, Item etherItem, CrawsBow crawsBowType) {
         int etherAmount = AttributeExtensions.getCharges(crawsBow);
         int allowedAmount = MAX_AMOUNT - etherAmount;
         if (allowedAmount == 0) {
-            player.sendMessage("Craw's Bow can't hold any more revenant ether.");
+            player.sendMessage(crawsBow.getDef().name + " can't hold any more revenant ether.");
             return;
         }
         if(etherAmount == 0 && etherItem.getAmount() < ACTIVATION_AMOUNT) {
-            player.sendMessage("You require at least 1000 revenant ether to activate this weapon.");
+            player.sendMessage("You require at least 1,000 revenant ether to activate this weapon.");
             return;
         }
         int addAmount = Math.min(allowedAmount, etherItem.getAmount());
-        int newTotal = etherAmount + (addAmount);
         etherItem.incrementAmount(-addAmount);
-        AttributeExtensions.setCharges(crawsBow, newTotal);
+        AttributeExtensions.addCharges(crawsBow, addAmount);
         etherAmount = AttributeExtensions.getCharges(crawsBow);
-        crawsBow.setId(CHARGED);
+        crawsBow.setId(crawsBowType.chargedId);
         if(etherAmount == 0)
-            player.sendMessage("You use 1000 ether to activate the weapon.");
+            player.sendMessage("You use 1,000 ether to activate the weapon.");
         player.sendMessage("You add a further " + (etherAmount == 0 ? addAmount - ACTIVATION_AMOUNT: addAmount)
-                + " revenant ether to your weapon giving it a total of " + (etherAmount - ACTIVATION_AMOUNT) + " charges");
+                + " revenant ether to your weapon giving it a total of " + (AttributeExtensions.getCharges(crawsBow) - ACTIVATION_AMOUNT) + " charges.");
     }
 
-    private static void uncharge(Player player, Item crawsBow) {
+    private static void uncharge(Player player, Item crawsBow, CrawsBow bow) {
         player.dialogue(new YesNoDialogue("Are you sure you want to uncharge it?", "If you uncharge this weapon, all the revenant ether will be returned to your inventory.", crawsBow, () -> {
+            if (!player.getInventory().contains(crawsBow.getId(), crawsBow.getAmount(), false, true))
+                return;
             int etherAmount = AttributeExtensions.getCharges(crawsBow);
-            player.getInventory().addOrDrop(REVENANT_ETHER, etherAmount);
+            if (etherAmount > 0)
+                player.getInventory().addOrDrop(REVENANT_ETHER, etherAmount);
             AttributeExtensions.setCharges(crawsBow, 0);
-            crawsBow.setId(UNCHARGED);
+            crawsBow.setId(bow.unchargedId);
         }));
     }
 
