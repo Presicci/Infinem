@@ -112,6 +112,7 @@ public class TransmogInterface {
             } else {
                 UnlockableTransmog unlockableTransmog = UnlockableTransmog.TRANSMOGS_BY_ID.get(transmogId);
                 if (unlockableTransmog == null) return;
+                player.getTransmogCollection().setTransmogPreview(transmogId);
                 player.dialogueKeepInterfaces(new MessageDialogue("To unlock this transmog:<br><br>" + unlockableTransmog.getUnlockRequirement()));
             }
         }

@@ -47,7 +47,9 @@ public class TransmogCollection {
             int itemId = preview.getOrDefault(key, -2);
             if (itemId != -2) {
                 if (itemId == -1) {
-                    clearTransmog( key);
+                    clearTransmog(key);
+                } else if (!hasTransmog(itemId)) {
+                    clearTransmog(key);
                 } else {
                     setTransmog(itemId);
                 }
