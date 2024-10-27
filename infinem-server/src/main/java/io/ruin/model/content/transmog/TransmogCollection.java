@@ -25,6 +25,18 @@ public class TransmogCollection {
 
     @Setter private Player player;
 
+    public void addToCollection(UnlockableTransmog... unlockableTransmogs) {
+        for (UnlockableTransmog t : unlockableTransmogs) {
+            t.unlock(player, false);
+        }
+    }
+
+    public void addToCollection(int... itemIds) {
+        for (int id : itemIds) {
+            addToCollection(id, false);
+        }
+    }
+
     public boolean addToCollection(int itemId, boolean showNotification) {
         if (collectedTransmogs.add(itemId)) {
             ItemDefinition def = ItemDefinition.get(itemId);
@@ -32,6 +44,7 @@ public class TransmogCollection {
             if (showNotification) {
                 player.getPacketSender().sendPopupNotification(0xff981f, "New Transmog!", Color.WHITE.wrap(def.name));
             }
+            return true;
         }
         return false;
     }

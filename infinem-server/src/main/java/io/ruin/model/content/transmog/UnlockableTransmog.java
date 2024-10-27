@@ -1,5 +1,6 @@
 package io.ruin.model.content.transmog;
 
+import io.ruin.cache.ItemID;
 import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.entity.player.Player;
@@ -33,7 +34,7 @@ public enum UnlockableTransmog {
     BLACK_COFFIN(TransmogSlot.CAPE, 25463, "Open Shades of Mort'ton chests."),
     SILVER_COFFIN(TransmogSlot.CAPE, 25465, "Open Shades of Mort'ton chests."),
     GOLD_COFFIN(TransmogSlot.CAPE, 25467, "Open Shades of Mort'ton chests."),
-    // Diary rewards, KEEP ORDINALS
+    // Diary rewards
     ARDOUGNE_CLOAK_1(TransmogSlot.CAPE, 13121, "Get " + TaskArea.KANDARIN.getPointThreshold(AreaTaskTier.EASY) + " task points from Kandarin tasks.", TaskArea.KANDARIN, AreaTaskTier.EASY),
     ARDOUGNE_CLOAK_2(TransmogSlot.CAPE, 13122, "Get " + TaskArea.KANDARIN.getPointThreshold(AreaTaskTier.MEDIUM) + " task points from Kandarin tasks.", TaskArea.KANDARIN, AreaTaskTier.MEDIUM),
     ARDOUGNE_CLOAK_3(TransmogSlot.CAPE, 13123, "Get " + TaskArea.KANDARIN.getPointThreshold(AreaTaskTier.HARD) + " task points from Kandarin tasks.", TaskArea.KANDARIN, AreaTaskTier.HARD),
@@ -72,8 +73,22 @@ public enum UnlockableTransmog {
     WILDERNESS_SWORD_4(TransmogSlot.WEAPON, 13111, "Get " + TaskArea.WILDERNESS.getPointThreshold(AreaTaskTier.ELITE) + " task points from Wilderness tasks.", TaskArea.WILDERNESS, AreaTaskTier.ELITE),
     // Misc
     FIRE_CAPE(TransmogSlot.CAPE, Items.FIRE_CAPE, "Complete the Fight Caves."),
-    INFERNAL_CAPE(TransmogSlot.CAPE, Items.INFERNAL_CAPE, "Complete The Inferno.")
-    ;
+    INFERNAL_CAPE(TransmogSlot.CAPE, Items.INFERNAL_CAPE, "Complete The Inferno."),
+    // Store transmogs
+    FOUNDER_HOOD_T1(TransmogSlot.HAT, ItemID.SHATTERED_HOOD_T1, "Purchaseable in the shop; part of 'Founder Pack - T1', 'Founder Pack - T2', and 'Founder Pack - T3'"),
+    FOUNDER_TOP_T1(TransmogSlot.CHEST, ItemID.SHATTERED_TOP_T1, "Purchaseable in the shop; part of 'Founder Pack - T1', 'Founder Pack - T2', and 'Founder Pack - T3'"),
+    FOUNDER_BOTTOM_T1(TransmogSlot.LEGS, ItemID.SHATTERED_TROUSERS_T1, "Purchaseable in the shop; part of 'Founder Pack - T1', 'Founder Pack - T2', and 'Founder Pack - T3'"),
+    FOUNDER_BOOTS_T1(TransmogSlot.FEET, ItemID.SHATTERED_BOOTS_T1, "Purchaseable in the shop; part of 'Founder Pack - T1', 'Founder Pack - T2', and 'Founder Pack - T3'"),
+    FOUNDER_HOOD_T2(TransmogSlot.HAT, ItemID.SHATTERED_HOOD_T2, "Purchaseable in the shop; part of 'Founder Pack - T2' and 'Founder Pack - T3'"),
+    FOUNDER_TOP_T2(TransmogSlot.CHEST, ItemID.SHATTERED_TOP_T2, "Purchaseable in the shop; part of 'Founder Pack - T2' and 'Founder Pack - T3'"),
+    FOUNDER_BOTTOM_T2(TransmogSlot.LEGS, ItemID.SHATTERED_TROUSERS_T2, "Purchaseable in the shop; part of 'Founder Pack - T2' and 'Founder Pack - T3'"),
+    FOUNDER_BOOTS_T2(TransmogSlot.FEET, ItemID.SHATTERED_BOOTS_T2, "Purchaseable in the shop; part of 'Founder Pack - T2' and 'Founder Pack - T3'"),
+    FOUNDER_HOOD_T3(TransmogSlot.HAT, ItemID.SHATTERED_HOOD_T3, "Purchaseable in the shop; part of 'Founder Pack - T3'"),
+    FOUNDER_TOP_T3(TransmogSlot.CHEST, ItemID.SHATTERED_TOP_T3, "Purchaseable in the shop; part of 'Founder Pack - T3'"),
+    FOUNDER_BOTTOM_T3(TransmogSlot.LEGS, ItemID.SHATTERED_TROUSERS_T3, "Purchaseable in the shop; part of 'Founder Pack - T3'"),
+    FOUNDER_BOOTS_T3(TransmogSlot.FEET, ItemID.SHATTERED_BOOTS_T3, "Purchaseable in the shop; part of 'Founder Pack - T3'"),
+    FOUNDER_CROSSBOW(TransmogSlot.WEAPON, ItemID.RUNE_CROSSBOW_OR, "Purchaseable in the shop; part of 'Founder Pack - T2' and 'Founder Pack - T3'"),
+    FOUNDER_WHIP(TransmogSlot.WEAPON, ItemID.ABYSSAL_WHIP_OR, "Purchaseable in the shop; part of 'Founder Pack - T3'");
 
     private final TransmogSlot slot;
     private final int itemId;
