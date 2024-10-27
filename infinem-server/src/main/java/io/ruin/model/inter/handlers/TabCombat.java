@@ -25,7 +25,7 @@ public class TabCombat {
             h.actions[21] = (SimpleAction) p -> openAutocast(p, true);
             h.actions[26] = (SimpleAction) p -> openAutocast(p, false);
             h.actions[30] = (SimpleAction) Config.AUTO_RETALIATE::toggle;
-            h.actions[36] = (SimpleAction) p -> p.getCombat().toggleSpecial();
+            h.actions[37] = (SimpleAction) p -> p.getCombat().toggleSpecial();
         });
         InterfaceHandler.register(Interface.AUTOCAST_SELECTION, h -> {
             h.actions[1] = (SlotAction) TabCombat::selectAutocast;
@@ -34,7 +34,7 @@ public class TabCombat {
 
     private static void open(Player player, int interfaceId) {//meehhhh (Todo better interface positioning system..)
         final int parentId = player.getGameFrameId();// Do we need 67?
-        final int childId = parentId == Interface.FIXED_SCREEN ? 75 : Config.SIDE_PANELS.get(player) == 1 ? 78 : 79;
+        final int childId = parentId == Interface.FIXED_SCREEN ? 80 : Config.SIDE_PANELS.get(player) == 1 ? 73 : 76;
         player.getPacketSender().sendInterface(interfaceId, parentId, childId, 1);
     }
 
