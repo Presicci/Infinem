@@ -251,17 +251,23 @@ public class PlayerCombat extends Combat {
                 return;
             }
         }
-        if(useSpell()) {
-            if(!hasAttackDelay())
-                attackWithMagic();
-            return;
-        }
         if(MapArea.MAGE_ARENA.inArea(player) && attackSet.style != AttackStyle.MAGIC) {
             player.sendMessage("You can only use magic inside the arena!");
             reset();
             return;
         }
-        if(attackSet.style == AttackStyle.RANGED) {
+        Equipment equipment = player.getEquipment();
+        if (specialActive != null &&
+                (equipment.hasId(ItemID.ACCURSED_SCEPTRE) || equipment.hasId(ItemID.ACCURSED_SCEPTRE_A))) {
+            handleSpecial(AttackStyle.MAGIC, AttackType.ACCURATE, 0);
+            updateLastAttack(4);
+            if (player.getCombat().getAttackStyle() != AttackStyle.MAGIC) {
+                player.getCombat().reset();
+            }
+        } else if(useSpell()) {
+            if(!hasAttackDelay())
+                attackWithMagic();
+        } else if(attackSet.style == AttackStyle.RANGED) {
             if (!hasAttackDelay() || (specialActive instanceof DragonThrownaxe && Config.SPECIAL_ENERGY.get(player) >= 250))
                 attackWithRanged();
         } else if (attackSet.style == AttackStyle.MAGIC) {
