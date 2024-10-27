@@ -64,7 +64,11 @@ public class SlayerStaffEnchanted {
         ItemAction.registerEquipment(SLAYER_STAFF_E, "check", SlayerStaffEnchanted::check);
         ItemItemAction.register(Items.SLAYERS_STAFF, 21257, SlayerStaffEnchanted::enchant);
         ItemDefinition.get(SLAYER_STAFF_E).addPreTargetDefendListener((player, item, hit, target) -> {
-            if (hit.attackStyle != null && hit.attackStyle.isMagic() && target.npc != null && Slayer.isTask(player, target.npc)) {
+            if (hit.attackStyle != null
+                    && hit.attackStyle.isMagic()
+                    && target.npc != null
+                    && !hit.keepCharges
+                    && Slayer.isTask(player, target.npc)) {
                 removeCharge(player, item);
             }
         });

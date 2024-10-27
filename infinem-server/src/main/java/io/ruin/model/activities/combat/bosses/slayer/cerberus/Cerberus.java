@@ -1,4 +1,4 @@
-package io.ruin.model.activities.combat.bosses.slayer;
+package io.ruin.model.activities.combat.bosses.slayer.cerberus;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
@@ -23,6 +23,15 @@ import java.util.function.BiConsumer;
 
 public class Cerberus extends NPCCombat { // todo - only allow attacking if on a slayer task
 
+    private boolean ATTACK_STARTED = false;
+    private static final int FIRE_WALL = 23105;
+    private static final int NORTH_REGION = 5140;
+    private static final int EAST_REGION = 5395;
+    private static final int WEST_REGION = 4883;
+    private FireWall[] FIRE_WALLS;
+    private static final FireWall[] NORTH_CERB = {new FireWall(FIRE_WALL, 1305, 1306, 0, 10, 0), new FireWall(FIRE_WALL, 1304, 1306, 0, 10, 0), new FireWall(FIRE_WALL, 1303, 1306, 0, 10, 0)}; //5140
+    private static final FireWall[] EAST_CERB = {new FireWall(FIRE_WALL, 1369, 1242, 0, 10, 0), new FireWall(FIRE_WALL, 1368, 1242, 0, 10, 0), new FireWall(FIRE_WALL, 1367, 1242, 0, 10, 0)}; //5395
+    private static final FireWall[] WEST_CERB = {new FireWall(FIRE_WALL, 1241, 1242, 0, 10, 0), new FireWall(FIRE_WALL, 1240, 1242, 0, 10, 0), new FireWall(FIRE_WALL, 1239, 1242, 0, 10, 0)}; //4883
 
     private static final Projectile MAGIC_PROJECTILE = new Projectile(1242, 65, 31, 25, 86, 20, 15, 220);
     private static final Projectile RANGED_PROJECTILE = new Projectile(1245, 65, 31, 25, 86, 20, 15, 220);
@@ -31,6 +40,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
     private static final Projectile SOUL_MAGIC_PROJECTILE = new Projectile(100, 31, 31, 15, 50, 0, 12, 11);
     private static final Projectile SOUL_MELEE_PROJECTILE = new Projectile(1248, 31, 31, 15, 50, 0, 12, 11);
     private static final List<Soul> souls = new ArrayList<>(3);
+    private static final List<NPC> spawnedSouls = new ArrayList<>(3);
 
     private Position[] soulSpawns;
 
@@ -49,17 +59,32 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
           summonSoulsCooldown.reset();
           spreadLavaCooldown.reset();
         };
+        npc.addEvent(event -> {
+            while (true) {
+                if (ATTACK_STARTED && !isDead() && !npc.isHidden() && !npc.isRemoved()
+                        && (npc.localPlayers().isEmpty())) {// no players in sight, reset
+                    npc.getMovement().teleport(npc.spawnPosition);
+                    npc.resetActions(true, true);
+                    npc.getCombat().restore();
+                    removeFireWallSpawns();
+                }
+                event.delay(5);
+            }
+        });
     }
 
     @Override
     public void follow() {
-        follow(1);
+        follow(10);
     }
 
     @Override
     public boolean attack() {
         if (!withinDistance(10))
             return false;
+        if (!ATTACK_STARTED) {
+            setFireWallSpawns();
+        }
         if (!comboAttackCooldown.isDelayed()) {
             comboAttack();
             return true;
@@ -75,23 +100,23 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
         if (withinDistance(1) && Random.rollPercent(25)) {
             meleeAttack(true);
         } else if (Random.rollPercent(50)) {
-            magicAttack();
+            magicAttack(true);
         } else {
-            rangedAttack();
+            rangedAttack(true);
         }
         return true;
     }
 
-    private void rangedAttack() {
+    private void rangedAttack(boolean animate) {
         int delay = RANGED_PROJECTILE.send(npc, target);
-        npc.animate(4492);
+        if (animate) npc.animate(4492);
         target.hit(new Hit(npc, AttackStyle.RANGED, null).randDamage(info.max_damage).clientDelay(delay));
         target.graphics(1244, 100, delay);
     }
 
-    private void magicAttack() {
+    private void magicAttack(boolean animate) {
         int delay = MAGIC_PROJECTILE.send(npc, target);
-        npc.animate(4492);
+        if (animate) npc.animate(4492);
         Hit hit = new Hit(npc, AttackStyle.MAGIC, null)
                 .randDamage(info.max_damage)
                 .clientDelay(delay);
@@ -111,18 +136,18 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
     private void comboAttack() {
         npc.animate(4490); // triple attack
         delayAttack(3);
-        magicAttack();
+        magicAttack(false);
         npc.addEvent(event -> {
             event.delay(2);
             if (!canAttack(target))
                 return;
-            rangedAttack();
+            rangedAttack(false);
             event.delay(2);
             if (!canAttack(target))
                 return;
-            meleeAttack(false);
+            meleeAttack(true);
         });
-        comboAttackCooldown.delay(66); // ~40 seconds cooldown
+        //comboAttackCooldown.delay(66); // ~40 seconds cooldown
     }
 
     private void spreadLava() {
@@ -138,18 +163,19 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
                 World.sendGraphics(1246, 0, 0, pos.getX(), pos.getY(), pos.getZ());
                 event.delay(2);
                 for (int i = 0; i < 6; i++) {
-                    if (target == null)
+                    if (target == null || isDead() || npc.isHidden() || npc.isRemoved())
                         return;
                     if (target.getPosition().equals(pos)) {
                         target.hit(new Hit().randDamage(10, 15));
                     } else if (Misc.getDistance(target.getPosition(), pos) == 1) {
                         target.hit(new Hit().fixedDamage(7));
                     }
+                    World.sendGraphics(1246, 0, 0, pos.getX(), pos.getY(), pos.getZ());
                     event.delay(2);
                 }
                 World.sendGraphics(1247, 0, 0, pos.getX(), pos.getY(), pos.getZ());
                 event.delay(1);
-                if (target == null)
+                if (target == null || isDead() || npc.isHidden() || npc.isRemoved())
                     return;
                 if (target.getPosition().equals(pos)) {
                     target.hit(new Hit().randDamage(15, 18));
@@ -168,6 +194,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
         for (int i = 0; i < 3; i++) {
             Soul s = souls.get(i);
             NPC soul = new NPC(s.npcId).spawn(soulSpawns[i].getX(), soulSpawns[i].getY(), soulSpawns[i].getZ(), Direction.SOUTH, 0);
+            spawnedSouls.add(soul);
             int soulIndex = i;
             soul.addEvent(event -> { // ah this was such a pain in the ass to make work on osrune... this is much easier
                 soul.step(0, -12, StepType.FORCE_WALK); // walk to position
@@ -182,20 +209,77 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
                 soul.faceNone(false);
                 soul.step(0, 10, StepType.FORCE_WALK);
                 event.waitForMovement(soul);
+                spawnedSouls.remove(soul);
                 soul.remove();
             });
         }
     }
 
+    @Override
+    public void startDeath(Hit killHit) {
+        removeFireWallSpawns();
+        spawnedSouls.forEach(NPC::remove);    // Remove soul spawns on death
+        super.startDeath(killHit);
+    }
+
+    private void setFireWallSpawns() {
+        switch (npc.getPosition().getRegion().id) {
+            case NORTH_REGION:
+                FIRE_WALLS = NORTH_CERB;
+                break;
+            case EAST_REGION:
+                FIRE_WALLS = EAST_CERB;
+                break;
+            case WEST_REGION:
+                FIRE_WALLS = WEST_CERB;
+                break;
+            default:
+                ATTACK_STARTED = true;
+                return;
+        }
+        if (FIRE_WALLS != null) {
+            for (FireWall fireWall : FIRE_WALLS) {
+                fireWall.spawn();
+                fireWall.startFirewallCheck();
+                fireWall.cerberusCombat = this;
+            }
+        }
+        ATTACK_STARTED = true;
+    }
+
+    private void removeFireWallSpawns() {
+        if (FIRE_WALLS != null) {
+            for (FireWall fireWall : FIRE_WALLS) {
+                fireWall.remove();
+            }
+        }
+        FIRE_WALLS = null;
+        ATTACK_STARTED = false;
+    }
+
+    protected void restartCerb(Player player) {
+        if (npc.getCombat() != null && !npc.getCombat().isDead() && npc.getCombat().getTarget() != null && npc.getCombat().getTarget().equals(player)) {
+            npc.getMovement().teleport(npc.spawnPosition);
+            npc.resetActions(true, true);
+            npc.getCombat().restore();
+        }
+        removeFireWallSpawns();
+    }
+
+
+
     private enum Soul {
         RANGED(5867, AttackStyle.RANGED, (npc, p) -> {
-            npc.animate(4503);
+            npc.animate(8530);
         }),
         MAGIC(5868, AttackStyle.MAGIC, (npc, p) -> {
-            npc.animate(4504);
+            npc.animate(8529);
             SOUL_MAGIC_PROJECTILE.send(npc, p);
         }),
-        MELEE(5869, AttackStyle.SLASH, SOUL_MELEE_PROJECTILE::send)
+        MELEE(5869, AttackStyle.SLASH, (npc, p) -> {
+            npc.animate(8528);
+            SOUL_MELEE_PROJECTILE.send(npc, p);
+        })
         ;
         int npcId;
         AttackStyle style;

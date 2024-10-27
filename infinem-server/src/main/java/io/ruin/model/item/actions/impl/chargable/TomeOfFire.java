@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl.chargable;
 
+import io.ruin.model.combat.Hit;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -97,10 +98,12 @@ public class TomeOfFire {
         player.sendMessage("Your tome currently holds " + (charges) + " charge" + (charges <= 1 ? "" : "s") + ".");
     }
 
-    public static boolean consumeCharge(Player player) {
+    public static boolean consumeCharge(Player player, Hit hit) {
         Item item = player.getEquipment().findItemIgnoringAttributes(CHARGED, false);
         if(item == null)
             return false;
+        if (hit.keepCharges)
+            return true;
         int charges = AttributeExtensions.getCharges(item);
         item.putAttribute(AttributeTypes.CHARGES, charges - 1);
         if (charges == 0) {

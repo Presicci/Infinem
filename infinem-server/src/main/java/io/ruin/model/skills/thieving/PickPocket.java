@@ -485,7 +485,7 @@ public enum PickPocket {
         }
         RandomEvent.attemptTrigger(player);
         player.lock(LockType.FULL_REGULAR_DAMAGE);
-        player.addEvent(event -> {
+        player.startEvent(event -> {
             if (successful(player, pickpocket)) {
                 /*
                  Roll for 'additional loot'

@@ -15,15 +15,8 @@ public abstract class Combat {
      * Death
      */
 
+    @Setter
     private boolean dead;
-
-    public void setDead(boolean dead) {
-        this.dead = dead;
-    }
-
-    public boolean isDead() {
-        return dead;
-    }
 
     @Getter @Setter
     public boolean truelyDead;
@@ -32,15 +25,7 @@ public abstract class Combat {
      * Target
      */
 
-    protected Entity target;
-
-    public void setTarget(Entity target) {
-        this.target = target;
-    }
-
-    public Entity getTarget() {
-        return target;
-    }
+    @Getter @Setter protected Entity target;
 
     /**
      * Attacking
@@ -159,6 +144,10 @@ public abstract class Combat {
         return highestKiller;
     }
 
+    public boolean isDead() {
+        return dead;
+    }
+
     /**
      * Reset
      */
@@ -190,5 +179,4 @@ public abstract class Combat {
     public abstract double getDragonfireResistance();
 
     public abstract void faceTarget();
-
 }

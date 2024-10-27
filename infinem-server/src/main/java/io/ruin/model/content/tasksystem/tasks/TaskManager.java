@@ -126,7 +126,7 @@ public class TaskManager {
         completeTaskBit(player, uuid);
         // Check for unlocks
         AreaTaskTier newTier = taskArea.getHighestTier(player);
-        if (newTier != null && newTier != prevTier) {
+        if (newTier != null && newTier != prevTier && taskArea != TaskArea.GENERAL) {
             player.sendMessage("<col=990000><shad=000000>You've reached the " + StringUtils.capitalizeFirst(newTier.name().toLowerCase()) + " tier of unlocks in " + taskArea + "!");
             AreaConfig.checkAll(player);
             UnlockableTransmog.unlockAreaTransmogs(player, taskArea);

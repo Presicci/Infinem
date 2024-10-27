@@ -259,7 +259,10 @@ public abstract class Patch {
             compostType = BottomlessCompostBucket.getType(item) + 1;
         } else
             throw new IllegalArgumentException("Invalid compost");
-
+        if (isFullyGrown()) {
+            player.sendMessage("This patch is already fully grown.");
+            return;
+        }
         if (!isRaked()) {
             player.sendMessage("You should clear the patch first.");
             return;
@@ -278,6 +281,8 @@ public abstract class Patch {
             item.remove();
         player.getStats().addXp(StatType.Farming, 4, true);
         player.sendMessage("You treat the patch with " + (compostType == 2 ? "super" : compostType == 3 ? "ultra" : "") + " compost.");
+        getStatus().produceCount = calculateProduceAmount();
+
     }
 
     public void plant(Item item) {

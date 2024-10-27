@@ -83,7 +83,6 @@ public class Blowpipe {
             darts = ItemDefinition.get(dart.id).name + " x " + getDartAmount(blowpipe);
         String scales;
         int scalesAmount = getScalesAmount(blowpipe);
-        System.out.println("Scales: " + scalesAmount); //prints out 16380 here
         if(scalesAmount == 0)
             scales = "0.0%, 0 scales";
         else

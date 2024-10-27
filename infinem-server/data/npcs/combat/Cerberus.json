@@ -1,12 +1,12 @@
 [
   { // Cerberus (318)
     "ids": [ 5862, 5863, 5866 ],
-    "handler": "io.ruin.model.activities.combat.bosses.slayer.Cerberus",
+    "handler": "io.ruin.model.activities.combat.bosses.slayer.cerberus.Cerberus",
     //Combat Info
     "hitpoints": 600,
     "aggressive_level": 636,
     "max_damage": 23,
-    "attack_style": "SLASH",
+    "attack_style": "STAB",
     "pet": "HELLPUPPY",
     //Slayer Info
     "slayer_level": 91,
@@ -28,13 +28,13 @@
     "stab_defence": 50,
     "slash_defence": 100,
     "crush_defence": 25,
-    "magic_defence": 200,
-    "ranged_defence": 200,
+    "magic_defence": 100,
+    "ranged_defence": 100,
     //Immunites
     "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 6,
     "death_ticks": 5,
     "respawn_ticks": 15,
     //Animations

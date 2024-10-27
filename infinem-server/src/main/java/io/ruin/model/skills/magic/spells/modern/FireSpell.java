@@ -12,7 +12,7 @@ public class FireSpell extends TargetSpell {
         super.beforeHit(hit, target);
         if (hit.attacker != null && hit.attacker.player != null) {
             //Tome of Fire Damage Boost
-            if (TomeOfFire.consumeCharge(hit.attacker.player)) {
+            if (TomeOfFire.consumeCharge(hit.attacker.player, hit)) {
                 hit.boostDamage(0.5);
             }
             //Ice Demon Fire Spell Damage Boost

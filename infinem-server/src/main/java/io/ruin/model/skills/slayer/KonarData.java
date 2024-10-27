@@ -4,8 +4,12 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Region;
+import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -38,7 +42,7 @@ public class KonarData {
         ADAMANT_DRAGON(108, TaskLocation.LITHKREN_VAULT),
         ANKOU(79, TaskLocation.STRONGHOLD_OF_SECURITY, TaskLocation.STRONGHOLD_SLAYER_CAVE, TaskLocation.CATACOMBS_OF_KOUREND),
         BLACK_DEMON(30, TaskLocation.TAVERLY_DUNGEON, TaskLocation.BRIMHAVEN_DUNGEON, TaskLocation.CATACOMBS_OF_KOUREND),
-        BLACK_DRAGON(27, TaskLocation.TAVERLY_DUNGEON, TaskLocation.EVIL_CHICKEN_LAIR, TaskLocation.MYTHS_GUILD_DUNGEON, TaskLocation.CATACOMBS_OF_KOUREND),
+        BLACK_DRAGON(27, TaskLocation.TAVERLY_DUNGEON, TaskLocation.EVIL_CHICKEN_LAIR, TaskLocation.MYTHS_GUILD_DUNGEON),
         BLOODVELD(48, TaskLocation.STRONGHOLD_SLAYER_CAVE, TaskLocation.GODWARS_DUNGEON, TaskLocation.SLAYER_TOWER, TaskLocation.CATACOMBS_OF_KOUREND),
         BLUE_DRAGON(25, TaskLocation.TAVERLY_DUNGEON, TaskLocation.OGRE_ENCLAVE, TaskLocation.MYTHS_GUILD_DUNGEON, TaskLocation.CATACOMBS_OF_KOUREND),
         //BRINE_RAT("brine rat", TaskLocation.BRINE_RAT_CAVERN),
@@ -91,7 +95,7 @@ public class KonarData {
         RELEKKA_SLAYER_DUNGEON("Relekka Slayer Dungeon", new Bounds(2680, 9950, 2814, 10045, -1)),
         KRAKEN_COVE("Kraken Cove", new Bounds(2238, 9983, 2304, 10048, -1)),
         CATACOMBS_OF_KOUREND("Catacombs of Kourend", new Bounds(1588, 9978, 1747, 10110, -1)),
-        SLAYER_TOWER("Slayer Tower", Bounds.fromRegion(13623)),
+        SLAYER_TOWER("Slayer Tower", 13623, 13723),
         TAVERLY_DUNGEON("Taverly Dungeon", new Bounds(2812, 9666, 2969, 9855, -1)),
         WITCHAVEN_DUNGEON("Witchaven Dungeon", new Bounds(2686, 9663, 2750, 9720, -1)),
         WATERFALL_DUNGEON("Waterfall Dungeon", new Bounds(2558, 9860, 2596, 9916, -1)),
@@ -100,7 +104,7 @@ public class KonarData {
         BRIMHAVEN_DUNGEON("Brimhaven Dungeon", new Bounds(2625, 9404, 2751, 9599, -1)),
         ABYSSAL_AREA("Abyssal Area", new Bounds(3007, 4863, 3071, 4926, -1)),
         MYTHS_GUILD_DUNGEON("Myths' Guild Dungeon", new Bounds(1876, 8960, 2072, 9085, -1)),
-        WATERBIRTH_ISLAND("Waterbirth Island", Bounds.fromRegions(9886, 10142, 7236, 7748, 7492, 7236, 11589, 11588)),
+        WATERBIRTH_ISLAND("Waterbirth Island", 9886, 10142, 7236, 7748, 7492, 7236, 11589, 11588),
         GODWARS_DUNGEON("Godwars Dungeon", new Bounds(2816, 5255, 2942, 5370, -1)),
         BRINE_RAT_CAVERN("Brine Rat Cavern", new Bounds(2686, 10116, 2751, 10175, -1)),
         SMOKE_DUNGEON("Smoke Dungeon", new Bounds(3168, 9344, 3326, 9404, -1)),
@@ -117,21 +121,38 @@ public class KonarData {
         OGRE_ENCLAVE("Ogre Enclave", new Bounds(2561, 9407, 2621, 9469, -1)),
         WYVERN_CAVE("Wyvern Cave", Bounds.fromRegions(14495, 14496));
 
-        private final String name;
+        @Getter private final String name;
         private final Bounds[] boundaries;
+        private final Region[] regions;
+
+        TaskLocation(String name) {
+            this.name = name;
+            this.boundaries = new Bounds[0];
+            this.regions = new Region[0];
+        }
 
         TaskLocation(String name, Bounds... boundaries) {
             this.name = name;
             this.boundaries = boundaries;
+            this.regions = new Region[0];
         }
 
-        public String getName() {
-            return name;
+        TaskLocation(String name, int... regionIds) {
+            this.name = name;
+            this.boundaries = new Bounds[0];
+            List<Region> regions = new ArrayList<>(regionIds.length);
+            for (int id : regionIds) {
+                regions.add(Region.get(id));
+            }
+            this.regions = regions.toArray(new Region[0]);
         }
 
         public boolean inside(Position pos) {
             for (Bounds b : boundaries)
                 if (b.inBounds(pos.getX(), pos.getY(), pos.getZ(), 0))
+                    return true;
+            for (Region r : regions)
+                if (r.isInside(pos))
                     return true;
             return false;
         }

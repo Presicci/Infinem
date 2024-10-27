@@ -244,6 +244,10 @@ public class Region {
         house = null;
     }
 
+    public boolean isInside(Position position) {
+        return bounds.inBounds(position);
+    }
+
 
     public House getHouse() {
         return house;

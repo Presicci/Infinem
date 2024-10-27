@@ -290,6 +290,7 @@ public class StarterGuide {
         player.getInventory().add(Items.BRONZE_AXE, 1);
         player.getInventory().add(Items.BRONZE_PICKAXE, 1);
         player.getInventory().add(Items.TINDERBOX, 1);
+        player.getInventory().add(757, 1); // Guide book
         switch (player.getGameMode()) {
             case IRONMAN:
                 player.getInventory().add(12810, 1);

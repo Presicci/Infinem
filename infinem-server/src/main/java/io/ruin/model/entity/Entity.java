@@ -724,6 +724,8 @@ public abstract class Entity extends TemporaryAttributesHolder {
     public int hit(Hit... hits) {
         if(queuedHits == null)
             queuedHits = new ArrayList<>();
+        if (getCombat() != null && getCombat().isDead())
+            return 0;
         int damage = 0;
         for(Hit hit : hits) {
             if(hit.defend(this)) {

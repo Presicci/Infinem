@@ -60,7 +60,7 @@ public class BestiaryEntry {
         if (name == null || name.isEmpty()) return defaultMulti;
         for (BestiaryPerk perk : perks) {
             if (player.hasAttribute(getPerkKey(perkType))) {
-                return perk.getMultiplier(0);
+                return defaultMulti;
             }
             if (perkType.isInstance(perk))
                 return perk.getMultiplier(killCount);

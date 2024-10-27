@@ -44,15 +44,15 @@ public class RingOfRecoil {
     }
 
     public static void check(Player player, Hit hit) {
-        if(hit.attacker == null || hit.attackStyle == null)
+        if (hit.attacker == null || hit.attackStyle == null || hit.attacker.getCombat() == null || hit.attacker.getCombat().isDead())
             return;
         Item ring = player.getEquipment().get(Equipment.SLOT_RING);
-        if(ring == null || ring.getId() != RING_OF_RECOIL)
+        if (ring == null || ring.getId() != RING_OF_RECOIL)
             return;
         int damage = (int) Math.ceil(hit.damage * 0.10);
-        if(damage == 0)
+        if (damage == 0)
             return;
-        if(damage >= player.recoilDamageRemaining) {
+        if (damage >= player.recoilDamageRemaining) {
             damage = player.recoilDamageRemaining;
             rechargeRing(player);
             ring.remove();

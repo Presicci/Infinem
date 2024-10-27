@@ -1231,7 +1231,7 @@ public class PlayerCombat extends Combat {
             if (target.getHp() <= 0 || hit.attackWeapon == null) {
                 return;
             }
-            Hit secondHit = new Hit(player, hit.attackStyle, hit.attackType).randDamage(hit.maxDamage).setAttackWeapon(null).ignoreDefence().ignorePrayer();
+            Hit secondHit = new Hit(player, hit.attackStyle, hit.attackType).randDamage(hit.maxDamage).setAttackWeapon(null).keepCharges().ignoreDefence().ignorePrayer();
             RangedAmmo rangedAmmo = hit.rangedWeapon == null ? null : hit.rangedWeapon.rangedAmmo;
             if(rangedAmmo != null && rangedAmmo.effect != null && rangedAmmo.effect.apply(target, secondHit))
                 return;
@@ -1891,7 +1891,7 @@ public class PlayerCombat extends Combat {
                 continue;
             if (!player.getCombat().canAttack(plr, false))
                 continue;
-            plr.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
+            plr.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef).keepCharges());
             if (++targetCount >= targetCap)
                 break;
         }
@@ -1910,7 +1910,7 @@ public class PlayerCombat extends Combat {
                 continue;
             if (!player.getCombat().canAttack(npc, false))
                 continue;
-            npc.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef));
+            npc.hit(new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef).keepCharges());
             if (++targetCount >= targetCap)
                 break;
         }

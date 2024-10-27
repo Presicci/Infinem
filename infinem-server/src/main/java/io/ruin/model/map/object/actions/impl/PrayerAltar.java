@@ -29,7 +29,7 @@ public class PrayerAltar {
         }
         prayer.restore();
         int pointsRestored = prayer.currentLevel - currentPoints;
-        player.getTaskManager().doLookupByCategory(TaskCategory.PRAYERRESTORED, pointsRestored, true);
+        player.getTaskManager().doLookupByCategory(TaskCategory.PRAYERRESTORED, pointsRestored, false);
         player.animate(645);
         player.privateSound(2674);
     }
