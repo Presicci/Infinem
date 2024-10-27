@@ -36,7 +36,8 @@ public enum Pet {
      */
     ABYSSAL_ORPHAN(13262, 5884, null),
     BABY_MOLE(12646, 6635, null, 3000, 600),
-    CALLISTO_CUB(13178, 5558, null, 2800, 500),
+    CALLISTO_CUB(27649, 11986, 5558, null, 2800, 500),
+    CALLISTO_CUB_RETRO(13178, 5558, 11986, null),
     HELLPUPPY(13247, 3099, null, 3000, 600),
     KALPHITE_PRINCESS(12647, 6638, 6637, null, 3000, 600),
     KALPHITE_PRINCESS_2(12654, 6637, 6638, null),
@@ -60,9 +61,12 @@ public enum Pet {
     PRINCE_BLACK_DRAGON(12653, 6636, null, 3000, 600),
     SCORPIAS_OFFSPRING(13181, 5561, null, 2016, 400),
     TZREK_JAD(13225, 5893, 15008, null, 100, 50),
-    VENENATIS_SPIDERLING(13177, 5557, null, 2800, 500),
+    VENENATIS_SPIDERLING(13177, 5557, 11985, null, 2800, 500),
+    VENENATIS_SPIDERLING_RETRO(27648, 11985, 5557, null),
     VETION_JR_PURPLE(13179, 5559, 5560, null, 2800, 500),
-    VETION_JR_ORANGE(13180, 5560, 5559, null),
+    VETION_JR_ORANGE(13180, 5560, 11987, null),
+    VETION_JR_PURPLE_RETRO(27650, 11987, 11988, null),
+    VETION_JR_ORANGE_RETRO(27651, 11988, 5559, null),
     SKOTOS(21273, 7671, null, 65, 65),
     VORKI(21992, 8029, null, 3000, 1500),
     LIL_ZIK(22473, 8337, null, 500, 250),
@@ -1125,6 +1129,7 @@ public enum Pet {
                         new NPCDialogue(pet.npcId, "You're overthinking this.")
                 );
             }
+            case CALLISTO_CUB_RETRO:
             case CALLISTO_CUB: {
                 return player -> player.dialogue(
                         new PlayerDialogue("Why the grizzly face?"),
@@ -1148,6 +1153,7 @@ public enum Pet {
                         new NPCDialogue(pet.npcId, "In answer to your question though. Yes I, like every scorpion, would glow.")
                 );
             }
+            case VENENATIS_SPIDERLING_RETRO:
             case VENENATIS_SPIDERLING: {
                 return player -> player.dialogue(
                         new PlayerDialogue("It's a damn good thing I don't have arachnophobia."),
@@ -1262,6 +1268,8 @@ public enum Pet {
                         new PlayerDialogue("Wow. Whoever created you wasn't very creative. You're just resized versions of one another!")
                 );
             }
+            case VETION_JR_ORANGE_RETRO:
+            case VETION_JR_PURPLE_RETRO:
             case VETION_JR_ORANGE:
             case VETION_JR_PURPLE: {
                 return player -> player.dialogue(
