@@ -129,6 +129,10 @@ public class TabCombat {
                 case 28262: // Ice ancient sceptre
                 case 28264: // Smoke ancient sceptre
                 case 28266: // Shadow ancient sceptre
+                case ItemID.THAMMARONS_SCEPTRE_AU:
+                case ItemID.THAMMARONS_SCEPTRE_A:
+                case ItemID.ACCURSED_SCEPTRE_AU:
+                case ItemID.ACCURSED_SCEPTRE_A:
                     return 4675;
                 default:
                     return null;
@@ -251,6 +255,8 @@ public class TabCombat {
                 case 21200: // Mystic lava staff (or)
                 case ItemID.THAMMARONS_SCEPTRE_AU:
                 case ItemID.THAMMARONS_SCEPTRE_A:
+                case ItemID.ACCURSED_SCEPTRE_AU:
+                case ItemID.ACCURSED_SCEPTRE_A:
                     return -1;
                 default:
                     return null;
