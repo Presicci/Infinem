@@ -365,7 +365,6 @@ public class PlayerCombat extends Combat {
         if (weaponDef.id == ItemID.THAMMARONS_SCEPTRE || weaponDef.id == ItemID.ACCURSED_SCEPTRE) {
             boolean thammaronsSceptre = weaponDef.id == ItemID.THAMMARONS_SCEPTRE;
             player.animate(1167);
-            target.graphics(78, 60, 70);
             target.publicSound(1460, 0, 76);
             player.publicSound(178);
             int duration = new Projectile(thammaronsSceptre ? 2340 : 2337, 30, 23, 46, 0, 10, 10, 64, true).send(player, target);
@@ -373,7 +372,11 @@ public class PlayerCombat extends Combat {
                     .randDamage(getThammaronSceptreMaxDamage(thammaronsSceptre ? 8 : 6))
                     .clientDelay(duration)
                     .setAttackWeapon(weaponDef);
-            target.hit(hit);
+            int damage = target.hit(hit);
+            if (damage > 0) {
+                target.graphics(78, 60, duration);
+                if (target.isNpc() && player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) aoeAttack(damage / 2, duration, 5);
+            }
             updateLastAttack(5);
         }
     }
