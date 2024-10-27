@@ -58,7 +58,9 @@ public class InterfaceOnEntityHandler {
                     .add("itemId", itemId);
             player.sendFilteredMessage("[ItemOnEntityAction] " + debug.toString());
         }
-        if (itemId == -1 || itemId == 65535)
+        if (itemId == -1
+                || itemId == 65535
+                || (target.isNpc() && (int) target.npc.getDef().custom_values.getOrDefault("ITEM_ON_NPC_SKIP_MOVE_CHECK", -1) == itemId))
             action(player, target, interfaceHash, slot, itemId);
         else
             TargetRoute.set(player, target, () -> action(player, target, interfaceHash, slot, itemId));

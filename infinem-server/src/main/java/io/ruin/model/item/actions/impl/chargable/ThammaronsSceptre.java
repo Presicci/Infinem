@@ -1,6 +1,8 @@
 package io.ruin.model.item.actions.impl.chargable;
 
+import io.ruin.api.utils.Random;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.item.Items;
 import io.ruin.utility.Color;
@@ -82,7 +84,7 @@ public enum ThammaronsSceptre {
             hit.boostAttack(0.5);               // 50% accuracy increase
             hit.boostDamage(0.5);    // 50% damage increase
         }
-        consumeCharge(player, item);
+        if (hit.attackWeapon != null) consumeCharge(player, item);
     }
 
     private static boolean canAttack(Player player, Item item) {
@@ -135,6 +137,7 @@ public enum ThammaronsSceptre {
     }
 
     public static boolean consumeCharge(Player player, Item item) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(2)) return true;
         int charges = AttributeExtensions.getCharges(item);
         if(charges <= 1000) {
             player.sendMessage(Color.DARK_RED.wrap("Your weapon has run out of revenant ether!"));
