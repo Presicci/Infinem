@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl.combine;
 
+import io.ruin.cache.ItemID;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -239,6 +240,23 @@ public class ItemCombineAction {
         NETTLE_WATER("You add the nettles to the water.", Collections.singletonList(new SkillRequired(StatType.Cooking, 20, 1)),
                 Arrays.asList(new ItemPair(Items.BOWL_OF_WATER, Items.NETTLEWATER), new ItemPair(Items.NETTLES, -1))),
 
+        WEBWEAVER_BOW("You carefully combine the fangs with the bow.", Collections.singletonList(new SkillRequired(StatType.Fletching, 85, 100)),
+                Arrays.asList(new ItemPair(ItemID.CRAWS_BOW, ItemID.WEBWEAVER_BOW), new ItemPair(ItemID.FANGS_OF_VENENATIS, -1))),
+        WEBWEAVER_BOW_U("You carefully combine the fangs with the bow.", Collections.singletonList(new SkillRequired(StatType.Fletching, 85, 100)),
+                Arrays.asList(new ItemPair(ItemID.CRAWS_BOW_U, ItemID.WEBWEAVER_BOW_U), new ItemPair(ItemID.FANGS_OF_VENENATIS, -1))),
+        ACCURSED_SCEPTRE("You carefully combine the skull with the sceptre.", Collections.singletonList(new SkillRequired(StatType.Fletching, 85, 100)),
+                Arrays.asList(new ItemPair(ItemID.THAMMARONS_SCEPTRE, ItemID.ACCURSED_SCEPTRE), new ItemPair(ItemID.SKULL_OF_VETION, -1))),
+        ACCURSED_SCEPTRE_U("You carefully combine the skull with the sceptre.", Collections.singletonList(new SkillRequired(StatType.Fletching, 85, 100)),
+                Arrays.asList(new ItemPair(ItemID.THAMMARONS_SCEPTRE_U, ItemID.ACCURSED_SCEPTRE_U), new ItemPair(ItemID.SKULL_OF_VETION, -1))),
+        ACCURSED_SCEPTRE_A("You carefully combine the skull with the sceptre.", Collections.singletonList(new SkillRequired(StatType.Fletching, 85, 100)),
+                Arrays.asList(new ItemPair(ItemID.THAMMARONS_SCEPTRE_A, ItemID.ACCURSED_SCEPTRE_A), new ItemPair(ItemID.SKULL_OF_VETION, -1))),
+        ACCURSED_SCEPTRE_AU("You carefully combine the skull with the sceptre.", Collections.singletonList(new SkillRequired(StatType.Fletching, 85, 100)),
+                Arrays.asList(new ItemPair(ItemID.THAMMARONS_SCEPTRE_AU, ItemID.ACCURSED_SCEPTRE_AU), new ItemPair(ItemID.SKULL_OF_VETION, -1))),
+        URSINE_CHAINMACE("You carefully combine the claws with the chainmace.", Collections.singletonList(new SkillRequired(StatType.Fletching, 85, 100)),
+                Arrays.asList(new ItemPair(ItemID.VIGGORAS_CHAINMACE, ItemID.URSINE_CHAINMACE), new ItemPair(ItemID.CLAWS_OF_CALLISTO, -1))),
+        URSINE_CHAINMACE_U("You carefully combine the claws with the chainmace.", Collections.singletonList(new SkillRequired(StatType.Fletching, 85, 100)),
+                Arrays.asList(new ItemPair(ItemID.VIGGORAS_CHAINMACE_U, ItemID.URSINE_CHAINMACE_U), new ItemPair(ItemID.CLAWS_OF_CALLISTO, -1))),
+
         /**
          * Crafting
          */
@@ -308,7 +326,7 @@ public class ItemCombineAction {
 
         public boolean combine(Player player, List<ItemPair> itemReqs) {
             for (ItemPair i : itemReqs) {   // If the player runs out of items, break loop
-                if (i.required != null && !player.getInventory().contains(i.required)) {
+                if (i.required != null && !player.getInventory().contains(i.required.getId(), i.required.getAmount(), false, true)) {
                     return false;
                 }
             }
@@ -323,7 +341,7 @@ public class ItemCombineAction {
             }
             for (ItemPair i : itemReqs) {
                 if (i.required != null && i.replacement != null) {
-                    player.getInventory().findItem(i.required.getId()).setId(i.replacement.getId());
+                    player.getInventory().findItemIgnoringAttributes(i.required.getId(), false).setId(i.replacement.getId());
                 } else if (i.required == null) {
                     player.getInventory().addOrDrop(i.replacement);
                 } else {
