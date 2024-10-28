@@ -22,13 +22,12 @@ import lombok.Getter;
  */
 @Getter
 public enum Master {
-
-    TURAEL(1, 1, 401, 1),
-    MAZCHNA(1, 20, 402, 2),
+    TURAEL(1, 1, 13618, 1),
+    MAZCHNA(1, 20, 13620, 2),
     VANNAKA(1, 40, 403, 3),
     CHAELDAR(1, 70, 404, 4),
     NIEVE(1, 85, 6797, 5),
-    DURADEL(50, 100, 405, 6),
+    DURADEL(50, 100, 13622, 6),
     KRYSTILIA(1, 1, 7663, 7, "Yeah? What do you want?"),
     KONAR(1, 75, 8623, 8, "Bringer of death, have you come to serve the balance?"),
     STEVE(1, 85, 6798, 9);
