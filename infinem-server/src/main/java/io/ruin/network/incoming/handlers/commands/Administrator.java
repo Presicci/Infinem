@@ -3286,6 +3286,11 @@ public class Administrator {
                 player.sendMessage("Inside: " + KonarData.TaskLocation.values()[Integer.parseInt(args[0])].inside(player.getPosition()));
                 return true;
             }
+            case "cleartransmog":
+            case "cleartransmogs": {
+                player.getTransmogCollection().clearCollection();
+                return true;
+            }
         }
         return false;
     }
