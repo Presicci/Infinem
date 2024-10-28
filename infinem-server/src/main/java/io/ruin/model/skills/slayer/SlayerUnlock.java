@@ -391,7 +391,7 @@ public enum SlayerUnlock {
         BROAD_BOLTS(11875, 35, 250),    // Broad bolts
         BROAD_ARROWS(4160, 35, 250),    // Broad arrows
         HERB_SACK(13226, 750, 1),       // Herb sack
-        RUNE_POUCH(12791, 1250, 1),     // Rune pouch
+        RUNE_POUCH(12791, 750, 1),     // Rune pouch
         LOOTING_BAG(11941, 10, 1);      // Looting bag
 
         public final int id, price, buyAmount;
