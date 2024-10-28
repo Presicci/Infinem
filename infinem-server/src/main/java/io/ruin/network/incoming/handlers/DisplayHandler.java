@@ -26,7 +26,11 @@ public class DisplayHandler implements Incoming {
         int canvasWidth = in.readShort();
         int canvasHeight = in.readShort();
         if (!player.hasDisplay()) {
+            if (displayMode == 2 && Config.SIDE_PANELS.get(player) == 1) {
+                displayMode = 3;
+            }
             player.setDisplayMode(displayMode);
+            System.out.println(displayMode);
             sendDisplay(player);
             player.start();
             player.setOnline(true);
@@ -48,9 +52,9 @@ public class DisplayHandler implements Incoming {
         if (player.isFixedScreen()) {
             ps.sendGameFrame(548);
         } else if (Config.SIDE_PANELS.get(player) == 0) {
-            ps.sendGameFrame(164);
-        } else {
             ps.sendGameFrame(161);
+        } else {
+            ps.sendGameFrame(164);
         }
         openInterface(player, Interface.CHAT_BAR, 96, 1);
         openInterface(player, COMBAT_OPTIONS, 76, 1);
@@ -150,9 +154,9 @@ public class DisplayHandler implements Incoming {
         if (player.isFixedScreen()) {
             ps.sendGameFrame(548);
         } else if (Config.SIDE_PANELS.get(player) == 1) {
-            ps.sendGameFrame(164);
-        } else {
             ps.sendGameFrame(161);
+        } else {
+            ps.sendGameFrame(164);
         }
 
         Map<Integer, Integer> newComponents = getToplevelComponents(player).getValuesAsInts();
