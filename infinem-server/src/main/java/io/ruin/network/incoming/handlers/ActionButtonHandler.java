@@ -131,7 +131,6 @@ public class ActionButtonHandler {
                     .add("item", itemId);
             player.sendFilteredMessage("[ActionButton] " + debug.toString());
         }
-        System.out.println("inter: " + interfaceId + ", child: " + childId + ", slot: " + slot + ", option: " + option);
         if (player.hasTemporaryAttribute("TUTORIAL") && interfaceId != Interface.LOGOUT && !dialogue && interfaceId != Interface.IRON_MAN_SETTINGS && interfaceId != Interface.APPEARANCE_CUSTOMIZATION)
             return;
         // Inventory

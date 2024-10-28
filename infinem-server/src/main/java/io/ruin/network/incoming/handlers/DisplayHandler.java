@@ -30,7 +30,6 @@ public class DisplayHandler implements Incoming {
                 displayMode = 3;
             }
             player.setDisplayMode(displayMode);
-            System.out.println(displayMode);
             sendDisplay(player);
             player.start();
             player.setOnline(true);

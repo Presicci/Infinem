@@ -340,7 +340,6 @@ public class PlayerUpdater {
      */
 
     private void writeMasks(Player localPlayer, int maskData) {
-        System.out.println("writemasks");
         int smallMask = 8;
         int largeMask = 1024;
 
