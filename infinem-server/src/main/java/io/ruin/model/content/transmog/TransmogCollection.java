@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.NotificationInterface;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.utility.Color;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,7 +42,7 @@ public class TransmogCollection {
         if (collectedTransmogs.add(itemId)) {
             ItemDefinition def = ItemDefinition.get(itemId);
             player.sendMessage("New transmog added to your collection: " + Color.RED.wrap(def.name));
-            if (showNotification) {
+            if (showNotification && Config.TRANSMOG_POPUP.get(player) == 0) {
                 player.getPacketSender().sendPopupNotification(0xff981f, "New Transmog!", Color.WHITE.wrap(def.name));
             }
             return true;
@@ -111,6 +112,10 @@ public class TransmogCollection {
         }
         transmogs.put(slot, itemId);
         TransmogInterface.sendSlot(player, slot);
+    }
+
+    public void clearCollection() {
+        collectedTransmogs.clear();
     }
 
     public int getTransmogIdForSlot(int slot) {

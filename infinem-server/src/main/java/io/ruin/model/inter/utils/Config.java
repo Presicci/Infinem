@@ -151,6 +151,7 @@ public class Config {
     public static final Config MAP_KEY_OPEN_BY_DEFAULT = varpbit(10294, true).defaultValue(1);
     public static final Config BESTIARY_KC = varpbit(16010, true);
     public static final Config BESTIARY_NEW_ENTRY = varpbit(16016, true).defaultValue(1);
+    public static final Config TRANSMOG_POPUP = varpbit(16017, true).defaultValue(1);
     public static final Config INFORMATION_BROADCASTS = varpbit(16011, true).defaultValue(1);
     public static final Config SKILLING_BROADCASTS = varpbit(16012, true).defaultValue(1);
     public static final Config DROP_BROADCASTS = varpbit(16013, true).defaultValue(1);
