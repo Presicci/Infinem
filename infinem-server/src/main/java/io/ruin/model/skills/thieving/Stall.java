@@ -93,6 +93,7 @@ public enum Stall {
             new int[][]{
                     {6165, 6984},
                     {11729, 634},
+                    {36569, 36568}
             },
             new LootTable().addTable(1,
                     new LootItem(950, 1, 1)                     //Silk
@@ -193,6 +194,7 @@ public enum Stall {
             new int[][]{
                     {6164, 6984},
                     {11734, 634},
+                    {36570, 36568}
             },
             new LootTable().addTable(1,
                     new LootItem(Items.SILVER_ORE, 1, 16),
@@ -205,6 +207,7 @@ public enum Stall {
                     {6572, 6573},
                     {11733, 634},
                     {20348, 20349},
+                    {36572, 36568}
             },
             new LootTable().addTable(1,
                     new LootItem(2007, 1, 2)                      //Spice
@@ -235,6 +238,7 @@ public enum Stall {
             new int[][]{
                     {6162, 6984},
                     {11731, 634},
+                    {36571, 36568}
             },
             new LootTable().addTable(1,
                     new LootItem(1623, 1, 10),                     //Uncut sapphire
