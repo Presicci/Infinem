@@ -217,8 +217,9 @@ public class Slayer {
     }
 
     public static int decrementTaskAmount(Player player, int amount, int master) {
+        if (player.getAttributeIntOrZero(AttributeKey.SLAYER_TASK_AMOUNT) <= 0) return 0;
         int am = player.incrementNumericAttribute(AttributeKey.SLAYER_TASK_AMOUNT, -amount);
-        if (am == 0) {
+        if (am <= 0) {
             final int spree = ++player.slayerSpree;
             final int points = SlayerMaster.getTaskPoints(master, spree);
             final int current = Config.SLAYER_POINTS.get(player);
