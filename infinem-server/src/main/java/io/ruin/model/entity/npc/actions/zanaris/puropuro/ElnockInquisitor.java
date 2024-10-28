@@ -178,7 +178,8 @@ public class ElnockInquisitor {
                             new OptionsDialogue("What would you like to ask about?",
                                     new Option("Can I trade some jarred implings please?", () -> ElnockExchange.open(player)),
                                     new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc)),
-                                    new Option("Can you tell me about the wheat?", () -> wheatDialogue(player, npc))
+                                    new Option("Can you tell me about the wheat?", () -> wheatDialogue(player, npc)),
+                                    new Option("Can I buy more impling jars?", () -> npc.openShop(player))
                             )
                     );
                 } else {

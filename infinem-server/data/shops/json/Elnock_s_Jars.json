@@ -1,0 +1,18 @@
+{
+  "name": "Elnock's Jars",
+  "currency": "COINS",
+  "npcs": [
+    5734
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 11260,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 2000
+    }
+  ]
+}
