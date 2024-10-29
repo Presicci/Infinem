@@ -847,6 +847,7 @@ public class Config {
      * Magic book
      */
     public static final Config DISABLE_SPELL_FILTERING = varpbit(6718, true);
+    public static final Config DISABLE_PRAYER_FILTERING = varpbit(6579, true);
     public static final Config SHOW_COMBAT_SPELLS = varpbit(6605, true);
     public static final Config SHOW_UTILITY_SPELLS = varpbit(6606, true);
     public static final Config SHOW_SPELLS_LACK_LEVEL = varpbit(6607, true);

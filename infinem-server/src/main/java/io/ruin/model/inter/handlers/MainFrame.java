@@ -78,18 +78,30 @@ public class MainFrame {
             }
         });
         InterfaceHandler.register(Interface.FIXED_SCREEN, actions -> {
-            actions.actions[62] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[68] = (DefaultAction) (player, option, slot, itemId) -> {
+                if(option == 2)
+                    Config.DISABLE_PRAYER_FILTERING.toggle(player);
+            };
+            actions.actions[69] = (DefaultAction) (player, option, slot, itemId) -> {
                 if(option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
         });
         InterfaceHandler.register(Interface.RESIZED_SCREEN, actions -> {
-            actions.actions[58] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[64] = (DefaultAction) (player, option, slot, itemId) -> {
+                if(option == 2)
+                    Config.DISABLE_PRAYER_FILTERING.toggle(player);
+            };
+            actions.actions[65] = (DefaultAction) (player, option, slot, itemId) -> {
                 if(option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
         });
         InterfaceHandler.register(Interface.RESIZED_STACKED_SCREEN, actions -> {
+            actions.actions[57] = (DefaultAction) (player, option, slot, itemId) -> {
+                if(option == 2)
+                    Config.DISABLE_PRAYER_FILTERING.toggle(player);
+            };
             actions.actions[58] = (DefaultAction) (player, option, slot, itemId) -> {
                 if(option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
