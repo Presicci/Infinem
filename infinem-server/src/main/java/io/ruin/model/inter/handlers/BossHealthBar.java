@@ -71,6 +71,10 @@ public class BossHealthBar {
     }
 
     public static void tick(Player player) {
+        if (!player.getCombat().isDefending(30)) {
+            close(player);
+            return;
+        }
         NPC npc = player.getTemporaryAttributeOrDefault("HEALTH_BAR_NPC", null);
         if (npc == null || npc.getCombat() == null || npc.getCombat().isDead()) {
             closeFromDeath(player);
