@@ -139,7 +139,10 @@ public class BossHealthBar {
     }
 
     public static final Set<String> HP_BAR_BOSSES = new HashSet<>(Arrays.asList(
-            "callisto"
+            "callisto", "artio", "spindel", "venenatis", "calvar'ion", "vet'ion", "king black dragon", "zulrah", "vorkath", "nex", "corporeal beast",
+            "phantom muspah", "general graardor", "commander zilyana", "kree'arra", "k'ril tsutsaroth", "kalphite queen", "sarachnis", "scorpia",
+            "obor", "bryophyta", "hespori", "skotizo", "abyssal sire", "cerberus", "kraken", "thermonuclear smoke devil", "alchemical hydra",
+            "tztok-jad", "tzkal-zuk", "tekton", "vanguard", "vespula", "vasa nistirio", "muttadile", "great olm"
     ));
 
     static {
