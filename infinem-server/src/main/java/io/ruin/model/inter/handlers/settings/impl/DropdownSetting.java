@@ -12,7 +12,7 @@ import java.util.function.BiConsumer;
  * Created on 10/15/2024
  */
 public enum DropdownSetting {
-    BOSS_OVERLAY_DISPLAY_TYPE(0, 49, 49),   // VB 14708 0, 1
+    BOSS_OVERLAY_DISPLAY_TYPE(0, 49, 49, Config.BOSS_HEALTH_BAR_TYPE::set),
     LMS_FOG_COLOR(0, 61, 61),   // VB 11865, 0 -> 5
     MUSIC_AREA_MODE(1, 6, 87),  // VB 12233, 0, 1
     HIT_SOUNDS(1, 9, 90),   // VB 10731 0, 1

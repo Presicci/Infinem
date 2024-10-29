@@ -2,6 +2,7 @@ package io.ruin.model.inter.handlers.settings.impl;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.handlers.BossHealthBar;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.utility.Color;
@@ -22,9 +23,12 @@ public enum ClickSetting {
             player.integerInput("Set value threshold for max hits (2-500):", (i) ->
                     Config.MAX_HIT_HITSPLATS_MINIMUM_THRESHOLD.set(player, Math.max(2, Math.min(500, i))))
     )),
-    BOSS_HEALTH_OVERLAY(0, 46, 46), // VB 12389 0 = on, 1 = off
-    BOSS_HEALTH_OVERLAY_NAME(0, 48, 48),    // VB 14706, 0 = on, 1 = off
-    BOSS_HEALTH_OVERLAY_COMPACT(0, 50, 50), // VB 14707 0, 1
+    BOSS_HEALTH_OVERLAY(0, 46, 46, player -> {
+        int value = Config.BOSS_HEALTH_BAR_ENABLED.toggle(player);
+        if (value == 1) BossHealthBar.close(player);
+    }),
+    BOSS_HEALTH_OVERLAY_NAME(0, 48, 48, player -> Config.BOSS_HEALTH_BAR_SHOW_NAME.toggle(player)),
+    BOSS_HEALTH_OVERLAY_COMPACT(0, 50, 50, Config.BOSS_HEALTH_BAR_COMPACT::toggle),
     BEGINNER_CLUE_SCROLL_WARNING(0, 66, 66),    // VB 10693 0 = on, 1 = off
     EASY_CLUE_SCROLL_WARNING(0, 67, 67),    // VB 10694 0 = on, 1 = off
     MEDIUM_CLUE_SCROLL_WARNING(0, 68, 68),    // VB 10695 0 = on, 1 = off

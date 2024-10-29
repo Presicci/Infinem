@@ -1201,6 +1201,18 @@ public class Config {
     public static final Config MAX_HIT_HITSPLATS_MINIMUM_THRESHOLD = varpbit(14195, true).defaultValue(10);
 
     /**
+     * Boss Health Bar
+     */
+    public static final Config BOSS_HEALTH_BAR_ENABLED = varpbit(12389, true);
+    public static final Config BOSS_HEALTH_BAR_SHOW_NAME = varpbit(14706, true);
+    public static final Config BOSS_HEALTH_BAR_COMPACT = varpbit(14707, true);
+    public static final Config BOSS_HEALTH_BAR_TYPE = varpbit(14708, true);
+    public static final Config BOSS_HEALTH_BAR_ID = varp(1683, false);
+    public static final Config BOSS_HEALTH_BAR_CURRENT_HP = varpbit(6099, false);
+    public static final Config BOSS_HEALTH_BAR_MAX_HP = varpbit(6100, false);
+    public static final Config BOSS_HEALTH_BAR_POSITION = varpbit(12401, false);
+
+    /**
      * Separator
      */
 

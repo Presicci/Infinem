@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.TemporaryAttributesHolder;
 import io.ruin.cache.def.AnimationDefinition;
+import io.ruin.model.inter.handlers.BossHealthBar;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.World;
@@ -749,8 +750,18 @@ public abstract class Entity extends TemporaryAttributesHolder {
                     CombatUtils.addXp(baseHit.attacker.player, this, baseHit.attackStyle, baseHit.attackType, damage);
             }
             getCombat().updateLastDefend(baseHit.attacker);
-        }
 
+            if (isNpc() && baseHit.attacker.isPlayer() && npc.getDef().custom_values.containsKey("BOSS_BAR")) {
+                Player player = baseHit.attacker.player;
+                NPC currentBar = player.getTemporaryAttributeOrDefault("HEALTH_BAR_NPC", null);
+                if (currentBar != null && currentBar == npc) {
+                    BossHealthBar.updateBar(player, currentBar);
+                } else {
+                    player.putTemporaryAttribute("HEALTH_BAR_NPC", npc);
+                    BossHealthBar.open(player, npc);
+                }
+            }
+        }
         return damage;
     }
 

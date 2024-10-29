@@ -10,6 +10,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.transmog.TransmogCollection;
+import io.ruin.model.inter.handlers.BossHealthBar;
 import io.ruin.model.inter.handlers.NotificationInterface;
 import io.ruin.model.skills.slayer.PartnerSlayer;
 import io.ruin.network.central.CentralSender;
@@ -1622,6 +1623,7 @@ public class Player extends PlayerAttributes {
         tickDarkness();
         tickEvents();
         Desert.tickDesertHeat(this);
+        BossHealthBar.tick(this);
         /*if(player.wildernessLevel <= 0 && !player.pvpAttackZone && player.snowballPeltOption &&
                 !player.getEquipment().hasId(Christmas.SNOWBALL) && !player.getPosition().inBounds(DuelArena.BOUNDS)
                 && !player.getPosition().inBounds(DuelArena.CUSTOM_EDGE)) {
