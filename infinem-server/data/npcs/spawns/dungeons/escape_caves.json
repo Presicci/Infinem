@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Grizzly bear",
+    "id": 11989,
+    "x": 3345,
+    "y": 10292,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 11989,
+    "x": 3334,
+    "y": 10268,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 11989,
+    "x": 3342,
+    "y": 10258,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 11989,
+    "x": 3356,
+    "y": 10271,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 11989,
+    "x": 3364,
+    "y": 10247,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 11989,
+    "x": 3375,
+    "y": 10257,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 11989,
+    "x": 3379,
+    "y": 10283,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 11989,
+    "x": 3374,
+    "y": 10292,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3358,
+    "y": 10294,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3369,
+    "y": 10294,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3378,
+    "y": 10288,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3384,
+    "y": 10274,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3381,
+    "y": 10263,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3378,
+    "y": 10260,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3373,
+    "y": 10263,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3365,
+    "y": 10268,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3359,
+    "y": 10279,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3361,
+    "y": 10290,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3338,
+    "y": 10283,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3335,
+    "y": 10278,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3337,
+    "y": 10261,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3341,
+    "y": 10254,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3349,
+    "y": 10266,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3349,
+    "y": 10250,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3358,
+    "y": 10248,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Poison spider",
+    "id": 11990,
+    "x": 3368,
+    "y": 10249,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  }
+]
