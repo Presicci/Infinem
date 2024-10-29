@@ -21,6 +21,7 @@ import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.shop.ShopItem;
 import lombok.extern.slf4j.Slf4j;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.RejectedExecutionException;
@@ -363,6 +364,13 @@ public class PacketSender {
         OutBuffer out = new OutBuffer(6).sendFixedPacket(ServerPacket.IF_SETHIDE.getPacketId())
                 .addByteSub(hide ? 1 : 0)
                 .addIMEInt(interfaceId << 16 | childId);
+        write(out);
+    }
+
+    public void sendSetColor(int interfaceId, int childId, Color colour) {
+        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.IF_SETCOLOUR.getPacketId())
+                .addShort(colour.getRed() << 10 | colour.getGreen() << 5 | colour.getBlue())
+                .addLEInt(interfaceId << 16 | childId);
         write(out);
     }
 
