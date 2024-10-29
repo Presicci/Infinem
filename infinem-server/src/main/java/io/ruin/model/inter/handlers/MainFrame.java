@@ -54,8 +54,9 @@ public class MainFrame {
             };
             h.actions[31] = (OptionAction) (player, option) -> {
                 if (option == 2) {
-                    player.openInterface(InterfaceType.MAIN, 553);
-                    player.getPacketSender().sendClientScript(1104, "iis", 1, 0, "");
+                    //player.openInterface(InterfaceType.MAIN, 553);
+                    //player.getPacketSender().sendClientScript(1104, "iis", 1, 0, "");
+                    player.sendMessage("Reporting is temporary disabled. Please manually send your report to a staff member.");
                 } else if (option == 3) {
                     if (player.getAction(4) == PlayerAction.REPORT) {
                         player.setAction(4, null);
@@ -81,84 +82,18 @@ public class MainFrame {
                 if(option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
-//            actions.actions[50] = (SimpleAction) player -> {
-//                player.journal = Journal.PRESETS;
-//                for(int childId = 9; childId <= 47; childId++) {
-//                    player.getPacketSender().sendClientScript(135, "ii",Interface.SERVER_TAB << 16 | childId, 494);
-//                    player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
-//                }
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 48, false);
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 49, false);
-//                player.getPacketSender().sendString(Interface.SERVER_TAB, 1, player.journal.name());
-//                player.journal.send(player);
-//            };
-//            actions.actions[32] = (SimpleAction) player -> {
-//                player.journal = Journal.MAIN;
-//                for(int childId = 9; childId <= 47; childId++) {
-//                    player.getPacketSender().sendClientScript(135, "ii",Interface.SERVER_TAB << 16 | childId, 494);
-//                    player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
-//                }
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 48, true);
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 49, true);
-//                player.getPacketSender().sendString(Interface.SERVER_TAB, 1, "Noticeboard");
-//                player.journal.send(player);
-//            };
         });
         InterfaceHandler.register(Interface.RESIZED_SCREEN, actions -> {
-            actions.actions[68] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[58] = (DefaultAction) (player, option, slot, itemId) -> {
                 if(option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
-//            actions.actions[53] = (SimpleAction) player -> {
-//                player.journal = Journal.PRESETS;
-//                for(int childId = 9; childId <= 47; childId++) {
-//                    player.getPacketSender().sendClientScript(135, "ii",Interface.SERVER_TAB << 16 | childId, 494);
-//                    player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
-//                }
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 48, false);
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 49, false);
-//                player.getPacketSender().sendString(Interface.SERVER_TAB, 1, player.journal.name());
-//                player.journal.send(player);
-//            };
-//            actions.actions[36] = (SimpleAction) player -> {
-//                player.journal = Journal.MAIN;
-//                for(int childId = 9; childId <= 47; childId++) {
-//                    player.getPacketSender().sendClientScript(135, "ii",Interface.SERVER_TAB << 16 | childId, 494);
-//                    player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
-//                }
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 48, true);
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 49, true);
-//                player.getPacketSender().sendString(Interface.SERVER_TAB, 1, "Noticeboard");
-//                player.journal.send(player);
-//            };
         });
         InterfaceHandler.register(Interface.RESIZED_STACKED_SCREEN, actions -> {
-            actions.actions[65] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[58] = (DefaultAction) (player, option, slot, itemId) -> {
                 if(option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
-//            actions.actions[52] = (SimpleAction) player -> {
-//                player.journal = Journal.PRESETS;
-//                for(int childId = 9; childId <= 47; childId++) {
-//                    player.getPacketSender().sendClientScript(135, "ii",Interface.SERVER_TAB << 16 | childId, 494);
-//                    player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
-//                }
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 48, false);
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 49, false);
-//                player.getPacketSender().sendString(Interface.SERVER_TAB, 1, player.journal.name());
-//                player.journal.send(player);
-//            };
-//            actions.actions[36] = (SimpleAction) player -> {
-//                player.journal = Journal.MAIN;
-//                for(int childId = 9; childId <= 47; childId++) {
-//                    player.getPacketSender().sendClientScript(135, "ii",Interface.SERVER_TAB << 16 | childId, 494);
-//                    player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
-//                }
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 48, true);
-//                player.getPacketSender().setHidden(Interface.SERVER_TAB, 49, true);
-//                player.getPacketSender().sendString(Interface.SERVER_TAB, 1, "Noticeboard");
-//                player.journal.send(player);
-//            };
         });
     }
 
