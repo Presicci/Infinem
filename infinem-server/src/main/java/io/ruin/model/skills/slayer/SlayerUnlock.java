@@ -244,6 +244,8 @@ public enum SlayerUnlock {
     private static void storeTask(Player player) {
         int taskID = Slayer.getTask(player);
         int taskAmount = Slayer.getTaskAmount(player);
+        int taskLocation = player.slayerLocation;
+        int master = Config.SLAYER_MASTER.get(player);
         SlayerCreature task = SlayerCreature.lookup(taskID);
         if (task == null || taskAmount <= 0) {
             player.sendMessage("You don't have a slayer task to store.");
@@ -251,20 +253,28 @@ public enum SlayerUnlock {
         }
         boolean stored = player.hasAttribute(AttributeKey.STORED_SLAYER_TASK);
         if (stored) { // Swap
-            int storedID = player.getAttributeOrDefault(AttributeKey.STORED_SLAYER_TASK, -1);
-            int storedAmount = player.getAttributeOrDefault(AttributeKey.STORED_SLAYER_TASK_AMOUNT, -1);
-            int storedBoss = player.getAttributeOrDefault(AttributeKey.STORED_BOSS_TASK, -1);
+            int storedID = player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK);
+            int storedAmount = player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK_AMOUNT);
+            int storedBoss = player.getAttributeIntOrZero(AttributeKey.STORED_BOSS_TASK);
+            int storedLocation = player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK_LOCATION);
+            if (master == SlayerMaster.KONAR_ID && storedLocation == 0) {
+                player.sendMessage("Your stored task is not a Konar task.");
+                return;
+            }
             // Store
             player.putAttribute(AttributeKey.STORED_SLAYER_TASK, taskID);
             player.putAttribute(AttributeKey.STORED_SLAYER_TASK_AMOUNT, taskAmount);
+            player.putAttribute(AttributeKey.STORED_SLAYER_TASK_LOCATION, taskLocation);
             player.putAttribute(AttributeKey.STORED_BOSS_TASK, Slayer.getBossTask(player));
             // Replace current task with prev stored one
             Slayer.setTask(player, storedID);
             Slayer.setTaskAmount(player, storedAmount);
             Slayer.setBossTask(player, storedBoss);
+            player.slayerLocation = storedLocation;
         } else {
             player.putAttribute(AttributeKey.STORED_SLAYER_TASK, taskID);
             player.putAttribute(AttributeKey.STORED_SLAYER_TASK_AMOUNT, taskAmount);
+            player.putAttribute(AttributeKey.STORED_SLAYER_TASK_LOCATION, taskLocation);
             player.putAttribute(AttributeKey.STORED_BOSS_TASK, Slayer.getBossTask(player));
             Slayer.resetTask(player);
         }
@@ -275,6 +285,8 @@ public enum SlayerUnlock {
         int taskID = player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK);
         int taskAmount = player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK_AMOUNT);
         int bossTask = player.getAttributeIntOrZero(AttributeKey.STORED_BOSS_TASK);
+        int location = player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK_LOCATION);
+        int master = Config.SLAYER_MASTER.get(player);
         SlayerCreature task = SlayerCreature.lookup(taskID);
         if (task == null || taskAmount <= 0) {
             player.sendMessage("You don't have a slayer task stored.");
@@ -285,12 +297,18 @@ public enum SlayerUnlock {
             player.sendMessage("You already have a slayer task.");
             return;
         }
+        if (master == SlayerMaster.KONAR_ID && location == 0) {
+            player.sendMessage("Your stored task is not a Konar task.");
+            return;
+        }
         Slayer.setTask(player, taskID);
         Slayer.setTaskAmount(player, taskAmount);
         Slayer.setBossTask(player, bossTask);
+        player.slayerLocation = location;
 
         player.removeAttribute(AttributeKey.STORED_SLAYER_TASK);
         player.removeAttribute(AttributeKey.STORED_SLAYER_TASK_AMOUNT);
+        player.removeAttribute(AttributeKey.STORED_SLAYER_TASK_LOCATION);
         player.removeAttribute(AttributeKey.STORED_BOSS_TASK);
         Slayer.sendVarps(player);
     }
