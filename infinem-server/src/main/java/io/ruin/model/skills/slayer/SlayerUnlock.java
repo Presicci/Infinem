@@ -251,6 +251,10 @@ public enum SlayerUnlock {
             player.sendMessage("You don't have a slayer task to store.");
             return;
         }
+        if (master == SlayerMaster.KRYSTILIA_ID) {
+            player.sendMessage("You can't store wilderness tasks.");
+            return;
+        }
         boolean stored = player.hasAttribute(AttributeKey.STORED_SLAYER_TASK);
         if (stored) { // Swap
             int storedID = player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK);
@@ -290,6 +294,10 @@ public enum SlayerUnlock {
         SlayerCreature task = SlayerCreature.lookup(taskID);
         if (task == null || taskAmount <= 0) {
             player.sendMessage("You don't have a slayer task stored.");
+            return;
+        }
+        if (master == SlayerMaster.KRYSTILIA_ID) {
+            player.sendMessage("You can't use task storage with Krystilia.");
             return;
         }
         task = SlayerCreature.lookup(Slayer.getTask(player));
