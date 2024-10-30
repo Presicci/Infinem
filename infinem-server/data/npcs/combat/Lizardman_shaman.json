@@ -1,6 +1,6 @@
 [
   { // Lizardman shaman (150)
-    "ids": [ 6766, 6767, 7744, 7745 ],
+    "ids": [ 6766, 6767, 7744, 7745, 8565 ],
 	"handler": "io.ruin.model.activities.combat.bosses.LizardmanShaman",
     //Combat Info
     "hitpoints": 150,
