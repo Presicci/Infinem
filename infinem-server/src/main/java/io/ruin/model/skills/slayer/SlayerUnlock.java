@@ -130,18 +130,18 @@ public enum SlayerUnlock {
      * @param slot   The slot of the unlock.
      */
     private static void handleUnlock(Player player, int slot) {
-        if (slot == 60) {
+        if (slot == 65) {
             extendAll(player);
-        } else if (slot == 52) {
+        } else if (slot == 57) {
             cancelTask(player);
-        } else if (slot == 53) {
+        } else if (slot == 58) {
             blockTask(player);
-        } else if (slot == 61) {
+        } else if (slot == 66) {
             storeTask(player);
-        } else if (slot == 62) {
+        } else if (slot == 67) {
             unstoreTask(player);
-        } else if (slot >= 54 && slot <= 60) {
-            unblockTask(player, slot - 54);
+        } else if (slot >= 59 && slot <= 65) {
+            unblockTask(player, slot - 59);
         }
         SlayerUnlock unlock = UNLOCKS.get(slot);
         if (unlock != null) {
@@ -298,7 +298,7 @@ public enum SlayerUnlock {
             return;
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
         player.openInterface(InterfaceType.MAIN, 426);
-        player.getPacketSender().sendAccessMask(426, 8, 0, 62, 2);
+        player.getPacketSender().sendAccessMask(426, 8, 0, 70, 2);
         player.getPacketSender().sendAccessMask(426, 23, 0, 5, 1052);
         Slayer.sendVarps(player);
     }
