@@ -63,6 +63,7 @@ public class KonarData {
         HYDRA(113, TaskLocation.KARUULM_SLAYER_DUNGEON),
         KALPHITE(53, TaskLocation.KALPHITE_LAIR, TaskLocation.KALPHITE_CAVE),
         KURASK(45, TaskLocation.RELEKKA_SLAYER_DUNGEON),
+        LIZARDMEN(90, TaskLocation.BATTLEFRONT, TaskLocation.LIZARDMAN_CANYON, TaskLocation.LIZARDMAN_SETTLEMENT, TaskLocation.KEBOS_SWAMP, TaskLocation.MOLCH),
         NECHRYAEL(52, TaskLocation.CATACOMBS_OF_KOUREND, TaskLocation.SLAYER_TOWER),
         RUNE_DRAGON(109, TaskLocation.LITHKREN_VAULT),
         SKELETAL_WYVERN(72, TaskLocation.ASGARNIAN_ICE_DUNGEON),
@@ -119,7 +120,13 @@ public class KonarData {
         EVIL_CHICKEN_LAIR("Evil Chicken's Lair", new Bounds(2445, 4353, 2493, 4408, -1)),
         CHASM_OF_FIRE("Chasm of Fire", new Bounds(1409, 10050, 1468, 10108, -1)),
         OGRE_ENCLAVE("Ogre Enclave", new Bounds(2561, 9407, 2621, 9469, -1)),
-        WYVERN_CAVE("Wyvern Cave", Bounds.fromRegions(14495, 14496));
+        WYVERN_CAVE("Wyvern Cave", Bounds.fromRegions(14495, 14496)),
+        BATTLEFRONT("Battlefront", new Bounds(1327, 3684, 1407, 3745, -1)),
+        LIZARDMAN_CANYON("Lizardman Canyon", new Bounds(1473, 3685, 1544, 3725, -1)),
+        LIZARDMAN_SETTLEMENT("Lizardman Settlement", 5175, 5431, 5275),
+        KEBOS_SWAMP("Kebos Swamp", new Bounds(1232, 3589, 1332, 3644, -1)),
+        MOLCH("Molch", new int[] { 5277 }, new Bounds(1272, 3639, 1328, 3690, -1)),
+        ;
 
         @Getter private final String name;
         private final Bounds[] boundaries;
@@ -140,6 +147,16 @@ public class KonarData {
         TaskLocation(String name, int... regionIds) {
             this.name = name;
             this.boundaries = new Bounds[0];
+            List<Region> regions = new ArrayList<>(regionIds.length);
+            for (int id : regionIds) {
+                regions.add(Region.get(id));
+            }
+            this.regions = regions.toArray(new Region[0]);
+        }
+
+        TaskLocation(String name, int[] regionIds, Bounds... boundaries) {
+            this.name = name;
+            this.boundaries = boundaries;
             List<Region> regions = new ArrayList<>(regionIds.length);
             for (int id : regionIds) {
                 regions.add(Region.get(id));
