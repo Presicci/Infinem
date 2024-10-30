@@ -1,0 +1,21 @@
+7742
+Captain Cleive: Hello there. What do you need?
+<What is this place?
+Player: What is this place?
+Captain Cleive: This is one of the lairs of those foul Lizardmen. We've managed to corner these ones so they can't escape.
+><Who are you?
+Player: Who are you?
+Captain Cleive: Cleive. Captain Cleive. Captain in the Shayzien Guard and renowned slayer.
+Player: Renowned?
+Captain Cleive: Absolutely. I'm part of a great family of slayers. You've probably met a few of them over on the mainland.
+><Why are you here?
+Player: Why are you here?
+Captain Cleive: We learnt of a group of Lizardman Shamans causing trouble on the surface. I led a taskforce out to drive them back into their lair.
+Captain Cleive: We suffered many losses but we've now managed to trap them in this cave.
+Captain Cleive: We've lost too many men to be able to finish them off but I'm happy for someone else to do it if I feel they're worthy of the challenge.
+><Can I fight these Lizardmen?
+Player: Can I fight these Lizardmen?
+Captain Cleive: Perhaps. I've lost too many men to be able to kill them myself but I'm happy for someone else to do it if I feel they're worthy of the challenge.
+Player: What do you define as worthy?
+Captain Cleive: You'll need to be on a Lizardman Slayer task.
+>
