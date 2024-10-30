@@ -45,6 +45,8 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.RelicFragment;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.RelicFragmentManager;
 import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.content.transportation.relics.DungeonHub;
@@ -3289,6 +3291,10 @@ public class Administrator {
             case "cleartransmog":
             case "cleartransmogs": {
                 player.getTransmogCollection().clearCollection();
+                return true;
+            }
+            case "rollfragment": {
+                RelicFragment.generate();
                 return true;
             }
         }
