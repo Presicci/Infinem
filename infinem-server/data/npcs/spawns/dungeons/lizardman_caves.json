@@ -1,0 +1,91 @@
+[
+  {
+    "name": "Captain Cleive",
+    "id": 7742,
+    "x": 1307,
+    "y": 9972,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "id": 7744,
+    "x": 1309,
+    "y": 9946,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "name": "Lizardman shaman",
+    "taskOnlyNPC": "CAPTAIN_CLEIVE"
+  },
+  {
+    "id": 7744,
+    "x": 1302,
+    "y": 9951,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "name": "Lizardman shaman",
+    "taskOnlyNPC": "CAPTAIN_CLEIVE"
+  },
+  {
+    "id": 7744,
+    "x": 1287,
+    "y": 9952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "name": "Lizardman shaman",
+    "taskOnlyNPC": "CAPTAIN_CLEIVE"
+  },
+  {
+    "id": 7744,
+    "x": 1292,
+    "y": 9958,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "name": "Lizardman shaman",
+    "taskOnlyNPC": "CAPTAIN_CLEIVE"
+  },
+  {
+    "id": 7744,
+    "x": 1324,
+    "y": 9948,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "name": "Lizardman shaman",
+    "taskOnlyNPC": "CAPTAIN_CLEIVE"
+  },
+  {
+    "id": 7744,
+    "x": 1318,
+    "y": 9954,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "name": "Lizardman shaman",
+    "taskOnlyNPC": "CAPTAIN_CLEIVE"
+  },
+  {
+    "id": 7744,
+    "x": 1325,
+    "y": 9969,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "name": "Lizardman shaman",
+    "taskOnlyNPC": "CAPTAIN_CLEIVE"
+  },
+  {
+    "id": 7744,
+    "x": 1329,
+    "y": 9965,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "name": "Lizardman shaman",
+    "taskOnlyNPC": "CAPTAIN_CLEIVE"
+  }
+]
