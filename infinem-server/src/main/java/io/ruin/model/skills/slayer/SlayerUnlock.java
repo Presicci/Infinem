@@ -249,16 +249,10 @@ public enum SlayerUnlock {
             player.sendMessage("You don't have a slayer task to store.");
             return;
         }
-        if (Config.SLAYER_POINTS.get(player) < 50) {
-            player.sendMessage("You need 50 points to store your task.");
-            return;
-        }
         player.putAttribute(AttributeKey.STORED_SLAYER_TASK, taskID);
         player.putAttribute(AttributeKey.STORED_SLAYER_TASK_AMOUNT, taskAmount);
         player.putAttribute(AttributeKey.STORED_BOSS_TASK, Slayer.getBossTask(player));
         Slayer.resetTask(player);
-        int pts = Config.SLAYER_POINTS.get(player) - 50;
-        Config.SLAYER_POINTS.set(player, pts);
         Slayer.sendVarps(player);
     }
 
