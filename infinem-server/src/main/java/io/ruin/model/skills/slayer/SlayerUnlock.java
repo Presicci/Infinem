@@ -249,10 +249,25 @@ public enum SlayerUnlock {
             player.sendMessage("You don't have a slayer task to store.");
             return;
         }
-        player.putAttribute(AttributeKey.STORED_SLAYER_TASK, taskID);
-        player.putAttribute(AttributeKey.STORED_SLAYER_TASK_AMOUNT, taskAmount);
-        player.putAttribute(AttributeKey.STORED_BOSS_TASK, Slayer.getBossTask(player));
-        Slayer.resetTask(player);
+        boolean stored = player.hasAttribute(AttributeKey.STORED_SLAYER_TASK);
+        if (stored) { // Swap
+            int storedID = player.getAttributeOrDefault(AttributeKey.STORED_SLAYER_TASK, -1);
+            int storedAmount = player.getAttributeOrDefault(AttributeKey.STORED_SLAYER_TASK_AMOUNT, -1);
+            int storedBoss = player.getAttributeOrDefault(AttributeKey.STORED_BOSS_TASK, -1);
+            // Store
+            player.putAttribute(AttributeKey.STORED_SLAYER_TASK, taskID);
+            player.putAttribute(AttributeKey.STORED_SLAYER_TASK_AMOUNT, taskAmount);
+            player.putAttribute(AttributeKey.STORED_BOSS_TASK, Slayer.getBossTask(player));
+            // Replace current task with prev stored one
+            Slayer.setTask(player, storedID);
+            Slayer.setTaskAmount(player, storedAmount);
+            Slayer.setBossTask(player, storedBoss);
+        } else {
+            player.putAttribute(AttributeKey.STORED_SLAYER_TASK, taskID);
+            player.putAttribute(AttributeKey.STORED_SLAYER_TASK_AMOUNT, taskAmount);
+            player.putAttribute(AttributeKey.STORED_BOSS_TASK, Slayer.getBossTask(player));
+            Slayer.resetTask(player);
+        }
         Slayer.sendVarps(player);
     }
 
