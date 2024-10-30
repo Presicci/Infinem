@@ -4,7 +4,7 @@
 	"handler": "io.ruin.model.activities.combat.bosses.LizardmanShaman",
     //Combat Info
     "hitpoints": 150,
-    "aggressive_level": 0,
+    "aggressive_level": 300,
     "max_damage": 31,
     "attack_style": "CRUSH",
     //Slayer Info
