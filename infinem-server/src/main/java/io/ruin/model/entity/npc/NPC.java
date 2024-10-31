@@ -282,17 +282,17 @@ public class NPC extends NPCAttributes {
     protected void init() {
         this.movement = new NPCMovement(this);
         this.masks = new UpdateMask[]{
-                transformUpdate = new TransformUpdate(),
-                forceTextUpdate = new ForceTextUpdate(),
-                mapDirectionUpdate = new MapDirectionUpdate(),
-                animationUpdate = new AnimationUpdate(),
-                entityDirectionUpdate = new EntityDirectionUpdate(),
-                npcOverrideUpdate = new NPCOverrideUpdate(),
                 combatLevelUpdate = new CombatLevelUpdate(),
-                modelRecolorUpdate = new ModelRecolorUpdate(),
+                npcOverrideUpdate = new NPCOverrideUpdate(),
+                entityDirectionUpdate = new EntityDirectionUpdate(),
+                animationUpdate = new AnimationUpdate(),
                 graphicsUpdate = new GraphicsUpdate(),
-                hitsUpdate = new HitsUpdate(this),
+                forceTextUpdate = new ForceTextUpdate(),
                 forceMovementUpdate = new ForceMovementUpdate(),
+                mapDirectionUpdate = new MapDirectionUpdate(),
+                modelRecolorUpdate = new ModelRecolorUpdate(),
+                transformUpdate = new TransformUpdate(),
+                hitsUpdate = new HitsUpdate(this),
         };
     }
 
