@@ -829,10 +829,10 @@ public class PacketSender {
     public void sendCreateObject(int id, int x, int y, int z, int type, int dir) {
         sendMapPacket(x, y, z, offsetHash ->
                 new OutBuffer(6).sendFixedPacket(ServerPacket.LOC_ADD_CHANGE.getPacketId())
-                        .addShortAdd(id)
-                        .addByteNeg(31)
-                        .addByteNeg(type << 2 | dir)
-                        .addByteNeg(offsetHash)
+                        .addByteSub(type << 2 | dir)
+                        .addByteSub(31)
+                        .addLEShort(id)
+                        .addByteAdd(offsetHash)
         );
     }
 
