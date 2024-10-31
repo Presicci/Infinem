@@ -380,9 +380,9 @@ public class PacketSender {
             return;
         }
         OutBuffer out = new OutBuffer(11).sendFixedPacket(ServerPacket.IF_SETOBJECT.getPacketId())
+                .addMEInt(parentId << 16 | childId)
                 .addLEShort(itemId)
-                .addIMEInt(amount)
-                .addLEInt(parentId << 16 | childId);
+                .addIMEInt(amount);
         write(out);
     }
 
