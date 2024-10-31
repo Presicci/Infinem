@@ -94,6 +94,10 @@ public class OutBuffer {
             return;
         if(type == FIXED_TYPE) {
             int opcode = payload[0] & 0xff;
+            if (opcode >= 128) {
+                opcode = payload[0] << 8 & 128;
+                opcode += payload[1] & 255;
+            }
             System.err.println("Increase packet size for: " + opcode);
         }
         byte[] newBuffer = new byte[newLength * 2];
