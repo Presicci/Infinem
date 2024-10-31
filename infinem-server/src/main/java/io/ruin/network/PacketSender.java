@@ -52,7 +52,7 @@ public class PacketSender {
             opcode += out.payload()[1] & 255;
         }
         ServerPacket packet = ServerPacket.getPacketByOpcode(opcode);
-        System.out.println("Client outgoing: " + opcode + (packet == null ? "" : " - " + packet) + " - " + Arrays.toString(out.payload()));
+        //System.out.println("Client outgoing: " + opcode + (packet == null ? "" : " - " + packet) + " - " + Arrays.toString(out.payload()));
         player.getChannel().write(out.encode(cipher).toBuffer());
     }
 
