@@ -340,8 +340,8 @@ public class PlayerUpdater {
      */
 
     private void writeMasks(Player localPlayer, int maskData) {
-        int smallMask = 8;
-        int largeMask = 1024;
+        int smallMask = 2;
+        int largeMask = 16384;
 
         if ((maskData & ~0xFF) != 0) {
             maskData |= smallMask;
