@@ -88,7 +88,7 @@ public class WildernessBossEntrance {
 
     private static void enterCave(Player player, GameObject object, Cave cave) {
         final int cost = ENTRANCE_FEE - (player.getAttributeIntOrZero(KILL_DISCOUNT) * (ENTRANCE_FEE / 5));
-        if (player.hasAttribute(PAID_KEY)) {
+        if (true) {
             teleport(player, object, cave);
             return;
         }
