@@ -442,10 +442,10 @@ public class PacketSender {
         }
         int mask = AccessMasks.combine(masks);
         OutBuffer out = new OutBuffer(13).sendFixedPacket(ServerPacket.IF_SETEVENTS.getPacketId())
-                .addShort(minChildId)
                 .addLEShort(maxChildId)
-                .addMEInt(interfaceId << 16 | childParentId)
-                .addInt(mask);
+                .addMEInt(mask)
+                .addLEShortAdd(minChildId)
+                .addIMEInt(interfaceId << 16 | childParentId);
         write(out);
     }
 
