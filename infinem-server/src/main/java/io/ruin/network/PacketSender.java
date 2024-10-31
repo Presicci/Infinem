@@ -339,8 +339,8 @@ public class PacketSender {
         }
         player.moveVisibleInterface(fromParentId, fromChildId, toParentId, toChildId);
         OutBuffer out = new OutBuffer(9).sendFixedPacket(ServerPacket.IF_MOVESUB.getPacketId())
-                .addMEInt(fromParentId << 16 | fromChildId)
-                .addLEInt(toParentId << 16 | toChildId);
+                .addIMEInt(fromParentId << 16 | fromChildId)
+                .addIMEInt(toParentId << 16 | toChildId);
         write(out);
     }
 
