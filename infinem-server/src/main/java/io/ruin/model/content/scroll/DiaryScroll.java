@@ -2,7 +2,9 @@ package io.ruin.model.content.scroll;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
+import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.SimpleAction;
 
 import java.util.List;
 
@@ -34,5 +36,11 @@ public class DiaryScroll {
         if (size >= 10) {
             player.getPacketSender().sendClientScript(2523, "ii", 1, size);
         }
+    }
+
+    static {
+        InterfaceHandler.register(119, h -> {
+            h.actions[7] = (SimpleAction) p -> p.closeInterface(InterfaceType.MAIN);
+        });
     }
 }
