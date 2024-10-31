@@ -121,7 +121,7 @@ public class CoreWorker extends World {
             try {
                 if (player.isOnline()) {
                     player.getUpdater().process();
-                    //player.getNpcUpdater().process();
+                    player.getNpcUpdater().process();
                     //player.getWorldEntityUpdater().process();
                     TargetOverlay.process(player);
                     player.sendVarps();

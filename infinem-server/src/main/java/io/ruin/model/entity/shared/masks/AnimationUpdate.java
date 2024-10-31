@@ -32,13 +32,13 @@ public class AnimationUpdate extends UpdateMask {
             out.addByteAdd(delay);
         } else {
             out.addLEShortAdd(id);
-            out.addByteAdd(delay);
+            out.addByteSub(delay);
         }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 64 : 2;
+        return playerUpdate ? 64 : 64;
     }
 
 }

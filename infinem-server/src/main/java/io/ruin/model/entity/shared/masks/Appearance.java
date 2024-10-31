@@ -265,9 +265,8 @@ public class Appearance extends UpdateMask {
 
             data.addByte(gender);
         }
-        out.addByteNeg(data.position());
-        System.out.println(data.position());
-        out.addBytesSpecial(data.payload(), 0, data.position());
+        out.addByte(data.position());
+        out.addBytesReversed(data.payload(), 0, data.position());
     }
 
     private void append(Player player, OutBuffer out, int slot, int styleIndex) {
@@ -340,7 +339,7 @@ public class Appearance extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return 32;
+        return 128;
     }
 
 }

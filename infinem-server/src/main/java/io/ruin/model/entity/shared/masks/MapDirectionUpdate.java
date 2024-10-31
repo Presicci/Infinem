@@ -55,7 +55,7 @@ public class MapDirectionUpdate extends UpdateMask {
         if (playerUpdate) {
             out.addShortAdd(direction);
         } else {
-            out.addShort(faceX);
+            out.addLEShortAdd(faceX);
             out.addLEShort(faceY);
             out.addByteNeg(instant ? 1 : 0);
         }

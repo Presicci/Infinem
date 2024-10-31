@@ -65,8 +65,8 @@ public class EntityDirectionUpdate extends UpdateMask {
             out.addLEShort(index & 0xffff);
             out.addByteSub(index >> 16);
         } else {
-            out.addLEShortAdd(index & 0xffff);
-            out.addByteNeg(index >> 16);
+            out.addShort(index & 0xffff);
+            out.addByteAdd(index >> 16);
         }
     }
 

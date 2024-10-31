@@ -51,17 +51,17 @@ public class ModelRecolorUpdate extends UpdateMask {
             out.addByteSub(lightness);
             out.addByteSub(alpha);
         } else {
-            out.addLEShort(startTick);
-            out.addShort(endTick);
+            out.addShortAdd(startTick);
+            out.addLEShortAdd(endTick);
             out.addByteAdd(hue);
-            out.addByteNeg(saturation);
+            out.addByteSub(saturation);
             out.addByte(lightness);
-            out.addByteNeg(alpha);
+            out.addByteAdd(alpha);
         }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 1024 : 1024;
+        return playerUpdate ? 1024 : 32768;
     }
 }

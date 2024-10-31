@@ -28,11 +28,11 @@ public class CombatLevelUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
-        out.addLEInt(level);
+        out.addIMEInt(level);
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return 16384;
+        return 256;
     }
 }

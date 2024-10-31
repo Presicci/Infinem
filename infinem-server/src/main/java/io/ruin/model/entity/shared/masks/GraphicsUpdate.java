@@ -49,8 +49,8 @@ public class GraphicsUpdate extends UpdateMask {
             out.addByteAdd(pending.size());
             for (Map.Entry<Integer, SpotAnim> entry : pending.entrySet()) {
                 SpotAnim spotAnim = entry.getValue();
-                out.addByteSub(entry.getKey());
-                out.addShortAdd(spotAnim.id);
+                out.addByteAdd(entry.getKey());
+                out.addLEShortAdd(spotAnim.id);
                 out.addInt(spotAnim.height << 16 | spotAnim.delay);
             }
         }
@@ -58,7 +58,7 @@ public class GraphicsUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 65536 : 262144;
+        return playerUpdate ? 65536 : 131072;
     }
 
 }

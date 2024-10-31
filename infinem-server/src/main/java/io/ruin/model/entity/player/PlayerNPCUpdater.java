@@ -184,8 +184,8 @@ public class PlayerNPCUpdater {
      */
 
     private void writeMasks(NPC npc, int maskData) {
-        int smallMask = 32;
-        int largeMask = 512;
+        int smallMask = 128;
+        int largeMask = 8192;
 
         if ((maskData & ~0xFF) != 0) {
             maskData |= smallMask;

@@ -127,7 +127,7 @@ public class HitsUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 4 : 128;
+        return playerUpdate ? 4 : 2;
     }
 
     @AllArgsConstructor

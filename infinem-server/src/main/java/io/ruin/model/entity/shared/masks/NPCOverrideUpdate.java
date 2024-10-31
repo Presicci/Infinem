@@ -54,30 +54,30 @@ public class NPCOverrideUpdate extends UpdateMask {
             out.addByteAdd(models.length);
 
             for (int model : models) {
-                out.addLEShort(model);
+                out.addLEShortAdd(model);
             }
         }
 
         if (recolors != null) {
             for (int recolor : recolors) {
-                out.addLEShortAdd(recolor);
+                out.addShort(recolor);
             }
         }
 
         if (retextures != null) {
             for (int retexture : retextures) {
-                out.addShortAdd(retexture);
+                out.addShort(retexture);
             }
         }
 
         if (useLocalPlayer != -1) {
-            out.addByteSub(useLocalPlayer);
+            out.addByteNeg(useLocalPlayer);
         }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return 2048;
+        return 16384;
     }
 
     public void resetModels() {
