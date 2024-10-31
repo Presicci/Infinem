@@ -84,15 +84,9 @@ public enum CollectionLogCategory {
             return;
         }
         CollectionLogEntry entry = entries.get(slot);
-        if (entry.getKillcounts().length > 0) {
-            Config.COLLECTION_LOG_KC_1.setInstant(player, entry.getKillcounts()[0].apply(player));
-        }
-        if (entry.getKillcounts().length > 1) {
-            Config.COLLECTION_LOG_KC_2.setInstant(player, entry.getKillcounts()[1].apply(player));
-        }
-        if (entry.getKillcounts().length > 2) {
-            Config.COLLECTION_LOG_KC_3.setInstant(player, entry.getKillcounts()[2].apply(player));
-        }
+        Config.COLLECTION_LOG_KC_1.setInstant(player, entry.getKillcounts().length > 0 ? entry.getKillcounts()[0].apply(player) : 0);
+        Config.COLLECTION_LOG_KC_2.setInstant(player, entry.getKillcounts().length > 1 ? entry.getKillcounts()[1].apply(player) : 0);
+        Config.COLLECTION_LOG_KC_3.setInstant(player, entry.getKillcounts().length > 2 ? entry.getKillcounts()[2].apply(player) : 0);
     }
 
     private static final int STRUCT_LOG_SUBCATEGORY = 683;
