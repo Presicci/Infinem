@@ -158,12 +158,12 @@ public class PlayerNPCUpdater {
         int diffX = npc.getPosition().getX() - player.getPosition().getX();
         int diffY = npc.getPosition().getY() - player.getPosition().getY();
         if (diffX < 0)
-            diffX += isLargeView() ? 256 : 32;
+            diffX += isLargeView() ? 256 : 64;
         if (diffY < 0)
-            diffY += isLargeView() ? 256 : 32;
+            diffY += isLargeView() ? 256 : 64;
         out.addBits(16, npc.getIndex());
-        out.addBits(isLargeView() ? 8 : 5, diffX);
-        out.addBits(isLargeView() ? 8 : 5, diffY);
+        out.addBits(isLargeView() ? 8 : 6, diffX);
+        out.addBits(isLargeView() ? 8 : 6, diffY);
         out.addBits(3, npc.spawnDirection.ordinal());
         out.addBits(1, 0);
         if (maskData != 0) {
@@ -171,11 +171,11 @@ public class PlayerNPCUpdater {
         } else {
             out.addBits(1, 0);
         }
+        out.addBits(14, npc.getId());
+        out.addBits(1, npc.getMovement().hasTeleportUpdate() ? 1 : 0);
         if (maskData != 0) {
             writeMasks(npc, maskData);
         }
-        out.addBits(14, npc.getId());
-        out.addBits(1, npc.getMovement().hasTeleportUpdate() ? 1 : 0);
         return true;
     }
 
