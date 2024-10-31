@@ -23,49 +23,50 @@ public class GroundItemActionHandler implements Incoming {
         player.resetActions(true, true, true);
         int option = OPTIONS[opcode];
         if (option == 1) {
-            int x = in.readUnsignedLEShortAdd();
-            int y = in.readUnsignedLEShort();
-            int id = in.readUnsignedShortAdd();
-            int ctrlRun = in.readByteSub();
+            int id = in.readUnsignedShort();
+            int ctrlRun = in.readUnsignedByte();
+            int y = in.readUnsignedShort();
+            int x = in.readUnsignedShort();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 2) {
             int id = in.readUnsignedLEShort();
+            int ctrlRun = in.readUnsignedByteAdd();
             int y = in.readUnsignedLEShort();
             int x = in.readUnsignedLEShort();
-            int ctrlRun = in.readByteNeg();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 3) {
-            int ctrlRun = in.readByteNeg();
-            int id = in.readUnsignedShort();
-            int x = in.readUnsignedLEShortAdd();
-            int y = in.readUnsignedShortAdd();
+            int id = in.readUnsignedShortAdd();
+            int ctrlRun = in.readUnsignedByteAdd();
+            int y = in.readUnsignedLEShortAdd();
+            int x = in.readUnsignedLEShort();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 4) {
-            int ctrlRun = in.readByteAdd();
+            int y = in.readUnsignedLEShort();
+            int ctrlRun = in.readUnsignedByteSub();
             int x = in.readUnsignedLEShortAdd();
-            int y = in.readUnsignedLEShortAdd();
-            int id = in.readUnsignedLEShortAdd();
+            int id = in.readUnsignedLEShort();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 5) {
             int id = in.readUnsignedShort();
-            int x = in.readUnsignedShort();
-            int y = in.readUnsignedShortAdd();
-            int ctrlRun = in.readByteSub();
+            int y = in.readUnsignedLEShort();
+            int x = in.readUnsignedShortAdd();
+            int ctrlRun = in.readUnsignedByteAdd();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 6) {
-            int y = in.readShort();
-            int x = in.readLEShortAdd();
-            int id = in.readLEShort();
+            int id = in.readUnsignedLEShort();
+            int y = in.readUnsignedLEShortAdd();
+            int x = in.readUnsignedLEShort();
+
             ItemDefinition def = ItemDefinition.get(id);
             if (def != null) {
                 if (player.debug) {
