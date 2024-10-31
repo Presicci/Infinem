@@ -393,8 +393,8 @@ public class PacketSender {
         }
         OutBuffer out = new OutBuffer(9).sendFixedPacket(ServerPacket.IF_SETPOSITION.getPacketId())
                 .addLEShort(y)
-                .addIMEInt(parentId << 16 | childId)
-                .addShortAdd(x)
+                .addLEInt(parentId << 16 | childId)
+                .addLEShort(x)
         ;
         write(out);
     }
