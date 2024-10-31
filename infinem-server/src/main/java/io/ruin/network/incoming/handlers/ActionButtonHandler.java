@@ -78,7 +78,7 @@ public class ActionButtonHandler {
                     .add("item", itemId);
             player.sendFilteredMessage("[ActionButton] " + debug.toString());
         }
-        if (player.hasTemporaryAttribute("TUTORIAL") && interfaceId != Interface.LOGOUT && !dialogue && interfaceId != Interface.IRON_MAN_SETTINGS && interfaceId != Interface.APPEARANCE_CUSTOMIZATION)
+        if (player.hasTemporaryAttribute("TUTORIAL") && interfaceId != Interface.LOGOUT && !dialogue && interfaceId != 890 && interfaceId != Interface.APPEARANCE_CUSTOMIZATION)
             return;
         // Inventory
         if (option == 10 && interfaceId == 149 && itemId != -1) {

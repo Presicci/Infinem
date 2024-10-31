@@ -1,6 +1,7 @@
 package io.ruin.model.entity.player;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.model.inter.AccessMasks;
 import io.ruin.services.Hiscores;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
@@ -91,8 +92,6 @@ public enum GameMode {
      */
     public static void openSelection(Player player) {
         player.openInterface(InterfaceType.MAIN, 890);
-        player.getPacketSender().setHidden(215, 16, true);
-        player.getPacketSender().setHidden(215, 17, true);
     }
 
     public static void changeForumsGroup(Player player, int mode) {
@@ -111,14 +110,17 @@ public enum GameMode {
             h.actions[9] = (SimpleAction) p -> Config.IRONMAN_MODE_REMOVAL_REQUIREMENT.set(p, 0);
             h.actions[21] = (SimpleAction) p -> Config.IRONMAN_MODE.set(p, 0);
             h.actions[22] = (SimpleAction) p -> {
+                if (!p.hasAttribute("NEW_PLAYER")) return;
                 Config.IRONMAN_MODE.set(p, 1);
                 changeForumsGroup(p, IRONMAN.groupId);
             };
             h.actions[23] = (SimpleAction) p -> {
+                if (!p.hasAttribute("NEW_PLAYER")) return;
                 Config.IRONMAN_MODE.set(p, 2);
                 changeForumsGroup(p, ULTIMATE_IRONMAN.groupId);
             };
             h.actions[24] = (SimpleAction) p -> {
+                if (!p.hasAttribute("NEW_PLAYER")) return;
                 Config.IRONMAN_MODE.set(p, 3);
                 changeForumsGroup(p, HARDCORE_IRONMAN.groupId);
             };

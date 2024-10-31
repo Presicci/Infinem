@@ -150,6 +150,7 @@ public class StarterGuide {
                         new NPCDialogue(guide, "Do you want to see the options for Iron Man modes?"),
                         new OptionsDialogue("View Iron Man options?",
                                 new Option("Yes", () -> {
+                                    player.getPacketSender().sendVarp(266, 1);  // Lets the player pick any gamemode
                                     GameMode.openSelection(player);
                                     player.unsafeDialogue(new MessageDialogue("Close the interface once you're happy with your selection." +
                                             "<br><br><col=ff0000>WARNING:</col> This is the ONLY chance to choose your Iron Man mode.").hideContinue());
