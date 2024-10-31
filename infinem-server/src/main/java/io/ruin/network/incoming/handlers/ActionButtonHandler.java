@@ -34,59 +34,6 @@ public class ActionButtonHandler {
 
     }
 
-    @ClientPacketHolder(packets = {})
-    public static final class InventoryHandler implements Incoming {
-
-        @Override
-        public void handle(Player player, InBuffer in, int opcode) {
-            int option = OPTIONS[opcode];
-            if (option == 1) {
-                int interfaceHash = in.readIntME();
-                int itemId = in.readShort();
-                int slot = in.readLEShortAdd();
-                handleAction(player, option, interfaceHash, slot, itemId, false);
-                return;
-            }
-            if (option == 2) {
-                int slot = in.readShortAdd();
-                int itemId = in.readShort();
-                int interfaceHash = in.readInt();
-                handleAction(player, option, interfaceHash, slot, itemId, false);
-                return;
-            }
-            if (option == 3) {
-                int slot = in.readLEShortAdd();
-                int interfaceHash = in.readIntME();
-                int itemId = in.readShort();
-                handleAction(player, option, interfaceHash, slot, itemId, false);
-                return;
-            }
-            if (option == 4) {
-                int slot = in.readShort();
-                int itemId = in.readLEShortAdd();
-                int interfaceHash = in.readMInt();
-                handleAction(player, option, interfaceHash, slot, itemId, false);
-                return;
-            }
-            if (option == 5) {
-                int itemId = in.readShort();
-                int interfaceHash = in.readMInt();
-                int slot = in.readLEShortAdd();
-                handleAction(player, option, interfaceHash, slot, itemId, false);
-                return;
-            }
-            if (option == 6) {
-                int itemId = in.readShortAdd();
-                int interfaceHash = in.readLEInt();
-                int slot = in.readShort();
-                handleAction(player, 10, interfaceHash, slot, itemId, false);
-                return;
-            }
-            player.sendFilteredMessage("Unhandled interface action: option=" + option + " opcode=" + opcode);
-        }
-
-    }
-
     @ClientPacketHolder(packets = {ClientPacket.RESUME_PAUSEBUTTON})
     public static final class DialogueHandler implements Incoming {
 
