@@ -282,6 +282,11 @@ public abstract class NPCCombat extends Combat {
                 event.delay(info.death_ticks);
             dropItems(killer);
 
+            if (npc.inMulti()) {
+                for (Killer k : killers.values()) {
+                    if (k.player != null && k != killer) k.player.getBestiary().incrementKillCount(npc.getDef());
+                }
+            }
             if (killer != null && killer.player != null) {
                 killer.player.getBestiary().incrementKillCount(npc.getDef());
                 killer.player.getTaskManager().doKillLookup(npc.getId());
