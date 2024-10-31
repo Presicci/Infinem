@@ -729,9 +729,9 @@ public class PacketSender {
 
     public void sendPlayerAction(String name, boolean top, int option) {
         OutBuffer out = new OutBuffer(4 + Protocol.strLen(name)).sendVarBytePacket(ServerPacket.SET_PLAYER_OP.getPacketId())
-                .addByteNeg(option)
-                .addByte(top ? 1 : 0)
-                .addString(name);
+                .addString(name)
+                .addByteSub(top ? 1 : 0)
+                .addByteSub(option);
         write(out);
     }
 
