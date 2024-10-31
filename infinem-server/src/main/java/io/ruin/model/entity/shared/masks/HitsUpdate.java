@@ -111,17 +111,17 @@ public class HitsUpdate extends UpdateMask {
         }
 
         if (playerUpdate)
-            out.addByteAdd(1); // Hp bar count
+            out.addByteNeg(1); // Hp bar count
         else
-            out.addByteAdd(1); // Hp bar count ?
+            out.addByteSub(1); // Hp bar count ?
         out.addSmart(hpBarType);
         out.addSmart(0); // Second bar type
         out.addSmart(0); // Hp bar delay
         if (playerUpdate) {
-            out.addByte(hpBarRatio);
+            out.addByteSub(hpBarRatio);
             // if second smart is greater than 0, out.addByteS
         } else
-            out.addByte(hpBarRatio);
+            out.addByteNeg(hpBarRatio);
             // if second smart is greater than 0, out.addByteA
     }
 
