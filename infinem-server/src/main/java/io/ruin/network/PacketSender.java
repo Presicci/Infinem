@@ -821,9 +821,9 @@ public class PacketSender {
     public void sendRemoveGroundItem(GroundItem groundItem) {
         sendMapPacket(groundItem.x, groundItem.y, groundItem.z, offsetHash ->
                 new OutBuffer(8).sendFixedPacket(ServerPacket.OBJ_DEL.getPacketId())
-                        .addShort(groundItem.id)
                         .addByteSub(offsetHash)
-                        .addIMEInt(groundItem.amount)
+                        .addShortAdd(groundItem.id)
+                        .addLEInt(groundItem.amount)
         );
     }
 
