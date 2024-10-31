@@ -908,11 +908,11 @@ public class PacketSender {
 
     public void sendMusic(int id, int fadeOutDelay, int fadeOutSpeed, int fadeInDelay, int fadeInSpeed) {
         OutBuffer out = new OutBuffer(11).sendFixedPacket(ServerPacket.MIDI_SONG_V2.getPacketId())
-                .addShortAdd(fadeOutDelay)
-                .addLEShortAdd(fadeOutSpeed)
-                .addLEShort(fadeInDelay)
-                .addLEShortAdd(id)
-                .addShortAdd(fadeInSpeed);
+                .addLEShort(fadeOutDelay)
+                .addShort(fadeInDelay)
+                .addShortAdd(id)
+                .addLEShortAdd(fadeInSpeed)
+                .addShort(fadeOutSpeed);
         write(out);
     }
 
