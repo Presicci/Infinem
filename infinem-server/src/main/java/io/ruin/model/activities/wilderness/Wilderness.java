@@ -63,7 +63,6 @@ public class Wilderness {
             }
         }
         player.getBountyHunter().checkActive();
-        System.out.println(player.wildernessLevel);
         return player.wildernessLevel > 0;
     }
 
@@ -293,12 +292,20 @@ public class Wilderness {
         //Set default areas
         setLevels(new Bounds(2944, 3525, 3391, 4351, -1), y -> ((y - 3520) / 8) + 1); //main
         setLevels(new Bounds(3008, 10112, 3071, 10175, -1), y -> ((y - 9920) / 8) - 1); //gwd
-        setLevels(new Bounds(2944, 9920, 3391, 10879, -1), y -> ((y - 9920) / 8) + 1); //idk
-        setLevels(new Bounds(3328, 10048, 3455, 10175, -1), y -> ((y - 9920) / 8) + 1); // Wilderness slayer cave
+        setLevels(new Bounds(2944, 9920, 3455, 10879, -1), y -> ((y - 9920) / 8) + 1); //idk
+        setLevels(new Bounds(3328, 10240, 3391, 10303, -1), y -> ((((y % 64) - 6) * 7) / 50) + 33); // Wilderness slayer cave & escape caves
 
         // Bounty hunter island
         setLevels(new Bounds(3328, 3968, 3519, 4159, -1), 5);
         setLevels(new Bounds(3413, 4053, 3434, 4074, -1), 0);   // Safe area
+
+        // Wilderness bosses
+        setLevels(new Bounds(3264, 10176, 3327, 10239, -1), 35);    // Vet'ion
+        setLevels(new Bounds(3392, 10176, 3455, 10239, -1), 35);    // Venenatis
+        setLevels(new Bounds(3328, 10304, 3391, 10367, -1), 40);    // Callisto
+        setLevels(new Bounds(1728, 11520, 1791, 11583, -1), 21);    // Artio
+        setLevels(new Bounds(1856, 11520, 1919, 11583, -1), 21);    // Calvar'ion
+        setLevels(new Bounds(1600, 11520, 1663, 11583, -1), 29);    // Spindel
 
         //Unset certain areas
         setLevels(new Bounds(2941, 3676, 2947, 3681, -1), 0); //trollheim shortcut
