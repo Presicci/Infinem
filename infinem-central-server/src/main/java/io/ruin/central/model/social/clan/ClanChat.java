@@ -73,7 +73,7 @@ public class ClanChat extends ClanContainer {
         OutBuffer out = new OutBuffer(3 + 4 + Protocol.strLen(string))
                 .sendVarShortPacket(ServerPacket.IF_SETTEXT.getPacketId())
                 .addString(string)
-                .addInt(interfaceId << 16 | childId);
+                .addIMEInt(interfaceId << 16 | childId);
         player.write(out);
     }
 
