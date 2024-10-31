@@ -1005,7 +1005,7 @@ public class PacketSender {
 
     public void sendPlayerHead(int parentId, int childId) {
         OutBuffer out = new OutBuffer(5).sendFixedPacket(ServerPacket.IF_SETPLAYERHEAD.getPacketId())
-                .addIMEInt(parentId << 16 | childId);
+                .addLEInt(parentId << 16 | childId);
         write(out);
     }
 
