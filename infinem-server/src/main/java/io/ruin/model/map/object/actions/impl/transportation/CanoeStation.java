@@ -19,7 +19,14 @@ import io.ruin.model.skills.woodcutting.Hatchet;
 import io.ruin.model.stat.StatType;
 
 public enum CanoeStation {
-
+    // SCRIPT 3099
+    // VB 1846 says which station we are at
+    // - 1 = LUMBRIDGE
+    // - 2 = CHAMP GUILD
+    // - 3 = BARB VILLAGE
+    // - 4 = EDGEVILLE CANOE
+    // - 5 = 10527 - FEROX
+    // inter 647 new canoe interface
     LUMBRIDGE(12163, Config.LUMBRIDGE_CANOE,
             new int[]{32, 11},
             new Position(3240, 3241, 0),

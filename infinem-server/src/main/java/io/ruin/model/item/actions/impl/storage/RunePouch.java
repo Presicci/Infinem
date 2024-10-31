@@ -17,6 +17,7 @@ import io.ruin.model.skills.magic.rune.Rune;
 
 public class RunePouch extends ItemContainer {
 
+    // script 453
     public static final int RUNE_POUCH = 12791;
 
     private void open() {

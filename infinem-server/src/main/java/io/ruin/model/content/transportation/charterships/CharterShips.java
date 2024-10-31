@@ -25,7 +25,7 @@ public class CharterShips {
     //365 -> 2 && 150 -> 160 Shipyard
     //328 -> 15 Port tyras
     //176 -> 2 prif
-
+    // script 1131 - interface anim
     public static void openInterface(Player player) {
         Config.varp(302, false).set(player, 61);        // Unlocks port phasmatys
         Config.varp(655, false).set(player, 140);       // Unlocks mos le'harmless
