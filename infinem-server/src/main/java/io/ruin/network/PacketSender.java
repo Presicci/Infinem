@@ -708,10 +708,10 @@ public class PacketSender {
 
     public void sendStat(int id, int currentLevel, int experience) {
         OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.UPDATE_STAT_V2.getPacketId())
-                .addMEInt(experience)
-                .addByteSub(id)
-                .addByteNeg(currentLevel) // Boosted level
-                .addByteAdd(currentLevel);
+                .addByte(id)
+                .addIMEInt(experience)
+                .addByte(currentLevel) // Boosted level
+                .addByteNeg(currentLevel);
         write(out);
     }
 
