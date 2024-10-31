@@ -499,7 +499,7 @@ public class PacketSender {
     public void sendSystemUpdate(int time) {
         OutBuffer out = new OutBuffer(3)
                 .sendFixedPacket(ServerPacket.UPDATE_REBOOT_TIMER.getPacketId())
-                .addShortAdd(time * 50 / 30);
+                .addLEShortAdd(time * 50 / 30);
         write(out);
     }
 
