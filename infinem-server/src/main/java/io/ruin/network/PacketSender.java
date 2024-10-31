@@ -839,8 +839,8 @@ public class PacketSender {
     public void sendRemoveObject(int x, int y, int z, int type, int dir) {
         sendMapPacket(x, y, z, offsetHash ->
                 new OutBuffer(3).sendFixedPacket(ServerPacket.LOC_DEL.getPacketId())
-                        .addByte(offsetHash)
                         .addByte(type << 2 | dir)
+                        .addByteSub(offsetHash)
         );
     }
 
