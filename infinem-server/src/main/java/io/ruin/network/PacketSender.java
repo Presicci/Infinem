@@ -23,6 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.function.Function;
@@ -47,7 +48,7 @@ public class PacketSender {
             Server.logError(player.getName() + " wrote packet off main thread!", new Throwable());
         int opcode = out.payload()[0] & 0xff;;
         ServerPacket packet = ServerPacket.getPacketByOpcode(opcode);
-        //System.out.println("Client outgoing: " + opcode + (packet == null ? "" : " - " + packet) + " - " + Arrays.toString(out.payload()));
+        System.out.println("Client outgoing: " + opcode + (packet == null ? "" : " - " + packet) + " - " + Arrays.toString(out.payload()));
         player.getChannel().write(out.encode(cipher).toBuffer());
     }
 
@@ -582,12 +583,12 @@ public class PacketSender {
         OutBuffer out;
         if (value < Byte.MIN_VALUE || value > Byte.MAX_VALUE)
             out = new OutBuffer(7).sendFixedPacket(ServerPacket.VARP_LARGE.getPacketId())
-                    .addShortAdd(id)
-                    .addIMEInt(value);
+                    .addShort(id)
+                    .addInt(value);
         else
             out = new OutBuffer(4).sendFixedPacket(ServerPacket.VARP_SMALL.getPacketId())
                     .addByteSub(value)
-                    .addLEShortAdd(id);
+                    .addLEShort(id);
         write(out);
     }
 
