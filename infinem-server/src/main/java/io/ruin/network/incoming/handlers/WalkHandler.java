@@ -41,10 +41,9 @@ public class WalkHandler implements Incoming {
         }
 
         player.resetActions(true, true, true);
-
-        int y = in.readUnsignedShort();
-        int type = in.readByteSub();
+        int type = in.readUnsignedByteAdd();
         int x = in.readUnsignedShortAdd();
+        int y = in.readUnsignedLEShortAdd();
         if (player.isAdmin() || World.isDev()) {
             NPC npc = player.getTemporaryAttribute("CONTROLLING_NPC");
             if (npc != null) {
