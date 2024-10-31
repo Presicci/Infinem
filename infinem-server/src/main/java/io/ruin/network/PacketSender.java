@@ -156,8 +156,8 @@ public class PacketSender {
              * Dynamic map
              */
             out.sendVarShortPacket(ServerPacket.REBUILD_REGION.getPacketId())
-                    .addShort(chunkY)
-                    .addShort(chunkX)
+                    .addLEShortAdd(chunkY)
+                    .addLEShortAdd(chunkX)
                     .addByteNeg(0); //force refresh;
 
             int startPos = out.position();
