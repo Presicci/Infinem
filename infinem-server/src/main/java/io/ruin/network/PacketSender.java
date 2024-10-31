@@ -796,14 +796,14 @@ public class PacketSender {
     public void sendGroundItem(GroundItem groundItem) {
         sendMapPacket(groundItem.x, groundItem.y, groundItem.z, offsetHash ->
                 new OutBuffer(16).sendFixedPacket(ServerPacket.OBJ_ADD.getPacketId())
-                        .addLEShort((groundItem.getDespawnTime() * 1000) / 600)   // despawn time TODO
                         .addByteSub(offsetHash)
-                        .addLEShortAdd(groundItem.id)
-                        .addLEShort(0)// visible time TODO
-                        .addByte(0)// private TODO
                         .addByte(31) //OPFILTER TODO
-                        .addByteSub(groundItem.activeOwner)// ownership
-                        .addLEInt(groundItem.amount)
+                        .addByte(0)// private TODO
+                        .addInt(groundItem.amount)
+                        .addLEShortAdd(groundItem.id)
+                        .addByteAdd(groundItem.activeOwner)// ownership
+                        .addLEShort((groundItem.getDespawnTime() * 1000) / 600)   // despawn time TODO
+                        .addLEShort(0)// visible time TODO
         );
     }
 
