@@ -29,13 +29,13 @@ public class InterfaceOnGroundItemHandler {
     public static final class FromInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int ctrlRun = in.readUnsignedByte();
-            int groundItemId = in.readUnsignedLEShortAdd();
-            int interfaceHash = in.readIMInt();
+            int x = in.readUnsignedShort();
             int itemId = in.readUnsignedLEShort();
-            int x = in.readUnsignedLEShort();
-            int slot = in.readUnsignedShortAdd();
-            int y = in.readUnsignedShortAdd();
+            int groundItemId = in.readUnsignedLEShort();
+            int y = in.readUnsignedLEShort();
+            int ctrlRun = in.readUnsignedByteAdd();
+            int interfaceHash = in.readIMInt();
+            int slot = in.readUnsignedShort();
             int telegrabHash = 14286875;
             if (interfaceHash == telegrabHash) {
                 handleTelegrab(player, groundItemId, x, y, ctrlRun == 1);
