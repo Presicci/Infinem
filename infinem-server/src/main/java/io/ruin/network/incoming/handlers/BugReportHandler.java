@@ -16,8 +16,8 @@ public class BugReportHandler implements Incoming {
     @Override
     public void handle(Player player, InBuffer in, int opcode) {
         String first = in.readString();
+        in.readUnsignedByteSub();
         String second = in.readString();
-        in.readByteAdd();
         BugReportEmbedMessage.sendDiscordMessage(player, first, second);
     }
 }
