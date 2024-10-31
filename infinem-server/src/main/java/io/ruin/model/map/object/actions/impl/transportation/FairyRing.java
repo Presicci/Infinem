@@ -208,6 +208,7 @@ public enum FairyRing { //todo add favorite option
                     player.putTemporaryAttribute("FAIRY_LAST_TELE", entry.position);
             }
             player.animate(3266);
+            player.getPacketSender().sendClientScript(4079);
             event.delay(1);
             if(entry == null)
                 player.dialogue(new PlayerDialogue("Wow, fairy magic sure is useful, I hardly moved at all!"));
