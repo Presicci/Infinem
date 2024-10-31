@@ -34,37 +34,37 @@ public class NPCActionHandler implements Incoming {
         if (option != 6)
             player.resetActions(true, true, true);
         if (option == 1) {
-            int targetIndex = in.readUnsignedShortAdd();
-            int ctrlRun = in.readByteNeg();
+            int ctrlRun = in.readUnsignedByte();
+            int targetIndex = in.readUnsignedShort();
             handleAction(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 2) {
-            int ctrlRun = in.readByte();
+            int ctrlRun = in.readUnsignedByte();
             int targetIndex = in.readUnsignedLEShort();
             handleAction(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 3) {
-            int ctrlRun = in.readByteNeg();
-            int targetIndex = in.readUnsignedShortAdd();
-            handleAction(player, option, targetIndex, ctrlRun);
-            return;
-        }
-        if (option == 4) {
-            int ctrlRun = in.readByte();
+            int ctrlRun = in.readUnsignedByte();
             int targetIndex = in.readUnsignedShort();
             handleAction(player, option, targetIndex, ctrlRun);
             return;
         }
-        if (option == 5) {
+        if (option == 4) {
             int targetIndex = in.readUnsignedLEShortAdd();
-            int ctrlRun = in.readByteAdd();
+            int ctrlRun = in.readUnsignedByteAdd();
+            handleAction(player, option, targetIndex, ctrlRun);
+            return;
+        }
+        if (option == 5) {
+            int ctrlRun = in.readUnsignedByteAdd();
+            int targetIndex = in.readUnsignedShortAdd();
             handleAction(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 6) {
-            int id = in.readUnsignedLEShort();
+            int id = in.readUnsignedShort();
             NPCDefinition def = NPCDefinition.get(id);
             if (def == null)
                 return;
