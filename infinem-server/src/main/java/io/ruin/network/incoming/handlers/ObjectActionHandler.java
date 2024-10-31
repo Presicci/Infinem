@@ -28,48 +28,48 @@ public class ObjectActionHandler implements Incoming {
         if (option != 6)
             player.resetActions(true, true, true);
         if (option == 1) {
-            int x = in.readUnsignedLEShortAdd();
-            int id = in.readUnsignedShort();
-            int y = in.readUnsignedShort();
-            int ctrlRun = in.readByteSub();
+            int x = in.readUnsignedLEShort();
+            int y = in.readUnsignedShortAdd();
+            int ctrlRun = in.readUnsignedByteSub();
+            int id = in.readUnsignedLEShort();
             player.removeTemporaryAttribute(TricksterAgility.KEY);
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 2) {
-            int y = in.readUnsignedShort();
-            int id = in.readUnsignedLEShortAdd();
-            int ctrlRun = in.readByteNeg();
-            int x = in.readUnsignedLEShort();
+            int ctrlRun = in.readUnsignedByte();
+            int id = in.readUnsignedLEShort();
+            int x = in.readUnsignedLEShortAdd();
+            int y = in.readUnsignedLEShort();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 3) {
-            int y = in.readUnsignedShort();
-            int id = in.readUnsignedLEShort();
-            int ctrlRun = in.readByteSub();
-            int x = in.readUnsignedLEShortAdd();
+            int ctrlRun = in.readUnsignedByteNeg();
+            int id = in.readUnsignedLEShortAdd();
+            int y = in.readUnsignedLEShortAdd();
+            int x = in.readUnsignedShortAdd();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 4) {
-            int y = in.readUnsignedShort();
-            int x = in.readUnsignedLEShort();
-            int ctrlRun = in.readByteNeg();
-            int id = in.readUnsignedLEShortAdd();
+            int y = in.readUnsignedLEShortAdd();
+            int id = in.readUnsignedLEShort();
+            int ctrlRun = in.readUnsignedByte();
+            int x = in.readUnsignedShortAdd();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 5) {
-            int y = in.readUnsignedLEShortAdd();
-            int ctrlRun = in.readByteAdd();
-            int x = in.readUnsignedLEShort();
-            int id = in.readUnsignedLEShortAdd();
+            int x = in.readUnsignedShortAdd();
+            int ctrlRun = in.readUnsignedByteSub();
+            int id = in.readUnsignedShortAdd();
+            int y = in.readUnsignedShort();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if (option == 6) {
-            int id = in.readUnsignedShort();
+            int id = in.readUnsignedLEShort();
             ObjectDefinition def = ObjectDefinition.get(id);
             if (def != null) {
                 if (player.debug) {
