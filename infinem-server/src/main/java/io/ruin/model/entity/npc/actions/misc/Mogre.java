@@ -18,7 +18,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public class Mogre {
 
     private static final GameObject[] FISHING_SPOT = {
-            new GameObject(10087, 2982, 3113, 0, 10, 0),
+            new GameObject(10087, 2982, 3113, 0, 10, 1),
             new GameObject(10088, 2996, 3106, 0, 10, 0),
             new GameObject(10089, 3005, 3117, 0, 10, 0)
     };
