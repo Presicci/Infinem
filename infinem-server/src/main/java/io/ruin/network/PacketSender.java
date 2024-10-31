@@ -617,16 +617,17 @@ public class PacketSender {
         for (int slot = 0; slot < length; slot++) {
             Item item = items[slot];
             if (item == null || item.getId() < 0) {
+                out.addLEShort(0);
                 out.addByteNeg(0);
-                out.addLEShortAdd(0);
             } else {
+                out.addLEShort(item.getId() + 1);
                 if (item.getAmount() < 255) {
                     out.addByteNeg(item.getAmount());
                 } else {
                     out.addByteNeg(255);
                     out.addIMEInt(item.getAmount());
                 }
-                out.addLEShortAdd(item.getId() + 1);
+
             }
         }
         write(out);
