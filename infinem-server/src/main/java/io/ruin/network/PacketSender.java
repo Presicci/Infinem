@@ -884,15 +884,15 @@ public class PacketSender {
     }
 
     public void sendAreaSound(int id, int type, int delay, int x, int y, int distance) {
-        /*sendMapPacket(x, y, player.getHeight(), offsetHash ->
+        sendMapPacket(x, y, player.getHeight(), offsetHash ->
                 new OutBuffer(8).sendFixedPacket(ServerPacket.SOUND_AREA.getPacketId())
+                        .addLEShort(id)
+                        .addByteAdd(type) // loops
                         .addByte(distance)
-                        .addShortAdd(id)
-                        .addByteSub(1) // drop off range
-                        .addByteSub(type) // loops
+                        .addByteNeg(1) // drop off range
                         .addByte(delay)
-                        .addByteAdd(offsetHash)
-        );*/
+                        .addByteNeg(offsetHash)
+        );
     }
 
     public void sendSoundEffect(int id, int type, int delay) {
