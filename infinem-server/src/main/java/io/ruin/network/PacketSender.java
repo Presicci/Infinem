@@ -786,9 +786,10 @@ public class PacketSender {
         int playerLocalY = Position.getLocal(chunkAbsY, player.getPosition().getFirstChunkY());
         if (playerLocalX >= 0 && playerLocalX < 104 && playerLocalY >= 0 && playerLocalY < 104) {
             write(new OutBuffer(4).sendFixedPacket(ServerPacket.UPDATE_ZONE_PARTIAL_FOLLOWS.getPacketId())
-                    .addByte(playerLocalX)
-                    .addByteAdd(z)
-                    .addByteAdd(playerLocalY));
+                    .addByteSub(playerLocalY)
+                    .addByte(z)
+                    .addByteNeg(playerLocalX)
+            );
             write(write.apply((targetLocalX & 0x7) << 4 | (targetLocalY & 0x7)));
         }
     }
