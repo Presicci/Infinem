@@ -849,9 +849,9 @@ public class PacketSender {
     public void sendObjectAnimation(int x, int y, int z, int type, int dir, int animationId) {
         sendMapPacket(x, y, z, offsetHash ->
                 new OutBuffer(5).sendFixedPacket(ServerPacket.LOC_ANIM.getPacketId())
-                        .addByteSub(type << 2 | dir)
+                        .addByte(type << 2 | dir)
+                        .addLEShortAdd(animationId)
                         .addByte(offsetHash)
-                        .addLEShort(animationId)
         );
     }
 
