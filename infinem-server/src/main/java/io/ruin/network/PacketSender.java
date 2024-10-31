@@ -770,9 +770,9 @@ public class PacketSender {
         int y = Position.getLocal(chunkAbsY, player.getPosition().getFirstChunkY());
         int z = player.getHeight();
         OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.UPDATE_ZONE_FULL_FOLLOWS.getPacketId())
-                .addByteAdd(x)
-                .addByteSub(z)
-                .addByteSub(y);
+                .addByteAdd(z)
+                .addByteNeg(y)
+                .addByteNeg(x);
         write(out);
     }
 
