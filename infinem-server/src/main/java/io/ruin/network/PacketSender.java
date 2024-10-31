@@ -362,8 +362,8 @@ public class PacketSender {
             return;
         }
         OutBuffer out = new OutBuffer(6).sendFixedPacket(ServerPacket.IF_SETHIDE.getPacketId())
-                .addByteSub(hide ? 1 : 0)
-                .addIMEInt(interfaceId << 16 | childId);
+                .addInt(interfaceId << 16 | childId)
+                .addByte(hide ? 1 : 0);
         write(out);
     }
 
