@@ -39,8 +39,8 @@ public class ActionButtonHandler {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int slot = in.readUnsignedShortAdd();
-            int interfaceHash = in.readIntME();
+            int interfaceHash = in.readMInt();
+            int slot = in.readUnsignedShort();
             if (GameEventProcessor.resumeWith(player, slot)) {
                 return;
             }
