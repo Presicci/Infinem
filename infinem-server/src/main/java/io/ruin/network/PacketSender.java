@@ -637,29 +637,6 @@ public class PacketSender {
         write(out);
     }
 
-    public void sendShopItems(int interfaceHash, int containerId, ShopItem[] items, int length) {
-        OutBuffer out = new OutBuffer(10 + (length * 10)).sendVarShortPacket(ServerPacket.UPDATE_INV_FULL.getPacketId())
-                .addInt(interfaceHash)
-                .addShort(containerId)
-                .addShort(length);
-        for (int slot = 0; slot < items.length; slot++) {
-            ShopItem item = items[slot];
-            if (item == null || item.getId() < 0) {
-                out.addByteNeg(0);
-                out.addLEShortAdd(0);
-            } else {
-                if (item.getAmount() < 255) {
-                    out.addByteNeg(item.getAmount());
-                } else {
-                    out.addByteNeg(255);
-                    out.addIMEInt(item.getAmount());
-                }
-                out.addLEShortAdd(item.getId() + 1);
-            }
-        }
-        write(out);
-    }
-
     public void updateItems(int interfaceHash, int containerId, Item[] items, boolean[] updatedSlots, int updatedCount) {
         OutBuffer out = new OutBuffer(10 + (updatedCount * 10)).sendVarShortPacket(ServerPacket.UPDATE_INV_PARTIAL.getPacketId())
                 .addInt(interfaceHash)
@@ -667,31 +644,6 @@ public class PacketSender {
         for (int slot = 0; slot < items.length; slot++) {
             if (updatedSlots[slot]) {
                 Item item = items[slot];
-                out.addSmart(slot);
-                if (item == null || item.getId() < 0) {
-                    out.addShort(0);
-                } else {
-                    out.addShort(item.getId() + 1);
-                    if (item.getAmount() < 255) {
-                        out.addByte(item.getAmount());
-                    } else {
-                        out.addByte(255);
-                        out.addInt(item.getAmount());
-                    }
-
-                }
-            }
-        }
-        write(out);
-    }
-
-    public void updateItems(int interfaceHash, int containerId, ShopItem[] items, boolean[] updatedSlots, int updatedCount) {
-        OutBuffer out = new OutBuffer(10 + (updatedCount * 10)).sendVarShortPacket(ServerPacket.UPDATE_INV_PARTIAL.getPacketId())
-                .addInt(interfaceHash)
-                .addShort(containerId);
-        for (int slot = 0; slot < items.length; slot++) {
-            if (updatedSlots[slot]) {
-                ShopItem item = items[slot];
                 out.addSmart(slot);
                 if (item == null || item.getId() < 0) {
                     out.addShort(0);

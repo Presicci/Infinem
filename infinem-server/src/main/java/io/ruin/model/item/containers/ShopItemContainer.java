@@ -27,7 +27,7 @@ public class ShopItemContainer extends ItemContainerG<ShopItem> {
 
     @Override
     public void send(Player player, int interfaceHash, int containerId) {
-        player.getPacketSender().sendShopItems(interfaceHash, containerId, items, items.length);
+        player.getPacketSender().sendItems(interfaceHash, containerId, items, items.length);
     }
 
     public void sendUpdates(Player player, int interfaceHash, int containerId) {
