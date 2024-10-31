@@ -11,12 +11,10 @@ public class TeleportHandler implements Incoming {
 
     @Override
     public void handle(Player player, InBuffer in, int opcode) {
-        in.readLEInt();
-        int z = in.readByteAdd();
-        int x = in.readUnsignedLEShort();
+        int z = in.readUnsignedByteNeg();
+        in.readMInt();
         int y = in.readUnsignedLEShort();
-
-
+        int x = in.readUnsignedLEShort();
         player.getMovement().teleport(x, y, z);
     }
 
