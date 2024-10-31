@@ -1119,7 +1119,7 @@ public class PacketSender {
     }
 
     public void sendNPCUpdateOrigin() {
-        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.SET_NPC_UPDATE_ORIGIN.getPacketId())
+        OutBuffer out = new OutBuffer(4).sendFixedPacket(ServerPacket.SET_NPC_UPDATE_ORIGIN.getPacketId())
                 .addByte(Position.getLocal(player.getAbsX(), player.getPosition().getFirstChunkX()))
                 .addByte(Position.getLocal(player.getAbsY(), player.getPosition().getFirstChunkY()))
         ;
