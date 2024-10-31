@@ -46,7 +46,11 @@ public class PacketSender {
         }
         if(!Thread.currentThread().getName().equals("server-worker #1"))
             Server.logError(player.getName() + " wrote packet off main thread!", new Throwable());
-        int opcode = out.payload()[0] & 0xff;;
+        int opcode = out.payload()[0] & 0xff;
+        if (opcode >= 128) {
+            opcode = out.payload()[0] << 8 & 128;
+            opcode += out.payload()[1] & 255;
+        }
         ServerPacket packet = ServerPacket.getPacketByOpcode(opcode);
         System.out.println("Client outgoing: " + opcode + (packet == null ? "" : " - " + packet) + " - " + Arrays.toString(out.payload()));
         player.getChannel().write(out.encode(cipher).toBuffer());
