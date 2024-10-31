@@ -876,10 +876,10 @@ public class PacketSender {
     public void sendGraphics(int id, int height, int delay, int x, int y, int z) {
         sendMapPacket(x, y, z, offsetHash ->
                 new OutBuffer(7).sendFixedPacket(ServerPacket.MAP_ANIM.getPacketId())
-                        .addByteSub(offsetHash)
-                        .addShortAdd(id)
-                        .addByteSub(height)
-                        .addShortAdd(delay)
+                        .addLEShort(id)
+                        .addLEShortAdd(delay)
+                        .addByteNeg(offsetHash)
+                        .addByte(height)
         );
     }
 
