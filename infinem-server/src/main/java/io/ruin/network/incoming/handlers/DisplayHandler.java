@@ -17,7 +17,7 @@ import java.util.Map;
 import static io.ruin.model.inter.Interface.COMBAT_OPTIONS;
 
 @SuppressWarnings("Duplicates")
-@ClientPacketHolder(packets = {ClientPacket.EVENT_WINDOW_SETTING})
+@ClientPacketHolder(packets = {ClientPacket.WINDOW_STATUS})
 public class DisplayHandler implements Incoming {
 
     @Override

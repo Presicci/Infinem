@@ -11,10 +11,8 @@ import io.ruin.services.Loggers;
 import io.ruin.services.Punishment;
 import io.ruin.utility.ClientPacketHolder;
 
-import java.util.Arrays;
-
 @ClientPacketHolder(packets = {
-        ClientPacket.IGNORELIST_ADD, ClientPacket.FRIENDLIST_ADD, ClientPacket.FRIEND_DELUSER,
+        ClientPacket.IGNORELIST_ADD, ClientPacket.FRIENDLIST_ADD, ClientPacket.FRIENDLIST_DEL,
         ClientPacket.IGNORELIST_DEL, ClientPacket.MESSAGE_PRIVATE, ClientPacket.FRIENDCHAT_SETRANK})
 public class FriendsHandler implements Incoming {
 
@@ -38,7 +36,7 @@ public class FriendsHandler implements Incoming {
             CentralClient.sendSocialRequest(player.getUserId(), name, 1);
             return;
         }
-        if (opcode == ClientPacket.FRIEND_DELUSER.packetId) {
+        if (opcode == ClientPacket.FRIENDLIST_DEL.packetId) {
             /**
              * Delete friend
              */

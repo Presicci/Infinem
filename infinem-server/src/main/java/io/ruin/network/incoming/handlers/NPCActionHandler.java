@@ -21,7 +21,7 @@ import java.util.Arrays;
 
 @ClientPacketHolder(packets = {
         ClientPacket.OPNPC1, ClientPacket.OPNPC2, ClientPacket.OPNPC3,
-        ClientPacket.OPNPC4, ClientPacket.OPNPC5, ClientPacket.OPNPCE})
+        ClientPacket.OPNPC4, ClientPacket.OPNPC5, ClientPacket.OPNPC6})
 public class NPCActionHandler implements Incoming {
 
     @Override

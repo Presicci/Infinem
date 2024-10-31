@@ -7,7 +7,7 @@ import io.ruin.network.incoming.Incoming;
 import io.ruin.network.ClientPacket;
 import io.ruin.utility.ClientPacketHolder;
 
-@ClientPacketHolder(packets = {ClientPacket.CHAT_SETFILTER})
+@ClientPacketHolder(packets = {ClientPacket.SET_CHATFILTERSETTINGS})
 public class PrivacyHandler implements Incoming {
 
     @Override

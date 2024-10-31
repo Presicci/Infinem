@@ -102,7 +102,7 @@ public class ActionButtonHandler {
 
     }
 
-    @ClientPacketHolder(packets = {ClientPacket.WIDGET_TYPE})
+    @ClientPacketHolder(packets = {ClientPacket.IF_BUTTON})
     public static final class OtherHandler implements Incoming {
 
         @Override

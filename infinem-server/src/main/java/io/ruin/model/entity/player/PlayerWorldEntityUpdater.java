@@ -2,13 +2,10 @@ package io.ruin.model.entity.player;
 
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.protocol.ServerPacket;
-import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.worldentity.WorldEntity;
 import io.ruin.model.map.Position;
-import io.ruin.model.map.Region;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -28,7 +25,7 @@ public class PlayerWorldEntityUpdater {
     }
 
     public void process() {
-        OutBuffer out = new OutBuffer(0xff).sendVarShortPacket(ServerPacket.WORLDENTITY_INFO.getPacketId());
+        OutBuffer out = new OutBuffer(0xff).sendVarShortPacket(ServerPacket.WORLDENTITY_INFO_V2.getPacketId());
         out.addByte(localWorldEntities.size());
         if (!localWorldEntities.isEmpty()) {
             for (Iterator<WorldEntity> it = localWorldEntities.iterator(); it.hasNext(); ) {

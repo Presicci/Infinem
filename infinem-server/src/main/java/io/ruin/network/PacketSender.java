@@ -88,7 +88,7 @@ public class PacketSender {
 
     public void sendLogout() {
         try {
-            OutBuffer out = new OutBuffer(1).sendFixedPacket(ServerPacket.LOGOUT_FULL.getPacketId());
+            OutBuffer out = new OutBuffer(1).sendFixedPacket(ServerPacket.LOGOUT.getPacketId());
             if (player.getChannel().isActive())
                 player.getChannel().writeAndFlush(out.encode(cipher).toBuffer()).addListener(ChannelFutureListener.CLOSE);
         } catch (RejectedExecutionException ex) {
@@ -120,7 +120,6 @@ public class PacketSender {
                 player.getUpdater().updateRegion = true;
                 chunkX = chunkY = 0;
             }
-
             out.addShort(chunkX);
             out.addShort(0); //UNUSED
             out.addLEShort(chunkY);
@@ -706,7 +705,7 @@ public class PacketSender {
     }
 
     public void sendStat(int id, int currentLevel, int experience) {
-        OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.UPDATE_STAT.getPacketId())
+        OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.UPDATE_STAT_V2.getPacketId())
                 .addMEInt(experience)
                 .addByteSub(id)
                 .addByteNeg(currentLevel) // Boosted level
@@ -735,7 +734,7 @@ public class PacketSender {
     }
 
     public void worldHop(String host, int id, int flags) {
-        OutBuffer out = new OutBuffer(50).sendFixedPacket(ServerPacket.EVENT_WORLDHOP.getPacketId())
+        OutBuffer out = new OutBuffer(50).sendFixedPacket(ServerPacket.LOGOUT_TRANSFER.getPacketId())
                 .addString(host)
                 .addShort(id)
                 .addInt(flags);
@@ -906,7 +905,7 @@ public class PacketSender {
     }
 
     public void sendMusic(int id, int fadeOutDelay, int fadeOutSpeed, int fadeInDelay, int fadeInSpeed) {
-        OutBuffer out = new OutBuffer(11).sendFixedPacket(ServerPacket.MIDI_SONG.getPacketId())
+        OutBuffer out = new OutBuffer(11).sendFixedPacket(ServerPacket.MIDI_SONG_V2.getPacketId())
                 .addShortAdd(fadeOutDelay)
                 .addLEShortAdd(fadeOutSpeed)
                 .addLEShort(fadeInDelay)
@@ -1065,7 +1064,7 @@ public class PacketSender {
         Position pos = new Position(x, y, 0);
         int posX = pos.getSceneX(player.getPosition());
         int posY = pos.getSceneY(player.getPosition());
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_SETANGLE.getPacketId())
+        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_ROTATETO.getPacketId())
                 .addByte(posX)
                 .addByte(posY)
                 .addShort(cameraHeight)

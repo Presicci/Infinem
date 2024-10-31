@@ -63,7 +63,7 @@ public class Player {
     }
 
     public void sendPrivacy(int privacy) {
-        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.SET_PRIVATECHATMODE.getPacketId())
+        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.CHAT_FILTER_SETTINGS_PRIVATECHAT.getPacketId())
                 .addByte(privacy);
         this.write(out);
     }

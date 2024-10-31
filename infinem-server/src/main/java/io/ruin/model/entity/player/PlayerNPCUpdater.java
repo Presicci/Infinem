@@ -37,8 +37,8 @@ public class PlayerNPCUpdater {
         player.getPacketSender().sendNPCUpdateOrigin();
         OutBuffer out = new OutBuffer(0xff)
                 .sendVarShortPacket(isLargeView()
-                        ? ServerPacket.NPC_INFO_LARGE.getPacketId()
-                        : ServerPacket.NPC_INFO_SMALL.getPacketId())
+                        ? ServerPacket.NPC_INFO_LARGE_V5.getPacketId()
+                        : ServerPacket.NPC_INFO_SMALL_V5.getPacketId())
                 .initBitAccess();
         /**
          * Local (Updating visible npcs)

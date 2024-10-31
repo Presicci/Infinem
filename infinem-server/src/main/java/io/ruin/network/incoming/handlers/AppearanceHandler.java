@@ -10,7 +10,7 @@ import io.ruin.network.incoming.Incoming;
 import io.ruin.network.ClientPacket;
 import io.ruin.utility.ClientPacketHolder;
 
-@ClientPacketHolder(packets = {ClientPacket.UPDATE_PLAYER_MODEL})
+@ClientPacketHolder(packets = {ClientPacket.UPDATE_PLAYER_MODEL_V2})
 public class AppearanceHandler implements Incoming {
 
     private static final short[][] COLORS = {

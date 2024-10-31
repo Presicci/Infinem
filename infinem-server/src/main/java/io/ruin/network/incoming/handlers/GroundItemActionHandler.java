@@ -11,11 +11,9 @@ import io.ruin.network.ClientPacket;
 import io.ruin.utility.ClientPacketHolder;
 import io.ruin.utility.DebugMessage;
 
-import java.util.Arrays;
-
 @ClientPacketHolder(packets = {
         ClientPacket.OPOBJ1, ClientPacket.OPOBJ2, ClientPacket.OPOBJ3,
-        ClientPacket.OPOBJ4, ClientPacket.OPOBJ5, ClientPacket.OPOBJE})
+        ClientPacket.OPOBJ4, ClientPacket.OPOBJ5, ClientPacket.OPOBJ6})
 public class GroundItemActionHandler implements Incoming {
 
     @Override

@@ -253,7 +253,7 @@ public class ClanChat extends ClanContainer {
     }
 
     private OutBuffer getMessageBuffer(String senderName, int rankId, String message) {
-        OutBuffer out = new OutBuffer(255).sendVarBytePacket(ServerPacket.MESSAGE_FRIENDS_CHAT.getPacketId());
+        OutBuffer out = new OutBuffer(255).sendVarBytePacket(ServerPacket.MESSAGE_FRIENDCHANNEL.getPacketId());
         out.addString(senderName);
         out.addLong(StringUtils.stringToLong(this.name));
         for (int i = 0; i < 5; ++i) {

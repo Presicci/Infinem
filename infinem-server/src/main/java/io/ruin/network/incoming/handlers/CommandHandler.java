@@ -19,7 +19,7 @@ import java.io.*;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@ClientPacketHolder(packets = {ClientPacket.DOCHEAT})
+@ClientPacketHolder(packets = {ClientPacket.CLIENT_CHEAT})
 public class CommandHandler implements Incoming {
 
     public static final Bounds EDGEVILLE = new Bounds(3036, 3478, 3144, 3524, -1);
