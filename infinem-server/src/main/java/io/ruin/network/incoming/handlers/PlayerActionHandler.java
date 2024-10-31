@@ -22,50 +22,50 @@ public class PlayerActionHandler implements Incoming {
 
         int option = OPTIONS[opcode];
         if (option == 1) {
-            int targetIndex = in.readUnsignedLEShort();
-            int ctrlRun = in.readByte();
+            int targetIndex = in.readUnsignedShortAdd();
+            int ctrlRun = in.readUnsignedByteSub();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 2) {
-            int targetIndex = in.readUnsignedShortAdd();
-            int ctrlRun = in.readByteAdd();
+            int targetIndex = in.readUnsignedShort();
+            int ctrlRun = in.readUnsignedByteAdd();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 3) {
-            int ctrlRun = in.readByteAdd();
-            int targetIndex = in.readUnsignedLEShortAdd();
+            int ctrlRun = in.readUnsignedByteSub();
+            int targetIndex = in.readUnsignedShortAdd();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 4) {
-            int targetIndex = in.readUnsignedShort();
-            int ctrlRun = in.readByteSub();
+            int ctrlRun = in.readUnsignedByteSub();
+            int targetIndex = in.readUnsignedShortAdd();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 5) {
-            int ctrlRun = in.readByte();
-            int targetIndex = in.readUnsignedLEShort();
+            int targetIndex = in.readUnsignedShortAdd();
+            int ctrlRun = in.readUnsignedByteSub();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 6) {
-            int targetIndex = in.readUnsignedShortAdd();
-            int ctrlRun = in.readByteAdd();
+            int targetIndex = in.readUnsignedShort();
+            int ctrlRun = in.readUnsignedByteAdd();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 7) {
-            int ctrlRun = in.readByte();
-            int targetIndex = in.readUnsignedShortAdd();
+            int targetIndex = in.readUnsignedLEShort();
+            int ctrlRun = in.readUnsignedByteSub();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if (option == 8) {
-            int ctrlRun = in.readByte();
-            int targetIndex = in.readUnsignedShort();
+            int ctrlRun = in.readUnsignedByteNeg();
+            int targetIndex = in.readUnsignedLEShortAdd();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
