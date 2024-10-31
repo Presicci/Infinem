@@ -858,18 +858,18 @@ public class PacketSender {
     public void sendProjectile(int projectileId, int startX, int startY, int destX, int destY, int targetIndex, int startHeight, int endHeight, int delay, int duration, int curve, int something) {
         sendMapPacket(startX, startY, player.getHeight(), offsetHash ->
                 new OutBuffer(22).sendFixedPacket(ServerPacket.MAP_PROJANIM.getPacketId())
-                        .addShort(projectileId)
-                        .addByteNeg(endHeight)
-                        .addLEMedium(targetIndex)
-                        .addShortAdd(something)// progress
-                        .addShort(duration)
-                        .addByte(offsetHash)
-                        .addMedium_alt1(0)// source index
-                        .addByteAdd(curve)
-                        .addByte(startHeight)
-                        .addByteSub(destX - startX)
+                        .addShortAdd(duration)
+                        .addMedium(0)// source index
                         .addShortAdd(delay)
-                        .addByte(destY - startY)
+                        .addLEShortAdd(something)// progress
+                        .addLEMedium(targetIndex)
+                        .addByte(startHeight)
+                        .addByteSub(offsetHash)
+                        .addByteAdd(endHeight)
+                        .addShortAdd(projectileId)
+                        .addByteNeg(destY - startY)
+                        .addByteNeg(curve)
+                        .addByteAdd(destX - startX)
         );
     }
 
