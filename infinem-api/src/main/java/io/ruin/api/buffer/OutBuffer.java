@@ -146,7 +146,12 @@ public class OutBuffer {
     }
 
     public OutBuffer sendVarBytePacket(int opcode) {
-        addByte(opcode);
+        if (opcode < 128) {
+            addByte(opcode);
+        } else {
+            addByte(opcode >> 8 | 128);
+            addByte(opcode & 255);
+        }
         type = VAR_BYTE_TYPE;
         sizePosition = position;
         addByte(0); //"byte" size
@@ -154,7 +159,12 @@ public class OutBuffer {
     }
 
     public OutBuffer sendVarShortPacket(int opcode) {
-        addByte(opcode);
+        if (opcode < 128) {
+            addByte(opcode);
+        } else {
+            addByte(opcode >> 8 | 128);
+            addByte(opcode & 255);
+        }
         type = VAR_SHORT_TYPE;
         sizePosition = position;
         addShort(0); //"short" size
@@ -162,7 +172,12 @@ public class OutBuffer {
     }
 
     public OutBuffer sendVarIntPacket(int opcode) {
-        addByte(opcode);
+        if (opcode < 128) {
+            addByte(opcode);
+        } else {
+            addByte(opcode >> 8 | 128);
+            addByte(opcode & 255);
+        }
         type = VAR_INT_TYPE;
         sizePosition = position;
         addInt(0); //"int" size
