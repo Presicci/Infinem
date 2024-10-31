@@ -15,12 +15,12 @@ public class InterfaceOnInterfaceHandler {
     public static final class OnInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int toSlot = in.readUnsignedShortAdd();
-            int fromInterfaceHash = in.readMInt();
             int toItemId = in.readUnsignedShortAdd();
-            int fromSlot = in.readUnsignedShortAdd();
+            int toSlot = in.readUnsignedShortAdd();
             int fromItemId = in.readUnsignedLEShort();
             int toInterfaceHash = in.readIMInt();
+            int fromInterfaceHash = in.readInt();
+            int fromSlot = in.readUnsignedLEShortAdd();
             handleAction(player, fromInterfaceHash, fromSlot, fromItemId, toInterfaceHash, toSlot, toItemId);
         }
     }
