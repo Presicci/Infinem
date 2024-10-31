@@ -812,10 +812,10 @@ public class PacketSender {
     public void sendUpdateGroundItem(GroundItem groundItem, int oldAmount) {
         sendMapPacket(groundItem.x, groundItem.y, groundItem.z, offsetHash ->
                 new OutBuffer(14).sendFixedPacket(ServerPacket.OBJ_COUNT.getPacketId())
-                        .addByteSub(offsetHash)
+                        .addMEInt(oldAmount)
+                        .addShortAdd(groundItem.id)
+                        .addByte(offsetHash)
                         .addInt(groundItem.amount)
-                        .addLEShortAdd(groundItem.id)
-                        .addIMEInt(oldAmount)
         );
     }
 
