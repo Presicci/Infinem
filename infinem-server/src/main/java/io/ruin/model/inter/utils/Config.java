@@ -524,6 +524,7 @@ public class Config {
             varpbit(3212, true),
             varpbit(4441, true),
             varpbit(5023, true),
+            varpbit(15366, true),
     };
 
     /**

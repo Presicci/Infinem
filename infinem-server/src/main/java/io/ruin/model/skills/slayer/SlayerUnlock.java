@@ -140,8 +140,10 @@ public enum SlayerUnlock {
             storeTask(player);
         } else if (slot == 67) {
             unstoreTask(player);
-        } else if (slot >= 59 && slot <= 65) {
-            unblockTask(player, slot - 59);
+        } else if (slot >= 59 && slot <= 64 || slot == 68) {
+            if (slot == 64) unblockTask(player, 6);
+            else if (slot == 68) unblockTask(player, 5);
+            else unblockTask(player, slot - 59);
         }
         SlayerUnlock unlock = UNLOCKS.get(slot);
         if (unlock != null) {
@@ -225,6 +227,10 @@ public enum SlayerUnlock {
         // Check for an available slot and block
         for (Config i : Config.BLOCKED_TASKS) {
             if (i.get(player) == 0) {
+                if (i.id == 15366 && Config.LEAGUE_POINTS.get(player) < 8000) {
+                    player.sendMessage("You need 8,000 task points to block 7 tasks.");
+                    return;
+                }
                 i.set(player, uuid);
                 Slayer.resetTask(player);
                 int pts = Config.SLAYER_POINTS.get(player) - 100;
