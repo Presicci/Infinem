@@ -20,10 +20,10 @@ public class InterfaceOnEntityHandler {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
             int interfaceHash = in.readLEInt();
-            int slot = in.readUnsignedLEShortAdd();
             int targetIndex = in.readUnsignedLEShortAdd();
-            int itemId = in.readUnsignedShortAdd();
-            int ctrlRun = in.readByteAdd();
+            int slot = in.readUnsignedShort();
+            int itemId = in.readUnsignedShort();
+            int ctrlRun = in.readUnsignedByte();
             handleAction(player, World.getPlayer(targetIndex), interfaceHash, slot, itemId, ctrlRun);
         }
 
@@ -34,11 +34,11 @@ public class InterfaceOnEntityHandler {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int targetIndex = in.readUnsignedLEShort();
-            int item = in.readUnsignedShortAdd();
-            int interfaceHash = in.readLEInt();
+            int ctrlRun = in.readUnsignedByteNeg();
             int slot = in.readUnsignedLEShort();
-            int ctrlRun = in.readByteNeg();
+            int interfaceHash = in.readInt();
+            int targetIndex = in.readUnsignedShortAdd();
+            int item = in.readUnsignedShortAdd();
             handleAction(player, World.getNpc(targetIndex), interfaceHash, slot, item, ctrlRun);
         }
 
