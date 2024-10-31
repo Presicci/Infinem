@@ -16,12 +16,12 @@ public class InterfaceDragHandler {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int draggedWidgetHash = in.readLEInt();
-            int draggedOnItemId = in.readUnsignedLEShort();
-            int fromSlot = in.readUnsignedLEShortAdd();
-            int draggedItemId = in.readUnsignedShort();
-            int toSlot = in.readUnsignedLEShort();
-            int draggedOnWidgetHash = in.readLEInt();
+            int draggedWidgetHash = in.readIMInt();
+            int draggedOnWidgetHash = in.readMInt();
+            int toSlot = in.readUnsignedShortAdd();
+            int draggedItemId = in.readUnsignedShortAdd();
+            int draggedOnItemId = in.readUnsignedShort();
+            int fromSlot = in.readUnsignedShort();
             handleDrag(player, draggedWidgetHash, fromSlot, draggedItemId, draggedOnWidgetHash, toSlot, draggedOnItemId);
         }
 
