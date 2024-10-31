@@ -112,7 +112,7 @@ public enum ServerPacket {
     URL_OPEN(99, -2),               // Unused
     OBJ_COUNT(100, 11),
     VARP_SMALL(101, 3),
-    SERVER_TICK_END(102, 0),        // Unused
+    SERVER_TICK_END(102, 0),
     LOGOUT_TRANSFER(103, -1),
     CAM_MOVETO(104, 6),
     UPDATE_FRIENDCHAT_CHANNEL_FULL_V2(105, -2), // Unused

@@ -1152,4 +1152,9 @@ public class PacketSender {
                 .addByte(state ? 1 : 0);
         write(out);
     }
+
+    public void sendTickEnd() {
+        OutBuffer out = new OutBuffer(1).sendFixedPacket(ServerPacket.SERVER_TICK_END.getPacketId());
+        write(out);
+    }
 }

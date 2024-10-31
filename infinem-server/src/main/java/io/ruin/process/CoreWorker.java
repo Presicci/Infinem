@@ -125,6 +125,7 @@ public class CoreWorker extends World {
                     //player.getWorldEntityUpdater().process();
                     TargetOverlay.process(player);
                     player.sendVarps();
+                    player.getPacketSender().sendTickEnd();
                 }
             } catch (Throwable t) {
                 Server.logError("", t);
