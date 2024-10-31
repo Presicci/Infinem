@@ -12,7 +12,7 @@ public class KeyHandler implements Incoming {
     public void handle(Player player, InBuffer in, int opcode) {
         while(in.remaining() > 0) {
             in.skip(3); //time diff
-            handleKey(player, in.readUnsignedByteC());
+            handleKey(player, in.readUnsignedByteNeg());
         }
     }
 
