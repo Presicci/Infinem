@@ -75,7 +75,7 @@ public enum ServerPacket {
     RESET_ANIMS(62, 0),             // Unused
     PLAYER_INFO(63, -2),
     OBJ_UNCUSTOMISE(64, 7),         // Unused NEW IN 226
-    NPC_INFO_LARGE_V4(143, -2),     // Unused
+    NPC_INFO_LARGE_V4(65, -2),     // Unused
     IF_SETEVENTS(66, 12),
     IF_SETPLAYERMODEL_OBJ(67, 8),   // Unused
     LOGOUT(68, 0),
@@ -97,7 +97,7 @@ public enum ServerPacket {
     MIDI_SONG_V1(84, 2),            // Unused
     FRIENDLIST_LOADED(85, 0),       // Unused
     MESSAGE_CLANCHANNEL_SYSTEM(86, -1), // Unused
-    NPC_INFO_SMALL_V4(139, -2),     // Unused
+    NPC_INFO_SMALL_V4(87, -2),     // Unused
     VARCLAN(88, -1),                // Unused
     MAP_ANIM(89, 6),
     CLANSETTINGS_FULL(90, -2),      // Unused
@@ -118,8 +118,8 @@ public enum ServerPacket {
     UPDATE_FRIENDCHAT_CHANNEL_FULL_V2(105, -2), // Unused
     IF_CLEARINV(106, 4),            // Unused
     IF_SETANIM(107, 6),
-    CAM_ROTATETO(108, 6),
-    REBUILD_NORMAL(109, -2),/***/
+    CAM_ROTATETO(108, 6), // TODO wrong packet maybe
+    REBUILD_NORMAL(109, -2),
     IF_OPENTOP(110, 2),
     NPC_HEADICON_SPECIFIC(111, 9),  // Unused
     SET_MAP_FLAG(112, 2),
@@ -149,10 +149,10 @@ public enum ServerPacket {
     UNKNOWN_STRING(136, -1),        // Unused
     SET_INTERACTION_MODE(137, 4),   // Unused NEW IN 226
     HIDELOCOPS(138, 1),             // Unused
-    NPC_INFO_SMALL_V5(139, -2),/** NEW bit*/
+    NPC_INFO_SMALL_V5(139, -2),
     WORLDENTITY_INFO_V3(140, -2),   // Unused NEW IN 226
     HIDENPCOPS(141, 1),             // Unused
-    WORLDENTITY_INFO_V2(142, -2),
+    WORLDENTITY_INFO_V2(142, -2),   // Unused
     NPC_INFO_LARGE_V5(143, -2);
 
     private final int packetId, packetSize;
