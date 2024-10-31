@@ -1011,8 +1011,8 @@ public class PacketSender {
 
     public void sendNpcHead(int parentId, int childId, int npcId) {
         OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.IF_SETNPCHEAD.getPacketId())
-                .addLEShort(npcId)
-                .addLEInt(parentId << 16 | childId);
+                .addMEInt(parentId << 16 | childId)
+                .addShort(npcId);
         write(out);
     }
 
