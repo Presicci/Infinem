@@ -287,7 +287,7 @@ public class PacketSender {
         player.setGameFrameId(id);
         OutBuffer out = new OutBuffer(3)
                 .sendFixedPacket(ServerPacket.IF_OPENTOP.getPacketId())
-                .addShort(id);
+                .addLEShortAdd(id);
         write(out);
     }
 
