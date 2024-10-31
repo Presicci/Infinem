@@ -189,6 +189,7 @@ public enum FairyRing { //todo add favorite option
             if(entry != null)
                 Config.FAIRY_RING_LAST_DESTINATION.set(player, entry.lastDestination);
             event.delay(1);
+            player.getPacketSender().sendClientScript(2157);
             player.animate(3265, 30);
             player.graphics(569);
             event.delay(3);
