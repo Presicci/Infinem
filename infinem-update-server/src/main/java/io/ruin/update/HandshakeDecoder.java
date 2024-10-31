@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class HandshakeDecoder extends MessageDecoder<Channel> {
 
     private static final int SUB_BUILD = 1;
-    public static int REVISION = 225;
+    public static int REVISION = 226;
     public static final int OPCODE = 15;
     public static final int SIZE = 4;
 
