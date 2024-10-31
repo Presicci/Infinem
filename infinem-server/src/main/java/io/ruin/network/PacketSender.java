@@ -1018,7 +1018,7 @@ public class PacketSender {
 
     public void animateInterface(int parentId, int childId, int animationId) {
         OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.IF_SETANIM.getPacketId())
-                .addShort(animationId)
+                .addShortAdd(animationId)
                 .addMEInt(parentId << 16 | childId);
         write(out);
     }
