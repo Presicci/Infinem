@@ -369,8 +369,8 @@ public class PacketSender {
 
     public void sendSetColor(int interfaceId, int childId, Color colour) {
         OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.IF_SETCOLOUR.getPacketId())
-                .addShort(colour.getRed() << 10 | colour.getGreen() << 5 | colour.getBlue())
-                .addLEInt(interfaceId << 16 | childId);
+                .addIMEInt(interfaceId << 16 | childId)
+                .addLEShortAdd(colour.getRed() << 10 | colour.getGreen() << 5 | colour.getBlue());
         write(out);
     }
 
