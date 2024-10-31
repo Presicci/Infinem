@@ -121,9 +121,9 @@ public class PacketSender {
                 player.getUpdater().updateRegion = true;
                 chunkX = chunkY = 0;
             }
-            out.addShort(chunkX);
-            out.addShort(0); //UNUSED
-            out.addLEShort(chunkY);
+            out.addShortAdd(0); //UNUSED
+            out.addShortAdd(chunkX);
+            out.addShort(chunkY);
             int countPos = out.position();
             out.addShort(0);
 
