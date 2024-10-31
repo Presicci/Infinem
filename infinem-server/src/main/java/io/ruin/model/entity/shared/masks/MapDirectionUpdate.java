@@ -63,7 +63,7 @@ public class MapDirectionUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 2 : 8;
+        return playerUpdate ? 32 : 8;
     }
 
 }

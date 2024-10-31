@@ -1123,19 +1123,20 @@ public class Player extends PlayerAttributes {
         appearance.setPlayer(this);
 
         masks = new UpdateMask[]{ // Order same way as client reads
-                movementModeUpdate = new MovementModeUpdate(),
-                actionsUpdate = new EntityActionsUpdate(),
                 graphicsUpdate = new GraphicsUpdate(),
+                forceMovementUpdate = new ForceMovementUpdate(),
+                modelRecolorUpdate = new ModelRecolorUpdate(),
                 teleportModeUpdate = new TeleportModeUpdate(),
+                forceTextUpdate = new ForceTextUpdate(),
+                chatUpdate = new ChatUpdate(),
+                movementModeUpdate = new MovementModeUpdate(),
+                mapDirectionUpdate = new MapDirectionUpdate(),
+                animationUpdate = new AnimationUpdate(),
+                entityDirectionUpdate = new EntityDirectionUpdate(),
                 appearance,
                 hitsUpdate = new HitsUpdate(this),
-                chatUpdate = new ChatUpdate(),
-                forceMovementUpdate = new ForceMovementUpdate(),
-                entityDirectionUpdate = new EntityDirectionUpdate(),
-                animationUpdate = new AnimationUpdate(),
-                forceTextUpdate = new ForceTextUpdate(),
-                mapDirectionUpdate = new MapDirectionUpdate(),
-                modelRecolorUpdate = new ModelRecolorUpdate()
+                // move this if start using it
+                actionsUpdate = new EntityActionsUpdate()
         };
 
         if(inventory == null)

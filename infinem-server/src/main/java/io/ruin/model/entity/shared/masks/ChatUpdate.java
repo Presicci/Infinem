@@ -45,13 +45,11 @@ public class ChatUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
-        out.addByte(color);
-        out.addByte(effects);
-        out.addByteNeg(rankId);
+        out.addLEShort(color << 8 | effects);
+        out.addByte(rankId);
         out.addByteAdd(type);
         byte[] stringArray = Huffman.compressString(message);
         out.addByteSub(stringArray.length);
-        System.out.println(Arrays.toString(stringArray));
         out.addBytesReverse(stringArray, 0, stringArray.length);
         if (pattern != null) out.addBytes(pattern);
         //pattern
@@ -59,7 +57,7 @@ public class ChatUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return 8192;
+        return 2048;
     }
 
     private int[] getPatternColors() {

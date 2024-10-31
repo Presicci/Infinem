@@ -51,6 +51,6 @@ public class EntityActionsUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return 32768;
+        return 4096;
     }
 }

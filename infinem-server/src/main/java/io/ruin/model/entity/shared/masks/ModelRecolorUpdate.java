@@ -44,11 +44,11 @@ public class ModelRecolorUpdate extends UpdateMask {
     @Override
     public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         if (playerUpdate) {
-            out.addShort(startTick);
-            out.addShort(endTick);
-            out.addByteNeg(hue);
-            out.addByte(saturation);
-            out.addByteNeg(lightness);
+            out.addLEShortAdd(startTick);
+            out.addShortAdd(endTick);
+            out.addByte(hue);
+            out.addByteAdd(saturation);
+            out.addByteSub(lightness);
             out.addByteSub(alpha);
         } else {
             out.addLEShort(startTick);
@@ -62,6 +62,6 @@ public class ModelRecolorUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 512 : 1024;
+        return playerUpdate ? 1024 : 1024;
     }
 }

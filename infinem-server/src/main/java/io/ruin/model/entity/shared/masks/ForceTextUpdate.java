@@ -29,7 +29,7 @@ public class ForceTextUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 1 : 1;
+        return playerUpdate ? 16 : 1;
     }
 
 }

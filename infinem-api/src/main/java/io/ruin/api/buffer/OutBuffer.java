@@ -252,6 +252,13 @@ public class OutBuffer {
         return this;
     }
 
+    public OutBuffer addBytesReversed(byte[] bytes, int offset, int length) {
+        resizeIfNeeded(position + (length - offset));
+        for(int i = length-1; i >= 0; i--)
+            payload[position++] = (byte) (bytes[i + offset]);
+        return this;
+    }
+
     public OutBuffer addByte(int b) {
         return setByte(position++, b);
     }

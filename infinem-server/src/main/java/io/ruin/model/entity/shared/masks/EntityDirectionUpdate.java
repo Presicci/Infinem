@@ -62,8 +62,8 @@ public class EntityDirectionUpdate extends UpdateMask {
             index = target.getClientIndex();
         }
         if (playerUpdate) {
-            out.addLEShortAdd(index & 0xffff);
-            out.addByteNeg(index >> 16);
+            out.addLEShort(index & 0xffff);
+            out.addByteSub(index >> 16);
         } else {
             out.addLEShortAdd(index & 0xffff);
             out.addByteNeg(index >> 16);
@@ -72,7 +72,7 @@ public class EntityDirectionUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 64 : 16;
+        return playerUpdate ? 1 : 16;
     }
 
 }

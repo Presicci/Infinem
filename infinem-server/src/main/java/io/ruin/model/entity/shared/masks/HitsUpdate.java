@@ -89,7 +89,7 @@ public class HitsUpdate extends UpdateMask {
     @Override
     public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         if (playerUpdate)
-            out.addByteNeg(splats.size());
+            out.addByte(splats.size());
         else
             out.addByteSub(splats.size()); // ?
         boolean tinting = receivingPlayer != null && Config.HITSPLAT_TINTING.get(receivingPlayer) == 0;
@@ -127,7 +127,7 @@ public class HitsUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 128 : 128;
+        return playerUpdate ? 4 : 128;
     }
 
     @AllArgsConstructor

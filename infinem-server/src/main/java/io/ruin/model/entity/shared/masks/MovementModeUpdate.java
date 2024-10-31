@@ -35,7 +35,7 @@ public class MovementModeUpdate extends UpdateMask {
     @Override
     public int get(boolean playerUpdate) {
         if (!playerUpdate) throw new UnsupportedOperationException("only for players...");
-        return 256;
+        return 32768;
     }
 
 }

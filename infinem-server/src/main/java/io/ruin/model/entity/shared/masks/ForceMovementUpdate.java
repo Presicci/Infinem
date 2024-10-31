@@ -37,13 +37,13 @@ public class ForceMovementUpdate extends UpdateMask {
     @Override
     public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         if (playerUpdate) {
-            out.addByteAdd(diffX1);
-            out.addByteSub(diffY1);
-            out.addByteSub(diffX2);
-            out.addByteNeg(diffY2);
-            out.addLEShort(speed1);
-            out.addLEShort(speed2);
-            out.addLEShortAdd(direction);
+            out.addByteSub(diffX1);
+            out.addByte(diffY1);
+            out.addByteNeg(diffX2);
+            out.addByte(diffY2);
+            out.addShort(speed1);
+            out.addShortAdd(speed2);
+            out.addLEShort(direction);
         } else {
             out.addByteSub(diffX1);
             out.addByteAdd(diffY1);
@@ -57,7 +57,7 @@ public class ForceMovementUpdate extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 16384 : 4096;
+        return playerUpdate ? 256 : 4096;
     }
 
 }

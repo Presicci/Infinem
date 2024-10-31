@@ -38,12 +38,12 @@ public class GraphicsUpdate extends UpdateMask {
     @Override
     public void send(OutBuffer out, boolean playerUpdate, Player receivingPlayer) {
         if (playerUpdate) {
-            out.addByteSub(pending.size());
+            out.addByte(pending.size());
             for (Map.Entry<Integer, SpotAnim> entry : pending.entrySet()) {
                 SpotAnim spotAnim = entry.getValue();
-                out.addByteNeg(entry.getKey());
-                out.addShort(spotAnim.id);
-                out.addIMEInt(spotAnim.delay | (spotAnim.height << 16));
+                out.addByte(entry.getKey());
+                out.addShortAdd(spotAnim.id);
+                out.addLEInt(spotAnim.delay | (spotAnim.height << 16));
             }
         } else {
             out.addByteAdd(pending.size());
