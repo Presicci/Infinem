@@ -304,9 +304,9 @@ public class PacketSender {
         }
         player.setVisibleInterface(interfaceId, parentId, childId);
         OutBuffer out = new OutBuffer(8).sendFixedPacket(ServerPacket.IF_OPENSUB.getPacketId())
-                .addLEShortAdd(interfaceId)
                 .addIMEInt(parentId << 16 | childId)
-                .addByteSub(overlayType);
+                .addShortAdd(interfaceId)
+                .addByteAdd(overlayType);
         write(out);
     }
 
