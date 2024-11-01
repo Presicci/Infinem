@@ -26,7 +26,6 @@ public class ChatHandler implements Incoming {
             }
             return;
         }
-        System.out.println(Arrays.toString(in.getPayload()));
         int type = in.readUnsignedByte();
         int color = in.readUnsignedByte();
         int effect = in.readUnsignedByte();
@@ -40,7 +39,6 @@ public class ChatHandler implements Incoming {
         in.readBytes(compressed);
 
         String message = Huffman.decompress(compressed, length);
-        System.out.println(type + ", " + color + ", " + effect + ", " + message + ", " + (pattern == null ? "none" : pattern.length));
         if (message.isEmpty()) {
             /* how does this even happen? */
             return;

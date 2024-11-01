@@ -93,7 +93,6 @@ public class ObjectActionHandler implements Incoming {
     }
 
     public static void handleAction(Player player, int option, int objectId, int objectX, int objectY, int ctrlRun) {
-        System.out.println(objectId + ": " + objectX + ", " + objectY);
         if (objectId == -1) {
             if (player.debug) {
                 player.sendFilteredMessage("[ObjectAction] ObjectId is -1. Option=" + option);
