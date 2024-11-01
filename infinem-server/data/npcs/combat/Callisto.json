@@ -7,6 +7,7 @@
     "aggressive_level": 940,
     "max_damage": 60,
     "attack_style": "CRUSH",
+    "easier_root": true,
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 1300.0,
