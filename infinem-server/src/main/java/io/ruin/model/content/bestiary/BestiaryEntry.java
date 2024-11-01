@@ -62,8 +62,9 @@ public class BestiaryEntry {
             if (player.hasAttribute(getPerkKey(perkType))) {
                 return defaultMulti;
             }
-            if (perkType.isInstance(perk))
-                return perk.getMultiplier(killCount);
+            if (perkType.isInstance(perk)) {
+                return perk.getMultiplier(uniqueEntryKillcountModifier(killCount));
+            }
         }
         return defaultMulti;
     }
@@ -92,19 +93,29 @@ public class BestiaryEntry {
     }
 
     public List<BestiaryPerk> getSortedPerks() {
-        perks.sort((o1, o2) -> o2.getFill(killCount) - o1.getFill(killCount));
+        int count = uniqueEntryKillcountModifier(killCount);
+        perks.sort((o1, o2) -> o2.getFill(count) - o1.getFill(count));
         return perks;
     }
 
     public String generateRewardString() {
-        perks.sort((o1, o2) -> o2.getFill(killCount) - o1.getFill(killCount));
+        int count = uniqueEntryKillcountModifier(killCount);
+        perks.sort((o1, o2) -> o2.getFill(count) - o1.getFill(count));
         StringBuilder sb = new StringBuilder();
         for (BestiaryPerk perk : perks) {
-            sb.append(perk.getString(killCount));
-            sb.append(!perk.hasUnlocked(killCount) ? "2" : player.hasAttribute(getPerkKey(perk.getClass())) ? "0" : "1");
+            sb.append(perk.getString(count));
+            sb.append(!perk.hasUnlocked(count) ? "2" : player.hasAttribute(getPerkKey(perk.getClass())) ? "0" : "1");
             sb.append("|");
         }
         sb.deleteCharAt(sb.length() - 1);   // Trim trailing |
         return sb.toString();
+    }
+
+    public int uniqueEntryKillcountModifier(int killCount) {
+        if (!BestiaryDef.isBoss(name)) {
+            int uniqueEntries = player.getBestiary().getKillCounts().size();
+            killCount += uniqueEntries >= 400 ? 1000 : uniqueEntries >= 200 ? 500 : uniqueEntries >= 100 ? 250 : uniqueEntries >= 50 ? 100 : uniqueEntries >= 25 ? 50 : 0;
+        }
+        return killCount;
     }
 }
