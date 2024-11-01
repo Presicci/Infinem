@@ -146,7 +146,7 @@ public enum UnlockableTransmog {
             UNLOCKABLE_TRANSMOG_IDS.add(type.hoodId);
         }
         LoginListener.register(player -> {
-            if (player.lastLogin <= 1 /* TODO Timestamp when deploying */) {
+            if (player.lastLogin <= 1730449559) {
                 for (UnlockableTransmog t : values()) {
                     if (player.getCollectionLog().hasCollected(t.getItemId())) {
                         player.getTransmogCollection().addToCollection(t.getItemId(), false);
