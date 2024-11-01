@@ -73,7 +73,9 @@ public class TransmogCollection {
     }
 
     public void clearPreview() {
-
+        previews.clear();
+        player.closeDialogue();
+        TransmogInterface.send(player);
     }
 
     public int getItemIdForSlot(TransmogSlot slot) {
