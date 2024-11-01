@@ -107,6 +107,8 @@ public class npc_combat extends DataFile {
 
         @Expose public boolean typeless = false;
 
+        @Expose public boolean easier_root = false;
+
         /**
          * Slayer Info
          */

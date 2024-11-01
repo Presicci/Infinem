@@ -204,6 +204,8 @@ public class TargetSpell extends Spell {
                 .randDamage(maxDamage)
                 .clientDelay(projectileDuration, 16)
                 .setAttackSpell(this);
+        if (this instanceof RootSpell && target.isNpc() && target.npc.getCombat().getInfo().easier_root)
+            hit.ignoreDefence();
         if (!primaryCast) hit.keepCharges();
         hit.postDamage(t -> {
             if(hit.isBlocked()) {
