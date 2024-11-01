@@ -61,9 +61,10 @@ public class TabStats {
             h.actions[24] = (SimpleAction) p -> selectCategory(p, 11);
             h.actions[25] = (SimpleAction) p -> selectCategory(p, 12);
             h.actions[26] = (SimpleAction) p -> selectCategory(p, 13);
+            h.actions[28] = (SimpleAction) p -> p.closeInterface(InterfaceType.WORLD_MAP);
         });
         InterfaceHandler.register(860, h -> {
-            h.actions[4] = (SimpleAction) player -> player.closeInterface(InterfaceType.WORLD_MAP);;
+            h.actions[4] = (SimpleAction) player -> player.closeInterface(InterfaceType.WORLD_MAP);
         });
     }
 
@@ -85,7 +86,7 @@ public class TabStats {
         if (Config.NEW_SKILL_GUIDE.get(player) == 0) {
             Config.SKILL_GUIDE_STAT.set(player, statType.clientId);
             Config.SKILL_GUIDE_CAT.set(player, category);
-            player.openInterface(InterfaceType.MAIN, Interface.SKILL_GUIDE);
+            player.openInterface(InterfaceType.WORLD_MAP, Interface.SKILL_GUIDE);
         } else {
             player.openInterface(InterfaceType.WORLD_MAP, 860);
             player.getPacketSender().sendClientScript(1902, "ii", statType.clientId, 0);   // Stat index, tab index
