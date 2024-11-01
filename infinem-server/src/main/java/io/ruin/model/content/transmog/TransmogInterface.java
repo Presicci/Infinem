@@ -103,7 +103,6 @@ public class TransmogInterface {
             List<Integer> transmogs = player.getTemporaryAttributeOrDefault("TRANSMOGS", new ArrayList<>());
             int index = slot / 4;
             if (index >= transmogs.size()) {
-                player.sendMessage("Indexoob");
                 return;
             }
             int transmogId = transmogs.get(index);
@@ -116,7 +115,6 @@ public class TransmogInterface {
                 player.dialogueKeepInterfaces(new MessageDialogue("To unlock this transmog:<br><br>" + unlockableTransmog.getUnlockRequirement()));
             }
         }
-        player.sendMessage("op:" + option +", slot:"+slot);
     }
 
     private static void clickAppliedTransmog(Player player, int option, TransmogSlot slot) {
@@ -148,7 +146,6 @@ public class TransmogInterface {
     protected static void sendSlot(Player player, int slot) {
         TransmogSlot transmogSlot = TransmogSlot.getSlot(slot);
         if (transmogSlot == null) {
-            player.sendMessage("Improper slot for: " + slot);
             return;
         }
         sendSlot(player, transmogSlot);
