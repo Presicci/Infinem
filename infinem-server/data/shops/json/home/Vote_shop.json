@@ -103,6 +103,12 @@
       "stock": 10000,
       "buy_price": -1,
       "sell_price": 100
+    },
+    { // Transmog imbuement scroll
+      "itemId": 32040,
+      "stock": 10000,
+      "buy_price": -1,
+      "sell_price": 3
     }
   ]
 }
