@@ -21,9 +21,9 @@ public class InterfaceOnObjectHandler {
             int objectY = in.readUnsignedLEShort();
             int interfaceHash = in.readLEInt();
             int ctrlRun = in.readUnsignedByteNeg();
-            int slot = in.readUnsignedShortAdd();
-            int objectId = in.readUnsignedShortAdd();
             int itemId = in.readUnsignedShortAdd();
+            int objectId = in.readUnsignedShortAdd();
+            int slot = in.readUnsignedShortAdd();
             handleAction(player, interfaceHash, slot, itemId, objectId, objectX, objectY, ctrlRun);
         }
     }
