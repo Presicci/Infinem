@@ -99,11 +99,11 @@ public abstract class Combat {
      * @return Player can be attacked by all NPCs & by one single player
      */
     public boolean allowSinglePlus(Entity attacker, Entity target) {
-        if (lastAttacker != null && lastAttacker.isPlayer() && attacker == lastAttacker)
-            return true;
+        if (lastAttacker != null && lastAttacker.isPlayer() && target != lastAttacker)
+            return false;
         if (lastAttacker != null && lastAttacker.isNpc())
-            return true;
-        return target.getCombat().lastAttacker != null && target.getCombat().lastAttacker.isNpc();
+            return false;
+        return target.getCombat().lastAttacker == null || target.getCombat().lastAttacker.isNpc();
     }
 
     /**
