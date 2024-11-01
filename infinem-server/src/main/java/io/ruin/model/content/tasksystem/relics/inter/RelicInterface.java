@@ -59,6 +59,8 @@ public class RelicInterface {
      */
 
     public static void open(Player player) {
+        player.closeInterface(InterfaceType.WORLD_MAP); // Temp fix until i add resizable support for relics
+        player.setInterfaceUnderlay(-1, -1);
         player.openInterface(InterfaceType.MAIN, Interface.RELICS);
         // Relics
         player.getPacketSender().sendAccessMask(Interface.RELICS, 22, 0, 100, AccessMasks.ClickOp1);
