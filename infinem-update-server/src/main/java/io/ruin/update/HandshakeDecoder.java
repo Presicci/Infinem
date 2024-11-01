@@ -38,7 +38,7 @@ public class HandshakeDecoder extends MessageDecoder<Channel> {
                 in.readInt();
                 if (clientBuild == REVISION) {
                     channel.writeAndFlush(new OutBuffer(SUB_BUILD).addByte(0).toBuffer());
-                    channel.pipeline().replace("decoder", "decoder", new Js5Decoder());
+                    channel.pipeline().replace("decoder", "decoder", new Js5Decoder(fileStore));
                     return;
                 }
                 Response.GAME_UPDATED.send(channel);

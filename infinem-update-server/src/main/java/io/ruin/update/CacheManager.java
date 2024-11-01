@@ -11,18 +11,17 @@ public class CacheManager {
 
     private static final HashMap<Long, OutBuffer> cachedBuffers = new HashMap(1000);
 
-    public static synchronized OutBuffer get(int index, int archiveId, boolean priority, int encryptionValue) throws IOException {
+    public static synchronized OutBuffer get(FileStore fileStore, int index, int archiveId, boolean priority, int encryptionValue) throws IOException {
         int storedType = priority ? index : index + 256;
         long hash = (long) archiveId + ((long) storedType << 32);
-        FileStore fs = Server.fileStore;
         HashMap<Long, OutBuffer> map = cachedBuffers;
         OutBuffer cached = map.get(hash);
         if (cached != null) {
             return cached;
         }
         if (index == 255 && archiveId == 255) {
-            OutBuffer out = new OutBuffer(fs.files.length * 8);
-            for (IndexFile file : fs.files) {
+            OutBuffer out = new OutBuffer(fileStore.files.length * 8);
+            for (IndexFile file : fileStore.files) {
                 if (file == null) {
                     out.addInt(0);
                     out.addInt(0);
@@ -48,8 +47,8 @@ public class CacheManager {
             }
             cached = buffer;
         } else {
-            IndexFile file = fs.get(index);
-            if (file == null || (index == 255 ? archiveId >= fs.files.length : !file.archiveExists(archiveId))) {
+            IndexFile file = fileStore.get(index);
+            if (file == null || (index == 255 ? archiveId >= fileStore.files.length : !file.archiveExists(archiveId))) {
                 return null;
             }
             byte[] archive = file.getArchiveData(archiveId);

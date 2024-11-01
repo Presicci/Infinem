@@ -33,14 +33,19 @@ public class LoginDecoder extends MessageDecoder<Channel> {
     private static final BigInteger EXPONENT = new BigInteger("83923922839219287732917015149195732073695536052984669036231778384894490439511932467277679466826619631057457711190000931928848746974072996674449163992099423404866521840525018174269929252811697346444185514151969525075984167323004389765704130745055780821036980587747264383960689940905074229888881011617738648897");
     private static final BigInteger MODULUS = new BigInteger("94210824259843347324509385276594109263523823612210415282840685497179394322370180677069205378760490069724955139827325518162089726630921395369270393801925644637806226306156731189625154078707248525519618118185550146216513714101970726787284175941436804270501308516733103597242337227056455402809871503542425244523");
 
-    public LoginDecoder() {
+    private final FileStore fileStore;
+
+    public LoginDecoder(FileStore fileStore) {
         super(null, false);
+        this.fileStore = fileStore;
     }
 
     @Override
     protected void handle(Channel channel, InBuffer in, int opcode) {
         ServerWrapper.log(opcode + " Incoming: " + IPAddress.get(channel));
-        if (opcode == 14) {
+        if (opcode == 15) {
+            HandshakeDecoder.handle(fileStore, channel, in, opcode);
+        } else if (opcode == 14) {
             /*
              * Login handshake request
              */
@@ -213,6 +218,7 @@ public class LoginDecoder extends MessageDecoder<Channel> {
     protected int getSize(int opcode) {
         switch(opcode) {
             case 14: return 0;          //login handshake request
+            case 15: return 20;
             case 16: return VAR_SHORT;  //world login request
             case 18: return VAR_SHORT;  //world login request (from dc)
         }
