@@ -232,6 +232,25 @@ public class Store {
                 addItem(player, Items.PYROMANCER_BOOTS, 1);
                 addItem(player, Items.WARM_GLOVES, 1);
                 break;
+            case 21:    // Void
+                addItem(player, Items.VOID_KNIGHT_GLOVES, 1);
+                addItem(player, Items.VOID_KNIGHT_ROBE, 1);
+                addItem(player, Items.VOID_KNIGHT_TOP, 1);
+                addItem(player, Items.VOID_RANGER_HELM, 1);
+                addItem(player, Items.VOID_MELEE_HELM, 1);
+                addItem(player, Items.VOID_MAGE_HELM, 1);
+                break;
+            case 22:    // Elite void
+                addItem(player, Items.VOID_KNIGHT_GLOVES, 1);
+                addItem(player, Items.ELITE_VOID_ROBE, 1);
+                addItem(player, Items.ELITE_VOID_TOP, 1);
+                addItem(player, Items.VOID_RANGER_HELM, 1);
+                addItem(player, Items.VOID_MELEE_HELM, 1);
+                addItem(player, Items.VOID_MAGE_HELM, 1);
+                break;
+            case 23:    // Transmog imbuement scrolls
+                addItem(player, 32040, 5);
+                break;
         }
         return 0;
     }
