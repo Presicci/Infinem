@@ -229,7 +229,7 @@ public class Interface {
 
     public static final int DUEL_ARENA_CHALLENGE = 389;
 
-    public static final int DUEL_ARENA_RULES = 482;
+    public static final int DUEL_ARENA_RULES = 755;
 
     public static final int DUEL_ARENA_STAKE = 1001;
 

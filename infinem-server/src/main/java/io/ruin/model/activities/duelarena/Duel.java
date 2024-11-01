@@ -171,30 +171,34 @@ public class Duel extends ItemContainer {
 
         /* target name & combat */
         int targetLevel = targetDuel.player.getCombat().getLevel();
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 35, "Dueling with: " + targetDuel.player.getName());
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 34, levelWarning(player.getCombat().getLevel(), targetLevel) + "Combat level: " + targetLevel);
+        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 6, "Dueling with: " + targetDuel.player.getName());
+        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 7, levelWarning(player.getCombat().getLevel(), targetLevel) + "Combat level: " + targetLevel);
         player.getPacketSender().sendClientScript(209, "s", targetDuel.player.getName());
 
         /* target stats */
         StatList targetStats = targetDuel.player.getStats();
         StatList playerStats = player.getStats();
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 8, levelWarning(playerStats.get(StatType.Attack).currentLevel, targetStats.get(StatType.Attack).currentLevel) + targetStats.get(StatType.Attack).currentLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 9, "" + levelWarning(playerStats.get(StatType.Attack).fixedLevel, targetStats.get(StatType.Attack).fixedLevel) + targetStats.get(StatType.Attack).fixedLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 12, "" + levelWarning(playerStats.get(StatType.Strength).currentLevel, targetStats.get(StatType.Strength).currentLevel) + targetStats.get(StatType.Strength).currentLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 13, "" + levelWarning(playerStats.get(StatType.Strength).fixedLevel, targetStats.get(StatType.Strength).fixedLevel) + targetStats.get(StatType.Strength).fixedLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 16, "" + levelWarning(playerStats.get(StatType.Defence).currentLevel, targetStats.get(StatType.Defence).currentLevel) + targetStats.get(StatType.Defence).currentLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 17, "" + levelWarning(playerStats.get(StatType.Defence).fixedLevel, targetStats.get(StatType.Defence).fixedLevel) + targetStats.get(StatType.Defence).fixedLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 20, "" + levelWarning(playerStats.get(StatType.Hitpoints).currentLevel, targetStats.get(StatType.Hitpoints).currentLevel) + targetStats.get(StatType.Hitpoints).currentLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 21, "" + levelWarning(playerStats.get(StatType.Hitpoints).fixedLevel, targetStats.get(StatType.Hitpoints).fixedLevel) + targetStats.get(StatType.Hitpoints).fixedLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 24, "" + levelWarning(playerStats.get(StatType.Prayer).currentLevel, targetStats.get(StatType.Prayer).currentLevel) + targetStats.get(StatType.Prayer).currentLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 25, "" + levelWarning(playerStats.get(StatType.Prayer).fixedLevel, targetStats.get(StatType.Prayer).fixedLevel) + targetStats.get(StatType.Prayer).fixedLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 28, "" + levelWarning(playerStats.get(StatType.Ranged).currentLevel, targetStats.get(StatType.Ranged).currentLevel) + targetStats.get(StatType.Ranged).currentLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 29, "" + levelWarning(playerStats.get(StatType.Ranged).fixedLevel, targetStats.get(StatType.Ranged).fixedLevel) + targetStats.get(StatType.Ranged).fixedLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 32, "" + levelWarning(playerStats.get(StatType.Magic).currentLevel, targetStats.get(StatType.Magic).currentLevel) + targetStats.get(StatType.Magic).currentLevel);
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 33, "" + levelWarning(playerStats.get(StatType.Magic).fixedLevel, targetStats.get(StatType.Magic).fixedLevel) + targetStats.get(StatType.Magic).fixedLevel);
-
-        /* misc */
-        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 117, "Choose the options for your duel on the left. Restrict unusable worn slots on the right.");
+        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 10, (levelWarning(playerStats.get(StatType.Attack).currentLevel, targetStats.get(StatType.Attack).currentLevel) + targetStats.get(StatType.Attack).currentLevel)
+                + "<br>"
+                + levelWarning(playerStats.get(StatType.Attack).fixedLevel, targetStats.get(StatType.Attack).fixedLevel) + targetStats.get(StatType.Attack).fixedLevel);
+        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 13, levelWarning(playerStats.get(StatType.Strength).currentLevel, targetStats.get(StatType.Strength).currentLevel) + targetStats.get(StatType.Strength).currentLevel
+                + "<br>"
+                + levelWarning(playerStats.get(StatType.Strength).fixedLevel, targetStats.get(StatType.Strength).fixedLevel) + targetStats.get(StatType.Strength).fixedLevel);
+        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 16, levelWarning(playerStats.get(StatType.Defence).currentLevel, targetStats.get(StatType.Defence).currentLevel) + targetStats.get(StatType.Defence).currentLevel
+                + "<br>"
+                + levelWarning(playerStats.get(StatType.Defence).fixedLevel, targetStats.get(StatType.Defence).fixedLevel) + targetStats.get(StatType.Defence).fixedLevel);
+        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 19, levelWarning(playerStats.get(StatType.Hitpoints).currentLevel, targetStats.get(StatType.Hitpoints).currentLevel) + targetStats.get(StatType.Hitpoints).currentLevel
+                + "<br>"
+                + levelWarning(playerStats.get(StatType.Hitpoints).fixedLevel, targetStats.get(StatType.Hitpoints).fixedLevel) + targetStats.get(StatType.Hitpoints).fixedLevel);
+        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 22, levelWarning(playerStats.get(StatType.Prayer).currentLevel, targetStats.get(StatType.Prayer).currentLevel) + targetStats.get(StatType.Prayer).currentLevel
+                + "<br>"
+                + levelWarning(playerStats.get(StatType.Prayer).fixedLevel, targetStats.get(StatType.Prayer).fixedLevel) + targetStats.get(StatType.Prayer).fixedLevel);
+        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 25, levelWarning(playerStats.get(StatType.Ranged).currentLevel, targetStats.get(StatType.Ranged).currentLevel) + targetStats.get(StatType.Ranged).currentLevel
+                + "<br>"
+                + levelWarning(playerStats.get(StatType.Ranged).fixedLevel, targetStats.get(StatType.Ranged).fixedLevel) + targetStats.get(StatType.Ranged).fixedLevel);
+        player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 28, levelWarning(playerStats.get(StatType.Magic).currentLevel, targetStats.get(StatType.Magic).currentLevel) + targetStats.get(StatType.Magic).currentLevel
+                + "<br>"
+                + levelWarning(playerStats.get(StatType.Magic).fixedLevel, targetStats.get(StatType.Magic).fixedLevel) + targetStats.get(StatType.Magic).fixedLevel);
 
         /* display and update duel state */
         player.openInterface(InterfaceType.MAIN, Interface.DUEL_ARENA_RULES);
@@ -230,18 +234,18 @@ public class Duel extends ItemContainer {
         /**
          * Preset rules
          */
-        if(settings == player.presetDuelVarp)
+        /*if(settings == player.presetDuelVarp)
             player.getPacketSender().setHidden(Interface.DUEL_ARENA_RULES, 114, false);
         else
-            player.getPacketSender().setHidden(Interface.DUEL_ARENA_RULES, 114, true);
+            player.getPacketSender().setHidden(Interface.DUEL_ARENA_RULES, 114, true);*/
 
         /**
          * Last duel rules
          */
-        if(settings == player.lastDuelVarp)
+        /*if(settings == player.lastDuelVarp)
             player.getPacketSender().setHidden(Interface.DUEL_ARENA_RULES, 115, false);
         else
-            player.getPacketSender().setHidden(Interface.DUEL_ARENA_RULES, 115, true);
+            player.getPacketSender().setHidden(Interface.DUEL_ARENA_RULES, 115, true);*/
     }
 
     private void updateState() {
@@ -250,8 +254,8 @@ public class Duel extends ItemContainer {
             s = (stage == 1 ? "<col=ff0000>" : "<col=aaaaaa>") + "Waiting for other player...";
         else if(targetDuel.accepted)
             s = (stage == 1 ? "<col=ff0000>" : "<col=aaaaaa>") + "Other player has accepted.";
-        if(stage == 1)
-            player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 118, s == null ? "" : s);
+        //if(stage == 1)
+            //player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 118, s == null ? "" : s);
         else if(stage == 2)
             player.getPacketSender().sendString(Interface.DUEL_ARENA_STAKE, 74, s == null ? "" : s);
         else if(stage == 3)
@@ -507,20 +511,48 @@ public class Duel extends ItemContainer {
         updateSettings();
         if(!toggleable)
             return;
-        player.getPacketSender().sendClientScript(1441, "ii", 1588458, 5);
-        targetDuel.player.getPacketSender().sendClientScript(1441, "ii", 1588458, 5);
+        //player.getPacketSender().sendClientScript(1441, "ii", 1588458, 5);
+        //targetDuel.player.getPacketSender().sendClientScript(1441, "ii", 1588458, 5);
 
         /* accept button status */
         player.acceptDelay.delaySeconds(3);
-        player.getPacketSender().sendClientScript(968, "ii", Interface.DUEL_ARENA_RULES << 16 | 106, -1);
+        //player.getPacketSender().sendClientScript(968, "ii", Interface.DUEL_ARENA_RULES << 16 | 106, -1);
 
         targetDuel.player.acceptDelay.delaySeconds(3);
-        targetDuel.player.getPacketSender().sendClientScript(968, "ii", Interface.DUEL_ARENA_RULES << 16 | 106, -1);
+        //targetDuel.player.getPacketSender().sendClientScript(968, "ii", Interface.DUEL_ARENA_RULES << 16 | 106, -1);
 
         /* rule changed warning */
         targetDuel.player.sendMessage("Duel Option change - " + rule.message + (isToggled(rule) ? " ON!" : " OFF!"));
-        targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 118, "<col=ff0000>An option has changed - check before accepting!");
-        targetDuel.player.getPacketSender().sendClientScript(968, "Ii", 31588458, rule.bitPos);
+        targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 83, "<col=ff0000>An option has changed - check before accepting!");
+        //targetDuel.player.getPacketSender().sendClientScript(968, "Ii", 31588458, rule.bitPos);
+    }
+
+    private void setActive(DuelRule rule) {
+        boolean toggleable = checkToggle(rule);
+        if(!prepSettings())
+            return;
+        if(!isToggled(rule) && toggleable)
+            settings |= rule.bitValue;
+
+        targetDuel.settings = settings;
+        targetDuel.updateSettings();
+        updateSettings();
+        if(!toggleable)
+            return;
+        //player.getPacketSender().sendClientScript(1441, "ii", 1588458, 5);
+        //targetDuel.player.getPacketSender().sendClientScript(1441, "ii", 1588458, 5);
+
+        /* accept button status */
+        player.acceptDelay.delaySeconds(3);
+        //player.getPacketSender().sendClientScript(968, "ii", Interface.DUEL_ARENA_RULES << 16 | 106, -1);
+
+        targetDuel.player.acceptDelay.delaySeconds(3);
+        //targetDuel.player.getPacketSender().sendClientScript(968, "ii", Interface.DUEL_ARENA_RULES << 16 | 106, -1);
+
+        /* rule changed warning */
+        targetDuel.player.sendMessage("Duel Option change - " + rule.message + (isToggled(rule) ? " ON!" : " OFF!"));
+        targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_RULES, 83, "<col=ff0000>An option has changed - check before accepting!");
+        //targetDuel.player.getPacketSender().sendClientScript(968, "Ii", 31588458, rule.bitPos);
     }
 
     private boolean checkToggle(DuelRule rule) {
@@ -905,31 +937,50 @@ public class Duel extends ItemContainer {
      */
 
     private static final int[] RULES = {
-            41, 42, 43, 49, 48, 37, 46, 44, 45, 38, 47, 54, 55, 56,
-            62, 61, 50, 50, 59, 57, 58, 51, 60, 69, 70, 71, 72, 73,
-            74, 75, 76, 77, 78, 79, 52, 39, 40, 53
+            30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
+            48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58
+    };
+
+    private static final int[] WHIP_RULES = {
+            30, 32, 33, 36, 37, 38, 39, 40, 41,
+            48, 49, 50, 51, 52, 54, 55, 56, 57, 58
+    };
+
+    private static final int[] BOXING_RULES = {
+            30, 32, 33, 36, 37, 38, 39, 40, 41,
+            48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58
     };
 
     static {
-        /*InterfaceHandler.register(Interface.DUEL_ARENA_RULES, h -> {
-            h.actions[103] = (SimpleAction) p -> {
+        InterfaceHandler.register(Interface.DUEL_ARENA_RULES, h -> {
+            h.actions[86] = (SimpleAction) p -> {
                 if(p.acceptDelay.isDelayed())
                     return;
                 p.getDuel().accept(true, false);
             };
-            h.actions[104] = (SimpleAction) p -> p.getDuel().close();
+            h.actions[87] = (SimpleAction) p -> p.getDuel().close();
             for(int rule : RULES) {
                 DuelRule duelRule = DuelRule.get(rule);
                 h.actions[rule] = (SimpleAction) p -> p.getDuel().toggle(duelRule);
             }
-            h.actions[112] = (SimpleAction) p -> p.getDuel().saveSettings();
-            h.actions[111] = (SimpleAction) p -> p.getDuel().loadSettings(false);
-            h.actions[113] = (SimpleAction) p -> p.getDuel().loadSettings(true);
+            h.actions[89] = (SimpleAction) p -> p.getDuel().saveSettings();
+            h.actions[92] = (SimpleAction) p -> p.getDuel().loadSettings(false);
+            h.actions[90] = (SimpleAction) p -> p.getDuel().loadSettings(true);
+            h.actions[94] = (SimpleAction) p -> {
+                for (int rule : WHIP_RULES) {
+                    p.getDuel().setActive(DuelRule.get(rule));
+                }
+            };
+            h.actions[96] = (SimpleAction) p -> {
+                for (int rule : BOXING_RULES) {
+                    p.getDuel().setActive(DuelRule.get(rule));
+                }
+            };
 
-            h.actions[108] = (SimpleAction) p -> p.getDuel().saveSettings();
-            h.actions[110] = (SimpleAction) p -> p.getDuel().loadSettings(true);
-            h.actions[109] = (SimpleAction) p -> p.getDuel().loadSettings(false);
-        });*/
+            //h.actions[108] = (SimpleAction) p -> p.getDuel().saveSettings();
+            //h.actions[110] = (SimpleAction) p -> p.getDuel().loadSettings(true);
+            //h.actions[109] = (SimpleAction) p -> p.getDuel().loadSettings(false);
+        });
 
         InterfaceHandler.register(Interface.DUEL_ARENA_STAKE, h -> {
             h.actions[18] = (DefaultAction) (p, option, slot, itemId) -> {
