@@ -8,6 +8,7 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.Style;
+import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
@@ -151,5 +152,9 @@ public class BodyTypeInterface {
             };
             h.actions[32] = (SlotAction) BodyTypeInterface::clickMakeoverType;
         });
+    }
+
+    static {
+        LoginListener.register(player -> Style.Companion.updateAll(player));
     }
 }
