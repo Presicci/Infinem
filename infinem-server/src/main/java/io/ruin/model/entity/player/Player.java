@@ -488,12 +488,12 @@ public class Player extends PlayerAttributes {
     }
 
     public void openInterface(InterfaceType type, int interfaceId) {
-        player.setInterfaceUnderlay(-1, -1);
+        if (type == InterfaceType.MAIN) player.setInterfaceUnderlay(-1, -1);
         openInterface(type, interfaceId, InterfaceHandler.handlers.getOrDefault(interfaceId, InterfaceHandler.EMPTY_HANDLER));
     }
 
     public void openResizeableInterface(InterfaceType type, int interfaceId) {
-        player.setInterfaceUnderlay(-1, -2);
+        if (type == InterfaceType.MAIN) player.setInterfaceUnderlay(-1, -2);
         openInterface(type, interfaceId, InterfaceHandler.handlers.getOrDefault(interfaceId, InterfaceHandler.EMPTY_HANDLER));
     }
 
