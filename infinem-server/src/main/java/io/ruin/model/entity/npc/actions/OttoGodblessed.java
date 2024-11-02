@@ -5,12 +5,14 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemNPCAction;
+import lombok.AllArgsConstructor;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
@@ -64,7 +66,10 @@ public class OttoGodblessed {
          */
         for(int id : new int[]{11824, 11889})
             ItemNPCAction.register(id, 2914, OttoGodblessed::convertZamorakianWeapon);
-
+        ItemNPCAction.register(22963, 2914, (player, item, npc) -> {
+            item.setId(22731);
+            player.dialogue(new ItemDialogue().one(22731, "Otto skillfully repairs the hasta."));
+        });
         NPCAction.register(2914, "talk-to", OttoGodblessed::dialogue);
     }
 }
