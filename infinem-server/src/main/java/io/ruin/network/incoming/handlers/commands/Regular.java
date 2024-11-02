@@ -1,5 +1,6 @@
 package io.ruin.network.incoming.handlers.commands;
 
+import io.ruin.model.map.object.actions.impl.locations.prifddinas.PrifCityEntrance;
 import io.ruin.services.Votes;
 import io.ruin.utility.Color;
 import io.ruin.data.impl.Help;
@@ -32,7 +33,7 @@ public class Regular {
             case "commands": {
                 player.sendScroll("<col=800000>Commands</col>",
                         "<col=800000>Misc Commands:</col>",
-                        "::yell", "::skull",
+                        "::yell", "::skull", "prif",
                         "",
                         "<col=800000>Website Commands:</col>",
                         "::store", "::vote", "::guides", "::support", "::forums", "::scores", "::discord", "::thread #", "::member #"
@@ -232,6 +233,15 @@ public class Regular {
             case "claimvotes":
             case "claimvote": {
                 Votes.claim(player, null);
+                return true;
+            }
+            case "prifcheck":
+            case "priffcheck":
+            case "priff":
+            case "prif": {
+                if (PrifCityEntrance.prifSkillCheckNoNPC(player)) {
+                    player.dialogue(new MessageDialogue("You have all Prifddinas requirements. Congratulations!"));
+                }
                 return true;
             }
         }
