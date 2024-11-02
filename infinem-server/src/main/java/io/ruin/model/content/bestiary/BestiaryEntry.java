@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import lombok.Getter;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -32,9 +33,8 @@ public class BestiaryEntry {
         perks.add(new RespawnPerk(isBoss));
         perks.add(new LuckPerk(isBoss));
         perks.add(new GoldPickupPerk());
-        for (BestiaryEntryModifiers modifiers : BestiaryEntryModifiers.values()) {
-            if (modifiers.getPredicate().test(this)) modifiers.getConsumer().accept(this);
-        }
+        List<Consumer<BestiaryEntry>> modifiers = BestiaryEntryModifiers.MODIFIERS.getOrDefault(name, Collections.emptyList());
+        modifiers.forEach(mod -> mod.accept(this));
     }
 
     public void clearPerks() {

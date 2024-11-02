@@ -4,6 +4,9 @@ import io.ruin.model.content.bestiary.perks.impl.*;
 import io.ruin.model.content.bestiary.perks.impl.misc.BarrowsChestPerk;
 import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -14,7 +17,7 @@ import java.util.function.Predicate;
 @Getter
 public enum BestiaryEntryModifiers {
     BOSS(
-            entry -> BestiaryDef.isBoss(entry.getName()),
+            entry -> BestiaryDef.isBoss(entry),
             entry -> {
                 entry.clearPerks();
                 entry.addPerk(new DamagePerk(true));
@@ -28,7 +31,7 @@ public enum BestiaryEntryModifiers {
             }
     ),
     BARROWS_BROTHERS(
-            entry -> entry.getName() != null && entry.getName().equalsIgnoreCase("barrows brother"),
+            entry -> entry != null && entry.equalsIgnoreCase("barrows brother"),
             entry -> {
                 entry.removePerk(ExtraDropPerk.class);
                 entry.removePerk(GoldPickupPerk.class);
@@ -37,11 +40,21 @@ public enum BestiaryEntryModifiers {
             }
     );
 
-    private final Predicate<BestiaryEntry> predicate;
+    private final Predicate<String> predicate;
     private final Consumer<BestiaryEntry> consumer;
 
-    BestiaryEntryModifiers(Predicate<BestiaryEntry> predicate, Consumer<BestiaryEntry> consumer) {
+    BestiaryEntryModifiers(Predicate<String> predicate, Consumer<BestiaryEntry> consumer) {
         this.predicate = predicate;
         this.consumer = consumer;
+    }
+
+    protected static final HashMap<String, List<Consumer<BestiaryEntry>>> MODIFIERS = new HashMap<>();
+
+    static {
+        BestiaryDef.ENTRIES.forEach(entry -> {
+            for (BestiaryEntryModifiers modifier : values()) {
+                if (modifier.predicate.test(entry)) MODIFIERS.computeIfAbsent(entry, v -> new ArrayList<>()).add(modifier.consumer);
+            }
+        });
     }
 }
