@@ -143,8 +143,9 @@ public class SeedVault extends ItemContainer {
             return;
         player.openResizeableInterface(InterfaceType.MAIN, Interface.SEED_VAULT);
         player.openResizeableInterface(InterfaceType.INVENTORY, Interface.SEED_VAULT_INVENTORY);
-        player.getPacketSender().sendItems(Interface.SEED_VAULT, 15, 626, this.items);
-        player.getPacketSender().sendAccessMask(Interface.SEED_VAULT, 15, 0, 90,
+        sendAll = true;
+        sendUpdates();
+        player.getPacketSender().sendAccessMask(Interface.SEED_VAULT, 15, 0, 93,
                 AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4, AccessMasks.ClickOp5,
                 AccessMasks.ClickOp6, AccessMasks.ClickOp7, AccessMasks.ClickOp8, AccessMasks.ClickOp9, AccessMasks.ClickOp10,
                 AccessMasks.DragDepth2, AccessMasks.DragTargetable);
