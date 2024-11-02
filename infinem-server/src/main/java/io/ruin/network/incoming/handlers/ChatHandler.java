@@ -34,7 +34,7 @@ public class ChatHandler implements Incoming {
             pattern = new byte[color - 12];
             in.readBytes(pattern);
         }
-        int length = in.readUnsignedByte();
+        int length = in.readSmart();
         byte[] compressed = new byte[length];
         in.readBytes(compressed);
 
