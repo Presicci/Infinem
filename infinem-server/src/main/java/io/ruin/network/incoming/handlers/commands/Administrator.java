@@ -1443,10 +1443,22 @@ public class Administrator {
                 player.getRelicManager().takeRelic(Relic.values()[index]);
                 return true;
             }
-
             case "removerelic": {
-                int index = Integer.parseInt(args[0]);
-                player.getRelicManager().removeRelic(index);
+                if (args == null || args.length < 1) {
+                    player.sendMessage("Syntax: ::removerelic [?playername] [relic tier]");
+                    return true;
+                }
+                Player target = args.length >= 2 ? World.getPlayer(args[0]) : player;
+                if (target == null) {
+                    player.sendMessage("That player doesn't exist.");
+                    return true;
+                }
+                int index = args.length >= 2 ? Integer.parseInt(args[1]) : Integer.parseInt(args[0]);
+                target.getRelicManager().removeRelic(index);
+                if (target != player) {
+                    player.sendMessage("You've reset " + target.getName() + "'s tier " + index + " relic.");
+                    target.sendMessage("Your tier " + index + " relic has been reset.");
+                }
                 return true;
             }
             case "testfilter": {
