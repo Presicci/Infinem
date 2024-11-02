@@ -184,13 +184,13 @@ public class StatList {
         if(newXp > Stat.MAX_XP)
             newXp = Stat.MAX_XP;
         if (newXp >= Stat.xpForLevel(120) && stat.experience < Stat.xpForLevel(120)) {
-            Broadcast.SKILL.sendNews(Icon.SKILL_ICON, player.getName() + " has just reached virtual level 120 in " + type.name() + "!");
+            Broadcast.SKILL.sendNews(player, Icon.SKILL_ICON, player.getName() + " has just reached virtual level 120 in " + type.name() + "!");
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLMASTER, type.name());
             SkillAchievementEmbedMessage.sendDiscordMessage("120 " + type.name() + "!", player.getName() + " has just reached virtual level 120 in " + type.name() + "!", type);
             player.getTransmogCollection().addToCollection(type.masterCapeId, true);
         }
         if(newXp == Stat.MAX_XP && stat.experience < Stat.MAX_XP) {
-            Broadcast.SKILL.sendNews(Icon.SKILL_ICON, player.getName() + " has just reached 200 million experience in " + type.name() + "!");
+            Broadcast.SKILL.sendNews(player, Icon.SKILL_ICON, player.getName() + " has just reached 200 million experience in " + type.name() + "!");
             player.sendMessage("Congratulations, you have reached max experience in " + type.name() + "!");
             SkillAchievementEmbedMessage.sendDiscordMessage("200M " + type.name() + "!", player.getName() + " has just reached 200 million experience in " + type.name() + "!", type);
         }
