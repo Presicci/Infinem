@@ -1997,6 +1997,7 @@ public class Player extends PlayerAttributes {
     public List<NotificationInterface.Notification> queuedPopups = new ArrayList<>();
 
     public boolean isFriendsWith(Player otherPlayer) {
+        if (otherPlayer == null) return false;
         return onlineFriendNames.contains(otherPlayer.name);
     }
 
