@@ -138,7 +138,7 @@ public class Callisto extends NPCCombat {
         super.startDeath(killHit);
         phase = Phase.ONE;
         for (GameObject object : traps) {
-            removeTrap(object);
+            object.remove();
         }
         traps.clear();
     }
