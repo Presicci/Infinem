@@ -124,6 +124,7 @@ public class Callisto extends NPCCombat {
         npc.animate(MAGIC_ANIMATION);
         int delay = MAGIC_PROJECTILE.send(npc, target);
         target.hit(new Hit(npc, AttackStyle.MAGIC).fixedDamage(0).clientDelay(delay).hide().onLand(hit1 -> {
+            if (target == null || target.isNpc()) return;
             if (!target.player.getPrayer().isActive(Prayer.PROTECT_FROM_MAGIC)) {
                 knockback(target);
             }
