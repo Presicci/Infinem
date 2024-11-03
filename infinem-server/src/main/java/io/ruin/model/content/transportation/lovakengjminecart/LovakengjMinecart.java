@@ -54,7 +54,6 @@ public enum LovakengjMinecart {
         if ((currentValue & bit) == bit) return;
         int newValue = currentValue | bit;
         player.putAttribute(LovakengjMinecartNetwork.KEY, newValue);
-        player.sendMessage("" + newValue);
         if (newValue >= 4095) {
             player.getTaskManager().doLookupByUUID(992);    // Fully Unlock the Lovakengj Minecart Network
         }
