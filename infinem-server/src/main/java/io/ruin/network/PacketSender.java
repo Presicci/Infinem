@@ -1023,7 +1023,7 @@ public class PacketSender {
         Position pos = new Position(x, y, 0);
         int posX = pos.getSceneX(player.getPosition());
         int posY = pos.getSceneY(player.getPosition());
-        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_ROTATETO.getPacketId())
+        OutBuffer out = new OutBuffer(7).sendFixedPacket(ServerPacket.CAM_LOOKAT.getPacketId())
                 .addByte(posX)
                 .addByte(posY)
                 .addShort(cameraHeight)
