@@ -175,6 +175,20 @@ public class npc_combat extends DataFile {
 
         @Expose public int random_drop_count = 1;
 
+        /**
+         * New info - 11/2/2024
+         */
+        public String[] attributes;
+        public int attack_bonus;
+        public int strength_bonus;
+        public int magic_damage_bonus;
+        public int ranged_strength_bonus;
+        public String elemental_weakness;
+        public int elemental_weakness_percent;
+        public int light_range_defence;
+        public int medium_range_defence;
+        public int heavy_range_defence;
+
     }
 
     /**

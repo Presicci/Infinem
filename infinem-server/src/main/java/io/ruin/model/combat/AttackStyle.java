@@ -1,6 +1,7 @@
 package io.ruin.model.combat;
 
 public enum AttackStyle {
+    NONE,
 
     STAB,
     SLASH,
@@ -53,5 +54,4 @@ public enum AttackStyle {
     public boolean isMagical() {
         return this == MAGIC || this == MAGICAL_MELEE || this == MAGICAL_RANGED;
     }
-
 }

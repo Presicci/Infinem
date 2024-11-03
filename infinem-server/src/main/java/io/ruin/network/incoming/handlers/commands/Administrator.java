@@ -12,6 +12,7 @@ import io.ruin.content.areas.wilderness.DeadmanChestEvent;
 import io.ruin.data.DataFile;
 import io.ruin.data.dumper.DropDumper;
 import io.ruin.data.dumper.ItemInfoDumper;
+import io.ruin.data.dumper.NPCInfoDumper;
 import io.ruin.data.impl.dialogue.DialogueLoader;
 import io.ruin.data.impl.Help;
 import io.ruin.data.impl.items.item_info;
@@ -1842,12 +1843,23 @@ public class Administrator {
                 return true;
             }
 
+            /**
+             * Wiki dumping
+             */
             case "dumpitem": {
                 ItemInfoDumper.dump(Integer.parseInt(args[0]));
                 return true;
             }
             case "dumpitems": {
                 ItemInfoDumper.dump(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+                return true;
+            }
+            case "dumpnpc": {
+                NPCInfoDumper.dump(Integer.parseInt(args[0]));
+                return true;
+            }
+            case "dumpnpcs": {
+                NPCInfoDumper.dump(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
                 return true;
             }
 
