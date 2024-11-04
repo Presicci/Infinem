@@ -40,6 +40,8 @@ public abstract class DataFile {
 
     public int priority() { return Integer.MAX_VALUE; }
 
+    public void onLoadComplete() {};
+
     public static void load() throws Exception {
         if (Server.dataFolder.exists() && Server.dataFolder.isDirectory())
             loadUnpacked();
@@ -114,6 +116,7 @@ public abstract class DataFile {
                 ServerWrapper.logError("DataFile Failure: " + unpackedFile.getAbsolutePath(), t);
             }
         }
+        dataFile.onLoadComplete();
         return packedFiles;
     }
 
