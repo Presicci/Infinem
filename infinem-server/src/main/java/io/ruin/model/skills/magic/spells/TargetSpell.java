@@ -1,7 +1,7 @@
 package io.ruin.model.skills.magic.spells;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.def.ItemDefinition;
+import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.activities.wilderness.MageArena;
 import io.ruin.model.combat.npc.MaxHitDummy;
@@ -23,6 +23,10 @@ import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
 import io.ruin.model.skills.magic.spells.arceuus.Resurrection;
 import io.ruin.model.skills.magic.spells.modern.*;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.EarthSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.FireSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.WaterSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.WindSpell;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.StatType;
 
@@ -149,6 +153,7 @@ public class TargetSpell extends Spell {
     }
 
     private boolean cast(Entity entity, Entity target, int projectileDuration, int maxDamage, boolean primaryCast) {
+        double elementalBoost = 0;
         if (primaryCast) {
             boolean saveRunes = entity.player != null && entity.player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE) && Random.rollDie(100, 75);
             RuneRemoval r = null;
@@ -197,6 +202,18 @@ public class TargetSpell extends Spell {
             if(percentageBonus > 0) {
                 maxDamage = (int) (maxDamage * (1D + (percentageBonus * 0.01)));
             }
+            if (target.isNpc()) {
+                npc_combat.Info combatInfo = target.npc.getDef().combatInfo;
+                if (combatInfo != null && combatInfo.elemental_weakness != null) {
+                    if (this instanceof FireSpell && combatInfo.elemental_weakness.equalsIgnoreCase("fire")
+                            || this instanceof EarthSpell && combatInfo.elemental_weakness.equalsIgnoreCase("earth")
+                            || this instanceof WaterSpell && combatInfo.elemental_weakness.equalsIgnoreCase("water")
+                            || this instanceof WindSpell && combatInfo.elemental_weakness.equalsIgnoreCase("air")) {
+                        elementalBoost = combatInfo.elemental_weakness_percent / 100D;
+                        maxDamage += (int) (maxDamage * elementalBoost);
+                    }
+                }
+            }
             if (r != null && !saveRunes)
                 r.remove();
         }
@@ -204,6 +221,7 @@ public class TargetSpell extends Spell {
                 .randDamage(maxDamage)
                 .clientDelay(projectileDuration, 16)
                 .setAttackSpell(this);
+        if (primaryCast) hit.boostAttack(elementalBoost);
         if (this instanceof RootSpell && target.isNpc() && target.npc.getCombat().getInfo().easier_root)
             hit.ignoreDefence();
         if (!primaryCast) hit.keepCharges();
