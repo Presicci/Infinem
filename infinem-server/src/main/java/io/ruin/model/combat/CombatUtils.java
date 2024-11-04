@@ -208,8 +208,9 @@ public class CombatUtils {
         boolean multiplier = victim.npc != null;
         double xp = damageDealt * 4D;
         double monsterMod = 1.0;
-        if (multiplier && Arrays.stream(MaxHitDummy.dummyIds).anyMatch(i -> i == victim.npc.getId()))
-            monsterMod = victim.npc.getCombat().getInfo().combat_xp_modifier;
+        if (multiplier && Arrays.stream(MaxHitDummy.dummyIds).noneMatch(i -> i == victim.npc.getId())) {
+            monsterMod += Math.max(0D, victim.npc.getCombat().getInfo().combat_xp_modifier / 100D);
+        }
         xp *= monsterMod;
         if (xp <= 0)
             return;
