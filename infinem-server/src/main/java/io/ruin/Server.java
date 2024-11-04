@@ -123,6 +123,30 @@ public class Server extends ServerWrapper {
         }
 
         /*
+         * Database connections
+         */
+        if (!OfflineMode.enabled) {
+            println("Connecting to SQL databases...");
+
+            //siteDb = new Database(properties.getProperty("database_host"), "infinem", properties.getProperty("database_user"), properties.getProperty("database_password"));
+            gameDb = new Database(properties.getProperty("database_host"), "game", properties.getProperty("database_user"), properties.getProperty("database_password"));
+
+            DatabaseUtils.connect(new Database[]{gameDb}, errors -> {
+                if (!errors.isEmpty()) {
+                    for (Throwable t : errors)
+                        logError("Database error", t);
+                    System.exit(1);
+                }
+            });
+
+            Loggers.clearOnlinePlayers(World.id);
+            LatestUpdate.fetch();
+            if(!OfflineMode.enabled && !World.isDev()) {
+                //DiscordConnection.setup("NTY4NjgxMjU2NDQzNzA3Mzkz.XLlnsQ.s6HIMbTgRrVsNhclAY1VYJPwGnc");
+            }
+        }
+
+        /*
          * Loading (Data from cache & databases)
          */
         println("Loading server data...");
@@ -159,32 +183,7 @@ public class Server extends ServerWrapper {
             return;
         }
 
-        /*
-         * Database connections
-         */
-        if (!OfflineMode.enabled) {
-            println("Connecting to SQL databases...");
-
-            //siteDb = new Database(properties.getProperty("database_host"), "infinem", properties.getProperty("database_user"), properties.getProperty("database_password"));
-            gameDb = new Database(properties.getProperty("database_host"), "game", properties.getProperty("database_user"), properties.getProperty("database_password"));
-
-            DatabaseUtils.connect(new Database[]{gameDb}, errors -> {
-                if (!errors.isEmpty()) {
-                    for (Throwable t : errors)
-                        logError("Database error", t);
-                    System.exit(1);
-                }
-            });
-
-            Loggers.clearOnlinePlayers(World.id);
-            LatestUpdate.fetch();
-            if(!OfflineMode.enabled && !World.isDev()) {
-                //DiscordConnection.setup("NTY4NjgxMjU2NDQzNzA3Mzkz.XLlnsQ.s6HIMbTgRrVsNhclAY1VYJPwGnc");
-            }
-        }
-
         item_info.loadFromDatabase();
-        npc_combat.loadFromDatabase();
 
         ShopManager.registerUI();
 
