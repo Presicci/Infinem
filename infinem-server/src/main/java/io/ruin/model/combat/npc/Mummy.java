@@ -3,8 +3,8 @@ package io.ruin.model.combat.npc;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.shared.listeners.HitListener;
-import io.ruin.model.skills.magic.spells.modern.FireSpell;
-import io.ruin.model.skills.magic.spells.modern.WaterSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.FireSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.WaterSpell;
 
 import java.util.HashMap;
 

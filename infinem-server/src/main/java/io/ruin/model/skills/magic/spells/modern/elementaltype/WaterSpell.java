@@ -1,4 +1,4 @@
-package io.ruin.model.skills.magic.spells.modern;
+package io.ruin.model.skills.magic.spells.modern.elementaltype;
 
 import io.ruin.model.skills.magic.spells.TargetSpell;
 

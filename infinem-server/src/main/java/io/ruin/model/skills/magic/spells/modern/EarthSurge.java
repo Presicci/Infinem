@@ -6,8 +6,9 @@ import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.SpellSack;
 import io.ruin.model.skills.magic.spells.TargetSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.EarthSpell;
 
-public class EarthSurge extends TargetSpell {
+public class EarthSurge extends EarthSpell {
 
     protected SpellSack getSpellSack() {
         return SpellSack.SURGE;

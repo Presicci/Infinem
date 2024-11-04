@@ -6,8 +6,9 @@ import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.SpellSack;
 import io.ruin.model.skills.magic.spells.TargetSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.WindSpell;
 
-public class WindSurge extends TargetSpell {
+public class WindSurge extends WindSpell {
 
     protected SpellSack getSpellSack() {
         return SpellSack.SURGE;

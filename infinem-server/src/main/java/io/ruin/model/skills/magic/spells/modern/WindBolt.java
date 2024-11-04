@@ -3,8 +3,9 @@ package io.ruin.model.skills.magic.spells.modern;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.TargetSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.WindSpell;
 
-public class WindBolt extends TargetSpell {
+public class WindBolt extends WindSpell {
 
     public WindBolt() {
         setLvlReq(17);

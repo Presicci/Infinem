@@ -5,8 +5,9 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.TargetSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.EarthSpell;
 
-public class EarthBlast extends TargetSpell {
+public class EarthBlast extends EarthSpell {
 
     public EarthBlast() {
         setLvlReq(53);

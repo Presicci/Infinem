@@ -5,7 +5,7 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.SpellSack;
-import io.ruin.model.skills.magic.spells.TargetSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.WaterSpell;
 
 public class WaterWave extends WaterSpell {
 

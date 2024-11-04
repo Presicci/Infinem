@@ -3,8 +3,9 @@ package io.ruin.model.skills.magic.spells.modern;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.TargetSpell;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.EarthSpell;
 
-public class EarthBolt extends TargetSpell {
+public class EarthBolt extends EarthSpell {
 
     public EarthBolt() {
         setLvlReq(29);

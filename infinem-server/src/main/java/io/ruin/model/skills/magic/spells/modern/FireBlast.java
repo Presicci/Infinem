@@ -4,6 +4,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.model.skills.magic.spells.modern.elementaltype.FireSpell;
 
 public class FireBlast extends FireSpell {
 
