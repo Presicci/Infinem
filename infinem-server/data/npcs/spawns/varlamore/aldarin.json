@@ -1,0 +1,2432 @@
+[
+  {
+    "name": "Antonia",
+    "id": 13985,
+    "x": 1442,
+    "y": 2976,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1441,
+    "y": 2973,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Gull",
+    "id": 14047,
+    "x": 1442,
+    "y": 2988,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Tourist",
+    "id": 13209,
+    "x": 1442,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sailor",
+    "id": 13248,
+    "x": 1445,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1445,
+    "y": 2965,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fisher",
+    "id": 13254,
+    "x": 1445,
+    "y": 2963,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13251,
+    "x": 1448,
+    "y": 2968,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1447,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1448,
+    "y": 2967,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Trader Crewmember",
+    "id": 9312,
+    "x": 1454,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Trader Crewmember",
+    "id": 9348,
+    "x": 1453,
+    "y": 2967,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13899,
+    "x": 1451,
+    "y": 2968,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1457,
+    "y": 2962,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 13995,
+    "x": 1434,
+    "y": 2971,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13986,
+    "x": 1430,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Child",
+    "id": 13903,
+    "x": 1431,
+    "y": 2967,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13895,
+    "x": 1429,
+    "y": 2964,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Child",
+    "id": 13902,
+    "x": 1424,
+    "y": 2967,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13989,
+    "x": 1424,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13988,
+    "x": 1419,
+    "y": 2966,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13992,
+    "x": 1420,
+    "y": 2974,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13890,
+    "x": 1422,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chiribaya",
+    "id": 13961,
+    "x": 1421,
+    "y": 2978,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13889,
+    "x": 1425,
+    "y": 2979,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Toci",
+    "id": 13915,
+    "x": 1428,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13887,
+    "x": 1421,
+    "y": 2971,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Shopkeeper",
+    "id": 13913,
+    "x": 1414,
+    "y": 2971,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1418,
+    "y": 2968,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Tourist",
+    "id": 13208,
+    "x": 1426,
+    "y": 2967,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1424,
+    "y": 2989,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1421,
+    "y": 2991,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1425,
+    "y": 2994,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Porcupine",
+    "id": 13968,
+    "x": 1413,
+    "y": 2993,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Unicorn",
+    "id": 14043,
+    "x": 1408,
+    "y": 2991,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1407,
+    "y": 2989,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Cleaner",
+    "id": 13880,
+    "x": 1422,
+    "y": 2972,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1420,
+    "y": 3007,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1402,
+    "y": 2992,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Porcupine",
+    "id": 13968,
+    "x": 1400,
+    "y": 2987,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Unicorn",
+    "id": 14043,
+    "x": 1396,
+    "y": 2988,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1392,
+    "y": 2988,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1386,
+    "y": 2983,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13887,
+    "x": 1379,
+    "y": 2973,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Porcupine",
+    "id": 13968,
+    "x": 1372,
+    "y": 2979,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1366,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1360,
+    "y": 2974,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1357,
+    "y": 2976,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1360,
+    "y": 2981,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1355,
+    "y": 2981,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1354,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1352,
+    "y": 2978,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1355,
+    "y": 2979,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Porcupine",
+    "id": 13968,
+    "x": 1348,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1343,
+    "y": 2981,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1339,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1340,
+    "y": 2983,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Porcupine",
+    "id": 13968,
+    "x": 1332,
+    "y": 2976,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 1328,
+    "y": 2964,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bear Cub",
+    "id": 3909,
+    "x": 1326,
+    "y": 2961,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grizzly bear",
+    "id": 2838,
+    "x": 1323,
+    "y": 2959,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bear Cub",
+    "id": 3908,
+    "x": 1323,
+    "y": 2963,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1322,
+    "y": 2959,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1324,
+    "y": 2954,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Porcupine",
+    "id": 13968,
+    "x": 1327,
+    "y": 2952,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1323,
+    "y": 2944,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1330,
+    "y": 2937,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1337,
+    "y": 2935,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1339,
+    "y": 2939,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1343,
+    "y": 2937,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1345,
+    "y": 2934,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1342,
+    "y": 2931,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1340,
+    "y": 2934,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1342,
+    "y": 2935,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1334,
+    "y": 2942,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1335,
+    "y": 2946,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Porcupine",
+    "id": 13968,
+    "x": 1337,
+    "y": 2954,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Techichi",
+    "id": 13958,
+    "x": 1347,
+    "y": 2956,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1344,
+    "y": 2959,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Farmer",
+    "id": 13229,
+    "x": 1343,
+    "y": 2964,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Farmer",
+    "id": 13234,
+    "x": 1348,
+    "y": 2966,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1353,
+    "y": 2966,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1346,
+    "y": 2949,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13895,
+    "x": 1355,
+    "y": 2956,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13192,
+    "x": 1348,
+    "y": 2951,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13205,
+    "x": 1355,
+    "y": 2956,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13889,
+    "x": 1363,
+    "y": 2961,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13892,
+    "x": 1384,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Capybara",
+    "id": 12961,
+    "x": 1388,
+    "y": 2970,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1389,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1392,
+    "y": 2964,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Citizen",
+    "id": 13897,
+    "x": 1396,
+    "y": 2958,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13893,
+    "x": 1411,
+    "y": 2954,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13884,
+    "x": 1411,
+    "y": 2950,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13899,
+    "x": 1408,
+    "y": 2943,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Locke McScruff",
+    "id": 13965,
+    "x": 1405,
+    "y": 2947,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Woofson",
+    "id": 13966,
+    "x": 1403,
+    "y": 2947,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1396,
+    "y": 2945,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1403,
+    "y": 2940,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Farmer",
+    "id": 13235,
+    "x": 1405,
+    "y": 2940,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Adala",
+    "id": 13822,
+    "x": 1412,
+    "y": 2938,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1407,
+    "y": 2936,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Citizen",
+    "id": 13890,
+    "x": 1394,
+    "y": 2943,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13896,
+    "x": 1390,
+    "y": 2938,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Techichi",
+    "id": 13958,
+    "x": 1389,
+    "y": 2936,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1393,
+    "y": 2935,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Tourist",
+    "id": 13209,
+    "x": 1381,
+    "y": 2938,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Chiribaya",
+    "id": 13962,
+    "x": 1380,
+    "y": 2934,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13164,
+    "x": 1382,
+    "y": 2932,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13884,
+    "x": 1373,
+    "y": 2938,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ercos",
+    "id": 14030,
+    "x": 1368,
+    "y": 2937,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Tool Leprechaun",
+    "id": 12765,
+    "x": 1364,
+    "y": 2943,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13894,
+    "x": 1368,
+    "y": 2943,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Capybara",
+    "id": 12961,
+    "x": 1367,
+    "y": 2946,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1366,
+    "y": 2949,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13906,
+    "x": 1361,
+    "y": 2934,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bartender",
+    "id": 13917,
+    "x": 1376,
+    "y": 2927,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13891,
+    "x": 1379,
+    "y": 2927,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13897,
+    "x": 1380,
+    "y": 2928,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13893,
+    "x": 1373,
+    "y": 2928,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13889,
+    "x": 1374,
+    "y": 2924,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13181,
+    "x": 1377,
+    "y": 2927,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13893,
+    "x": 1381,
+    "y": 2928,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13905,
+    "x": 1365,
+    "y": 2927,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13907,
+    "x": 1358,
+    "y": 2930,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Lucrezia",
+    "id": 14029,
+    "x": 1359,
+    "y": 2922,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Antonius",
+    "id": 13916,
+    "x": 1362,
+    "y": 2922,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Capybara",
+    "id": 13957,
+    "x": 1359,
+    "y": 2916,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1350,
+    "y": 2922,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1346,
+    "y": 2917,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1350,
+    "y": 2913,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1356,
+    "y": 2915,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1351,
+    "y": 2927,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13905,
+    "x": 1362,
+    "y": 2916,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13907,
+    "x": 1368,
+    "y": 2915,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13906,
+    "x": 1361,
+    "y": 2906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1371,
+    "y": 2909,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Vineyard foreman",
+    "id": 13908,
+    "x": 1370,
+    "y": 2915,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1357,
+    "y": 2941,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1354,
+    "y": 2937,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1376,
+    "y": 2913,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Citizen",
+    "id": 13888,
+    "x": 1382,
+    "y": 2911,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Molossus",
+    "id": 12992,
+    "x": 1376,
+    "y": 2916,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Clanila",
+    "id": 13923,
+    "x": 1390,
+    "y": 2917,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Alaxxi",
+    "id": 13926,
+    "x": 1387,
+    "y": 2917,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Tourist",
+    "id": 13207,
+    "x": 1384,
+    "y": 2925,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 13988,
+    "x": 1386,
+    "y": 2924,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13994,
+    "x": 1390,
+    "y": 2924,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13990,
+    "x": 1386,
+    "y": 2929,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13901,
+    "x": 1391,
+    "y": 2927,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Banker",
+    "id": 13225,
+    "x": 1401,
+    "y": 2928,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 13224,
+    "x": 1401,
+    "y": 2925,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1396,
+    "y": 2916,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1398,
+    "y": 2919,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Meztlan",
+    "id": 13922,
+    "x": 1388,
+    "y": 2917,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Farmer",
+    "id": 13232,
+    "x": 1396,
+    "y": 2905,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13904,
+    "x": 1383,
+    "y": 2900,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13906,
+    "x": 1379,
+    "y": 2898,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13907,
+    "x": 1376,
+    "y": 2894,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Vineyard worker",
+    "id": 13905,
+    "x": 1370,
+    "y": 2894,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1364,
+    "y": 2896,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1359,
+    "y": 2895,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1355,
+    "y": 2897,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1353,
+    "y": 2900,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Capybara",
+    "id": 12961,
+    "x": 1346,
+    "y": 2899,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Capybara",
+    "id": 12961,
+    "x": 1340,
+    "y": 2902,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1339,
+    "y": 2906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1360,
+    "y": 2886,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1337,
+    "y": 2911,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bat",
+    "id": 14042,
+    "x": 1336,
+    "y": 2891,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bat",
+    "id": 14042,
+    "x": 1333,
+    "y": 2891,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bat",
+    "id": 14042,
+    "x": 1336,
+    "y": 2894,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bat",
+    "id": 14042,
+    "x": 1339,
+    "y": 2894,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1325,
+    "y": 2886,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1376,
+    "y": 2886,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1380,
+    "y": 2884,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1396,
+    "y": 2876,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Guard",
+    "id": 13934,
+    "x": 1387,
+    "y": 2874,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13935,
+    "x": 1375,
+    "y": 2871,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1363,
+    "y": 2871,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1366,
+    "y": 2868,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13939,
+    "x": 1380,
+    "y": 2870,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Banker",
+    "id": 13931,
+    "x": 1380,
+    "y": 2864,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 13932,
+    "x": 1383,
+    "y": 2864,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13937,
+    "x": 1375,
+    "y": 2867,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Ichta",
+    "id": 13929,
+    "x": 1388,
+    "y": 2868,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13941,
+    "x": 1391,
+    "y": 2870,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Necto",
+    "id": 13930,
+    "x": 1400,
+    "y": 2866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13933,
+    "x": 1390,
+    "y": 2866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Bartender",
+    "id": 13928,
+    "x": 1390,
+    "y": 2858,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13940,
+    "x": 1392,
+    "y": 2858,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Overseer Khougo",
+    "id": 13956,
+    "x": 1389,
+    "y": 2859,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1384,
+    "y": 2849,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Child",
+    "id": 13946,
+    "x": 1376,
+    "y": 2867,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13943,
+    "x": 1378,
+    "y": 2866,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13933,
+    "x": 1381,
+    "y": 2863,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13936,
+    "x": 1382,
+    "y": 2860,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Child",
+    "id": 13945,
+    "x": 1377,
+    "y": 2859,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13934,
+    "x": 1385,
+    "y": 2860,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Child",
+    "id": 13944,
+    "x": 1387,
+    "y": 2861,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Child",
+    "id": 13947,
+    "x": 1386,
+    "y": 2857,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13942,
+    "x": 1377,
+    "y": 2858,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13938,
+    "x": 1378,
+    "y": 2855,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13935,
+    "x": 1376,
+    "y": 2852,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1396,
+    "y": 2848,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1401,
+    "y": 2851,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1365,
+    "y": 2851,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1361,
+    "y": 2861,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1357,
+    "y": 2862,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Guard",
+    "id": 13933,
+    "x": 1372,
+    "y": 2863,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1403,
+    "y": 2856,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1406,
+    "y": 2854,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1413,
+    "y": 2863,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1413,
+    "y": 2858,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Giant rat",
+    "id": 2857,
+    "x": 1412,
+    "y": 2860,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Giant rat",
+    "id": 2856,
+    "x": 1409,
+    "y": 2853,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Giant rat",
+    "id": 2858,
+    "x": 1418,
+    "y": 2857,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Giant rat",
+    "id": 2856,
+    "x": 1424,
+    "y": 2853,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1421,
+    "y": 2850,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1420,
+    "y": 2864,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13955,
+    "x": 1425,
+    "y": 2877,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Worker",
+    "id": 13953,
+    "x": 1430,
+    "y": 2881,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Worker",
+    "id": 13952,
+    "x": 1439,
+    "y": 2884,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1455,
+    "y": 2875,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant rat",
+    "id": 2858,
+    "x": 1459,
+    "y": 2877,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant rat",
+    "id": 2857,
+    "x": 1457,
+    "y": 2879,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1458,
+    "y": 2882,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1465,
+    "y": 2887,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1458,
+    "y": 2897,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1474,
+    "y": 2906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1410,
+    "y": 2906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1420,
+    "y": 2907,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13885,
+    "x": 1412,
+    "y": 2909,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1413,
+    "y": 2917,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1415,
+    "y": 2914,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1407,
+    "y": 2921,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13888,
+    "x": 1411,
+    "y": 2924,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Villa Guard",
+    "id": 13871,
+    "x": 1426,
+    "y": 2934,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Head Butler",
+    "id": 13833,
+    "x": 1426,
+    "y": 2919,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Butler",
+    "id": 13856,
+    "x": 1438,
+    "y": 2927,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Smart-looking dog",
+    "id": 13842,
+    "x": 1442,
+    "y": 2939,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Butler",
+    "id": 13864,
+    "x": 1441,
+    "y": 2940,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Butler",
+    "id": 13864,
+    "x": 1443,
+    "y": 2938,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Xocotla",
+    "id": 13829,
+    "x": 1441,
+    "y": 2926,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Butler",
+    "id": 13854,
+    "x": 1445,
+    "y": 2934,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13900,
+    "x": 1382,
+    "y": 2950,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1375,
+    "y": 2949,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1375,
+    "y": 2947,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13898,
+    "x": 1378,
+    "y": 2958,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Techichi",
+    "id": 13960,
+    "x": 1388,
+    "y": 2954,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Child",
+    "id": 13903,
+    "x": 1384,
+    "y": 2951,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Citizen",
+    "id": 13883,
+    "x": 1368,
+    "y": 2955,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1426,
+    "y": 2953,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1431,
+    "y": 2953,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1433,
+    "y": 2950,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1438,
+    "y": 2951,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1446,
+    "y": 2951,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1454,
+    "y": 2953,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1458,
+    "y": 2950,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1457,
+    "y": 2953,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bird",
+    "id": 10541,
+    "x": 1456,
+    "y": 2951,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Farmer",
+    "id": 13230,
+    "x": 1402,
+    "y": 2896,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1395,
+    "y": 2895,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1396,
+    "y": 2894,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1398,
+    "y": 2894,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1399,
+    "y": 2892,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1400,
+    "y": 2894,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1399,
+    "y": 2895,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1398,
+    "y": 2893,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1397,
+    "y": 2895,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

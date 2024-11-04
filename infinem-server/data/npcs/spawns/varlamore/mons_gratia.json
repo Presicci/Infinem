@@ -1,0 +1,335 @@
+[
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 1464,
+    "y": 3223,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "White jaguar",
+    "id": 12979,
+    "x": 1420,
+    "y": 3233,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bandit",
+    "id": 13288,
+    "x": 1429,
+    "y": 3277,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bandit",
+    "id": 13289,
+    "x": 1431,
+    "y": 3279,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bandit",
+    "id": 13283,
+    "x": 1432,
+    "y": 3282,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bandit",
+    "id": 13286,
+    "x": 1426,
+    "y": 3283,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sapphire glacialis",
+    "id": 5555,
+    "x": 1430,
+    "y": 3258,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sapphire glacialis",
+    "id": 5555,
+    "x": 1435,
+    "y": 3259,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sapphire glacialis",
+    "id": 5555,
+    "x": 1433,
+    "y": 3253,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sapphire glacialis",
+    "id": 5555,
+    "x": 1436,
+    "y": 3249,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1435,
+    "y": 3254,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1431,
+    "y": 3256,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1435,
+    "y": 3262,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1439,
+    "y": 3264,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1439,
+    "y": 3259,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Snowy knight",
+    "id": 5554,
+    "x": 1435,
+    "y": 3246,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Cerulean twitch",
+    "id": 5550,
+    "x": 1436,
+    "y": 3248,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Snowy knight",
+    "id": 5554,
+    "x": 1429,
+    "y": 3244,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snowy knight",
+    "id": 5554,
+    "x": 1431,
+    "y": 3240,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snowy knight",
+    "id": 5554,
+    "x": 1434,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sapphire glacialis",
+    "id": 5555,
+    "x": 1436,
+    "y": 3237,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snowy knight",
+    "id": 5554,
+    "x": 1442,
+    "y": 3233,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sapphire glacialis",
+    "id": 5555,
+    "x": 1439,
+    "y": 3232,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Cerulean twitch",
+    "id": 5550,
+    "x": 1443,
+    "y": 3231,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Cerulean twitch",
+    "id": 5550,
+    "x": 1446,
+    "y": 3231,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Cerulean twitch",
+    "id": 5550,
+    "x": 1447,
+    "y": 3235,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Cerulean twitch",
+    "id": 5550,
+    "x": 1449,
+    "y": 3233,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sapphire glacialis",
+    "id": 5555,
+    "x": 1446,
+    "y": 3237,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snowy knight",
+    "id": 5554,
+    "x": 1442,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snowy knight",
+    "id": 5554,
+    "x": 1446,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Cerulean twitch",
+    "id": 5550,
+    "x": 1448,
+    "y": 3240,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sapphire glacialis",
+    "id": 5555,
+    "x": 1449,
+    "y": 3243,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snowy knight",
+    "id": 5554,
+    "x": 1450,
+    "y": 3247,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sapphire glacialis",
+    "id": 5555,
+    "x": 1452,
+    "y": 3250,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snowy knight",
+    "id": 5554,
+    "x": 1447,
+    "y": 3253,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pilgrim",
+    "id": 14022,
+    "x": 1457,
+    "y": 3265,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "White jaguar",
+    "id": 12979,
+    "x": 1466,
+    "y": 3293,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]

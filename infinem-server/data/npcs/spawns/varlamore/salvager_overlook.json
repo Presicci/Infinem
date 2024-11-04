@@ -1,0 +1,191 @@
+[
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1647,
+    "y": 3279,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1643,
+    "y": 3284,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1639,
+    "y": 3284,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1637,
+    "y": 3289,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1633,
+    "y": 3290,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1626,
+    "y": 3284,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Salvager",
+    "id": 13971,
+    "x": 1646,
+    "y": 3286,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Salvager",
+    "id": 13977,
+    "x": 1632,
+    "y": 3290,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1627,
+    "y": 3293,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1621,
+    "y": 3285,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1622,
+    "y": 3286,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Shopkeeper",
+    "id": 13969,
+    "x": 1626,
+    "y": 3287,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Salvager",
+    "id": 13974,
+    "x": 1626,
+    "y": 3293,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Salvager",
+    "id": 13972,
+    "x": 1628,
+    "y": 3299,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1624,
+    "y": 3302,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Salvager",
+    "id": 13973,
+    "x": 1622,
+    "y": 3295,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Salius",
+    "id": 13970,
+    "x": 1621,
+    "y": 3290,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Salvager",
+    "id": 13976,
+    "x": 1618,
+    "y": 3296,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1623,
+    "y": 3303,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Salvager",
+    "id": 13975,
+    "x": 1619,
+    "y": 3300,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Salvager",
+    "id": 13976,
+    "x": 1611,
+    "y": 3290,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Citizen",
+    "id": 13200,
+    "x": 1711,
+    "y": 3154,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Tourist",
+    "id": 13206,
+    "x": 1707,
+    "y": 3162,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Academic",
+    "id": 13298,
+    "x": 1706,
+    "y": 3165,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Curator Herminius",
+    "id": 13297,
+    "x": 1712,
+    "y": 3163,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13182,
+    "x": 1713,
+    "y": 3165,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13192,
+    "x": 1718,
+    "y": 3165,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Academic",
+    "id": 13300,
+    "x": 1718,
+    "y": 3161,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13184,
+    "x": 1706,
+    "y": 3166,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Academic",
+    "id": 13301,
+    "x": 1705,
+    "y": 3162,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tourist",
+    "id": 13210,
+    "x": 1712,
+    "y": 3162,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Academic",
+    "id": 13298,
+    "x": 1720,
+    "y": 3163,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13193,
+    "x": 1719,
+    "y": 3160,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Academic",
+    "id": 13300,
+    "x": 1714,
+    "y": 3167,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13181,
+    "x": 1719,
+    "y": 3164,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tourist",
+    "id": 13211,
+    "x": 1712,
+    "y": 3161,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Tourist",
+    "id": 13208,
+    "x": 1720,
+    "y": 3158,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Academic",
+    "id": 13299,
+    "x": 1704,
+    "y": 3162,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13197,
+    "x": 1706,
+    "y": 3157,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 5
+  }
+]

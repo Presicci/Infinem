@@ -1,0 +1,191 @@
+[
+  {
+    "name": "Emissary Chosen",
+    "id": 13738,
+    "x": 1638,
+    "y": 3243,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Emissary Chosen",
+    "id": 13742,
+    "x": 1636,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Emissary Fisher",
+    "id": 13759,
+    "x": 1612,
+    "y": 3218,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 14035,
+    "x": 1611,
+    "y": 3218,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1688,
+    "y": 3219,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1694,
+    "y": 3216,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1719,
+    "y": 3267,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1721,
+    "y": 3271,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1722,
+    "y": 3286,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1721,
+    "y": 3284,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1714,
+    "y": 3280,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1713,
+    "y": 3277,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1709,
+    "y": 3278,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1709,
+    "y": 3286,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1706,
+    "y": 3289,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1698,
+    "y": 3288,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1700,
+    "y": 3285,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1696,
+    "y": 3293,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1698,
+    "y": 3294,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1684,
+    "y": 3288,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Puffin",
+    "id": 548,
+    "x": 1671,
+    "y": 3294,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

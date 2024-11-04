@@ -1,0 +1,353 @@
+[
+  {
+    "name": "Rabbit",
+    "id": 12853,
+    "x": 1498,
+    "y": 3267,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1522,
+    "y": 3248,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1518,
+    "y": 3251,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13100,
+    "x": 1521,
+    "y": 3252,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 1532,
+    "y": 3222,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1600,
+    "y": 3211,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1603,
+    "y": 3220,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1605,
+    "y": 3225,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 1609,
+    "y": 3240,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1629,
+    "y": 3256,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1633,
+    "y": 3261,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Wolf",
+    "id": 106,
+    "x": 1612,
+    "y": 3274,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Wolf",
+    "id": 106,
+    "x": 1610,
+    "y": 3269,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Squirrel",
+    "id": 12854,
+    "x": 1535,
+    "y": 3300,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1530,
+    "y": 3303,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Wolf",
+    "id": 106,
+    "x": 1526,
+    "y": 3310,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rabbit",
+    "id": 12852,
+    "x": 1556,
+    "y": 3288,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Rabbit",
+    "id": 12851,
+    "x": 1561,
+    "y": 3287,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1546,
+    "y": 3283,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1545,
+    "y": 3287,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1562,
+    "y": 3278,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1565,
+    "y": 3279,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Rabbit",
+    "id": 12851,
+    "x": 1569,
+    "y": 3279,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 1553,
+    "y": 3273,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ezco, Teoki of Ranul",
+    "id": 14023,
+    "x": 1582,
+    "y": 3275,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Yolotli, Teoki of Ralos",
+    "id": 14024,
+    "x": 1581,
+    "y": 3277,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Buffalo",
+    "id": 13425,
+    "x": 1590,
+    "y": 3276,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1594,
+    "y": 3256,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1586,
+    "y": 3249,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1541,
+    "y": 3243,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1546,
+    "y": 3224,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1549,
+    "y": 3220,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1553,
+    "y": 3215,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1571,
+    "y": 3207,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1576,
+    "y": 3205,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1582,
+    "y": 3222,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1585,
+    "y": 3226,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1554,
+    "y": 3244,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "White wolf",
+    "id": 108,
+    "x": 1557,
+    "y": 3249,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]

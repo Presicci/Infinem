@@ -1,0 +1,102 @@
+[
+  // Under headquarters
+  {
+    "name": "Guard",
+    "id": 13105,
+    "x": 1637,
+    "y": 9565,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13100,
+    "x": 1643,
+    "y": 9565,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard Captain",
+    "id": 13323,
+    "x": 1641,
+    "y": 9568,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13109,
+    "x": 1640,
+    "y": 9571,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13101,
+    "x": 1638,
+    "y": 9574,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13103,
+    "x": 1644,
+    "y": 9575,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13102,
+    "x": 1648,
+    "y": 9575,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13107,
+    "x": 1651,
+    "y": 9574,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1633,
+    "y": 9576,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1628,
+    "y": 9574,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Thief",
+    "id": 13295,
+    "x": 1614,
+    "y": 9574,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  }
+]

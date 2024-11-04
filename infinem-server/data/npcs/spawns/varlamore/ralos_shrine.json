@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Nelta of Ralos",
+    "id": 13264,
+    "x": 1736,
+    "y": 2928,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13267,
+    "x": 1738,
+    "y": 2929,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  }
+]

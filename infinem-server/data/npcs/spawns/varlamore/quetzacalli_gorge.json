@@ -1,0 +1,218 @@
+[
+  {
+    "name": "Squirrel",
+    "id": 12855,
+    "x": 1519,
+    "y": 3215,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Rabbit",
+    "id": 12852,
+    "x": 1500,
+    "y": 3219,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Shopkeeper",
+    "id": 14021,
+    "x": 1518,
+    "y": 3222,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Banker",
+    "id": 13224,
+    "x": 1521,
+    "y": 3228,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 13227,
+    "x": 1521,
+    "y": 3229,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13187,
+    "x": 1515,
+    "y": 3232,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4
+  },
+  {
+    "name": "Bartender",
+    "id": 14020,
+    "x": 1499,
+    "y": 3224,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Worker",
+    "id": 14025,
+    "x": 1503,
+    "y": 3227,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13168,
+    "x": 1509,
+    "y": 3230,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13186,
+    "x": 1505,
+    "y": 3232,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13168,
+    "x": 1501,
+    "y": 3238,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13109,
+    "x": 1511,
+    "y": 3243,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13106,
+    "x": 1513,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13102,
+    "x": 1511,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Master Farmer",
+    "id": 13243,
+    "x": 1495,
+    "y": 3236,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Tourist",
+    "id": 13206,
+    "x": 1498,
+    "y": 3226,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Alpaca",
+    "id": 12986,
+    "x": 1493,
+    "y": 3224,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca cria",
+    "id": 12990,
+    "x": 1494,
+    "y": 3223,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Squirrel",
+    "id": 12855,
+    "x": 1492,
+    "y": 3235,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Chiribaya",
+    "id": 13962,
+    "x": 1503,
+    "y": 3235,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Citizen",
+    "id": 13181,
+    "x": 1517,
+    "y": 3231,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13169,
+    "x": 1498,
+    "y": 3224,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rabbit",
+    "id": 12851,
+    "x": 1497,
+    "y": 3243,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13166,
+    "x": 1496,
+    "y": 3251,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]

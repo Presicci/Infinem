@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Seer",
+    "id": 13997,
+    "x": 1531,
+    "y": 3292,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Chef",
+    "id": 13998,
+    "x": 1534,
+    "y": 3289,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 14000,
+    "x": 1531,
+    "y": 3287,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 14001,
+    "x": 1523,
+    "y": 3293,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Taala",
+    "id": 13996,
+    "x": 1528,
+    "y": 3293,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Worker",
+    "id": 14004,
+    "x": 1529,
+    "y": 3291,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Manauia",
+    "id": 14007,
+    "x": 1526,
+    "y": 3291,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 14003,
+    "x": 1530,
+    "y": 3289,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Wolf",
+    "id": 106,
+    "x": 1521,
+    "y": 3311,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Wolf",
+    "id": 106,
+    "x": 1515,
+    "y": 3313,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Wolf",
+    "id": 106,
+    "x": 1495,
+    "y": 3304,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Butterfly",
+    "id": 238,
+    "x": 1489,
+    "y": 3303,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Rabbit",
+    "id": 12851,
+    "x": 1482,
+    "y": 3299,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Squirrel",
+    "id": 12854,
+    "x": 1477,
+    "y": 3300,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "The Hueycoatl",
+    "id": 14009,
+    "x": 1509,
+    "y": 3290,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Seer",
+    "id": 14008,
+    "x": 1530,
+    "y": 3284,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  }
+]

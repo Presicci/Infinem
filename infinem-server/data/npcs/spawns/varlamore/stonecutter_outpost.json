@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Worker",
+    "id": 13141,
+    "x": 1735,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Worker",
+    "id": 13144,
+    "x": 1741,
+    "y": 2968,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Metla",
+    "id": 13140,
+    "x": 1742,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Avinia",
+    "id": 13145,
+    "x": 1739,
+    "y": 2959,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13142,
+    "x": 1750,
+    "y": 2960,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13143,
+    "x": 1741,
+    "y": 2953,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

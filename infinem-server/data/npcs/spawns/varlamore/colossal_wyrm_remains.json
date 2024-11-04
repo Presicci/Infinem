@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1642,
+    "y": 2921,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Construction Worker",
+    "id": 13983,
+    "x": 1639,
+    "y": 2923,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Worm Tongue",
+    "id": 13981,
+    "x": 1638,
+    "y": 2921,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Primio",
+    "id": 12888,
+    "x": 3277,
+    "y": 3411,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Regulus Cento",
+    "id": 12884,
+    "x": 3281,
+    "y": 3413,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  }
+]

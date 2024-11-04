@@ -1,0 +1,263 @@
+[
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1672,
+    "y": 3155,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13107,
+    "x": 1687,
+    "y": 3154,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1687,
+    "y": 3160,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Squire",
+    "id": 13246,
+    "x": 1687,
+    "y": 3169,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Knight of Varlamore",
+    "id": 13114,
+    "x": 1684,
+    "y": 3172,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Helvia",
+    "id": 13319,
+    "x": 1681,
+    "y": 3172,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13103,
+    "x": 1676,
+    "y": 3172,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Knight of Varlamore",
+    "id": 13119,
+    "x": 1676,
+    "y": 3168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13102,
+    "x": 1677,
+    "y": 3165,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13101,
+    "x": 1685,
+    "y": 3171,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Knight of Varlamore",
+    "id": 13117,
+    "x": 1683,
+    "y": 3169,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Knight of Varlamore",
+    "id": 13115,
+    "x": 1680,
+    "y": 3166,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Knight of Varlamore",
+    "id": 13119,
+    "x": 1676,
+    "y": 3170,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13109,
+    "x": 1675,
+    "y": 3165,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13103,
+    "x": 1689,
+    "y": 3167,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Knight of Varlamore",
+    "id": 13117,
+    "x": 1687,
+    "y": 3167,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Knight of Varlamore",
+    "id": 13118,
+    "x": 1688,
+    "y": 3153,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13106,
+    "x": 1684,
+    "y": 3152,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13100,
+    "x": 1676,
+    "y": 3152,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Knight of Varlamore",
+    "id": 13116,
+    "x": 1671,
+    "y": 3152,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1674,
+    "y": 3171,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13109,
+    "x": 1676,
+    "y": 3168,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13106,
+    "x": 1673,
+    "y": 3164,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13105,
+    "x": 1672,
+    "y": 3158,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13101,
+    "x": 1687,
+    "y": 3171,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13103,
+    "x": 1685,
+    "y": 3167,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13107,
+    "x": 1682,
+    "y": 3164,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13105,
+    "x": 1688,
+    "y": 3160,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13106,
+    "x": 1687,
+    "y": 3156,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

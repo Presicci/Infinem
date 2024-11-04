@@ -1,0 +1,353 @@
+[
+  {
+    "name": "Minimus",
+    "id": 12807,
+    "x": 1805,
+    "y": 9508,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gloria",
+    "id": 12809,
+    "x": 1802,
+    "y": 9512,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gladiator",
+    "id": 12841,
+    "x": 1802,
+    "y": 9523,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12841,
+    "x": 1802,
+    "y": 9527,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12840,
+    "x": 1806,
+    "y": 9529,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12840,
+    "x": 1808,
+    "y": 9529,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12838,
+    "x": 1807,
+    "y": 9525,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12839,
+    "x": 1805,
+    "y": 9525,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12838,
+    "x": 1805,
+    "y": 9523,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12839,
+    "x": 1807,
+    "y": 9523,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12835,
+    "x": 1813,
+    "y": 9519,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Duelist",
+    "id": 12843,
+    "x": 1824,
+    "y": 9530,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gladiator",
+    "id": 12835,
+    "x": 1839,
+    "y": 9522,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Gladiator",
+    "id": 12841,
+    "x": 1843,
+    "y": 9527,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12840,
+    "x": 1844,
+    "y": 9524,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12842,
+    "x": 1843,
+    "y": 9524,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13110,
+    "x": 1848,
+    "y": 9516,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13112,
+    "x": 1847,
+    "y": 9516,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13113,
+    "x": 1846,
+    "y": 9516,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12840,
+    "x": 1805,
+    "y": 9489,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12842,
+    "x": 1806,
+    "y": 9489,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12841,
+    "x": 1806,
+    "y": 9486,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12836,
+    "x": 1812,
+    "y": 9493,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Gladiator",
+    "id": 12834,
+    "x": 1804,
+    "y": 9492,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lelia",
+    "id": 13806,
+    "x": 1819,
+    "y": 9484,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Ueman, Teoki of Ralos",
+    "id": 13420,
+    "x": 1824,
+    "y": 9486,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Seia, Teoki of Ranul",
+    "id": 13421,
+    "x": 1827,
+    "y": 9484,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gladiator",
+    "id": 12840,
+    "x": 1841,
+    "y": 9484,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12841,
+    "x": 1843,
+    "y": 9484,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12839,
+    "x": 1841,
+    "y": 9487,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12838,
+    "x": 1843,
+    "y": 9487,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12839,
+    "x": 1843,
+    "y": 9489,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12837,
+    "x": 1841,
+    "y": 9489,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12836,
+    "x": 1840,
+    "y": 9492,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gladiator",
+    "id": 12840,
+    "x": 1847,
+    "y": 9490,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Gladiator",
+    "id": 12841,
+    "x": 1847,
+    "y": 9486,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13112,
+    "x": 1846,
+    "y": 9497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13113,
+    "x": 1847,
+    "y": 9497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13110,
+    "x": 1848,
+    "y": 9497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  }
+]

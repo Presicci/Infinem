@@ -1,0 +1,668 @@
+[
+  {
+    "name": "Toucan",
+    "id": 12984,
+    "x": 1460,
+    "y": 3029,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Toucan",
+    "id": 12984,
+    "x": 1458,
+    "y": 3037,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Toucan",
+    "id": 12984,
+    "x": 1452,
+    "y": 3023,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Toucan",
+    "id": 12984,
+    "x": 1449,
+    "y": 3029,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Toucan",
+    "id": 12984,
+    "x": 1444,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Toucan",
+    "id": 12984,
+    "x": 1450,
+    "y": 3038,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Toucan",
+    "id": 12984,
+    "x": 1441,
+    "y": 3044,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Black jaguar",
+    "id": 12978,
+    "x": 1452,
+    "y": 3037,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Black jaguar",
+    "id": 12978,
+    "x": 1444,
+    "y": 3040,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1438,
+    "y": 3067,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1434,
+    "y": 3069,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1403,
+    "y": 3103,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Moss giant",
+    "id": 12844,
+    "x": 1400,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Moss giant",
+    "id": 12845,
+    "x": 1396,
+    "y": 3107,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1393,
+    "y": 3102,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Moss giant",
+    "id": 12846,
+    "x": 1389,
+    "y": 3116,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Moss giant",
+    "id": 12847,
+    "x": 1395,
+    "y": 3114,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Moss giant",
+    "id": 12845,
+    "x": 1399,
+    "y": 3118,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Moss giant",
+    "id": 12844,
+    "x": 1396,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1400,
+    "y": 3123,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1394,
+    "y": 3125,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1392,
+    "y": 3129,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1398,
+    "y": 3135,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1399,
+    "y": 3154,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1405,
+    "y": 3163,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Buffalo",
+    "id": 13425,
+    "x": 1466,
+    "y": 3051,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Bandit",
+    "id": 13285,
+    "x": 1465,
+    "y": 3054,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bandit",
+    "id": 13284,
+    "x": 1469,
+    "y": 3051,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bandit",
+    "id": 13289,
+    "x": 1471,
+    "y": 3052,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bandit",
+    "id": 13283,
+    "x": 1471,
+    "y": 3054,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bandit",
+    "id": 13285,
+    "x": 1469,
+    "y": 3056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1471,
+    "y": 3060,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Mountain toucan",
+    "id": 12985,
+    "x": 1469,
+    "y": 3072,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Tecu salamander",
+    "id": 12769,
+    "x": 1472,
+    "y": 3087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tecu salamander",
+    "id": 12769,
+    "x": 1469,
+    "y": 3089,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tecu salamander",
+    "id": 12769,
+    "x": 1472,
+    "y": 3095,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tecu salamander",
+    "id": 12769,
+    "x": 1476,
+    "y": 3096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tecu salamander",
+    "id": 12769,
+    "x": 1477,
+    "y": 3100,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tecu salamander",
+    "id": 12769,
+    "x": 1473,
+    "y": 3098,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tecu salamander",
+    "id": 12769,
+    "x": 1473,
+    "y": 3093,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Attala",
+    "id": 12861,
+    "x": 1435,
+    "y": 3124,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13054,
+    "x": 1434,
+    "y": 3123,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13054,
+    "x": 1437,
+    "y": 3123,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Zuma",
+    "id": 12860,
+    "x": 1436,
+    "y": 3123,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 1413,
+    "y": 3117,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 1417,
+    "y": 3156,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 13109,
+    "x": 1417,
+    "y": 3186,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13101,
+    "x": 1414,
+    "y": 3178,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13107,
+    "x": 1418,
+    "y": 3176,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13103,
+    "x": 1418,
+    "y": 3182,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1440,
+    "y": 3173,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13100,
+    "x": 1442,
+    "y": 3177,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13265,
+    "x": 1441,
+    "y": 3182,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13266,
+    "x": 1445,
+    "y": 3188,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13270,
+    "x": 1439,
+    "y": 3193,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13270,
+    "x": 1450,
+    "y": 3175,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13271,
+    "x": 1452,
+    "y": 3180,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13266,
+    "x": 1454,
+    "y": 3185,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13106,
+    "x": 1458,
+    "y": 3183,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Nelta of Ranul",
+    "id": 13276,
+    "x": 1452,
+    "y": 3196,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13266,
+    "x": 1457,
+    "y": 3192,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13271,
+    "x": 1451,
+    "y": 3195,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13266,
+    "x": 1458,
+    "y": 3192,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13265,
+    "x": 1448,
+    "y": 3181,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13270,
+    "x": 1440,
+    "y": 3184,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Nelta of Ranul",
+    "id": 13281,
+    "x": 1442,
+    "y": 3186,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Virilis",
+    "id": 13346,
+    "x": 1444,
+    "y": 3154,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1438,
+    "y": 3207,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1440,
+    "y": 3205,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1444,
+    "y": 3208,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1453,
+    "y": 3205,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Icefiend",
+    "id": 4813,
+    "x": 1452,
+    "y": 3207,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1483,
+    "y": 3135,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1486,
+    "y": 3130,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]

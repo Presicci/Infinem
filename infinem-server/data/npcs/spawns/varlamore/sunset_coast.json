@@ -1,0 +1,335 @@
+[
+  {
+    "name": "Crab",
+    "id": 1553,
+    "x": 1530,
+    "y": 2976,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fisher",
+    "id": 13253,
+    "x": 1529,
+    "y": 2984,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13155,
+    "x": 1525,
+    "y": 2986,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tourist",
+    "id": 13206,
+    "x": 1521,
+    "y": 2983,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Reinn",
+    "id": 13161,
+    "x": 1523,
+    "y": 2980,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Sailor",
+    "id": 13248,
+    "x": 1520,
+    "y": 2978,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Molossus",
+    "id": 12993,
+    "x": 1521,
+    "y": 2976,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1520,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13251,
+    "x": 1518,
+    "y": 2988,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shopkeeper",
+    "id": 13159,
+    "x": 1515,
+    "y": 2986,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13179,
+    "x": 1513,
+    "y": 2989,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Thurid",
+    "id": 13160,
+    "x": 1515,
+    "y": 2994,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Fisher",
+    "id": 13254,
+    "x": 1508,
+    "y": 2994,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1507,
+    "y": 2990,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13186,
+    "x": 1508,
+    "y": 2986,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Fisher",
+    "id": 13252,
+    "x": 1503,
+    "y": 2986,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Trader Crewmember",
+    "id": 9348,
+    "x": 1515,
+    "y": 2973,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Trader Crewmember",
+    "id": 9312,
+    "x": 1513,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Fisher",
+    "id": 13255,
+    "x": 1514,
+    "y": 2979,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13249,
+    "x": 1529,
+    "y": 2980,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13172,
+    "x": 1523,
+    "y": 2985,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13150,
+    "x": 1515,
+    "y": 2990,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13178,
+    "x": 1510,
+    "y": 2985,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Arnkel",
+    "id": 13163,
+    "x": 1508,
+    "y": 2986,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Antonia",
+    "id": 13984,
+    "x": 1495,
+    "y": 2985,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Fisher",
+    "id": 13252,
+    "x": 1499,
+    "y": 2984,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1497,
+    "y": 2985,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crab",
+    "id": 1553,
+    "x": 1505,
+    "y": 2980,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Crab",
+    "id": 1553,
+    "x": 1498,
+    "y": 2994,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Crab",
+    "id": 1553,
+    "x": 1500,
+    "y": 2991,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crab",
+    "id": 1553,
+    "x": 1501,
+    "y": 2988,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1525,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1531,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1534,
+    "y": 2965,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1507,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1503,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1484,
+    "y": 2991,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  }
+]

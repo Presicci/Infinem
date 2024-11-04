@@ -1,0 +1,2019 @@
+[
+  {
+    "name": "Citizen",
+    "id": 13193,
+    "x": 1710,
+    "y": 3143,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Tourist",
+    "id": 13208,
+    "x": 1721,
+    "y": 3140,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1710,
+    "y": 3139,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13107,
+    "x": 1713,
+    "y": 3137,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1716,
+    "y": 3139,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Primio",
+    "id": 12889,
+    "x": 1702,
+    "y": 3141,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Renu",
+    "id": 13348,
+    "x": 1696,
+    "y": 3141,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Regulus Cento",
+    "id": 12885,
+    "x": 1700,
+    "y": 3142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13197,
+    "x": 1692,
+    "y": 3132,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Furia Tullus",
+    "id": 12890,
+    "x": 1686,
+    "y": 3142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Ennius Tullus",
+    "id": 12892,
+    "x": 1687,
+    "y": 3141,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Guard",
+    "id": 13101,
+    "x": 1688,
+    "y": 3139,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1680,
+    "y": 3131,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13109,
+    "x": 1673,
+    "y": 3138,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13195,
+    "x": 1677,
+    "y": 3136,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13198,
+    "x": 1684,
+    "y": 3135,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tourist",
+    "id": 13210,
+    "x": 1678,
+    "y": 3144,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13187,
+    "x": 1664,
+    "y": 3138,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13195,
+    "x": 1653,
+    "y": 3133,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13178,
+    "x": 1641,
+    "y": 3127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Knight of Varlamore",
+    "id": 13116,
+    "x": 1630,
+    "y": 3127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13185,
+    "x": 1623,
+    "y": 3130,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Caius",
+    "id": 13314,
+    "x": 1634,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13181,
+    "x": 1628,
+    "y": 3113,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13102,
+    "x": 1627,
+    "y": 3109,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13105,
+    "x": 1627,
+    "y": 3103,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13179,
+    "x": 1628,
+    "y": 3098,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Victor",
+    "id": 13313,
+    "x": 1636,
+    "y": 3100,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Rufus",
+    "id": 13315,
+    "x": 1632,
+    "y": 3096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1631,
+    "y": 3087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1647,
+    "y": 3089,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1646,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Citizen",
+    "id": 13201,
+    "x": 1641,
+    "y": 3087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13193,
+    "x": 1658,
+    "y": 3094,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Lucia",
+    "id": 13317,
+    "x": 1664,
+    "y": 3089,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13168,
+    "x": 1663,
+    "y": 3084,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1665,
+    "y": 3078,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1655,
+    "y": 3085,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1635,
+    "y": 3106,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Citizen",
+    "id": 13199,
+    "x": 1642,
+    "y": 3107,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 13107,
+    "x": 1647,
+    "y": 3110,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13100,
+    "x": 1649,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tourist",
+    "id": 13209,
+    "x": 1654,
+    "y": 3106,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1648,
+    "y": 3102,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13192,
+    "x": 1647,
+    "y": 3094,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Molossus",
+    "id": 12992,
+    "x": 1649,
+    "y": 3109,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Banker",
+    "id": 13212,
+    "x": 1646,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 13213,
+    "x": 1647,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 13214,
+    "x": 1648,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 13215,
+    "x": 1649,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Dodgy Character",
+    "id": 13310,
+    "x": 1654,
+    "y": 3112,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13200,
+    "x": 1662,
+    "y": 3106,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13194,
+    "x": 1660,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Shopkeeper",
+    "id": 13330,
+    "x": 1668,
+    "y": 3123,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13187,
+    "x": 1671,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13179,
+    "x": 1670,
+    "y": 3117,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1667,
+    "y": 3109,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13184,
+    "x": 1668,
+    "y": 3100,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lavinia",
+    "id": 13312,
+    "x": 1670,
+    "y": 3091,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Child",
+    "id": 13191,
+    "x": 1673,
+    "y": 3086,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1675,
+    "y": 3078,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13180,
+    "x": 1672,
+    "y": 3082,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Aurelia",
+    "id": 13308,
+    "x": 1678,
+    "y": 3086,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Wealthy citizen",
+    "id": 13302,
+    "x": 1687,
+    "y": 3087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Wealthy citizen",
+    "id": 13304,
+    "x": 1682,
+    "y": 3082,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13109,
+    "x": 1678,
+    "y": 3079,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13106,
+    "x": 1682,
+    "y": 3079,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13100,
+    "x": 1680,
+    "y": 3076,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1681,
+    "y": 3070,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1678,
+    "y": 3069,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13166,
+    "x": 1684,
+    "y": 3069,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13197,
+    "x": 1680,
+    "y": 3067,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Wealthy citizen",
+    "id": 13303,
+    "x": 1680,
+    "y": 3091,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13182,
+    "x": 1682,
+    "y": 3093,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Tourist",
+    "id": 13210,
+    "x": 1689,
+    "y": 3095,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Estate Agent",
+    "id": 13343,
+    "x": 1704,
+    "y": 3101,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13172,
+    "x": 1695,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13181,
+    "x": 1696,
+    "y": 3114,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Child",
+    "id": 13188,
+    "x": 1702,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13179,
+    "x": 1704,
+    "y": 3106,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Cobado",
+    "id": 13341,
+    "x": 1701,
+    "y": 3112,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Tourist",
+    "id": 13206,
+    "x": 1688,
+    "y": 3119,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13167,
+    "x": 1708,
+    "y": 3123,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13195,
+    "x": 1718,
+    "y": 3123,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bartender",
+    "id": 13344,
+    "x": 1711,
+    "y": 3116,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13178,
+    "x": 1713,
+    "y": 3115,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13182,
+    "x": 1715,
+    "y": 3116,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13183,
+    "x": 1717,
+    "y": 3115,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13186,
+    "x": 1722,
+    "y": 3116,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13203,
+    "x": 1726,
+    "y": 3118,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rabbit",
+    "id": 12852,
+    "x": 1732,
+    "y": 3116,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13103,
+    "x": 1717,
+    "y": 3109,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13105,
+    "x": 1713,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13102,
+    "x": 1711,
+    "y": 3109,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Julia",
+    "id": 13307,
+    "x": 1716,
+    "y": 3102,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Wealthy citizen",
+    "id": 13302,
+    "x": 1717,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Wealthy citizen",
+    "id": 13305,
+    "x": 1713,
+    "y": 3099,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Wealthy citizen",
+    "id": 13303,
+    "x": 1711,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13187,
+    "x": 1715,
+    "y": 3094,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13169,
+    "x": 1713,
+    "y": 3091,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Xolo",
+    "id": 12996,
+    "x": 1712,
+    "y": 3087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Citizen",
+    "id": 13205,
+    "x": 1724,
+    "y": 3088,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13181,
+    "x": 1724,
+    "y": 3094,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rabbit",
+    "id": 12851,
+    "x": 1728,
+    "y": 3091,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Squirrel",
+    "id": 12854,
+    "x": 1728,
+    "y": 3097,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1730,
+    "y": 3101,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Squirrel",
+    "id": 12854,
+    "x": 1741,
+    "y": 3098,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13184,
+    "x": 1737,
+    "y": 3095,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13202,
+    "x": 1739,
+    "y": 3086,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1745,
+    "y": 3086,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13204,
+    "x": 1748,
+    "y": 3097,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Duck",
+    "id": 10546,
+    "x": 1740,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ducklings",
+    "id": 2002,
+    "x": 1735,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Duck",
+    "id": 10546,
+    "x": 1738,
+    "y": 3109,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ducklings",
+    "id": 2002,
+    "x": 1735,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rabbit",
+    "id": 12852,
+    "x": 1748,
+    "y": 3094,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13178,
+    "x": 1753,
+    "y": 3093,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13185,
+    "x": 1756,
+    "y": 3091,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13179,
+    "x": 1754,
+    "y": 3098,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13187,
+    "x": 1755,
+    "y": 3101,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13105,
+    "x": 1760,
+    "y": 3088,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13100,
+    "x": 1758,
+    "y": 3087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13102,
+    "x": 1760,
+    "y": 3082,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1758,
+    "y": 3079,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13101,
+    "x": 1761,
+    "y": 3078,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13173,
+    "x": 1767,
+    "y": 3078,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13180,
+    "x": 1760,
+    "y": 3073,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Squirrel",
+    "id": 12854,
+    "x": 1764,
+    "y": 3086,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Artima",
+    "id": 13342,
+    "x": 1766,
+    "y": 3101,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13180,
+    "x": 1769,
+    "y": 3107,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Squirrel",
+    "id": 12856,
+    "x": 1772,
+    "y": 3098,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Banker",
+    "id": 13217,
+    "x": 1781,
+    "y": 3092,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 13218,
+    "x": 1780,
+    "y": 3092,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 13219,
+    "x": 1779,
+    "y": 3092,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 13216,
+    "x": 1778,
+    "y": 3092,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13186,
+    "x": 1779,
+    "y": 3102,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tourist",
+    "id": 13208,
+    "x": 1780,
+    "y": 3105,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1777,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13109,
+    "x": 1781,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1776,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13181,
+    "x": 1781,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13179,
+    "x": 1784,
+    "y": 3109,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13165,
+    "x": 1784,
+    "y": 3119,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13183,
+    "x": 1785,
+    "y": 3139,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13101,
+    "x": 1778,
+    "y": 3138,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13249,
+    "x": 1781,
+    "y": 3141,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Molossus",
+    "id": 12992,
+    "x": 1778,
+    "y": 3142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 13108,
+    "x": 1780,
+    "y": 3147,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13250,
+    "x": 1777,
+    "y": 3148,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1774,
+    "y": 3151,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Guard",
+    "id": 13100,
+    "x": 1776,
+    "y": 3153,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13248,
+    "x": 1775,
+    "y": 3155,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1776,
+    "y": 3153,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13260,
+    "x": 1772,
+    "y": 3157,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13248,
+    "x": 1773,
+    "y": 3156,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13249,
+    "x": 1770,
+    "y": 3163,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1767,
+    "y": 3164,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Worker",
+    "id": 13257,
+    "x": 1768,
+    "y": 3168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1767,
+    "y": 3177,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1770,
+    "y": 3183,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1767,
+    "y": 3185,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1769,
+    "y": 3189,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Worker",
+    "id": 13257,
+    "x": 1766,
+    "y": 3180,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fisher",
+    "id": 13252,
+    "x": 1770,
+    "y": 3174,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Fisher",
+    "id": 13253,
+    "x": 1777,
+    "y": 3134,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1776,
+    "y": 3132,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sailor",
+    "id": 13251,
+    "x": 1778,
+    "y": 3127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13172,
+    "x": 1776,
+    "y": 3125,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sailor",
+    "id": 13251,
+    "x": 1776,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13258,
+    "x": 1773,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13249,
+    "x": 1769,
+    "y": 3121,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1768,
+    "y": 3118,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1759,
+    "y": 3121,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1753,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sailor",
+    "id": 13251,
+    "x": 1761,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13250,
+    "x": 1756,
+    "y": 3121,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13248,
+    "x": 1759,
+    "y": 3121,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13179,
+    "x": 1761,
+    "y": 3119,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13166,
+    "x": 1755,
+    "y": 3118,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1759,
+    "y": 3117,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Sailor",
+    "id": 13248,
+    "x": 1749,
+    "y": 3119,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tourist",
+    "id": 13206,
+    "x": 1745,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13261,
+    "x": 1742,
+    "y": 3126,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Trader Crewmember",
+    "id": 9324,
+    "x": 1743,
+    "y": 3136,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1741,
+    "y": 3130,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13107,
+    "x": 1738,
+    "y": 3135,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13165,
+    "x": 1739,
+    "y": 3133,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tourist",
+    "id": 13211,
+    "x": 1740,
+    "y": 3141,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1742,
+    "y": 3144,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13165,
+    "x": 1737,
+    "y": 3140,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13201,
+    "x": 1727,
+    "y": 3138,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13104,
+    "x": 1740,
+    "y": 3143,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Trader Crewmember",
+    "id": 9360,
+    "x": 1742,
+    "y": 3138,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1742,
+    "y": 3153,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 13103,
+    "x": 1740,
+    "y": 3152,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1747,
+    "y": 3157,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1751,
+    "y": 3156,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1750,
+    "y": 3160,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1749,
+    "y": 3163,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1752,
+    "y": 3162,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Fisher",
+    "id": 13254,
+    "x": 1748,
+    "y": 3159,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13256,
+    "x": 1749,
+    "y": 3157,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Worker",
+    "id": 13260,
+    "x": 1751,
+    "y": 3165,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1749,
+    "y": 3168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sailor",
+    "id": 13251,
+    "x": 1751,
+    "y": 3170,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1338,
+    "x": 1749,
+    "y": 3176,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1753,
+    "y": 3180,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1750,
+    "y": 3183,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1752,
+    "y": 3186,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Seagull",
+    "id": 1339,
+    "x": 1749,
+    "y": 3188,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Thief",
+    "id": 13295,
+    "x": 1736,
+    "y": 3170,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Thief",
+    "id": 13291,
+    "x": 1735,
+    "y": 3174,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Thief",
+    "id": 13296,
+    "x": 1739,
+    "y": 3174,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Thief",
+    "id": 13293,
+    "x": 1743,
+    "y": 3175,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Thief",
+    "id": 13292,
+    "x": 1738,
+    "y": 3172,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Thief",
+    "id": 13294,
+    "x": 1735,
+    "y": 3171,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Thief",
+    "id": 13292,
+    "x": 1623,
+    "y": 9565,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Thief",
+    "id": 13294,
+    "x": 1622,
+    "y": 9574,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Thief",
+    "id": 13293,
+    "x": 1619,
+    "y": 9574,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Floria",
+    "id": 13340,
+    "x": 1658,
+    "y": 3099,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13185,
+    "x": 1664,
+    "y": 3101,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Thief",
+    "id": 13291,
+    "x": 1623,
+    "y": 3164,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Thief",
+    "id": 13296,
+    "x": 1620,
+    "y": 3163,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  // TODO
+  {
+    "name": "Fishing spot",
+    "id": 13329,
+    "x": 1738,
+    "y": 3101,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  }
+]

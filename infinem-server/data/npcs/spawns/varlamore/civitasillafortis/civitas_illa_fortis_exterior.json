@@ -1,0 +1,1982 @@
+[
+  {
+    "name": "Thief",
+    "id": 13294,
+    "x": 1613,
+    "y": 3175,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Thief",
+    "id": 13292,
+    "x": 1608,
+    "y": 3174,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1609,
+    "y": 3174,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant spider",
+    "id": 3017,
+    "x": 1591,
+    "y": 3180,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1711,
+    "y": 3205,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Giant spider",
+    "id": 3017,
+    "x": 1582,
+    "y": 3173,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1566,
+    "y": 3161,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13264,
+    "x": 1565,
+    "y": 3168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant spider",
+    "id": 3017,
+    "x": 1551,
+    "y": 3154,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Giant spider",
+    "id": 3017,
+    "x": 1543,
+    "y": 3171,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Giant spider",
+    "id": 3017,
+    "x": 1529,
+    "y": 3177,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Giant spider",
+    "id": 3017,
+    "x": 1526,
+    "y": 3174,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bandit",
+    "id": 13290,
+    "x": 1493,
+    "y": 3176,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bandit",
+    "id": 13287,
+    "x": 1496,
+    "y": 3174,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bandit",
+    "id": 13284,
+    "x": 1498,
+    "y": 3178,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Bandit",
+    "id": 13286,
+    "x": 1501,
+    "y": 3170,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1499,
+    "y": 3130,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1502,
+    "y": 3127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1498,
+    "y": 3126,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1504,
+    "y": 3125,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1502,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bard",
+    "id": 13146,
+    "x": 1511,
+    "y": 3107,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Bard",
+    "id": 13147,
+    "x": 1512,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Bard",
+    "id": 13148,
+    "x": 1508,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1525,
+    "y": 3099,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1521,
+    "y": 3091,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1537,
+    "y": 3123,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1542,
+    "y": 3138,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1549,
+    "y": 3133,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1551,
+    "y": 3132,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1547,
+    "y": 3132,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1548,
+    "y": 3129,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1550,
+    "y": 3127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1556,
+    "y": 3127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1554,
+    "y": 3130,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1557,
+    "y": 3129,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1557,
+    "y": 3133,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1554,
+    "y": 3127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1558,
+    "y": 3127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Alpaca",
+    "id": 12986,
+    "x": 1556,
+    "y": 3121,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca",
+    "id": 12988,
+    "x": 1557,
+    "y": 3117,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca",
+    "id": 12986,
+    "x": 1562,
+    "y": 3111,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca",
+    "id": 12988,
+    "x": 1561,
+    "y": 3114,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca",
+    "id": 12988,
+    "x": 1562,
+    "y": 3116,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca",
+    "id": 12988,
+    "x": 1561,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca cria",
+    "id": 12991,
+    "x": 1557,
+    "y": 3118,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca cria",
+    "id": 12991,
+    "x": 1560,
+    "y": 3115,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca cria",
+    "id": 12991,
+    "x": 1560,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca cria",
+    "id": 12990,
+    "x": 1556,
+    "y": 3112,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alpaca cria",
+    "id": 12990,
+    "x": 1562,
+    "y": 3123,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1567,
+    "y": 3111,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1570,
+    "y": 3112,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1569,
+    "y": 3116,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1571,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1574,
+    "y": 3114,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1576,
+    "y": 3118,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1578,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1580,
+    "y": 3119,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1583,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1586,
+    "y": 3116,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1582,
+    "y": 3114,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1579,
+    "y": 3116,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chiribaya",
+    "id": 13964,
+    "x": 1586,
+    "y": 3126,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Alba",
+    "id": 13807,
+    "x": 1583,
+    "y": 3127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Farmer",
+    "id": 13228,
+    "x": 1586,
+    "y": 3121,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Master Farmer",
+    "id": 13238,
+    "x": 1587,
+    "y": 3132,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Toucan",
+    "id": 12982,
+    "x": 1596,
+    "y": 3140,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1594,
+    "y": 3118,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1596,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13171,
+    "x": 1593,
+    "y": 3111,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13171,
+    "x": 1596,
+    "y": 3107,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chiribaya",
+    "id": 13961,
+    "x": 1604,
+    "y": 3106,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Child",
+    "id": 13176,
+    "x": 1609,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 13103,
+    "x": 1615,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 13106,
+    "x": 1615,
+    "y": 3107,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Agelus",
+    "id": 13339,
+    "x": 1594,
+    "y": 3103,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Tool Leprechaun",
+    "id": 12765,
+    "x": 1593,
+    "y": 3099,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Harminia",
+    "id": 12766,
+    "x": 1584,
+    "y": 3100,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1576,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1596,
+    "y": 3090,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13179,
+    "x": 1605,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Child",
+    "id": 13175,
+    "x": 1608,
+    "y": 3104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1610,
+    "y": 3101,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1613,
+    "y": 3099,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1611,
+    "y": 3096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1615,
+    "y": 3094,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1614,
+    "y": 3090,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1605,
+    "y": 3091,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1604,
+    "y": 3087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1608,
+    "y": 3087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1610,
+    "y": 3091,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13004,
+    "x": 1611,
+    "y": 3085,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Farmer",
+    "id": 13231,
+    "x": 1596,
+    "y": 3086,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13169,
+    "x": 1603,
+    "y": 3083,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Xolo",
+    "id": 12996,
+    "x": 1607,
+    "y": 3079,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Master Farmer",
+    "id": 13242,
+    "x": 1586,
+    "y": 3090,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Farmer",
+    "id": 13229,
+    "x": 1624,
+    "y": 3069,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Farmer",
+    "id": 13233,
+    "x": 1628,
+    "y": 3066,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13170,
+    "x": 1625,
+    "y": 3059,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13166,
+    "x": 1625,
+    "y": 3049,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1631,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1637,
+    "y": 3049,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Master Farmer",
+    "id": 13237,
+    "x": 1635,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1642,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1648,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1637,
+    "y": 3077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1647,
+    "y": 3077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1654,
+    "y": 3067,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Farmer",
+    "id": 13230,
+    "x": 1651,
+    "y": 3072,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Child",
+    "id": 13174,
+    "x": 1648,
+    "y": 3061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Child",
+    "id": 13177,
+    "x": 1646,
+    "y": 3057,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1652,
+    "y": 3059,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1657,
+    "y": 3069,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13167,
+    "x": 1660,
+    "y": 3070,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Buffalo",
+    "id": 13005,
+    "x": 1660,
+    "y": 3060,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1666,
+    "y": 3063,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Citizen",
+    "id": 13187,
+    "x": 1668,
+    "y": 3069,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13165,
+    "x": 1675,
+    "y": 3064,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1670,
+    "y": 3064,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1671,
+    "y": 3066,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13186,
+    "x": 1677,
+    "y": 3058,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Master Farmer",
+    "id": 13237,
+    "x": 1682,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Farmer",
+    "id": 13233,
+    "x": 1663,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13165,
+    "x": 1660,
+    "y": 3056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13169,
+    "x": 1681,
+    "y": 3045,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Farmer",
+    "id": 13228,
+    "x": 1692,
+    "y": 3045,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Farmer",
+    "id": 13231,
+    "x": 1690,
+    "y": 3056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13180,
+    "x": 1689,
+    "y": 3064,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13168,
+    "x": 1691,
+    "y": 3069,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mugger",
+    "id": 13282,
+    "x": 1694,
+    "y": 3065,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1694,
+    "y": 3067,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1697,
+    "y": 3068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Atza",
+    "id": 12933,
+    "x": 1696,
+    "y": 3062,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Molossus",
+    "id": 12993,
+    "x": 1701,
+    "y": 3062,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13172,
+    "x": 1701,
+    "y": 3070,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Thief",
+    "id": 13296,
+    "x": 1704,
+    "y": 3065,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Thief",
+    "id": 13291,
+    "x": 1702,
+    "y": 3066,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13167,
+    "x": 1709,
+    "y": 3063,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1711,
+    "y": 3066,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1704,
+    "y": 3063,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Farmer",
+    "id": 13234,
+    "x": 1714,
+    "y": 3049,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1715,
+    "y": 3061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bartender",
+    "id": 13345,
+    "x": 1723,
+    "y": 3077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Worker",
+    "id": 13257,
+    "x": 1727,
+    "y": 3072,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13172,
+    "x": 1729,
+    "y": 3077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Thief",
+    "id": 13293,
+    "x": 1734,
+    "y": 3080,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1729,
+    "y": 3071,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Child",
+    "id": 13177,
+    "x": 1735,
+    "y": 3073,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1734,
+    "y": 3066,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13165,
+    "x": 1728,
+    "y": 3063,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shopkeeper",
+    "id": 13331,
+    "x": 1720,
+    "y": 3064,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13168,
+    "x": 1744,
+    "y": 3075,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13167,
+    "x": 1748,
+    "y": 3079,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1747,
+    "y": 3071,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13171,
+    "x": 1747,
+    "y": 3073,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13182,
+    "x": 1751,
+    "y": 3072,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Emelio",
+    "id": 13804,
+    "x": 1754,
+    "y": 3075,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Master Farmer",
+    "id": 13242,
+    "x": 1748,
+    "y": 3066,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13185,
+    "x": 1738,
+    "y": 3068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1738,
+    "y": 3071,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1743,
+    "y": 3065,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Master Farmer",
+    "id": 13241,
+    "x": 1736,
+    "y": 3062,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1740,
+    "y": 3061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Farmer",
+    "id": 13230,
+    "x": 1749,
+    "y": 3056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1731,
+    "y": 3057,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1730,
+    "y": 3056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1733,
+    "y": 3056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1734,
+    "y": 3054,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1732,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1733,
+    "y": 3051,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1735,
+    "y": 3050,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1737,
+    "y": 3051,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1739,
+    "y": 3050,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1736,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1739,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 1736,
+    "y": 3056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1735,
+    "y": 3057,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1754,
+    "y": 3055,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Citizen",
+    "id": 13169,
+    "x": 1762,
+    "y": 3074,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Child",
+    "id": 13174,
+    "x": 1766,
+    "y": 3075,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1769,
+    "y": 3077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1776,
+    "y": 3080,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1779,
+    "y": 3075,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13165,
+    "x": 1769,
+    "y": 3076,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rat",
+    "id": 2855,
+    "x": 1773,
+    "y": 3076,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1780,
+    "y": 3070,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Citizen",
+    "id": 13164,
+    "x": 1765,
+    "y": 3068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13170,
+    "x": 1774,
+    "y": 3064,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Citizen",
+    "id": 13171,
+    "x": 1765,
+    "y": 3062,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Spike",
+    "id": 13333,
+    "x": 1776,
+    "y": 3058,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1788,
+    "y": 3067,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1785,
+    "y": 3071,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ru Merald",
+    "id": 13157,
+    "x": 1844,
+    "y": 3071,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 1760,
+    "y": 3058,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fisher",
+    "id": 13252,
+    "x": 1774,
+    "y": 3048,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 13252
+  },
+  {
+    "name": "Fisher",
+    "id": 13252,
+    "x": 1770,
+    "y": 3042,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13166,
+    "x": 1756,
+    "y": 3046,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Molossus",
+    "id": 12999,
+    "x": 1748,
+    "y": 3050,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Xolo",
+    "id": 13000,
+    "x": 1749,
+    "y": 3049,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Lola",
+    "id": 12998,
+    "x": 1747,
+    "y": 3049,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13172,
+    "x": 1729,
+    "y": 3048,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1789,
+    "y": 3042,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1801,
+    "y": 3044,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 281,
+    "x": 1793,
+    "y": 3030,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 5936,
+    "x": 1798,
+    "y": 3051,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 7207,
+    "x": 1797,
+    "y": 3052,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 5936,
+    "x": 1799,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 7207,
+    "x": 1799,
+    "y": 3055,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 7207,
+    "x": 1804,
+    "y": 3054,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 5936,
+    "x": 1794,
+    "y": 3054,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 7207,
+    "x": 1791,
+    "y": 3052,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 5936,
+    "x": 1793,
+    "y": 3050,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 7207,
+    "x": 1787,
+    "y": 3048,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 5936,
+    "x": 1785,
+    "y": 3048,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Sandy rocks",
+    "id": 5936,
+    "x": 1803,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Citizen",
+    "id": 13196,
+    "x": 1703,
+    "y": 3033,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Xolo",
+    "id": 12996,
+    "x": 1699,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Citizen",
+    "id": 13184,
+    "x": 1699,
+    "y": 3034,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13269,
+    "x": 1683,
+    "y": 3033,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Nelta of Ralos",
+    "id": 13262,
+    "x": 1684,
+    "y": 3032,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

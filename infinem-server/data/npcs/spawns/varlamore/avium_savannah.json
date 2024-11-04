@@ -1,0 +1,2171 @@
+[
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1759,
+    "y": 2987,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1755,
+    "y": 2990,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1760,
+    "y": 2997,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1760,
+    "y": 2997,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1758,
+    "y": 3000,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1756,
+    "y": 3027,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1727,
+    "y": 3026,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1723,
+    "y": 3028,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1721,
+    "y": 3022,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1706,
+    "y": 3020,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1686,
+    "y": 3024,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1692,
+    "y": 3018,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1698,
+    "y": 3016,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1698,
+    "y": 3008,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1709,
+    "y": 3012,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Capybara",
+    "id": 12966,
+    "x": 1687,
+    "y": 2992,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Capybara",
+    "id": 12967,
+    "x": 1678,
+    "y": 2993,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Capybara",
+    "id": 12965,
+    "x": 1702,
+    "y": 2988,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Capybara",
+    "id": 12965,
+    "x": 1703,
+    "y": 2987,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Capybara",
+    "id": 12965,
+    "x": 1701,
+    "y": 2987,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Capybara",
+    "id": 12965,
+    "x": 1686,
+    "y": 2980,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Tool Leprechaun",
+    "id": 12765,
+    "x": 1683,
+    "y": 2971,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Marcellus",
+    "id": 12935,
+    "x": 1686,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Capybara",
+    "id": 12961,
+    "x": 1672,
+    "y": 2981,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Capybara",
+    "id": 12961,
+    "x": 1676,
+    "y": 2981,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Capybara",
+    "id": 12962,
+    "x": 1678,
+    "y": 2980,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Capybara",
+    "id": 12961,
+    "x": 1680,
+    "y": 2978,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Capybara",
+    "id": 12961,
+    "x": 1685,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Capybara pup",
+    "id": 12963,
+    "x": 1687,
+    "y": 2978,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Flies",
+    "id": 13008,
+    "x": 1692,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Flies",
+    "id": 13008,
+    "x": 1699,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Flies",
+    "id": 13008,
+    "x": 1701,
+    "y": 2980,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Flies",
+    "id": 13008,
+    "x": 1694,
+    "y": 2985,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Frog",
+    "id": 12941,
+    "x": 1697,
+    "y": 2984,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Frog",
+    "id": 12949,
+    "x": 1695,
+    "y": 2986,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Frog",
+    "id": 12945,
+    "x": 1693,
+    "y": 2993,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Frog",
+    "id": 12937,
+    "x": 1694,
+    "y": 2995,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Flies",
+    "id": 13008,
+    "x": 1703,
+    "y": 2995,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Flies",
+    "id": 13008,
+    "x": 1708,
+    "y": 2988,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Frog",
+    "id": 12953,
+    "x": 1683,
+    "y": 3002,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1712,
+    "y": 2984,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1707,
+    "y": 2978,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1710,
+    "y": 2976,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1705,
+    "y": 2970,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Flies",
+    "id": 13008,
+    "x": 1704,
+    "y": 2974,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1720,
+    "y": 2992,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1727,
+    "y": 2993,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1724,
+    "y": 3002,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1714,
+    "y": 3006,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1726,
+    "y": 2982,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1737,
+    "y": 2990,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1732,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1728,
+    "y": 2971,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1732,
+    "y": 2942,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1727,
+    "y": 2946,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1708,
+    "y": 2927,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1719,
+    "y": 2926,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1721,
+    "y": 2930,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1714,
+    "y": 2930,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1712,
+    "y": 2925,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1710,
+    "y": 2938,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1706,
+    "y": 2933,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1702,
+    "y": 2938,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1706,
+    "y": 2944,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1709,
+    "y": 2922,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1704,
+    "y": 2928,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1700,
+    "y": 2923,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1697,
+    "y": 2929,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1695,
+    "y": 2936,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1682,
+    "y": 2923,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Harpy eagle",
+    "id": 13003,
+    "x": 1689,
+    "y": 2921,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1681,
+    "y": 2897,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1687,
+    "y": 2902,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1689,
+    "y": 2900,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1695,
+    "y": 2902,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1696,
+    "y": 2905,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1692,
+    "y": 2904,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1689,
+    "y": 2906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1693,
+    "y": 2908,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1696,
+    "y": 2910,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1695,
+    "y": 2912,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1690,
+    "y": 2911,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1687,
+    "y": 2904,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1688,
+    "y": 2908,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1689,
+    "y": 2913,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1692,
+    "y": 2912,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1691,
+    "y": 2900,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1697,
+    "y": 2900,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1698,
+    "y": 2903,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Harpie Bug Swarm",
+    "id": 464,
+    "x": 1691,
+    "y": 2906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Harpy eagle",
+    "id": 13003,
+    "x": 1677,
+    "y": 2903,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1643,
+    "y": 2947,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1651,
+    "y": 2948,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1646,
+    "y": 2954,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Harpy eagle",
+    "id": 13003,
+    "x": 1668,
+    "y": 2950,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1679,
+    "y": 2944,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1692,
+    "y": 2946,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1680,
+    "y": 2961,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Harpy eagle",
+    "id": 13003,
+    "x": 1687,
+    "y": 2960,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1658,
+    "y": 2974,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1650,
+    "y": 2970,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1646,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Fennec fox",
+    "id": 12980,
+    "x": 1645,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fennec fox",
+    "id": 12980,
+    "x": 1651,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fennec fox",
+    "id": 12980,
+    "x": 1647,
+    "y": 2980,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1638,
+    "y": 2980,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Fennec fox cub",
+    "id": 12981,
+    "x": 1643,
+    "y": 2978,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1654,
+    "y": 2987,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1652,
+    "y": 2993,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1646,
+    "y": 2988,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1638,
+    "y": 2990,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1638,
+    "y": 2998,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1641,
+    "y": 3007,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1662,
+    "y": 2996,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1661,
+    "y": 2999,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1666,
+    "y": 2998,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1669,
+    "y": 3000,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1671,
+    "y": 3002,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1665,
+    "y": 3001,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1662,
+    "y": 3004,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1666,
+    "y": 3007,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Flies",
+    "id": 13008,
+    "x": 1674,
+    "y": 3003,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Flies",
+    "id": 13008,
+    "x": 1684,
+    "y": 3003,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1679,
+    "y": 3016,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Harpy eagle",
+    "id": 13003,
+    "x": 1657,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1654,
+    "y": 3033,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1642,
+    "y": 3027,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1637,
+    "y": 3027,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1637,
+    "y": 3030,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1634,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1635,
+    "y": 3035,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1639,
+    "y": 3036,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1644,
+    "y": 3035,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1631,
+    "y": 3033,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Fennec fox cub",
+    "id": 12981,
+    "x": 1631,
+    "y": 3022,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fennec fox cub",
+    "id": 12981,
+    "x": 1630,
+    "y": 3019,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fennec fox",
+    "id": 12980,
+    "x": 1628,
+    "y": 3023,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fennec fox",
+    "id": 12980,
+    "x": 1633,
+    "y": 3023,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Fennec fox",
+    "id": 12980,
+    "x": 1629,
+    "y": 3017,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Fennec fox",
+    "id": 12980,
+    "x": 1626,
+    "y": 3020,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1613,
+    "y": 3039,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1611,
+    "y": 3048,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1613,
+    "y": 3026,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1605,
+    "y": 3025,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1610,
+    "y": 3021,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Harpy eagle",
+    "id": 13003,
+    "x": 1608,
+    "y": 3011,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1601,
+    "y": 3011,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1597,
+    "y": 3008,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1589,
+    "y": 3007,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1598,
+    "y": 3001,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1614,
+    "y": 3000,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1617,
+    "y": 2999,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1619,
+    "y": 2997,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1620,
+    "y": 2999,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1614,
+    "y": 2996,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1611,
+    "y": 2998,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1621,
+    "y": 2994,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1622,
+    "y": 2998,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1613,
+    "y": 2994,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pyre fox",
+    "id": 13138,
+    "x": 1617,
+    "y": 3003,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1630,
+    "y": 2985,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Ru Merald",
+    "id": 13157,
+    "x": 1612,
+    "y": 2978,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1607,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jaguar",
+    "id": 12976,
+    "x": 1609,
+    "y": 2981,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jaguar",
+    "id": 12976,
+    "x": 1606,
+    "y": 2985,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jaguar cub",
+    "id": 12977,
+    "x": 1608,
+    "y": 2983,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hill Giant",
+    "id": 12848,
+    "x": 1614,
+    "y": 2963,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 12849,
+    "x": 1621,
+    "y": 2964,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 12850,
+    "x": 1613,
+    "y": 2959,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 12849,
+    "x": 1617,
+    "y": 2956,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 12849,
+    "x": 1623,
+    "y": 2958,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 12850,
+    "x": 1619,
+    "y": 2960,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1585,
+    "y": 2985,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jaguar",
+    "id": 12976,
+    "x": 1581,
+    "y": 2980,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jaguar",
+    "id": 12976,
+    "x": 1577,
+    "y": 2979,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jaguar",
+    "id": 12976,
+    "x": 1583,
+    "y": 2977,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jaguar cub",
+    "id": 12977,
+    "x": 1579,
+    "y": 2983,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jaguar cub",
+    "id": 12977,
+    "x": 1575,
+    "y": 2981,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jaguar cub",
+    "id": 12977,
+    "x": 1579,
+    "y": 2978,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1566,
+    "y": 2995,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1549,
+    "y": 2971,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1552,
+    "y": 2966,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Picaria",
+    "id": 13158,
+    "x": 1559,
+    "y": 2960,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1542,
+    "y": 2992,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1539,
+    "y": 3014,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1531,
+    "y": 3021,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1524,
+    "y": 3019,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1523,
+    "y": 3028,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1517,
+    "y": 3015,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1511,
+    "y": 3015,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1509,
+    "y": 3020,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1505,
+    "y": 3015,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Green skink",
+    "id": 12972,
+    "x": 1504,
+    "y": 3008,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Toucan",
+    "id": 12983,
+    "x": 1499,
+    "y": 3005,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1495,
+    "y": 3007,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Green skink",
+    "id": 12973,
+    "x": 1490,
+    "y": 3014,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Toucan",
+    "id": 12983,
+    "x": 1489,
+    "y": 3016,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Toucan",
+    "id": 12983,
+    "x": 1492,
+    "y": 3023,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1485,
+    "y": 3030,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1488,
+    "y": 3035,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1493,
+    "y": 3037,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oryx",
+    "id": 13006,
+    "x": 1500,
+    "y": 3039,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1474,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1470,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1468,
+    "y": 3036,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1468,
+    "y": 3042,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1462,
+    "y": 3045,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12975,
+    "x": 1488,
+    "y": 3098,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1485,
+    "y": 3083,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunbeam skink",
+    "id": 12974,
+    "x": 1482,
+    "y": 3074,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1485,
+    "y": 3076,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1488,
+    "y": 3084,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Scorpion",
+    "id": 13001,
+    "x": 1482,
+    "y": 3071,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ru Merald",
+    "id": 13157,
+    "x": 1481,
+    "y": 3050,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1504,
+    "y": 3057,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1501,
+    "y": 3068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Harpy eagle",
+    "id": 13003,
+    "x": 1512,
+    "y": 3065,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Harpy eagle",
+    "id": 13003,
+    "x": 1510,
+    "y": 3080,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1511,
+    "y": 3070,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1527,
+    "y": 3061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Flies",
+    "id": 13007,
+    "x": 1530,
+    "y": 3068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1520,
+    "y": 3050,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1516,
+    "y": 3051,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1511,
+    "y": 3049,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1509,
+    "y": 3045,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1507,
+    "y": 3043,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1512,
+    "y": 3041,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1514,
+    "y": 3045,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1518,
+    "y": 3046,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1519,
+    "y": 3041,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1516,
+    "y": 3040,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1522,
+    "y": 3046,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Harpy eagle",
+    "id": 13003,
+    "x": 1530,
+    "y": 3060,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Embertailed jerboa",
+    "id": 13139,
+    "x": 1526,
+    "y": 3047,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1539,
+    "y": 3073,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1530,
+    "y": 3082,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1541,
+    "y": 3094,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1550,
+    "y": 3090,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Snake",
+    "id": 13002,
+    "x": 1550,
+    "y": 3078,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1575,
+    "y": 3076,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jerboa",
+    "id": 12982,
+    "x": 1602,
+    "y": 3061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  }
+]
