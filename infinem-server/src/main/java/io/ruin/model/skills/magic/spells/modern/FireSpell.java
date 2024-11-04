@@ -15,11 +15,6 @@ public class FireSpell extends TargetSpell {
             if (TomeOfFire.consumeCharge(hit.attacker.player, hit)) {
                 hit.boostDamage(0.5);
             }
-            //Ice Demon Fire Spell Damage Boost
-            if (target.npc != null && target.npc.getId() == 7585) {
-                hit.boostDamage(1.5);
-                hit.ignoreDefence();
-            }
         }
     }
 }
