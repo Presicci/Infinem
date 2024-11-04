@@ -2,6 +2,7 @@ package io.ruin.data.impl.npcs;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
+import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.utils.*;
 import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.cache.def.NPCDefinition;
@@ -18,6 +19,8 @@ import org.jsoup.select.Elements;
 import java.io.*;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -59,9 +62,6 @@ public class npc_combat extends DataFile {
                         System.err.println("[NPC_COMBAT] " + id + " is invalid npc id.");
                         continue;
                     }
-//                    if (def.combatInfo != null) {
-//                        System.err.println(def.id + ": " + def.name + " already has combat info set!");
-//                    }
                     def.combatInfo = info;
                     if (info.handler != null && !info.handler.isEmpty()) {
                         try {
@@ -74,13 +74,78 @@ public class npc_combat extends DataFile {
                             ServerWrapper.logError("Failed to combat info: " + def.id, e);
                         }
                     }
-                    //if(info.slayer_task != null && info.slayer_task.equalsIgnoreCase("NONE"))
-                    //    info.slayer_task = null;
                 }
             });
+            loadFromDatabase();
         }
 
         return list;
+    }
+
+    public static void loadFromDatabase() {
+        Server.gameDb.execute(connection -> {
+            PreparedStatement statement = null;
+            ResultSet rs;
+            try {
+                statement = connection.prepareStatement("select  * from npc_info");
+                rs = statement.executeQuery();
+                while (rs.next()) {
+                    NPCDefinition def = NPCDefinition.get(rs.getInt("id"));
+                    if (def == null) continue;
+                    if (def.combatInfo == null) def.combatInfo = new Info();
+                    Info info = def.combatInfo;
+                    String attributes = rs.getString("attributes");
+                    info.attributes = attributes.equalsIgnoreCase("null") ? null : attributes.split(", ");
+                    info.combat_xp_modifier = rs.getDouble("xpbonus");
+                    info.max_damage = rs.getInt("maxdamage");
+                    String attackStyle = rs.getString("attackstyle");
+                    info.attack_style = attackStyle.equalsIgnoreCase("null") ? AttackStyle.NONE : AttackStyle.valueOf(attackStyle);
+                    info.attack_ticks = rs.getInt("attackticks");
+                    info.slayer_level = rs.getInt("slayerlevel");
+                    info.slayer_xp = rs.getDouble("slayerxp");
+                    String tasks = rs.getString("slayertasks");
+                    info.slayer_tasks = tasks.equalsIgnoreCase("null") ? null : tasks.split(", ");
+                    info.hitpoints = rs.getInt("hitpoints");
+                    info.attack = rs.getInt("attack");
+                    info.strength = rs.getInt("strength");
+                    info.defence = rs.getInt("defence");
+                    info.magic = rs.getInt("magic");
+                    info.ranged = rs.getInt("ranged");
+                    info.attack_bonus = rs.getInt("attackbonus");
+                    info.strength_bonus = rs.getInt("strengthbonus");
+                    info.magic_attack = rs.getInt("magicattack");
+                    info.magic_damage_bonus = rs.getInt("magicdamagebonus");
+                    info.ranged_attack = rs.getInt("rangedattack");
+                    info.ranged_strength_bonus = rs.getInt("rangedatrengthbonus");
+                    info.stab_defence = rs.getInt("stabdefence");
+                    info.slash_defence = rs.getInt("slashdefence");
+                    info.crush_defence = rs.getInt("crushdefence");
+                    info.magic_defence = rs.getInt("magicdefence");
+                    info.elemental_weakness = rs.getString("elementalweakness");
+                    info.elemental_weakness_percent = rs.getInt("elementalweaknesspercent");
+                    info.light_range_defence = rs.getInt("lightrangedefence");
+                    info.medium_range_defence = rs.getInt("mediumrangedefence");
+                    info.heavy_range_defence = rs.getInt("heavyrangedefence");
+                    info.poison_immunity = rs.getInt("poisonimmunity") == 1;
+                    info.venom_immunity = rs.getInt("venomimmunity") == 1;
+                    String tagString = rs.getString("tags");
+                    if (tagString != null && !tagString.isEmpty()) {
+                        String[] tags = tagString.split("(?<!\\\\),");
+                        for (String tag : tags) {
+                            tag = tag.replace("\\,", ",");
+                            String[] parts = tag.split(":");
+                            switch (parts[0].toLowerCase()) {
+                                case "typeless":
+                                    info.typeless = true;
+                                    break;
+                            }
+                        }
+                    }
+                }
+            } finally {
+                DatabaseUtils.close(statement);
+            }
+        });
     }
 
     public static final class Info {
