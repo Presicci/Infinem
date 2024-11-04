@@ -69,6 +69,8 @@ public abstract class NPCCombat extends Combat {
                 info.crush_defence,
                 info.magic_defence,
                 info.ranged_defence,
+                info.light_range_defence,
+                info.heavy_range_defence,
         };
         if (info.poison > 0)
             setPoison(info.poison);
@@ -102,6 +104,8 @@ public abstract class NPCCombat extends Combat {
                 info.crush_defence,
                 info.magic_defence,
                 info.ranged_defence,
+                info.light_range_defence,
+                info.heavy_range_defence,
         };
     }
 

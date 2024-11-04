@@ -421,7 +421,7 @@ public class Hit {
 	}
 
 	public double getDefenceBonus(Entity target) {
-		return CombatUtils.getDefenceBonus(target, attackStyle);
+		return CombatUtils.getDefenceBonus(target, this);
 	}
 
 	/**

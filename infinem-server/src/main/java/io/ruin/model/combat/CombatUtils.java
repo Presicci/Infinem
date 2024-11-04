@@ -127,20 +127,36 @@ public class CombatUtils {
         }
     }
 
-    public static double getDefenceBonus(Entity entity, AttackStyle attackStyle) {
+    public static double getDefenceBonus(Entity entity, Hit hit) {
         double effectiveDefence = getEffectiveDefence(entity);
         double bonus = 0;
-        if(attackStyle == AttackStyle.MAGIC || attackStyle == AttackStyle.MAGICAL_RANGED || attackStyle == AttackStyle.MAGICAL_MELEE) {
+        AttackStyle attackStyle = hit.attackStyle;
+        if (attackStyle == AttackStyle.MAGIC || attackStyle == AttackStyle.MAGICAL_RANGED || attackStyle == AttackStyle.MAGICAL_MELEE) {
             effectiveDefence = getEffectiveMagicDefence(entity);
             bonus = entity.getCombat().getBonus(EquipmentStats.MAGIC_DEFENCE);
-        } else if(attackStyle == AttackStyle.STAB)
+        } else if (attackStyle == AttackStyle.STAB)
             bonus = entity.getCombat().getBonus(EquipmentStats.STAB_DEFENCE);
-        else if(attackStyle == AttackStyle.SLASH)
+        else if (attackStyle == AttackStyle.SLASH)
             bonus = entity.getCombat().getBonus(EquipmentStats.SLASH_DEFENCE);
-        else if(attackStyle == AttackStyle.CRUSH)
+        else if (attackStyle == AttackStyle.CRUSH)
             bonus = entity.getCombat().getBonus(EquipmentStats.CRUSH_DEFENCE);
-        else if(attackStyle == AttackStyle.RANGED || attackStyle == AttackStyle.RANGED_MAGIC || attackStyle == AttackStyle.RANGED_MELEE)
-            bonus = entity.getCombat().getBonus(EquipmentStats.RANGE_DEFENCE);
+        else if (attackStyle == AttackStyle.RANGED || attackStyle == AttackStyle.RANGED_MAGIC || attackStyle == AttackStyle.RANGED_MELEE) {
+            if (entity.isNpc()) {
+                ItemDefinition weapon = hit.attackWeapon;
+                RangedWeapon.DamageType damageType;
+                if (weapon.rangedWeapon != null) damageType = weapon.rangedWeapon.damageType;
+                else damageType = RangedWeapon.DamageType.STANDARD;
+                if (damageType == RangedWeapon.DamageType.LIGHT) {
+                    bonus = entity.getCombat().getBonus(10);
+                } else if (damageType == RangedWeapon.DamageType.HEAVY) {
+                    bonus = entity.getCombat().getBonus(11);
+                } else {
+                    bonus = entity.getCombat().getBonus(9);
+                }
+            } else {
+                bonus = entity.getCombat().getBonus(EquipmentStats.RANGE_DEFENCE);
+            }
+        }
         return effectiveDefence * (bonus + 64D);
     }
 

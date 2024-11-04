@@ -22,7 +22,7 @@ public class VestasLongsword implements Special {
         player.animate(7515);
         player.publicSound(2529);
         Hit hit = new Hit(player, attackStyle, attackType);
-        int sides = (int) CombatUtils.getDefenceBonus(target, hit.attackStyle);
+        int sides = (int) CombatUtils.getDefenceBonus(target, hit);
         int chance = (int) (sides * 0.75);
         if (Random.rollDie(sides, chance)) {
             hit.defenceIgnored = true;

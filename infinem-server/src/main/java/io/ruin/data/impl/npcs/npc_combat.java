@@ -51,6 +51,11 @@ public class npc_combat extends DataFile {
     }
 
     @Override
+    public void onLoadComplete() {
+        loadFromDatabase();
+    };
+
+    @Override
     public Object fromJson(String fileName, String json) {
         List<Info> list = JsonUtils.fromJson(json, List.class, Info.class);
 
@@ -81,7 +86,7 @@ public class npc_combat extends DataFile {
     }
 
     public static void loadFromDatabase() {
-        Server.gameDb.execute(connection -> {
+        Server.gameDb.executeAwait(connection -> {
             PreparedStatement statement = null;
             ResultSet rs;
             try {
@@ -122,7 +127,7 @@ public class npc_combat extends DataFile {
                     info.elemental_weakness = rs.getString("elementalweakness");
                     info.elemental_weakness_percent = rs.getInt("elementalweaknesspercent");
                     info.light_range_defence = rs.getInt("lightrangedefence");
-                    info.medium_range_defence = rs.getInt("mediumrangedefence");
+                    info.ranged_defence = rs.getInt("rangedefence");
                     info.heavy_range_defence = rs.getInt("heavyrangedefence");
                     info.poison_immunity = rs.getInt("poisonimmunity") == 1;
                     info.venom_immunity = rs.getInt("venomimmunity") == 1;
@@ -249,7 +254,6 @@ public class npc_combat extends DataFile {
         public String elemental_weakness;
         public int elemental_weakness_percent;
         public int light_range_defence;
-        public int medium_range_defence;
         public int heavy_range_defence;
 
     }
