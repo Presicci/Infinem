@@ -77,16 +77,11 @@ public class NPCInfoDumper {
                 int column = 0;
                 for (Element td : tr.children()) {
                     if (td.text().isEmpty()) {
-                        if (column == 1) return;
                         column++;
                         continue;
                     }
                     switch (column) {
                         case 1:
-                            if (td.text().isEmpty()) {
-                                // No combat level so skip getting info
-                                return;
-                            }
                             break;
                         case 2:
                             List<TextNode> attributes = td.textNodes();
@@ -131,6 +126,7 @@ public class NPCInfoDumper {
                             } catch (NumberFormatException e) {
                                 System.err.println("[NPCDUMP] Couldn't parse damage for " + id + "; " + td.text());
                             }
+                            if (damageString.isEmpty()) return;
                             break;
                         case 5:
                             if (td.text().toLowerCase().contains("typeless")) {
@@ -267,7 +263,7 @@ public class NPCInfoDumper {
                 Server.gameDb.execute(connection -> {
                     PreparedStatement statement = null;
                     try {
-                            statement = connection.prepareStatement("REPLACE INTO npc_info (id, name, tags, attributes, xpbonus, maxdamage, attackstyle, attackticks, " +
+                            statement = connection.prepareStatement("INSERT INTO npc_info (id, name, tags, attributes, xpbonus, maxdamage, attackstyle, attackticks, " +
                                     "slayerlevel, slayerxp, slayertasks, hitpoints, attack, strength, defence, magic, ranged, attackbonus, " +
                                     "strengthbonus, magicattack, magicdamagebonus, rangedattack, rangedatrengthbonus, " +
                                     "stabdefence, slashdefence, crushdefence, magicdefence, elementalweakness, elementalweaknesspercent, " +
