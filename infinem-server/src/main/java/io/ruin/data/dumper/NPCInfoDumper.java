@@ -246,7 +246,7 @@ public class NPCInfoDumper {
                             temp.light_range_defence = Integer.parseInt(td.text().replace(",", ""));
                             break;
                         case 29:
-                            temp.medium_range_defence = Integer.parseInt(td.text().replace(",", ""));
+                            temp.ranged_defence = Integer.parseInt(td.text().replace(",", ""));
                             break;
                         case 30:
                             temp.heavy_range_defence = Integer.parseInt(td.text().replace(",", ""));
@@ -267,7 +267,7 @@ public class NPCInfoDumper {
                                     "slayerlevel, slayerxp, slayertasks, hitpoints, attack, strength, defence, magic, ranged, attackbonus, " +
                                     "strengthbonus, magicattack, magicdamagebonus, rangedattack, rangedatrengthbonus, " +
                                     "stabdefence, slashdefence, crushdefence, magicdefence, elementalweakness, elementalweaknesspercent, " +
-                                    "lightrangedefence, mediumrangedefence, heavyrangedefence, poisonimmunity, venomimmunity) " +
+                                    "lightrangedefence, rangedefence, heavyrangedefence, poisonimmunity, venomimmunity) " +
                                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                             statement.setInt(1, id);
                             statement.setString(2, NPCDefinition.get(id).name);
@@ -299,7 +299,7 @@ public class NPCInfoDumper {
                             statement.setString(28, temp.elemental_weakness);
                             statement.setInt(29, temp.elemental_weakness_percent);
                             statement.setInt(30, temp.light_range_defence);
-                            statement.setInt(31, temp.medium_range_defence);
+                            statement.setInt(31, temp.ranged_defence);
                             statement.setInt(32, temp.heavy_range_defence);
                             statement.setInt(33, temp.poison_immunity ? 1 : 0);
                             statement.setInt(34, temp.venom_immunity ? 1 : 0);
