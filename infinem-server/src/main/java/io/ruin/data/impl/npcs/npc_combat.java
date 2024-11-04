@@ -76,9 +76,7 @@ public class npc_combat extends DataFile {
                     }
                 }
             });
-            loadFromDatabase();
         }
-
         return list;
     }
 

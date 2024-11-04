@@ -15,6 +15,7 @@ import io.ruin.cache.def.db.DBTableIndexDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.data.impl.items.item_info;
 import io.ruin.data.impl.login_set;
+import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.data.yaml.YamlLoader;
 import io.ruin.model.World;
 import io.ruin.model.combat.special.Special;
@@ -183,6 +184,7 @@ public class Server extends ServerWrapper {
         }
 
         item_info.loadFromDatabase();
+        npc_combat.loadFromDatabase();
 
         ShopManager.registerUI();
 
