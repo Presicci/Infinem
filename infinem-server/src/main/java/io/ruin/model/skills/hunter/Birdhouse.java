@@ -252,7 +252,6 @@ public class Birdhouse {
     private boolean hasRequirements(BirdHouses b) {
         StatList stats = player.getStats();
         if (player.getInventory().hasAtLeastOneOf(b.birdhouse) && stats.get(StatType.Hunter).currentLevel >= b.hunterLevel && stats.get(StatType.Crafting).currentLevel >= b.craftingLevel) {
-            logger.info("Has requirements!");
             return true;
         }
         return false;
