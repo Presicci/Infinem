@@ -137,7 +137,10 @@ public class BestiaryDef {
         put("tzhaar", new String[] { "tzhaar-hur", "tzhaar-ket", "tzhaar-mej", "tzhaar-xil" });
         put("fight cave tzhaar", new String[] { "tz-kek", "ket-zek", "tz-kih", "yt-hurkot", "yt-mejkot", "tok-xil" });
         put("inferno tzhaar", new String[] { "jal-zek", "jal-akrek-xil", "jal-xil", "jal-akrek-ket", "jal-akrek-mej", "jal-mejjak", "jal-mejrah", "jal-ak", "jal-nib", "jal-imkot", "jaltok-jad" });
+        put("colosseum adversary", new String[] { "fremennik warband berserker", "fremennik warband archer", "fremennik warband seer", "serpent shaman", "jaguar warrior", "javelin colossus",
+                "manticore", "shockwave colossus" });
         put("barbarian spirit", new String[] { "angry barbarian spirit", "berserk barbarian spirit", "enraged barbarian spirit", "ferocious barbarian spirit" });
+        put("bandosian sergeant", new String[] { "sergeant strongstack", "sergeant grimspike", "sergeant steelwill" });
     }};
 
     public static Map<String, String> REPLACEMENTS = new HashMap<String,String>() {{
@@ -174,6 +177,7 @@ public class BestiaryDef {
         put("insatiable mutated bloodveld", "mutated bloodveld");
         put("vitreous jelly", "jelly");
         put("vitreous warped jelly", "warped jelly");
+        put("bloodthirsty warped jelly", "warped jelly");
         put("spiked turoth", "turoth");                 //
         put("mutated terrorbird", "warped terrorbird"); //
         put("mutated tortoise", "warped tortoise");     //
@@ -192,11 +196,25 @@ public class BestiaryDef {
         put("night beast", "dark beast");
         put("nuclear smoke devil", "smoke devil");
         put("colossal hydra", "hydra");                 //
+        put("padulah", "");
+        put("nylocas hagios", "nylocas");
+        put("nylocas ischyros", "nylocas");
+        put("nylocas prinkipas", "nylocas");
+        put("nylocas toxobolos", "nylocas");
+        put("nylocas matomenos", "nylocas");
+        put("prifddinas guard", "elf warrior");
+        put("tyras guard", "guard");
+        put("glacies", "nex minion");
+        put("fumus", "nex minion");
+        put("umbra", "nex minion");
+        put("cruor", "nex minion");
     }};
 
     public static Map<Integer, String> REPLACEMENTS_BY_ID = new HashMap<Integer,String>() {{
         put(5054, "nightmares");
         put(6326, "nightmares");
+        put(12812, "colosseum adversary");  // Minotaur
+        put(12813, "colosseum adversary");  // Minotaur
     }};
 
     private static final Set<String> BOSS = new HashSet<String>() {{
@@ -253,6 +271,9 @@ public class BestiaryDef {
 
     // mage arena 2 npcs
     private static final String[] IGNORED = {
+            "scarab",
+            "gadderanks",
+            "acidic bloodveld",
             "colonel radick",
             "delrith",
             "evil spirit",
@@ -422,6 +443,8 @@ public class BestiaryDef {
                 ENTRIES.add(name);
         });
         System.out.println("Loaded " + ENTRIES.size() + " bestiary entries");
+
+        System.out.println(ENTRIES);
 
         LoginListener.register(player -> {
             var killcounts = player.getBestiary().getKillCounts();
