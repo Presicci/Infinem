@@ -32,7 +32,9 @@ public enum WallBeast {
     public void trigger(Player player) {
         NPC beast = null;
         for (NPC npc : player.localNpcs()) {
-            if (npc.getId() == 475 && npc.getPosition().equals(position)) {
+            if (npc.getId() == 475
+                    && npc.getPosition().equals(position)
+                    && player.getPosition().distance(npc.getPosition()) < 3) {
                 beast = npc;
                 break;
             }
@@ -70,7 +72,7 @@ public enum WallBeast {
                 e.delay(1);
                 finalBeast.transform(476);
                 finalBeast.targetPlayer(player, false);
-                finalBeast.attackTargetPlayer();
+                //finalBeast.attackTargetPlayer();
                 finalBeast.getCombat().delayAttack(4);
                 finalBeast.animate(1805);
                 finalBeast.publicSound(895, 10, 0);
