@@ -193,16 +193,16 @@ public enum DialogueLoaderAction {
             default:
                 npcName = "AUBURY";
                 break;
-            case 5034:
+            case 11433:
                 npcName = "SEDRIDOR";
                 break;
-            case 3248:
+            case 11400:
                 npcName = "DISTENTOR";
                 break;
-            case 5314:
+            case 8480:
                 npcName = "CROMPERTY";
                 break;
-            case 4913:
+            case 11431:
                 npcName = "BRIMSTAIL";
                 break;
         }

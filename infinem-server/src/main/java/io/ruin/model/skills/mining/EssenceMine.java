@@ -107,13 +107,13 @@ public class EssenceMine {
 
     static {
         ObjectAction.register(34825, 1, EssenceMine::leaveMine);
-        NPCAction.register(2886, "teleport", (player, npc) -> enterMine(player, npc, "AUBURY"));
-        NPCAction.register(11435, "teleport", (player, npc) -> enterMine(player, npc, "SEDRIDOR"));
-        NPCAction.register(5034, "talk-to", (player, npc) -> shopDialogue(player, npc, "SEDRIDOR"));
-        NPCAction.register(3248, "teleport", (player, npc) -> enterMine(player, npc, "DISTENTOR"));
+        NPCAction.register(11435, "teleport", (player, npc) -> enterMine(player, npc, "AUBURY"));
+        NPCAction.register(11433, "teleport", (player, npc) -> enterMine(player, npc, "SEDRIDOR"));
+        NPCAction.register(11433, "talk-to", (player, npc) -> shopDialogue(player, npc, "SEDRIDOR"));
+        NPCAction.register(11400, "teleport", (player, npc) -> enterMine(player, npc, "DISTENTOR"));
         NPCAction.register(8480, 3, (player, npc) -> enterMine(player, npc, "CROMPERTY"));
         NPCAction.register(8480, 1, (player, npc) -> dialogue(player, npc, "CROMPERTY"));
-        NPCAction.register(4913, "teleport", (player, npc) -> enterMine(player, npc, "BRIMSTAIL"));
-        NPCAction.register(4913, "talk-to", (player, npc) -> dialogue(player, npc, "BRIMSTAIL"));
+        NPCAction.register(11431, "teleport", (player, npc) -> enterMine(player, npc, "BRIMSTAIL"));
+        NPCAction.register(11431, "talk-to", (player, npc) -> dialogue(player, npc, "BRIMSTAIL"));
     }
 }
