@@ -228,6 +228,7 @@ public class Slayer {
             Config.SLAYER_POINTS.set(player, current + points);
             player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASKCOMPL, 1, true);
         }
+        SlayerMaster.sendTask(player);
         return am;
     }
 

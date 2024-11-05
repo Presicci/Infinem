@@ -516,6 +516,8 @@ public class Config {
 
     public static final Config SLAYER_POINTS = varpbit(4068, true);
     public static final Config SLAYER_MASTER = varpbit(4067, true);
+    public static final Config SLAYER_TASK_BOSS = varpbit(4723, false);
+    public static final Config SLAYER_STREAK = varpbit(4069, false);
 
     public static final Config[] BLOCKED_TASKS = {
             varpbit(3209, true),

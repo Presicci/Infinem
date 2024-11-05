@@ -108,6 +108,7 @@ public enum Master {
         if (this == KONAR) KonarData.assignLocation(player, def.getCreatureUid());
         assignTaskToPartner(player);
         taskDialogue(player);
+        SlayerMaster.sendTask(player);
     }
 
     private void assignTaskToPartner(Player player) {

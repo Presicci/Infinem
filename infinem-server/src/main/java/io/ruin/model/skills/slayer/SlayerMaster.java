@@ -322,14 +322,13 @@ public class SlayerMaster {
             String name = SlayerCreature.taskName(player, task);
             String location = "";
             int master = Config.SLAYER_MASTER.get(player);
-
             if (master == KRYSTILIA_ID && bossTask == 0) {
                 location = " in the wilderness";
             } else if (master == KONAR_ID && bossTask == 0) {
                 location = " at the " + KonarData.TaskLocation.values()[player.slayerLocation].getName();
             }
-
             player.sendMessage("You're assigned to kill " + name + "" + location + "; only " + amount + " more to go.");
+            sendTask(player);
         } else {
             player.sendMessage("You need something new to hunt.");
         }
@@ -341,6 +340,18 @@ public class SlayerMaster {
                     + "<br>points:" + Config.SLAYER_POINTS.get(player)
             );
         player.getTaskManager().doLookupByUUID(31, 1);  // Check Your Slayer Task
+    }
+
+    /**
+     * Sends task information to the player, enables the slayer plugin.
+     */
+    public static void sendTask(Player player) {
+        KonarData.TaskLocation loc = KonarData.TaskLocation.values()[player.slayerLocation];
+        player.getPacketSender().sendVarp(394, Slayer.getTaskAmount(player));
+        player.getPacketSender().sendVarp(395, Slayer.getTask(player));
+        Config.SLAYER_TASK_BOSS.set(player, Slayer.getBossTask(player));
+        Config.SLAYER_STREAK.set(player, player.slayerSpree);
+        if (loc != null) player.getPacketSender().sendVarp(2096, loc.getEnumId());
     }
 
     private static int getMasterNPCId(Player player) {
