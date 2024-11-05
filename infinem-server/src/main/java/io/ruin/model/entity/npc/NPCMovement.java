@@ -54,7 +54,7 @@ public class NPCMovement extends Movement {
             return;
         if(!npc.isRandomWalkAllowed())
             return;
-        if(!Random.rollDie(4, 1))
+        if(!Random.rollDie(10, 1))
             return;
         NPCCombat combat = npc.getCombat();
         if(combat != null && (combat.isDead() || combat.getTarget() != null))
