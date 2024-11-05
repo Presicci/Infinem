@@ -1,5 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
+import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
@@ -71,6 +72,8 @@ public enum Signpost {
                 player.openInterface(InterfaceType.MAIN, 135);
                 // Move the camera so its facing north
                 player.getPacketSender().sendClientScript(143, "ii", 280, 0);
+                player.getPacketSender().moveCameraToLocation(3235, 3221, 1500, 2, 10);
+                player.getPacketSender().turnCameraToLocation(3235, 3230, 450, 2, 10);
                 // Tanned background behind interface
                 //player.getPacketSender().sendClientScript(917, "ii", 10786175, 200);
                 // Assign the corresponding directions to the signpost
@@ -78,7 +81,12 @@ public enum Signpost {
                 player.getPacketSender().sendString(135, 7, signpost.east);
                 player.getPacketSender().sendString(135, 8, signpost.south);
                 player.getPacketSender().sendString(135, 11, signpost.west);
+                //
+                player.getPacketSender().sendClientScript(2524, "ii", -1, -1);
             });
         }
+        InterfaceHandler.register(135, h -> {
+            h.closedAction = (player, integer) -> player.getPacketSender().resetCamera();
+        });
     }
 }
