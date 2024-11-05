@@ -2962,9 +2962,9 @@ public class Administrator {
                 if (npcs.size() <= 0) {
                     player.sendMessage("No npcs found.");
                 } else {
-                    player.sendMessage("Found " + npcs.size() + " objects with showid " + showid + ":");
+                    player.sendMessage("Found " + npcs.size() + " npcs with showid " + showid + ":");
                     for (NPCDefinition def : npcs) {
-                        player.sendMessage(def.id + "");
+                        player.sendMessage(def.id + " - " + "V: " + def.varpId + ", VB: " + def.varpbitId);
                     }
                 }
                 return true;
