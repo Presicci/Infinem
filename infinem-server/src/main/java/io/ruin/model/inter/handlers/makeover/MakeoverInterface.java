@@ -29,9 +29,8 @@ public class MakeoverInterface {
 
     public static void open(Player player, MakeoverType type, NPC npc) {
         player.putTemporaryAttribute(NPC_KEY, npc);
-        player.setInterfaceUnderlay(-1, -2);
         INTERFACE_TYPE.setInstant(player, type.ordinal());
-        player.openInterface(InterfaceType.MAIN, 516);
+        player.openResizeableInterface(InterfaceType.MAIN, 516);
         player.getPacketSender().sendAccessMask(516, 7, 0, 300, AccessMasks.ClickOp1);  // Styles
         player.getPacketSender().sendAccessMask(516, 24, 0, 59, AccessMasks.ClickOp1);  // Colors
         player.getPacketSender().sendAccessMask(516, 27, 9, 9, AccessMasks.ClickOp1);   // Apply
@@ -114,6 +113,7 @@ public class MakeoverInterface {
     }
 
     private static void clickMakeoverType(Player player, int slot) {
+        player.closeInterface(InterfaceType.MAIN);
         if (slot == 14) {
             BodyTypeInterface.open(player);
         } else {
