@@ -289,7 +289,7 @@ public class NPCDefinition {
         }
 
         attackOption = getOption("attack", "fight");
-        flightClipping = name.toLowerCase().contains("impling") || name.toLowerCase().contains("butterfly")
+        flightClipping = name.toLowerCase().contains("impling") || name.toLowerCase().contains("butterfly") || name.toLowerCase().contains("gull")
                 || id == 5317;  // Eagle
     }
 
