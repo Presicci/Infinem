@@ -12,12 +12,10 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public class FossilIslandDungeon {
 
     public static void handlePosition31485(Player player) {
-        if (player.getPosition().getX() == 3607 && player.getPosition().getY() == 10291) {
-            player.getMovement().teleport(new Position(3603, 10291, 0));
+        if (player.getPosition().getX() == 3603) {
+            player.getMovement().teleport(new Position(3607, 10291, 0));
         } else {
-            if (player.getPosition().getX() == 3603 && player.getPosition().getY() == 10291) {
-                player.getMovement().teleport(new Position(3607, 10291, 0));
-            }
+            player.getMovement().teleport(new Position(3603, 10291, 0));
         }
     }
 
