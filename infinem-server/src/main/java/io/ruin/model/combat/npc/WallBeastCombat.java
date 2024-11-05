@@ -9,7 +9,10 @@ import io.ruin.model.entity.npc.NPCCombat;
 public class WallBeastCombat extends NPCCombat {
     @Override
     public void init() {
-        npc.deathEndListener = (entity, killer, killHit) -> npc.transform(475);
+        npc.deathEndListener = (entity, killer, killHit) -> {
+            npc.transform(475);
+            npc.getCombat().reset();
+        };
     }
 
     @Override
@@ -19,6 +22,8 @@ public class WallBeastCombat extends NPCCombat {
 
     @Override
     public boolean attack() {
+        if (npc.getId() != 476)
+            return false;
         if (!withinDistance(2))
             return false;
         basicAttack();
