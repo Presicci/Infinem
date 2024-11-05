@@ -75,7 +75,9 @@ public class MonsterExamine extends Spell {
                 "<col=bebebe>Slash: " + (int) examined.getCombat().getBonus(6) + "<br>" +
                 "<col=bebebe>Crush: " + (int) examined.getCombat().getBonus(7) + "<br>" +
                 "<col=bebebe>Magic: " + (int) examined.getCombat().getBonus(8) + "<br>" +
-                "<col=bebebe>Ranged: " + (int) examined.getCombat().getBonus(9) + "<br>"
+                "<col=bebebe>Light ranged: " + (int) examined.getCombat().getBonus(10) + "<br>" +
+                "<col=bebebe>Standard ranged: " + (int) examined.getCombat().getBonus(9) + "<br>" +
+                "<col=bebebe>Heavy ranged: " + (int) examined.getCombat().getBonus(11) + "<br>"
         );
     }
 
