@@ -114,7 +114,13 @@ public class npc_combat extends DataFile {
                     info.defence = rs.getInt("defence");
                     info.magic = rs.getInt("magic");
                     info.ranged = rs.getInt("ranged");
-                    info.attack_bonus = rs.getInt("attackbonus");
+                    if (info.attack_style == AttackStyle.CRUSH) {
+                        info.crush_attack = rs.getInt("attackbonus");
+                    } else if (info.attack_style == AttackStyle.STAB) {
+                        info.stab_attack = rs.getInt("attackbonus");
+                    } else {
+                        info.slash_attack = rs.getInt("attackbonus");
+                    }
                     info.strength_bonus = rs.getInt("strengthbonus");
                     info.magic_attack = rs.getInt("magicattack");
                     info.magic_damage_bonus = rs.getInt("magicdamagebonus");
