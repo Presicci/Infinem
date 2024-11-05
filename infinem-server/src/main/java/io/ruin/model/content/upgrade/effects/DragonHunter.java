@@ -21,7 +21,7 @@ public class DragonHunter extends ItemUpgrade {
 
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {
-        if (hit.attacker != null && hit.attacker.npc != null && hit.attacker.npc.getDef().hasCustomValue("DRAGON")) {
+        if (hit.attacker != null && hit.attacker.npc != null && hit.attacker.npc.getDef().hasAttribute("DRAGON")) {
             hit.boostDamage(boost);
         }
     }

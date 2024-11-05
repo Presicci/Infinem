@@ -86,7 +86,7 @@ public enum BaneWeapon {
     }
 
     private static void onHit(Hit hit, Entity target, BaneWeapon weapon) {
-        if (target == null || target.isPlayer() || !target.npc.getDef().hasCustomValue(weapon.tagKey) || hit.attackStyle == null || !weapon.predicate.test(hit.attackStyle))
+        if (target == null || target.isPlayer() || !target.npc.getDef().hasAttribute(weapon.tagKey) || hit.attackStyle == null || !weapon.predicate.test(hit.attackStyle))
             return;
         if (weapon.attackBoost > 0) {
             System.out.println(weapon.name() + " boosting attack by " + weapon.attackBoost);
@@ -99,7 +99,7 @@ public enum BaneWeapon {
     }
 
     private static void onHitOtherEffect(Hit hit, Entity target, BaneWeapon weapon) {
-        if (target == null || target.isPlayer() || !target.npc.getDef().hasCustomValue(weapon.tagKey) || hit.attackStyle == null || !weapon.predicate.test(hit.attackStyle))
+        if (target == null || target.isPlayer() || !target.npc.getDef().hasAttribute(weapon.tagKey) || hit.attackStyle == null || !weapon.predicate.test(hit.attackStyle))
             return;
         if (weapon.otherEffects != null) {
             weapon.otherEffects.accept(hit);

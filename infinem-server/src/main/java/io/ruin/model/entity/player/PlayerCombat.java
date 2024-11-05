@@ -912,7 +912,7 @@ public class PlayerCombat extends Combat {
             if (amulet == null) {
                 return false;
             }
-            if (!target.npc.getDef().hasCustomValue("UNDEAD")) {
+            if (!target.npc.getDef().hasAttribute("UNDEAD")) {
                 return false;
             }
             int amuletId = amulet.getId();

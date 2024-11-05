@@ -14,7 +14,7 @@ public class DemonsLight extends ItemUpgrade {
 
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {
-        if (hit.attacker != null && hit.attacker.npc != null && hit.attacker.npc.getDef().hasCustomValue("DEMON")) {
+        if (hit.attacker != null && hit.attacker.npc != null && hit.attacker.npc.getDef().hasAttribute("DEMON")) {
             hit.boostDamage(0.05);
         }
     }

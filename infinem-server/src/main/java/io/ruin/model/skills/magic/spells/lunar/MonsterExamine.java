@@ -85,16 +85,16 @@ public class MonsterExamine extends Spell {
         sb.append("<col=bebebe>Is ").append(SlayerCreature.isSlayerCreature(examined) ? "not " : "").append("a slayer monster.<br>");
         sb.append("<col=bebebe>").append(examined.getCombat().getInfo().poison_immunity ? "Immune to poison." : "Can be poisoned.").append("<br>");
         sb.append("<col=bebebe>").append(examined.getCombat().getInfo().venom_immunity ? "Immune to venom." : "Can be envenomed.").append("<br>");
-        if (examined.getDef().hasCustomValue("DRAGON")) {
+        if (examined.getDef().hasAttribute("DRAGON")) {
             sb.append("<col=bebebe>Draconic.<br>");
         }
-        if (examined.getDef().hasCustomValue("DEMON")) {
+        if (examined.getDef().hasAttribute("DEMON")) {
             sb.append("<col=bebebe>Demonic.<br>");
         }
-        if (examined.getDef().hasCustomValue("SPECTRAL")) {
+        if (examined.getDef().hasAttribute("SPECTRAL")) {
             sb.append("<col=bebebe>Spectral.<br>");
         }
-        if (examined.getDef().hasCustomValue("UNDEAD")) {
+        if (examined.getDef().hasAttribute("UNDEAD")) {
             sb.append("<col=bebebe>Undead.<br>");
         }
         player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 26, sb.toString());

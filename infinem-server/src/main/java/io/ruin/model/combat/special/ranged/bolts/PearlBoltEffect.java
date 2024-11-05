@@ -36,7 +36,7 @@ public class PearlBoltEffect extends BoltEffect {
                 return false;
             newDamage += (int) (hit.attacker.player.getStats().get(StatType.Ranged).currentLevel * (hasFire ? 0.06 : 0.05));
         } else if (target.npc != null) {
-            boolean fireMonster = target.npc.getDef().hasCustomValue("FIERY");
+            boolean fireMonster = target.npc.getDef().hasAttribute("fiery");
             newDamage += (int) (hit.attacker.player.getStats().get(StatType.Ranged).currentLevel * (fireMonster ? 0.06 : 0.05));
         }
         target.graphics(750);
