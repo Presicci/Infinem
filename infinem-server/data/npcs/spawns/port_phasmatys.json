@@ -508,5 +508,14 @@
     "z": 1,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Ak-Haranu",
+    "id": 5859,
+    "x": 3690,
+    "y": 3496,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
   }
 ]
