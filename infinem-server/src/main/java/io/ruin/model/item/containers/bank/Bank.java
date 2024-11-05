@@ -687,7 +687,7 @@ public class Bank extends ItemContainerG<BankItem> {
                 @Override
                 public void handleDrag(Player player, int fromSlot, int fromItemId, int toInterfaceId, int toChildId, int toSlot, int toItemId) {
                     if(toChildId == 11) {
-                        player.getBank().changeTab(fromSlot, toItemId, toSlot);
+                        player.getBank().changeTab(fromSlot, fromItemId, toSlot);
                         return;
                     }
                     if(toChildId == 13) {
