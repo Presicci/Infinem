@@ -221,13 +221,13 @@ public class npc_combat extends DataFile {
          * Speeds
          */
 
-        @Expose public int attack_ticks, death_ticks, respawn_ticks;
+        @Expose public int attack_ticks = 4, death_ticks = 2, respawn_ticks = 50;
 
         /**
          * Anims
          */
 
-        @Expose public int spawn_animation, attack_animation, defend_animation, death_animation;
+        @Expose public int spawn_animation = -1, attack_animation = -1, defend_animation = -1, death_animation = -1;
 
         /**
          * Sounds
