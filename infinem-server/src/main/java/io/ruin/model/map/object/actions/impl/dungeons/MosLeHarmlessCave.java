@@ -12,6 +12,7 @@ public class MosLeHarmlessCave {
         // Main entrance
         ObjectAction.register(3650, 3748, 2973, 0, "enter", (player, obj) -> player.getMovement().teleport(3748, 9373, 0));
         // Main exit
+        ObjectAction.register(6702, 3749, 9374, 0, "exit", (player, obj) -> player.getMovement().teleport(3749, 2974, 0));
         ObjectAction.register(5553, 3749, 9373, 0, "exit", (player, obj) -> player.getMovement().teleport(3749, 2973, 0));
         // Back entrances
         ObjectAction.register(5270, 3814, 3062, 0, "climb-down", (player, obj) -> player.getMovement().teleport(3816, 9463, 0));
