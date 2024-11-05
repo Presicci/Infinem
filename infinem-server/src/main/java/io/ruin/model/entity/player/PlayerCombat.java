@@ -643,7 +643,7 @@ public class PlayerCombat extends Combat {
 
     public void removeAmmo(Item ammo, Hit... hits) {
         if(rangedData.alwaysBreak) {
-            ammo.remove(hits.length);
+            if (!player.getRelicManager().hasRelicEnalbed(Relic.DEADEYE) || Random.rollDie(2)) ammo.remove(hits.length);
             return;
         }
         for(Hit hit : hits) {
