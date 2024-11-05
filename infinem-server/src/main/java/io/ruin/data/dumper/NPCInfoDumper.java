@@ -29,6 +29,7 @@ public class NPCInfoDumper {
         for (NPCDefinition def : NPCDefinition.cached.values()) {
             if (dumped > dumpAmount && dumpAmount > 0) return;
             if (def.id < startingId) continue;
+            if (npc_combat.LOADED_FROM_DB.contains(def.id)) continue;
             new WikiDumper(def.id).run();
             dumped++;
         }
@@ -263,12 +264,14 @@ public class NPCInfoDumper {
                 Server.gameDb.execute(connection -> {
                     PreparedStatement statement = null;
                     try {
-                            statement = connection.prepareStatement("INSERT INTO npc_info (id, name, tags, attributes, xpbonus, maxdamage, attackstyle, attackticks, " +
+                            statement = connection.prepareStatement(
+                                    "INSERT INTO npc_info (id, name, tags, attributes, xpbonus, maxdamage, attackstyle, attackticks, " +
                                     "slayerlevel, slayerxp, slayertasks, hitpoints, attack, strength, defence, magic, ranged, attackbonus, " +
                                     "strengthbonus, magicattack, magicdamagebonus, rangedattack, rangedatrengthbonus, " +
                                     "stabdefence, slashdefence, crushdefence, magicdefence, elementalweakness, elementalweaknesspercent, " +
                                     "lightrangedefence, rangedefence, heavyrangedefence, poisonimmunity, venomimmunity) " +
-                                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
+                                    "ON DUPLICATE KEY UPDATE id=id");
                             statement.setInt(1, id);
                             statement.setString(2, NPCDefinition.get(id).name);
                             statement.setString(3, tags.toString());

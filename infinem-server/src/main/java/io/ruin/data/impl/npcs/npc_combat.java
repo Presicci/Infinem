@@ -85,6 +85,8 @@ public class npc_combat extends DataFile {
         return list;
     }
 
+    public static final Set<Integer> LOADED_FROM_DB = new HashSet<>();
+
     public static void loadFromDatabase() {
         Server.gameDb.executeAwait(connection -> {
             PreparedStatement statement = null;
@@ -95,6 +97,7 @@ public class npc_combat extends DataFile {
                 while (rs.next()) {
                     NPCDefinition def = NPCDefinition.get(rs.getInt("id"));
                     if (def == null) continue;
+                    LOADED_FROM_DB.add(def.id);
                     if (def.combatInfo == null) def.combatInfo = new Info();
                     Info info = def.combatInfo;
                     String attributes = rs.getString("attributes");
