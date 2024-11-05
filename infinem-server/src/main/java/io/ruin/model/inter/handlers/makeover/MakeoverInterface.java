@@ -38,7 +38,7 @@ public class MakeoverInterface {
         player.getPacketSender().sendAccessMask(516, 31, 9, 24, AccessMasks.ClickOp1);  // Dropdown navigation
         player.putTemporaryAttribute(TYPE_KEY, type);
         player.putTemporaryAttribute(ORIGINAL_STYLE_KEY, player.getAppearance().styles[type.getStyle().getAppearanceIndex()]);
-        player.putTemporaryAttribute(ORIGINAL_COLOR_KEY, player.getAppearance().colors[type.getColorIndex()]);
+        if (type != MakeoverType.HANDS) player.putTemporaryAttribute(ORIGINAL_COLOR_KEY, player.getAppearance().colors[type.getColorIndex()]);
         player.removeTemporaryAttribute(STYLE_KEY);
         player.removeTemporaryAttribute(COLOR_KEY);
         player.startEvent(e -> {
