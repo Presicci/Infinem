@@ -196,7 +196,7 @@ public class BestiaryDef {
         put("night beast", "dark beast");
         put("nuclear smoke devil", "smoke devil");
         put("colossal hydra", "hydra");                 //
-        put("padulah", "");
+        put("padulah", "monkey");
         put("nylocas hagios", "nylocas");
         put("nylocas ischyros", "nylocas");
         put("nylocas prinkipas", "nylocas");
