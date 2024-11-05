@@ -933,7 +933,7 @@
     "y": 3467,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -943,7 +943,7 @@
     "y": 3470,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -953,7 +953,7 @@
     "y": 3472,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -963,7 +963,7 @@
     "y": 3475,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -973,7 +973,7 @@
     "y": 3478,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -983,7 +983,7 @@
     "y": 3481,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -993,7 +993,7 @@
     "y": 3486,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -1003,7 +1003,7 @@
     "y": 3465,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -1013,7 +1013,7 @@
     "y": 3489,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -1023,7 +1023,7 @@
     "y": 3492,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -1033,7 +1033,7 @@
     "y": 3482,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -1043,7 +1043,7 @@
     "y": 3485,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -1053,7 +1053,7 @@
     "y": 3481,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -1063,7 +1063,7 @@
     "y": 3477,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -1073,7 +1073,7 @@
     "y": 3482,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -1103,7 +1103,7 @@
     "y": 3462,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -2346,7 +2346,7 @@
     "y": 3467,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -2356,7 +2356,7 @@
     "y": 3473,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -2366,7 +2366,7 @@
     "y": 3473,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -2376,7 +2376,7 @@
     "y": 3472,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -2386,7 +2386,7 @@
     "y": 3473,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -3416,7 +3416,7 @@
     "y": 3466,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },
@@ -3426,7 +3426,7 @@
     "y": 3462,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Sand Crab"
   },

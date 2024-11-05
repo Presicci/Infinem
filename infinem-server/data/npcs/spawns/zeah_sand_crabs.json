@@ -6,7 +6,7 @@
     "y": 3412,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -15,7 +15,7 @@
     "y": 3411,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -24,7 +24,7 @@
     "y": 3413,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -33,7 +33,7 @@
     "y": 3425,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -42,7 +42,7 @@
     "y": 3424,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -51,7 +51,7 @@
     "y": 3426,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -60,7 +60,7 @@
     "y": 3410,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -69,7 +69,7 @@
     "y": 3425,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -78,7 +78,7 @@
     "y": 3433,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -87,7 +87,7 @@
     "y": 3410,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -96,7 +96,7 @@
     "y": 3439,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -105,7 +105,7 @@
     "y": 3440,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -114,7 +114,7 @@
     "y": 3412,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -123,7 +123,7 @@
     "y": 3427,
     "z": 0,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -132,7 +132,7 @@
     "y": 3429,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -141,7 +141,7 @@
     "y": 3445,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -150,7 +150,7 @@
     "y": 3444,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -159,7 +159,7 @@
     "y": 3446,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -168,7 +168,7 @@
     "y": 3446,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -177,7 +177,7 @@
     "y": 3423,
     "z": 0,
     "direction": "S",
-    "walkRange": 5
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -186,7 +186,7 @@
     "y": 3409,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -195,7 +195,7 @@
     "y": 3408,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -204,7 +204,7 @@
     "y": 3409,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -213,7 +213,7 @@
     "y": 3470,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -222,7 +222,7 @@
     "y": 3447,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -231,7 +231,7 @@
     "y": 3412,
     "z": 0,
     "direction": "S",
-    "walkRange": 7
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -240,7 +240,7 @@
     "y": 3468,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -249,7 +249,7 @@
     "y": 3429,
     "z": 0,
     "direction": "S",
-    "walkRange": 6
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -258,7 +258,7 @@
     "y": 3432,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -267,7 +267,7 @@
     "y": 3425,
     "z": 0,
     "direction": "S",
-    "walkRange": 5
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -276,7 +276,7 @@
     "y": 3407,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -285,7 +285,7 @@
     "y": 3471,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sandicrahb",
@@ -303,7 +303,7 @@
     "y": 3467,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -312,7 +312,7 @@
     "y": 3406,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -321,7 +321,7 @@
     "y": 3408,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -330,7 +330,7 @@
     "y": 3413,
     "z": 0,
     "direction": "S",
-    "walkRange": 6
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -339,7 +339,7 @@
     "y": 3427,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -348,7 +348,7 @@
     "y": 3465,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -357,7 +357,7 @@
     "y": 3437,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -366,7 +366,7 @@
     "y": 3466,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -375,7 +375,7 @@
     "y": 3439,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -384,7 +384,7 @@
     "y": 3408,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -393,7 +393,7 @@
     "y": 3432,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -402,7 +402,7 @@
     "y": 3438,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -411,7 +411,7 @@
     "y": 3461,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -420,7 +420,7 @@
     "y": 3412,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -429,7 +429,7 @@
     "y": 3465,
     "z": 0,
     "direction": "S",
-    "walkRange": 6
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -438,7 +438,7 @@
     "y": 3404,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -447,7 +447,7 @@
     "y": 3460,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -456,7 +456,7 @@
     "y": 3403,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -465,7 +465,7 @@
     "y": 3404,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -474,7 +474,7 @@
     "y": 3462,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -483,7 +483,7 @@
     "y": 3405,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -492,7 +492,7 @@
     "y": 3406,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -501,7 +501,7 @@
     "y": 3468,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -510,7 +510,7 @@
     "y": 3469,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sandicrahb",
@@ -528,7 +528,7 @@
     "y": 3466,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -537,7 +537,7 @@
     "y": 3472,
     "z": 0,
     "direction": "S",
-    "walkRange": 6
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -546,7 +546,7 @@
     "y": 3467,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -555,7 +555,7 @@
     "y": 3469,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   },
   {
     "name": "Sand Crab",
@@ -564,6 +564,6 @@
     "y": 3469,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 0
   }
 ]
