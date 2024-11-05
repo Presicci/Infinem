@@ -14,7 +14,7 @@ import io.ruin.model.inter.utils.Option;
  */
 public class Patchy {
 
-    public final static int PATCHY = 1053;
+    public final static int PATCHY = 5870;
 
     private static void noThanks(Player player, NPC npc){
         player.dialogue(
