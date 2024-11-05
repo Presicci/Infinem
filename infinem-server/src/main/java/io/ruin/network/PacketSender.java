@@ -1088,19 +1088,19 @@ public class PacketSender {
     }
 
     public void hideObjectOptions(boolean state) {
-        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.HIDEOBJOPS.getPacketId())
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.HIDEOBJOPS.getPacketId())
                 .addByte(state ? 1 : 0);
         write(out);
     }
 
     public void hideNPCOptions(boolean state) {
-        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.HIDENPCOPS.getPacketId())
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.HIDENPCOPS.getPacketId())
                 .addByte(state ? 1 : 0);
         write(out);
     }
 
     public void hideGroundItemOptions(boolean state) {
-        OutBuffer out = new OutBuffer(2).sendFixedPacket(ServerPacket.HIDELOCOPS.getPacketId())
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.HIDELOCOPS.getPacketId())
                 .addByte(state ? 1 : 0);
         write(out);
     }
