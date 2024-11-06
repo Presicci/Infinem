@@ -1160,6 +1160,7 @@ public class Config {
     public static final Config PEST_CONTROL_ACTIVITY = varpbit(5662, false);
     private static final Config VARROCK_QUETZEL_SPOT = varpbit(9652, false).defaultValue(1);
     private static final Config AK_HARANU = varpbit(217, false).defaultValue(4);
+    private static final Config ZEMOUREGALS_BASE_ENTRANCE = varpbit(9655, false).defaultValue(10);
 
     /**
      * Elemental workshop

@@ -12,6 +12,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
     //DOWN(1, "climb-down", new Position(), new Position(), false),\
+    ZEMOUREGALS_BASE_ENTRANCE(50689, 1, new Position(3343, 3515), new Position(3560, 4552), false),
+    ZEMOUREGALS_BASE_EXIT(50143, "climb-up", new Position(3559, 4552), new Position(3342, 3515), true),
+
     JATIZSO_LADDER_UP(21395, "climb-up", new Position(2373, 3800), new Position(2372, 3800, 2), true),
     JATIZSO_LADDER_DOWN(21396, "climb-down", new Position(2373, 3800, 2), new Position(2372, 3800, 0), false),
 
