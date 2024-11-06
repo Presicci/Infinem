@@ -9,6 +9,7 @@ import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.inter.handlers.TabEquipment;
 import io.ruin.model.inter.handlers.TabInventory;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
 
@@ -36,6 +37,7 @@ public class BankEquipment {
         int actualAttackSpeed = player.getCombat().getAttackType() == AttackType.RAPID_RANGED ? baseAttackSpeed - 1 : baseAttackSpeed;
         player.getPacketSender().sendString(Interface.BANK, 132, "Base: " + df.format(baseAttackSpeed * 0.6));
         player.getPacketSender().sendString(Interface.BANK, 133, "Actual: " + df.format(actualAttackSpeed * 0.6));
+        Config.EQUIPMENT_SET_BONUS.set(player, EquipmentStats.getSetBonusIndex(player));
     }
 
     private static void clickEquippedItem(Player player, int option, int equipmentSlot) {
