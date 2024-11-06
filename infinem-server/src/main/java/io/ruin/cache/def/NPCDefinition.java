@@ -530,6 +530,7 @@ public class NPCDefinition {
     }
 
     public boolean hasAttribute(String attribute) {
+        if (combatInfo == null || combatInfo.attributes == null) return false;
         return Arrays.stream(combatInfo.attributes).anyMatch(att -> att.equalsIgnoreCase(attribute));
     }
 
