@@ -214,7 +214,7 @@ public enum Icon {
     GOLD_STAR(38),
     CROSSED_SWORDS(31),
     SKULL(9),
-    PET(67),
+    PET(76),
     SKILL_ICON(217),
     INVENTORY_BAG(242),
     SMILY(32),
