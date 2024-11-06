@@ -35,9 +35,8 @@ public class ChatHandler implements Incoming {
             in.readBytes(pattern);
         }
         int length = in.readSmart();
-        byte[] compressed = new byte[length];
+        byte[] compressed = new byte[in.remaining()];
         in.readBytes(compressed);
-
         String message = Huffman.decompress(compressed, length);
         if (message.isEmpty()) {
             /* how does this even happen? */

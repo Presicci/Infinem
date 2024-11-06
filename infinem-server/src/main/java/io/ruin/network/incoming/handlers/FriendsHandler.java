@@ -61,12 +61,10 @@ public class FriendsHandler implements Incoming {
             /**
              * Private message
              */
-            int len = in.readSmart();
-            byte[] compressed = new byte[len];
+            int length = in.readSmart();
+            byte[] compressed = new byte[in.remaining()];
             in.readBytes(compressed);
-
-            String message = Huffman.decompress(compressed, compressed.length);
-            System.out.println(name + ": " + message);
+            String message = Huffman.decompress(compressed, length);
             if (Punishment.isMuted(player)) {
                 if (player.shadowMute)
                     player.getPacketSender().write(Protocol.outgoingPm(name, message));
