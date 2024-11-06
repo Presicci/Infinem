@@ -161,115 +161,115 @@ public class Huffman {
         return (var7 + 7 >> 3) - offset;
     }
 
-    int decompress(byte[] var1, int var2, byte[] var3, int var4, int var5) {
-        if (var5 == 0) {
+    int decompress(byte[] compressed, int startingIndex, byte[] decompressed, int offset, int length) {
+        if (length == 0) {
             return 0;
         } else {
-            int var6 = 0;
-            var5 += var4;
-            int var7 = var2;
+            int key = 0;
+            length += offset;
+            int index = startingIndex;
             while (true) {
-                byte var8 = var1[var7];
-                if (var8 < 0) {
-                    var6 = this.keys[var6];
+                byte charByte = compressed[index];
+                if (charByte < 0) {
+                    key = this.keys[key];
                 } else {
-                    ++var6;
+                    ++key;
                 }
                 int var9;
-                if ((var9 = this.keys[var6]) < 0) {
-                    var3[var4++] = (byte)(~var9);
-                    if (var4 >= var5) {
+                if ((var9 = this.keys[key]) < 0) {
+                    decompressed[offset++] = (byte)(~var9);
+                    if (offset >= length) {
                         break;
                     }
-                    var6 = 0;
+                    key = 0;
                 }
-                if ((var8 & 64) != 0) {
-                    var6 = this.keys[var6];
+                if ((charByte & 64) != 0) {
+                    key = this.keys[key];
                 } else {
-                    ++var6;
+                    ++key;
                 }
-                if ((var9 = this.keys[var6]) < 0) {
-                    var3[var4++] = (byte)(~var9);
-                    if (var4 >= var5) {
+                if ((var9 = this.keys[key]) < 0) {
+                    decompressed[offset++] = (byte)(~var9);
+                    if (offset >= length) {
                         break;
                     }
-                    var6 = 0;
+                    key = 0;
                 }
-                if ((var8 & 32) != 0) {
-                    var6 = this.keys[var6];
+                if ((charByte & 32) != 0) {
+                    key = this.keys[key];
                 } else {
-                    ++var6;
+                    ++key;
                 }
-                if ((var9 = this.keys[var6]) < 0) {
-                    var3[var4++] = (byte)(~var9);
-                    if (var4 >= var5) {
+                if ((var9 = this.keys[key]) < 0) {
+                    decompressed[offset++] = (byte)(~var9);
+                    if (offset >= length) {
                         break;
                     }
-                    var6 = 0;
+                    key = 0;
                 }
-                if ((var8 & 16) != 0) {
-                    var6 = this.keys[var6];
+                if ((charByte & 16) != 0) {
+                    key = this.keys[key];
                 } else {
-                    ++var6;
+                    ++key;
                 }
-                if ((var9 = this.keys[var6]) < 0) {
-                    var3[var4++] = (byte)(~var9);
-                    if (var4 >= var5) {
+                if ((var9 = this.keys[key]) < 0) {
+                    decompressed[offset++] = (byte)(~var9);
+                    if (offset >= length) {
                         break;
                     }
-                    var6 = 0;
+                    key = 0;
                 }
-                if ((var8 & 8) != 0) {
-                    var6 = this.keys[var6];
+                if ((charByte & 8) != 0) {
+                    key = this.keys[key];
                 } else {
-                    ++var6;
+                    ++key;
                 }
-                if ((var9 = this.keys[var6]) < 0) {
-                    var3[var4++] = (byte)(~var9);
-                    if (var4 >= var5) {
+                if ((var9 = this.keys[key]) < 0) {
+                    decompressed[offset++] = (byte)(~var9);
+                    if (offset >= length) {
                         break;
                     }
-                    var6 = 0;
+                    key = 0;
                 }
-                if ((var8 & 4) != 0) {
-                    var6 = this.keys[var6];
+                if ((charByte & 4) != 0) {
+                    key = this.keys[key];
                 } else {
-                    ++var6;
+                    ++key;
                 }
-                if ((var9 = this.keys[var6]) < 0) {
-                    var3[var4++] = (byte)(~var9);
-                    if (var4 >= var5) {
+                if ((var9 = this.keys[key]) < 0) {
+                    decompressed[offset++] = (byte)(~var9);
+                    if (offset >= length) {
                         break;
                     }
-                    var6 = 0;
+                    key = 0;
                 }
-                if ((var8 & 2) != 0) {
-                    var6 = this.keys[var6];
+                if ((charByte & 2) != 0) {
+                    key = this.keys[key];
                 } else {
-                    ++var6;
+                    ++key;
                 }
-                if ((var9 = this.keys[var6]) < 0) {
-                    var3[var4++] = (byte)(~var9);
-                    if (var4 >= var5) {
+                if ((var9 = this.keys[key]) < 0) {
+                    decompressed[offset++] = (byte)(~var9);
+                    if (offset >= length) {
                         break;
                     }
-                    var6 = 0;
+                    key = 0;
                 }
-                if ((var8 & 1) != 0) {
-                    var6 = this.keys[var6];
+                if ((charByte & 1) != 0) {
+                    key = this.keys[key];
                 } else {
-                    ++var6;
+                    ++key;
                 }
-                if ((var9 = this.keys[var6]) < 0) {
-                    var3[var4++] = (byte)(~var9);
-                    if (var4 >= var5) {
+                if ((var9 = this.keys[key]) < 0) {
+                    decompressed[offset++] = (byte)(~var9);
+                    if (offset >= length) {
                         break;
                     }
-                    var6 = 0;
+                    key = 0;
                 }
-                ++var7;
+                ++index;
             }
-            return var7 + 1 - var2;
+            return index + 1 - startingIndex;
         }
     }
 
