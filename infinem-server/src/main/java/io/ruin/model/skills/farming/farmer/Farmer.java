@@ -15,10 +15,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.farming.patch.PatchData;
-import io.ruin.model.skills.farming.patch.impl.CelastrusPatch;
-import io.ruin.model.skills.farming.patch.impl.HardWoodTreePatch;
-import io.ruin.model.skills.farming.patch.impl.RedwoodPatch;
-import io.ruin.model.skills.farming.patch.impl.WoodTreePatch;
+import io.ruin.model.skills.farming.patch.impl.*;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
@@ -285,7 +282,7 @@ public enum Farmer {
     private static void dialogue(Player player, NPC npc, Farmer farmer) {
         Option patchOption = new Option("Would you look after my crops for me?", () -> lookAfterDialogue(player, npc, farmer));
         Patch patch = player.getFarming().getPatch(farmer.patch1);
-        if (patch instanceof WoodTreePatch || patch instanceof HardWoodTreePatch || patch instanceof RedwoodPatch || patch instanceof CelastrusPatch) {
+        if (patch instanceof WoodTreePatch || patch instanceof HardWoodTreePatch || patch instanceof RedwoodPatch || patch instanceof CelastrusPatch || patch instanceof FruitTreePatch) {
             if (patch.getPlantedCrop() != null && patch.getStage() >= patch.getPlantedCrop().getTotalStages() + 1) {  // Can clear
                 patchOption = new Option("Could you clear the patch for me?", () -> clearDialogue(player, npc, farmer));
             } else if (patch.getPlantedCrop() != null && patch.getStage() == patch.getPlantedCrop().getTotalStages()) {
