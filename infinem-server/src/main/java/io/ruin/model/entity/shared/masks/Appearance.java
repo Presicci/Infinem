@@ -287,6 +287,10 @@ public class Appearance extends UpdateMask {
                     item = new Item(transmogId);
                 }
             }
+            // Hide during a makeover
+            if (player.isVisibleInterface(516)) {
+                item = null;
+            }
             boolean hide = false;
             if(item != null) {
                 if(styleIndex == 0)
@@ -325,6 +329,10 @@ public class Appearance extends UpdateMask {
                         itemId = transmogId;
                     }
                 }
+            }
+            // Hide during a makeover
+            if (player.isVisibleInterface(516)) {
+                itemId = -1;
             }
             if(itemId == -1) {
                 if(styleIndex == -1)

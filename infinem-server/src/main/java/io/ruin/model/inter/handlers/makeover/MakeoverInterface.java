@@ -41,6 +41,7 @@ public class MakeoverInterface {
         if (type != MakeoverType.HANDS) player.putTemporaryAttribute(ORIGINAL_COLOR_KEY, player.getAppearance().colors[type.getColorIndex()]);
         player.removeTemporaryAttribute(STYLE_KEY);
         player.removeTemporaryAttribute(COLOR_KEY);
+        player.getAppearance().update();
         player.startEvent(e -> {
             while (player.isVisibleInterface(516) || player.isVisibleInterface(205)) {
                 World.sendGraphics(2372, 0, 0, player.getPosition());
