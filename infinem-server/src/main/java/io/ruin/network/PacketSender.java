@@ -87,8 +87,17 @@ public class PacketSender {
         player.getChannel().write(out.toBuffer()); //no encryption needed!
 
         sendRegion(true);
+
+        hideGroundItemOptions(true);
+        hideNPCOptions(true);
+        hideObjectOptions(true);
+
         sendActiveWorld();
         Region.update(player);
+
+        hideGroundItemOptions(false);
+        hideNPCOptions(false);
+        hideObjectOptions(false);
     }
 
     public void sendLogout() {
