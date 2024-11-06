@@ -1088,7 +1088,7 @@ public class PacketSender {
     }
 
     public void hideObjectOptions(boolean state) {
-        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.HIDEOBJOPS.getPacketId())
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.HIDELOCOPS.getPacketId())
                 .addByte(state ? 1 : 0);
         write(out);
     }
@@ -1100,7 +1100,7 @@ public class PacketSender {
     }
 
     public void hideGroundItemOptions(boolean state) {
-        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.HIDELOCOPS.getPacketId())
+        OutBuffer out = new OutBuffer(3).sendFixedPacket(ServerPacket.HIDEOBJOPS.getPacketId())
                 .addByte(state ? 1 : 0);
         write(out);
     }
