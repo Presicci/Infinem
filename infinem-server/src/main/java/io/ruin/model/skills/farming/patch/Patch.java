@@ -149,7 +149,9 @@ public abstract class Patch {
         if (plantedCrop == null && getStatus().raked == 0)
             /* do nothing */
             return;
-        if (plantedCrop == null && System.currentTimeMillis() - getStatus().lastWeedGrowth >= TimeUtils.getMinutesToMillis(4)) {
+        if (plantedCrop == null
+                && System.currentTimeMillis() - getStatus().lastWeedGrowth >= TimeUtils.getMinutesToMillis(4)
+                && System.currentTimeMillis() - player.getTemporaryAttributeIntOrZero("DELAY_WEEDS") >= TimeUtils.getMinutesToMillis(1)) {
             growWeeds();
             return;
         }
@@ -243,6 +245,7 @@ public abstract class Patch {
         getStatus().compost = 0;
         getStatus().raked = weeds ? 0 : 3;
         getStatus().farmerProtected = false;
+        player.putTemporaryAttribute("DELAY_WEEDS", System.currentTimeMillis());
         update();
     }
 
