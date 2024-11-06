@@ -144,7 +144,7 @@ public class CombatUtils {
             if (entity.isNpc()) {
                 ItemDefinition weapon = hit.attackWeapon;
                 RangedWeapon.DamageType damageType;
-                if (weapon.rangedWeapon != null) damageType = weapon.rangedWeapon.damageType;
+                if (weapon != null && weapon.rangedWeapon != null) damageType = weapon.rangedWeapon.damageType;
                 else damageType = RangedWeapon.DamageType.STANDARD;
                 if (damageType == RangedWeapon.DamageType.LIGHT) {
                     bonus = entity.getCombat().getBonus(10);
