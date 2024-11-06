@@ -1218,6 +1218,22 @@ public class Config {
     public static final Config BOSS_HEALTH_BAR_POSITION = varpbit(12401, false);
 
     /**
+     * Equipment Interface Set Effects
+     */
+    public static final Config EQUIPMENT_SET_BONUS = varpbit(10535, false);
+    // Graceful
+    public static final Config GRACEFUL_SET_PIECES = varpbit(10542, false);
+    public static final Config GRACEFUL_HOOD = varpbit(10536, false);
+    public static final Config GRACEFUL_TORSO = varpbit(10537, false);
+    public static final Config GRACEFUL_LEGS = varpbit(10538, false);
+    public static final Config GRACEFUL_GLOVES = varpbit(10540, false);
+    public static final Config GRACEFUL_BOOTS = varpbit(10539, false);
+    public static final Config GRACEFUL_CAPE = varpbit(10541, false);
+    public static final Config SWAMPBARK_SET_PIECES = varpbit(11792, false);
+    public static final Config BLOODBARK_SET_PIECES = varpbit(11793, false);
+    public static final Config ZEALOT_SET_PIECES = varpbit(11794, false);
+
+    /**
      * Separator
      */
 

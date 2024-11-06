@@ -1,14 +1,17 @@
 package io.ruin.model.inter.handlers;
 
 import io.ruin.model.combat.AttackType;
+import io.ruin.model.combat.SetEffect;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.skills.SkillingOutfit;
 
 import java.text.DecimalFormat;
 
@@ -106,6 +109,69 @@ public class EquipmentStats {
         int actualAttackSpeed = player.getCombat().getAttackType() == AttackType.RAPID_RANGED ? baseAttackSpeed - 1 : baseAttackSpeed;
         player.getPacketSender().sendString(84, 53, "Base: " + df.format(baseAttackSpeed * 0.6));
         player.getPacketSender().sendString(84, 54, "Actual: " + df.format(actualAttackSpeed * 0.6));
+        Config.EQUIPMENT_SET_BONUS.set(player, getSetBonusIndex(player));
+    }
+
+    // Enum 3047
+    public static int getSetBonusIndex(Player player) {
+        Config.GRACEFUL_SET_PIECES.set(player, SkillingOutfit.GRACEFUL.countSetPiecesForInterface(player));
+        Config.ZEALOT_SET_PIECES.set(player, SkillingOutfit.ZEALOT.countSetPiecesForInterface(player));
+        Config.SWAMPBARK_SET_PIECES.set(player, SetEffect.SWAMPBARK.numberOfPieces(player));
+        Config.BLOODBARK_SET_PIECES.set(player, SetEffect.BLOODBARK.numberOfPieces(player));
+        // 7 - Inquis
+        if (SkillingOutfit.GRACEFUL.hasPieces(player)) return 8;
+        if (SetEffect.OBSIDIAN_ARMOUR.hasPieces(player)) return 9;
+        if (SetEffect.VOID_MELEE.hasPieces(player)) return 10;
+        if (SetEffect.VOID_RANGE.hasPieces(player)) return 11;
+        if (SetEffect.ELITE_VOID_RANGE.hasPieces(player)) return 12;
+        if (SetEffect.VOID_MAGE.hasPieces(player)) return 13;
+        if (SetEffect.ELITE_VOID_MAGE.hasPieces(player)) return 14;
+        // 15 - Justiciar
+        if (SkillingOutfit.ANGLER.hasPieces(player)) return 16;
+        if (SkillingOutfit.LUMBERJACK.hasPieces(player)) return 17;
+        if (SkillingOutfit.PROSPECTOR.hasPieces(player)) return 18;
+        // 19 - Farmer
+        if (SkillingOutfit.PYROMANCER.hasPieces(player)) return 20;
+        // 21 - Shayzien
+        if (SkillingOutfit.ROGUE.hasPieces(player)) return 22;
+        if (SkillingOutfit.CONSTRUCTION.hasPieces(player)) return 23;
+        // 24 - Crystal armour
+        if (SetEffect.SWAMPBARK.hasPieces(player)) return 25;
+        if (SetEffect.BLOODBARK.hasPieces(player)) return 26;
+        if (SkillingOutfit.ZEALOT.hasPieces(player)) return 27;
+        // 28 - Spirit angler
+        // 29 - Virtus robes
+        // 30 - Raiments of the eye
+        // 31 - Smith's uniform
+        // 32 - Statius's equipment
+        // 33 - Vesta's equipment
+        // 34 - Morrigan's equipment
+        // 35 - Zuriel's equipment
+        // 36 - Statius's Corrupt Equipment
+        // 37 - Vesta's Corrupt Equipment
+        // 38 - Morrigan's Corrupt Equipment
+        // 39 - Zuriel's Corrupt Equipment
+        // 40 - Bloodrager Effect
+        // 41 - Frostweaver Effect
+        // 42 - Frostweaver Effect Set
+        // 43 - Eclipse Effect
+        // 44 - Hunter's Armour 60%
+        // 45 - Hunter's Armour 40%
+        // 46 - Hunter's Armour 20%
+        // 47 - Guild Hunter Outfit
+        if (SetEffect.AHRIM_DAMNED.hasPieces(player)) return 2001;
+        if (SetEffect.DHAROK_DAMNED.hasPieces(player)) return 2002;
+        if (SetEffect.GUTHAN_DAMNED.hasPieces(player)) return 2003;
+        if (SetEffect.KARIL_DAMNED.hasPieces(player)) return 2004;
+        if (SetEffect.TORAG_DAMNED.hasPieces(player)) return 2005;
+        if (SetEffect.VERAC_DAMNED.hasPieces(player)) return 2006;
+        if (SetEffect.AHRIM.hasPieces(player)) return 1;
+        if (SetEffect.DHAROK.hasPieces(player)) return 2;
+        if (SetEffect.GUTHAN.hasPieces(player)) return 3;
+        if (SetEffect.KARIL.hasPieces(player)) return 4;
+        if (SetEffect.TORAG.hasPieces(player)) return 5;
+        if (SetEffect.VERAC.hasPieces(player)) return 6;
+        return 0;
     }
 
     public static String asBonus(int value, boolean percent) {
