@@ -253,13 +253,23 @@ public enum Farmer {
         }
     }
 
-    private static void clearDialogue(Player player, NPC npc, Farmer farmer) {
+    private static void clearDialogue(Player player, NPC npc, Farmer farmer, boolean skipDialogue) {
         Patch patch = player.getFarming().getPatch(farmer.patch1);
         if (patch == null) {
             throw new IllegalArgumentException();
         }
         if (patch.getPlantedCrop() == null) {
             player.dialogue(new NPCDialogue(npc, "You don't have anything planted in that patch."));
+            return;
+        }
+        if (skipDialogue) {
+            if (!player.getInventory().contains(995, 200)) {
+                player.dialogue(new PlayerDialogue("My pockets are a little light at the moment, I'll take you up on that later."));
+                return;
+            }
+            player.getInventory().remove(995, 200);
+            patch.reset(false);
+            player.dialogue(new NPCDialogue(npc, "There you are friend, good as new."));
             return;
         }
         player.dialogue(new NPCDialogue(npc, "I can clear your patch for you if you pay me 200 coins."),
@@ -284,7 +294,7 @@ public enum Farmer {
         Patch patch = player.getFarming().getPatch(farmer.patch1);
         if (patch instanceof WoodTreePatch || patch instanceof HardWoodTreePatch || patch instanceof RedwoodPatch || patch instanceof CelastrusPatch || patch instanceof FruitTreePatch) {
             if (patch.getPlantedCrop() != null && patch.getStage() >= patch.getPlantedCrop().getTotalStages() + 1) {  // Can clear
-                patchOption = new Option("Could you clear the patch for me?", () -> clearDialogue(player, npc, farmer));
+                patchOption = new Option("Could you clear the patch for me?", () -> clearDialogue(player, npc, farmer, false));
             } else if (patch.getPlantedCrop() != null && patch.getStage() == patch.getPlantedCrop().getTotalStages()) {
                 patchOption = new Option("Could you clear the patch for me?",
                         new NPCDialogue(npc, "You should probably check its health first."),
@@ -314,6 +324,16 @@ public enum Farmer {
                                 new Option("Cactus", p -> attemptPayment(p, npc, PatchData.FARMING_GUILD_CACTUS))
                         ));
                     } else {
+                        Patch patch = player.getFarming().getPatch(farmer.patch1.getObjectId());
+                        if (patch instanceof WoodTreePatch || patch instanceof HardWoodTreePatch || patch instanceof RedwoodPatch || patch instanceof CelastrusPatch || patch instanceof FruitTreePatch) {
+                            if (patch.getPlantedCrop() != null && patch.getStage() >= patch.getPlantedCrop().getTotalStages() + 1) {  // Can clear
+                                clearDialogue(player, npc, farmer, true);
+                                return;
+                            } else if (patch.getPlantedCrop() != null && patch.getStage() == patch.getPlantedCrop().getTotalStages()) {
+                                player.dialogue(new NPCDialogue(npc, "You should probably check its health first."), new PlayerDialogue("Oh yeah, good idea."));
+                                return;
+                            }
+                        }
                         attemptPayment(player, npc, farmer.patch1);
                     }
                 });
