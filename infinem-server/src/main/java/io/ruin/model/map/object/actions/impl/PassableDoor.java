@@ -14,6 +14,8 @@ import lombok.AllArgsConstructor;
  * Created on 1/18/2022
  */
 public enum PassableDoor {
+    ZEMOUREGALS_BASE_1(50149, "open", new Position(3536, 4571), Direction.WEST),
+    ZEMOUREGALS_BASE_2(50150, "open", new Position(3540, 4597), Direction.WEST),
     HOLLOWS_WALL(5052, "search", new Position(3480, 9837), Direction.SOUTH),
     TROLL_STRONGHOLD_PRISON_DOOR(3780, "unlock", new Position(2848, 10107, 1), Direction.WEST),
     TAI_BWO_WANNAI_1(779, "open", new Position(2782, 3057), Direction.EAST),
