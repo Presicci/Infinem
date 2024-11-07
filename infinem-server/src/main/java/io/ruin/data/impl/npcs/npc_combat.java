@@ -98,8 +98,7 @@ public class npc_combat extends DataFile {
                     NPCDefinition def = NPCDefinition.get(rs.getInt("id"));
                     if (def == null) continue;
                     LOADED_FROM_DB.add(def.id);
-                    if (def.combatInfo == null) def.combatInfo = new Info();
-                    Info info = def.combatInfo;
+                    Info info = new Info();
                     String attributes = rs.getString("attributes");
                     info.attributes = attributes.equalsIgnoreCase("null") ? null : attributes.split(", ");
                     info.combat_xp_modifier = rs.getDouble("xpbonus");
@@ -153,6 +152,7 @@ public class npc_combat extends DataFile {
                             }
                         }
                     }
+                    def.combatInfo = info;
                 }
             } finally {
                 DatabaseUtils.close(statement);
