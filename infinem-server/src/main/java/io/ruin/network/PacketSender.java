@@ -94,10 +94,6 @@ public class PacketSender {
 
         sendActiveWorld();
         Region.update(player);
-
-        hideGroundItemOptions(false);
-        hideNPCOptions(false);
-        hideObjectOptions(false);
     }
 
     public void sendLogout() {
