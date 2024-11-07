@@ -74,6 +74,17 @@ public enum PassableDoor {
     public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset, Position objectOffset, int tempObjectId) {
         player.lock();
         World.startEvent(e -> {
+            if (doorOpenDirection == Direction.EAST || doorOpenDirection == Direction.WEST) {
+                if (player.getAbsY() != obj.y) {
+                    player.stepAbs(player.getAbsX(), obj.y, StepType.FORCE_WALK);
+                    e.delay(1);
+                }
+            } else {
+                if (player.getAbsX() != obj.x) {
+                    player.stepAbs(obj.x, player.getAbsY(), StepType.FORCE_WALK);
+                    e.delay(1);
+                }
+            }
             e.delay(1);
             Position tempGatePos = obj.getPosition().translate(
                     doorOpenDirection == Direction.EAST ? 1 : doorOpenDirection == Direction.WEST ? -1 : 0,
