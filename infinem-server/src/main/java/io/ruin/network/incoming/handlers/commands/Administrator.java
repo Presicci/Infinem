@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 import io.ruin.PersistentData;
 import io.ruin.api.utils.*;
 import io.ruin.cache.def.*;
+import io.ruin.cache.def.db.impl.music.MusicDB;
 import io.ruin.content.activities.event.TimedEventManager;
 import io.ruin.content.areas.wilderness.DeadmanChestEvent;
 import io.ruin.data.DataFile;
@@ -3319,6 +3320,18 @@ public class Administrator {
             }
             case "rollfragment": {
                 RelicFragment.generate();
+                return true;
+            }
+            case "searchmusic": {
+                if (args == null || args.length < 1) {
+                    player.sendMessage("Syntax: ::searchmusic [search string]");
+                    return true;
+                }
+                String searchString = args[0].toLowerCase();
+                MusicDB.ROWS.forEach(song -> {
+                    if (song.getName().toLowerCase().contains(searchString))
+                        System.out.println(song);
+                });
                 return true;
             }
         }
