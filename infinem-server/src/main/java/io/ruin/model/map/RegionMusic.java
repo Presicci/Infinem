@@ -25,12 +25,12 @@ public class RegionMusic {
         return music;
     }
 
-    private String name, hint;
-    private int musicId, duration;
+    private String name = "", hint = "";
+    private int musicId, duration = 0;
     private List<Integer> regionIds;
     private boolean defaultLocked;
 
     public Song getSong() {
-        return MusicDB.getSongByName(name.toLowerCase());
+        return MusicDB.getSongById(musicId);
     }
 }

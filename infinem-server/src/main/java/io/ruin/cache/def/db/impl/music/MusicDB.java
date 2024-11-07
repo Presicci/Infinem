@@ -16,6 +16,7 @@ public class MusicDB {
 
     public static final List<Song> ROWS = new ArrayList<>();
     public static final Map<String, Song> ROWS_BY_NAME = new HashMap<>();
+    public static final Map<Integer, Song> ROWS_BY_ID = new HashMap<>();
 
     public static Song getSongBySlot(int id) {
         return ROWS.get(id);
@@ -23,6 +24,10 @@ public class MusicDB {
 
     public static Song getSongByName(String name) {
         return ROWS_BY_NAME.get(name.toLowerCase());
+    }
+
+    public static Song getSongById(int id) {
+        return ROWS_BY_ID.get(id);
     }
 
     static {
@@ -37,6 +42,7 @@ public class MusicDB {
             Song song = new Song(row, ROWS.size());
             ROWS.add(song);
             ROWS_BY_NAME.put(song.getName().toLowerCase(), song);
+            ROWS_BY_ID.put(song.getId(), song);
         }
     }
 }
