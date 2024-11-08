@@ -152,7 +152,7 @@ public class npc_combat extends DataFile {
                             }
                         }
                     }
-                    def.combatInfo = info;
+                    if (info.hitpoints > 0) def.combatInfo = info;
                 }
             } catch (CloneNotSupportedException e) {
                 throw new RuntimeException(e);
