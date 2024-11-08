@@ -98,7 +98,7 @@ public class npc_combat extends DataFile {
                     NPCDefinition def = NPCDefinition.get(rs.getInt("id"));
                     if (def == null) continue;
                     LOADED_FROM_DB.add(def.id);
-                    Info info = new Info();
+                    Info info = def.combatInfo == null ? new Info() : (Info) def.combatInfo.clone();
                     String attributes = rs.getString("attributes");
                     info.attributes = attributes.equalsIgnoreCase("null") ? null : attributes.split(", ");
                     info.combat_xp_modifier = rs.getDouble("xpbonus");
@@ -154,13 +154,15 @@ public class npc_combat extends DataFile {
                     }
                     def.combatInfo = info;
                 }
+            } catch (CloneNotSupportedException e) {
+                throw new RuntimeException(e);
             } finally {
                 DatabaseUtils.close(statement);
             }
         });
     }
 
-    public static final class Info {
+    public static final class Info implements Cloneable {
 
         @Expose public int[] ids;
 
@@ -265,6 +267,10 @@ public class npc_combat extends DataFile {
         public int light_range_defence;
         public int heavy_range_defence;
 
+        @Override
+        protected Object clone() throws CloneNotSupportedException {
+            return super.clone();
+        }
     }
 
     /**
