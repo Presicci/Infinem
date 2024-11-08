@@ -34,8 +34,8 @@ public enum Ladder {
 
     ECTOFUNTUS_EXIT(16110, "climb-up", new Position(3668, 9888, 3), new Position(3654, 3519, 0), true),
 
-    BLUE_MOON_INN_BASEMENT_ENTRANCE(11803, "climb-down", new Position(3232, 3402), new Position(3232, 9801, 0), false),
-    BLUE_MOON_INN_BASEMENT_EXIT(11804, "climb-up", new Position(3232, 9802), new Position(3232, 3401, 0), true),
+    BLUE_MOON_INN_BASEMENT_ENTRANCE(11803, "climb-down", new Position(3231, 3401), new Position(3232, 9801, 0), false),
+    BLUE_MOON_INN_BASEMENT_EXIT(11804, "climb-up", new Position(3231, 9801), new Position(3230, 3401, 0), true),
 
     KRUK_DUNGEON_ENTRANCE(28810, 1, new Position(2714, 2788), new Position(2509, 9173, 1), false),
     KRUK_DUNGEON_EXIT(28676, "climb-up", new Position(2510, 9173, 1), new Position(2714, 2787), true),
