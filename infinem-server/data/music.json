@@ -5022,5 +5022,11 @@
     "hint": "unlocked during Darkness of Hallowvale.",
     "musicId": 646,
     "duration": 625
+  },
+  { // Undead army
+    "musicId": 779,
+    "regionIds": [
+      14151
+    ]
   }
 ]
