@@ -1,0 +1,54 @@
+[
+  {
+    "ids": [ 12720, 12721, 12722, 12723, 12724, 12725, 12726, 12727, 12728, 12729, 12730, 12731, 12732, 12733, 12734, 12735, 12736, 12737, 12738, 12739, 12740, 12741, 12742, 12743, 12744, 12745, 12746, 12747, 12748, 12749, 12755, 12756, 12757, 12758, 12759, 12760, 12761, 12762, 12763, 12764, 14113, 14114, 14115, 14116, 14117, 14118, 14119, 14120, 14121, 14122, 14135, 14136 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Runes and ammunition",
+        "weight": 351225,
+        "items": [
+          { "id": 890, "min": 12, "max": 12, "weight": 62500 },   //Adamant arrow
+          { "id": 565, "min": 4, "max": 10, "weight": 31300 },   //Blood rune
+          { "id": 562, "min": 10, "max": 20, "weight": 7810 },   //Chaos rune
+          { "id": 564, "min": 10, "max": 20, "weight": 23399 },   //Cosmic rune
+          { "id": 560, "min": 4, "max": 10, "weight": 7810 },   //Death rune
+          { "id": 561, "min": 4, "max": 10, "weight": 15600 },   //Nature rune
+          { "id": 7937, "min": 20, "max": 50, "weight": 93800 }   //Pure essence (noted)
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 499000,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 600063,
+        "items": [
+          { "id": 1199, "min": 1, "max": 1, "weight": 7810 },   //Adamant kiteshield
+          { "id": 1430, "min": 1, "max": 1, "weight": 23399 },   //Adamant mace
+          { "id": 995, "min": 10, "max": 20, "weight": 23399 },   //Coins
+          { "id": 995, "min": 50, "max": 400, "weight": 242000 },   //Coins
+          { "id": 222, "min": 2, "max": 6, "weight": 7810 },   //Eye of newt (noted)
+          { "id": 313, "min": 6, "max": 6, "weight": 7810 },   //Fishing bait
+          { "id": 8779, "min": 5, "max": 5, "weight": 46900 },   //Oak plank (noted)
+          { "id": 961, "min": 10, "max": 10, "weight": 39100 },   //Plank (noted)
+          { "id": 8781, "min": 2, "max": 2, "weight": 15600 }   //Teak plank (noted)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 13427,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 7810 },   //Clue scroll (hard)
+          { "id": 28813, "min": 1, "max": 1, "weight": 1250 },   //Broken zombie axe
+          { "id": 6807, "min": 1, "max": 1, "weight": 200 }   //Zombie champion scroll
+        ]
+      }
+    ]
+  }
+]
