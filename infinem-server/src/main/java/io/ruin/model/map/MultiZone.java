@@ -393,7 +393,27 @@ public class MultiZone {
                 new Bounds(2452, 10424, 2495, 10467, 0),
 
                 // Forthos dungeon spiders
-                new Bounds(1826, 9947, 1851, 9972, 0)
+                new Bounds(1826, 9947, 1851, 9972, 0),
+
+                // Varlamore sand crabs
+                new Bounds(1583, 2883, 1758, 2943, 0),
+                new Bounds(1583, 2944, 1662, 2957, 0),
+                new Bounds(1583, 2957, 1649, 2971, 0),
+
+                // Varlamore sunset coast
+                new Bounds(1491, 2965, 1546, 3004, 0),
+
+                // Varlamore wolves den outside
+                new Bounds(1493, 3119, 1510, 3134, 0),
+
+                // Fortis colosseum
+                new Bounds(1807, 3090, 1842, 3124, 0),
+
+                // Civitas illa fortis
+                new Bounds(1634, 3133, 1732, 3185, 0),
+
+                // Ralos rise
+                new Bounds(1419, 3134, 1467, 3217, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
