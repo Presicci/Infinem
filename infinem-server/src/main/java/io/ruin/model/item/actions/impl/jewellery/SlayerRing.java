@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.skills.slayer.PartnerSlayer;
 import io.ruin.model.skills.slayer.SlayerMaster;
 
 public enum SlayerRing {
@@ -46,7 +47,7 @@ public enum SlayerRing {
             ItemAction.registerEquipment(ring.id, "master", (player, item) -> SlayerMaster.simpleDialogue(player));
             ItemAction.registerEquipment(ring.id, "log", (player, item) -> KillCounter.openOwnSlayer(player));
             ItemAction.registerEquipment(ring.id, "check", (player, item) -> SlayerMaster.checkTask(player));
-            ItemAction.registerEquipment(ring.id, "partner", (player, item) -> player.sendMessage("Coop slayer is not available yet."));
+            ItemAction.registerEquipment(ring.id, "partner", (player, item) -> PartnerSlayer.openPartnerInterface(player));
         }
     }
 }
