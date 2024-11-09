@@ -131,7 +131,7 @@ public class DropViewer {
         }
         if (lootTable.guaranteed != null) {
             for (LootItem item : lootTable.guaranteed) {
-                drops.add(new DropViewerResultItem(item.id, item.min, item.max, 1));
+                if (item != null) drops.add(new DropViewerResultItem(item.id, item.min, item.max, 1));
             }
         }
         if (lootTable.tables != null) {
