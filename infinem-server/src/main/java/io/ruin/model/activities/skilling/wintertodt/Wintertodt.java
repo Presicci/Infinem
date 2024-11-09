@@ -153,9 +153,9 @@ public class Wintertodt { // TODO make hits not reset events
         player.getTaskManager().doLookupByUUID(944);    //    Subdue Wintertodt
         player.getTaskManager().doLookupByUUID(955, 1, true);   // Subdue Wintertodt 50 Times
         player.sendMessage("Your subdued Wintertodt count is: <col=ff0000>" + PlayerCounter.WINTERTODT_SUBDUED.get(player) + "</col>.");
-        if (player.wintertodtPoints >= 500) {
-            int crates = player.wintertodtPoints / 500; // guaranteed crates
-            if (Random.rollDie(500, player.wintertodtPoints % 500)) {
+        if (player.wintertodtPoints >= 250) {
+            int crates = player.wintertodtPoints / 250; // guaranteed crates
+            if (Random.rollDie(250, player.wintertodtPoints % 250)) {
                 crates++;
             }
             if (crates > 1) {
