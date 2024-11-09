@@ -465,7 +465,6 @@ public class DwarfCannon extends OwnedObject {
                 cannon.getDecayTimer().reset();
                 cannon.getDecayTimer().start();
                 player.animate(3684);
-                e.delay(2);
                 cannon.setStage(CannonStage.FIRING, true);
             });
         } else {
