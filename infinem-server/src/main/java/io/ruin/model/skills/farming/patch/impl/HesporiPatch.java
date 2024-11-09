@@ -95,6 +95,7 @@ public class HesporiPatch extends Patch {
                 List<Item> loot = new ArrayList<>();
                 loot.add(HesporiLoot.ANIMA_SEEDS.rollItem());
                 loot.add(HesporiLoot.NORMAL_SEEDS.rollItem());
+                loot.add(HesporiLoot.NORMAL_SEEDS.rollItem());
                 for (Item item : loot) {
                     player.getInventory().addOrDrop(item);
                     player.getCollectionLog().collect(item);
