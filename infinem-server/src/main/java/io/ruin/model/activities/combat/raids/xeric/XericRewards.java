@@ -160,7 +160,7 @@ public class XericRewards {
             for (int i = 0; i < 2; i++) {
                 Item rolled = rollRegular();
                 double pointsPerItem = rolled.getAmount();
-                int amount = (int) Math.ceil(playerPoints / pointsPerItem);
+                int amount = (int) Math.ceil(playerPoints / pointsPerItem) * 2;
                 rolled.setAmount(amount);
                 if (amount > 1 && !rolled.getDef().stackable && !rolled.getDef().isNote())
                     rolled.setId(rolled.getDef().notedId);
