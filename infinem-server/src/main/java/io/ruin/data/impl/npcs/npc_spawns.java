@@ -47,7 +47,7 @@ public class npc_spawns extends DataFile {
                     spawn.x -= 1152;
                     spawn.y -= 4864;
                 }
-                if (spawn.walkRange == 0) Tile.get(spawn.x, spawn.y, spawn.z, true).flagUnmovable();
+                if (spawn.walkRange == 0 && NPCDefinition.get(spawn.id).combatInfo == null) Tile.get(spawn.x, spawn.y, spawn.z, true).flagUnmovable();
                 if (NPCDefinition.get(spawn.id) == null) {
                     System.err.println("[npc_spawns] NPC with ID: " + spawn.id + " has invalid cache def.");
                     return;
