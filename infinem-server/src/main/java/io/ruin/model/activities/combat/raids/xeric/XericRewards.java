@@ -134,7 +134,7 @@ public class XericRewards {
                 break;
             int pointsToUse = Math.min(570000, uniqueBudget); // Max of 570k points per unique attempt
             uniqueBudget -= pointsToUse;
-            double chance = pointsToUse / 8676.0 / 100.0;
+            double chance = pointsToUse / 7676.0 / 100.0;   // 8676 - old
             if (Random.get() < chance) {
                 uniques++;
                 Player winner = getPlayerToReceiveUnique(raid);
