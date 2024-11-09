@@ -7,6 +7,7 @@ import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.shadesofmortton.Coffin;
 import io.ruin.model.activities.shadesofmortton.FuneralPyre;
+import io.ruin.model.content.bestiary.BestiaryDef;
 import io.ruin.model.content.bestiary.perks.impl.GoldPickupPerk;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.inter.utils.Config;
@@ -87,6 +88,9 @@ public class NPCDrops {
                 rolls += 3; // Superiors drop minimum of 4 items
             }
             if (npc.getId() == 8059 || npc.getId() == 8061) {
+                rolls += 1;
+            }
+            if (BestiaryDef.isBoss(npc.getDef().bestiaryEntry)) {
                 rolls += 1;
             }
             for(int i = 0; i < rolls; i++) {
