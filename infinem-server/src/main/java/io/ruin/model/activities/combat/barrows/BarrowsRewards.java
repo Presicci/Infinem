@@ -67,16 +67,16 @@ public class BarrowsRewards {
         container.init(player, 6, -1, 64161, 141, false);
         container.sendAll = true;
 
-        double rolls = brothersKilled;
+        double rolls = brothersKilled * 2;
 
         double bestiaryChance = player.getBestiary().getBestiaryEntry("barrows brother").getPerkMultiplier(BarrowsChestPerk.class, 0);
         if (bestiaryChance > 1) {
             int bestiaryRolls = (int) bestiaryChance;
             bestiaryChance -= bestiaryRolls;
-            rolls += bestiaryRolls;
+            rolls += bestiaryRolls * 2;
         }
         if (bestiaryChance > 0 && Random.get() < bestiaryChance) {
-            rolls++;
+            rolls += 2;
         }
 
         for(int i = 0; i < rolls; i++) {
