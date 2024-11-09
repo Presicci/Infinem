@@ -1,6 +1,7 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -46,27 +47,31 @@ public enum MonkeyGreeGree {
         }
         player.getEquipment().equip(greegree);
         if(player.getEquipment().getId(Equipment.SLOT_WEAPON) == greegreeId) {
-            player.privateSound(1677); //rs probably has unique sounds per greegree..
-            player.graphics(160, 124, 0);
-            player.getAppearance().setNpcId(npcId);
-            player.addEvent(e -> {
-                while(true) {
-                    Item item = player.getEquipment().get(Equipment.SLOT_WEAPON);
-                    if(item == null || item.getId() != greegreeId)
-                        break;
-                    if(!canUse(player)) {
-                        item.remove();
-                        player.getInventory().addOrDrop(item.getId(), 1);
-                        player.dialogue(new MessageDialogue("The Monkey Greegree wrenches itself from your hand as its power begins to fade...").lineHeight(24));
-                        break;
-                    }
-                    e.delay(1);
-                }
-                player.privateSound(1681); //rs probably has unique sounds per greegree..
-                player.graphics(160, 124, 0);
-                player.getAppearance().setNpcId(-1);
-            });
+            turnIntoMonkey(player);
         }
+    }
+
+    private void turnIntoMonkey(Player player) {
+        player.privateSound(1677); //rs probably has unique sounds per greegree..
+        player.graphics(160, 124, 0);
+        player.getAppearance().setNpcId(npcId);
+        player.addEvent(e -> {
+            while(true) {
+                Item item = player.getEquipment().get(Equipment.SLOT_WEAPON);
+                if(item == null || item.getId() != greegreeId)
+                    break;
+                if(!canUse(player)) {
+                    item.remove();
+                    player.getInventory().addOrDrop(item.getId(), 1);
+                    player.dialogue(new MessageDialogue("The Monkey Greegree wrenches itself from your hand as its power begins to fade...").lineHeight(24));
+                    break;
+                }
+                e.delay(1);
+            }
+            player.privateSound(1681); //rs probably has unique sounds per greegree..
+            player.graphics(160, 124, 0);
+            player.getAppearance().setNpcId(-1);
+        });
     }
 
     public static boolean isMonkey(Player player) {
@@ -79,8 +84,15 @@ public enum MonkeyGreeGree {
     }
 
     static {
-        for(MonkeyGreeGree monkeyGreeGree : values())
+        for (MonkeyGreeGree monkeyGreeGree : values())
             ItemAction.registerInventory(monkeyGreeGree.greegreeId, "hold", monkeyGreeGree::hold);
+        LoginListener.register(player -> {
+            for (MonkeyGreeGree monkeyGreeGree : values()) {
+                if(player.getEquipment().getId(Equipment.SLOT_WEAPON) == monkeyGreeGree.greegreeId) {
+                    monkeyGreeGree.turnIntoMonkey(player);
+                }
+            }
+        });
     }
 
     private final Bounds ZOO_BOUNDS = new Bounds(2592, 3264, 2639, 3287, 0);
