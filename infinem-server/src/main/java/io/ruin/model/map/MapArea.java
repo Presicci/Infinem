@@ -74,6 +74,7 @@ public enum MapArea {
     LUMBRIDGE(12593, 12594, 12595, 12849, 12850, 12851),
     TAVERLY_DUNGEON(11416, 11417, 11671, 11672, 11673, 11928, 11929),
     BRIMHAVEN_DUNGEON(player -> player.getTaskManager().doLookupByUUID(394), new int[] { 10643, 10644, 10645, 10899, 10900, 10901 }),
+    HARMONY_ISLAND(player -> player.getTaskManager().doLookupByUUID(712), new int[] { 15148 }),
     // Dark caves
     LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     CAVE_OF_HORROR(OldFirePit.FirePit.MOS_LE_HARMLESS_FIRE, 3, 14994, 14995, 15251),
