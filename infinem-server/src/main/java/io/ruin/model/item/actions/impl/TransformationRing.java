@@ -46,7 +46,7 @@ public enum TransformationRing {
     }
 
     public static void check(Player player) {
-        if(player.getAppearance().getNpcId() != -1)
+        if (player.getAppearance().getNpcId() != -1 && !MonkeyGreeGree.isMonkey(player))
             unmorph(player);
     }
 
