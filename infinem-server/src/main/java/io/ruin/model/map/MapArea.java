@@ -73,6 +73,7 @@ public enum MapArea {
     AL_KHARID(13105, 13106),
     LUMBRIDGE(12593, 12594, 12595, 12849, 12850, 12851),
     TAVERLY_DUNGEON(11416, 11417, 11671, 11672, 11673, 11928, 11929),
+    BRIMHAVEN_DUNGEON(player -> player.getTaskManager().doLookupByUUID(394), new int[] { 10643, 10644, 10645, 10899, 10900, 10901 }),
     // Dark caves
     LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     CAVE_OF_HORROR(OldFirePit.FirePit.MOS_LE_HARMLESS_FIRE, 3, 14994, 14995, 15251),
@@ -125,6 +126,11 @@ public enum MapArea {
 
     MapArea(int... regionId) {
         this.bounds = Bounds.fromRegions(regionId);
+    }
+
+    MapArea(MapListener.EnteredAction enteredAction, int[] regionId) {
+        this.bounds = Bounds.fromRegions(regionId);
+        registerOnEnter(bounds, enteredAction);
     }
 
     MapArea(int southWestX, int southWestY, int northEastX, int northEastY, int z) {
