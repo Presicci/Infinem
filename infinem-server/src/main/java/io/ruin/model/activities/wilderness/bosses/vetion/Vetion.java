@@ -492,10 +492,12 @@ public class Vetion extends NPCCombat {
             double quantityMultiplier = Math.max(0.25, (double) playerDamage / totalDamage);
 
             // Roll regular tables for the players
-            Item item = VetionDropTable.rollRegular();
-            item.setAmount((int) Math.ceil((double) item.getAmount() * quantityMultiplier));
-            new GroundItem(item).owner(p).position(tile).spawn();
-            p.getCollectionLog().collect(item);
+            for (int index = 0; index < 2; index++) {
+                Item item = VetionDropTable.rollRegular();
+                item.setAmount((int) Math.ceil((double) item.getAmount() * quantityMultiplier));
+                new GroundItem(item).owner(p).position(tile).spawn();
+                p.getCollectionLog().collect(item);
+            }
 
             // Pet chance
             int dropAverage = (int) (1500 * (2D - quantityMultiplier));
