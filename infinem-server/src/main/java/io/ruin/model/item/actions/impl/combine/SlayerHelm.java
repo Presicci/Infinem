@@ -136,10 +136,12 @@ public class SlayerHelm {
             ItemAction.registerInventory(helm, "check", (player, item) -> SlayerMaster.checkTask(player));
             ItemPlayerAction.register(helm, (player, item, other) -> PartnerSlayer.attemptToPartnerPlayer(player, other));
         }
-        ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "check", (player, item) -> SlayerMaster.checkTask(player));
-        ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "activate", (player, item) -> SlayerMaster.simpleDialogue(player));
-        ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "log", (player, item) -> KillCounter.openOwnSlayer(player));
-        ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "partner", (player, item) -> PartnerSlayer.openPartnerInterface(player));
-        ItemPlayerAction.register(ItemID.ENCHANTED_GEM, (player, item, other) -> PartnerSlayer.attemptToPartnerPlayer(player, other));
+        for (int gem : Arrays.asList(ItemID.ENCHANTED_GEM, ItemID.ETERNAL_GEM)) {
+            ItemAction.registerInventory(gem, "check", (player, item) -> SlayerMaster.checkTask(player));
+            ItemAction.registerInventory(gem, "activate", (player, item) -> SlayerMaster.simpleDialogue(player));
+            ItemAction.registerInventory(gem, "log", (player, item) -> KillCounter.openOwnSlayer(player));
+            ItemAction.registerInventory(gem, "partner", (player, item) -> PartnerSlayer.openPartnerInterface(player));
+            ItemPlayerAction.register(gem, (player, item, other) -> PartnerSlayer.attemptToPartnerPlayer(player, other));
+        }
     }
 }
