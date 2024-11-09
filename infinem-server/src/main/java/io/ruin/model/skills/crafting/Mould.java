@@ -29,6 +29,7 @@ public enum Mould {
     ONYX_RING(1592, 6575, 6573, 67, 115.0, 14),
     ZENYTE_RING(1592, 19538, 19493, 89, 150.0, 15),
     SLAYER_RING(1592, 11866, 4155, 75, 15.0, 16),
+    SLAYER_RING_ETERNAL(1592, 21268, 21270, 75, 15.0, 999),
 
     //Necklaces
     GOLD_NECKLACES(1597, 1654, -1, 6, 20.0, 23),
@@ -82,7 +83,7 @@ public enum Mould {
         player.closeInterfaces();
         if(!player.getStats().check(StatType.Crafting, mould.levelReq, "make this"))
             return;
-        if(mould == Mould.SLAYER_RING && Config.RING_BLING.get(player) == 0) {
+        if((mould == Mould.SLAYER_RING || mould == Mould.SLAYER_RING_ETERNAL) && Config.RING_BLING.get(player) == 0) {
             player.sendMessage("You haven't unlocked the ability to craft this ring.");
             return;
         }
@@ -196,7 +197,13 @@ public enum Mould {
             h.actions[DRAGONSTONE_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, DRAGONSTONE_RING);
             h.actions[ONYX_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ONYX_RING);
             h.actions[ZENYTE_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ZENYTE_RING);
-            h.actions[SLAYER_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, SLAYER_RING);
+            h.actions[SLAYER_RING.child] = (DefaultAction) (p, option, slot, itemId) -> {
+                if (itemId == 11866) {
+                    option(p, SLAYER_RING);
+                } else {
+                    option(p, SLAYER_RING_ETERNAL);
+                }
+            };
 
             /*
              * Necklaces
