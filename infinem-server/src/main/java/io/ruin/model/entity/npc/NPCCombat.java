@@ -531,7 +531,7 @@ public abstract class NPCCombat extends Combat {
                 && playerAggroExtraCheck(player)
                 && canAttack(player) // can attack
                 && !player.isIdle // player isn't idle
-                && (player.inMulti() || !player.getCombat().isDefending(12))
+                && (player.inMulti() || !player.getCombat().isDefending(12) || player.getCombat().getTarget() == null)
                 && DumbRoute.withinDistance(npc, player, getAggressionRange()) // distance and line of sight
                 && (npc.inMulti() || (StreamSupport.stream(npc.localNpcs().spliterator(), false)
                 .noneMatch(n -> n.getCombat() != null && n.getCombat().getTarget() == player && !n.getCombat().isAttacking(10) && !n.getMovement().isAtDestination()))) // not 100% sure how i feel about this check, but it ensures multiple npcs don't try to go for the same player at the same time in a single-way zone since they wouldn't be able to attack upon reaching
