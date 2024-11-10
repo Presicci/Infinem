@@ -104,7 +104,10 @@ public class TaskInterface {
             h.actions[6] = (SlotAction) TaskInterface::navigation;
             h.actions[35] = (SlotAction) (player, slot) -> TIER_FILTER.set(player, slot - 1);
             h.actions[36] = (SlotAction) (player, slot) -> TYPE_FILTER.set(player, slot - 1);
-            h.actions[37] = (SlotAction) (player, slot) -> AREA_FILTER.set(player, slot - 1);
+            h.actions[37] = (SlotAction) (player, slot) -> {
+                AREA_FILTER.set(player, slot - 1);
+                if (slot == 3) openTaskInterface(player);
+            };
             h.actions[39] = (SlotAction) (player, slot) -> COMPLETED_FILTER.set(player, slot - 1);
         }));
     }
