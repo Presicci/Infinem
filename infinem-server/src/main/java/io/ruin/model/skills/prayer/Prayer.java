@@ -341,15 +341,16 @@ public enum Prayer {
         for (Prayer prayer : overheadPrayers) {
             prayer.disallow(overheadPrayers);
         }
-
-        Prayer[] prayers = values();
-        QUICK_PRAYER_ORDER = new Prayer[prayers.length];
-        System.arraycopy(prayers, 0, QUICK_PRAYER_ORDER, 0, 24);
-        QUICK_PRAYER_ORDER[25] = CHIVALRY;
-        QUICK_PRAYER_ORDER[26] = PIETY;
-        QUICK_PRAYER_ORDER[24] = RIGOUR;
-        QUICK_PRAYER_ORDER[27] = AUGURY;
-        QUICK_PRAYER_ORDER[28] = PRESERVE;
+        QUICK_PRAYER_ORDER = new Prayer[] {
+                THICK_SKIN, BURST_OF_STRENGTH, CLARITY_OF_THOUGHT,
+                ROCK_SKIN, SUPERHUMAN_STRENGTH, IMPROVED_REFLEXES,
+                RAPID_RESTORE, RAPID_HEAL, PROTECT_ITEM, STEEL_SKIN,
+                ULTIMATE_STRENGTH, INCREDIBLE_REFLEXES, PROTECT_FROM_MAGIC,
+                PROTECT_FROM_MISSILES, PROTECT_FROM_MELEE, RETRIBUTION,
+                REDEMPTION, SMITE, SHARP_EYE, MYSTIC_WILL, HAWK_EYE,
+                MYSTIC_LORE, EAGLE_EYE, MYSTIC_MIGHT, RIGOUR,
+                CHIVALRY, PIETY, AUGURY, PRESERVE
+        };
     }
 
     public static Prayer getQuickPrayer(int slot) {
