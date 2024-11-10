@@ -22,7 +22,7 @@ public class ArandorGate {
         // East gate
         ObjectAction.register(3944, "enter", (player, obj) -> {
             boolean north = player.getAbsY() < obj.y;
-            player.startEvent(e -> {
+            World.startEvent(e -> {
                 player.lock();
                 if (player.getAbsX() != 2386) {
                     player.stepAbs(2386, player.getAbsY(), StepType.FORCE_WALK);
