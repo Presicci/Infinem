@@ -25,6 +25,7 @@ public class EmblemTrader {
             String currencyName = "coins";
             player.dialogue(new NPCDialogue(npc, "If you find an ancient emblem, totem, or statuette, use it on me and I'll exchange it for " + currencyName + "."));
         });
+        NPCAction.register(7943, "skull", (player, npc) -> skull(player));
         int[][] ancientArtifacts = {
                 {21807, 500_000},   //Emblem
                 {21810, 1_000_000},  //Totem
