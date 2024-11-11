@@ -19,11 +19,11 @@ public class NotedDropPerk extends IntervalPerk {
 
     @Override
     protected int getInterval() {
-        return isBoss ? getBossInterval() : 1500;
+        return isBoss ? getBossInterval() : 750;
     }
 
     private int getBossInterval() {
-        return 1000;
+        return 500;
     }
 
     @Override
