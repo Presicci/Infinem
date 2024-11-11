@@ -8,6 +8,7 @@ import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
+import io.ruin.model.content.scroll.DiaryScroll;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.transmog.TransmogCollection;
 import io.ruin.model.inter.handlers.BossHealthBar;
@@ -360,16 +361,7 @@ public class Player extends PlayerAttributes {
     }
 
     public void sendScroll(String title, String... lines) {
-        if(isVisibleInterface(119))
-            closeInterface(InterfaceType.MAIN);
-        packetSender.sendString(119, 2, title);
-        int childId = 4;
-        packetSender.sendString(119, childId++, "");
-        for(String s : lines)
-            packetSender.sendString(119, childId++, s);
-        //packetSender.sendClientScript(917, "ii", -1, -1);
-        openInterface(InterfaceType.MAIN, 119);
-        packetSender.sendClientScript(2523, "1i", 1, lines.length);
+        new DiaryScroll(title, Arrays.asList(lines)).open(player);
     }
 
     public void sendHintArrow(Entity target) {
