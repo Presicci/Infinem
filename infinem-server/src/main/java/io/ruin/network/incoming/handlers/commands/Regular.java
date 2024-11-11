@@ -33,7 +33,7 @@ public class Regular {
             case "commands": {
                 player.sendScroll("<col=800000>Commands</col>",
                         "<col=800000>Misc Commands:</col>",
-                        "::yell", "::skull", "prif",
+                        "::yell", "::skull", "::prif",
                         "",
                         "<col=800000>Website Commands:</col>",
                         "::store", "::vote", "::guides", "::support", "::forums", "::scores", "::discord", "::thread #", "::member #"
