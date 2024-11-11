@@ -33,10 +33,10 @@ public class Regular {
             case "commands": {
                 player.sendScroll("<col=800000>Commands</col>",
                         "<col=800000>Misc Commands:</col>",
-                        "::yell", "::skull", "::prif",
+                        "::yell", "::skull", "::prif", "::clear", "::staff", "::claimvotes",
                         "",
                         "<col=800000>Website Commands:</col>",
-                        "::store", "::vote", "::guides", "::support", "::forums", "::scores", "::discord"
+                        "::updates", "::store", "::vote", "::guides", "::support", "::forums", "::highscores", "::discord"
                 );
                 return true;
             }
@@ -221,6 +221,7 @@ public class Regular {
                 player.openUrl(World.type.getWorldName() + " Forums", "https://www.infinem.net/forums/");
                 return true;
             }
+            case "highscores":
             case "hiscores":
             case "scores": {
                 player.openUrl("https://www.infinem.net/highscores/");
