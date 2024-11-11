@@ -2,17 +2,17 @@ package io.ruin.model.item.actions.impl.tradepost.offer;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.model.item.Item;
+import lombok.Getter;
 import lombok.Setter;
 
 /**
  * @author <a href="https://github.com/kLeptO">Augustinas R.</a>
  */
 public class TradePostOffer {
-
-    @Expose private final String username;
-    @Expose private final Item item;
-    @Expose private final int pricePerItem;
-    @Expose private final long timestamp;
+    @Getter @Expose private final String username;
+    @Getter @Expose private final Item item;
+    @Getter @Expose private final int pricePerItem;
+    @Getter @Expose private final long timestamp;
     @Expose public int unclaimedSales;
 
     public TradePostOffer(String username, Item item, int pricePerItem, long timestamp) {
@@ -21,21 +21,4 @@ public class TradePostOffer {
         this.pricePerItem = pricePerItem;
         this.timestamp = timestamp;
     }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public int getPricePerItem() {
-        return pricePerItem;
-    }
-
-    public long getTimestamp() {
-        return timestamp;
-    }
-
 }
