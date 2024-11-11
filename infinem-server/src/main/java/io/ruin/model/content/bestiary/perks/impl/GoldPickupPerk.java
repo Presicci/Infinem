@@ -10,7 +10,7 @@ public class GoldPickupPerk extends UnlockPerk {
 
     @Override
     protected int getRequiredKills() {
-        return 2500;
+        return 1000;
     }
 
     @Override
