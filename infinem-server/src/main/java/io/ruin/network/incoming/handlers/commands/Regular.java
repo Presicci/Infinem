@@ -36,7 +36,7 @@ public class Regular {
                         "::yell", "::skull", "::prif",
                         "",
                         "<col=800000>Website Commands:</col>",
-                        "::store", "::vote", "::guides", "::support", "::forums", "::scores", "::discord", "::thread #", "::member #"
+                        "::store", "::vote", "::guides", "::support", "::forums", "::scores", "::discord"
                 );
                 return true;
             }
