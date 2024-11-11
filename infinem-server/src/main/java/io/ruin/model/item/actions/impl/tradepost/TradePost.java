@@ -235,10 +235,10 @@ public class TradePost {
                         case PRICE_ASCENDING:
                             return offerA.getPricePerItem() - offerB.getPricePerItem();
                         case AGE_DESCENDING:
-                            return (int) (offerA.getTimestamp() - offerB.getTimestamp());
+                            return Long.compare(offerA.getTimestamp(), offerB.getTimestamp());
                         case AGE_ASCENDING:
                         default:
-                            return (int) (offerB.getTimestamp() - offerA.getTimestamp());
+                            return Long.compare(offerB.getTimestamp(), offerA.getTimestamp());
                     }
                 }).limit(MAX_VIEW_OFFERS)
                 .collect(Collectors.toList());
