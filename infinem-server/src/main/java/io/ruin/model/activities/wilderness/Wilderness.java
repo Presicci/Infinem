@@ -327,6 +327,8 @@ public class Wilderness {
         setLevels(new Bounds(3147, 3618, 3419, 3620, 0), 13); //Fernox enclave
         setLevels(Bounds.fromRegion(12700), 0); //Fernox enclave underground
 
+        setLevels(Bounds.fromRegion(13723), 0); // Clearn wildy levels from slayer tower basement
+
         /*ItemAction.registerInventory(30104, "open", (player, item) -> {
             Item reward = Random.get(RESOURCE_PACK_LOOT);
             player.getInventory().remove(item.getId(), 1);
