@@ -133,7 +133,7 @@ public class TaskManager {
         }
         AreaTaskTier newGeneralTier = TaskArea.GENERAL.getHighestTier(player);
         if (newGeneralTier != null && newGeneralTier != prevGeneralTier) {
-            player.sendMessage("<col=990000><shad=000000>You've reached the " + StringUtils.capitalizeFirst(newTier.name().toLowerCase()) + " tier of general unlocks!");
+            player.sendMessage("<col=990000><shad=000000>You've reached the " + StringUtils.capitalizeFirst(newGeneralTier.name().toLowerCase()) + " tier of general unlocks!");
         }
     }
 
