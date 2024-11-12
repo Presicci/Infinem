@@ -166,7 +166,7 @@ public enum Altars {
             player.privateSound(2710);
             e.delay(4);
             //  If the player has a rift guardian pet active, set the appearance to that of the rune you crafted
-            if (player.pet != null && Arrays.stream(player.pet.getVariantArray()).anyMatch(pet -> pet == player.pet)) {
+            if (player.pet != null && player.pet.variant != null && Arrays.stream(player.pet.getVariantArray()).anyMatch(pet -> pet == player.pet)) {
                 player.petNPC.transform(altar.pet.npcId);
             }
             if (Random.rollDie(altar.petOdds - (player.getStats().get(StatType.Runecrafting).currentLevel * 25), essenceCount))
