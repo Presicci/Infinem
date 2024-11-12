@@ -14,7 +14,7 @@ import io.ruin.model.stat.StatType;
 public class Pickables {
 
     public enum Node {
-        NETTLES(4241, 1181, 5256, 5258),
+        NETTLES(4241, 1181, 5253, 5254, 5255, 5256, 5257, 5258),
         FLAX(1779, 14896),
         CABBAGE(1965, 1161),
         WHEAT(1947, 15506, 15507, 15508),
