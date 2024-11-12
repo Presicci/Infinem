@@ -13,6 +13,18 @@ import io.ruin.model.map.object.actions.ObjectAction;
  */
 public class Stairs {
 
+    public static void registerSpiralStair(int objectId) {
+        ObjectAction.register(objectId, "climb-up", (player, obj) -> climbUpSpiral(player));
+        ObjectAction.register(objectId, "climb-down", (player, obj) -> climbDownSpiral(player));
+        ObjectAction.register(objectId, "climb", (player, obj) -> {
+            player.dialogue(
+                    new OptionsDialogue("Climb up or down the stairs?",
+                            new Option("Climb up the stairs.", () -> climbUpSpiral(player)),
+                            new Option("Climb down the stairs.", () -> climbDownSpiral(player))
+                    ));
+        });
+    }
+
     public static void registerSpiralStair(int objectId, Position position) {
         ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-up", (player, obj) -> climbUpSpiral(player));
         ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-down", (player, obj) -> climbDownSpiral(player));
@@ -102,5 +114,28 @@ public class Stairs {
         // Ectofuntus
         registerStair(16646, 5, 2);
         registerStair(16647, 5, 0);
+        // Civitas illa fortis
+        registerSpiralStair(52628); // Stone spiral up
+        registerSpiralStair(52629); // Stone spiral down
+        registerSpiralStair(52630); // Wood spiral up
+        // Wood spiral middle
+        registerSpiralStair(52631);
+        ObjectAction.register(52631, "climb-up", (player, obj) -> player.getMovement().teleport(player.getPosition().getX() + 3, player.getPosition().getY(), player.getPosition().getZ() + 1));
+        ObjectAction.register(52631, "climb", (player, obj) -> {
+            player.dialogue(
+                    new OptionsDialogue("Climb up or down the stairs?",
+                            new Option("Climb up the stairs.", () -> player.getMovement().teleport(player.getPosition().getX() + 3, player.getPosition().getY(), player.getPosition().getZ() + 1)),
+                            new Option("Climb down the stairs.", () -> climbDownSpiral(player))
+                    ));
+        });
+        // Wood spiral down
+        ObjectAction.register(52632, "climb-down", (player, obj) -> player.getMovement().teleport(player.getPosition().getX() - 3, player.getPosition().getY(), player.getPosition().getZ() - 1));
+        registerStair(52626, 4, 2); // Stone up
+        registerStair(52627, 4, 0); // Stone down
+        registerStair(52635, 3, 2); // Wooden up
+        registerStair(52636, 3, 0); // Wooden down
+        registerStair(52637, 3, 0); // Wooden down
+        registerStair(52012, 4, 2); // Big wooden up
+        registerStair(52013, 4, 0); // Big wooden down
     }
 }
