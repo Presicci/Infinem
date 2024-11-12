@@ -301,6 +301,9 @@ public class Woodcutting {
         ObjectAction.register(36672, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 36673)); // Gwenith tree
         ObjectAction.register(36674, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 36675)); // Gwenith tree
         ObjectAction.register(42393, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 42394)); // Tree in shayzien
+        ObjectAction.register(51762, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 51763)); // Varlamore
+        ObjectAction.register(51764, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 51765)); // Varlamore
+        ObjectAction.register(53188, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 53189)); // Varlamore
         ObjectAction.register(2023, "chop", (player, obj) -> chop(Tree.ACHEY, player, obj, 3371));
         ObjectAction.register(10820, "chop down", (player, obj) -> chop(Tree.OAK, player, obj, 1356));
         ObjectAction.register(10819, "chop down", (player, obj) -> chop(Tree.WILLOW, player, obj, 9711));
@@ -326,6 +329,7 @@ public class Woodcutting {
         ObjectAction.register(9034, "chop down", (player, obj) -> chop(Tree.MAHOGANY, player, obj, 9035));
         ObjectAction.register(36688, "chop down", (player, obj) -> chop(Tree.MAHOGANY, player, obj, 36689));    // Prif mahog
         ObjectAction.register(36686, "chop down", (player, obj) -> chop(Tree.TEAK, player, obj, 36687));    // Prif teak
+        ObjectAction.register(40758, "chop down", (player, obj) -> chop(Tree.TEAK, player, obj, 40759));    // Varlamore teak
         ObjectAction.register(10821, "chop down", (player, obj) -> chop(Tree.HOLLOW_TREE, player, obj, 2310));
         ObjectAction.register(10830, "chop down", (player, obj) -> chop(Tree.HOLLOW_TREE, player, obj, 4061));
         ObjectAction.register(1292, "chop down", (player, obj) -> chop(Tree.DRAMEN_TREE, player, obj, -1));
