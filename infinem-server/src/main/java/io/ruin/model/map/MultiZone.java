@@ -108,6 +108,7 @@ public class MultiZone {
                 9552,   // Fight pits
                 7508,   // Penance queen arena
                 14151,  // Armoured zombies
+                9358, 9359, 9360, 9615, 9616, 9871, // Maniacal monkeys
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
