@@ -5,6 +5,7 @@ import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.netty.MessageDecoder;
 import io.ruin.api.protocol.Response;
+import io.ruin.api.protocol.ServerPacket;
 import io.ruin.api.protocol.login.LoginRequest;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
@@ -122,118 +123,22 @@ public class CentralDecoder extends MessageDecoder {
             bufferClone.readInt();
 
             Set<String> onlineFriends = null;
-            switch (bufferClone.readByte()) {
-                case 17:    // Friends list update
-                    onlineFriends = new HashSet<>();
-                    bufferClone.readUnsignedShort();
-                    while (bufferClone.remaining() > 0) {
-                        bufferClone.readUnsignedByte();
-                        String name = bufferClone.readString();
-                        bufferClone.readString();
-                        int worldId = bufferClone.readUnsignedShort();
-                        bufferClone.readUnsignedByte();
-                        bufferClone.readUnsignedByte();
-                        if (worldId > 0) {
-                            onlineFriends.add(name);
-                            bufferClone.skip(6);
-                        }
-                        bufferClone.skip(1);
+            if (bufferClone.readByte() == ServerPacket.UPDATE_FRIENDLIST.getPacketId()) {
+                onlineFriends = new HashSet<>();
+                bufferClone.readUnsignedShort();
+                while (bufferClone.remaining() > 0) {
+                    bufferClone.readUnsignedByte();
+                    String name = bufferClone.readString();
+                    bufferClone.readString();
+                    int worldId = bufferClone.readUnsignedShort();
+                    bufferClone.readUnsignedByte();
+                    bufferClone.readUnsignedByte();
+                    if (worldId > 0) {
+                        onlineFriends.add(name);
+                        bufferClone.skip(6);
                     }
-                    break;
-                case 7:     // Ignore
-                    /*
-                    for (SocialMember ignore : ignores) {
-                        out.addByte(ignore.sendNewName() ? 1 : 0);
-                        out.addString(ignore.name);
-                        out.addString(ignore.lastName);
-                        out.skip(1);
-                    }
-                     */
-                    break;
-                case 12:    // Privacy
-                    /*
-                    OutBuffer out = new OutBuffer(2).sendFixedPacket(12).addByte(privacy);
-                     */
-                    break;
-                case 21:    // Receive pm
-                    /*
-                    OutBuffer out = new OutBuffer(255).sendVarShortPacket(21)
-                    .addString(fromName);
-                    for (int i = 0; i < 5; ++i) {
-                        out.addByte(Random.get(255));
-                    }
-                    out.addByte(fromRank);
-                    Huffman.encrypt(out, message);
-                     */
-                    break;
-                case 22:    // Get message buffer
-                    /*
-                    OutBuffer out = new OutBuffer(255).sendVarBytePacket(22);
-                    out.addString(senderName);
-                    out.addLong(StringUtils.stringToLong(this.name));
-                    for (int i = 0; i < 5; ++i) {
-                        out.addByte(Random.get(255));
-                    }
-                    out.addByte(rankId);
-                    Huffman.encrypt(out, message);
-                    return out;
-                     */
-                    break;
-                case 23:    // Send string
-                    /*
-                    OutBuffer out = new OutBuffer(3 + 4 + Protocol.strLen(string))
-                    .sendVarShortPacket(23)
-                    .writeStringCp1252NullTerminated(string)
-                    .addInt(interfaceId << 16 | childId);
-                     */
-                    break;
-                case 42:
-                    /*
-                    private OutBuffer getLeaveBuffer() {
-                        return this.getBuffer(0);
-                    }
-
-                    private OutBuffer getChannelBuffer() {
-                        return this.getBuffer(1);
-                    }
-
-                    private OutBuffer getSettingsBuffer() {
-                        return this.getBuffer(2);
-                    }
-
-
-
-                    if (type == 0) {
-                        return new OutBuffer(3).sendVarShortPacket(42);
-                    }
-                    OutBuffer out = new OutBuffer(255).sendVarShortPacket(42).
-                            addString(this.owner).
-                            addLong(StringUtils.stringToLong(this.name)).//addString(this.name).
-                                    addByte(ClanChat.getRankId(this.kickRank));
-                    if (type == 2) {
-                        out.addByte(255);
-                        return out;
-                    }
-                    out.addByte(this.ccMembersCount);
-                    for (int i = 0; i < this.ccMembersCount; ++i) {
-                        SocialMember member = this.ccMembers[i];
-                        out.addString(member.name);
-                        out.addShort(member.worldId);
-                        out.addByte(this.getRankId(member.name));
-                        out.addByte(0);
-                    }
-                    return out;
-                     */
-                    break;
-                case 56:    // Send pm
-                    /*
-                    OutBuffer out = new OutBuffer(255).sendVarShortPacket(56)
-                    .addString(toUsername);
-                    Huffman.encrypt(out, message);
-                     */
-                    break;
-                case 66:
-                    break;
+                    bufferClone.skip(1);
+                }
             }
             Set<String> finalOnlineFriends = onlineFriends;
             new Task() { //todo - come back to this
