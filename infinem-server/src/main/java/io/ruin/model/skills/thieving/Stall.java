@@ -42,7 +42,8 @@ public enum Stall {
             new int[][]{
                     {6163, 6984},
                     {11730, 634},
-                    {6945, 6944}
+                    {6945, 6944},
+                    {51937, 51932}  // Varlamore
             },
             new LootTable().addTable(1,
                     new LootItem(1891, 1, 3),                    //Cake
@@ -93,7 +94,8 @@ public enum Stall {
             new int[][]{
                     {6165, 6984},
                     {11729, 634},
-                    {36569, 36568}
+                    {36569, 36568},
+                    {51933, 51932}  // Varlamore
             },
             new LootTable().addTable(1,
                     new LootItem(950, 1, 1)                     //Silk
@@ -157,6 +159,7 @@ public enum Stall {
             new int[][]{
                     {4278, 634},
                     {11732, 634},
+                    {51934, 51932}  // Varlamore
             },
             new LootTable().addTable(1,
                     new LootItem(958, 1, 1)                       //Grey wolf fur
@@ -207,7 +210,8 @@ public enum Stall {
                     {6572, 6573},
                     {11733, 634},
                     {20348, 20349},
-                    {36572, 36568}
+                    {36572, 36568},
+                    {51936, 51932}  // Varlamore
             },
             new LootTable().addTable(1,
                     new LootItem(2007, 1, 2)                      //Spice
@@ -238,7 +242,8 @@ public enum Stall {
             new int[][]{
                     {6162, 6984},
                     {11731, 634},
-                    {36571, 36568}
+                    {36571, 36568},
+                    {51935, 51932}  // Varlamore
             },
             new LootTable().addTable(1,
                     new LootItem(1623, 1, 10),                     //Uncut sapphire
