@@ -6,6 +6,7 @@ import io.ruin.api.filestore.IndexFile;
 import io.ruin.cache.type.ArchiveType;
 import io.ruin.cache.type.GroupType;
 import io.ruin.cache.type.ScriptVarType;
+import io.ruin.model.map.object.GameObject;
 
 import java.util.Arrays;
 
@@ -86,5 +87,9 @@ public class DBRowDefinition {
                 System.err.println("Unrecognized dbrow opcode " + opcode);
                 break;
         }
+    }
+
+    public Object getColumnValue(int column) {
+        return columnValues[column][0];
     }
 }

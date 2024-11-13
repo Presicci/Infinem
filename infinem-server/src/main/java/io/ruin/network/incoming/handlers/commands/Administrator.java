@@ -38,17 +38,14 @@ import io.ruin.model.activities.combat.barrows.BarrowsBrother;
 import io.ruin.model.activities.combat.barrows.BarrowsRewards;
 import io.ruin.model.activities.combat.inferno.Inferno;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
-import io.ruin.model.activities.combat.raids.xeric.XericRewards;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;
 import io.ruin.model.activities.combat.raids.xeric.chamber.ChamberDefinition;
 import io.ruin.model.activities.combat.raids.xeric.party.Party;
 import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.combat.HitType;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.relics.impl.fragments.RelicFragment;
-import io.ruin.model.content.tasksystem.relics.impl.fragments.RelicFragmentManager;
 import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.content.transportation.relics.DungeonHub;
@@ -91,6 +88,7 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.route.RouteFinder;
 import io.ruin.model.shop.Shop;
 import io.ruin.model.shop.ShopManager;
+import io.ruin.model.shop.omnishop.OmniShop;
 import io.ruin.model.skills.construction.*;
 import io.ruin.model.skills.construction.actions.Costume;
 import io.ruin.model.skills.construction.actions.CostumeStorage;
@@ -3332,6 +3330,10 @@ public class Administrator {
                     if (song.getName().toLowerCase().contains(searchString))
                         System.out.println(song);
                 });
+                return true;
+            }
+            case "omnishop": {
+                OmniShop.WORM_TONGUES_WARES.open(player);
                 return true;
             }
         }
