@@ -137,7 +137,7 @@ public enum ServerPacket {
     IF_SETANGLE(124, 10),           // Unused
     CAM_ROTATEBY(125, 7),           // Unused
     CAM_TARGET_V1(126, 3),          // Unused
-    MESSAGE_PRIVATE(127, -1),
+    MESSAGE_PRIVATE(127, -2),
     RESET_INTERACTION_MODE(128, 2), // Unused NEW IN 226
     SET_NPC_UPDATE_ORIGIN(129, 2),
     REBUILD_WORLDENTITY(130, -2),   // Unused
