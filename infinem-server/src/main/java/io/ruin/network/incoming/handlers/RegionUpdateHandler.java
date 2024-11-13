@@ -15,9 +15,10 @@ public class RegionUpdateHandler implements Incoming {
 
     @Override
     public void handle(Player player, InBuffer in, int opcode) {
-        player.getPacketSender().hideGroundItemOptions(false);
-        player.getPacketSender().hideNPCOptions(false);
-        player.getPacketSender().hideObjectOptions(false);
+        player.addEvent(e -> {
+            player.getPacketSender().hideGroundItemOptions(false);
+            player.getPacketSender().hideNPCOptions(false);
+            player.getPacketSender().hideObjectOptions(false);
+        });
     }
-
 }
