@@ -99,17 +99,25 @@ public class ModernTeleport extends Spell {
     private final Item[] runes;
 
     public static void wildernessTeleport(Player player, int wildernessLevel, Bounds bounds) {
+        wildernessTeleport(player, wildernessLevel, bounds, null);
+    }
+
+    public static void wildernessTeleport(Player player, int wildernessLevel, Bounds bounds, Consumer<Player> onTeleport) {
         if (player.wildernessLevel > 0 || player.hasAttribute("WILDY_TELE_WARNING_DIS")) {
             teleport(player, bounds);
             return;
         }
         player.dialogueKeepInterfaces(
                 new OptionsDialogue(Color.RED.wrap("This teleport leads to level " + wildernessLevel + " wilderness."),
-                        new Option("Teleport", () -> teleport(player, bounds)),
+                        new Option("Teleport", () -> {
+                            teleport(player, bounds);
+                            if (onTeleport != null) onTeleport.accept(player);
+                        }),
                         new Option("Nope"),
                         new Option("Teleport (disable all wilderness teleport warnings)", () -> {
                             player.putAttribute("WILDY_TELE_WARNING_DIS", 1);
                             teleport(player, bounds);
+                            if (onTeleport != null) onTeleport.accept(player);
                         })
                 )
         );

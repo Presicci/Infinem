@@ -23,9 +23,10 @@ public class WildernessSword {
                 player.timeTillDailyReset("You've already used your teleport for the day.<br><br>");
                 return;
             }
-            player.incrementNumericAttribute(KEY, 1);
+            ModernTeleport.wildernessTeleport(player, 47, JewelleryTeleportBounds.FOUNTAIN_OF_RUNE.getBounds(), p -> p.incrementNumericAttribute(KEY, 1));
+        } else {
+            ModernTeleport.wildernessTeleport(player, 47, JewelleryTeleportBounds.FOUNTAIN_OF_RUNE.getBounds());
         }
-        ModernTeleport.wildernessTeleport(player, 47, JewelleryTeleportBounds.FOUNTAIN_OF_RUNE.getBounds());
     }
 
     static {
