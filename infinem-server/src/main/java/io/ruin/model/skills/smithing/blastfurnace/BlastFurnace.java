@@ -185,7 +185,7 @@ public class BlastFurnace {
         player.getPacketSender().sendObjectAnimation(1945, 4966, 0, 10, 0, 2436);   // Gear box
 
         int dispenser = DISPENSER.get(player);
-        if (dispenser == 1 || dispenser == 2) {
+        if (dispenser == 1 || dispenser == 2 || getTotalBars(player) > 0) {
             processBarDispenser(player);
         }
         DISPENSER.forceSend();
