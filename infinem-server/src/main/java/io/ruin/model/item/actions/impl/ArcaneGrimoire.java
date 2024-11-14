@@ -23,7 +23,11 @@ public class ArcaneGrimoire {
 
     private static void changeSpellbook(Player player) {
         if (!player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
-            player.sendMessage("You need the Archmage relic and be out of the wilderness to use the Grimoire.");
+            player.sendMessage("You need the Archmage relic to use the Grimoire.");
+            return;
+        }
+        if (player.wildernessLevel >   0) {
+            player.sendMessage("You can't use the Grimoire in the wilderness.");
             return;
         }
         List<Option> options = new ArrayList<>();
@@ -39,7 +43,11 @@ public class ArcaneGrimoire {
 
     private static void lastSpellbook(Player player) {
         if (!player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
-            player.sendMessage("You need the Archmage relic and be out of the wilderness to use the Grimoire.");
+            player.sendMessage("You need the Archmage relic to use the Grimoire.");
+            return;
+        }
+        if (player.wildernessLevel > 0) {
+            player.sendMessage("You can't use the Grimoire in the wilderness.");
             return;
         }
         Config.MAGIC_BOOK.set(player, player.getAttributeIntOrZero("LAST_SPELLBOOK"));
@@ -48,7 +56,11 @@ public class ArcaneGrimoire {
 
     private static void checkLast(Player player) {
         if (!player.getRelicManager().hasRelicEnalbed(Relic.ARCHMAGE)) {
-            player.sendMessage("You need the Archmage relic and be out of the wilderness to use the Grimoire.");
+            player.sendMessage("You need the Archmage relic to use the Grimoire.");
+            return;
+        }
+        if (player.wildernessLevel > 0) {
+            player.sendMessage("You can't use the Grimoire in the wilderness.");
             return;
         }
         int spellbookIndex = player.getAttributeIntOrZero("LAST_SPELLBOOK");
