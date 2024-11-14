@@ -305,8 +305,8 @@ public abstract class Patch {
         if (!player.getStats().check(StatType.Farming, crop.getLevelReq(), "plant that " + type)) {
             return;
         }
-        if (!player.getInventory().contains(sapling ? 5325 : 5343, 1)) {
-            player.sendMessage("You need a " + (sapling ? "gardening trowel" : "seed dibber") + " to plant " + type + "s.");
+        if (!player.getInventory().contains(sapling ? 952 : 5343, 1)) {
+            player.sendMessage("You need a " + (sapling ? "spade" : "seed dibber") + " to plant " + type + "s.");
             return;
         }
         if (!isRaked()) {
