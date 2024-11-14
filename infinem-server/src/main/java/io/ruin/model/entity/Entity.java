@@ -887,8 +887,10 @@ public abstract class Entity extends TemporaryAttributesHolder {
     public void publicSound(int id, int type, int delay, int distance) {
         int x = getAbsX();
         int y = getAbsY();
-        for(Player p : localPlayers())
-            p.getPacketSender().sendAreaSound(id, type, delay, x, y, distance);
+        for(Player p : localPlayers()) {
+            if (p != null) p.getPacketSender().sendAreaSound(id, type, delay, x, y, distance);
+        }
+
     }
 
     /**
