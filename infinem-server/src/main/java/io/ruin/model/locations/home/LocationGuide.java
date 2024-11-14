@@ -82,9 +82,10 @@ public class LocationGuide {
         SpawnListener.register(306, npc -> GUIDE = npc);
         SpawnListener.register(3216, npc -> MELEE_COMBAT_TUTOR = npc);
         SpawnListener.register(3221, npc -> FISHING_TUTOR = npc);
+        SpawnListener.register(3222, npc -> MINING_TUTOR = npc);
         SpawnListener.register(15000, npc -> VOTE_MANAGER = npc);
         SpawnListener.register(15001, npc -> DONATION_MANAGER = npc);
-        SpawnListener.register(401, npc -> {
+        SpawnListener.register(13618, npc -> {
             if (npc.getAbsY() < 3196)
                 TURAEL = npc;
         });
