@@ -53,7 +53,11 @@ public class EmoteClue extends Clue {
     }
 
     public void spawnUri(Player player, TabEmote emote) {
-        if (emote != this.emotes.get(0) || !equipmentCheck(player) || player.hasTemporaryAttribute(AttributeKey.URI_SPAWNED)) {
+        if (!player.debug && (emote != this.emotes.get(0)
+                || !equipmentCheck(player)
+                || player.hasTemporaryAttribute(AttributeKey.URI_SPAWNED)
+                || type.getSave(player) == null
+                || type.getSave(player).id != id)) {
             return;
         }
         Runnable runnable = () -> {
