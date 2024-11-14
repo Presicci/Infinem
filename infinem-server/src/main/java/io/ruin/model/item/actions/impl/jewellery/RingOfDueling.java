@@ -21,7 +21,7 @@ public enum RingOfDueling {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("ring", false,
-                new JeweleryTeleports.Teleport("Duel Arena", JewelleryTeleportBounds.DUEL_ARENA.getBounds()),
+                new JeweleryTeleports.Teleport("Emir's Arena", JewelleryTeleportBounds.DUEL_ARENA.getBounds()),
                 new JeweleryTeleports.Teleport("Castle Wars", JewelleryTeleportBounds.CASTLE_WARS.getBounds()),
                 new JeweleryTeleports.Teleport("Ferox Enclave", JewelleryTeleportBounds.FEROX_ENCLAVE.getBounds())
         );
