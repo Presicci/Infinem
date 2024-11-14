@@ -17,6 +17,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.impl.jewellery.JewelleryTeleportBounds;
 import io.ruin.model.skills.magic.SpellBook;
+import io.ruin.model.skills.magic.spells.modern.Alchemy;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 
 /**
@@ -112,7 +113,11 @@ public class ExplorersRing {
                     player.timeTillDailyReset("You've used all your Explorer's ring alchemy charges for the day.<br><br>");
                     return;
                 }
-                SpellBook.MODERN.spells[ALCHEMY_TAB.get(player) == 0 ? 13 : 34].itemAction.accept(player, player.getInventory().get(slot));
+                if (ALCHEMY_TAB.get(player) == 0) {
+                    new Alchemy(true).itemAction.accept(player, player.getInventory().get(slot));
+                } else {
+                    new Alchemy(false).itemAction.accept(player, player.getInventory().get(slot));
+                }
             };
         });
     }
