@@ -62,7 +62,7 @@ public class DumbRoute {
             source = Misc.getClosestPosition(entity, target); // if this is a "big" entity, we need to check from the closest position and use size 1, otherwise the getDirection check will fail in tight spaces as the npc won't be able to actually take the step, but might still be able to reach the target with an attack
         }
         if(distance == 1) {
-            return entity.getRouteFinder().routeEntity.finished(entity.getPosition())
+            return (entity.getRouteFinder().routeEntity == null || entity.getRouteFinder().routeEntity.finished(entity.getPosition()))
                     && getDirection(source.getX(), source.getY(), entity.getHeight(), 1, target.getAbsX(), target.getAbsY()) != null
                     && source.isWithinDistance(target.getPosition(), 1);
         } else {
