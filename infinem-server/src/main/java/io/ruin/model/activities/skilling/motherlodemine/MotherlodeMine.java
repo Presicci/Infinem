@@ -3,8 +3,10 @@ package io.ruin.model.activities.skilling.motherlodemine;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemID;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerBoolean;
@@ -292,6 +294,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     PlayerCounter.MINED_PAYDIRT.increment(player, 1);
                     player.getStats().addXp(StatType.Mining, 60, true);
                     player.sendFilteredMessage("You manage to mine some pay-dirt.");
+                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDefinition.get(PAY_DIRT).name);
                     if (Random.rollDie(247200 - (player.getStats().get(StatType.Mining).currentLevel * 25)))
                         Pet.ROCK_GOLEM.unlock(player);
                     if (!upperLevel && Random.rollDie(3, 1)) {
