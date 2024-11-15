@@ -541,6 +541,15 @@ public class Consumable {
             p.getStats().get(StatType.Fletching).drain(1, 0);
         });
 
+        // Blood pint
+        registerDrink(24774, -1, 16, 3, p -> {
+            p.sendMessage("You drink the Blood Pint. It tastes unsurprisingly awful and makes you feel a bit sick.");
+            p.getStats().get(StatType.Attack).boost(2, 0.04);
+            p.getStats().get(StatType.Strength).boost(2, 0.04);
+            p.getStats().get(StatType.Magic).drain(2, 0.04);
+            p.getStats().get(StatType.Prayer).drain(2, 0.04);
+        });
+
         // Lizardkicker
         registerDrink(25826, 1919, 0, 3, p -> {
             p.getStats().get(StatType.Ranged).boost(4, 0.00);
