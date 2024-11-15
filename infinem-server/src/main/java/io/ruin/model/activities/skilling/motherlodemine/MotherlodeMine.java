@@ -156,7 +156,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
         ObjectAction.register(LADDER, 1, (player, obj) -> {
             if (player.isAt(3755, 5673)) {
                 if (!PlayerBoolean.MOTHERLODE_MINE_UPPER.has(player)) {
-                    player.dialogue(new NPCDialogue(6562, "Ye gotta pay to access that. 200 nuggets it'll cost ye."));
+                    player.dialogue(new NPCDialogue(6562, "Ye gotta pay to access that. 100 nuggets it'll cost ye."));
                     return;
                 }
                 if (player.getStats().get(StatType.Mining).fixedLevel < 72) {
