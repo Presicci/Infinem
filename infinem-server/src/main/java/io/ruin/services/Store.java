@@ -251,6 +251,9 @@ public class Store {
             case 23:    // Transmog imbuement scrolls
                 addItem(player, 32040, 5);
                 break;
+            case 24:    // Combat relic reset tablet
+                addItem(player, 32041, 1);
+                break;
         }
         return 0;
     }
