@@ -6,6 +6,7 @@ import io.ruin.cache.ItemID;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -289,12 +290,13 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     });
                 }
                 if (Mining.canAttempt(attempts, pickaxe) && Random.get(100) <= Mining.chance(player, player.getStats().get(StatType.Mining).currentLevel, Rock.PAYDIRT)) {
-                    player.collectResource(new Item(PAY_DIRT, 1));
-                    player.getInventory().add(PAY_DIRT, 1);
-                    PlayerCounter.MINED_PAYDIRT.increment(player, 1);
-                    player.getStats().addXp(StatType.Mining, 60, true);
+                    int amt = player.getRelicManager().hasRelic(Relic.ENDLESS_HARVEST) ? 2 : 1;
+                    player.collectResource(new Item(PAY_DIRT, amt));
+                    player.getInventory().add(PAY_DIRT, amt);
+                    PlayerCounter.MINED_PAYDIRT.increment(player, amt);
+                    player.getStats().addXp(StatType.Mining, 60 * amt, true);
                     player.sendFilteredMessage("You manage to mine some pay-dirt.");
-                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDefinition.get(PAY_DIRT).name);
+                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDefinition.get(PAY_DIRT).name, amt);
                     if (Random.rollDie(247200 - (player.getStats().get(StatType.Mining).currentLevel * 25)))
                         Pet.ROCK_GOLEM.unlock(player);
                     if (!upperLevel && Random.rollDie(3, 1)) {
