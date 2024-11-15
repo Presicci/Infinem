@@ -192,7 +192,7 @@ public class Bank extends ItemContainerG<BankItem> {
         if(item.getId() == BLANK_ID)
             return;
         if(item.getId() == FILLER_ID) {
-            if(amount == -1)
+            if(amount == 1)
                 setBlank(item);
             else
                 clearFillers();
