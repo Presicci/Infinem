@@ -9,19 +9,19 @@
   "buyMultiplier": 600,
   "hideBuy": false,
   "items": [
-    {
+    { // Spice
       "itemId": 2007,
       "stock": 1,
       "buy_price": 138,
       "sell_price": 230
     },
-    {
+    { // Knife
       "itemId": 946,
       "stock": 1,
       "buy_price": 3,
       "sell_price": 6
     },
-    {
+    { // Garlic
       "itemId": 1550,
       "stock": 2,
       "buy_price": 1,
