@@ -7,6 +7,9 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Bounds;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class JeweleryTeleports {
 
     public final String type;
@@ -27,10 +30,9 @@ public class JeweleryTeleports {
             return;
         }
         player.sendFilteredMessage("You rub the " + type + "...");
-        Option[] options = new Option[teleports.length];
-        for(int i = 0; i < teleports.length; i++) {
-            Teleport teleport = teleports[i];
-            options[i] = new Option(teleport.name, () -> teleport.select(player, item, charges, replacementId, this));
+        List<Option> options = new ArrayList<>();
+        for (Teleport teleport : teleports) {
+            options.add(new Option(teleport.name, () -> teleport.select(player, item, charges, replacementId, this)));
         }
         player.dialogue(new OptionsDialogue("Where would you like to teleport to?", options));
     }
