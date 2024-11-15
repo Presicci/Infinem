@@ -197,7 +197,9 @@ public class PestControlGame {
 	private void end(boolean failed) {
 		players.forEach(p -> {
 			int rewardedPoints = settings.points() * 2;
-			if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_PEST_CONTROL_POINTS)) {
+			if (World.doublePest) {
+				rewardedPoints *= 4;
+			} else if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_PEST_CONTROL_POINTS)) {
 				rewardedPoints *= 2;
 			}
 			p.lock();
