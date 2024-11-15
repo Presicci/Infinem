@@ -217,6 +217,8 @@ public class NPCDrops {
          * Resource packs
          */
         Wilderness.resourcePackWithBoss(pKiller, npc);
+
+        handleRelicResetTabletDrop(killer, pKiller, dropPosition);
     }
 
     private void handleDrop(Killer killer, Position dropPosition, Player pKiller, Item item) {
@@ -653,5 +655,12 @@ public class NPCDrops {
         if (Arrays.asList(410, 411, 2916, 7276, 4005, 7278).contains(npc.getId()) && Random.rollDie(24, 1)) {
             handleDrop(killer, pos, player, new Item(23962));
         }
+    }
+
+    private void handleRelicResetTabletDrop(Killer killer, Player player, Position pos) {
+        int combatLevel = npc.getDef().combatLevel;
+        if (combatLevel < 50) return;
+        int roll = Math.max(1000, 5000 - (combatLevel / 20) * 150);
+        if (Random.rollDie(roll)) handleDrop(killer, pos, player, new Item(32041));
     }
 }
