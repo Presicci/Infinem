@@ -467,16 +467,40 @@ public class Consumable {
             p.getStats().get(StatType.Defence).drain(5);
         });
 
-        //Cup of tea
+        // Cup of tea
         registerDrink(712, 1980, 3, 3, p -> {
             p.getStats().get(StatType.Attack).boost(3, 0.0);
             p.forceText("Aaah, nothing like a nice cuppa tea!");
         });
 
-        //Beer
+        // Beer
         registerDrink(1917, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Strength).boost(2, 0.04);
             p.getStats().get(StatType.Attack).drain(1, 0.06);
+        });
+
+        // Vodka
+        registerDrink(Items.VODKA, -1, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(1, 0.05);
+            p.getStats().get(StatType.Attack).drain(3, 0.02);
+        });
+
+        // Rum
+        registerDrink(Items.RUM, -1, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(1, 0.05);
+            p.getStats().get(StatType.Attack).drain(3, 0.02);
+        });
+
+        // Whisky
+        registerDrink(Items.WHISKY, -1, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(1, 0.05);
+            p.getStats().get(StatType.Attack).drain(3, 0.02);
+        });
+
+        // Gin
+        registerDrink(Items.GIN, -1, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(1, 0.05);
+            p.getStats().get(StatType.Attack).drain(3, 0.02);
         });
 
         // Lizardkicker
