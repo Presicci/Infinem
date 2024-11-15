@@ -559,6 +559,13 @@ public class Consumable {
             p.getStats().get(StatType.Defence).drain(2, 0.05);
         });
 
+        // Sun-shine
+        registerDrink(29421, -1, 1, 3, p -> {
+            p.sendFilteredMessage("You drink the Sunshine. It's got quite the kick to it!");
+            p.getStats().get(StatType.Strength).boost(1, 0.05);
+            p.getStats().get(StatType.Attack).drain(4, 0);
+        });
+
         // Lizardkicker
         registerDrink(25826, 1919, 0, 3, p -> {
             p.getStats().get(StatType.Ranged).boost(4, 0.00);
