@@ -39,10 +39,10 @@ public enum DungeonHubTeleport {
             new Bounds(3088, 9821, 3149, 9917, 0),
             new Bounds(3149, 9868, 3152, 9908, 0)
     ),
-    FORTHOS_DUNGEON(TaskArea.ZEAH, new Position(1829, 9972, 0),
-            Bounds.fromRegion(7323)),
     EXPERIMENT_CAVE(TaskArea.MORYTANIA, new Position(3574, 9929, 0),
             Bounds.fromRegions(13979, 14235)),
+    FORTHOS_DUNGEON(TaskArea.ZEAH, new Position(1829, 9972, 0),
+            Bounds.fromRegion(7323)),
     FREMENNIK_SLAYER_DUNGEON(TaskArea.FREMENNIK, new Position(2803, 10000, 0),
             Bounds.fromRegions(10908, 11164), Bounds.fromRegion(10907)),
     ISLE_OF_SOULS_DUNGEON(TaskArea.MISTHALIN, new Position(2165, 9309, 0),
