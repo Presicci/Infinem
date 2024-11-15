@@ -14,6 +14,7 @@ import io.ruin.data.DataFile;
 import io.ruin.data.dumper.DropDumper;
 import io.ruin.data.dumper.ItemInfoDumper;
 import io.ruin.data.dumper.NPCInfoDumper;
+import io.ruin.data.dumper.ShopDumper;
 import io.ruin.data.impl.dialogue.DialogueLoader;
 import io.ruin.data.impl.Help;
 import io.ruin.data.impl.items.item_info;
@@ -1906,6 +1907,14 @@ public class Administrator {
                     item_info.loadFromDatabase();
                     player.sendMessage("Done!");
                 }).start();
+                return true;
+            }
+
+            /**
+             * Shop commands
+             */
+            case "dumpshop": {
+                ShopDumper.dump(String.join("_", args));
                 return true;
             }
 
