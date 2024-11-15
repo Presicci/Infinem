@@ -23,6 +23,7 @@ public class OutOfRangeNPC {
             3101,   // Sawmill operator
             4291,   // Herman Caranos
             2148,   // GE clerk
+            13344,  // Bartender
     };
 
     private static void addTwoTileWalkException(NPC npc) {
