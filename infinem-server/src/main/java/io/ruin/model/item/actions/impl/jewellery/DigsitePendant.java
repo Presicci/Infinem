@@ -19,8 +19,8 @@ public enum DigsitePendant {
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("pendant", false,
                 new JeweleryTeleports.Teleport("Digsite", JewelleryTeleportBounds.DIGSITE.getBounds()),
-                new JeweleryTeleports.Teleport("House on the Hill", JewelleryTeleportBounds.HOUSE_ON_THE_HILL.getBounds()),
-                new JeweleryTeleports.Teleport("Lithkren", JewelleryTeleportBounds.LITHKREN.getBounds())
+                new JeweleryTeleports.Teleport("Fossil Island", JewelleryTeleportBounds.HOUSE_ON_THE_HILL.getBounds()),
+                new JeweleryTeleports.Teleport("Lithkren Dungeon", JewelleryTeleportBounds.LITHKREN.getBounds())
         );
         for(DigsitePendant pendant : values())
             teleports.register(pendant.id, pendant.charges, pendant.replacementId);
