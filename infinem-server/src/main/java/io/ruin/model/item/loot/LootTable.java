@@ -545,7 +545,7 @@ public class LootTable {
                 new LootItem(203, 1, 18),   // Tarromin
                 new LootItem(205, 1, 14),   // Harralander
                 new LootItem(207, 1, 11),   // Ranarr
-                new LootItem(259, 1, 8),    // Irit
+                new LootItem(209, 1, 8),    // Irit
                 new LootItem(211, 1, 6),    // Avantoe
                 new LootItem(213, 1, 5),    // Kwuarm
                 new LootItem(215, 1, 4),    // Cadantine
