@@ -479,6 +479,13 @@ public class Consumable {
             p.getStats().get(StatType.Attack).drain(1, 0.06);
         });
 
+        // Sunbeam ale
+        registerDrink(29409, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(1, 0);
+            p.getStats().get(StatType.Agility).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(1, 0.05);
+        });
+
         // Vodka
         registerDrink(Items.VODKA, -1, 5, 3, p -> {
             p.getStats().get(StatType.Strength).boost(1, 0.05);
@@ -501,6 +508,37 @@ public class Consumable {
         registerDrink(Items.GIN, -1, 5, 3, p -> {
             p.getStats().get(StatType.Strength).boost(1, 0.05);
             p.getStats().get(StatType.Attack).drain(3, 0.02);
+        });
+
+        // Moon-lite
+        registerDrink(29418, -1, 5, 3, p -> {
+            p.sendMessage("You drink the Moonlite. It's very strong and leaves you feeling a bit dizzy.");
+            p.getStats().get(StatType.Strength).boost(5, 0);
+            p.getStats().get(StatType.Attack).drain(4, 0);
+        });
+
+        // Metztonalli white
+        registerDrink(29955, -1, 16, 3, p -> {
+            p.sendMessage("You drink the Metztonalli white. You find yourself feeling refreshed.");
+            p.getStats().get(StatType.Runecrafting).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(5, 0);
+            p.getStats().get(StatType.Firemaking).drain(1, 0);
+        });
+
+        // Blackbird red
+        registerDrink(29944, -1, 16, 3, p -> {
+            p.sendMessage("You drink the Blackbird red. Rich flavours flutter across your tongue.");
+            p.getStats().get(StatType.Hunter).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(5, 0);
+            p.getStats().get(StatType.Slayer).drain(1, 0);
+        });
+
+        // Eclipse red
+        registerDrink(29415, -1, 16, 3, p -> {
+            p.sendMessage("You drink the Eclipse red. It tastes great, but maybe not 1,000 coins great.");
+            p.getStats().get(StatType.Woodcutting).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(5, 0);
+            p.getStats().get(StatType.Fletching).drain(1, 0);
         });
 
         // Lizardkicker
