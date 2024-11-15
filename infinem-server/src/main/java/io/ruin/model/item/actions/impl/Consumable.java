@@ -550,6 +550,15 @@ public class Consumable {
             p.getStats().get(StatType.Prayer).drain(2, 0.04);
         });
 
+        // Steamforge brew
+        registerDrink(29412, 1919, 1, 3, p -> {
+            p.sendMessage("You drink the Steamforge brew. It has an odd metallic taste to it.");
+            p.getStats().get(StatType.Mining).boost(1, 0);
+            p.getStats().get(StatType.Magic).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(2, 0.05);
+            p.getStats().get(StatType.Defence).drain(2, 0.05);
+        });
+
         // Lizardkicker
         registerDrink(25826, 1919, 0, 3, p -> {
             p.getStats().get(StatType.Ranged).boost(4, 0.00);
