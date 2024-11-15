@@ -243,7 +243,7 @@ public enum ConditionalNPCLootTable {
      */
     ELF_WARRIOR_TASK("On-task",
             Slayer::isTask,
-            table -> table.modifyItemWeight(4207, 2.5D),
+            table -> table.modifyItemWeight(4207, 5D),
             3429, 8759, 8877, 8879, 8881, 8882, 8883, 8884,             // Iorwerth warriors
             3428, 8760, 8878, 8880, 8885, 8886, 8923, 8936, 8937, 8953, 8954,   // Iorwerth archers
             5293, 5294,                                                         // Elf warriors
