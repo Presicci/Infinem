@@ -20,12 +20,12 @@ public enum SkillingOutfit {
     ),
     GRACEFUL(StatType.Agility, 0.016, // 5% total boost
             // Normal, arceuus, port piscarilius, lovakengj, shayzien, hosidius, kourend, brimhaven agility, hallowed sepulchre, trailblazer
-            new SkillingOutfitPiece(Config.GRACEFUL_HOOD, 0.012, 11850, 13580, 13592, 13604, 13616, 13628, 13668, 21063, 24745, 25071),            // Hood
-            new SkillingOutfitPiece(Config.GRACEFUL_CAPE, 0.014, 11852, 13582, 13594, 13606, 13618, 13630, 13670, 21066, 24748, 25074),             // Cape
-            new SkillingOutfitPiece(Config.GRACEFUL_TORSO, 0.02, 11854, 13584, 13596, 13608, 13620, 13632, 13672, 21069, 24751, 25077),            // Top
-            new SkillingOutfitPiece(Config.GRACEFUL_LEGS, 0.016, 11856, 13586, 13598, 13610, 13622, 13634, 13674, 21072, 24754, 25080),             // Legs
-            new SkillingOutfitPiece(Config.GRACEFUL_GLOVES, 0.01, 11858, 13588, 13600, 13612, 13624, 13636, 13676, 21075, 24757, 25083),             // Gloves
-            new SkillingOutfitPiece(Config.GRACEFUL_BOOTS, 0.012, 11860, 13590, 13602, 13614, 13626, 13638, 13678, 21078, 24760, 25086)              // Boots
+            new SkillingOutfitPiece(Config.GRACEFUL_HOOD, 0.012, 11850, 13580, 13592, 13604, 13616, 13628, 13668, 21063, 24745, 25071, 27446, 30047),            // Hood
+            new SkillingOutfitPiece(Config.GRACEFUL_CAPE, 0.014, 11852, 13582, 13594, 13606, 13618, 13630, 13670, 21066, 24748, 25074, 27449, 30050),             // Cape
+            new SkillingOutfitPiece(Config.GRACEFUL_TORSO, 0.02, 11854, 13584, 13596, 13608, 13620, 13632, 13672, 21069, 24751, 25077, 27452, 30053),            // Top
+            new SkillingOutfitPiece(Config.GRACEFUL_LEGS, 0.016, 11856, 13586, 13598, 13610, 13622, 13634, 13674, 21072, 24754, 25080, 27455, 30056),             // Legs
+            new SkillingOutfitPiece(Config.GRACEFUL_GLOVES, 0.01, 11858, 13588, 13600, 13612, 13624, 13636, 13676, 21075, 24757, 25083, 27458, 30059),             // Gloves
+            new SkillingOutfitPiece(Config.GRACEFUL_BOOTS, 0.012, 11860, 13590, 13602, 13614, 13626, 13638, 13678, 21078, 24760, 25086, 27461, 30062)              // Boots
     ),
     PROSPECTOR(StatType.Mining, 0.028,
             new SkillingOutfitPiece(0.016, Items.PROSPECTOR_HELMET, 25549),
