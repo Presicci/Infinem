@@ -1,0 +1,14 @@
+13936,13937,13938,13939,13940,13941,13942,13943
+RAND
+/Player: Hello there. How's it going?
+Citizen: I don't talk to you lot.
+/Player: Hello there. How's it going?
+Citizen: Hmph!
+/Player: Hello there. How's it going?
+Citizen: Why are you here? This isn't a place for humans.
+/Player: Hello there. How's it going?
+Citizen: A human? Why don't you go back to where you came from?
+/Player: Hello there. How's it going?
+Citizen: I don't talk to you lot.
+/Player: Hello there. How's it going?
+Citizen: Not interested!

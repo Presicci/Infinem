@@ -1,0 +1,14 @@
+13883,13884,13885,13886,13887,13888,13889,13890,13891,13892,13893,13894,13895,13896,13897,13898,13899,13900,13901
+RAND
+/Player: Hello there. How's it going?
+Citizen: I'm very well, thank you.
+/Player: Hello there. How's it going?
+Citizen: Sorry, but I don't want to buy anything.
+/Player: Hello there. How's it going?
+Citizen: Not too bad thanks.
+/Player: Hello there. How's it going?
+Citizen: Hello!
+/Player: Hello there. How's it going?
+Citizen: Nilsal! I'm pretty good, thank you.
+/Player: Hello there. How's it going?
+Citizen: Nilsal!

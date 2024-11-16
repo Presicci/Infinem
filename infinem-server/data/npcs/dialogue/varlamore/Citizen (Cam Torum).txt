@@ -1,0 +1,12 @@
+13063,13064,13065,13066,13067,13068,13069,13070,13071,13072,13073,13074,13075,13076,13077,13078,13079,13080,13081,13082
+RAND
+/Player: Hello there. How's it going?
+Citizen: Another human? Do what you need to and then be gone from here.
+/Player: Hello there. How's it going?
+Citizen: Every day they let more of your kind in.
+/Player: Hello there. How's it going?
+Citizen: Hmph!
+/Player: Hello there. How's it going?
+Citizen: I don't talk to you lot.
+/Player: Hello there. How's it going?
+Citizen: Not interested!
