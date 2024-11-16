@@ -22,6 +22,8 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.shop.omnishop.OmniShop;
+import io.ruin.model.skills.agility.courses.ColossalWyrmRemains;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.skills.mining.EssenceMine;
 import io.ruin.model.stat.StatType;
@@ -35,6 +37,11 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    WORM_TONGUE_SHOP(OmniShop.WORM_TONGUES_WARES::open),
+    WORM_TONGUE_STATS(player -> {
+        NPC npc = player.getDialogueNPC();
+        ColossalWyrmRemains.statsDialogue(player, npc);
+    }),
     DAMPE_LOCKS(player -> {
         List<Coffin> REVERSED_LIST = Arrays.asList(Coffin.values());
         Collections.reverse(REVERSED_LIST);

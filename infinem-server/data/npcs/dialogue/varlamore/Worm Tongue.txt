@@ -1,0 +1,34 @@
+Player: Hello.
+Worm Tongue: Hello there, my short-tongued friend. What can I do for you?
+<What are you doing here?
+Player: What are you doing here?
+Worm Tongue: What do you think I'm doing here?
+Player: I wouldn't like to guess.
+Worm Tongue: How disappointing. I enjoy a good guessing game! No matter. My colleague and I are here are on a mission of preservation!
+Player: Preservation of what?
+Worm Tongue: Preservation of these magnificent colossal wyrm remains, of course! You see, we have a termite problem.
+Player: I'm beginning to see your role in all of this.
+Worm Tongue: Indeed! And while my archaeological skills are certainly exemplary, I also bring a certain set of more unique skills to this troublesome assignment.
+OTHERNPC:13983:Oh for goodness sake, he just eats the termites!
+Worm Tongue: Ahem! I am able to dispose of the termites in ways others cannot.
+Player: I see. So can I help your preservation efforts?
+Worm Tongue: Why yes! It seems our scaffolding has proven to be a useful place for adventurous types to practice running and jumping in quick succession.
+Worm Tongue: I'll happily exchange them for some goodies I've collected during my time here! You can also keep any bone shards they may have unfortunately chipped off.
+Player: Sounds simple enough!
+Worm Tongue: Wonderful! To get started, just use the ladder by the wyrm's skull to climb up onto the scaffolding.
+Worm Tongue: Initially the route is the same for everyone, but part way round you'll find a loftier section of scaffolding. If you're skilled, that route might be more appealing to you.
+Worm Tongue: That said, don't go up there unless you know what you're doing. I have work to do so I can't spend all my time patching people up when they hurt themselves!
+MESSAGE:You'll need at least 50 Agility to tackle the basic course and 62 Agility to take on the advanced course.
+Player: Great, thanks!
+Worm Tongue: Good luck!
+><Would you like to trade?
+Player: Would you like to trade?
+Worm Tongue: I certainly would!
+WORM_TONGUE_SHOP:
+><How am I doing so far?
+Player: How am I doing so far?
+Worm Tongue: Which route would you like to know about?
+WORM_TONGUE_STATS:
+><I'd better get going.
+Player: I'd better get going.
+Worm Tongue: Farewell.
