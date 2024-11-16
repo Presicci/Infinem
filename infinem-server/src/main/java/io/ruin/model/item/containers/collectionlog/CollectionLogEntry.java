@@ -197,7 +197,7 @@ public enum CollectionLogEntry {
     CHAMPIONS_CHALLENGE(12019, CollectionLogCategory.OTHER),
     CHAOS_DRUIDS(12024, CollectionLogCategory.OTHER),
     CHOMP_BIRD_HUNTING(12028, CollectionLogCategory.OTHER),
-    COLOSSAL_WYRM_AGILITY(-1, CollectionLogCategory.OTHER),
+    COLOSSAL_WYRM_AGILITY(11414, CollectionLogCategory.OTHER),
     CREATURE_CREATION(12034, CollectionLogCategory.OTHER),
     CYCLOPES(12023, CollectionLogCategory.OTHER),
     FORESTRY(-1, CollectionLogCategory.OTHER),
