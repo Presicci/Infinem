@@ -7,7 +7,7 @@ import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
-import io.ruin.model.inter.actions.SlotAction;
+import io.ruin.model.inter.actions.SimpleAction;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -138,13 +138,25 @@ public enum OmniShop {
         }
     }
 
+    private static void clickInventoryItem(Player player, int option, int slot, int itemId) {
+        // slot, shopdbrow, amt, 0?, value, -1?, examine
+        OmniShop shop = player.getTemporaryAttributeOrDefault(SHOP_KEY, null);
+        if (shop == null) return;
+        player.getPacketSender().sendClientScript(7253, "iiiiiis", slot, shop.rowId, player.getInventory().getAmount(itemId), 0, -1, -1, ItemDefinition.get(itemId).examine);
+    }
+
     static {
         InterfaceHandler.register(819, h -> {
+            // Changing between views removes selected item
+            h.actions[7] = (SimpleAction) player -> player.removeTemporaryAttribute(ITEM_KEY);
             h.actions[33] = (DefaultAction) (player, option, slot, itemId) -> clickItem(player, option, slot);
             h.closedAction = (player, i) -> {
                 player.removeTemporaryAttribute(SHOP_KEY);
                 player.removeTemporaryAttribute(ITEM_KEY);
             };
+        });
+        InterfaceHandler.register(806, h -> {
+            h.actions[0] = (DefaultAction) OmniShop::clickInventoryItem;
         });
     }
 }
