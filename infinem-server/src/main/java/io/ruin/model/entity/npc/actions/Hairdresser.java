@@ -56,5 +56,8 @@ public class Hairdresser {
         NPCAction.register(12116, "talk-to", Hairdresser::dialogue);
         NPCAction.register(12116, "haircut", (player, npc) -> MakeoverInterface.open(player, MakeoverType.HAIR, npc));
         NPCAction.register(12116, "shave", (player, npc) -> MakeoverInterface.open(player, MakeoverType.FACIAL_HAIR, npc));
+        NPCAction.register(13042, "talk-to", Hairdresser::dialogue);
+        NPCAction.register(13042, "haircut", (player, npc) -> MakeoverInterface.open(player, MakeoverType.HAIR, npc));
+        NPCAction.register(13042, "shave", (player, npc) -> MakeoverInterface.open(player, MakeoverType.FACIAL_HAIR, npc));
     }
 }
