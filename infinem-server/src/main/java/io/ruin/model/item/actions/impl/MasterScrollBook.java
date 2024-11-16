@@ -32,7 +32,10 @@ public class MasterScrollBook {
         ZAL_ANDRA(12938, new Bounds(2194, 3055, 2197, 3057, 0), 49, Config.ZUL_ANDRA_SCROLLS),
         KEY_MASTER(13249, new Bounds(1312, 1249, 1315, 1251, 0), 53, Config.KEY_MASTER_SCROLLS),
         REVENANT_SCROLL(21802, new Bounds(3128, 3830, 3131, 3835, 0), 57, Config.REV_SCROLLS),
-        WATSON(23387, new Bounds(1644, 3576, 1646, 3580, 0), 61, Config.WATSON_SCROLLS);
+        WATSON(23387, new Bounds(1644, 3576, 1646, 3580, 0), 61, Config.WATSON_SCROLLS),
+        GUTHIXIAN_TEMPLE(29684, new Bounds(4062, 4556, 4064, 4557, 0), 62, Config.GUTHIXIAN_TEMPLE_SCROLLS),
+        SPIDER_CAVE(29782, new Bounds(3656, 3402, 3658, 3403, 0), 63, Config.SPIDER_CAVE_SCROLLS),
+        COLOSSAL_WYRM(30040, new Bounds(1641, 2921, 1642, 2922, 0), 73, Config.COLOSSAL_WYRM_SCROLLS);
 
         public final int id, componentId;
 
@@ -139,12 +142,16 @@ public class MasterScrollBook {
         scroll.config.set(player, storedAmt - withdrawAmt);
     }
 
+    private static int getDefaultIndex(Player player) {
+        return Config.DEFAULT_SCROLL_BASE_15.get(player) * 15 + Config.DEFAULT_SCROLL.get(player);
+    }
+
     static {
         ItemAction.registerInventory(SCROLLBOOK, "open", (player, item) -> {
             MasterScrollBook.sendInterface(player);
         });
         ItemAction.registerInventory(SCROLLBOOK, "teleport", (player, item) -> {
-            int scrollIndex = Config.DEFAULT_SCROLL.get(player) - 1;
+            int scrollIndex = getDefaultIndex(player) - 1;
             if (scrollIndex < 0) {
                 player.sendMessage("You do not have a default scroll set.");
                 return;
@@ -152,6 +159,7 @@ public class MasterScrollBook {
             MasterScrollBook.teleport(player, TeleportScroll.values()[scrollIndex]);
         });
         ItemAction.registerInventory(SCROLLBOOK, "remove default", (player, item) -> {
+            Config.DEFAULT_SCROLL_BASE_15.set(player, 0);
             Config.DEFAULT_SCROLL.set(player, 0);
         });
         for (TeleportScroll scroll : TeleportScroll.values()) {
@@ -163,7 +171,9 @@ public class MasterScrollBook {
                     if (option == 1) {  // Activate
                         MasterScrollBook.teleport(player, scroll);
                     } else if (option == 2) {   // Set default
-                        Config.DEFAULT_SCROLL.set(player, scroll.ordinal() + 1);
+                        int value = scroll.ordinal() + 1;
+                        Config.DEFAULT_SCROLL_BASE_15.set(player, value >= 15 ? 1 : 0);
+                        Config.DEFAULT_SCROLL.set(player, value - 15);
                     } else {    // Withdraw
                         MasterScrollBook.withdraw(player, scroll);
                     }

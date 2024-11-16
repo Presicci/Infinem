@@ -753,8 +753,12 @@ public class Config {
     public static final Config KEY_MASTER_SCROLLS = varpbit(5684, true);
     public static final Config REV_SCROLLS = varpbit(6056, true);
     public static final Config WATSON_SCROLLS = varpbit(8253, true);
+    public static final Config GUTHIXIAN_TEMPLE_SCROLLS = varpbit(10967, true);
+    public static final Config SPIDER_CAVE_SCROLLS = varpbit(10995, true);
+    public static final Config COLOSSAL_WYRM_SCROLLS = varpbit(11029, true);
 
-    public static final Config DEFAULT_SCROLL = varpbit(5685, true);
+    public static final Config DEFAULT_SCROLL = varpbit(10966, true);
+    public static final Config DEFAULT_SCROLL_BASE_15 = varpbit(10968, true);
 
     /**
      * Pets
