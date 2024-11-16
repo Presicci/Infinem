@@ -75,7 +75,7 @@ public class ItemDefinition {
                 def.decode(new InBuffer(data));
                 if (def.stackable || PLURAL_ITEMS.contains(def.id))
                     def.descriptiveName = "some " + def.name.toLowerCase();
-                else if (DESCRIPTORLESS_ITEMS.contains(def.id))
+                else if (DESCRIPTORLESS_ITEMS.contains(def.id) || def.name.endsWith("s"))
                     def.descriptiveName = def.name.toLowerCase();
                 else if (StringUtils.vowelStart(def.name))
                     def.descriptiveName = "an " + def.name;
