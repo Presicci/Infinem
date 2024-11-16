@@ -534,6 +534,13 @@ public abstract class ItemContainerG<I extends Item> {
         return item != null && item.getAmount() >= amount;
     }
 
+    public boolean hasItems(List<Item> items) {
+        for (Item item : items) {
+             if (!hasItem(item.getId(), item.getAmount())) return false;
+        }
+        return true;
+    }
+
     public boolean hasMultiple(int id) {
         int amount = 0;
         for(Item item : items) {
