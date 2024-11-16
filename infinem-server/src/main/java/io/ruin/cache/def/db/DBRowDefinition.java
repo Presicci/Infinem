@@ -92,4 +92,8 @@ public class DBRowDefinition {
     public Object getColumnValue(int column) {
         return columnValues[column][0];
     }
+
+    public Object[] getColumnValues(int column) {
+        return columnValues[column];
+    }
 }
