@@ -94,8 +94,9 @@ public final class Utils {
     public static String grammarCorrectListForItems(List<Item> items) {
         List<String> names = new ArrayList<>();
         for (Item item : items) {
+            String name = ItemDefinition.get(item.getId()).name;
             names.add(
-                    item.getAmount() > 1 ? (item.getAmount() + " " + ItemDefinition.get(item.getId()).name + "s") : ItemDefinition.get(item.getId()).descriptiveName
+                    item.getAmount() > 1 ? (item.getAmount() + " " + name + (name.endsWith("s") ? "" : "s")) : ItemDefinition.get(item.getId()).descriptiveName
             );
         }
         return grammarCorrectList(names);
