@@ -26,6 +26,8 @@ public class PersistentData {
 
     @Expose public final Set<String> STARTER_IPS = new HashSet<>();
     @Expose public final Set<String> WEEK_ONE_IPS = new HashSet<>();
+    @Expose public int colossalWyrmBasicLaps;
+    @Expose public int colossalWyrmAdvancedLaps;
 
     public void save() {
         try {

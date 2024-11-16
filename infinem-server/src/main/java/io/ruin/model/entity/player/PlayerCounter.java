@@ -45,6 +45,8 @@ public enum PlayerCounter {
     PRIFDDINAS_COURSE,
     AGILITY_PYRAMID,
     APE_ATOLL_COURSE,
+    COLOSSAL_WYRM_LAPS,
+    COLOSSAL_WYRM_ADVANCED_LAPS,
 
     /**
      * Woodcutting

@@ -27,4 +27,8 @@ public class Renders {
 
     public static final int[] APE_ATOLL_TROPICAL_TREE = {3494, 3494, 3494, 3494, 3494, 3494, -1};
 
+    /*
+     * Colossal Wyrm Remains
+     */
+    public static final int[] WYRM_TIGHTROPE = {11653, 11653, 11653, 11653, 11653, 11653, -1};
 }
