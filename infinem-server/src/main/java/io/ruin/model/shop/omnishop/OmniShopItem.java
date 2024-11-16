@@ -71,10 +71,12 @@ public class OmniShopItem {
             inventory.remove(item.getId(), item.getAmount() * amount);
         }
         if (OmniShopFakeItem.FAKE_ITEMS.containsKey(itemId)) {
-            for (int replacementId : OmniShopFakeItem.FAKE_ITEMS.get(itemId).getReplacementItems()) {
+            OmniShopFakeItem fakeItem = OmniShopFakeItem.FAKE_ITEMS.get(itemId);
+            for (int replacementId : fakeItem.getReplacementItems()) {
                 inventory.add(replacementId, amount);
                 player.getCollectionLog().collect(replacementId, amount);
             }
+            if (fakeItem.getOnPurchaseAction() != null) fakeItem.getOnPurchaseAction().accept(player);
         } else {
             inventory.add(itemId, amount);
             player.getCollectionLog().collect(itemId, amount);
