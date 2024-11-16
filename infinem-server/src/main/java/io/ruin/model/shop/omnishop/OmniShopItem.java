@@ -73,9 +73,11 @@ public class OmniShopItem {
         if (OmniShopFakeItem.FAKE_ITEMS.containsKey(itemId)) {
             for (int replacementId : OmniShopFakeItem.FAKE_ITEMS.get(itemId).getReplacementItems()) {
                 inventory.add(replacementId, amount);
+                player.getCollectionLog().collect(replacementId, amount);
             }
         } else {
             inventory.add(itemId, amount);
+            player.getCollectionLog().collect(itemId, amount);
         }
     }
 }
