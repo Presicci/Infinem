@@ -2554,5 +2554,23 @@
     "y": 3289,
     "z": 0,
     "respawnSeconds": 60
+  },
+  {
+    "itemName": "Jug of water",
+    "amount": 0,
+    "id": 1937,
+    "x": 1649,
+    "y": 2906,
+    "z": 2,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Steel arrow",
+    "amount": 0,
+    "id": 886,
+    "x": 1633,
+    "y": 2906,
+    "z": 2,
+    "respawnSeconds": 60
   }
 ]
