@@ -25,7 +25,7 @@ public class StaticFacingNPC {
             5454,   // Thumpy
             7386,   // Dumpy
             13983,  // Construction worker
-            13981,  // Worm tongue
+            13982,  // Worm tongue
     };
     public static final Set<Integer> NPCS = new HashSet<>(Arrays.asList(VALUES));
 
