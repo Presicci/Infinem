@@ -124,7 +124,8 @@ public enum Pet {
     ROCK_GOLEM_LOVAKITE(21358, 7739, PetVariants.ROCK_GOLEM),
     ROCK_GOLEM_ELEMENTAL(21359, 7740, PetVariants.ROCK_GOLEM),
     ROCK_GOLEM_DAEYALT(21360, 7741, PetVariants.ROCK_GOLEM),
-    GIANT_SQUIRREL(20659, 7351, null),
+    GIANT_SQUIRREL(20659, 7351, 14044, null),
+    BONE_SQUIRREL(30151, 14044, 7351, null),
     TANGLEROOT(20661, 7352, PetVariants.TANGLEROOT),
     TANGLEROOT_CRYSTAL(24555, 9497, PetVariants.TANGLEROOT),
     TANGLEROOT_DRAGONFRUIT(24557, 9498, PetVariants.TANGLEROOT),
@@ -662,6 +663,12 @@ public enum Pet {
                         return;
                     }
                 }
+                if (pet == GIANT_SQUIRREL) {
+                    if (!PlayerBoolean.SQUIRREL_BONE.has(player)) {
+                        player.sendMessage("You need to use a Calcified acorn on him first before you can use metamorphosis.");
+                        return;
+                    }
+                }
                 if (pet.metaId == -1)
                     return;
                 npc.transform(pet.metaId);
@@ -724,6 +731,17 @@ public enum Pet {
                 player.dialogue(new ItemDialogue().one(item.getId(), "You sprinkle the dust over Olmlet. Congratulations! You may now metamorphise them."));
                 item.remove(1);
                 bool.setTrue(player);
+            } else {
+                player.sendMessage("You've already unlocked metamorphosis for this pet.");
+            }
+        });
+        ItemNPCAction.register(30042, GIANT_SQUIRREL.npcId, (player, item, npc) -> {
+            PlayerBoolean bool = PlayerBoolean.SQUIRREL_BONE;
+            if (!bool.has(player)) {
+                player.dialogue(new ItemDialogue().one(item.getId(), "The squirrel carefully crunches the calcified acorn and magically turns into a skeleton. Whoops!"));
+                item.remove(1);
+                bool.setTrue(player);
+                npc.transform(BONE_SQUIRREL.npcId);
             } else {
                 player.sendMessage("You've already unlocked metamorphosis for this pet.");
             }
@@ -1294,6 +1312,7 @@ public enum Pet {
                         new NPCDialogue(pet.npcId, "Squeaka squeaka!")
                 );
             }
+            case BONE_SQUIRREL:
             case GIANT_SQUIRREL: {
                 return player -> {
                     int random = Random.get(1, 3);

@@ -16,7 +16,8 @@ public enum PlayerBoolean {
     OLM_METAMORPH,
     ROW_DISABLED,
     DEFENCE_CAPE,
-    ROL_ARDY;
+    ROL_ARDY,
+    SQUIRREL_BONE;
 
     /**
      * Checks the boolean value for given player.
