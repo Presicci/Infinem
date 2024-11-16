@@ -8,6 +8,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
+import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +17,7 @@ import java.util.Map;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/13/2024
  */
+@Getter
 public enum OmniShop {
     FORESTRY_SHOP(
             3284,
@@ -151,10 +153,24 @@ public enum OmniShop {
         player.getPacketSender().sendClientScript(7253, "iiiiiis", slot, shop.rowId, player.getInventory().getAmount(itemId), 0, -1, -1, ItemDefinition.get(itemId).examine);
     }
 
+    private static void purchase(Player player, int amount) {
+        OmniShop shop = player.getTemporaryAttributeOrDefault(SHOP_KEY, null);
+        if (shop == null) return;
+        int index = player.getTemporaryAttributeOrDefault(ITEM_KEY, -1);
+        if (index == -1) return;
+        OmniShopItem item = shop.items.get(index);
+        if (item == null) return;
+        item.purchase(player, amount);
+    }
+
     static {
         InterfaceHandler.register(819, h -> {
             // Changing between views removes selected item
             h.actions[7] = (SimpleAction) player -> player.removeTemporaryAttribute(ITEM_KEY);
+            h.actions[25] = (SimpleAction) player -> purchase(player, 1);
+            h.actions[26] = (SimpleAction) player -> purchase(player, 5);
+            h.actions[27] = (SimpleAction) player -> purchase(player, 10);
+            h.actions[28] = (SimpleAction) player -> purchase(player, 50);
             h.actions[33] = (DefaultAction) (player, option, slot, itemId) -> clickItem(player, option, slot);
             h.closedAction = (player, i) -> {
                 player.removeTemporaryAttribute(SHOP_KEY);
