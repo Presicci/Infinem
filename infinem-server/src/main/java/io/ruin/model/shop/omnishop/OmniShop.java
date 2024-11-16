@@ -9,6 +9,9 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/13/2024
@@ -83,11 +86,14 @@ public enum OmniShop {
     );
 
     private final int rowId;
-    private final OmniShopItem[] items;
+    private final Map<Integer, OmniShopItem> items;
 
     OmniShop(int rowId, OmniShopItem... items) {
         this.rowId = rowId;
-        this.items = items;
+        this.items = new HashMap<>();
+        for (OmniShopItem item : items) {
+            this.items.put(item.getSlot(), item);
+        }
     }
 
     public void open(Player player) {
@@ -114,10 +120,10 @@ public enum OmniShop {
         OmniShop shop = player.getTemporaryAttributeOrDefault(SHOP_KEY, null);
         if (shop == null) return;
         int index = slot / 12;
-        if (index < 0 || index >= shop.items.length) return;
+        OmniShopItem item = shop.items.get(index);
+        if (item == null) return;
         int currentItem = player.getTemporaryAttributeOrDefault(ITEM_KEY, -1);
         if (currentItem == index) return;
-        OmniShopItem item = shop.items[index];
         int itemId = (int) DBRowDefinition.get(item.getRowId()).getColumnValue(0);
         if (option == 1) {
             player.getPacketSender().sendClientScript(7146, "iiiiiiisi",
