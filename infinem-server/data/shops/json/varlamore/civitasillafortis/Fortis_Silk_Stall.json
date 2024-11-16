@@ -1,0 +1,30 @@
+{
+  "name": "Fortis Silk Stall",
+  "currency": "COINS",
+  "npcs": [
+    13334
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": false,
+  "items": [
+    { // Needle
+      "itemId": 1733,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Thread
+      "itemId": 1734,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Silk
+      "itemId": 950,
+      "stock": 50,
+      "buy_price": 15,
+      "sell_price": 15
+    }
+  ]
+}

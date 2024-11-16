@@ -1,0 +1,84 @@
+{
+  "name": "Antima's Crafting Supplies",
+  "currency": "COINS",
+  "npcs": [
+    13342
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 650,
+  "hideBuy": false,
+  "items": [
+    { // Chisel
+      "itemId": 1755,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Hammer
+      "itemId": 2347,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Needle
+      "itemId": 1733,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Thread
+      "itemId": 1734,
+      "stock": 1000,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Shears
+      "itemId": 1735,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Glassblowing pipe
+      "itemId": 1785,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Ring mould
+      "itemId": 1592,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    { // Necklace mould
+      "itemId": 1597,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    { // Amulet mould
+      "itemId": 1595,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    { // Bracelet mould
+      "itemId": 11065,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    { // Tiara mould
+      "itemId": 5523,
+      "stock": 10,
+      "buy_price": 65,
+      "sell_price": 100
+    },
+    { // Bolt mould
+      "itemId": 9434,
+      "stock": 10,
+      "buy_price": 16,
+      "sell_price": 25
+    }
+  ]
+}

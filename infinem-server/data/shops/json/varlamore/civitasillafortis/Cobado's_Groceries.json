@@ -1,0 +1,158 @@
+{
+  "name": "Cobado's Groceries",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13341
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Cooking apple
+      "itemId": 1955,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Pineapple
+      "itemId": 2114,
+      "stock": 15,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Banana
+      "itemId": 1963,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Tomato
+      "itemId": 1982,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    { // Potato
+      "itemId": 1942,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Onion
+      "itemId": 1957,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    { // Cabbage
+      "itemId": 24367,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Orange
+      "itemId": 2108,
+      "stock": 2,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Papaya fruit
+      "itemId": 5972,
+      "stock": 0,
+      "buy_price": 44,
+      "sell_price": 64
+    },
+    { // Coconut
+      "itemId": 5974,
+      "stock": 0,
+      "buy_price": 60,
+      "sell_price": 87
+    },
+    { // Strawberry
+      "itemId": 5504,
+      "stock": 0,
+      "buy_price": 11,
+      "sell_price": 17
+    },
+    { // Watermelon
+      "itemId": 5982,
+      "stock": 0,
+      "buy_price": 33,
+      "sell_price": 48
+    },
+    { // Sweetcorn
+      "itemId": 5986,
+      "stock": 0,
+      "buy_price": 6,
+      "sell_price": 9
+    },
+    { // Redberries
+      "itemId": 1951,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    { // Cheese
+      "itemId": 1985,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    { // Chocolate bar
+      "itemId": 1973,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    { // Raw chicken
+      "itemId": 2138,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Raw beef
+      "itemId": 2132,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Raw rabbit
+      "itemId": 3226,
+      "stock": 5,
+      "buy_price": 14,
+      "sell_price": 20
+    },
+    { // Raw herring
+      "itemId": 345,
+      "stock": 5,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    { // Raw cod
+      "itemId": 341,
+      "stock": 5,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    { // Raw tuna
+      "itemId": 359,
+      "stock": 5,
+      "buy_price": 28,
+      "sell_price": 40
+    },
+    { // Raw bass
+      "itemId": 363,
+      "stock": 3,
+      "buy_price": 28,
+      "sell_price": 40
+    },
+    { // Raw swordfish
+      "itemId": 371,
+      "stock": 2,
+      "buy_price": 56,
+      "sell_price": 80
+    }
+  ]
+}

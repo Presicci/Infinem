@@ -1,0 +1,194 @@
+{
+  "name": "Fortis Blacksmith",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13332
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Bronze platebody
+      "itemId": 1117,
+      "stock": 5,
+      "buy_price": 96,
+      "sell_price": 160
+    },
+    { // Iron platebody
+      "itemId": 1115,
+      "stock": 4,
+      "buy_price": 336,
+      "sell_price": 560
+    },
+    { // Steel platebody
+      "itemId": 1119,
+      "stock": 4,
+      "buy_price": 1200,
+      "sell_price": 2000
+    },
+    { // Mithril platebody
+      "itemId": 1121,
+      "stock": 3,
+      "buy_price": 3120,
+      "sell_price": 5200
+    },
+    { // Adamant platebody
+      "itemId": 1123,
+      "stock": 2,
+      "buy_price": 9984,
+      "sell_price": 16640
+    },
+    { // Bronze platelegs
+      "itemId": 1075,
+      "stock": 5,
+      "buy_price": 48,
+      "sell_price": 80
+    },
+    { // Iron platelegs
+      "itemId": 1067,
+      "stock": 4,
+      "buy_price": 168,
+      "sell_price": 280
+    },
+    { // Steel platelegs
+      "itemId": 1069,
+      "stock": 4,
+      "buy_price": 600,
+      "sell_price": 1000
+    },
+    { // Mithril platelegs
+      "itemId": 1071,
+      "stock": 3,
+      "buy_price": 1560,
+      "sell_price": 2600
+    },
+    { // Adamant platelegs
+      "itemId": 1073,
+      "stock": 2,
+      "buy_price": 3840,
+      "sell_price": 6400
+    },
+    { // Bronze plateskirt
+      "itemId": 1087,
+      "stock": 5,
+      "buy_price": 48,
+      "sell_price": 80
+    },
+    { // Iron plateskirt
+      "itemId": 1081,
+      "stock": 4,
+      "buy_price": 168,
+      "sell_price": 280
+    },
+    { // Steel plateskirt
+      "itemId": 1083,
+      "stock": 4,
+      "buy_price": 600,
+      "sell_price": 1000
+    },
+    { // Mithril plateskirt
+      "itemId": 1085,
+      "stock": 3,
+      "buy_price": 1560,
+      "sell_price": 2600
+    },
+    { // Adamant plateskirt
+      "itemId": 1091,
+      "stock": 2,
+      "buy_price": 3840,
+      "sell_price": 6400
+    },
+    { // Bronze longsword
+      "itemId": 1291,
+      "stock": 5,
+      "buy_price": 24,
+      "sell_price": 40
+    },
+    { // Iron longsword
+      "itemId": 1293,
+      "stock": 4,
+      "buy_price": 84,
+      "sell_price": 140
+    },
+    { // Steel longsword
+      "itemId": 1295,
+      "stock": 4,
+      "buy_price": 300,
+      "sell_price": 500
+    },
+    { // Mithril longsword
+      "itemId": 1299,
+      "stock": 3,
+      "buy_price": 780,
+      "sell_price": 1300
+    },
+    { // Adamant longsword
+      "itemId": 1301,
+      "stock": 2,
+      "buy_price": 1920,
+      "sell_price": 3200
+    },
+    { // Bronze scimitar
+      "itemId": 1321,
+      "stock": 5,
+      "buy_price": 19,
+      "sell_price": 32
+    },
+    { // Iron scimitar
+      "itemId": 1323,
+      "stock": 4,
+      "buy_price": 67,
+      "sell_price": 112
+    },
+    { // Steel scimitar
+      "itemId": 1325,
+      "stock": 4,
+      "buy_price": 240,
+      "sell_price": 400
+    },
+    { // Mithril scimitar
+      "itemId": 1329,
+      "stock": 3,
+      "buy_price": 624,
+      "sell_price": 1040
+    },
+    { // Adamant scimitar
+      "itemId": 1331,
+      "stock": 2,
+      "buy_price": 1536,
+      "sell_price": 2560
+    },
+    { // Bronze spear
+      "itemId": 1237,
+      "stock": 5,
+      "buy_price": 15,
+      "sell_price": 26
+    },
+    { // Iron spear
+      "itemId": 1239,
+      "stock": 4,
+      "buy_price": 54,
+      "sell_price": 91
+    },
+    { // Steel spear
+      "itemId": 1241,
+      "stock": 4,
+      "buy_price": 195,
+      "sell_price": 325
+    },
+    { // Mithril spear
+      "itemId": 1243,
+      "stock": 3,
+      "buy_price": 507,
+      "sell_price": 845
+    },
+    { // Adamant spear
+      "itemId": 1245,
+      "stock": 2,
+      "buy_price": 1248,
+      "sell_price": 2080
+    }
+  ]
+}

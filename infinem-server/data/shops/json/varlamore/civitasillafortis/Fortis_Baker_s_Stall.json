@@ -1,0 +1,30 @@
+{
+  "name": "Fortis Baker's Stall",
+  "currency": "COINS",
+  "npcs": [
+    13338
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 800,
+  "hideBuy": false,
+  "items": [
+    { // Bread
+      "itemId": 2309,
+      "stock": 100,
+      "buy_price": 9,
+      "sell_price": 12
+    },
+    { // Cake
+      "itemId": 1891,
+      "stock": 250,
+      "buy_price": 40,
+      "sell_price": 50
+    },
+    { // Chocolate slice
+      "itemId": 1901,
+      "stock": 100,
+      "buy_price": 24,
+      "sell_price": 30
+    }
+  ]
+}

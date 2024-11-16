@@ -1,0 +1,30 @@
+{
+  "name": "Fortis Spice Stall",
+  "currency": "COINS",
+  "npcs": [
+    13337
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Knife
+      "itemId": 946,
+      "stock": 10,
+      "buy_price": 4,
+      "sell_price": 6
+    },
+    { // Spice
+      "itemId": 2007,
+      "stock": 20,
+      "buy_price": 161,
+      "sell_price": 230
+    },
+    { // Garlic
+      "itemId": 1550,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 3
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Fortis Gem Stall",
+  "currency": "COINS",
+  "npcs": [
+    13336
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    { // Sapphire
+      "itemId": 1607,
+      "stock": 2,
+      "buy_price": 200,
+      "sell_price": 375
+    },
+    { // Emerald
+      "itemId": 1605,
+      "stock": 1,
+      "buy_price": 400,
+      "sell_price": 750
+    },
+    { // Ruby
+      "itemId": 1603,
+      "stock": 1,
+      "buy_price": 800,
+      "sell_price": 1500
+    },
+    { // Diamond
+      "itemId": 1601,
+      "stock": 0,
+      "buy_price": 1600,
+      "sell_price": 3000
+    }
+  ]
+}
