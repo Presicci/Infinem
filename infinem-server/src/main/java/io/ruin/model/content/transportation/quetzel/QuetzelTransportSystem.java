@@ -21,7 +21,7 @@ import lombok.Getter;
 public class QuetzelTransportSystem {
 
     // 2=green, 3=gold, 4=blue, 5=cyan, 6=green and orange
-    private static final Config RENU = Config.varpbit(9951, true).defaultValue(2);
+    protected static final Config RENU = Config.varpbit(9951, true).defaultValue(2);
     // Bitmask of all locked location indexes
     private static final Config INTERFACE_UNLOCKS = Config.varp(4182, false).defaultValue(2528);
 
@@ -30,7 +30,7 @@ public class QuetzelTransportSystem {
         player.getPacketSender().sendAccessMask(874, 15, 0, 15, AccessMasks.ClickOp1);
     }
 
-    private static void teleport(Player player, Position destination) {
+    protected static void teleport(Player player, Position destination) {
         Traveling.fadeTravel(player, destination, 5);
         player.privateSound(8501, 3, 55);
     }
