@@ -30,6 +30,11 @@ public class QuetzelTransportSystem {
         player.getPacketSender().sendAccessMask(874, 15, 0, 15, AccessMasks.ClickOp1);
     }
 
+    private static void teleport(Player player, Position destination) {
+        Traveling.fadeTravel(player, destination, 5);
+        player.privateSound(8501, 3, 55);
+    }
+
     private static void click(Player player, int slot) {
         QuetzelDestination quetzelDestination = QuetzelDestination.values()[slot];
         Position destination = quetzelDestination.getDestination();
@@ -38,12 +43,13 @@ public class QuetzelTransportSystem {
             return;
         }
         player.closeInterface(InterfaceType.MAIN);
-        Traveling.fadeTravel(player, destination, 5);
-        player.privateSound(8501, 3, 55);
+        teleport(player, destination);
     }
 
     static {
         NPCAction.registerIncludeVariants(13350, 1, (player, npc) -> open(player));
+        //NPCAction.registerIncludeVariants(12888, "travel", (player, npc) -> teleport(player, new Position(1703, 3140)));
+        NPCAction.registerIncludeVariants(12889, "travel", (player, npc) -> teleport(player, new Position(3280, 3412)));
         InterfaceHandler.register(874, h -> {
             h.actions[15] = (SlotAction) QuetzelTransportSystem::click;
         });
