@@ -1,8 +1,10 @@
 package io.ruin.model.content.transportation.quetzel;
 
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -46,8 +48,24 @@ public class QuetzelTransportSystem {
         teleport(player, destination);
     }
 
+    private static void pet(Player player, NPC npc) {
+        Position dest = npc.getCentrePosition().translate(npc.spawnDirection, 2);
+        player.lock();
+        player.startEvent(e -> {
+            player.stepAbs(dest.getX(), dest.getY(), StepType.FORCE_WALK);
+            e.waitForMovement(player);
+            e.delay(1);
+            player.face(npc);
+            player.animate(11122);
+            npc.animate(11123);
+            e.delay(2);
+            player.unlock();
+        });
+    }
+
     static {
         NPCAction.registerIncludeVariants(13350, 1, (player, npc) -> open(player));
+        NPCAction.registerIncludeVariants(13350, 4, QuetzelTransportSystem::pet);
         //NPCAction.registerIncludeVariants(12888, "travel", (player, npc) -> teleport(player, new Position(1703, 3140)));
         NPCAction.registerIncludeVariants(12889, "travel", (player, npc) -> teleport(player, new Position(3280, 3412)));
         InterfaceHandler.register(874, h -> {
