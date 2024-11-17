@@ -43,7 +43,7 @@ public enum PickPocket {
             0.2424,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 3, 3, 1)  //Coins
-            ), "hengel"),
+            ), "hengel", "citizen"),
     WOMAN(1, 8.0, 422, 5, 1, "woman's", PlayerCounter.PICKPOCKETED_MAN,
             257211,
             22521,
@@ -551,7 +551,7 @@ public enum PickPocket {
                         player.sendFilteredMessage("Your lightning-fast reactions allow you to steal " + (additionalRolls == 1 ? "double" : additionalRolls == 2 ? "triple" : additionalRolls == 3 ? "quadruple" : "quintuple") + " the loot.");
                     }
                 } else {
-                    player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
+                    player.sendFilteredMessage("You pick the " + (npc.getDef().name.equalsIgnoreCase("citizen") ? "citizen's" : pickpocket.identifier) + " pocket.");
                     List<Item> items = lootTable.rollItems(true);
                     for (Item item : items) {
                         if (item.getId() == 995 && pouchId != -1) {
