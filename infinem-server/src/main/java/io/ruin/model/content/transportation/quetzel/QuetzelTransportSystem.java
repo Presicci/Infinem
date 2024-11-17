@@ -64,8 +64,8 @@ public class QuetzelTransportSystem {
     }
 
     static {
-        NPCAction.registerIncludeVariants(13350, 1, (player, npc) -> open(player));
-        NPCAction.registerIncludeVariants(13350, 4, QuetzelTransportSystem::pet);
+        NPCAction.registerIncludeVariants(13355, 1, (player, npc) -> open(player));
+        NPCAction.registerIncludeVariants(13355, 4, QuetzelTransportSystem::pet);
         //NPCAction.registerIncludeVariants(12888, "travel", (player, npc) -> teleport(player, new Position(1703, 3140)));
         NPCAction.registerIncludeVariants(12889, "travel", (player, npc) -> teleport(player, new Position(3280, 3412)));
         InterfaceHandler.register(874, h -> {
