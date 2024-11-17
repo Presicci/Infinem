@@ -241,6 +241,16 @@ public enum PickPocket {
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 30, 30, 1) //Coins
             )),
+    WEALTHY_CITIZEN(50, 96, 422, 5, 3, "citizen's", PlayerCounter.PICKPOCKETED_WEALTHY_CITIZEN,
+            257211,
+            28822,
+            46.48,
+            0.64,
+            new LootTable().addTable(1,
+                    new LootItem(COINS_995, 85, 85, 79), //Coins
+                    new LootItem(29325, 1, 1, 5), //House keys
+                    new LootItem(24362, 1, 1, 1) //Clue scroll (easy)
+            )),
     BANDIT(53, 79.5, 422, 5, 3, "bandit's", PlayerCounter.PICKPOCKETED_BANDIT,
             257211,
             22530,
