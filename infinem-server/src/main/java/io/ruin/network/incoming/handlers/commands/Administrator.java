@@ -3342,7 +3342,7 @@ public class Administrator {
                 return true;
             }
             case "omnishop": {
-                OmniShop.WORM_TONGUES_WARES.open(player);
+                OmniShop.FORESTRY_SHOP.open(player);
                 return true;
             }
         }
