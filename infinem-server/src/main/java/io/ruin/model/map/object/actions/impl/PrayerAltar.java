@@ -71,6 +71,9 @@ public class PrayerAltar {
             player.animate(645);
             player.sendMessage("You pray at the altar, nothing interesting happens.");
         });
+        // Varlamore shrines
+        ObjectAction.register(52405, 1,  (player, obj) -> pray(player));    // Shrine of ralos
+        ObjectAction.register(54427, 1,  (player, obj) -> pray(player));    // Shrine of twilight
         // Entrana
         ObjectAction.register(10638, 1, (player, obj) -> pray(player));
         // Ancient pyramid altar
