@@ -26,10 +26,24 @@ public class QuetzelTransportSystem {
     protected static final Config RENU = Config.varpbit(9951, true).defaultValue(2);
     // Bitmask of all locked location indexes
     private static final Config INTERFACE_UNLOCKS = Config.varp(4182, false).defaultValue(2528);
+    private static final String LAST_DESTINATION_KEY = "LAST_QUETZEL";
 
     private static void open(Player player) {
         player.openInterface(InterfaceType.MAIN, 874);
         player.getPacketSender().sendAccessMask(874, 15, 0, 15, AccessMasks.ClickOp1);
+    }
+
+    private static void lastDestination(Player player) {
+        Position destination = player.getTemporaryAttributeOrDefault(LAST_DESTINATION_KEY, null);
+        if (destination == null) {
+            player.sendMessage("You don't have a last destination.");
+            return;
+        }
+        if (player.getPosition().distance(destination) < 4) {
+            player.sendMessage("You are already at that destination.");
+            return;
+        }
+        teleport(player, destination);
     }
 
     protected static void teleport(Player player, Position destination) {
@@ -45,6 +59,7 @@ public class QuetzelTransportSystem {
             return;
         }
         player.closeInterface(InterfaceType.MAIN);
+        player.putTemporaryAttribute(LAST_DESTINATION_KEY, destination);
         teleport(player, destination);
     }
 
@@ -65,6 +80,7 @@ public class QuetzelTransportSystem {
 
     static {
         NPCAction.registerIncludeVariants(13355, 1, (player, npc) -> open(player));
+        NPCAction.registerIncludeVariants(13355, 3, (player, npc) -> lastDestination(player));
         NPCAction.registerIncludeVariants(13355, 4, QuetzelTransportSystem::pet);
         //NPCAction.registerIncludeVariants(12888, "travel", (player, npc) -> teleport(player, new Position(1703, 3140)));
         NPCAction.registerIncludeVariants(12889, "travel", (player, npc) -> teleport(player, new Position(3280, 3412)));
