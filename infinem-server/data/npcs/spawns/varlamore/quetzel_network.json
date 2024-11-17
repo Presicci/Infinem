@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Renu",
+    "id": 13355,
+    "x": 1388,
+    "y": 2898,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Renu",
+    "id": 13355,
+    "x": 1547,
+    "y": 2996,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 13355,
+    "x": 1671,
+    "y": 2932,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 13355,
+    "x": 1701,
+    "y": 3036,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 13355,
+    "x": 1776,
+    "y": 3110,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 13355,
+    "x": 1436,
+    "y": 3168,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 13355,
+    "x": 1584,
+    "y": 3054,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 13355,
+    "x": 1447,
+    "y": 3107,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 13355,
+    "x": 1511,
+    "y": 3221,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 13355,
+    "x": 1612,
+    "y": 3301,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 13355,
+    "x": 1696,
+    "y": 3141,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  }
+]
