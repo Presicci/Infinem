@@ -49,7 +49,8 @@ public enum ItemPack {
     SOFT_CLAY_MINING_GUILD(24851, 1762),
     SOFT_CLAY_STARDUST(25533, 1762),
     EMPTY_BUCKET(22660, 1926),
-    BONE_BOLT(13193, 8882);
+    BONE_BOLT(13193, 8882),
+    OLIVE_OIL(12857, 3423, 100);
 
     public final int itemID, packContents, packContentsAmt;
 
