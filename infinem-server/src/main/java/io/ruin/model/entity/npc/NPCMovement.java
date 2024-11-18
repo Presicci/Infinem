@@ -4,7 +4,10 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.WorldConstants;
 import io.ruin.model.entity.shared.Movement;
 import io.ruin.model.entity.shared.StepType;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+
+import java.util.function.Consumer;
 
 public class NPCMovement extends Movement {
 
@@ -92,4 +95,20 @@ public class NPCMovement extends Movement {
         return -1;
     }
 
+    /**
+     * Routes
+     */
+    public void routeNPC(Consumer<NPC> onComplete, Position[] path) {
+        npc.startEvent(e -> {
+            for (Position destination : path) {
+                npc.stepAbs(destination.getX(), destination.getY(), StepType.FORCE_WALK);
+                e.waitForMovement(npc);
+            }
+            if (onComplete != null) onComplete.accept(npc);
+        });
+    }
+
+    public void routeNPC(Position[] path) {
+        routeNPC(null, path);
+    }
 }
