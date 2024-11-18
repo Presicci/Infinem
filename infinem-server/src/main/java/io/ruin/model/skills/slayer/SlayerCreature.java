@@ -91,7 +91,7 @@ public enum SlayerCreature {
     MUTATED_ZYGOMITES(74, 57, 60, "mutated zygomites"),
     ICEFIENDS(75, 1, 20, "icefiends"),
     MINOTAURS(76, 1, 7, "minotaurs"),
-    FLESH_CRAWLER(77, 1, 15, "fleshcrawlers"),
+    FLESH_CRAWLER(77, 1, 15, "flesh crawlers"),
     CATABLEPON(78, 1, 35, "catablepon"),
     ANKOUS(79, 1, 40, "ankou"),
     CAVE_HORRORS(80, 58, 85, "cave horrors"),
