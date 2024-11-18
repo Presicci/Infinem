@@ -177,7 +177,7 @@ public class Vorkath extends NPCCombat {
     private void postDefend(Hit hit) {
         if (resistance == Resistance.FULL) {
             hit.block();
-            if (hit.attacker.player != null)
+            if (hit.attacker != null && hit.attacker.player != null)
                 hit.attacker.player.sendMessage("Vorkath is currently immune to your attacks!");
         } else if (resistance == Resistance.PARTIAL) {
             hit.damage /= 2;
