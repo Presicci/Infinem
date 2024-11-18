@@ -98,7 +98,7 @@ public class MakeoverInterface {
         MakeoverType type = player.getTemporaryAttributeOrDefault(TYPE_KEY, null);
         if (type == null) return;
         player.putTemporaryAttribute(ORIGINAL_STYLE_KEY, player.getAppearance().styles[type.getStyle().getAppearanceIndex()]);
-        player.putTemporaryAttribute(ORIGINAL_COLOR_KEY, player.getAppearance().colors[type.getColorIndex()]);
+        if (type != MakeoverType.HANDS) player.putTemporaryAttribute(ORIGINAL_COLOR_KEY, player.getAppearance().colors[type.getColorIndex()]);
         NPC npc = player.getTemporaryAttributeOrDefault(NPC_KEY, null);
         if (npc != null) {
             if (npc.getId() == 534 && (type == MakeoverType.TOP || type == MakeoverType.LEGS || type == MakeoverType.ARMS))
