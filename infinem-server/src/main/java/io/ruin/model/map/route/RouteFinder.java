@@ -120,6 +120,11 @@ public class RouteFinder {
         return routeAbsolute;
     }
 
+    public boolean isAbsoluteRouteFinished(Position destination) {
+        System.out.println("Current: " + destination + " vs. Goal: " + routeAbsolute.finishX + ", " + routeAbsolute.finishY);
+        return routeAbsolute.finished(destination);
+    }
+
     /**
      * Relative route (Attempts to move to the given coordinates based on size)
      */
@@ -132,6 +137,10 @@ public class RouteFinder {
         routeRelative.set(destX, destY, entity.getSize(), entity.getSize(), 0);
         route(routeRelative, true, false);
         return routeRelative;
+    }
+
+    public boolean isRelativeRouteFinished(Position destination) {
+        return routeRelative.finished(destination);
     }
 
     /**
