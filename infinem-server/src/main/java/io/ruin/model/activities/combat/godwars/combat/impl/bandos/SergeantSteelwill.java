@@ -26,7 +26,7 @@ public class SergeantSteelwill extends NPCCombat {
         npc.animate(info.attack_animation);
         int delay = PROJECTILE.send(npc, target);
         Hit hit = new Hit(npc, AttackStyle.MAGIC, null)
-                .randDamage(35)
+                .randDamage(15)
                 .clientDelay(delay);
         hit.postDamage(t -> {
             if(hit.damage > 0) {
