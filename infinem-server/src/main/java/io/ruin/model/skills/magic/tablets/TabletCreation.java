@@ -20,15 +20,17 @@ public class TabletCreation {
     private static final Config TABLET_SET = Config.varp(4074, false);
     private static final Config LECTERN_TYPE = Config.varpbit(10599, false);
     private static final Config LECTERN_SELECTION = Config.varpbit(10600, false);
+    private static final String LECTERN_KEY = "LECTERN";
 
     public static void open(Player player, MagicTabletType type) {
         LECTERN_TYPE.set(player, type.getVbIndex());
+        player.putTemporaryAttribute(LECTERN_KEY, type);
         TABLET_SET.set(player, type.getTabletEnum());
         player.openInterface(InterfaceType.MAIN, 403);
     }
 
     private static void create(Player player) {
-        MagicTabletType type = MagicTabletType.getType(LECTERN_TYPE.get(player));
+        MagicTabletType type = player.getTemporaryAttributeOrDefault(LECTERN_KEY, MagicTabletType.OAK);
         if (type == null) return;
         List<MagicTablet> tablets = MagicTablet.getTablets(type);
         int selection = LECTERN_SELECTION.get(player) - 1;
