@@ -479,9 +479,7 @@ public class Farming {
             def.seedType = getCropForSeed(def.id);
             if (def.seedType == null)
                 def.seedType = getCropForSapling(def.id);
-            if (def.id == 5974)         // Coconut
-                def.produceOf = null;
-            else if (def.id == 5978)    // Coconut shell
+            if (def.id == 5978)    // Coconut shell
                 def.produceOf = FruitTreeCrop.PALM;
         });
 
