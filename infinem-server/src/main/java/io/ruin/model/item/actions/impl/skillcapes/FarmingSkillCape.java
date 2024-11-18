@@ -24,7 +24,7 @@ public class FarmingSkillCape {
     }
 
     public static void teleport(Player player) {
-        ModernTeleport.teleport(player, new Position(1248, 3721, 0));
+        ModernTeleport.teleport(player, new Position(1248, 3726, 0));
     }
 
     static {
