@@ -41,7 +41,7 @@ public class SpiderlingCombat extends NPCCombat {
             npc.remove();
         }
         basicAttack().onLand(hit -> {
-            if (target.player != null) {
+            if (target != null && target.player != null) {
                 target.player.getPrayer().drain(1);
                 target.player.sendFilteredMessage("You feel yourself drained by the spiderling");
             }
