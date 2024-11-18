@@ -3345,6 +3345,32 @@ public class Administrator {
                 OmniShop.FORESTRY_SHOP.open(player);
                 return true;
             }
+            /**
+             * Route building commands
+             */
+            case "ra": {
+                List<Position> route = player.getTemporaryAttributeOrDefault("NPCROUTE", new ArrayList<>());
+                route.add(player.getPosition().copy());
+                player.putTemporaryAttribute("NPCROUTE", route);
+                return true;
+            }
+            case "rundo": {
+                List<Position> route = player.getTemporaryAttributeOrDefault("NPCROUTE", new ArrayList<>());
+                route.remove(route.size() - 1);
+                player.putTemporaryAttribute("NPCROUTE", route);
+                return true;
+            }
+            case "cr": {
+                player.removeTemporaryAttribute("NPCROUTE");
+                return true;
+            }
+            case "pr": {
+                List<Position> route = player.getTemporaryAttributeOrDefault("NPCROUTE", new ArrayList<>());
+                for (Position pos : route) {
+                    System.out.print("new Position(" + pos.getX() + ", " + pos.getY() + "), ");
+                }
+                return true;
+            }
         }
         return false;
     }
