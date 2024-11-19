@@ -88,6 +88,10 @@ public class StatList {
     /**
      * Checks the fixed (not boosted) level.
      */
+    public boolean checkFixed(StatType type, int lvlReq) {
+        return get(type).fixedLevel >= lvlReq;
+    }
+
     public boolean checkFixed(StatType type, int levelReq, String action) {
         if (get(type).fixedLevel < levelReq) {
             player.sendMessage("You need " + type.descriptiveName + " level of " + levelReq + " or higher to " + action + ".");

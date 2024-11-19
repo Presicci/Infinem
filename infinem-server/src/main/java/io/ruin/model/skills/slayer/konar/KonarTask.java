@@ -4,7 +4,9 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -20,7 +22,7 @@ public enum KonarTask {
     AVIANSIES(94, KonarTaskLocation.GODWARS_DUNGEON),
     BASILISKS(43, KonarTaskLocation.JORMUNGANDS_PRISON, KonarTaskLocation.FREMENNIK_DUNGEON),
     BLACK_DEMON(30, KonarTaskLocation.TAVERLY_DUNGEON, KonarTaskLocation.BRIMHAVEN_DUNGEON, KonarTaskLocation.CATACOMBS_OF_KOUREND, KonarTaskLocation.CHASM_OF_FIRE),
-    BLACK_DRAGON(27, KonarTaskLocation.TAVERLY_DUNGEON, KonarTaskLocation.EVIL_CHICKEN_LAIR, KonarTaskLocation.MYTHS_GUILD_DUNGEON),
+    BLACK_DRAGON(27, KonarTaskLocation.TAVERLY_DUNGEON, KonarTaskLocation.EVIL_CHICKEN_LAIR, KonarTaskLocation.MYTHS_GUILD_DUNGEON, KonarTaskLocation.CATACOMBS_OF_KOUREND),
     BLOODVELD(48, KonarTaskLocation.STRONGHOLD_SLAYER_CAVE, KonarTaskLocation.GODWARS_DUNGEON, KonarTaskLocation.SLAYER_TOWER, KonarTaskLocation.CATACOMBS_OF_KOUREND),
     BLUE_DRAGON(25, KonarTaskLocation.TAVERLY_DUNGEON, KonarTaskLocation.OGRE_ENCLAVE, KonarTaskLocation.MYTHS_GUILD_DUNGEON, KonarTaskLocation.CATACOMBS_OF_KOUREND),
     //BRINE_RAT("brine rat", KonarTaskLocation.BRINE_RAT_CAVERN),
@@ -67,11 +69,17 @@ public enum KonarTask {
      * @param taskUuid The task being assigned.
      */
     public static void assignLocation(Player player, int taskUuid) {
-        Optional<KonarTask> task = Arrays.stream(io.ruin.model.skills.slayer.konar.KonarTask.values()).filter(s -> s.getUid() == taskUuid).findFirst();
+        Optional<KonarTask> task = Arrays.stream(values()).filter(s -> s.getUid() == taskUuid).findFirst();
         if (!task.isPresent()) {
             return;
         }
-        KonarTaskLocation location = Random.get(task.get().getLocations());
+        KonarTask t = task.get();
+        List<KonarTaskLocation> locations = new ArrayList<>(Arrays.asList(t.locations));
+        List<KonarTaskRequirement> requirements = KonarTaskRequirement.REQUIREMENTS.getOrDefault(t, new ArrayList<>());
+        for (KonarTaskRequirement requirement : requirements) {
+            if (!requirement.test(player)) locations.remove(requirement.getTaskLocation());
+        }
+        KonarTaskLocation location = Random.get(locations);
         player.slayerLocation = location.ordinal();
     }
 }
