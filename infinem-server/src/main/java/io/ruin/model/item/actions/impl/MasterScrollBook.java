@@ -17,7 +17,6 @@ import java.util.HashMap;
 public class MasterScrollBook {
 
     public enum TeleportScroll {
-
         NARDAH(12402, new Bounds(3419, 2916, 3421, 2918, 0), 5, Config.NARDAH_SCROLLS),
         DIGSITE(12403, new Bounds(3324, 3411, 3327, 3414, 0), 9, Config.DIGSITE_SCROLLS),
         FELDIP_HILLS(12404, new Bounds(2540, 2924, 2542, 2926, 0), 13, Config.FELDIP_SCROLLS),
@@ -26,7 +25,7 @@ public class MasterScrollBook {
         PEST_CONTROL(12407, new Bounds(2657, 2658, 2659, 2660, 0), 25, Config.PEST_CONTROL_SCROLLS),
         PISCATORIS(12408, new Bounds(2338, 3648, 2341, 3651, 0), 29, Config.PISCATORIS_SCROLLS),
         TAI_BWO_WANNAI(12409, new Bounds(2787, 3064, 2791, 3067, 0), 33, Config.TAI_BWO_WANNAI_SCROLLS),
-        ELF_CAMP(12410, new Bounds(2202, 3352, 2206, 3354, 0), 37, Config.IORWERTH_SCROLLS),
+        ELF_CAMP(12410, new Bounds(2193, 3257, 2196, 3259, 0), 37, Config.IORWERTH_SCROLLS),
         MOS_LE_HARMLESS(12411, new Bounds(3684, 2968, 3687, 2971, 0), 41, Config.MOS_LEHARMLESS_SCROLLS),
         LUMBER_YARD(12642, new Bounds(3306, 3488, 3309, 3490, 0), 45, Config.LUMBERYARD_SCROLLS),
         ZAL_ANDRA(12938, new Bounds(2194, 3055, 2197, 3057, 0), 49, Config.ZUL_ANDRA_SCROLLS),
