@@ -102,8 +102,8 @@ import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.mining.Pickaxe;
 import io.ruin.model.skills.mining.Rock;
 import io.ruin.model.skills.mining.ShootingStar;
-import io.ruin.model.skills.slayer.KonarData;
 import io.ruin.model.skills.slayer.Slayer;
+import io.ruin.model.skills.slayer.konar.KonarTaskLocation;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
@@ -3314,7 +3314,7 @@ public class Administrator {
                     player.sendMessage("Syntax: ::testkonar [TaskLocation ordinal]");
                     return true;
                 }
-                player.sendMessage("Inside: " + KonarData.TaskLocation.values()[Integer.parseInt(args[0])].inside(player.getPosition()));
+                player.sendMessage("Inside: " + KonarTaskLocation.values()[Integer.parseInt(args[0])].inside(player.getPosition()));
                 return true;
             }
             case "cleartransmog":

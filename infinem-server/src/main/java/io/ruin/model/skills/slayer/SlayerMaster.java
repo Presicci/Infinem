@@ -13,6 +13,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.skills.slayer.konar.KonarTaskLocation;
 
 import java.util.Arrays;
 import java.util.List;
@@ -301,7 +302,7 @@ public class SlayerMaster {
         if (master == KRYSTILIA_ID && bossTask == 0) {
             text = "You're still meant to be slaying " + SlayerCreature.taskName(player, task) + " in<br>the Wilderness, you have " + left + " to go. Come back when<br>you've finished your task.";
         } else if (master == KONAR_ID && bossTask == 0) {
-            text = "You're still bringing balance to " + SlayerCreature.taskName(player, task) + " at the " + KonarData.TaskLocation.values()[player.slayerLocation].getName() + ", with " + left + " to go.<br>Come back when you're finished.";
+            text = "You're still bringing balance to " + SlayerCreature.taskName(player, task) + " at the " + KonarTaskLocation.values()[player.slayerLocation].getName() + ", with " + left + " to go.<br>Come back when you're finished.";
         }
 
         return text;
@@ -325,7 +326,7 @@ public class SlayerMaster {
             if (master == KRYSTILIA_ID && bossTask == 0) {
                 location = " in the wilderness";
             } else if (master == KONAR_ID && bossTask == 0) {
-                location = " at the " + KonarData.TaskLocation.values()[player.slayerLocation].getName();
+                location = " at the " + KonarTaskLocation.values()[player.slayerLocation].getName();
             }
             player.sendMessage("You're assigned to kill " + name + "" + location + "; only " + amount + " more to go.");
             sendTask(player);
@@ -346,7 +347,7 @@ public class SlayerMaster {
      * Sends task information to the player, enables the slayer plugin.
      */
     public static void sendTask(Player player) {
-        KonarData.TaskLocation loc = KonarData.TaskLocation.values()[player.slayerLocation];
+        KonarTaskLocation loc = KonarTaskLocation.values()[player.slayerLocation];
         player.getPacketSender().sendVarp(394, Slayer.getTaskAmount(player));
         player.getPacketSender().sendVarp(395, Slayer.getTask(player));
         Config.SLAYER_TASK_BOSS.set(player, Slayer.getBossTask(player));

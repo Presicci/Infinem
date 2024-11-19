@@ -17,6 +17,7 @@ import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.MapArea;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.ground.GroundItem;
+import io.ruin.model.skills.slayer.konar.KonarTaskLocation;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -93,8 +94,8 @@ public class Slayer {
                  * if I do add in the future, this
                  * is where it will go.
                  */
-            } else if (master == SlayerMaster.KONAR_ID && !KonarData.TaskLocation.values()[player.slayerLocation].inside(npc.getPosition().copy())) {
-                String location = KonarData.TaskLocation.values()[player.slayerLocation].getName();
+            } else if (master == SlayerMaster.KONAR_ID && !KonarTaskLocation.values()[player.slayerLocation].inside(npc.getPosition().copy())) {
+                String location = KonarTaskLocation.values()[player.slayerLocation].getName();
                 player.sendMessage("<col=FF0000>You must kill your slayer assignment at the " + location + " to receive experience!");
                 return;
             } else if (master == SlayerMaster.KONAR_ID) {

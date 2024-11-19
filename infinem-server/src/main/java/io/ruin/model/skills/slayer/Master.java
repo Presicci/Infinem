@@ -13,6 +13,8 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.skillcapes.SlayerSkillCape;
+import io.ruin.model.skills.slayer.konar.KonarTask;
+import io.ruin.model.skills.slayer.konar.KonarTaskLocation;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -105,7 +107,7 @@ public enum Master {
         Config.SLAYER_MASTER.set(player, configIndex);
         Slayer.setTask(player, def.getCreatureUid());
         Slayer.setTaskAmount(player, amt);
-        if (this == KONAR) KonarData.assignLocation(player, def.getCreatureUid());
+        if (this == KONAR) KonarTask.assignLocation(player, def.getCreatureUid());
         assignTaskToPartner(player);
         taskDialogue(player);
         SlayerMaster.sendTask(player);
@@ -125,7 +127,7 @@ public enum Master {
                 + amount + " "
                 + SlayerCreature.taskName(partner, task)
                 + (this == KRYSTILIA ? " in the wilderness" : "")
-                + (this == KONAR ? " at the " + KonarData.TaskLocation.values()[partner.slayerLocation].getName() : "")
+                + (this == KONAR ? " at the " + KonarTaskLocation.values()[partner.slayerLocation].getName() : "")
                 + ".");
     }
 
@@ -195,7 +197,7 @@ public enum Master {
                                 + left + " "
                                 + SlayerCreature.taskName(player, task.getUid())
                                 + (isKrystilia ? " in the wilderness" : "")
-                                + (isKonar ? " at the " + KonarData.TaskLocation.values()[player.slayerLocation].getName() : "")
+                                + (isKonar ? " at the " + KonarTaskLocation.values()[player.slayerLocation].getName() : "")
                                 + "."),
                         new OptionsDialogue(
                                 new Option("Got any tips for me?", new PlayerDialogue("Got any tips for me?"), new NPCDialogue(npcId, SlayerCreature.getTipFor(task)), new PlayerDialogue("Great, thanks!")),
@@ -214,7 +216,7 @@ public enum Master {
                                 + left + " "
                                 + SlayerCreature.taskName(player, task.getUid())
                                 + (isKrystilia ? " in the wilderness" : "")
-                                + (isKonar ? " at the " + KonarData.TaskLocation.values()[player.slayerLocation].getName() : "")
+                                + (isKonar ? " at the " + KonarTaskLocation.values()[player.slayerLocation].getName() : "")
                                 + "."),
                         new OptionsDialogue(
                                 new Option("Got any tips for me?", new PlayerDialogue("Got any tips for me?"), new NPCDialogue(npcId, SlayerCreature.getTipFor(task)), new PlayerDialogue("Great, thanks!")),
