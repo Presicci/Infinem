@@ -46,8 +46,11 @@ public class Slayer {
         final int master = Config.SLAYER_MASTER.get(player);
 
         SlayerCreature creature = SlayerCreature.lookup(task);
-
-        if (task > 0 && am > 0 && master > 0 && creature != null && creature.contains(npc)) {
+        int bossTask = getBossTask(player);
+        SlayerBoss boss = bossTask == 0 ? null : SlayerBoss.lookup(npc.getId());
+        if (task > 0 && am > 0 && master > 0
+                && ((creature != null && creature.contains(npc))
+                || (creature == SlayerCreature.BOSSES && boss != null && Arrays.stream(boss.ids).anyMatch(id -> id == npc.getId())))) {
             int combatLevel = npc.getDef().combatLevel;
             Position dropPosition = npc.getCombat().getDropPosition();
             if (master == SlayerMaster.KRYSTILIA_ID && player.wildernessLevel <= 0) {
@@ -78,7 +81,7 @@ public class Slayer {
                  */
                 chance = 320 - (int) Math.floor(npc.getDef().combatInfo.hitpoints * 0.8);
                 // Bosses are always 1/30
-                if (Arrays.stream(WILDERNESS_BOSSES).anyMatch((boss) -> boss == npc.getId())) {
+                if (Arrays.stream(WILDERNESS_BOSSES).anyMatch((b) -> b == npc.getId())) {
                     chance = 30;
                 }
                 if (Random.get(chance) == 1) {
