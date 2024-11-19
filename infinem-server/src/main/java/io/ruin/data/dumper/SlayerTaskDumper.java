@@ -119,9 +119,17 @@ public class SlayerTaskDumper {
 
         private DumpTask parse(String taskName, String amountString, String extendedAmtString, String weightString) {
             try {
-                String[] splitAmount = amountString.split("\\[")[0].split("-");
-                int minAmount = Integer.parseInt(splitAmount[0].replace(",", ""));
-                int maxAmount = Integer.parseInt(splitAmount[1].replace(",", ""));
+                int minAmount;
+                int maxAmount;
+                if (!amountString.contains("-")) {
+                    String[] splitAmount = amountString.split("\\[")[0].split("-");
+                    minAmount = Integer.parseInt(splitAmount[0].replace(",", ""));
+                    maxAmount = Integer.parseInt(splitAmount[0].replace(",", ""));
+                } else {
+                    String[] splitAmount = amountString.split("\\[")[0].split("-");
+                    minAmount = Integer.parseInt(splitAmount[0].replace(",", ""));
+                    maxAmount = Integer.parseInt(splitAmount[1].replace(",", ""));
+                }
                 int minExtendedAmount = 0;
                 int maxExtendedAmount = 0;
                 if (!extendedAmtString.contains("/")) {
