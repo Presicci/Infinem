@@ -106,17 +106,17 @@ public class SlayerTaskDumper {
 
         private DumpTask parse(String taskName, String amountString, String extendedAmtString, String weightString) {
             try {
-                String[] splitAmount = amountString.split("-");
+                String[] splitAmount = amountString.split("\\[")[0].split("-");
                 int minAmount = Integer.parseInt(splitAmount[0].replace(",", ""));
                 int maxAmount = Integer.parseInt(splitAmount[1].replace(",", ""));
                 int minExtendedAmount = 0;
                 int maxExtendedAmount = 0;
                 if (!extendedAmtString.contains("/")) {
-                    String[] splitExtendedAmount = extendedAmtString.split("-");
+                    String[] splitExtendedAmount = extendedAmtString.split("\\[")[0].split("-");
                     minExtendedAmount = Integer.parseInt(splitExtendedAmount[0].replace(",", ""));
                     maxExtendedAmount = Integer.parseInt(splitExtendedAmount[1].replace(",", ""));
                 }
-                int weight = Integer.parseInt(weightString.replace(",", ""));
+                int weight = Integer.parseInt(weightString.replace(",", "").split("\\[")[0]);
                 return new DumpTask(taskName, minAmount, maxAmount, minExtendedAmount, maxExtendedAmount, weight);
             } catch (Exception e) {
                 ServerWrapper.logError("Error parsing wiki (" + wikiName + ") task entry! | task=" + taskName + "   amount=" + amountString + "   extendedamount=" + extendedAmtString + "   weight=" + weightString, e);
