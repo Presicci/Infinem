@@ -32,10 +32,16 @@ public enum SlayerBoss {
     THE_THERMONUCLEAR_SMOKE_DEVIL((p) -> p.getStats().get(StatType.Slayer).fixedLevel >= 93),
     CERBERUS((p) -> p.getStats().get(StatType.Slayer).fixedLevel >= 91),
     THE_ABYSSAL_SIRE((p) -> p.getStats().get(StatType.Slayer).fixedLevel >= 85),    // 21
-    THE_GROTESQUE_GUARDIANS((p) -> p.getStats().get(StatType.Slayer).fixedLevel >= 75), // TODO Roof unlock too
+    THE_GROTESQUE_GUARDIANS((p) -> false),//p.getStats().get(StatType.Slayer).fixedLevel >= 75), // TODO Roof unlock too
     VORKATH,
     THE_ALCHEMICAL_HYDRA((p) -> p.getStats().get(StatType.Slayer).fixedLevel >= 95),
     SARACHNIS;
+    // the Phantom Muspah
+    // Vardorvis
+    // Duke Sucellus
+    // the Whisperer
+    // the Leviathan
+    // Araxxor
 
     public final int[] ids;
     public final Function<Player, Boolean> canAssign;
