@@ -570,8 +570,17 @@ public enum PickPocket {
                     List<Item> items = lootTable.rollItems(true);
                     for (Item item : items) {
                         if (item.getId() == 995 && pouchId != -1) {
-                            player.getInventory().add(pouchId, 1);
+                            if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) && Random.rollDie(4)) {
+                                player.getInventory().addOrDrop(pouchId, 2);
+                                player.sendFilteredMessage("<col=CD6007>Your relic doubles the pouches you receive.");
+                            } else {
+                                player.getInventory().addOrDrop(pouchId, 1);
+                            }
                         } else {
+                            if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) && Random.rollDie(4)) {
+                                item.setAmount(item.getAmount() * 2);
+                                player.sendFilteredMessage("<col=CD6007>Your relic doubles your loot: " + ItemDefinition.get(item.getId()).name);
+                            }
                             // Treasure hunter doubling clues
                             if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(item.getId())) {
                                 item.setAmount(item.getAmount() * 2);
