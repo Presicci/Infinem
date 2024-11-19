@@ -1,178 +1,154 @@
 [
-  {
-	// Turael
-	"npcId": 13618,
-	"defs": [
-		{
-			"weighing": 8,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 38
-		},
-		// Banshee
-		{
-			"weighing": 7,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 8
-		},
-		// Bats
-		{
-			"weighing": 6,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 5
-		},
-		// Birds
-		{
-			"weighing": 7,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 13
-		},
-		// Bears
-		{
-			"weighing": 8,
-			"min": 10,
-			"max": 30,
-			"creatureUid": 63
-		},
-		// Cave bugs
-		{
-			"weighing": 8,
-			"min": 10,
-			"max": 30,
-			"creatureUid": 37
-		},
-		// Cave crawlers
-		{
-			"weighing": 8,
-			"min": 10,
-			"max": 20,
-			"creatureUid": 62
-		},
-		// Cave slime
-		{
-			"weighing": 8,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 6
-		},
-		// Cows
-		{
-			"weighing": 8,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 39
-		},
-		// Crawling hands
-		{
-			"weighing": 8,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 22
-		},
-		// Dogs
-		{
-			"weighing": 7,
-			"min": 10,
-			"max": 25,
-			"creatureUid": 57
-		},
-		// Dwarves
-		{
-			"weighing": 7,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 12
-		},
-		// Ghosts
-		{
-			"weighing": 7,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 2
-		},
-		// Goblins
-		{
-			"weighing": 8,
-			"min": 15,
-			"max": 20,
-			"creatureUid": 75
-		},
-		// Icefiend
-		{
-			"weighing": 6,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 53
-		},
-		// Kalphite
-		{
-			"weighing": 6,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 68
-		},
-		// Lizard
-		{
-			"weighing": 7,
-			"min": 10,
-			"max": 20,
-			"creatureUid": 76
-		},
-		// Minotaur
-		{
-			"weighing": 6,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 1
-		},
-		// Monkeys
-		{
-			"weighing": 7,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 3
-		},
-		// Rats
-		{
-			"weighing": 7,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 7
-		},
-		// Scorpions
-		{
-			"weighing": 7,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 11
-		},
-		// Skeletons
-		{
-			"weighing": 6,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 4
-		},
-		// Spiders
-		{
-			"weighing": 7,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 9
-		},
-		// Wolves
-		{
-			"weighing": 7,
-			"min": 15,
-			"max": 30,
-			"creatureUid": 10
-		}
-		// Zombies
-	]
-  },
+	{
+		"name": "Turael",
+		"npcId": 13618,
+		"defs": [
+			{ // Banshees
+				"weighing": 8,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 38
+			},
+			{ // Bats
+				"weighing": 7,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 8
+			},
+			{ // Bears
+				"weighing": 7,
+				"min": 10,
+				"max": 20,
+				"creatureUid": 13
+			},
+			{ // Birds
+				"weighing": 6,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 5
+			},
+			{ // Cave bugs
+				"weighing": 8,
+				"min": 10,
+				"max": 30,
+				"creatureUid": 63
+			},
+			{ // Cave crawlers
+				"weighing": 8,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 37
+			},
+			{ // Cave slime
+				"weighing": 8,
+				"min": 10,
+				"max": 20,
+				"creatureUid": -1
+			},
+			{ // Cows
+				"weighing": 8,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 6
+			},
+			{ // Crawling Hands
+				"weighing": 8,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 39
+			},
+			{ // Dogs
+				"weighing": 7,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 22
+			},
+			{ // Dwarves
+				"weighing": 7,
+				"min": 10,
+				"max": 25,
+				"creatureUid": 57
+			},
+			{ // Ghosts
+				"weighing": 7,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 12
+			},
+			{ // Goblins
+				"weighing": 7,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 2
+			},
+			{ // Icefiends
+				"weighing": 8,
+				"min": 15,
+				"max": 20,
+				"creatureUid": 75
+			},
+			{ // Kalphite
+				"weighing": 6,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 53
+			},
+			{ // Lizards
+				"weighing": 8,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 68
+			},
+			{ // Minotaurs
+				"weighing": 7,
+				"min": 10,
+				"max": 20,
+				"creatureUid": 76
+			},
+			{ // Monkeys
+				"weighing": 6,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 1
+			},
+			{ // Rats
+				"weighing": 7,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 3
+			},
+			{ // Scorpions
+				"weighing": 7,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 7
+			},
+			{ // Skeletons
+				"weighing": 7,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 11
+			},
+			{ // Spiders
+				"weighing": 6,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 4
+			},
+			{ // Wolves
+				"weighing": 7,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 9
+			},
+			{ // Zombies
+				"weighing": 7,
+				"min": 15,
+				"max": 30,
+				"creatureUid": 10
+			},
+		]
+	},
   {
 	// Mazchna
 	"npcId": 13620,
