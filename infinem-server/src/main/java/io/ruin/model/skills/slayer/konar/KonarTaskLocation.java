@@ -63,6 +63,7 @@ public enum KonarTaskLocation {
     ISLE_OF_SOULS_DUNGEON(47, "Isle of Souls Dungeon", 8593),
     FOSSIL_ISLAND(32, "Fossil Island", new Bounds(3628, 3689, 3851, 3907, 0)),
     ZANARIS(36, "Zanaris", 9540, 9541, 9796, 9797),
+    FORTHOS_DUNGEON(41, "Forthos Dungeon", 7322, 7323),
     ;
 
     @Getter
