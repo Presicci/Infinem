@@ -2194,19 +2194,18 @@
 		]
 	},
 	{
-		// Krystilia
+		"name": "Krystilia",
 		"npcId": 7663,
 		"defs": [
-			{
-				"weighing": 3,
+			{ // Abyssal demons
+				"weighing": 5,
 				"min": 75,
 				"max": 125,
 				"minExtended": 200,
 				"maxExtended": 250,
 				"creatureUid": 42
 			},
-			// Abyssal demon
-			{
+			{ // Ankou
 				"weighing": 6,
 				"min": 75,
 				"max": 125,
@@ -2214,8 +2213,7 @@
 				"maxExtended": 150,
 				"creatureUid": 79
 			},
-			// Ankou
-			{
+			{ // Aviansie
 				"weighing": 7,
 				"min": 75,
 				"max": 125,
@@ -2223,22 +2221,19 @@
 				"maxExtended": 250,
 				"creatureUid": 94
 			},
-			// Aviansie
-			{
+			{ // Bandits
 				"weighing": 4,
 				"min": 75,
 				"max": 125,
 				"creatureUid": 102
 			},
-			// Bandits
-			{
+			{ // Bears
 				"weighing": 6,
-				"min": 50,
+				"min": 65,
 				"max": 100,
 				"creatureUid": 13
 			},
-			// Bear
-			{
+			{ // Black demons
 				"weighing": 7,
 				"min": 100,
 				"max": 150,
@@ -2246,24 +2241,21 @@
 				"maxExtended": 250,
 				"creatureUid": 30
 			},
-			// Black demon
-			{
+			{ // Black dragons
 				"weighing": 4,
-				"min": 5,
-				"max": 20,
+				"min": 8,
+				"max": 16,
 				"minExtended": 40,
 				"maxExtended": 60,
 				"creatureUid": 27
 			},
-			// Black dragon
-			{
+			{ // Black Knights
 				"weighing": 3,
 				"min": 75,
 				"max": 125,
 				"creatureUid": 119
 			},
-			// Black knight
-			{
+			{ // Bloodveld
 				"weighing": 4,
 				"min": 70,
 				"max": 110,
@@ -2271,22 +2263,19 @@
 				"maxExtended": 250,
 				"creatureUid": 48
 			},
-			// Bloodveld
-			{
+			{ // Chaos druids
 				"weighing": 5,
 				"min": 50,
-				"max": 85,
+				"max": 90,
 				"creatureUid": 110
 			},
-			// Chaos druid
-			{
+			{ // Dark warriors
 				"weighing": 4,
-				"min": 70,
+				"min": 75,
 				"max": 125,
 				"creatureUid": 103
 			},
-			// Dark warrior
-			{
+			{ // Dust devils
 				"weighing": 5,
 				"min": 75,
 				"max": 125,
@@ -2294,29 +2283,25 @@
 				"maxExtended": 250,
 				"creatureUid": 49
 			},
-			// Dust devil
-			{
+			{ // Earth warriors
 				"weighing": 6,
 				"min": 75,
-				"max": 130,
+				"max": 125,
 				"creatureUid": 54
 			},
-			// Earth warrior
-			{
+			{ // Ents
 				"weighing": 5,
 				"min": 35,
 				"max": 60,
 				"creatureUid": 101
 			},
-			// Ent
-			{
+			{ // Fire giants
 				"weighing": 7,
-				"min": 100,
-				"max": 150,
+				"min": 75,
+				"max": 125,
 				"creatureUid": 16
 			},
-			// Fire giant
-			{
+			{ // Greater demons
 				"weighing": 8,
 				"min": 100,
 				"max": 150,
@@ -2324,85 +2309,73 @@
 				"maxExtended": 250,
 				"creatureUid": 29
 			},
-			// Greater demon
-			{
+			{ // Green dragons
 				"weighing": 4,
-				"min": 60,
+				"min": 65,
 				"max": 100,
 				"creatureUid": 24
 			},
-			// Green dragon
-			{
+			{ // Hellhounds
 				"weighing": 7,
-				"min": 70,
-				"max": 123,
+				"min": 75,
+				"max": 125,
 				"creatureUid": 31
 			},
-			// Hellhound
-			{
+			{ // Hill Giants
 				"weighing": 3,
 				"min": 75,
 				"max": 125,
 				"creatureUid": 14
 			},
-			// Hill giant
-			{
+			{ // Ice giants
 				"weighing": 6,
 				"min": 100,
-				"max": 160,
+				"max": 150,
 				"creatureUid": 15
 			},
-			// Ice giant
-			{
+			{ // Ice warriors
 				"weighing": 7,
 				"min": 100,
 				"max": 150,
 				"creatureUid": 19
 			},
-			// Ice warrior
-			{
+			{ // Jellies
 				"weighing": 5,
 				"min": 100,
 				"max": 150,
 				"creatureUid": 50
 			},
-			// Jellies
-			{
+			{ // Lava dragons
 				"weighing": 3,
 				"min": 35,
 				"max": 60,
 				"creatureUid": 104
 			},
-			// Lava dragon
-			{
+			{ // Lesser demons
 				"weighing": 6,
 				"min": 80,
 				"max": 120,
 				"creatureUid": 28
 			},
-			// Lesser demon
-			{
+			{ // Magic axes
 				"weighing": 7,
-				"min": 70,
+				"min": 75,
 				"max": 125,
 				"creatureUid": 91
 			},
-			// Magic axe
-			{
+			{ // Mammoths
 				"weighing": 6,
 				"min": 75,
 				"max": 125,
 				"creatureUid": 99
 			},
-			// Mammoths
-			{
+			{ // Moss giants
 				"weighing": 4,
 				"min": 100,
 				"max": 150,
 				"creatureUid": 17
 			},
-			// Moss giant
-			{
+			{ // Nechryael
 				"weighing": 5,
 				"min": 75,
 				"max": 125,
@@ -2410,15 +2383,13 @@
 				"maxExtended": 250,
 				"creatureUid": 52
 			},
-			// Nechryael
-			{
+			{ // Pirates
 				"weighing": 3,
 				"min": 62,
 				"max": 75,
 				"creatureUid": 120
 			},
-			// Pirate
-			{
+			{ // Revenants
 				"weighing": 5,
 				"min": 40,
 				"max": 100,
@@ -2426,36 +2397,31 @@
 				"maxExtended": 150,
 				"creatureUid": 107
 			},
-			// Revenants
-			{
+			{ // Rogues
 				"weighing": 5,
 				"min": 75,
 				"max": 125,
 				"creatureUid": 100
 			},
-			// Rogues
-			{
+			{ // Scorpions
 				"weighing": 6,
-				"min": 60,
+				"min": 65,
 				"max": 100,
 				"creatureUid": 7
 			},
-			// Scorpions
-			{
+			{ // Skeletons
 				"weighing": 5,
-				"min": 60,
+				"min": 65,
 				"max": 100,
 				"creatureUid": 11
 			},
-			// Skeletons
-			{
+			{ // Spiders
 				"weighing": 6,
-				"min": 60,
+				"min": 65,
 				"max": 100,
 				"creatureUid": 4
 			},
-			// Spiders
-			{
+			{ // Spiritual creatures
 				"weighing": 6,
 				"min": 100,
 				"max": 150,
@@ -2463,21 +2429,18 @@
 				"maxExtended": 250,
 				"creatureUid": 89
 			},
-			// Spiritual creature
-			{
+			{ // Zombies
 				"weighing": 3,
 				"min": 75,
 				"max": 125,
 				"creatureUid": 10
 			},
-			// Zombie
-			{
+			{ // Wilderness bosses / demi-bosses
 				"weighing": 8,
 				"min": 3,
 				"max": 35,
 				"creatureUid": 98
 			},
-			// Wilderness bosses
 		]
 	}
 ]
