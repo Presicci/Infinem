@@ -71,7 +71,6 @@ public class SlayerTaskDumper {
                 for(Element header : tableHeaders) {
                     Elements search = header.getElementsContainingText("tasks");
                     if (search.isEmpty()) continue;
-                    System.out.println(search);
                     Element dl = header.nextElementSibling();
                     if (dl != null && dl.is("table")) {
                         Elements trs = dl.select("tr");
