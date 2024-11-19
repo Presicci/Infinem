@@ -21,7 +21,13 @@ import java.util.function.Predicate;
 public enum KonarTaskRequirement {
     BLACK_DRAGON_CATACOMBS(KonarTask.BLACK_DRAGON, KonarTaskLocation.CATACOMBS_OF_KOUREND,
             (p) -> p.getStats().checkFixed(StatType.Slayer, 77)
-                    && (PartnerSlayer.getCombatLevel(p) >= 100 || !p.slayerCombatCheck));
+                    && (PartnerSlayer.getCombatLevel(p) >= 100 || !p.slayerCombatCheck)),
+    BLUE_DRAGON_CATACOMBS(KonarTask.BLUE_DRAGON, KonarTaskLocation.CATACOMBS_OF_KOUREND,
+            (p) -> PartnerSlayer.getCombatLevel(p) >= 100 || !p.slayerCombatCheck),
+    RED_DRAGON_CATACOMBS(KonarTask.RED_DRAGON, KonarTaskLocation.CATACOMBS_OF_KOUREND,
+            (p) -> PartnerSlayer.getCombatLevel(p) >= 100 || !p.slayerCombatCheck),
+
+    ;
 
     private final KonarTask task;
     private final KonarTaskLocation taskLocation;
