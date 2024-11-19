@@ -3,6 +3,7 @@ package io.ruin.model.skills.thieving;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.NPCDefinition;
+import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.tasksystem.relics.Relic;
@@ -543,6 +544,10 @@ public enum PickPocket {
                                     item.setAmount(item.getAmount() * 2);
                                     player.sendFilteredMessage("<col=CD6007>Your relic doubles your loot: " + ItemDefinition.get(item.getId()).name);
                                 }
+                                // Treasure hunter doubling clues
+                                if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(item.getId())) {
+                                    item.setAmount(item.getAmount() * 2);
+                                }
                                 int noted = item.getDef().notedId;
                                 if (noted > 0 && player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
                                     player.getInventory().addOrDrop(item.note());
@@ -567,6 +572,10 @@ public enum PickPocket {
                         if (item.getId() == 995 && pouchId != -1) {
                             player.getInventory().add(pouchId, 1);
                         } else {
+                            // Treasure hunter doubling clues
+                            if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(item.getId())) {
+                                item.setAmount(item.getAmount() * 2);
+                            }
                             int noted = item.getDef().notedId;
                             if (noted > 0 && player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
                                 player.getInventory().addOrDrop(item.note());

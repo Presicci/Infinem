@@ -2,7 +2,9 @@ package io.ruin.model.skills.thieving;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
+import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -333,6 +335,10 @@ public class ThievableChests {
                     } else if (object.getPosition().equals(2746, 5350) || object.getPosition().equals(2743, 5350)) {
                         item = ZANIK_CHEST.rollItem();
                     }
+                }
+                // Treasure hunter doubling clues
+                if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(item.getId())) {
+                    item.setAmount(item.getAmount() * 2);
                 }
                 player.getInventory().addOrDrop(item);
                 player.getStats().addXp(StatType.Thieving, chest.xp, true);
