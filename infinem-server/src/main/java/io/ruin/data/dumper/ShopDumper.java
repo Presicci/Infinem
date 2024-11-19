@@ -4,7 +4,6 @@ import io.ruin.api.utils.FileUtils;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.ThreadUtils;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.shop.Shop;
 import io.ruin.model.shop.ShopItem;
 import io.ruin.model.skills.herblore.Herb;
@@ -19,7 +18,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.List;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
@@ -30,13 +28,11 @@ import static io.ruin.cache.ItemID.COINS_995;
 public class ShopDumper {
 
     public static void dump(String wikiName) {
-        DumpShop table = new ShopDumper.WikiDumper(wikiName).run();
-        if (table == null)
+        DumpShop shop = new WikiDumper(wikiName).run();
+        if (shop == null)
             return;
-        table.export(wikiName);
+        shop.export(wikiName);
     }
-
-    private static List<String> groupedDropsNotes;
 
     private static final class WikiDumper {
 
@@ -56,7 +52,6 @@ public class ShopDumper {
                 if (doc == null) throw new IOException("Failed to connect to wiki page!");
                 String[] searchHeaders = {"h2"};
                 Elements tableHeaders = null;
-                groupedDropsNotes = new ArrayList<>();
                 for (String s : searchHeaders) {
                     Elements headers = doc.body().select(s);
                     for (Element header : headers) {
