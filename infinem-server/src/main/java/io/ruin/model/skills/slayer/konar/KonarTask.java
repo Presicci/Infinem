@@ -56,7 +56,7 @@ public enum KonarTask {
     TUROTH(36, KonarTaskLocation.RELEKKA_SLAYER_DUNGEON),
     VAMPYRES(34, KonarTaskLocation.DARKMEYER, KonarTaskLocation.SLEPE), // Missing - Meiyerditch
     // WARPED_CREATURES
-    // WATERFIENDS
+    WATERFIENDS(88, KonarTaskLocation.ANCIENT_CAVERN, KonarTaskLocation.KRAKEN_COVE),   // Missing - Iorwerth dungeon (req Prif access)
     WYRM(111, KonarTaskLocation.KARUULM_SLAYER_DUNGEON);    // Missing - Neypotzli
 
     private final int uid;
