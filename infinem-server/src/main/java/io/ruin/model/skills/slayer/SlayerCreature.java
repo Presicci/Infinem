@@ -101,7 +101,7 @@ public enum SlayerCreature {
     //GORAKS(82, 1, 1, "goraks"),    // UNUSED in osrs
     SUQAHS(83, 1, 85, "suqahs"),
     BRINE_RATS(84, 47, 45, "brine rats"),
-    SCABARITES(85, 1, 85, "minions of scabaras"),
+    SCABARITES(85, 1, 85, "scabarites"),
     TERROR_DOGS(86, 40, 60, "terror dogs"),
     MOLANISKS(87, 1, 50, "molanisks"),
     WATERFIENDS(88, 1, 75, "waterfiends"),
