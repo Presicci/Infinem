@@ -61,6 +61,8 @@ public enum KonarTaskLocation {
     MEIYERDITCH(46, "Meiyerditch", new Bounds(3589, 3169, 3647, 3328, -1)), // Laboratories?
     SLEPE(45, "Slepe", new Bounds(3681, 3264, 3775, 3413, -1)),
     ISLE_OF_SOULS_DUNGEON(47, "Isle of Souls Dungeon", 8593),
+    FOSSIL_ISLAND(32, "Fossil Island", new Bounds(3628, 3689, 3851, 3907, 0)),
+    ZANARIS(36, "Zanaris", 9540, 9541, 9796, 9797),
     ;
 
     @Getter
