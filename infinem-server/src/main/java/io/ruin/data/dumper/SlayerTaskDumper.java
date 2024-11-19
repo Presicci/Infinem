@@ -78,7 +78,18 @@ public class SlayerTaskDumper {
                             for (Element tr : trs) {
                                 Elements tds = tr.select("td");
                                 if (tds.isEmpty()) continue;
-                                DumpTask task = parse(tds.get(0).text(), tds.get(1).text(), tds.get(2).text(), tds.get(5).text());
+                                DumpTask task = null;
+                                if (wikiName.equalsIgnoreCase("spria")) {
+                                    task = parse(tds.get(0).text(), tds.get(1).text(), "N/A", tds.get(4).text());
+                                } else if (wikiName.equalsIgnoreCase("turael")) {
+                                    task = parse(tds.get(0).text(), tds.get(1).text(), "N/A", tds.get(5).text());
+                                } else if (wikiName.equalsIgnoreCase("konar_quo_maten")) {
+                                    task = parse(tds.get(0).text(), tds.get(2).text(), tds.get(3).text(), tds.get(6).text());
+                                } else if (wikiName.equalsIgnoreCase("krystilia")) {
+                                    task = parse(tds.get(0).text(), tds.get(1).text(), tds.get(2).text(), tds.get(7).text());
+                                } else {
+                                    task = parse(tds.get(0).text(), tds.get(1).text(), tds.get(2).text(), tds.get(5).text());
+                                }
                                 if (task != null) assignments.tasks.add(task);
                             }
                         }
