@@ -59,13 +59,15 @@ public enum KonarTaskLocation {
     JORMUNGANDS_PRISON(43, "Jormungand's Prison", new Bounds(2394, 10368, 2493, 10467, -1)),
     DARKMEYER(44, "Darkmeyer", new Bounds(3587, 3329, 3670, 3398, -1)),
     MEIYERDITCH(46, "Meiyerditch", new Bounds(3589, 3169, 3647, 3328, -1)), // Laboratories?
-    SLEPE(45, "Slepe", new Bounds(3681, 3264, 3775, 3413, -1))
+    SLEPE(45, "Slepe", new Bounds(3681, 3264, 3775, 3413, -1)),
+    ISLE_OF_SOULS_DUNGEON(47, "Isle of Souls Dungeon", 8593),
     ;
 
     @Getter
     private final String name;
     private final Bounds[] boundaries;
     private final Region[] regions;
+    // Id for enum 4064
     @Getter private final int enumId;
 
     KonarTaskLocation(int enumId, String name) {
