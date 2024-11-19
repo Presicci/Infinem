@@ -90,7 +90,7 @@ public class SlayerMaster {
             // Krystilia can only assign wilderness bosses
             List<SlayerBoss> validTasks = npcId == Master.KRYSTILIA.getNpcId()
                     ? Arrays.asList(SlayerBoss.SCORPIA, SlayerBoss.CALLISTO, SlayerBoss.VET_ION, SlayerBoss.CRAZY_ARCHAEOLOGIST, SlayerBoss.THE_CHAOS_ELEMENTAL,
-                    SlayerBoss.THE_CHAOS_FANATIC, SlayerBoss.THE_KING_BLACK_DRAGON, SlayerBoss.VENENATIS)
+                    SlayerBoss.THE_CHAOS_FANATIC, SlayerBoss.VENENATIS)
                     : Arrays.stream(SlayerBoss.values()).filter((v) -> v.canAssign == null || v.canAssign.apply(player)).collect(Collectors.toList());
             SlayerBoss task = validTasks.get(Random.get(validTasks.size() - 1));
             Slayer.setBossTask(player, task.ordinal() + 1);
