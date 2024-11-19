@@ -65,8 +65,8 @@ public enum Master {
         for (Tuple<Integer, Config> creature : SlayerUnlock.multipliable) {
             if (creature.first() == def.getCreatureUid()) {
                 if (creature.second().get(player) != 0) {
-                    min = def.getMinExtended();
-                    max = def.getMaxExtended();
+                    min = Math.max(def.getMinExtended(), def.getMin());
+                    max = Math.max(def.getMaxExtended(), def.getMax());
                     break;
                 }
             }
@@ -85,8 +85,8 @@ public enum Master {
             for (Tuple<Integer, Config> creature : SlayerUnlock.multipliable) {
                 if (creature.first() == previous) {
                     if (creature.second().get(player) != 0) {
-                        altMin = altDef.getMinExtended();
-                        altMax = altDef.getMaxExtended();
+                        altMin = Math.max(altDef.getMinExtended(), altDef.getMin());
+                        altMax = Math.max(altDef.getMaxExtended(), altDef.getMax());
                         break;
                     }
                 }
