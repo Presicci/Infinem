@@ -88,6 +88,7 @@ public class SlayerTaskDumper {
                                 } else if (wikiName.equalsIgnoreCase("konar_quo_maten")) {
                                     task = parse(tds.get(0).text(), tds.get(2).text(), tds.get(3).text(), tds.get(6).text());
                                 } else if (wikiName.equalsIgnoreCase("krystilia")) {
+                                    if (tds.size() < 8) continue;
                                     task = parse(tds.get(0).text(), tds.get(1).text(), tds.get(2).text(), tds.get(7).text());
                                 } else {
                                     task = parse(tds.get(0).text(), tds.get(1).text(), tds.get(2).text(), tds.get(5).text());
