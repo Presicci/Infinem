@@ -2160,20 +2160,26 @@
 				"weighing": 3,
 				"min": 75,
 				"max": 125,
+				"minExtended": 200,
+				"maxExtended": 250,
 				"creatureUid": 42
 			},
 			// Abyssal demon
 			{
 				"weighing": 6,
-				"min": 40,
-				"max": 130,
+				"min": 75,
+				"max": 125,
+				"minExtended": 91,
+				"maxExtended": 150,
 				"creatureUid": 79
 			},
 			// Ankou
 			{
 				"weighing": 7,
-				"min": 40,
-				"max": 150,
+				"min": 75,
+				"max": 125,
+				"minExtended": 200,
+				"maxExtended": 250,
 				"creatureUid": 94
 			},
 			// Aviansie
@@ -2195,6 +2201,8 @@
 				"weighing": 7,
 				"min": 100,
 				"max": 150,
+				"minExtended": 200,
+				"maxExtended": 250,
 				"creatureUid": 30
 			},
 			// Black demon
@@ -2202,6 +2210,8 @@
 				"weighing": 4,
 				"min": 5,
 				"max": 20,
+				"minExtended": 40,
+				"maxExtended": 60,
 				"creatureUid": 27
 			},
 			// Black dragon
@@ -2216,6 +2226,8 @@
 				"weighing": 4,
 				"min": 70,
 				"max": 110,
+				"minExtended": 200,
+				"maxExtended": 250,
 				"creatureUid": 48
 			},
 			// Bloodveld
@@ -2237,6 +2249,8 @@
 				"weighing": 5,
 				"min": 75,
 				"max": 125,
+				"minExtended": 200,
+				"maxExtended": 250,
 				"creatureUid": 49
 			},
 			// Dust devil
@@ -2265,6 +2279,8 @@
 				"weighing": 8,
 				"min": 100,
 				"max": 150,
+				"minExtended": 200,
+				"maxExtended": 250,
 				"creatureUid": 29
 			},
 			// Greater demon
@@ -2349,6 +2365,8 @@
 				"weighing": 5,
 				"min": 75,
 				"max": 125,
+				"minExtended": 200,
+				"maxExtended": 250,
 				"creatureUid": 52
 			},
 			// Nechryael
@@ -2363,6 +2381,8 @@
 				"weighing": 5,
 				"min": 40,
 				"max": 100,
+				"minExtended": 100,
+				"maxExtended": 150,
 				"creatureUid": 107
 			},
 			// Revenants
@@ -2398,6 +2418,8 @@
 				"weighing": 6,
 				"min": 100,
 				"max": 150,
+				"minExtended": 181,
+				"maxExtended": 250,
 				"creatureUid": 89
 			},
 			// Spiritual creature
