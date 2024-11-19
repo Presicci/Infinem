@@ -647,7 +647,7 @@
 				"max": 130,
 				"minExtended": 130,
 				"maxExtended": 250,
-				"creatureUid": -1
+				"creatureUid": 94
 			},
 			{ // Basilisks
 				"weighing": 7,
@@ -931,7 +931,7 @@
 				"max": 185,
 				"minExtended": 200,
 				"maxExtended": 250,
-				"creatureUid": -1
+				"creatureUid": 94
 			},
 			{ // Basilisks
 				"weighing": 6,
@@ -1175,7 +1175,7 @@
 				"max": 185,
 				"minExtended": 186,
 				"maxExtended": 250,
-				"creatureUid": -1
+				"creatureUid": 83
 			},
 			{ // Trolls
 				"weighing": 6,
@@ -1267,7 +1267,7 @@
 				"max": 185,
 				"minExtended": 200,
 				"maxExtended": 250,
-				"creatureUid": -1
+				"creatureUid": 94
 			},
 			{ // Basilisks
 				"weighing": 6,
@@ -1603,7 +1603,7 @@
 				"max": 200,
 				"minExtended": 200,
 				"maxExtended": 250,
-				"creatureUid": -1
+				"creatureUid": 94
 			},
 			{ // Basilisks
 				"weighing": 7,
