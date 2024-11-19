@@ -72,6 +72,8 @@ public class SlayerTaskDumper {
                     Elements search = header.getElementsContainingText("tasks");
                     if (search.isEmpty()) continue;
                     Element dl = header.nextElementSibling();
+                    if (wikiName.equalsIgnoreCase("krystilia")) dl = dl.nextElementSibling();
+                    if (wikiName.equalsIgnoreCase("konar_quo_maten")) dl = dl.nextElementSibling().nextElementSibling().nextElementSibling().nextElementSibling().nextElementSibling();
                     if (dl != null && dl.is("table")) {
                         Elements trs = dl.select("tr");
                         if (trs != null) {
