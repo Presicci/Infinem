@@ -19,7 +19,7 @@ public enum Glass {
 
     BEER_GLASS(1, 17.5, 1919, "a beer glass"),
     EMPTY_CANDLE_LANTERN(4, 19.0, 4527, "a candle lantern"),
-    OIL_LAMP(12, 25.0, 4522, "an oil lamp"),
+    OIL_LAMP(12, 25.0, 4525, "an oil lamp"),
     VIAL( 33, 35.0, 229, "a vial"),
     FISH_BOWL(42, 42.5, 6667, "a fish bowl"),
     ORB(46, 52.5, 567, "an orb"),
