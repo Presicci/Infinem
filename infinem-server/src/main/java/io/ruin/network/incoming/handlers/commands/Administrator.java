@@ -11,10 +11,7 @@ import io.ruin.cache.def.db.impl.music.MusicDB;
 import io.ruin.content.activities.event.TimedEventManager;
 import io.ruin.content.areas.wilderness.DeadmanChestEvent;
 import io.ruin.data.DataFile;
-import io.ruin.data.dumper.DropDumper;
-import io.ruin.data.dumper.ItemInfoDumper;
-import io.ruin.data.dumper.NPCInfoDumper;
-import io.ruin.data.dumper.ShopDumper;
+import io.ruin.data.dumper.*;
 import io.ruin.data.impl.dialogue.DialogueLoader;
 import io.ruin.data.impl.Help;
 import io.ruin.data.impl.items.item_info;
@@ -3369,6 +3366,13 @@ public class Administrator {
                 for (Position pos : route) {
                     System.out.print("new Position(" + pos.getX() + ", " + pos.getY() + "), ");
                 }
+                return true;
+            }
+            /**
+             * Slayer task dumping
+             */
+            case "dumptasks": {
+                SlayerTaskDumper.dump(String.join("_", args));
                 return true;
             }
         }

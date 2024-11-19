@@ -6,6 +6,7 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.stat.StatType;
+import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -142,10 +143,10 @@ public enum SlayerCreature {
 
     BOSSES(98, 1, 1, "boss", (p, s) -> Config.LIKE_A_BOSS.get(p) != 0);
 
-    private final int uid;
+    @Getter private final int uid;
     private final int req;
     private final int cbreq;
-    private final String category;
+    @Getter private final String category;
 
     public final BiFunction<Player, SlayerMaster, Boolean> canAssign;
 
