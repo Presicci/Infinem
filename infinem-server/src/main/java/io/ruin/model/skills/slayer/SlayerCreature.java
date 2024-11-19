@@ -1,6 +1,7 @@
 package io.ruin.model.skills.slayer;
 
 import io.ruin.cache.def.EnumDefinition;
+import io.ruin.cache.def.StructDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
@@ -552,7 +553,8 @@ public enum SlayerCreature {
         String result = "";
         int bossTask = Slayer.getBossTask(player);
         if (bossTask != 0 && uid == 98) {
-            result = EnumDefinition.get(1174).getValuesAsStrings().get(bossTask);
+            StructDefinition struct = StructDefinition.get(EnumDefinition.get(5008).getValuesAsInts().get(bossTask));
+            result = (String) struct.getParams().get(1801);
         } else {
             result = EnumDefinition.get(693).getValuesAsStrings().get(uid);
         }
