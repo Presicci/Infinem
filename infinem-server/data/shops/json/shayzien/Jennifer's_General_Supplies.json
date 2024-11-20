@@ -2,7 +2,7 @@
   "name": "Jennifer's General Supplies",
   "currency": "COINS",
   "npcOption": "Trade",
-  "generalStore": false,
+  "generalStore": true,
   "npcs": [
     305
   ],
