@@ -1153,7 +1153,7 @@ public class PlayerCombat extends Combat {
              */
             if (hit.attacker.player != null) {
                 Item helmet = hit.attacker.player.getEquipment().get(Equipment.SLOT_HAT);
-                if (target.npc != null) {   // Can only venom npcs
+                if (target.npc != null && style != null) {   // Can only venom npcs
                     int roll = 0;
                     // If player is using a venom weapon
                     if ((weaponName.contains("trident of the swamp")
