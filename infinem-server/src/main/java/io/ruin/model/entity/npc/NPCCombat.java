@@ -179,7 +179,7 @@ public abstract class NPCCombat extends Combat {
         Player player = World.getPlayer(npc.ownerId, true);
         if (player != null)
             return true;
-        return npc.inSinglePlus() && (target.getCombat().lastAttacker != null && !target.getCombat().lastAttacker.isPlayer());
+        return npc.inSinglePlus() && target.getCombat().lastAttacker == null;
     }
 
     protected Hit basicAttack() {
