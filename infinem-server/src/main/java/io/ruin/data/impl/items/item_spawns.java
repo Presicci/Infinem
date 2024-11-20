@@ -31,6 +31,8 @@ public class item_spawns extends DataFile {
             int regionId = Region.getId(spawn.x, spawn.y);
             if(spawn.amount < 1)
                 spawn.amount = 1;
+            if (spawn.respawnSeconds == 0)
+                spawn.respawnSeconds = 60;
             List<GroundItemSpawn> regionSpawns = allSpawns.computeIfAbsent(regionId, k -> Lists.newArrayList());
             regionSpawns.add(spawn);
         });
