@@ -793,17 +793,17 @@ public class House {
     public boolean isStoredInCostumeRoom(int itemId) {
         Costume costume = Costume.getCostumeByItemId(itemId);
         if (costume == null) return false;
-        if (fancyDressStorage.containsKey(costume) && Arrays.stream(fancyDressStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        if (armourCaseStorage.containsKey(costume) && Arrays.stream(armourCaseStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        if (magicWardrobeStorage.containsKey(costume) && Arrays.stream(magicWardrobeStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        if (capeRackStorage.containsKey(costume) && Arrays.stream(capeRackStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        if (beginnerTreasureTrailsStorage.containsKey(costume) && Arrays.stream(beginnerTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        if (easyTreasureTrailsStorage.containsKey(costume) && Arrays.stream(easyTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        if (mediumTreasureTrailsStorage.containsKey(costume) && Arrays.stream(mediumTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        if (hardTreasureTrailsStorage.containsKey(costume) && Arrays.stream(hardTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        if (eliteTreasureTrailsStorage.containsKey(costume) && Arrays.stream(eliteTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        if (masterTreasureTrailsStorage.containsKey(costume) && Arrays.stream(masterTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
-        return toyBoxStorage.containsKey(costume) && Arrays.stream(mediumTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId);
+        if (fancyDressStorage != null && fancyDressStorage.containsKey(costume) && Arrays.stream(fancyDressStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        if (armourCaseStorage != null && armourCaseStorage.containsKey(costume) && Arrays.stream(armourCaseStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        if (magicWardrobeStorage != null && magicWardrobeStorage.containsKey(costume) && Arrays.stream(magicWardrobeStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        if (capeRackStorage != null && capeRackStorage.containsKey(costume) && Arrays.stream(capeRackStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        if (beginnerTreasureTrailsStorage != null && beginnerTreasureTrailsStorage.containsKey(costume) && Arrays.stream(beginnerTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        if (easyTreasureTrailsStorage != null && easyTreasureTrailsStorage.containsKey(costume) && Arrays.stream(easyTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        if (mediumTreasureTrailsStorage != null && mediumTreasureTrailsStorage.containsKey(costume) && Arrays.stream(mediumTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        if (hardTreasureTrailsStorage != null && hardTreasureTrailsStorage.containsKey(costume) && Arrays.stream(hardTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        if (eliteTreasureTrailsStorage != null && eliteTreasureTrailsStorage.containsKey(costume) && Arrays.stream(eliteTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        if (masterTreasureTrailsStorage != null && masterTreasureTrailsStorage.containsKey(costume) && Arrays.stream(masterTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId)) return true;
+        return toyBoxStorage != null && toyBoxStorage.containsKey(costume) && Arrays.stream(mediumTreasureTrailsStorage.get(costume)).anyMatch(item -> item.getId() == itemId);
     }
 
     public Map<Costume, Item[]> getFancyDressStorage() {
