@@ -319,13 +319,14 @@ public class Vorkath extends NPCCombat {
     private void poisonAttack() {
         npc.animate(7957);
         resistance = Resistance.PARTIAL;
-        target.addEvent(event -> { // may seem odd that this event is on the target but it's because players are processed before npcs, if the event is on the npc then it will not look right
-            final Entity entity = target;
+        Entity finalTarget = target;
+        finalTarget.addEvent(event -> { // may seem odd that this event is on the target but it's because players are processed before npcs, if the event is on the npc then it will not look right
+            final Entity entity = finalTarget;
             List<Position> positions = npc.getSpawnPosition().relative(3, 3).area(11, p -> p.getTile().clipping == 0);
             List<GameObject> pools = new LinkedList<>();
-            pools.add(new GameObject(32000, target.getPosition().copy(), 10, Random.get(3)));
-            Position srcPos = Misc.getClosestPosition(npc, target);
-            POISON_PROJECTILE.send(srcPos, target.getPosition());
+            pools.add(new GameObject(32000, finalTarget.getPosition().copy(), 10, Random.get(3)));
+            Position srcPos = Misc.getClosestPosition(npc, finalTarget);
+            POISON_PROJECTILE.send(srcPos, finalTarget.getPosition());
             for (int i = 0; i < 39; i++) {
                 Position pos = positions.remove(Random.get(positions.size() - 1));
                 pools.add(new GameObject(32000, pos, 10, Random.get(3)));
@@ -344,9 +345,9 @@ public class Vorkath extends NPCCombat {
                 }
             });
             for (int i = 0; i < 25; i++) {
-                if (isDead() || npc.isRemoved() || target != entity)
+                if (isDead() || npc.isRemoved() || finalTarget != entity)
                     break;
-                Position pos = target.getPosition().copy();
+                Position pos = finalTarget.getPosition().copy();
                 int delay = FIREBALL_PROJECTILE.send(npc, pos);
                 World.sendGraphics(131, 0, delay, pos);
                 Hit hit = new Hit();
