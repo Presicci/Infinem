@@ -86,6 +86,7 @@ public class TridentOfTheSeas {
         player.dialogue(new OptionsDialogue("You will NOT get the " + lostItem + " back.",
                 new Option("Okay. uncharge it.", () -> {
                     int charges = AttributeExtensions.getCharges(item);
+                    if (item.getId() == 11905) charges = 2500;
                     for (Item i : CHARGE_ITEMS) {
                         if (i.getId() == 995) continue;
                         if (!player.getInventory().hasRoomFor(i.getId(), i.getAmount() * charges)) {
