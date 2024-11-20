@@ -18,6 +18,7 @@ import io.ruin.model.item.actions.impl.Geode;
 import io.ruin.model.item.actions.impl.chargable.CelestialRing;
 import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
+import io.ruin.model.item.actions.impl.jewellery.BraceletOfClay;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.item.actions.impl.storage.CoalBag;
 import io.ruin.model.item.pet.Pet;
@@ -133,6 +134,10 @@ public class Mining {
                     } else {
                         int id = rockyOutcrop || gemRock ? itemId : rockData.ore;
                         id = trahaearnMine(player, id); // Turn clay into soft clay, roll for crystal shards
+                        if (rockData == Rock.CLAY && BraceletOfClay.test(player)) {
+                            if (id == Items.SOFT_CLAY) amount += 1; // If mining in trahaearn mine
+                            else id = Items.SOFT_CLAY;
+                        }
                         if (Random.rollPercent(getExtraOreChance(player, rockData))) {
                             amount *= 2;
                             player.sendFilteredMessage("You manage to mine an additional ore.");
