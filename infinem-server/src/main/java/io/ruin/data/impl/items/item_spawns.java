@@ -29,7 +29,7 @@ public class item_spawns extends DataFile {
         List<GroundItemSpawn> spawns = JsonUtils.fromJson(json, List.class, GroundItemSpawn.class);
         spawns.forEach(spawn -> {
             int regionId = Region.getId(spawn.x, spawn.y);
-            if(spawn.amount < 1)
+            if (spawn.amount < 1)
                 spawn.amount = 1;
             if (spawn.respawnSeconds == 0)
                 spawn.respawnSeconds = 60;
@@ -48,7 +48,7 @@ public class item_spawns extends DataFile {
 
     public static void save(int regionId) {
         List<GroundItemSpawn> regionSpawns = allSpawns.get(regionId);
-        if(regionSpawns != null) {
+        if (regionSpawns != null) {
             try {
                 JsonUtils.toFile(new File("./data/items/spawns/" + regionId + ".json"), JsonUtils.toPrettyJson(regionSpawns));
             } catch (IOException e) {
@@ -81,11 +81,17 @@ public class item_spawns extends DataFile {
 
     public static final class GroundItemSpawn {
 
-        @Expose public int id;
-        @Expose public int amount = 1;
-        @Expose public int x, y, z;
-        @Expose public String world;
-        @Expose public String itemName;
-        @Expose public int respawnSeconds = 60;
+        @Expose
+        public int id;
+        @Expose
+        public int amount = 1;
+        @Expose
+        public int x, y, z;
+        @Expose
+        public String world;
+        @Expose
+        public String itemName;
+        @Expose
+        public int respawnSeconds = 60;
     }
 }
