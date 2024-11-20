@@ -81,13 +81,15 @@ public class LootTable {
     public LootTable copy() {
         LootTable newTable = new LootTable();
         newTable.guaranteed = guaranteed.clone();
-        newTable.tables = new ArrayList<>();
-        for (ItemsTable iTable : tables) {
-            List<LootItem> items = new ArrayList<>();
-            for (LootItem item : iTable.items) {
-                items.add(item.copy());
+        if (tables != null) {
+            newTable.tables = new ArrayList<>();
+            for (ItemsTable iTable : tables) {
+                List<LootItem> items = new ArrayList<>();
+                for (LootItem item : iTable.items) {
+                    items.add(item.copy());
+                }
+                newTable.tables.add(new ItemsTable(iTable.name, iTable.weight, items.toArray(new LootItem[0])));
             }
-            newTable.tables.add(new ItemsTable(iTable.name, iTable.weight, items.toArray(new LootItem[0])));
         }
         newTable.totalWeight = totalWeight;
         return newTable;
