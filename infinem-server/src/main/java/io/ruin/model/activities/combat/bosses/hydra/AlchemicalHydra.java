@@ -92,7 +92,7 @@ public class AlchemicalHydra extends NPCCombat {
     }
 
     private static final Projectile MAGIC_PROJECTILE_1 = new Projectile(1662, 60, 21, 25, 30, 10, 16, 64);
-    private static final Projectile MAGIC_PROJECTILE_2 = new Projectile(1662, 50, 21, 40, 30, 10,16, 64);
+    private static final Projectile MAGIC_PROJECTILE_2 = new Projectile(1662, 50, 21, 40, 30, 10, 16, 64);
 
     private static final Projectile RANGED_PROJECTILE_1 = new Projectile(1663, 60, 31, 25, 30, 10, 16, 64);
     private static final Projectile RANGED_PROJECTILE_2 = new Projectile(1663, 50, 31, 40, 30, 10, 16, 64);
@@ -141,13 +141,13 @@ public class AlchemicalHydra extends NPCCombat {
             this.weaknessVent = weaknessVent;
         }
 
-        private int npcId; // main npc id (the one that fights)
-        private int loseHeadNPCId; // npc id this phase transforms into to do the losing head animation
-        private int loseHeadAnim; // the losing head animation
-        private int loseHeadDuration; // how many ticks to wait for lose head anim
-        private int fadeInAnim; // the animation this form performs when switching into it (comes right after the previous form's lose head animation)
-        private int middleHeadAttackAnim, rightHeadsAttackAnim, leftHeadsAttackAnim; // attack anims
-        private int weaknessVent;
+        private final int npcId; // main npc id (the one that fights)
+        private final int loseHeadNPCId; // npc id this phase transforms into to do the losing head animation
+        private final int loseHeadAnim; // the losing head animation
+        private final int loseHeadDuration; // how many ticks to wait for lose head anim
+        private final int fadeInAnim; // the animation this form performs when switching into it (comes right after the previous form's lose head animation)
+        private final int middleHeadAttackAnim, rightHeadsAttackAnim, leftHeadsAttackAnim; // attack anims
+        private final int weaknessVent;
 
     }
 
@@ -552,7 +552,7 @@ public class AlchemicalHydra extends NPCCombat {
     @Override
     public void startDeath(Hit killHit) {
         setDead(true);
-        if(target != null)
+        if (target != null)
             reset();
         npc.addEvent(event -> {
             npc.animate(8257);
@@ -565,14 +565,14 @@ public class AlchemicalHydra extends NPCCombat {
 
     private enum FireArea {
         WEST(-8, 0, -1, 4,
-                new Position[] {
+                new Position[]{
                         new Position(-1, 4, 0),
                         new Position(-1, 3, 0),
                         new Position(-1, 2, 0),
                         new Position(-1, 1, 0)
                 }, new int[]{-1, 0}),
         NORTH_WEST(-8, 5, -1, 14,
-                new Position[] {
+                new Position[]{
                         new Position(-1, 4, 0),
                         new Position(-1, 5, 0),
                         new Position(-1, 6, 0),
@@ -580,14 +580,14 @@ public class AlchemicalHydra extends NPCCombat {
                         new Position(1, 6, 0),
                 }, new int[]{-1, 1}),
         NORTH(0, 5, 5, 14,
-                new Position[] {
+                new Position[]{
                         new Position(1, 6, 0),
                         new Position(2, 6, 0),
                         new Position(3, 6, 0),
                         new Position(4, 6, 0),
                 }, new int[]{0, 1}),
         NORTH_EAST(6, 5, 13, 13,
-                new Position[] {
+                new Position[]{
                         new Position(6, 4, 0),
                         new Position(6, 5, 0),
                         new Position(6, 6, 0),
@@ -596,14 +596,14 @@ public class AlchemicalHydra extends NPCCombat {
 
                 }, new int[]{1, 1}),
         EAST(5, 0, 13, 5,
-                new Position[] {
+                new Position[]{
                         new Position(6, 1, 0),
                         new Position(6, 2, 0),
                         new Position(6, 3, 0),
                         new Position(6, 4, 0),
                 }, new int[]{1, 0}),
         SOUTH_EAST(5, -8, 13, -1,
-                new Position[] {
+                new Position[]{
                         new Position(6, 1, 0),
                         new Position(6, 0, 0),
                         new Position(6, -1, 0),
@@ -611,14 +611,14 @@ public class AlchemicalHydra extends NPCCombat {
                         new Position(4, -1, 0),
                 }, new int[]{1, -1}),
         SOUTH(0, -9, 5, 0,
-                new Position[] {
+                new Position[]{
                         new Position(1, -1, 0),
                         new Position(2, -1, 0),
                         new Position(3, -1, 0),
                         new Position(4, -1, 0),
                 }, new int[]{0, -1}),
         SOUTH_WEST(-8, -8, 0, -1,
-                new Position[] {
+                new Position[]{
                         new Position(-1, 1, 0),
                         new Position(-1, 0, 0),
                         new Position(-1, -1, 0),
@@ -626,7 +626,7 @@ public class AlchemicalHydra extends NPCCombat {
                         new Position(1, -1, 0),
                 }, new int[]{-1, -1});
 
-        int swX, swY, neX, neY;
+        final int swX, swY, neX, neY;
 
         FireArea(int swX, int swY, int neX, int neY, Position[] waveStart, int[] waveStep) {
             this.swX = swX;
@@ -637,8 +637,8 @@ public class AlchemicalHydra extends NPCCombat {
             this.waveStep = waveStep;
         }
 
-        Position[] waveStart;
-        int[] waveStep;
+        final Position[] waveStart;
+        final int[] waveStep;
 
         private FireArea[] getAdjacents() {
             int previous = ordinal() - 1;
@@ -664,9 +664,7 @@ public class AlchemicalHydra extends NPCCombat {
 
         private boolean isInArea(Entity target, NPC hydra) {
             Bounds bounds = getBounds(hydra);
-            if (target.getPosition().inBounds(bounds))
-                return true;
-            return false;
+            return target.getPosition().inBounds(bounds);
         }
 
         private Bounds getBounds(NPC hydra) {
