@@ -453,7 +453,11 @@ public class Consumable {
 
         //Wizard's mind bomb
         registerDrink(1907, 1919, 1, 3, p -> {
-            p.getStats().get(StatType.Magic).boost(2, 0);
+            if (p.getStats().checkFixed(StatType.Magic, 50)) {
+                p.getStats().get(StatType.Magic).boost(3, 0);
+            } else {
+                p.getStats().get(StatType.Magic).boost(2, 0);
+            }
             p.getStats().get(StatType.Attack).drain(1, 0.05);
             p.getStats().get(StatType.Strength).drain(1, 0.05);
             p.getStats().get(StatType.Defence).drain(1, 0.05);
