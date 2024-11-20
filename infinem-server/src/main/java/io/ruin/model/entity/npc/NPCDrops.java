@@ -536,12 +536,13 @@ public class NPCDrops {
         int eyes = player.getItemAmount(22973);
         int fangs = player.getItemAmount(22971);
         int hearts = player.getItemAmount(22969);
-        if (fangs < eyes && fangs < hearts) {
-            return 22971;
-        } else if (hearts < eyes && hearts < fangs) {
-            return 22969;
-        } else {
+        int least = Math.min(eyes, Math.min(fangs, hearts));
+        if (eyes == least) {
             return 22973;
+        } else if (fangs == least) {
+            return 22971;
+        } else {
+            return 22969;
         }
     }
 
