@@ -200,6 +200,10 @@ public class Birdhouse {
 
     private void addSeeds(Item seeds) {
         BirdHouses birdHouse = getBirdHouseById(config.get(player));
+        if (birdHouse == null) {
+            player.sendMessage("Nothing interesting happens.");
+            return;
+        }
         if (config.get(player) == birdHouse.seeded) {
             player.dialogue(new MessageDialogue("The birdhouse is already full of seeds!"));
             return;
