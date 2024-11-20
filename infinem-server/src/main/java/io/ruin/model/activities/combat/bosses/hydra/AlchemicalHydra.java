@@ -242,6 +242,8 @@ public class AlchemicalHydra extends NPCCombat {
             return;
         Form nextForm = Form.values()[currentForm.ordinal() + 1];
         npc.addEvent(event -> {
+            if (currentForm == Form.GREY)
+                return;
             npc.lock();
             npc.transform(currentForm.loseHeadNPCId);
             npc.animate(currentForm.loseHeadAnim);
