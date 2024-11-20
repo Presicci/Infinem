@@ -147,7 +147,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
                 return;
             meleeAttack(true);
         });
-        //comboAttackCooldown.delay(66); // ~40 seconds cooldown
+        comboAttackCooldown.delay(66); // ~40 seconds cooldown
     }
 
     private void spreadLava() {
