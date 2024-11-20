@@ -1,0 +1,86 @@
+{
+  "name": "Shayzien Styles",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    11042
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // White apron
+      "itemId": 1005,
+      "stock": 3,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Leather body
+      "itemId": 1129,
+      "stock": 12,
+      "buy_price": 11,
+      "sell_price": 21
+    },
+    { // Leather gloves
+      "itemId": 1059,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    { // Leather boots
+      "itemId": 1061,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    { // Brown apron
+      "itemId": 1757,
+      "stock": 1,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Black skirt
+      "itemId": 1015,
+      "stock": 3,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Blue skirt
+      "itemId": 1011,
+      "stock": 2,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Red cape
+      "itemId": 1007,
+      "stock": 4,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Black cape
+      "itemId": 1019,
+      "stock": 4,
+      "buy_price": 3,
+      "sell_price": 7
+    },
+    { // Blue cape
+      "itemId": 1021,
+      "stock": 4,
+      "buy_price": 17,
+      "sell_price": 32
+    },
+    { // Yellow cape
+      "itemId": 1023,
+      "stock": 4,
+      "buy_price": 17,
+      "sell_price": 32
+    },
+    { // Chef's hat
+      "itemId": 1949,
+      "stock": 4,
+      "buy_price": 1,
+      "sell_price": 2
+    }
+  ]
+}

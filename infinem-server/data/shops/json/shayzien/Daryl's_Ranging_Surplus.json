@@ -1,0 +1,116 @@
+{
+  "name": "Daryl's Ranging Surplus",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    11041
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Shortbow
+      "itemId": 841,
+      "stock": 4,
+      "buy_price": 27,
+      "sell_price": 50
+    },
+    { // Longbow
+      "itemId": 839,
+      "stock": 4,
+      "buy_price": 44,
+      "sell_price": 80
+    },
+    { // Oak shortbow
+      "itemId": 843,
+      "stock": 3,
+      "buy_price": 55,
+      "sell_price": 100
+    },
+    { // Oak longbow
+      "itemId": 845,
+      "stock": 3,
+      "buy_price": 88,
+      "sell_price": 160
+    },
+    { // Willow shortbow
+      "itemId": 849,
+      "stock": 2,
+      "buy_price": 110,
+      "sell_price": 200
+    },
+    { // Willow longbow
+      "itemId": 847,
+      "stock": 2,
+      "buy_price": 176,
+      "sell_price": 320
+    },
+    { // Maple shortbow
+      "itemId": 853,
+      "stock": 1,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    { // Maple longbow
+      "itemId": 851,
+      "stock": 1,
+      "buy_price": 352,
+      "sell_price": 640
+    },
+    { // Crossbow
+      "itemId": 837,
+      "stock": 2,
+      "buy_price": 38,
+      "sell_price": 70
+    },
+    { // Bronze arrow
+      "itemId": 882,
+      "stock": 2000,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Iron arrow
+      "itemId": 884,
+      "stock": 1500,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { // Steel arrow
+      "itemId": 886,
+      "stock": 1000,
+      "buy_price": 6,
+      "sell_price": 12
+    },
+    { // Mithril arrow
+      "itemId": 888,
+      "stock": 800,
+      "buy_price": 17,
+      "sell_price": 32
+    },
+    { // Adamant arrow
+      "itemId": 890,
+      "stock": 600,
+      "buy_price": 44,
+      "sell_price": 80
+    },
+    { // Rune arrow
+      "itemId": 892,
+      "stock": 200,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    { // Bronze bolts
+      "itemId": 877,
+      "stock": 2000,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Iron bolts
+      "itemId": 9140,
+      "stock": 1500,
+      "buy_price": 1,
+      "sell_price": 2
+    }
+  ]
+}

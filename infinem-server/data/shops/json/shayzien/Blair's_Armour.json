@@ -1,0 +1,86 @@
+{
+  "name": "Blair's Armour",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    11040
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Bronze chainbody
+      "itemId": 1103,
+      "stock": 5,
+      "buy_price": 36,
+      "sell_price": 60
+    },
+    { // Iron chainbody
+      "itemId": 1101,
+      "stock": 3,
+      "buy_price": 126,
+      "sell_price": 210
+    },
+    { // Steel chainbody
+      "itemId": 1105,
+      "stock": 3,
+      "buy_price": 450,
+      "sell_price": 750
+    },
+    { // Bronze platelegs
+      "itemId": 1075,
+      "stock": 3,
+      "buy_price": 48,
+      "sell_price": 80
+    },
+    { // Iron platelegs
+      "itemId": 1067,
+      "stock": 2,
+      "buy_price": 168,
+      "sell_price": 280
+    },
+    { // Steel platelegs
+      "itemId": 1069,
+      "stock": 2,
+      "buy_price": 600,
+      "sell_price": 1000
+    },
+    { // Bronze plateskirt
+      "itemId": 1087,
+      "stock": 3,
+      "buy_price": 48,
+      "sell_price": 80
+    },
+    { // Iron plateskirt
+      "itemId": 1081,
+      "stock": 2,
+      "buy_price": 168,
+      "sell_price": 280
+    },
+    { // Steel plateskirt
+      "itemId": 1083,
+      "stock": 2,
+      "buy_price": 600,
+      "sell_price": 1000
+    },
+    { // Bronze med helm
+      "itemId": 1139,
+      "stock": 5,
+      "buy_price": 14,
+      "sell_price": 24
+    },
+    { // Iron med helm
+      "itemId": 1137,
+      "stock": 3,
+      "buy_price": 50,
+      "sell_price": 84
+    },
+    { // Steel med helm
+      "itemId": 1141,
+      "stock": 3,
+      "buy_price": 180,
+      "sell_price": 300
+    }
+  ]
+}
