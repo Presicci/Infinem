@@ -13,6 +13,7 @@ public enum UnimplementedObject {
     The_Shayzien_Agility_Course(42209, new Position(1554, 3631)),
     Tempeross(41326, new Position(3194, 2841)),
     Tempeross$(41311, new Position(3269, 3141)),
+    COLOSSEUM(50749, new Position(1796, 3106))
     ;
 
     private final int objectId, option;
