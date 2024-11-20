@@ -46,7 +46,10 @@ public class DropViewer {
         NPCDefinition def = NPCDefinition.get(id);
         int activeModifiers = player.getTemporaryAttributeIntOrZero("DROPVIEWER_MODI");
         LootTable lootTable = def.lootTable.copy();
-        if (!ConditionalNPCLootTable.LOADED_TABLES.containsKey(id)) displayDrops(player, id, name);
+        if (!ConditionalNPCLootTable.LOADED_TABLES.containsKey(id)) {
+            displayDrops(player, id, name);
+            return;
+        }
         int index = 1;
         for (ConditionalNPCLootTable table : ConditionalNPCLootTable.LOADED_TABLES.get(id)) {
             if ((activeModifiers & index) == index) table.modifyTable(lootTable);
