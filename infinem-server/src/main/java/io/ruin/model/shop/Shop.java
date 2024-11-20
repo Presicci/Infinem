@@ -30,14 +30,14 @@ import java.util.function.Consumer;
 
 @Slf4j
 @ToString(exclude = {"viewingPlayers", "shopItems", "currencyHandler"})
-@JsonPropertyOrder({ "identifier", "title", "currency", "accessibleByIronMan", "generalStore", "canSellToStore", "restockRules", "defaultStock", "requiredLevels" })
+@JsonPropertyOrder({"identifier", "title", "currency", "accessibleByIronMan", "generalStore", "canSellToStore", "restockRules", "defaultStock", "requiredLevels"})
 @JsonIgnoreProperties({"currencyHandler", "viewingPlayers", "shopItems", "generatedByBuilder", "onTick"})
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class Shop {
 
     public static HashMap<Integer, Shop> shops = new HashMap<>();
 
-    public Shop(){
+    public Shop() {
 
     }
 
@@ -105,16 +105,16 @@ public class Shop {
     }
 
     public void init() {
-        if(restockRules == null)
+        if (restockRules == null)
             restockRules = RestockRules.generateDefault();
 
         shopItems = new ShopItemContainer();
         shopItems.init(null, ShopManager.SHOP_MAX_CAPACITY, 300, 16, 24, true);
-        if(currency != null)
+        if (currency != null)
             currencyHandler = currency.getCurrencyHandler();
     }
 
-    public void populate(){
+    public void populate() {
         shopItems.clear();
         defaultStock.forEach(shopItem ->
         {
@@ -130,7 +130,7 @@ public class Shop {
         });
     }
 
-    public Shop replace(Shop shop){
+    public Shop replace(Shop shop) {
         this.title = shop.title;
         this.defaultStock = shop.defaultStock;
 
@@ -141,7 +141,7 @@ public class Shop {
         return this;
     }
 
-    public void replaceListeners(){
+    public void replaceListeners() {
         viewingPlayers.forEach(listener -> {
             listener.setShopContainer(shopItems);
             listener.open();
@@ -149,22 +149,22 @@ public class Shop {
 
     }
 
-    public void open(Player player){
+    public void open(Player player) {
 
-        if(player.getGameMode().isIronMan() && !accessibleByIronMan) {
+        if (player.getGameMode().isIronMan() && !accessibleByIronMan) {
             player.sendMessage("You can't access this shop as an ironman!");
             return;
         }
-        if(player.isVisibleInterface(301))
+        if (player.isVisibleInterface(301))
             player.closeInterface(InterfaceType.MAIN);
 
 
         player.openInterface(InterfaceType.MAIN, 300);
         player.openInterface(InterfaceType.INVENTORY, 301);
 
-        player.getPacketSender().sendClientScript(1074, "isii",4, title, -1, 0);
-        player.getPacketSender().sendClientScript(149, "iiiiiisssss",301 << 16, 93, 4, 7, 0, -1, "Value<col=ff9040>", "Sell 1<col=ff9040>", "Sell 5<col=ff9040>", "Sell 10<col=ff9040>", "Sell 50<col=ff9040>");
-        player.getPacketSender().sendClientScript(149, "iiiiiisssss",300 << 16 | 16, 24, 8, 5, 0, -1, "Value<col=ff9040>", "Buy 1<col=ff9040>", "Buy 5<col=ff9040>", "Buy 10<col=ff9040>", "Buy 50<col=ff9040>");
+        player.getPacketSender().sendClientScript(1074, "isii", 4, title, -1, 0);
+        player.getPacketSender().sendClientScript(149, "iiiiiisssss", 301 << 16, 93, 4, 7, 0, -1, "Value<col=ff9040>", "Sell 1<col=ff9040>", "Sell 5<col=ff9040>", "Sell 10<col=ff9040>", "Sell 50<col=ff9040>");
+        player.getPacketSender().sendClientScript(149, "iiiiiisssss", 300 << 16 | 16, 24, 8, 5, 0, -1, "Value<col=ff9040>", "Buy 1<col=ff9040>", "Buy 5<col=ff9040>", "Buy 10<col=ff9040>", "Buy 50<col=ff9040>");
 
         player.getPacketSender().sendAccessMask(300, 16, 0, ShopManager.SHOP_MAX_CAPACITY, 1086);
         player.getPacketSender().sendAccessMask(301, 0, 0, 27, 1086);
@@ -183,16 +183,16 @@ public class Shop {
     }
 
 
-    public void close(Player player){
+    public void close(Player player) {
         viewingPlayers.removeIf(listener -> listener.getPlayer() == null || listener.getPlayer().equals(player));
         player.viewingShop = null;
     }
 
 
-    public void buyFromShop(Player player, Item requestedItem){
-        if(requestedItem.getAmount() == 0)
+    public void buyFromShop(Player player, Item requestedItem) {
+        if (requestedItem.getAmount() == 0)
             return;
-        if(!shopItems.hasId(requestedItem.getId())){
+        if (!shopItems.hasId(requestedItem.getId())) {
             //TODO Logging
             return;
         }
@@ -201,31 +201,31 @@ public class Shop {
 
         int stockAmount = Math.min(requestedItem.getAmount(), shopItem.getAmount());
 
-        if(player.getGameMode().isIronMan()) {
+        if (player.getGameMode().isIronMan()) {
             if (!shopItem.defaultStockItem) {
                 player.sendMessage("You cannot purchase an item somebody else has sold!");
                 return;
-            } else if(shopItem.getAmount() > defaultStock.get(shopItem.getSlot()).getAmount()){
+            } else if (shopItem.getAmount() > defaultStock.get(shopItem.getSlot()).getAmount()) {
                 player.sendMessage("You cannot purchase this as it is currently overstocked!");
                 return;
             }
         }
 
-        if(shopItem.requirementCheckType == RequirementCheckType.REQUIRED_TO_BUY){
-            if(!shopItem.hasRequirements(player)) {
+        if (shopItem.requirementCheckType == RequirementCheckType.REQUIRED_TO_BUY) {
+            if (!shopItem.hasRequirements(player)) {
                 shopItem.printRequirements(player);
                 return;
             }
         }
 
-        if(stockAmount == 0){
+        if (stockAmount == 0) {
             return;
         }
 
         int possibleBuyAmount = currencyHandler.getPossibleBuyAmount(player, shopItem);
         int buyAmount = Math.min(possibleBuyAmount, stockAmount);
         log.debug("Attempting to buy {} x {}", buyAmount, shopItem);
-        if(buyAmount > 0) {
+        if (buyAmount > 0) {
             int pricePer = getSellPrice(shopItem);
             int requiredCurrency = buyAmount * pricePer;
             int removedCurrency = currencyHandler.removeCurrency(player, requiredCurrency);//Should result in 0 if actual currency < requiredCurrency
@@ -235,7 +235,7 @@ public class Shop {
                 if (currencyHandler.addToCollectionLog) {
                     player.getCollectionLog().collect(bought);
                 }
-                if(shopItem.getAdditionalItems() != null && !shopItem.getAdditionalItems().isEmpty()){
+                if (shopItem.getAdditionalItems() != null && !shopItem.getAdditionalItems().isEmpty()) {
                     shopItem.getAdditionalItems().forEach(additional -> player.getInventory().add(new Item(additional.getId(), buyAmount * additional.getAmount())));
                 }
                 int removedFromshop = shopItems.remove(bought);
@@ -248,7 +248,7 @@ public class Shop {
             } else {
                 log.debug("Failed to buy {} x {} | removedCurrency {}", buyAmount, shopItem.getId(), removedCurrency);
             }
-        } else if(buyAmount == -2){
+        } else if (buyAmount == -2) {
             player.sendMessage("You don't have enough space to do that!");
         } else {
             player.sendMessage("You don't have enough " + currencyHandler.name() + " to buy that.");
@@ -259,20 +259,20 @@ public class Shop {
         viewingPlayers.forEach(ShopContainerListener::update);
     }
 
-    public void sellToShop(Player player, Item requestedItem){
-        if(!requestedItem.getDef().tradeable && generalStore && defaultStock.stream().noneMatch(i -> i.getId() == requestedItem.getId())){
+    public void sellToShop(Player player, Item requestedItem) {
+        if (!requestedItem.getDef().tradeable && generalStore && defaultStock.stream().noneMatch(i -> i.getId() == requestedItem.getId())) {
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
-        if(requestedItem.getDef().free){
+        if (requestedItem.getDef().free) {
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
-        if(requestedItem.getDef().isCurrency()){
+        if (requestedItem.getDef().isCurrency()) {
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
-        if(!canSellToStore){
+        if (!canSellToStore) {
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
@@ -281,46 +281,46 @@ public class Shop {
             return;
         }
         ShopItem matchingItem = shopItems.findItem(requestedItem.getId(), true);
-        if(generalStore && (matchingItem == null || !matchingItem.defaultStockItem)){
-            if(shopItems.getFreeSlots() == 0 && matchingItem == null){
+        if (generalStore && (matchingItem == null || !matchingItem.defaultStockItem)) {
+            if (shopItems.getFreeSlots() == 0 && matchingItem == null) {
                 player.sendMessage(ShopManager.SHOP_FULL);
                 return;
             }
             int inventoryCount = player.getInventory().count(requestedItem.getId());
-                int maxInventory = Math.min(requestedItem.getAmount(), inventoryCount);
+            int maxInventory = Math.min(requestedItem.getAmount(), inventoryCount);
 
-                int maxSell = Math.min(Integer.MAX_VALUE - (matchingItem != null ? matchingItem.getAmount() : 0), maxInventory);
+            int maxSell = Math.min(Integer.MAX_VALUE - (matchingItem != null ? matchingItem.getAmount() : 0), maxInventory);
 
-                int pricePer = getBuyPrice(requestedItem);
+            int pricePer = getBuyPrice(requestedItem);
 
-                boolean allSold = maxSell == inventoryCount;//guarantees that 1 slot will be open
+            boolean allSold = maxSell == inventoryCount;//guarantees that 1 slot will be open
 
-                boolean hasCurrency = currencyHandler.getCurrencyCount(player) != 0;
+            boolean hasCurrency = currencyHandler.getCurrencyCount(player) != 0;
 
-                log.debug("{} {} {}", maxSell, maxInventory, currencyHandler.getCurrencyCount(player));
-                if(!hasCurrency && !allSold){
-                    if(currencyHandler instanceof ItemCurrencyHandler){
-                        if(player.getInventory().getFreeSlots() == 0){
-                            player.sendMessage("You have no space for your " + currencyHandler.name());
-                            return;
-                        }
+            log.debug("{} {} {}", maxSell, maxInventory, currencyHandler.getCurrencyCount(player));
+            if (!hasCurrency && !allSold) {
+                if (currencyHandler instanceof ItemCurrencyHandler) {
+                    if (player.getInventory().getFreeSlots() == 0) {
+                        player.sendMessage("You have no space for your " + currencyHandler.name());
+                        return;
                     }
                 }
-                int removed = player.getInventory().remove(requestedItem.getId(), maxSell);
+            }
+            int removed = player.getInventory().remove(requestedItem.getId(), maxSell);
 
 
-                if(removed > 0){
-                    int unnoted = requestedItem.getDef().isNote() ? requestedItem.getDef().fromNote().id : requestedItem.getId();
-                    int givenCurrency = currencyHandler.addCurrency(player, pricePer * removed);
-                    log.debug("Sold {} x {}, given currency {}", requestedItem.getDef().name, removed, pricePer * removed);
-                    shopItems.add(unnoted, removed, -1, null);
-                    sendUpdates();
-                }
+            if (removed > 0) {
+                int unnoted = requestedItem.getDef().isNote() ? requestedItem.getDef().fromNote().id : requestedItem.getId();
+                int givenCurrency = currencyHandler.addCurrency(player, pricePer * removed);
+                log.debug("Sold {} x {}, given currency {}", requestedItem.getDef().name, removed, pricePer * removed);
+                shopItems.add(unnoted, removed, -1, null);
+                sendUpdates();
+            }
 
             return;
         }
         log.debug("Trying to sell to store {}", requestedItem);
-        if(matchingItem == null){
+        if (matchingItem == null) {
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
@@ -330,7 +330,7 @@ public class Shop {
 
         int pricePer = getBuyPrice(requestedItem);
         int removed = player.getInventory().remove(requestedItem.getId(), maxSell);
-        if(removed > 0){
+        if (removed > 0) {
             int unnoted = requestedItem.getDef().isNote() ? requestedItem.getDef().fromNote().id : requestedItem.getId();
             currencyHandler.addCurrency(player, pricePer * removed);
             log.debug("Sold {} x {}, given currency {}", requestedItem.getDef().name, removed, pricePer * removed);
@@ -342,29 +342,29 @@ public class Shop {
 
     public int getBuyPrice(Item itemForSlot) {
         ItemDefinition itemDefinition = itemForSlot.getDef().isNote() ? itemForSlot.getDef().fromNote() : itemForSlot.getDef();
-        if(!itemDefinition.tradeable && generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDefinition.id)){
+        if (!itemDefinition.tradeable && generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDefinition.id)) {
             return -1;
         }
-        if(itemDefinition.free){
+        if (itemDefinition.free) {
             return -1;
         }
-        if(itemDefinition.isCurrency()){
+        if (itemDefinition.isCurrency()) {
             return -1;
         }
-        if(generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDefinition.id)){
+        if (generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDefinition.id)) {
             return Math.max(itemDefinition.lowAlchValue, 1);
         }
-        if(!canSellToStore){
+        if (!canSellToStore) {
             return -1;
         }
         ShopItem matchingItem = shopItems.findItem(itemForSlot.getId(), true);
-        if(matchingItem == null && !generalStore){
+        if (matchingItem == null && !generalStore) {
             return -1;
         }
         if (matchingItem.buyPrice < 0) {
             return -1;
         }
-        if(matchingItem != null && matchingItem.buyPrice >= 0){
+        if (matchingItem != null && matchingItem.buyPrice >= 0) {
             return matchingItem.buyPrice;
         }
         return 1;
@@ -372,9 +372,9 @@ public class Shop {
 
     public int getSellPrice(ShopItem itemForSlot) {
 
-        if(itemForSlot != null){
+        if (itemForSlot != null) {
             ItemDefinition itemDefinition = itemForSlot.getDef().isNote() ? itemForSlot.getDef().fromNote() : itemForSlot.getDef();
-            if(itemForSlot.getPrice() <= 0){
+            if (itemForSlot.getPrice() <= 0) {
                 return itemDefinition.highAlchValue;
             }
             return itemForSlot.getPrice();//Can this ever be null?
@@ -382,13 +382,13 @@ public class Shop {
         return Integer.MAX_VALUE;//TODO
     }
 
-    public void save(File saveFile){
-        try(FileWriter fw = new FileWriter(saveFile)) {
+    public void save(File saveFile) {
+        try (FileWriter fw = new FileWriter(saveFile)) {
 
             ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
             objectMapper.writeValue(fw, this);
 
-        } catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
