@@ -356,7 +356,7 @@ public class EmoteClue extends Clue {
                 Collections.singletonList(TabEmote.CLAP), new Bounds(3228, 3201, 3233, 3205, 0),
                 Arrays.asList(Items.BRONZE_AXE, Items.LEATHER_BOOTS), ClueType.BEGINNER, Config.STASH_UNITS[1], 34738),
         AL_KHARID_MINE("Panic at Al Kharid mine.",
-                Collections.singletonList(TabEmote.PANIC), new Bounds(3292, 3297, 3306, 3317, 0),
+                Collections.singletonList(TabEmote.PANIC), new Bounds(3288, 3268, 3306, 3317, 0),
                 Collections.emptyList(), ClueType.BEGINNER),
         FLYNNS_MACE_SHOP("Spin at Flynn's Mace Shop.",
                 Collections.singletonList(TabEmote.SPIN), new Bounds(2948, 3385, 2952, 3388, 0),
