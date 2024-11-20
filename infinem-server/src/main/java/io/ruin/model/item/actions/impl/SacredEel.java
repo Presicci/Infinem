@@ -23,16 +23,11 @@ public class SacredEel {
             if (player.getStats().check(StatType.Cooking, 72, "dissect the eel")) {
                 int offset = (int) Math.floor((player.getStats().get(StatType.Cooking).currentLevel - 72) / 8.0);
                 int amount = Random.get(3 + offset, 5 + offset);
-                player.startEvent(event -> {
-                    player.lock();
-                    player.animate(7151);
-                    player.getInventory().remove(primary.getId(), 1);
-                    player.getInventory().add(12934, amount);
-                    player.getStats().addXp(StatType.Cooking, 100 + amount * 3, true);
-                    player.sendFilteredMessage("You dissect the eel into some Zulrah scales.");
-                    event.delay(1);
-                    player.unlock();
-                });
+                player.animate(7151);
+                player.getInventory().remove(primary.getId(), 1);
+                player.getInventory().add(12934, amount);
+                player.getStats().addXp(StatType.Cooking, 100 + amount * 3, true);
+                player.sendFilteredMessage("You dissect the eel into some Zulrah scales.");
             }
         });
     }
