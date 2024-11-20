@@ -47,6 +47,16 @@ public class Farming {
             vinePatchW1, vinePatchW2, vinePatchW3, vinePatchW4, vinePatchW5, vinePatchW6;
     @Expose private SeaweedPatch seaweedPatch1, seaweedPatch2;
 
+    /*
+     * Varlamore
+     */
+    @Expose private AllotmentPatch varlamoreNorth, varlamoreSouth;
+    @Expose private HerbPatch varlamoreHerb;
+    @Expose private FlowerPatch varlamoreFlower;
+    @Expose private CompostBin varlamoreCompost;
+    @Expose private HopsPatch varlamoreHops;
+    @Expose private HardWoodTreePatch varlamoreTree;
+
     private PatchGroup visibleGroup;
 
     public Farming() {
@@ -219,6 +229,16 @@ public class Farming {
             seaweedPatch2 = new SeaweedPatch();
         }
 
+        if (varlamoreNorth == null) {
+            varlamoreNorth = new AllotmentPatch();
+            varlamoreSouth = new AllotmentPatch();
+            varlamoreHerb = new HerbPatch();
+            varlamoreFlower = new FlowerPatch();
+            varlamoreCompost = new CompostBin();
+            varlamoreTree = new HardWoodTreePatch();
+            varlamoreHops = new HopsPatch();
+        }
+
         addPatch(faladorCompostBin.set(PatchData.FALADOR_COMPOST_BIN).setPlayer(player));
         addPatch(catherbyCompostBin.set(PatchData.CATHERBY_COMPOST_BIN).setPlayer(player));
         addPatch(canifisCompostBin.set(PatchData.CANIFIS_COMPOST_BIN).setPlayer(player));
@@ -331,6 +351,17 @@ public class Farming {
 
         addPatch(seaweedPatch1.set(PatchData.SEAWEED_PATCH1).setPlayer(player));
         addPatch(seaweedPatch2.set(PatchData.SEAWEED_PATCH2).setPlayer(player));
+
+        /*
+         * Varlamore
+         */
+        addPatch(varlamoreNorth.set(PatchData.VARLAMORE_NORTH).setPlayer(player));
+        addPatch(varlamoreSouth.set(PatchData.VARLAMORE_SOUTH).setPlayer(player));
+        addPatch(varlamoreHerb.set(PatchData.VARLAMORE_HERB).setPlayer(player));
+        addPatch(varlamoreFlower.set(PatchData.VARLAMORE_FLOWER).setPlayer(player));
+        addPatch(varlamoreCompost.set(PatchData.VARLAMORE_COMPOST_BIN).setPlayer(player));
+        addPatch(varlamoreTree.set(PatchData.VARLAMORE_TREE).setPlayer(player));
+        addPatch(varlamoreHops.set(PatchData.VARLAMORE_HOPS).setPlayer(player));
 
         patches.forEach((id, patch) -> patch.onLoad()); // force ticks
         refresh();

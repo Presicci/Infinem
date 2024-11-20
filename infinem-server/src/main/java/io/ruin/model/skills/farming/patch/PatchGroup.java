@@ -84,7 +84,16 @@ public enum PatchGroup {
             Arrays.asList(PatchData.VINERY_E1, PatchData.VINERY_E2, PatchData.VINERY_E3, PatchData.VINERY_E4, PatchData.VINERY_E5, PatchData.VINERY_E6,
                     PatchData.VINERY_W1, PatchData.VINERY_W2, PatchData.VINERY_W3, PatchData.VINERY_W4, PatchData.VINERY_W5, PatchData.VINERY_W6)),
     SEAWEEDS(Bounds.fromRegion(15008),
-            Arrays.asList(PatchData.SEAWEED_PATCH1, PatchData.SEAWEED_PATCH2));
+            Arrays.asList(PatchData.SEAWEED_PATCH1, PatchData.SEAWEED_PATCH2)),
+
+    /*
+     * Varlamore
+     */
+    ORTUS_FARM(Bounds.fromRegion(6192),
+            Arrays.asList(PatchData.VARLAMORE_NORTH, PatchData.VARLAMORE_SOUTH, PatchData.VARLAMORE_FLOWER,
+                    PatchData.VARLAMORE_HERB, PatchData.VARLAMORE_COMPOST_BIN)),
+    LOCUS_OASIS(Bounds.fromRegion(6702), Collections.singletonList(PatchData.VARLAMORE_TREE)),
+    ALDARIN(Bounds.fromRegion(5421), Collections.singletonList(PatchData.VARLAMORE_HOPS));
 
     private final Bounds bounds;
     private final List<PatchData> patches;

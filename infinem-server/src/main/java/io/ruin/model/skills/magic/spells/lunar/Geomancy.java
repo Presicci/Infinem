@@ -110,7 +110,19 @@ public class Geomancy extends Spell {
         FARMING_GUILD_REDWOOD(162, PatchData.FARMING_GUILD_REDWOOD),   //Farming Guild
         FARMING_GUILD_CELASTRUS(163, PatchData.FARMING_GUILD_CELASTRUS),   //Farming Guild
         FARMING_GUILD_ANIMA(165, PatchData.FARMING_GUILD_ANIMA),   //Farming Guild
-        PRIF_CRYSTAL_TREE(170, PatchData.PRIF_CRYSTAL_TREE);   //Prifddinas
+        PRIF_CRYSTAL_TREE(170, PatchData.PRIF_CRYSTAL_TREE),   //Prifddinas
+
+        /*
+         * Varlamore
+         */
+        VARLAMORE_FLOWER(171, PatchData.VARLAMORE_FLOWER),
+        VARLAMORE_NW(172, PatchData.VARLAMORE_NORTH),
+        VARLAMORE_SE(173, PatchData.VARLAMORE_SOUTH),
+        VARLAMORE_HERB(174, PatchData.VARLAMORE_HERB),
+        VARLAMORE_COMPOST(175, PatchData.VARLAMORE_COMPOST_BIN),
+        AVIUM_SAVANNAH(176, PatchData.VARLAMORE_TREE),
+        ALDARIN(177, PatchData.VARLAMORE_HOPS),
+        ;
 
         public final int val;
         public final PatchData patchData;
