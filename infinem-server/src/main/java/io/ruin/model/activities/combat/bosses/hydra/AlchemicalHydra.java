@@ -255,7 +255,7 @@ public class AlchemicalHydra extends NPCCombat {
                 power = 0;
             } else {
                 switchStyle();
-                power = 8;
+                power = 0;
                 attackCounter = -3;
                 lastSpecial = -1;
             }
