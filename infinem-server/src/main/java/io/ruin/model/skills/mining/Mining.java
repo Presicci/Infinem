@@ -481,6 +481,15 @@ public class Mining {
                 {Rock.LIMESTONE, 11383, 11384, PlayerCounter.MINED_LIMESTONE},
                 {Rock.LIMESTONE, 11384, 11385, PlayerCounter.MINED_LIMESTONE},
                 {Rock.ASH_PILE, 30985, 30986, PlayerCounter.MINED_VOLCANIC_ASH},
+                // Priff rocks
+                {Rock.IRON, 36203, 36202, PlayerCounter.MINED_IRON},
+                {Rock.COAL, 36204, 36202, PlayerCounter.MINED_COAL},
+                {Rock.SILVER, 36205, 36202, PlayerCounter.MINED_SILVER},
+                {Rock.GOLD, 36206, 36202, PlayerCounter.MINED_GOLD},
+                {Rock.MITHRIL, 36207, 36202, PlayerCounter.MINED_MITHRIL},
+                {Rock.ADAMANT, 36208, 36202, PlayerCounter.MINED_ADAMANT},
+                {Rock.RUNE, 36209, 36202, PlayerCounter.MINED_RUNITE},
+                {Rock.CLAY, 36210, 36202, PlayerCounter.MINED_CLAY},
         };
         for (Object[] d : oreData) {
             Rock rock = (Rock) d[0];
