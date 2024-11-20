@@ -134,7 +134,8 @@ public class Bank extends ItemContainerG<BankItem> {
         if(blankItem != null) {
             blankItem.setId(id);
             blankItem.setAmount(amount);
-            blankItem.putAttributes(attributes);
+            if (attributes == null) blankItem.clearAttributes();
+            else blankItem.putAttributes(attributes);
             return amount;
         }
         if(freeSlot != -1) {
