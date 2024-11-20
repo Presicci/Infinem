@@ -88,6 +88,7 @@ public class Venenatis extends NPCCombat {
                 drop(npc.getSpawnPosition());
             }
         };
+        npc.setIgnoreMulti(true);
     }
 
     private void postDefend(Hit hit) {
@@ -120,6 +121,7 @@ public class Venenatis extends NPCCombat {
                 Spiderling spiderling = new Spiderling(spindel ? NpcID.SPINDELS_SPIDERLING : NpcID.VENENATIS_SPIDERLING_12000, this);
                 spiderling.spawn(position, Direction.NORTH, 10);
                 spiderling.getCombat().setTarget(target);
+                spiderling.setIgnoreMulti(true);
                 spiderlings.add(spiderling);
             }
         }
