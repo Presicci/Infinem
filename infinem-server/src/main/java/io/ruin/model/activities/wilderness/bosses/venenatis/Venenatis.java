@@ -153,9 +153,6 @@ public class Venenatis extends NPCCombat {
                         ? (int) (maxHit - (maxHit * (1D - prayerReduction)))    // Reduce prayer effectiveness by 20% per spiderling alive
                         : maxHit)
                 .ignorePrayer()); // Ignoring prayer here as we handle it elsewhere
-        System.out.println(protection
-                ? (int) (maxHit - (maxHit * (1D - prayerReduction)))    // Reduce prayer effectiveness by 20% per spiderling alive
-                : maxHit);
     }
 
     private void rangedAttack() {
