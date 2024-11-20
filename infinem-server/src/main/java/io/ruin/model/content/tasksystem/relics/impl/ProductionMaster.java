@@ -25,8 +25,13 @@ public class ProductionMaster {
         if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) return;
         if (amt <= 0) return;
         player.getStats().addXp(stat, experience, true);
-        player.getBank().add(itemId, amt);
-        player.sendMessage("<col=09950f>You make an extra " + amt + " x " + ItemDefinition.get(itemId).name + ", which are put into your bank.");
+        if (player.getGameMode().isUltimateIronman()) {
+            player.getInventory().addOrDrop(itemId, amt);
+            player.sendMessage("<col=09950f>You make an extra " + amt + " x " + ItemDefinition.get(itemId).name + ".");
+        } else {
+            player.getBank().add(itemId, amt);
+            player.sendMessage("<col=09950f>You make an extra " + amt + " x " + ItemDefinition.get(itemId).name + ", which are put into your bank.");
+        }
         if (category != null) player.getTaskManager().doLookupByCategoryAndTrigger(category, ItemDefinition.get(itemId).name, amt);
     }
 }
