@@ -111,12 +111,26 @@ public enum KonarTaskLocation {
     }
 
     public boolean inside(Position pos) {
-        for (Bounds b : boundaries)
+        for (Bounds b : boundaries) {
+            // Check instances
+            if (pos.getRegion().dynamicData != null) {
+                if (b.intersects(Region.get(pos.getRegion().dynamicData[0][0][0][1]).bounds))
+                    return true;
+            }
+            // Check normal zones
             if (b.inBounds(pos.getX(), pos.getY(), pos.getZ(), 0))
                 return true;
-        for (Region r : regions)
+        }
+        for (Region r : regions) {
+            // Check instances
+            if (pos.getRegion().dynamicData != null) {
+                if (r.id == pos.getRegion().dynamicData[0][0][0][1])
+                    return true;
+            }
+            // Check normal zones
             if (r.isInside(pos))
                 return true;
+        }
         return false;
     }
 }
