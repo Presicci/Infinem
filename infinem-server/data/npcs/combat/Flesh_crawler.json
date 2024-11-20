@@ -10,7 +10,7 @@
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 25.0,
-    "slayer_tasks": [ "Fleshcrawlers" ],
+    "slayer_tasks": [ "Flesh Crawlers" ],
     //Combat Stats
     "attack": 60,
     "strength": 2,
