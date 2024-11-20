@@ -26,6 +26,7 @@ import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.MapArea;
+import io.ruin.model.map.Region;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.RandomEvent;
@@ -131,6 +132,7 @@ public class Mining {
                         }
                     } else {
                         int id = rockyOutcrop || gemRock ? itemId : rockData.ore;
+                        id = trahaearnMine(player, id); // Turn clay into soft clay, roll for crystal shards
                         if (Random.rollPercent(getExtraOreChance(player, rockData))) {
                             amount *= 2;
                             player.sendFilteredMessage("You manage to mine an additional ore.");
@@ -230,6 +232,26 @@ public class Mining {
                 event.delay(1);
             }
         });
+    }
+
+    private static int trahaearnMine(Player player, int ore) {
+        if (Region.get(13250).isInside(player.getPosition())) {
+            if (ore == Items.CLAY) ore = Items.SOFT_CLAY;
+            if (Random.rollDie(65)) {
+                if (player.getRelicManager().hasRelic(Relic.ENDLESS_HARVEST)) {
+                    if (player.getBank().hasRoomFor(23962, 2)) {
+                        player.getBank().add(23962, 2);
+                        player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(23962).name + " you would have gained, giving you a total of " + player.getBank().getAmount(23962) + ".");
+                    } else {
+                        player.getInventory().addOrDrop(23962, 2);
+                    }
+                } else {
+                    player.sendFilteredMessage("You get a crystal shard.");
+                    player.getInventory().addOrDrop(23962, 1);
+                }
+            }
+        }
+        return ore;
     }
 
     private static void rollGeode(Player player) {
