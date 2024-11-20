@@ -145,6 +145,27 @@ public class Consumable {
                 player.sendMessage("Eating the kebab has damaged your " + StatType.get(randStat).name() + " stat.");
             }
         });
+        // Varlamorian kebab
+        registerEat(29900, 0, player -> {
+            int hpLevel = player.getStats().get(StatType.Hitpoints).fixedLevel;
+            int rand = Random.get(1, 32);
+            player.sendMessage("You eat the kebab.");
+            if (rand <= 20) {
+                if (player.incrementHp((int) (3 + (hpLevel * 0.07))) > 0)
+                    player.sendMessage("It heals some health.");
+            } else if (rand <= 28) {
+                player.incrementHp((int) (6 + (hpLevel * 0.14)));
+                player.sendMessage("That was a good kebab. You feel a lot better.");
+            } else if (rand <= 31) {
+                player.getStats().get(StatType.Attack).boost(2, 0);
+                player.getStats().get(StatType.Strength).boost(2, 0);
+                player.getStats().get(StatType.Defence).boost(2, 0);
+                player.incrementHp((int) (7 + (hpLevel * 0.24)));
+                player.sendMessage("Wow, that was an amazing kebab! You feel really invigorated.");
+            } else {
+                player.sendMessage("It doesn't seem to do a lot.");
+            }
+        });
         registerEat(2108, 2, "orange");
         registerEat(22929, 10, "dragonfruit");
         registerEat(Items.STEW, Items.BOWL, 11, "stew");
