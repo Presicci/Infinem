@@ -1,6 +1,7 @@
 {
   "name": "Martin Thwait's Lost and Found",
   "currency": "COINS",
+  "generalStore": true,
   "npcs": [
     3193
   ],

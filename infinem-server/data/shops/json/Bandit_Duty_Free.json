@@ -1,6 +1,7 @@
 {
-  "name": "Noterazzo's Shop",
+  "name": "Bandit Duty Free",
   "currency": "COINS",
+  "generalStore": true,
   "npcs": [
     8692
   ],
