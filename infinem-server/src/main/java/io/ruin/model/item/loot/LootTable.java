@@ -472,7 +472,7 @@ public class LootTable {
             totalWeight = 0;
             for (LootItem item : items) {
                 totalWeight += item.weight;
-                if (ItemDefinition.get(item.id) == null)
+                if (item.id != -1 && ItemDefinition.get(item.id) == null)
                     System.err.println("!!@@@@@@@@@@@@@@@@@@@@@@: " + item.id);
             }
         }
