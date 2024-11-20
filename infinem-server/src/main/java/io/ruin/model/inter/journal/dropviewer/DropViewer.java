@@ -42,6 +42,13 @@ public class DropViewer {
         player.getTaskManager().doLookupByUUID(1007);   // Open the Drop Viewer
     }
 
+    public static void open(Player player, int npcId) {
+        NPCDefinition def = NPCDefinition.get(npcId);
+        if (def.combatInfo == null || def.combatLevel == 0 || def.attackOption == -1 || def.lootTable == null) return;
+        open(player);
+        displayDropsWithConditionals(player, npcId, def.name);
+    }
+
     private static void displayDropsWithConditionals(Player player, int id, String name) {
         NPCDefinition def = NPCDefinition.get(id);
         int activeModifiers = player.getTemporaryAttributeIntOrZero("DROPVIEWER_MODI");

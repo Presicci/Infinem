@@ -157,6 +157,7 @@ public class Config {
     public static final Config DROP_BROADCASTS = varpbit(16013, true).defaultValue(1);
     public static final Config FRIEND_BROADCASTS = varpbit(16014, true).defaultValue(1);
     public static final Config ACTIVITY_SPOTLIGHT_BROADCAST = varpbit(16015, true).defaultValue(1);
+    public static final Config DROP_VIEWER_EXAMINE = varpbit(16018, true);
 
     /**
      * House options

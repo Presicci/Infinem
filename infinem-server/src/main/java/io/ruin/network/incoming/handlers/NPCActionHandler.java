@@ -9,6 +9,8 @@ import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.journal.dropviewer.DropViewer;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.skills.construction.mahoganyhomes.MahoganyClient;
 import io.ruin.model.skills.construction.mahoganyhomes.MahoganyHomes;
@@ -71,6 +73,7 @@ public class NPCActionHandler implements Incoming {
             if (player.debug)
                 player.sendFilteredMessage("[NpcAction] option: 6 id=" + id);
             def.examine(player);
+            if (Config.DROP_VIEWER_EXAMINE.get(player) == 1) DropViewer.open(player, id);
             return;
         }
         player.sendFilteredMessage("Unhandled npc action: option=" + option + " opcode=" + opcode);
