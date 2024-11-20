@@ -21,9 +21,15 @@ public enum SlayerBoss {
     THE_GIANT_MOLE(5779, 6499),
     THE_KALPHITE_QUEEN(963, 965, 4303, 4304, 6500, 6501),
     THE_KING_BLACK_DRAGON(239, 6502, 12440),
-    CALLISTO(6503, 6609),
-    VENENATIS(6504, 6610),
-    VET_ION(6611, 6612),
+    CALLISTO(6503, 6609,
+            11992   // Artio
+    ),
+    VENENATIS(6504, 6610,
+            11998   // Spindel
+    ),
+    VET_ION(6611, 6612,
+            11993, 11994    // Calvar'ion
+    ),
     THE_CHAOS_ELEMENTAL(2054, 6505),
     THE_CHAOS_FANATIC(6619),
     CRAZY_ARCHAEOLOGIST(6618),
