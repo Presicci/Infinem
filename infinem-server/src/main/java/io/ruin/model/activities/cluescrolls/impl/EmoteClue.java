@@ -369,7 +369,7 @@ public class EmoteClue extends Clue {
                 Collections.singletonList(TabEmote.RASPBERRY), new Bounds(2597, 3272, 2612, 3285, 0),
                 Arrays.asList(Items.STUDDED_BODY, Items.BRONZE_PLATELEGS, Items.STAFF), ClueType.EASY, Config.STASH_UNITS[3], 28975),
         KEEP_LE_FAYE("Blow raspberries outside the entrance to Keep Le Faye. Equip a coif, an iron platebody and leather gloves.",
-                Collections.singletonList(TabEmote.BLOW_KISS), new Bounds(2753, 3397, 2762, 3403, 0),
+                Collections.singletonList(TabEmote.RASPBERRY), new Bounds(2753, 3397, 2762, 3403, 0),
                 Arrays.asList(Items.COIF, Items.IRON_PLATEBODY, Items.LEATHER_GLOVES), ClueType.EASY, Config.STASH_UNITS[4], 28978),
         DUEL_ARENA_OFFICE("Bow in the ticket office of the Duel Arena. Equip an iron chain body, leather chaps and coif.",
                 Collections.singletonList(TabEmote.BOW), new Bounds(3311, 3240, 3316, 3244, 0),
