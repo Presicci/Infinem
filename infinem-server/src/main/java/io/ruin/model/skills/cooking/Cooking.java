@@ -30,7 +30,9 @@ public class Cooking {
     };
     private static final String[] RANGE_NAMES = { "range", "cooking range", "stove", "sulphur vent", "gnome cooker", "clay oven",
             // House ranges
-            "steel range", "fancy range", "large oven", "small oven"
+            "steel range", "fancy range", "large oven", "small oven",
+            // Varlamore
+            "oven"
     };
     public static final int COOKING_GAUNLETS = 775;
 
