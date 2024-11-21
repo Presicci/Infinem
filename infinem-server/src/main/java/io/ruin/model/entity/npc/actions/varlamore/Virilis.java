@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemNPCAction;
+import io.ruin.model.skills.prayer.BlessedBoneShards;
 import io.ruin.model.skills.prayer.Bone;
 
 /**
@@ -20,7 +21,7 @@ public class Virilis {
             player.dialogue(new NPCDialogue(npc, "I'm afraid I can only exchange bank notes for real items."));
             return;
         }
-        if (Bone.get(def.notedId) == null) {
+        if (!BlessedBoneShards.BLESSABLE_BONES.contains(def.notedId)) {
             player.dialogue(new NPCDialogue(npc, "I only exchange bones that you can bless at Ralos' altar."));
             return;
         }

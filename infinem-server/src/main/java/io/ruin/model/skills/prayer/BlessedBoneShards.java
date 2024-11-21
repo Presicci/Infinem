@@ -3,6 +3,9 @@ package io.ruin.model.skills.prayer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/20/2024
@@ -36,5 +39,13 @@ public class BlessedBoneShards {
 
         private final Bone bone;
         private final int blessedBoneId, shardAmount;
+    }
+
+    public static final List<Integer> BLESSABLE_BONES = new ArrayList<>();
+
+    static {
+        for (Type boneType : Type.values()) {
+            if (boneType.bone != null) BLESSABLE_BONES.add(boneType.bone.id);
+        }
     }
 }
