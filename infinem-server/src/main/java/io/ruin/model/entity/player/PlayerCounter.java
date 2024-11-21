@@ -236,6 +236,8 @@ public enum PlayerCounter {
     WYRM_BONES_ALTAR,
     DRAKE_BONES_ALTAR,
     HYDRA_BONES_ALTAR,
+    WYRMLING_BONES_BURIED,
+    WYRMLING_BONES_ALTAR,
 
     /**
      * Farming
