@@ -19,33 +19,37 @@ public class StrayDog {
     private static final String KEY = "FOLLOWING";
     private static final String LAST_KEY = "LAST_TARGET";
 
+    private static final String[] DOG_NAMES = new String[] { "stray dog", "chiribaya", "molossus", "xolo" };
+
     static {
-        NPCAction.register("stray dog", "pet", (player, npc) -> {
-            player.animate(827);
-            player.sendMessage("You pet the dog...");
-            player.forceText("Who's a good doggie?");
-            npc.forceText("Woof!");
-            if (npc.getId() == 2922 || npc.getId() == 2902)
-                player.getTaskManager().doLookupByUUID(334);    // Pet a Stray Dog in Varrock
-        });
-        NPCAction.register("stray dog", "shoo-away", (player, npc) -> {
-            player.animate(2110);
-            player.forceText("Thbbbbt!");
-            npc.forceText("Whine!");
-            npc.startEvent(e -> {
-                Position playerPos = player.getPosition();
-                Position pos = npc.getPosition();
-                int xDiff = pos.getX() - playerPos.getX();
-                int yDiff = pos.getY() - playerPos.getY();
-                Position dest = pos.relative(xDiff * 5, yDiff * 5);
-                DumbRoute.route(npc, dest.getX(), dest.getY());
-                npc.removeTemporaryAttribute(KEY);
-                npc.face(player);
-                e.delay(5);
-                npc.faceNone(false);
+        for (String name : DOG_NAMES) {
+            NPCAction.register(name, "pet", (player, npc) -> {
+                player.animate(827);
+                player.sendMessage("You pet the dog...");
+                player.forceText("Who's a good doggie?");
+                npc.forceText("Woof!");
+                if (npc.getId() == 2922 || npc.getId() == 2902)
+                    player.getTaskManager().doLookupByUUID(334);    // Pet a Stray Dog in Varrock
             });
-        });
-        SpawnListener.register(ArrayUtils.of("stray dog"), npc -> {
+            NPCAction.register(name, "shoo-away", (player, npc) -> {
+                player.animate(2110);
+                player.forceText("Thbbbbt!");
+                npc.forceText("Whine!");
+                npc.startEvent(e -> {
+                    Position playerPos = player.getPosition();
+                    Position pos = npc.getPosition();
+                    int xDiff = pos.getX() - playerPos.getX();
+                    int yDiff = pos.getY() - playerPos.getY();
+                    Position dest = pos.relative(xDiff * 5, yDiff * 5);
+                    DumbRoute.route(npc, dest.getX(), dest.getY());
+                    npc.removeTemporaryAttribute(KEY);
+                    npc.face(player);
+                    e.delay(5);
+                    npc.faceNone(false);
+                });
+            });
+        }
+        SpawnListener.register(ArrayUtils.of(DOG_NAMES), npc -> {
             npc.addEvent(e -> {
                 int followCycles = 0;
                 while(true) {
