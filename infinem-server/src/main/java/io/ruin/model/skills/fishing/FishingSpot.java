@@ -3,6 +3,7 @@ package io.ruin.model.skills.fishing;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.areas.diaryitems.RadasBlessing;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
@@ -235,6 +236,7 @@ public class FishingSpot {
                                 : c.id == FishingCatch.KARAMBWANJI.id ? ((fishing.currentLevel / 5) + 1)
                                 : 1;
                         player.collectResource(new Item(c.id, amount));
+                        if (RadasBlessing.extraFish(player)) amount += 1;
                         if (tool == FishingTool.CRYSTAL_HARPOON && CrystalEquipment.HARPOON.hasCharge(player))
                             CrystalEquipment.HARPOON.removeCharge(player);
                         if (tool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(c.id)) {

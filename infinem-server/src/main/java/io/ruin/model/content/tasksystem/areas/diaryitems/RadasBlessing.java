@@ -1,11 +1,13 @@
 package io.ruin.model.content.tasksystem.areas.diaryitems;
 
+import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DailyResetListener;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.impl.jewellery.JewelleryTeleportBounds;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 
 /**
@@ -40,6 +42,18 @@ public class RadasBlessing {
             player.incrementNumericAttribute(KARUULM_KEY, 1);
         }
         ModernTeleport.teleport(player, JewelleryTeleportBounds.RADA_KARUULM.getBounds());
+    }
+
+    public static boolean extraFish(Player player) {
+        Item ammo = player.getEquipment().get(Equipment.SLOT_AMMO);
+        if (ammo == null) return false;
+        switch (ammo.getId()) {
+            default: return false;
+            case RADA_1: return Random.rollDie(50, 1);
+            case RADA_2: return Random.rollDie(25, 1);
+            case RADA_3: return Random.rollDie(50, 3);
+            case RADA_4: return Random.rollDie(25, 2);
+        }
     }
 
     static {
