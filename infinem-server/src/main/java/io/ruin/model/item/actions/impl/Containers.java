@@ -85,7 +85,7 @@ public enum Containers {
             if (name.equalsIgnoreCase("sink") || name.equalsIgnoreCase("gold sink"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.SINK));
-            if (name.equalsIgnoreCase("waterpump"))
+            if (name.equalsIgnoreCase("waterpump") || name.equalsIgnoreCase("water pump"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.WATERPUMP));
             if (name.equalsIgnoreCase("fountain"))
