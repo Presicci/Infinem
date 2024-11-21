@@ -13,6 +13,7 @@ import java.util.function.BiPredicate;
 
 @Getter
 public enum DialogueLoaderSetting {
+    HASGLORY((p, i) -> false),
     CANENTERMYTHS((p, i) -> MythsGuild.canEnter(p)),
     HASRELICTIER((p, i) -> p.getRelicManager().hasRelicInTier(i)),
     GHOSTSPEAK((p, i) -> GhostSpeak.canSpeak(p)),
