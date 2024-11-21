@@ -1,6 +1,7 @@
 package io.ruin.model.entity.npc.actions.animals;
 
 import io.ruin.api.utils.Random;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
@@ -29,65 +30,71 @@ public class CowMilk {
         );
     }
 
-    static {
-        ObjectAction.register("Dairy cow", "Milk", (player, npc) -> {
-            if (player.getInventory().contains(Items.BUCKET, 1)) {
-                player.startEvent(e -> {
-                    player.lock();
-                    player.privateSound(372, 1, 1);
-                    player.animate(2305);
-                    e.delay(7);
-                    player.getInventory().remove(Items.BUCKET, 1);
-                    player.getInventory().add(Items.BUCKET_OF_MILK, 1);
-                    player.sendMessage("You milk the cow.");
-                    player.unlock();
-                });
-            } else {
-                if ((npc.x == 3254 && npc.y == 3272) || npc.x == 3252 && npc.y == 3275) {
-                    startDialogue(player);
-                } else {
-                    player.dialogue(new MessageDialogue("You need a bucket to properly milk the cow."));
-                }
-            }
-        });
-        ItemObjectAction.register(Items.BUCKET, "Dairy cow", (player, item, npc) -> {
-            if (player.getInventory().contains(item)) {
-                player.startEvent(e -> {
-                    player.lock();
-                    player.privateSound(372, 1, 1);
-                    player.animate(2305);
-                    e.delay(2);
-                    player.getInventory().remove(item);
-                    player.getInventory().add(Items.BUCKET_OF_MILK, 1);
-                    player.sendMessage("You milk the cow.");
-                    player.unlock();
-                });
-            } else {
-                startDialogue(player);
-            }
-        });
+    private static final int[] MILKABLE_NPCS = new int[] { 8689, 12111, 52576 };
 
-        ObjectAction.register("Dairy cow", "Steal-cowbell", (player, npc) -> {
-            if (player.isStunned()) {
-                return;
-            }
-            if (Random.rollDie(3)) {
-                player.startEvent(e -> {
-                    player.stun(5, true, false);
-                    player.sendMessage("The cow kicks you and stuns you!");
-                });
-            } else {
-                player.startEvent(e -> {
-                    player.lock();
-                    player.animate(832);
-                    e.delay(1);
-                    player.privateSound(2581, 1, 1);
-                    player.sendMessage("You steal a cowbell.");
-                    player.getInventory().addOrDrop(Items.COWBELLS, 1);
-                    player.getStats().addXp(StatType.Thieving, 2.0, true);
-                    player.unlock();
-                });
-            }
-        });
+    static {
+        for (int id : MILKABLE_NPCS) {
+            ObjectAction.register(id, "Milk", (player, npc) -> {
+                String name = id == 52576 ? "buffalo" : "cow";
+                if (player.getInventory().contains(Items.BUCKET, 1)) {
+                    player.startEvent(e -> {
+                        player.lock();
+                        player.privateSound(372, 1, 1);
+                        player.animate(2305);
+                        e.delay(7);
+                        player.getInventory().remove(Items.BUCKET, 1);
+                        player.getInventory().add(Items.BUCKET_OF_MILK, 1);
+                        player.sendMessage("You milk the " + name + ".");
+                        player.unlock();
+                    });
+                } else {
+                    if ((npc.x == 3254 && npc.y == 3272) || npc.x == 3252 && npc.y == 3275) {
+                        startDialogue(player);
+                    } else {
+                        player.dialogue(new MessageDialogue("You need a bucket to properly milk the " + name + "."));
+                    }
+                }
+            });
+            ItemObjectAction.register(Items.BUCKET, id, (player, item, npc) -> {
+                String name = id == 52576 ? "buffalo" : "cow";
+                if (player.getInventory().contains(item)) {
+                    player.startEvent(e -> {
+                        player.lock();
+                        player.privateSound(372, 1, 1);
+                        player.animate(2305);
+                        e.delay(2);
+                        player.getInventory().remove(item);
+                        player.getInventory().add(Items.BUCKET_OF_MILK, 1);
+                        player.sendMessage("You milk the " + name + ".");
+                        player.unlock();
+                    });
+                } else {
+                    startDialogue(player);
+                }
+            });
+
+            ObjectAction.register(id, "Steal-cowbell", (player, npc) -> {
+                if (player.isStunned()) {
+                    return;
+                }
+                if (Random.rollDie(3)) {
+                    player.startEvent(e -> {
+                        player.stun(5, true, false);
+                        player.sendMessage("The cow kicks you and stuns you!");
+                    });
+                } else {
+                    player.startEvent(e -> {
+                        player.lock();
+                        player.animate(832);
+                        e.delay(1);
+                        player.privateSound(2581, 1, 1);
+                        player.sendMessage("You steal a cowbell.");
+                        player.getInventory().addOrDrop(Items.COWBELLS, 1);
+                        player.getStats().addXp(StatType.Thieving, 2.0, true);
+                        player.unlock();
+                    });
+                }
+            });
+        }
     }
 }
