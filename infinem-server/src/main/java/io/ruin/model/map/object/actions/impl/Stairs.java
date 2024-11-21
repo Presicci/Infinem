@@ -137,6 +137,7 @@ public class Stairs {
         registerStair(54713, 3, 2); // Wooden up
         registerStair(54782, 3, 2); // Wooden up
         registerStair(51855, 3, 0); // Wooden down
+        registerStair(51856, 3, 0); // Wooden down
         registerStair(52636, 3, 0); // Wooden down
         registerStair(52637, 3, 0); // Wooden down
         registerStair(54714, 3, 0); // Wooden down
