@@ -208,8 +208,12 @@ public enum AreaShopItem {
     /*
      * Zeah
      */
+    RADA_BLESSING_1(22941, TaskArea.ZEAH, AreaTaskTier.EASY, 50),
     KHAREDSTS_MEMOIRS(21760, TaskArea.ZEAH, AreaTaskTier.EASY, 1000),
+    RADA_BLESSING_2(22943, TaskArea.ZEAH, AreaTaskTier.MEDIUM, 250),
     BOOK_OF_THE_DEAD(25818, TaskArea.ZEAH, AreaTaskTier.MEDIUM, 5000),
+    RADA_BLESSING_3(22945, TaskArea.ZEAH, AreaTaskTier.HARD, 500),
+    RADA_BLESSING_4(22947, TaskArea.ZEAH, AreaTaskTier.ELITE, 1000),
     // lunch by the lancalliums
     // jewellery of jubilation
     // a dark disposition

@@ -114,6 +114,10 @@ public enum JewelleryTeleportBounds {
     XERICS_INFERNO(new Bounds(1503, 3816, 1506, 3818, 0)),
     XERICS_HEART(new Bounds(1639, 3669, 1641, 3677, 0)),
     XERICS_HONOUR(new Bounds(1253, 3557, 1256, 3560, 0)),
+
+    // Rada's Blessing
+    RADA_WOODLAND(new Bounds(1552, 3454, 1556, 3456, 0)),
+    RADA_KARUULM(new Bounds(1310, 3794, 1312, 3798, 0))
     ;
 
     private final Bounds bounds;
