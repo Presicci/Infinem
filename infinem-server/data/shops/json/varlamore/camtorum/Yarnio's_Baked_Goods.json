@@ -1,0 +1,56 @@
+{
+  "name": "Yarnio's Baked Goods",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13039
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Bread
+      "itemId": 2309,
+      "stock": 15,
+      "buy_price": 6,
+      "sell_price": 12
+    },
+    { // Cake
+      "itemId": 1891,
+      "stock": 5,
+      "buy_price": 27,
+      "sell_price": 50
+    },
+    { // Redberry pie
+      "itemId": 2325,
+      "stock": 5,
+      "buy_price": 6,
+      "sell_price": 12
+    },
+    { // Meat pie
+      "itemId": 2327,
+      "stock": 5,
+      "buy_price": 8,
+      "sell_price": 15
+    },
+    { // Apple pie
+      "itemId": 2323,
+      "stock": 5,
+      "buy_price": 16,
+      "sell_price": 30
+    },
+    { // Garden pie
+      "itemId": 7178,
+      "stock": 5,
+      "buy_price": 13,
+      "sell_price": 24
+    },
+    { // Fish pie
+      "itemId": 7188,
+      "stock": 5,
+      "buy_price": 55,
+      "sell_price": 100
+    }
+  ]
+}

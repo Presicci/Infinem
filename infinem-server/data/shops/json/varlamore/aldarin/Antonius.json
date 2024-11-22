@@ -1,0 +1,62 @@
+{
+  "name": "Antonius",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13916
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Blackbird red
+      "itemId": 29944,
+      "stock": 20,
+      "buy_price": 210,
+      "sell_price": 300
+    },
+    { // Chilhuac red
+      "itemId": 29947,
+      "stock": 20,
+      "buy_price": 280,
+      "sell_price": 400
+    },
+    { // Eclipse red
+      "itemId": 29415,
+      "stock": 20,
+      "buy_price": 700,
+      "sell_price": 1000
+    },
+    { // Ixcoztic white
+      "itemId": 29952,
+      "stock": 20,
+      "buy_price": 70,
+      "sell_price": 100
+    },
+    { // Metztonalli white
+      "itemId": 29955,
+      "stock": 20,
+      "buy_price": 350,
+      "sell_price": 500
+    },
+    { // Tonameyo white
+      "itemId": 29958,
+      "stock": 20,
+      "buy_price": 420,
+      "sell_price": 600
+    },
+    { // Chichilihui rosé
+      "itemId": 29963,
+      "stock": 20,
+      "buy_price": 70,
+      "sell_price": 100
+    },
+    { // Imperial rosé
+      "itemId": 29966,
+      "stock": 20,
+      "buy_price": 280,
+      "sell_price": 400
+    }
+  ]
+}

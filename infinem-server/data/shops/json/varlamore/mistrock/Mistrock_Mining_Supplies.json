@@ -1,0 +1,98 @@
+{
+  "name": "Mistrock Mining Supplies",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13930
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Hammer
+      "itemId": 2347,
+      "stock": 6,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Chisel
+      "itemId": 1755,
+      "stock": 6,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Bronze pickaxe
+      "itemId": 1265,
+      "stock": 6,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Iron pickaxe
+      "itemId": 1267,
+      "stock": 6,
+      "buy_price": 84,
+      "sell_price": 140
+    },
+    { // Steel pickaxe
+      "itemId": 1269,
+      "stock": 6,
+      "buy_price": 300,
+      "sell_price": 500
+    },
+    { // Copper ore
+      "itemId": 436,
+      "stock": 0,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { // Tin ore
+      "itemId": 438,
+      "stock": 0,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { // Iron ore
+      "itemId": 440,
+      "stock": 0,
+      "buy_price": 10,
+      "sell_price": 17
+    },
+    { // Mithril ore
+      "itemId": 447,
+      "stock": 0,
+      "buy_price": 97,
+      "sell_price": 162
+    },
+    { // Adamantite ore
+      "itemId": 449,
+      "stock": 0,
+      "buy_price": 240,
+      "sell_price": 400
+    },
+    { // Runite ore
+      "itemId": 451,
+      "stock": 0,
+      "buy_price": 1920,
+      "sell_price": 3200
+    },
+    { // Coal
+      "itemId": 453,
+      "stock": 0,
+      "buy_price": 27,
+      "sell_price": 45
+    },
+    { // Silver ore
+      "itemId": 442,
+      "stock": 0,
+      "buy_price": 45,
+      "sell_price": 75
+    },
+    { // Gold ore
+      "itemId": 444,
+      "stock": 0,
+      "buy_price": 90,
+      "sell_price": 150
+    }
+  ]
+}

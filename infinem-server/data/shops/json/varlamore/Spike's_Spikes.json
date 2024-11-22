@@ -1,0 +1,50 @@
+{
+  "name": "Spike's Spikes",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13333
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Bronze mace
+      "itemId": 1422,
+      "stock": 5,
+      "buy_price": 7,
+      "sell_price": 23
+    },
+    { // Iron mace
+      "itemId": 1420,
+      "stock": 4,
+      "buy_price": 25,
+      "sell_price": 81
+    },
+    { // Steel mace
+      "itemId": 1424,
+      "stock": 4,
+      "buy_price": 90,
+      "sell_price": 292
+    },
+    { // Mithril mace
+      "itemId": 1428,
+      "stock": 3,
+      "buy_price": 234,
+      "sell_price": 760
+    },
+    { // Adamant mace
+      "itemId": 1430,
+      "stock": 2,
+      "buy_price": 576,
+      "sell_price": 1872
+    },
+    { // Rune mace
+      "itemId": 1432,
+      "stock": 1,
+      "buy_price": 5760,
+      "sell_price": 18720
+    }
+  ]
+}

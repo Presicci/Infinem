@@ -1,0 +1,74 @@
+{
+  "name": "Thurid's Brain Buckets",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13160
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Bronze med helm
+      "itemId": 1139,
+      "stock": 5,
+      "buy_price": 9,
+      "sell_price": 31
+    },
+    { // Iron med helm
+      "itemId": 1137,
+      "stock": 4,
+      "buy_price": 33,
+      "sell_price": 109
+    },
+    { // Steel med helm
+      "itemId": 1141,
+      "stock": 4,
+      "buy_price": 120,
+      "sell_price": 390
+    },
+    { // Mithril med helm
+      "itemId": 1143,
+      "stock": 3,
+      "buy_price": 312,
+      "sell_price": 1014
+    },
+    { // Adamant med helm
+      "itemId": 1145,
+      "stock": 2,
+      "buy_price": 768,
+      "sell_price": 2496
+    },
+    { // Bronze full helm
+      "itemId": 1155,
+      "stock": 5,
+      "buy_price": 17,
+      "sell_price": 57
+    },
+    { // Iron full helm
+      "itemId": 1153,
+      "stock": 4,
+      "buy_price": 61,
+      "sell_price": 200
+    },
+    { // Steel full helm
+      "itemId": 1157,
+      "stock": 4,
+      "buy_price": 220,
+      "sell_price": 715
+    },
+    { // Mithril full helm
+      "itemId": 1159,
+      "stock": 3,
+      "buy_price": 572,
+      "sell_price": 1859
+    },
+    { // Adamant full helm
+      "itemId": 1161,
+      "stock": 2,
+      "buy_price": 1408,
+      "sell_price": 4576
+    }
+  ]
+}

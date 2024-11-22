@@ -1,0 +1,116 @@
+{
+  "name": "Faustus' Fruit and Veg",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13914
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Cooking apple
+      "itemId": 1955,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Banana
+      "itemId": 1963,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Orange
+      "itemId": 2108,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Lemon
+      "itemId": 2102,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Lime
+      "itemId": 2120,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Pineapple
+      "itemId": 2114,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Redberries
+      "itemId": 1951,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    { // Grapes
+      "itemId": 1987,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Tomato
+      "itemId": 1982,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    { // Potato
+      "itemId": 1942,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Onion
+      "itemId": 1957,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    { // Cabbage
+      "itemId": 24367,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Papaya fruit
+      "itemId": 5972,
+      "stock": 0,
+      "buy_price": 44,
+      "sell_price": 64
+    },
+    { // Coconut
+      "itemId": 5974,
+      "stock": 0,
+      "buy_price": 60,
+      "sell_price": 87
+    },
+    { // Strawberry
+      "itemId": 5504,
+      "stock": 0,
+      "buy_price": 11,
+      "sell_price": 17
+    },
+    { // Watermelon
+      "itemId": 5982,
+      "stock": 0,
+      "buy_price": 33,
+      "sell_price": 48
+    },
+    { // Sweetcorn
+      "itemId": 5986,
+      "stock": 0,
+      "buy_price": 6,
+      "sell_price": 9
+    }
+  ]
+}

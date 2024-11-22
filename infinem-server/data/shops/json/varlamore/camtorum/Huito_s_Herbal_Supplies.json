@@ -1,0 +1,56 @@
+{
+  "name": "Huito's Herbal Supplies",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13041
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Pestle and mortar
+      "itemId": 233,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    { // Vial
+      "itemId": 229,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Vial of water
+      "itemId": 227,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Eye of newt
+      "itemId": 221,
+      "stock": 50,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    { // Empty vial pack
+      "itemId": 11877,
+      "stock": 100,
+      "buy_price": 140,
+      "sell_price": 200
+    },
+    { // Water-filled vial pack
+      "itemId": 11879,
+      "stock": 100,
+      "buy_price": 140,
+      "sell_price": 201
+    },
+    { // Eye of newt pack
+      "itemId": 12859,
+      "stock": 50,
+      "buy_price": 210,
+      "sell_price": 300
+    }
+  ]
+}

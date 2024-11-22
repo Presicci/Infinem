@@ -1,0 +1,62 @@
+{
+  "name": "Tizoro's Pickaxes",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13037
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Hammer
+      "itemId": 2347,
+      "stock": 6,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Chisel
+      "itemId": 1755,
+      "stock": 6,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Bronze pickaxe
+      "itemId": 1265,
+      "stock": 6,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Iron pickaxe
+      "itemId": 1267,
+      "stock": 5,
+      "buy_price": 84,
+      "sell_price": 140
+    },
+    { // Steel pickaxe
+      "itemId": 1269,
+      "stock": 4,
+      "buy_price": 300,
+      "sell_price": 500
+    },
+    { // Mithril pickaxe
+      "itemId": 1273,
+      "stock": 3,
+      "buy_price": 780,
+      "sell_price": 1300
+    },
+    { // Adamant pickaxe
+      "itemId": 1271,
+      "stock": 2,
+      "buy_price": 1920,
+      "sell_price": 3200
+    },
+    { // Rune pickaxe
+      "itemId": 1275,
+      "stock": 1,
+      "buy_price": 19200,
+      "sell_price": 32000
+    }
+  ]
+}

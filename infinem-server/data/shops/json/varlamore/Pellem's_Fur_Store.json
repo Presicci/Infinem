@@ -1,0 +1,134 @@
+{
+  "name": "Pellem's Fur Store",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13130
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Thread
+      "itemId": 1734,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Needle
+      "itemId": 1733,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Fur
+      "itemId": 6814,
+      "stock": 3,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    { // Bear fur
+      "itemId": 948,
+      "stock": 3,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    { // Grey wolf fur
+      "itemId": 958,
+      "stock": 3,
+      "buy_price": 20,
+      "sell_price": 65
+    },
+    { // Jaguar fur
+      "itemId": 29218,
+      "stock": 2,
+      "buy_price": 32,
+      "sell_price": 104
+    },
+    { // Fox fur
+      "itemId": 29163,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    { // Moonlight antelope fur
+      "itemId": 29174,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    { // Sunlight antelope fur
+      "itemId": 29177,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    { // Polar kebbit fur
+      "itemId": 10117,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    { // Common kebbit fur
+      "itemId": 10121,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 15
+    },
+    { // Feldip weasel fur
+      "itemId": 10119,
+      "stock": 0,
+      "buy_price": 5,
+      "sell_price": 18
+    },
+    { // Desert devil fur
+      "itemId": 10123,
+      "stock": 0,
+      "buy_price": 6,
+      "sell_price": 22
+    },
+    { // Tatty larupia fur
+      "itemId": 10093,
+      "stock": 0,
+      "buy_price": 24,
+      "sell_price": 78
+    },
+    { // Larupia fur
+      "itemId": 10095,
+      "stock": 0,
+      "buy_price": 32,
+      "sell_price": 104
+    },
+    { // Tatty graahk fur
+      "itemId": 10097,
+      "stock": 0,
+      "buy_price": 36,
+      "sell_price": 117
+    },
+    { // Graahk fur
+      "itemId": 10099,
+      "stock": 0,
+      "buy_price": 48,
+      "sell_price": 156
+    },
+    { // Tatty kyatt fur
+      "itemId": 10101,
+      "stock": 0,
+      "buy_price": 48,
+      "sell_price": 156
+    },
+    { // Kyatt fur
+      "itemId": 10103,
+      "stock": 0,
+      "buy_price": 64,
+      "sell_price": 208
+    },
+    { // Mixed hide base
+      "itemId": 29292,
+      "stock": 10,
+      "buy_price": 3600,
+      "sell_price": 11700
+    }
+  ]
+}

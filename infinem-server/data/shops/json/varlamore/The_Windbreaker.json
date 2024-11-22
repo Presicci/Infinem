@@ -1,0 +1,78 @@
+{
+  "name": "The Windbreaker",
+  "currency": "COINS",
+  "npcs": [
+    14020
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Beer
+      "itemId": 1917,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 2
+    },
+    { // Cider
+      "itemId": 5763,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 2
+    },
+    { // Sunbeam ale
+      "itemId": 29409,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 8
+    },
+    { // Vodka
+      "itemId": 2015,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 5
+    },
+    { // Rum
+      "itemId": 8940,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 5
+    },
+    { // Whisky
+      "itemId": 2017,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 5
+    },
+    { // Gin
+      "itemId": 2019,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 5
+    },
+    { // Moon-lite
+      "itemId": 29418,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 15
+    },
+    { // Jug of wine
+      "itemId": 1993,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 1
+    },
+    { // Stew
+      "itemId": 2003,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 20
+    },
+    { // Meat pie
+      "itemId": 2327,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 15
+    }
+  ]
+}

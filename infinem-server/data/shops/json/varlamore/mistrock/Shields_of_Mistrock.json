@@ -1,0 +1,74 @@
+{
+  "name": "Shields of Mistrock",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13929
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Bronze sq shield
+      "itemId": 1173,
+      "stock": 6,
+      "buy_price": 28,
+      "sell_price": 48
+    },
+    { // Bronze kiteshield
+      "itemId": 1189,
+      "stock": 5,
+      "buy_price": 40,
+      "sell_price": 68
+    },
+    { // Iron sq shield
+      "itemId": 1175,
+      "stock": 5,
+      "buy_price": 100,
+      "sell_price": 168
+    },
+    { // Iron kiteshield
+      "itemId": 1191,
+      "stock": 4,
+      "buy_price": 142,
+      "sell_price": 238
+    },
+    { // Steel sq shield
+      "itemId": 1177,
+      "stock": 4,
+      "buy_price": 360,
+      "sell_price": 600
+    },
+    { // Steel kiteshield
+      "itemId": 1193,
+      "stock": 3,
+      "buy_price": 510,
+      "sell_price": 850
+    },
+    { // Mithril sq shield
+      "itemId": 1181,
+      "stock": 3,
+      "buy_price": 936,
+      "sell_price": 1560
+    },
+    { // Mithril kiteshield
+      "itemId": 1197,
+      "stock": 2,
+      "buy_price": 1326,
+      "sell_price": 2210
+    },
+    { // Adamant sq shield
+      "itemId": 1183,
+      "stock": 2,
+      "buy_price": 2304,
+      "sell_price": 3840
+    },
+    { // Adamant kiteshield
+      "itemId": 1199,
+      "stock": 1,
+      "buy_price": 3264,
+      "sell_price": 5440
+    }
+  ]
+}

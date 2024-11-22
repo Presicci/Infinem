@@ -1,0 +1,20 @@
+{
+  "name": "Emelio's Kebab Shop",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13804
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Varlamorian kebab
+      "itemId": 29900,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 2
+    }
+  ]
+}

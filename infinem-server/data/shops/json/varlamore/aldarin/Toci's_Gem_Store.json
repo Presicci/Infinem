@@ -1,0 +1,62 @@
+{
+  "name": "Toci's Gem Store",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13915
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Uncut sapphire
+      "itemId": 1623,
+      "stock": 3,
+      "buy_price": 17,
+      "sell_price": 25
+    },
+    { // Uncut emerald
+      "itemId": 1621,
+      "stock": 2,
+      "buy_price": 35,
+      "sell_price": 50
+    },
+    { // Uncut ruby
+      "itemId": 1619,
+      "stock": 1,
+      "buy_price": 70,
+      "sell_price": 100
+    },
+    { // Uncut diamond
+      "itemId": 1617,
+      "stock": 0,
+      "buy_price": 140,
+      "sell_price": 200
+    },
+    { // Sapphire
+      "itemId": 1607,
+      "stock": 3,
+      "buy_price": 175,
+      "sell_price": 250
+    },
+    { // Emerald
+      "itemId": 1605,
+      "stock": 2,
+      "buy_price": 350,
+      "sell_price": 500
+    },
+    { // Ruby
+      "itemId": 1603,
+      "stock": 1,
+      "buy_price": 700,
+      "sell_price": 1000
+    },
+    { // Diamond
+      "itemId": 1601,
+      "stock": 0,
+      "buy_price": 1400,
+      "sell_price": 2000
+    }
+  ]
+}

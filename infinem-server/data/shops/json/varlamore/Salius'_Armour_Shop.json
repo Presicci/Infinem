@@ -1,0 +1,44 @@
+{
+  "name": "Salius' Armour Shop",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13970
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Bronze platebody
+      "itemId": 1117,
+      "stock": 6,
+      "buy_price": 89,
+      "sell_price": 153
+    },
+    { // Iron platebody
+      "itemId": 1115,
+      "stock": 5,
+      "buy_price": 313,
+      "sell_price": 537
+    },
+    { // Steel platebody
+      "itemId": 1119,
+      "stock": 5,
+      "buy_price": 1120,
+      "sell_price": 1920
+    },
+    { // Mithril platebody
+      "itemId": 1121,
+      "stock": 4,
+      "buy_price": 2912,
+      "sell_price": 4992
+    },
+    { // Adamant platebody
+      "itemId": 1123,
+      "stock": 3,
+      "buy_price": 9318,
+      "sell_price": 15974
+    }
+  ]
+}

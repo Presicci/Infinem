@@ -1,0 +1,122 @@
+{
+  "name": "Picaria's Fishing Shop",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13158
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Small fishing net
+      "itemId": 303,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    { // Big fishing net
+      "itemId": 305,
+      "stock": 5,
+      "buy_price": 14,
+      "sell_price": 20
+    },
+    { // Fishing rod
+      "itemId": 307,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    { // Fly fishing rod
+      "itemId": 309,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    { // Harpoon
+      "itemId": 311,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    { // Lobster pot
+      "itemId": 301,
+      "stock": 5,
+      "buy_price": 14,
+      "sell_price": 20
+    },
+    { // Fishing bait
+      "itemId": 313,
+      "stock": 1000,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    { // Bait pack
+      "itemId": 11883,
+      "stock": 100,
+      "buy_price": 210,
+      "sell_price": 300
+    },
+    { // Feather
+      "itemId": 314,
+      "stock": 1000,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Feather pack
+      "itemId": 11881,
+      "stock": 100,
+      "buy_price": 140,
+      "sell_price": 200
+    },
+    { // Raw sardine
+      "itemId": 327,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    { // Raw herring
+      "itemId": 345,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    { // Raw mackerel
+      "itemId": 353,
+      "stock": 10,
+      "buy_price": 10,
+      "sell_price": 15
+    },
+    { // Raw cod
+      "itemId": 341,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    { // Raw tuna
+      "itemId": 359,
+      "stock": 10,
+      "buy_price": 28,
+      "sell_price": 40
+    },
+    { // Raw bass
+      "itemId": 363,
+      "stock": 6,
+      "buy_price": 28,
+      "sell_price": 40
+    },
+    { // Raw swordfish
+      "itemId": 371,
+      "stock": 4,
+      "buy_price": 56,
+      "sell_price": 80
+    },
+    { // Raw lobster
+      "itemId": 377,
+      "stock": 4,
+      "buy_price": 49,
+      "sell_price": 70
+    }
+  ]
+}

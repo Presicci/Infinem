@@ -1,0 +1,170 @@
+{
+  "name": "Cam Torum Blacksmith",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    13040
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Sapphire
+      "itemId": 1607,
+      "stock": 3,
+      "buy_price": 175,
+      "sell_price": 250
+    },
+    { // Emerald
+      "itemId": 1605,
+      "stock": 2,
+      "buy_price": 350,
+      "sell_price": 500
+    },
+    { // Ruby
+      "itemId": 1603,
+      "stock": 2,
+      "buy_price": 700,
+      "sell_price": 1000
+    },
+    { // Diamond
+      "itemId": 1601,
+      "stock": 0,
+      "buy_price": 1400,
+      "sell_price": 2000
+    },
+    { // Gold ring
+      "itemId": 1635,
+      "stock": 3,
+      "buy_price": 245,
+      "sell_price": 350
+    },
+    { // Gold necklace
+      "itemId": 1654,
+      "stock": 3,
+      "buy_price": 315,
+      "sell_price": 450
+    },
+    { // Gold amulet
+      "itemId": 1692,
+      "stock": 3,
+      "buy_price": 245,
+      "sell_price": 350
+    },
+    { // Gold bracelet
+      "itemId": 11069,
+      "stock": 3,
+      "buy_price": 385,
+      "sell_price": 550
+    },
+    { // Sapphire ring
+      "itemId": 1637,
+      "stock": 0,
+      "buy_price": 630,
+      "sell_price": 900
+    },
+    { // Emerald ring
+      "itemId": 1639,
+      "stock": 0,
+      "buy_price": 892,
+      "sell_price": 1275
+    },
+    { // Ruby ring
+      "itemId": 1641,
+      "stock": 0,
+      "buy_price": 1417,
+      "sell_price": 2025
+    },
+    { // Diamond ring
+      "itemId": 1643,
+      "stock": 0,
+      "buy_price": 2467,
+      "sell_price": 3525
+    },
+    { // Gold necklace
+      "itemId": 1654,
+      "stock": 0,
+      "buy_price": 315,
+      "sell_price": 450
+    },
+    { // Sapphire necklace
+      "itemId": 1656,
+      "stock": 0,
+      "buy_price": 735,
+      "sell_price": 1050
+    },
+    { // Emerald necklace
+      "itemId": 1658,
+      "stock": 0,
+      "buy_price": 997,
+      "sell_price": 1425
+    },
+    { // Ruby necklace
+      "itemId": 1660,
+      "stock": 0,
+      "buy_price": 1522,
+      "sell_price": 2175
+    },
+    { // Diamond necklace
+      "itemId": 1662,
+      "stock": 0,
+      "buy_price": 2572,
+      "sell_price": 3675
+    },
+    { // Gold amulet
+      "itemId": 1692,
+      "stock": 0,
+      "buy_price": 245,
+      "sell_price": 350
+    },
+    { // Sapphire amulet
+      "itemId": 1694,
+      "stock": 0,
+      "buy_price": 630,
+      "sell_price": 900
+    },
+    { // Emerald amulet
+      "itemId": 1696,
+      "stock": 0,
+      "buy_price": 892,
+      "sell_price": 1275
+    },
+    { // Ruby amulet
+      "itemId": 1698,
+      "stock": 0,
+      "buy_price": 1417,
+      "sell_price": 2025
+    },
+    { // Diamond amulet
+      "itemId": 1700,
+      "stock": 0,
+      "buy_price": 2467,
+      "sell_price": 3525
+    },
+    { // Sapphire bracelet
+      "itemId": 11072,
+      "stock": 0,
+      "buy_price": 805,
+      "sell_price": 1150
+    },
+    { // Emerald bracelet
+      "itemId": 11076,
+      "stock": 0,
+      "buy_price": 1067,
+      "sell_price": 1525
+    },
+    { // Ruby bracelet
+      "itemId": 11085,
+      "stock": 0,
+      "buy_price": 1627,
+      "sell_price": 2325
+    },
+    { // Diamond bracelet
+      "itemId": 11092,
+      "stock": 0,
+      "buy_price": 2677,
+      "sell_price": 3825
+    }
+  ]
+}

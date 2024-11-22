@@ -1,0 +1,122 @@
+{
+  "name": "Aldarin General Store",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": true,
+  "npcs": [
+    13913
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Chisel
+      "itemId": 1755,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Spade
+      "itemId": 952,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { // Hammer
+      "itemId": 2347,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Knife
+      "itemId": 946,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 7
+    },
+    { // Tinderbox
+      "itemId": 590,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Pestle and mortar
+      "itemId": 233,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 5
+    },
+    { // Needle
+      "itemId": 1733,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Thread
+      "itemId": 1734,
+      "stock": 30,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Rope
+      "itemId": 954,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 23
+    },
+    { // Pot
+      "itemId": 1931,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Jug
+      "itemId": 1935,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Bucket
+      "itemId": 1925,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    { // Bowl
+      "itemId": 1923,
+      "stock": 15,
+      "buy_price": 1,
+      "sell_price": 5
+    },
+    { // Cake tin
+      "itemId": 1887,
+      "stock": 15,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    { // Vial
+      "itemId": 229,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    { // Empty jug pack
+      "itemId": 20742,
+      "stock": 5,
+      "buy_price": 56,
+      "sell_price": 182
+    },
+    { // Empty bucket pack
+      "itemId": 22660,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    { // Empty vial pack
+      "itemId": 11877,
+      "stock": 5,
+      "buy_price": 80,
+      "sell_price": 260
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Stonecutter Supplies",
+  "currency": "COINS",
+  "npcs": [
+    13140
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    { // Bronze pickaxe
+      "itemId": 1265,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Limestone brick
+      "itemId": 3420,
+      "stock": 1000,
+      "buy_price": 10,
+      "sell_price": 26
+    },
+    { // Marble block
+      "itemId": 8786,
+      "stock": 30,
+      "buy_price": 125000,
+      "sell_price": 325000
+    },
+    { // Gold leaf
+      "itemId": 8784,
+      "stock": 40,
+      "buy_price": 50000,
+      "sell_price": 130000
+    },
+    { // Magic stone
+      "itemId": 8788,
+      "stock": 10,
+      "buy_price": 375000,
+      "sell_price": 975000
+    },
+    { // Condensed gold
+      "itemId": 26266,
+      "stock": 10,
+      "buy_price": 4000000,
+      "sell_price": 10400000
+    }
+  ]
+}

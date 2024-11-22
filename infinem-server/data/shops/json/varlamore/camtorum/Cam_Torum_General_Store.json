@@ -1,0 +1,122 @@
+{
+  "name": "Cam Torum General Store",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": true,
+  "npcs": [
+    13035
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Chisel
+      "itemId": 1755,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Spade
+      "itemId": 952,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { // Hammer
+      "itemId": 2347,
+      "stock": 50,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Knife
+      "itemId": 946,
+      "stock": 20,
+      "buy_price": 2,
+      "sell_price": 7
+    },
+    { // Bronze pickaxe
+      "itemId": 1265,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Tinderbox
+      "itemId": 590,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Pestle and mortar
+      "itemId": 233,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 5
+    },
+    { // Needle
+      "itemId": 1733,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Thread
+      "itemId": 1734,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Unlit torch
+      "itemId": 596,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 5
+    },
+    { // Rope
+      "itemId": 954,
+      "stock": 30,
+      "buy_price": 7,
+      "sell_price": 23
+    },
+    { // Charcoal
+      "itemId": 973,
+      "stock": 50,
+      "buy_price": 18,
+      "sell_price": 58
+    },
+    { // Jug
+      "itemId": 1935,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Bucket
+      "itemId": 1925,
+      "stock": 30,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    { // Bowl
+      "itemId": 1923,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 5
+    },
+    { // Pie dish
+      "itemId": 2313,
+      "stock": 30,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { // Jug pack
+      "itemId": 20742,
+      "stock": 50,
+      "buy_price": 56,
+      "sell_price": 182
+    },
+    { // Bucket pack
+      "itemId": 22660,
+      "stock": 150,
+      "buy_price": 200,
+      "sell_price": 650
+    }
+  ]
+}
