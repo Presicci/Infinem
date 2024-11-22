@@ -26,7 +26,9 @@ public class Cooking {
 
     private static final String[] FIRE_NAMES = { "fire", "cooking pot",
             // House fires
-            "firepit", "firepit with hook", "firepit with pot"
+            "firepit", "firepit with hook", "firepit with pot",
+            // Varlamore
+            "campfire"
     };
     private static final String[] RANGE_NAMES = { "range", "cooking range", "stove", "sulphur vent", "gnome cooker", "clay oven",
             // House ranges
