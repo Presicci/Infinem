@@ -24,6 +24,9 @@ public class OutOfRangeNPC {
             4291,   // Herman Caranos
             2148,   // GE clerk
             13344,  // Bartender
+            13345,  // Bartender
+            13917,  // Bartender
+            14020,  // Bartender
     };
 
     private static void addTwoTileWalkException(NPC npc) {
