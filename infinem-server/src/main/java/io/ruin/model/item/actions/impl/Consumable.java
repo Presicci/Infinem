@@ -615,6 +615,46 @@ public class Consumable {
             p.sendMessage("...but extremely drunk, too.");
         });
 
+        // Chilhuac red
+        registerDrink(29947, -1, 16, 3, p -> {
+            p.sendMessage("You drink the Chilhuac red. You feel a warmth spreading through you.");
+            p.getStats().get(StatType.Firemaking).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(5, 0);
+            p.getStats().get(StatType.Cooking).drain(1, 0);
+        });
+
+        // Chichilihui rosé
+        registerDrink(29963, -1, 16, 3, p -> {
+            p.sendMessage("You drink the Chichilihui rosé. A graceful calmness settles over you.");
+            p.getStats().get(StatType.Herblore).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(5, 0);
+            p.getStats().get(StatType.Farming).drain(1, 0);
+        });
+
+        // Tonameyo white
+        registerDrink(29958, -1, 16, 3, p -> {
+            p.sendMessage("You drink the Tonameyo white. You feel a divine warmth surround you.");
+            p.getStats().get(StatType.Prayer).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(5, 0);
+            p.getStats().get(StatType.Thieving).drain(1, 0);
+        });
+
+        // Imperial rosé
+        registerDrink(29966, -1, 16, 3, p -> {
+            p.sendMessage("You drink the Imperial rosé. You find yourself captivated by the complex flavours.");
+            p.getStats().get(StatType.Slayer).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(5, 0);
+            p.getStats().get(StatType.Agility).drain(1, 0);
+        });
+
+        // Ixcoztic white
+        registerDrink(29952, -1, 16, 3, p -> {
+            p.sendMessage("You drink the Ixcoztic white. The citrusy profile perfectly energises your palate.");
+            p.getStats().get(StatType.Farming).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(5, 0);
+            p.getStats().get(StatType.Herblore).drain(1, 0);
+        });
+
         /*
          * Gnome drinks
          */
