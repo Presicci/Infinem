@@ -52,7 +52,7 @@ public class NPCInfoDumper {
                 Document doc = Jsoup.connect("https://oldschool.runescape.wiki/w/Special:Ask?q=%5B%5BNPC+ID%3A%3A"
                                 + id
                                 + "%5D%5D&p=format%3Dtable%2Flink%3Dnone%2Fheaders%3Dshow%2Fsearchlabel%3D...-20further-20results%2Fclass%3Dsortable-20wikitable-20smwtable%2Fprefix%3Dnone&po=%3FCombat+level%0A%3FMonster+attribute%0A%3FExperience+bonus%0A%3FMax+hit%0A%3FAttack+style%0A%3FAttack+speed%0A%3FSlayer+level%0A%3FSlayer+experience%0A%3FSlayer+category%0A%3FHitpoints%0A%3FAttack+level%0A%3FStrength+level%0A%3FDefence+level%0A%3FMagic+level%0A%3FRanged+level%0A%3FAttack+bonus%0A%3FStrength+bonus%0A%3FMagic+attack+bonus%0A%3FMagic+Damage+bonus%0A%3FRange+attack+bonus%0A%3FRanged+Strength+bonus%0A%3FStab+defence+bonus%0A%3FSlash+defence+bonus%0A%3FCrush+defence+bonus%0A%3FMagic+defence+bonus%0A%3FElemental+weakness%0A%3FElemental+weakness+percent%0A%3FLight+range+defence+bonus%0A%3FStandard+range+defence+bonus%0A%3FHeavy+range+defence+bonus%0A%3FImmune+to+poison%0A%3FImmune+to+venom%0A%3FImmune+to+cannons%0A%3FImmune+to+thralls%0A&sort=NPC+ID&order=asc&eq=no&offset=0&limit=20")
-                        .userAgent("Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0")
+                        .userAgent("Mozilla")
                         .referrer("http://www.google.com")
                         .timeout(12000)
                         .get();
