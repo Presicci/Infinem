@@ -535,6 +535,12 @@ public class Consumable {
             p.getStats().get(StatType.Attack).drain(3, 0.02);
         });
 
+        // Brandy
+        registerDrink(Items.BRANDY, -1, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(1, 0.05);
+            p.getStats().get(StatType.Attack).drain(3, 0.02);
+        });
+
         // Moon-lite
         registerDrink(29418, -1, 5, 3, p -> {
             p.sendMessage("You drink the Moonlite. It's very strong and leaves you feeling a bit dizzy.");
