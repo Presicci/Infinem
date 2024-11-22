@@ -47,9 +47,9 @@ public class BankActions {
                 if(NPCAction.register(def.id, "bank", (p, n) -> p.getBank().open())) {
                     NPCAction.register(def.id, "talk-to", BankActions::talk);
                     NPCAction.register(def.id, "collect", (p, n) -> TradePost.openCoffer(p));
+                    ItemNPCAction.register(24585, def.id, LootingBagNote::exchangeNote);
                     bankerIds.add(def.id);
                 }
-                ItemNPCAction.register(24585, def.id, LootingBagNote::exchangeNote);
             });
             SpawnListener.forEach(npc -> {
                 if(bankerIds.contains(npc.getId())) {
