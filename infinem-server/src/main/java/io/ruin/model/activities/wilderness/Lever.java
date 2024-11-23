@@ -5,6 +5,7 @@ import io.ruin.model.activities.combat.pvminstance.InstanceType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -28,6 +29,18 @@ public class Lever {
             }
             player.sendMessage(message);
         });
+    }
+
+    private static final Config DESERTED_LEVER = Config.varpbit(14673, true).defaultValue(1);
+
+    private static void pullDeserted(Player player, GameObject lever, int option) {
+        int leverValue = DESERTED_LEVER.get(player);
+        int finalOption = leverValue == 1 ? option : option - 1;
+        if (finalOption ==  1) {
+            pull(player, lever, 2562, 3311, "...and teleport out of the wilderness.");
+        } else {
+            pull(player, lever, 3090, 3475, "...and teleport out of the wilderness.");
+        }
     }
 
     static {
@@ -74,8 +87,9 @@ public class Lever {
         /*
          * Deserted
          */
-        ObjectAction.register(1815, 3153, 3923, 0, 1, (player, obj) -> pull(player, obj, 2562, 3311, "...and teleport out of the wilderness."));
-        ObjectAction.register(1815, 3153, 3923, 0, 2, (player, obj) -> pull(player, obj, 3090, 3475, "...and teleport out of the wilderness."));
+        ObjectAction.register(1815, 3153, 3923, 0, 1, (player, obj) -> pullDeserted(player, obj, 1));
+        ObjectAction.register(1815, 3153, 3923, 0, 2, (player, obj) -> pullDeserted(player, obj, 2));
+        ObjectAction.register(1815, 3153, 3923, 0, 3, (player, obj) -> DESERTED_LEVER.set(player, DESERTED_LEVER.get(player) == 1 ? 2 : 1));
 
         /*
          * Magebank
