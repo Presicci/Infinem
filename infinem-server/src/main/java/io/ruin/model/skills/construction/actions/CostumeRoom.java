@@ -227,7 +227,7 @@ public class CostumeRoom {
             CostumeStorage finalType = type;
             Costume finalCostume = costume;
             boolean reopen = player.isVisibleInterface(675);
-            player.dialogue(new OptionsDialogue("You can only withdraw this item once you complete the set, continue?",
+            player.dialogueKeepInterfaces(new OptionsDialogue("You can only withdraw this item once you complete the set, continue?",
                     new Option("Deposit", () -> {
                         handleItemDeposit(player, item, messages, finalType, finalCostume);
                         if (reopen)
@@ -288,7 +288,7 @@ public class CostumeRoom {
             return;
         if (player.getGameMode().isUltimateIronman() &&  !type.hasFullSet(player, costume)) {
             boolean reopen = player.isVisibleInterface(675);
-            player.dialogue(new OptionsDialogue("You can only withdraw this item once you complete the set, continue?",
+            player.dialogueKeepInterfaces(new OptionsDialogue("You can only withdraw this item once you complete the set, continue?",
                     new Option("Deposit", () -> {
                         handleSetDeposit(player, costume, type);
                         if (reopen)
@@ -477,7 +477,7 @@ public class CostumeRoom {
                 if (player.getGameMode().isUltimateIronman()) {
                     Buildable buildable = player.getTemporaryAttribute(AttributeKey.COSTUME_BUILDABLE);
                     CostumeStorage costumeStorage = player.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
-                    player.dialogue(new OptionsDialogue("You can only withdraw this item once you complete the set, continue?",
+                    player.dialogueKeepInterfaces(new OptionsDialogue("You can only withdraw this item once you complete the set, continue?",
                             new Option("Deposit", () -> {
                                 depositInventory(player);
                                 costumeStorage.open(player, buildable == Buildable.OAK_TREASURE_CHEST ? 1 : buildable == Buildable.TEAK_TREASURE_CHEST ? 2 : buildable == Buildable.MAHOGANY_TREASURE_CHEST ? 5 : -1, buildable);
