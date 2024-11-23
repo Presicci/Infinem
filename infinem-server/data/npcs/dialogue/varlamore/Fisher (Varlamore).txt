@@ -1,0 +1,13 @@
+13252,13253,13254,13255
+RAND
+/Player: Hello there. How's it going?
+Fisher: Hello! Nice day for fishing!
+/Player: Hello there. How's it going?
+Fisher: Well given how good today's catch was, I'd say it's going pretty well!
+/Player: Hello there. How's it going?
+Fisher: Nilsal! It's going well, thanks.
+/Player: Hello there. How's it going?
+Fisher: I'm fine, how are you?
+Player: Very well, thank you.
+/Player: Hello there. How's it going?
+Fisher: Not too bad thanks.

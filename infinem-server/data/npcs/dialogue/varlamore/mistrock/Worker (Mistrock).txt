@@ -1,0 +1,12 @@
+13948,13949,13950,13951,13952,13953,13954,13955
+RAND
+/Player: Hello there.
+Worker: Leave me alone. I have work to do.
+/Player: Hello there.
+Worker: Whatever you want, the answer's no.
+/Player: Hello there.
+Worker: I don't have time to talk to you.
+/Player: Hello there.
+Worker: Please don't disturb me.
+/Player: Hello there.
+Worker: I'm busy right now.

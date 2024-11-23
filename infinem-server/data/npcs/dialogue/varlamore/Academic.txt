@@ -1,0 +1,11 @@
+RAND
+/Player: Hello there.
+Academic: Nilsal! Welcome to the Grand Museum.
+/Player: Hello there.
+Academic: Hello there! Hope you're enjoying the museum.
+/Player: Hello there.
+Academic: Sorry, I'd love to stop and talk, but I have some studying to do.
+/Player: Hello there.
+Academic: Have you seen the new Old One display? Fascinating stuff!
+/Player: Hello there.
+Academic: Isn't this place wonderful? There's just so much knowledge to be found!

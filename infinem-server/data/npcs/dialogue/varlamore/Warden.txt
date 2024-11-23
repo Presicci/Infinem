@@ -1,0 +1,11 @@
+13320
+Warden: Yes? Do you have business with one of the prisoners?
+Player: I don't think so. What are they in for?
+Warden: Does it matter? They are criminals.
+Player: Are all criminals the same?
+Warden: They will be if they're found guilty.
+Player: What happens if they are?
+Warden: In most cases, death.
+Player: Ah, nice. Bit brutal though, right?
+Warden: Brutal? Yes. Effective? Yes.
+Player: Fair enough.

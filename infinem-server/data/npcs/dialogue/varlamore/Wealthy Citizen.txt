@@ -1,0 +1,7 @@
+Player: Hello there.
+Wealthy citizen: Hello. How are you liking the city?
+Player: It's truly spectacular.
+Wealthy citizen: I'd recommend the Colosseum. Me and a few associates always wager bets on the contenders.
+Wealthy citizen: As you can tell, I'm doing quite well winning! Plenty of coin to pass around.
+Player: Got any spare for me?
+Wealthy citizen: No! We don't care for begging in the city!

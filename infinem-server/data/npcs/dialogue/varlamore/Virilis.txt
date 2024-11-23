@@ -1,0 +1,21 @@
+Virilis: Nilsal. Do you wish me to exchange banknotes for you? I charge only 10 coins for each banknote.
+<Yes please.
+Player: Yes please.
+Virilis: Then hand me the banknotes you wish me to exchange.
+><Who are you?
+Player: Who are you?
+Virilis: I am Virilis. I can exchange banknotes of bones for real items. Do you want any banknotes converted?
+FIRSTOPTIONS:
+><What can I do here?
+Player: What can I do here?
+Virilis: I'm glad you've asked! Next to me is an old altar of Ralos, upon which you can ask for bones and wines to be blessed.
+Virilis: You should beware though, Ralos won't hear your prayers if you aren't experienced enough. I wouldn't want you to get caught in the cold just waiting for nothing to happen.
+Virilis: Anyway, once you've had Ralos' blessing, you can break the bones down into shards. Then, along with your blessed wine, you can take them to the libation bowl and sacrifice them in Ralos' honour!
+Player: Libation bowl?
+Virilis: Yes! You'll find it inside the Teomat, near the library.
+Player: I see. And what happens if I drink the blessed wine?
+Virilis: The last person to try that ended up in the libation bowl. I do not recommend it.
+Virilis: Anyway, do you want any banknotes converted?
+FIRSTOPTIONS:
+><No thanks.
+Player: No thanks.

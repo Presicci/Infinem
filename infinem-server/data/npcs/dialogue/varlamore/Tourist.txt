@@ -1,0 +1,13 @@
+RAND
+/Player: Hey there.
+Tourist: Hello!
+/Player: Hey there.
+Tourist: Hello there! The weather here is wonderful, isn't it?
+/Player: Hey there.
+Tourist: Hello there, or should I say nilsal?
+/Player: Hey there.
+Tourist: I can't wait to visit the rest of the kingdom!
+/Player: Hey there.
+Tourist: Isn't this place wonderful?
+/Player: Hey there.
+Tourist: Hi there. Hope you're enjoying your time in Varlamore.

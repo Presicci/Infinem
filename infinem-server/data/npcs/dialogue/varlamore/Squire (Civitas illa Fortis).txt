@@ -1,0 +1,12 @@
+13244,13245,13246,13247
+RAND
+/Player: Hello there. How's it going?
+Squire: Busy, busy, busy.
+/Player: Hello there. How's it going?
+Squire: Sorry, but I'm busy right now.
+/Player: Hello there. How's it going?
+Squire: Sorry, but I have lots of work to do.
+/Player: Hello there. How's it going?
+Squire: Not too bad, but the work is definitely tiring.
+/Player: Hello there. How's it going?
+Squire: Well I could do with a good rest, but fine otherwise.

@@ -1,0 +1,8 @@
+13323
+Guard Captain: What are you doing here? You're not one of the guards.
+Player: I was just exploring. Is that okay?
+Guard Captain: I suppose, but why would you want to explore down here?
+Player: Well why not?
+Guard Captain: It's cold for a start.
+Player: I'd say it's still pretty warm compared to some places I've been.
+Guard Captain: If you say so. Just don't go causing any trouble.

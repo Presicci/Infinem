@@ -1,0 +1,12 @@
+13141,13142,13143,13144
+RAND
+/Player: Hello there.
+Worker: No, I don't want to buy anything.
+/Player: Hello there.
+Worker: Can't stop to talk. I have work to do.
+/Player: Hello there.
+Worker: I'm busy right now.
+/Player: Hello there.
+Worker: I don't have time to talk to you.
+/Player: Hello there.
+Worker: Please don't disturb me.

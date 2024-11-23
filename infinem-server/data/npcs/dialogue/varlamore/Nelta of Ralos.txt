@@ -1,0 +1,13 @@
+Nelta of Ralos: Nilsal, traveller.
+<Can you heal me? I'm injured.
+Player: Can you heal me? I'm injured.
+HEAL:
+><So what do you do?
+Player: So what do you do?
+Nelta of Ralos: I am a nelta in service to Ralos.
+Player: What's a nelta?
+Nelta of Ralos: We are the faithful servants  of Ralos. We serve in a variety of roles across the Church of Ralos.
+Player: So kind of like a priest?
+Nelta of Ralos: Yes, I believe that would be the closest comparison to the Church of Saradomin, though I am no expert on their practices.
+Nelta of Ralos: Above us mere neltas are the teoki, leaders of the key temples across the kingdom. And of course, above them you have the Teokan himself.
+FIRSTOPTIONS:

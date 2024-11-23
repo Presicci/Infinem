@@ -1,0 +1,11 @@
+RAND
+/Player: Hello there. How's it going?
+Vineyard worker: Lovely day for some wine!
+/Player: Hello there. How's it going?
+Vineyard worker: I wish these grapes could pick themselves.
+/Player: Hello there. How's it going?
+Vineyard worker: The grapes are in good shape for this harvest.
+/Player: Hello there. How's it going?
+Vineyard worker: I'm sorry, but the vineyards need tending to.
+/Player: Hello there. How's it going?
+Vineyard worker: Have you tried the wine? You won't regret it if you do!

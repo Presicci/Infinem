@@ -1,0 +1,12 @@
+13174,13175,13176,13177,13188,13189,13190,13191
+RAND
+/Player: Hello there. How's it going?
+Child: I don't know you.
+/Player: Hello there. How's it going?
+Child: I don't want to talk to you.
+/Player: Hello there. How's it going?
+Child: I shouldn't be talking to you.
+/Player: Hello there. How's it going?
+Child: I shouldn't speak with strangers.
+/Player: Hello there. How's it going?
+Child: I'm not allowed to talk to strangers.

@@ -1,0 +1,9 @@
+13161
+Reinn: Good to see you, [Fremennik name]!
+Player: Hello there. You're a long way from home.
+Reinn: Well what sort of Fremennik are you if you don't travel! Besides, we heard this was the land to visit for breaking skulls and spilling blood!
+Player: Is it?
+HASGLORY:2000
+(Reinn: Ha! As if you didn't know! We've heard about your exploits in the Colosseum! Maybe you'll see us next time you're there!
+(Reinn: Of course! Have you not visited the Colosseum? You won't regret it if you do.
+Player: Hmm... I might have to check it out.

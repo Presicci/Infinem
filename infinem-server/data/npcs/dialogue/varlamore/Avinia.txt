@@ -1,0 +1,7 @@
+Player: Hey there.
+Avinia: Need something, iknami?
+Player: Not really. Just wondering what brings you out here?
+Avinia: I'm here to trade with the dwarves here on behalf of Fortis. Stonecutter Outpost is the main supplier of the stone we use for building.
+Player: And is the trading going well?
+Avinia: Well it's significantly better than dealing with the dwarves in Cam Torum, but they're still not the easiest to work with.
+Player: Ah, well in that case, I'd better leave you to it.

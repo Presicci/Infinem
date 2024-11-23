@@ -1,0 +1,12 @@
+13149,13150,13151,13152,13153,13154,13155,13156,13256,13257,13258,13259,13260,13261
+RAND
+/Player: Hello there. How's it going?
+Worker: Sorry, but I have lots of work to do.
+/Player: Hello there. How's it going?
+Worker: Not too bad, but the work is definitely tiring.
+/Player: Hello there. How's it going?
+Worker: Well I could do with a good rest, but fine otherwise.
+/Player: Hello there. How's it going?
+Worker: Sorry, but I'm busy right now.
+/Player: Hello there. How's it going?
+Worker: Busy, busy, busy.

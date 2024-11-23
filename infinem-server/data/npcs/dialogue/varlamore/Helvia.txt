@@ -1,0 +1,12 @@
+Player: Hello!
+Helvia: You do not have an appointment.
+Player: Sorry, what?
+Helvia: You do not have an appointment.
+Player: Appointment for what?
+Helvia: An appointment to see the Queen.
+Player: How do you know that?
+Helvia: First, because it is my job. Second, because she is not in Fortis at the moment.
+Player: Oh. Well where is she then?
+Helvia: She has important business elsewhere in the kingdom. Perhaps when she returns, you'll be able to see her, or perhaps you won't.
+Player: Yes, those generally are the two options.
+Helvia: Now, if there's nothing else, please move along.

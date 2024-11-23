@@ -1,0 +1,7 @@
+13933,13934,13935
+RAND
+/Guard: Be on your way.
+/Guard: You don't want to mess with me, human.
+/Guard: If you're thinking of trying anything, you'll quickly find yourself regretting it.
+/Guard: I'm watching you, human.
+/Guard: Move along.

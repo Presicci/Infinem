@@ -1,0 +1,12 @@
+13248,13249,13250,13251
+RAND
+/Player: Hello there. How's it going?
+Sailor: Sorry, but I'm busy right now.
+/Player: Hello there. How's it going?
+Sailor: Okay, but it will be better once we're back on board.
+/Player: Hello there. How's it going?
+Sailor: Not too bad, but there's still a lot that needs doing today.
+/Player: Hello there. How's it going?
+Sailor: Sorry, but I have lots of work to do before we head back out to sea.
+/Player: Hello there. How's it going?
+Sailor: Well I could do with a good rest, but fine otherwise.

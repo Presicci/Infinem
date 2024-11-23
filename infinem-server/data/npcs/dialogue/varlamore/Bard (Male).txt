@@ -1,0 +1,5 @@
+13148
+Player: Hey there.
+Bard: Think you've got what it takes to join the College of Bards?
+Player: I'm not sure.
+Bard: Well it only takes a lifetime of practice, so maybe give it a go one day.
