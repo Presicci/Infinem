@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1446,
+    "y": 9626,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1446,
+    "y": 9632,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1436,
+    "y": 9637,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Sunlight Moth",
+    "id": 12770,
+    "x": 1434,
+    "y": 9632,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 6
+  }
+]

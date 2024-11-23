@@ -1,0 +1,389 @@
+[
+  {
+    "name": "Citizen",
+    "id": 13063,
+    "x": 1403,
+    "y": 9554,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13064,
+    "x": 1402,
+    "y": 9552,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13065,
+    "x": 1399,
+    "y": 9561,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13066,
+    "x": 1402,
+    "y": 9571,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13081,
+    "x": 1405,
+    "y": 9569,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13082,
+    "x": 1412,
+    "y": 9569,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13067,
+    "x": 1417,
+    "y": 9567,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13068,
+    "x": 1411,
+    "y": 9555,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13069,
+    "x": 1417,
+    "y": 9549,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13070,
+    "x": 1439,
+    "y": 9564,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13071,
+    "x": 1440,
+    "y": 9570,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13072,
+    "x": 1446,
+    "y": 9562,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13073,
+    "x": 1443,
+    "y": 9556,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13074,
+    "x": 1438,
+    "y": 9555,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13075,
+    "x": 1441,
+    "y": 9546,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13076,
+    "x": 1457,
+    "y": 9561,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13077,
+    "x": 1462,
+    "y": 9555,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13078,
+    "x": 1460,
+    "y": 9551,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13079,
+    "x": 1468,
+    "y": 9554,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13080,
+    "x": 1475,
+    "y": 9553,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13063,
+    "x": 1476,
+    "y": 9549,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13064,
+    "x": 1467,
+    "y": 9570,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13082,
+    "x": 1468,
+    "y": 9569,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13065,
+    "x": 1475,
+    "y": 9568,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Citizen",
+    "id": 13066,
+    "x": 1477,
+    "y": 9563,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13067,
+    "x": 1483,
+    "y": 9571,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13068,
+    "x": 1464,
+    "y": 9578,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13069,
+    "x": 1449,
+    "y": 9578,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13070,
+    "x": 1441,
+    "y": 9576,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13071,
+    "x": 1437,
+    "y": 9577,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13080,
+    "x": 1430,
+    "y": 9578,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Citizen",
+    "id": 13073,
+    "x": 1433,
+    "y": 9583,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13079,
+    "x": 1427,
+    "y": 9585,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13081,
+    "x": 1415,
+    "y": 9577,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Shopkeeper",
+    "id": 13035,
+    "x": 1426,
+    "y": 9555,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Blacksmith",
+    "id": 13038,
+    "x": 1448,
+    "y": 9584,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Conara",
+    "id": 13040,
+    "x": 1437,
+    "y": 9557,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Huito",
+    "id": 13041,
+    "x": 1437,
+    "y": 9554,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Nahta",
+    "id": 13036,
+    "x": 1425,
+    "y": 9568,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tizoro",
+    "id": 13037,
+    "x": 1442,
+    "y": 9554,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Yarnio",
+    "id": 13039,
+    "x": 1442,
+    "y": 9557,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Sonalo",
+    "id": 13042,
+    "x": 1452,
+    "y": 9555,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bartender",
+    "id": 13043,
+    "x": 1430,
+    "y": 9584,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  }
+]

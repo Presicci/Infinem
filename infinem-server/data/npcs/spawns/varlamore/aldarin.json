@@ -2428,5 +2428,14 @@
     "z": 3,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Faustus",
+    "id": 13914,
+    "x": 1420,
+    "y": 2981,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]

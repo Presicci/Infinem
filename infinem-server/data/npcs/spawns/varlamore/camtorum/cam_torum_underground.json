@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Citizen",
+    "id": 13068,
+    "x": 1469,
+    "y": 9555,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13064,
+    "x": 1411,
+    "y": 9553,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Citizen",
+    "id": 13082,
+    "x": 1414,
+    "y": 9557,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
