@@ -46,7 +46,7 @@ public class DropViewer {
         NPCDefinition def = NPCDefinition.get(npcId);
         if (def.combatInfo == null || def.combatLevel == 0 || def.attackOption == -1 || def.lootTable == null) return;
         open(player);
-        displayDropsWithConditionals(player, npcId, def.name);
+        displayDrops(player, npcId, def.name);
     }
 
     private static void displayDropsWithConditionals(Player player, int id, String name) {
