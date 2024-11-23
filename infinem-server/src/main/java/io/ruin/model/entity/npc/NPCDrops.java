@@ -661,7 +661,7 @@ public class NPCDrops {
     private void handleRelicResetTabletDrop(Killer killer, Player player, Position pos) {
         int combatLevel = npc.getDef().combatLevel;
         if (combatLevel < 50) return;
-        int roll = Math.max(1000, 5000 - (combatLevel / 20) * 150);
+        int roll = Math.max(2000, 7500 - (combatLevel / 20) * 150);
         if (Random.rollDie(roll)) handleDrop(killer, pos, player, new Item(32041));
     }
 }
