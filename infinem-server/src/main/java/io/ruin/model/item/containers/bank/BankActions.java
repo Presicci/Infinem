@@ -151,24 +151,18 @@ public class BankActions {
             if (item.getId() == 24585)
                 LootingBagNote.exchangeNote(player, item, null);
             if (def.isNote()) {
-                player.dialogue(new OptionsDialogue(
-                        "Un-note the " + (item.getAmount() == 1 ? "banknote" : "banknotes") + "?",
-                        new Option("Yes", () -> {
-                            int freeSlots = player.getInventory().getFreeSlots();
-                            if (item.getAmount() == 1)
-                                freeSlots++;
-                            int exchanged;
-                            if (freeSlots >= item.getAmount()) {
-                                item.remove();
-                                player.getInventory().add(def.notedId, exchanged = item.getAmount());
-                            } else {
-                                item.remove(freeSlots);
-                                player.getInventory().add(def.notedId, exchanged = freeSlots);
-                            }
-                            player.dialogue(new MessageDialogue("The bank exchanges your banknote for an item" + (exchanged == 1 ? "" : "s") + "."));
-                        }),
-                        new Option("No", player::closeDialogue)
-                ));
+                int freeSlots = player.getInventory().getFreeSlots();
+                if (item.getAmount() == 1)
+                    freeSlots++;
+                int exchanged;
+                if (freeSlots >= item.getAmount()) {
+                    item.remove();
+                    player.getInventory().add(def.notedId, exchanged = item.getAmount());
+                } else {
+                    item.remove(freeSlots);
+                    player.getInventory().add(def.notedId, exchanged = freeSlots);
+                }
+                player.dialogue(new MessageDialogue("The bank exchanges your banknote for an item" + (exchanged == 1 ? "" : "s") + "."));
             } else {
                 if (def.notedId != -1) {
                     player.dialogue(new OptionsDialogue(
