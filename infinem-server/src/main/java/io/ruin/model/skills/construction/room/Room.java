@@ -29,6 +29,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static io.ruin.cache.ItemID.COINS_995;
+import static io.ruin.cache.ItemID.MYTHICAL_CAPE;
 
 public abstract class Room {
 
@@ -248,6 +249,9 @@ public abstract class Room {
                         new Option("Yes", () -> {
                             if (!getBuilt(hotspotIndex).canRemove(player, this)) {
                                 return;
+                            }
+                            if (BuildableReturnItem.RETURNED_ITEMS.containsKey(getBuilt(hotspotIndex))) {
+                                player.getInventory().addOrDrop(BuildableReturnItem.RETURNED_ITEMS.get(getBuilt(hotspotIndex)));
                             }
                             clearBuilt(hotspotIndex);
                             player.animate(Construction.REMOVE_OBJECT);
