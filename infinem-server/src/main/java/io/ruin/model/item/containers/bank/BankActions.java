@@ -99,11 +99,12 @@ public class BankActions {
         int x = npc.getAbsX() + deltaX;
         int y = npc.getAbsY() + deltaY;
         int z = npc.getHeight();
-        GameObject obj = Tile.getObject(-1, x, y, z, 10, -1);
+        GameObject obj = Tile.getObject(-1, x, y, z);
         if(obj == null)
             return;
         ObjectDefinition def = obj.getDef();
-        if(def.xLength > 1 || def.yLength > 1)
+        Tile tile = Tile.get(x, y, z, true);
+        if(tile.allowStandardEntrance())
             return;
         npc.walkTo = new Position(x + deltaX, y + deltaY, z);
     }
