@@ -132,7 +132,7 @@ public class CostumeRoom {
         if (pieces[pieceIndex] == null)
             return;
         if (player.getGameMode().isUltimateIronman() && !cs.fullSetStored(player, costume) && pieces.length > 1) {
-            player.sendMessage("Ultimate ironman can only withdraw complete sets from storage.");
+            player.sendMessage("Ultimate ironmen can only withdraw complete sets from storage.");
             return;
         }
         player.getInventory().add(itemId, 1);
@@ -167,7 +167,7 @@ public class CostumeRoom {
             return;
         }
         if (player.getGameMode().isUltimateIronman() && !type.fullSetStored(player, costume)) {
-            player.sendMessage("Ultimate ironman can only withdraw from complete sets from storage.");
+            player.sendMessage("Ultimate ironmen can only withdraw from complete sets from storage.");
             return;
         }
         int requiredSpace = (int) Arrays.stream(stored).filter(Objects::nonNull).distinct().count();
