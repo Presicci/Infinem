@@ -184,7 +184,7 @@ public class Woodcutting {
                         player.resetAnimation();
                         if (treeData == Tree.SULLIUSCEP) {
                             int newValue = SULLIUSCEP_VARPBIT.increment(player, 1);
-                            if (newValue >= 5)
+                            if (newValue >= 6)
                                 SULLIUSCEP_VARPBIT.set(player, 0);
                             return;
                         }
