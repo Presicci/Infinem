@@ -1,0 +1,20 @@
+[
+  { // Buffalo (9)
+    "ids": [ 13004 ],
+    "handler": "",
+    //Combat Info
+    "aggressive_level": 0,
+    //Speeds
+    "death_ticks": 3,
+    "respawn_ticks": 30,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 5849,
+    "defend_animation": 5850,
+    "death_animation": 5851,
+    //Sounds
+    "attack_sound": 369,
+    "defend_sound": 371,
+    "death_sound": 370
+  }
+]
