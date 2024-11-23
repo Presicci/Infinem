@@ -131,7 +131,7 @@ public class CostumeRoom {
         int pieceIndex = costume.getPieceIndex(itemId);
         if (pieces[pieceIndex] == null)
             return;
-        if (player.getGameMode().isUltimateIronman() && !cs.fullSetStored(player, costume) && pieces.length > 1) {
+        if (player.getGameMode().isUltimateIronman() && !cs.fullSetStored(player, costume) && pieces.length > 1 && !Costume.DUPLICATE_COSTUME_ITEM.containsKey(itemId)) {
             player.sendMessage("Ultimate ironmen can only withdraw complete sets from storage.");
             return;
         }

@@ -6,10 +6,8 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.construction.Buildable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static io.ruin.model.skills.construction.actions.Costume.*;
 
@@ -192,14 +190,25 @@ public enum CostumeStorage {
         return null;
     }
 
+    private Set<Integer> collectionToIdSet(Player player) {
+        return getSets(player).values().stream().flatMap(Arrays::stream).filter(Objects::nonNull).map(Item::getId).collect(Collectors.toSet());
+    }
+
     public boolean fullSetStored(Player player, Costume costume) {
         Map<Costume, Item[]> stored = getSets(player);
         Item[] pieces = stored.get(costume);
         if (pieces == null)
             return false;
-        for (Item item : pieces) {
-            if (item == null)
+        Set<Integer> collectedPieces = collectionToIdSet(player);
+        outer : for (int index = 0; index < pieces.length; index++) {
+            Item item = pieces[index];
+            if (item == null) {
+                Item[] eligiblePieces = costume.pieces[index];
+                for (Item piece : eligiblePieces) {
+                    if (collectedPieces.contains(piece.getId())) continue outer;
+                }
                 return false;
+            }
         }
         return true;
     }

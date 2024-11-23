@@ -7,9 +7,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.stat.StatType;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public enum Costume {
     //fancy dress box
@@ -795,11 +793,16 @@ public enum Costume {
     }
 
     private static final Map<Integer, Costume> COSTUMES_BY_ITEM_ID = new HashMap<>();
+    public static final Map<Integer, Set<Costume>> DUPLICATE_COSTUME_ITEM = new HashMap<>();
 
     static {
         for (Costume costume : values()) {
             for (Item[] piece : costume.pieces) {
                 for (Item item : piece) {
+                    if (COSTUMES_BY_ITEM_ID.containsKey(item.getId())) {
+                        DUPLICATE_COSTUME_ITEM.computeIfAbsent(item.getId(), i -> new HashSet<>()).add(costume);
+                        DUPLICATE_COSTUME_ITEM.get(item.getId()).add(COSTUMES_BY_ITEM_ID.get(item.getId()));
+                    }
                     COSTUMES_BY_ITEM_ID.put(item.getId(), costume);
                 }
             }
