@@ -5028,5 +5028,85 @@
     "regionIds": [
       14151
     ]
+  },
+  { // The city of sun
+    "musicId": 787,
+    "regionIds": [
+      6448, 6449, 6704, 6705, 6960, 6961, 7216, 7217
+    ]
+  },
+  { // Prospering Fortune
+    "musicId": 811,
+    "regionIds": [
+      6448, 6449, 6704, 6705, 6960, 6961, 7216, 7217
+    ]
+  },
+  { // The Undying Light
+    "musicId": 783,
+    "regionIds": [
+      5424, 5425, 5679, 5680, 5935, 5936, 5937, 6189, 6190, 6192,
+      6193, 6445, 6446, 6447, 6701, 6702, 6703, 6957, 6958, 6959, 7215
+    ]
+  },
+  { // Creatures of Varlamore
+    "musicId": 808,
+    "regionIds": [
+      5424, 5425, 5679, 5680, 5935, 5936, 5937, 6189, 6190, 6192,
+      6193, 6445, 6446, 6447, 6701, 6702, 6703, 6957, 6958, 6959, 7215
+    ]
+  },
+  { // Ready for the Hunt
+    "musicId": 781,
+    "regionIds": [
+      6191
+    ]
+  },
+  { // Varlamore's Sunset
+    "musicId": 803,
+    "regionIds": [
+      5934
+    ]
+  },
+  { // Peace and Prosperity
+    "musicId": 804,
+    "regionIds": [
+      5165, 5166, 5421, 5422, 5677, 5678
+    ]
+  },
+  { // Isle of Serenity
+    "musicId": 805,
+    "regionIds": [
+      5165, 5166, 5421, 5422, 5677, 5678
+    ]
+  },
+  { // Mistrock
+    "musicId": 806,
+    "regionIds": [
+      5420, 5676
+    ]
+  },
+  { // The Guidance of Ralos
+    "musicId": 766,
+    "regionIds": [
+      5681
+    ]
+  },
+  { // Whispering wind
+    "musicId": 813,
+    "regionIds": [
+      5682, 5683, 5939, 5940, 6194, 6195, 6451
+    ]
+  },
+  { // Stones of Old
+    "musicId": 802,
+    "regionIds": [
+      5938
+    ]
+  },
+  { // Emissaries of Twilight
+    "musicId": 809,
+    "regionIds": [
+      6450, 6706, 6707
+    ]
   }
 ]
