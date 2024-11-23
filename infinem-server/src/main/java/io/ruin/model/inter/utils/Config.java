@@ -281,6 +281,7 @@ public class Config {
             varpbit(4689, true).defaultValue(0),     //Logout
     };
 
+    public static final Config CLOSE_SIDE_PANEL_WITH_HOTKEY = varpbit(4611, true);
     public static final Config ESCAPE_CLOSES = varpbit(4681, true);
 
     public static final Config SettingSearch = varpbit(9638, false);

@@ -116,7 +116,7 @@ public enum ClickSetting {
                 new Option("Keep Current Keybinds")
         ));
     })),
-    CLOSE_SIDE_PANEL_WITH_HOTKEY(3, 39, 187),   // VB 4611 0 = on, 1 = off
+    CLOSE_SIDE_PANEL_WITH_HOTKEY(3, 39, 187, Config.CLOSE_SIDE_PANEL_WITH_HOTKEY::toggle),   // VB 4611 0 = on, 1 = off
     ESCAPE_CLOSES_INTERFACE(3, 40, 188, Config.ESCAPE_CLOSES::toggle),
     // Display
     HIDE_ROOFS(4, 4, 193, Config.HIDE_ROOFS::toggle),
