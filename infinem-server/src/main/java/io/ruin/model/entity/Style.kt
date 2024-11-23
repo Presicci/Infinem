@@ -133,6 +133,7 @@ enum class Style(
         fun updateAll(player: Player) {
             val male = player.appearance.isMale
             for (value in values) {
+                if (value == HAIR) continue
                 if (value.isAvailable(male)) {
                     // when switches male -> female available index might not be found
                     var index = value.selectedAvailableIdentityKitIndex(player) ?: 0
