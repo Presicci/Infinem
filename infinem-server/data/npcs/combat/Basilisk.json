@@ -4,7 +4,7 @@
     "handler": "io.ruin.model.combat.npc.slayer.Basilisk",
     //Combat Info
     "hitpoints": 75,
-    "aggressive_level": 122,
+    "aggressive_level": 0,
     "max_damage": 5,
     "attack_style": "SLASH",
     //Slayer Info
