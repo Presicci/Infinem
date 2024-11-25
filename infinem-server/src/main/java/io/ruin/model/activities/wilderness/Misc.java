@@ -1,11 +1,44 @@
 package io.ruin.model.activities.wilderness;
 
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 
 public class Misc {
+
+    private static void crossWildernessDitch(Player player, GameObject obj) {
+        player.startEvent(event -> {
+            Direction dir;
+            int diffX = 0, diffY = 0;
+            if(obj.direction == 0 || obj.direction == 2) {
+                if(player.getAbsY() == 3520) {
+                    dir = Direction.NORTH;
+                    diffY = 3;
+                } else {
+                    dir = Direction.SOUTH;
+                    diffY -= 3;
+                }
+            } else {
+                if(player.getAbsX() == 2995) {
+                    dir = Direction.EAST;
+                    diffX = 3;
+                } else {
+                    dir = Direction.WEST;
+                    diffX = -3;
+                }
+            }
+            player.lock();
+            player.animate(6132);
+            player.privateSound(2462, 1, 25);
+            player.getMovement().force(diffX, diffY, 0, 0, 33, 60, dir);
+            event.delay(2);
+            player.getTaskManager().doLookupByUUID(839); // Cross the Wilderness Ditch
+            player.unlock();
+        });
+    }
 
     static {
         /**
@@ -63,36 +96,8 @@ public class Misc {
         /**
          * Ditch
          */
-        ObjectAction.register(23271, "cross", (p, obj) -> {
-            p.startEvent(event -> {
-                Direction dir;
-                int diffX = 0, diffY = 0;
-                if(obj.direction == 0 || obj.direction == 2) {
-                    if(p.getAbsY() == 3520) {
-                        dir = Direction.NORTH;
-                        diffY = 3;
-                    } else {
-                        dir = Direction.SOUTH;
-                        diffY -= 3;
-                    }
-                } else {
-                    if(p.getAbsX() == 2995) {
-                        dir = Direction.EAST;
-                        diffX = 3;
-                    } else {
-                        dir = Direction.WEST;
-                        diffX = -3;
-                    }
-                }
-                p.lock();
-                p.animate(6132);
-                p.privateSound(2462, 1, 25);
-                p.getMovement().force(diffX, diffY, 0, 0, 33, 60, dir);
-                event.delay(2);
-                p.getTaskManager().doLookupByUUID(839); // Cross the Wilderness Ditch
-                p.unlock();
-            });
-        });
+        ObjectAction.register(23271, "cross", Misc::crossWildernessDitch);
+        ObjectAction.register(50652, "cross", Misc::crossWildernessDitch);
         /**
          * Deep dungeon
          */
