@@ -93,7 +93,7 @@ public enum Bone {
             }
             if (!zealotSaveBone(player)) bone.remove();
             player.animate(827);
-            player.sendMessage("You dig a hole in the ground...");
+            player.sendFilteredMessage("You dig a hole in the ground...");
             int pyreCharges = player.getAttributeIntOrZero(PyreSite.PYRE_KEY);
             int pyreMultiplier = 1;
             if (pyreCharges > 0) {
@@ -108,7 +108,7 @@ public enum Bone {
             player.privateSound(2738);
             buryCounter.increment(player, 1);
             player.karamDelay.delay(2);
-            player.sendMessage("You bury the bones.");
+            player.sendFilteredMessage("You bury the bones.");
             if (pyreMultiplier > 1) {
                 player.sendFilteredMessage("You gain extra prayer experience as the ancestral barbarian spirits watch over you.");
             }
