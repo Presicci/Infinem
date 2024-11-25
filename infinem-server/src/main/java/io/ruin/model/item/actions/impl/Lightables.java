@@ -41,6 +41,10 @@ public enum Lightables {
 
     public final int unlitId, litId;
 
+    public boolean hasLit(Player player) {
+        return player.getInventory().hasId(litId) || player.getEquipment().hasId(litId);
+    }
+
     private void light(Player player, Item item) {
         String itemName = item.getDef().name;
         item.setId(litId);

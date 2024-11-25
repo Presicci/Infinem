@@ -16,6 +16,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemNPCAction;
+import io.ruin.model.item.actions.impl.Lightables;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
@@ -145,7 +146,7 @@ public class WintertodtActions {
     }
 
     private static void light(Player player, Brazier b) {
-        if (!player.getInventory().contains(Tool.TINDER_BOX, 1)) {
+        if (!player.getInventory().contains(Tool.TINDER_BOX, 1) && !Lightables.BRUMA_TORCH.hasLit(player)) {
             player.sendMessage("You need a tinderbox to light that brazier.");
             return;
         }
