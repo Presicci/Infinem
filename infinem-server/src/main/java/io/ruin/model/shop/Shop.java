@@ -353,7 +353,6 @@ public class Shop {
         }
         if (generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDefinition.id)) {
             if (title.equalsIgnoreCase("Bandit Duty Free") || title.equalsIgnoreCase("Martin Thwait's Lost and Found")) {
-                System.out.println("Specialty! " + itemDefinition.value + " - " + (itemDefinition.value/2));
                 return Math.max(itemDefinition.value / 2, 1);
             }
             return Math.max(itemDefinition.lowAlchValue, 1);
