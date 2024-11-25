@@ -484,7 +484,7 @@ public class PlayerCombat extends Combat {
             /**
              * Crystal bow, Knifes, Darts, etc
              */
-            if(rangedWep != RangedWeapon.CRYSTAL_BOW && rangedWep != RangedWeapon.CRAWS_BOW && rangedWep != RangedWeapon.STARTER_BOW)
+            if(rangedWep != RangedWeapon.CRYSTAL_BOW && rangedWep != RangedWeapon.CRAWS_BOW && rangedWep != RangedWeapon.STARTER_BOW && rangedWep != RangedWeapon.WEBWEAVER_BOW)
                 ammo = wep;
         } else {
             /**
