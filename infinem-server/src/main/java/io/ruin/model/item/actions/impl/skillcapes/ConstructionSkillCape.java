@@ -54,15 +54,20 @@ public class ConstructionSkillCape {
 
     protected static void teleport(Player player) {
         player.getMovement().startTeleport(e -> {
+            player.lock();
             player.animate(714);
             player.graphics(111, 92, 0);
             player.publicSound(200);
-            e.delay(2);
+            e.delay(1);
             if (Config.TELEPORT_INSIDE.get(player) == 0) {
                 player.house.buildAndEnter(player, false);
+                while (player.isLocked())
+                    e.delay(1);
             } else {
+                e.delay(1);
                 player.getMovement().teleport(player.house.getLocation().getPosition());
             }
+            player.unlock();
         });
     }
 }
