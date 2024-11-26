@@ -18,10 +18,12 @@ public class Sheep {
             {2697, 2691},
             {2698, 2692},
             {2699, 2691},
-            {2787, 2691}
+            {2787, 2691},
+            {12986, 12987},
+            {12988, 12989}
     };
 
-    private static void shear(Player player, NPC sheep, int replacement) {
+    private static void shear(Player player, NPC npc, int replacement) {
         Item shears = player.getInventory().findItem(Tool.SHEARS);
         if (shears == null) {
             player.sendFilteredMessage("You need a set of shears to do this.");
@@ -39,17 +41,17 @@ public class Sheep {
             player.privateSound(761);
             event.delay(2);
             player.privateSound(2053);
-            sheep.forceText("Baa!");
+            npc.forceText("Baa!");
             if (Random.rollDie(3, 1)) {
-                player.sendFilteredMessage("The sheep manages to get away from you.");
+                player.sendFilteredMessage("The " + npc.getDef().name.toLowerCase() + " manages to get away from you.");
             } else {
                 player.sendFilteredMessage("You get some wool.");
                 player.getInventory().add(1737, 1);
                 World.startEvent(e -> {
-                    int origId = sheep.getId();
-                    sheep.transform(replacement);
+                    int origId = npc.getId();
+                    npc.transform(replacement);
                     e.delay(30);
-                    sheep.transform(origId);
+                    npc.transform(origId);
                 });
             }
             player.unlock();
