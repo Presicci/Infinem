@@ -26,7 +26,6 @@ public class TeleportToHouse extends Spell {
             player.sendMessage("You're already in your house!");
             return false;
         }
-        System.out.println(i);
         return player.getMovement().startTeleport(e -> {
             player.animate(714);
             player.graphics(111, 92, 0);
