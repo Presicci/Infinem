@@ -81,7 +81,10 @@ public enum DialogueObject {
     CRUMBLING_TOWER(1796, new Position(1936, 9444),
             new MessageDialogue("Someone has crudely carved a message into the wall:<br><br>'The Soul Stone was here. Where is it now?")),
     BRINE_RAT_CAVE_CHEST(14197, new Position(2740, 10164),
-            new MessageDialogue("An etching on the chest reads 'Titan.' There is nothing here to indicate how the ship got here or what they were searching for."));
+            new MessageDialogue("An etching on the chest reads 'Titan.' There is nothing here to indicate how the ship got here or what they were searching for.")),
+    SHIPWRECK_COVE_CAMPFIRE(55099, new Position(1569, 3314),
+            new MessageDialogue("The flames of the campfire burn through strange magic. You find them quite alluring."))
+    ;
 
     DialogueObject(int objectId, Position position, Dialogue... dialogues) {
         this(objectId, 1, position, dialogues);
