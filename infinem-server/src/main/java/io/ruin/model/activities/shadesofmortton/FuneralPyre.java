@@ -19,6 +19,7 @@ import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -34,7 +35,7 @@ public enum FuneralPyre {
             new LootItem(Items.BRONZE_KEY_BROWN, 1, 28),
             new LootItem(995, 200, 300, 21),
             new LootItem(Items.BRONZE_KEY_CRIMSON, 1, 18)
-    )),
+    ), new PyreLog[] { PyreLog.REGULAR, PyreLog.OAK, PyreLog.WILLOW, PyreLog.TEAK, PyreLog.ARCTIC_PINE, PyreLog.MAPLE, PyreLog.MAHOGANY, PyreLog.YEW, PyreLog.MAGIC, PyreLog.REDWOOD }),
     PHRIN(Items.PHRIN_REMAINS, 45, new LootTable().addTable(1,
             new LootItem(Items.STEEL_KEY_RED, 1, 27),
             new LootItem(Items.STEEL_KEY_BROWN, 1, 23),
@@ -42,7 +43,7 @@ public enum FuneralPyre {
             new LootItem(Items.STEEL_KEY_CRIMSON, 1, 16),
             new LootItem(Items.BRONZE_KEY_BLACK, 1, 8),
             new LootItem(Items.BRONZE_KEY_PURPLE, 1, 5)
-    )),
+    ), new PyreLog[] { PyreLog.REGULAR, PyreLog.OAK, PyreLog.WILLOW, PyreLog.TEAK, PyreLog.ARCTIC_PINE, PyreLog.MAPLE, PyreLog.MAHOGANY, PyreLog.YEW, PyreLog.MAGIC, PyreLog.REDWOOD }),
     RIYL(Items.RIYL_REMAINS, 61, new LootTable().addTable(1,
             new LootItem(Items.BLACK_KEY_RED, 1, 27),
             new LootItem(Items.BLACK_KEY_BROWN, 1, 23),
@@ -50,7 +51,7 @@ public enum FuneralPyre {
             new LootItem(Items.BLACK_KEY_CRIMSON, 1, 16),
             new LootItem(Items.STEEL_KEY_BLACK, 1, 8),
             new LootItem(Items.STEEL_KEY_PURPLE, 1, 5)
-    )),
+    ), new PyreLog[] { PyreLog.WILLOW, PyreLog.TEAK, PyreLog.ARCTIC_PINE, PyreLog.MAPLE, PyreLog.MAHOGANY, PyreLog.YEW, PyreLog.MAGIC, PyreLog.REDWOOD }),
     ASYN(Items.ASYN_REMAINS, 80, new LootTable().addTable(1,
             new LootItem(Items.SILVER_KEY_RED, 1, 27),
             new LootItem(Items.SILVER_KEY_BROWN, 1, 23),
@@ -58,7 +59,7 @@ public enum FuneralPyre {
             new LootItem(Items.BLACK_KEY_CRIMSON, 1, 16),
             new LootItem(Items.BLACK_KEY_BLACK, 1, 8),
             new LootItem(Items.BLACK_KEY_PURPLE, 1, 5)
-    )),
+    ), new PyreLog[] { PyreLog.YEW, PyreLog.MAGIC, PyreLog.REDWOOD }),
     FIYR(Items.FIYR_REMAINS, 100, new LootTable().addTable(1,
             new LootItem(Items.SILVER_KEY_CRIMSON, 1, 35),
             new LootItem(995, 2000, 4000, 21),
@@ -66,7 +67,7 @@ public enum FuneralPyre {
             new LootItem(Items.SILVER_KEY_BROWN, 1, 16),
             new LootItem(Items.SILVER_KEY_BLACK, 1, 8),
             new LootItem(Items.SILVER_KEY_PURPLE, 1, 4)
-    )),
+    ), new PyreLog[] { PyreLog.MAGIC, PyreLog.REDWOOD }),
     URIUM(25419, 180.5, new LootTable().addTable(1,
             new LootItem(25428, 1, 35),
             new LootItem(995, 2000, 4000, 21),
@@ -74,11 +75,12 @@ public enum FuneralPyre {
             new LootItem(25426, 1, 16),
             new LootItem(25430, 1, 8),
             new LootItem(25432, 1, 4)
-    ));
+    ), new PyreLog[] { PyreLog.REDWOOD });
 
     private final int remains;
     private final double prayerExperience;
     private final LootTable lootTable;
+    private final PyreLog[] viableLogs;
 
     private void spawnLoot(Player player, GameObject object) {
         Position pos = object.getPosition();
@@ -132,6 +134,11 @@ public enum FuneralPyre {
         Player owner = (Player) object.attributes.getOrDefault("OWNER", null);
         if (owner != null && owner != player) {
             player.sendMessage("This isn't your pyre.");
+            return;
+        }
+        PyreLog pyreLog = (PyreLog) object.attributes.getOrDefault("PYRE_LOG", null);
+        if (pyreLog == null || Arrays.stream(pyre.viableLogs).noneMatch(log -> log == pyreLog)) {
+            player.sendMessage("You can't cremate those remains on those logs.");
             return;
         }
         player.lock();
