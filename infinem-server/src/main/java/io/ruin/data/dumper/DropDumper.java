@@ -198,6 +198,7 @@ public class DropDumper {
                                 }
                             } else {
                                 String[] chanceWords = chanceLine.split(" ");
+                                if (chanceWords.length < 12) continue;
                                 String chance = chanceWords[3] + chanceWords[4] + chanceWords[5];
                                 String tableType = chanceWords[10] + " " + chanceWords[11];
                                 String[] chanceSplit = chance.split("in");
