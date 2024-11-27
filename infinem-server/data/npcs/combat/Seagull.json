@@ -38,8 +38,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 1014,
-    "defend_animation": -1,
+    "attack_animation": 3467,
+    "defend_animation": 1014,
     "death_animation": 1015
   },
   { // Seagull (3)
@@ -81,8 +81,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 1014,
-    "defend_animation": -1,
+    "attack_animation": 3467,
+    "defend_animation": 1014,
     "death_animation": 1015
   }
 ]
