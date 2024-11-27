@@ -715,6 +715,108 @@ public enum FishingArea {
             new Position(2630, 3435, 0),
             new Position(2637, 3443, 0),
             new Position(2637, 3444, 0)
+    ),
+    RIVER_ORTUS_LURE_BAIT_1(
+            new Position(1550, 3186, 0),
+            new Position(1552, 3188, 0),
+            new Position(1553, 3188, 0),
+            new Position(1542, 3184, 0)
+    ),
+    RIVER_ORTUS_LURE_BAIT_2(
+            new Position(1621, 3228, 0),
+            new Position(1623, 3233, 0),
+            new Position(1625, 3237, 0),
+            new Position(1625, 3238, 0),
+            new Position(1625, 3239, 0)
+    ),
+    MISTROCK(
+            new Position(1378, 2841, 0),
+            new Position(1377, 2841, 0),
+            new Position(1376, 2841, 0),
+            new Position(1375, 2841, 0),
+            new Position(1374, 2841, 0),
+            new Position(1370, 2843, 0)
+    ),
+    SHIPWRECK_COVE_SOUTH(
+            new Position(1584, 3299, 0),
+            new Position(1585, 3299, 0),
+            new Position(1583, 3300, 0),
+            new Position(1582, 3303, 0),
+            new Position(1582, 3304, 0),
+            new Position(1588, 3300, 0),
+            new Position(1594, 3296, 0),
+            new Position(1600, 3293, 0)
+    ),
+    SHIPWRECK_COVE_NORTH(
+            new Position(1565, 3327, 0),
+            new Position(1562, 3329, 0),
+            new Position(1561, 3329, 0),
+            new Position(1559, 3328, 0),
+            new Position(1558, 3328, 0),
+            new Position(1573, 3322, 0)
+    ),
+    ALDARIN_NORTH(
+            new Position(1378, 2986, 0),
+            new Position(1377, 2986, 0),
+            new Position(1376, 2986, 0),
+            new Position(1375, 2986, 0),
+            new Position(1374, 2986, 0),
+            new Position(1371, 2985, 0),
+            new Position(1370, 2985, 0),
+            new Position(1369, 2985, 0),
+            new Position(1366, 2984, 0)
+    ),
+    ALDARIN_WEST(
+            new Position(1313, 2959, 0),
+            new Position(1313, 2960, 0),
+            new Position(1313, 2961, 0),
+            new Position(1313, 2962, 0),
+            new Position(1314, 2957, 0),
+            new Position(1314, 2967, 0)
+    ),
+    VARLAMORE_EAST_1(
+            new Position(1781, 2993, 0),
+            new Position(1779, 2994, 0),
+            new Position(1774, 2990, 0),
+            new Position(1774, 2989, 0),
+            new Position(1776, 2985, 0),
+            new Position(1776, 2984, 0),
+            new Position(1776, 2983, 0)
+    ),
+    VARLAMORE_EAST_2(
+            new Position(1773, 2975, 0),
+            new Position(1773, 2974, 0),
+            new Position(1771, 2969, 0),
+            new Position(1771, 2968, 0),
+            new Position(1771, 2967, 0),
+            new Position(1771, 2966, 0),
+            new Position(1771, 2965, 0)
+    ),
+    VARLAMORE_SOUTH_1(
+            new Position(1587, 2956, 0),
+            new Position(1586, 2955, 0),
+            new Position(1586, 2954, 0),
+            new Position(1586, 2953, 0),
+            new Position(1585, 2951, 0),
+            new Position(1586, 2948, 0),
+            new Position(1589, 2946, 0)
+    ),
+    VARLAMORE_SOUTH_2(
+            new Position(1585, 2960, 0),
+            new Position(1580, 2962, 0),
+            new Position(1579, 2962, 0),
+            new Position(1578, 2962, 0),
+            new Position(1577, 2962, 0),
+            new Position(1576, 2962, 0),
+            new Position(1573, 2964, 0)
+    ),
+    VARLAMORE_SOUTH_3(
+            new Position(1571, 2961, 0),
+            new Position(1571, 2960, 0),
+            new Position(1571, 2959, 0),
+            new Position(1571, 2958, 0),
+            new Position(1575, 2954, 0),
+            new Position(1575, 2953, 0)
     )
     ;
 
@@ -855,6 +957,18 @@ public enum FishingArea {
         WATER_RAVINE_DUNGEON.add(FishingSpot.LURE_BAIT, 6);
         MOUNT_QUIDAMORTEM.add(FishingSpot.USE_ROD, 4);
         HEMENSTER.add(FishingSpot.HEMENSTER, 5);
+        RIVER_ORTUS_LURE_BAIT_1.add(FishingSpot.NEW_LURE_BAIT, 2);
+        RIVER_ORTUS_LURE_BAIT_2.add(FishingSpot.NEW_LURE_BAIT, 2);
+        MISTROCK.add(FishingSpot.NEW_CAGE_HARPOON, 2);
+        SHIPWRECK_COVE_SOUTH.add(FishingSpot.NEW_BIG_NET_HARPOON, 3);
+        SHIPWRECK_COVE_SOUTH.add(FishingSpot.NEW_NET_BAIT, 2);
+        ALDARIN_NORTH.add(FishingSpot.NEW_NET_BAIT, 4);
+        ALDARIN_WEST.add(FishingSpot.NEW_NET_BAIT, 2);
+        VARLAMORE_EAST_1.add(FishingSpot.NEW_NET_BAIT, 2);
+        VARLAMORE_EAST_2.add(FishingSpot.NEW_BIG_NET_HARPOON, 2);
+        VARLAMORE_SOUTH_1.add(FishingSpot.NEW_CAGE_HARPOON, 2);
+        VARLAMORE_SOUTH_2.add(FishingSpot.NEW_CAGE_HARPOON, 2);
+        VARLAMORE_SOUTH_3.add(FishingSpot.NEW_BIG_NET_HARPOON, 2);
         FishingArea.fishingSpotTimer();
     }
 }

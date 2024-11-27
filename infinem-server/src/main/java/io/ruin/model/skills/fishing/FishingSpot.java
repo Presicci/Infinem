@@ -337,39 +337,26 @@ public class FishingSpot {
      */
 
     public static final int NET_BAIT = 1518;            //shrimps,anchovies / sardine,herring
-
+    public static final int NEW_NET_BAIT = 14038;            //shrimps,anchovies / sardine,herring
     public static final int LURE_BAIT = 1508;           //trout,salmon / pike
-
+    public static final int NEW_LURE_BAIT = 14036;           //trout,salmon / pike
     public static final int CAGE_HARPOON = 1519;        //lobster / tuna,swordfish
-
+    public static final int NEW_CAGE_HARPOON = 14039;        //lobster / tuna,swordfish
     public static final int BIG_NET_HARPOON = 1520;     //shark / tuna,swordfish
-
+    public static final int NEW_BIG_NET_HARPOON = 14037;     //shark / tuna,swordfish
     public static final int SMALL_NET_HARPOON = 4316;   //monkfish / swordfish
-
     public static final int USE_ROD = 1542;             //leaping
-
     public static final int CAGE = 1535;                //dark crab
-
     public static final int BAIT = 6825;                //angler
-
     private static final int MINNOWS = 7731;            //minnows
-
     public static final int INFERNO_EEL = 7676;        //infernal eel
-
     public static final int KARAMBWAN_SPOT = 4712;
-
     public static final int KARAMBWANJI = 4710;
-
     public static final int MOLTEN_EEL = 15018;
-
     public static final int LAVA_EEL = 4928;
-
     public static final int SLIMY_EEL = 2653;
-
     public static final int SACRED_EEL = 6488;
-
     public static final int SWAMP_NET_BAIT = 1497;
-
     public static final int HEMENSTER = 4079;
 
     static {
@@ -385,6 +372,12 @@ public class FishingSpot {
         new FishingSpot(FishingTool.FISHING_ROD)
                 .regularCatches(FishingCatch.SARDINE, FishingCatch.HERRING)
                 .register(NET_BAIT, "bait");
+        new FishingSpot(FishingTool.SMALL_FISHING_NET)
+                .regularCatches(FishingCatch.SHRIMPS, FishingCatch.ANCHOVIES)
+                .register(NEW_NET_BAIT, "small net");
+        new FishingSpot(FishingTool.FISHING_ROD)
+                .regularCatches(FishingCatch.SARDINE, FishingCatch.HERRING)
+                .register(NEW_NET_BAIT, "bait");
         /*
          * Lure / Bait
          */
@@ -394,6 +387,12 @@ public class FishingSpot {
         new FishingSpot(FishingTool.FISHING_ROD)
                 .regularCatches(FishingCatch.PIKE)
                 .register(LURE_BAIT, "bait");
+        new FishingSpot(FishingTool.FLY_FISHING_ROD)
+                .regularCatches(FishingCatch.TROUT, FishingCatch.SALMON)
+                .register(NEW_LURE_BAIT, "lure");
+        new FishingSpot(FishingTool.FISHING_ROD)
+                .regularCatches(FishingCatch.PIKE)
+                .register(NEW_LURE_BAIT, "bait");
         /*
          * Cage / Harpoon
          */
@@ -404,6 +403,13 @@ public class FishingSpot {
                 .regularCatches(FishingCatch.TUNA, FishingCatch.SWORDFISH)
                 .barehandCatches(FishingCatch.BARBARIAN_TUNA, FishingCatch.BARBARIAN_SWORDFISH)
                 .register(CAGE_HARPOON, "harpoon");
+        new FishingSpot(FishingTool.LOBSTER_POT)
+                .regularCatches(FishingCatch.LOBSTER)
+                .register(NEW_CAGE_HARPOON, "cage");
+        new FishingSpot(FishingTool.HARPOON)
+                .regularCatches(FishingCatch.TUNA, FishingCatch.SWORDFISH)
+                .barehandCatches(FishingCatch.BARBARIAN_TUNA, FishingCatch.BARBARIAN_SWORDFISH)
+                .register(NEW_CAGE_HARPOON, "harpoon");
         /*
          * Net (big) / Harpoon
          */
@@ -414,6 +420,13 @@ public class FishingSpot {
                 .regularCatches(FishingCatch.SHARK)
                 .barehandCatches(FishingCatch.BARBARIAN_SHARK)
                 .register(BIG_NET_HARPOON, "harpoon");
+        new FishingSpot(FishingTool.BIG_FISHING_NET)
+                .regularCatches(FishingCatch.MACKEREL, FishingCatch.COD, FishingCatch.BASS)
+                .register(NEW_BIG_NET_HARPOON, "big net");
+        new FishingSpot(FishingTool.HARPOON)
+                .regularCatches(FishingCatch.SHARK)
+                .barehandCatches(FishingCatch.BARBARIAN_SHARK)
+                .register(NEW_BIG_NET_HARPOON, "harpoon");
         /*
          * Net (small) / Harpoon
          */
