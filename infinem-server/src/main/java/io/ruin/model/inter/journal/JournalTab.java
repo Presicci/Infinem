@@ -324,12 +324,12 @@ public class JournalTab {
             }*/
         }
 
-        if (tab == Tab.RAIDING_JOURNAL) {
-            Party party = player.getTemporaryAttribute("RAID_JOURNAL");
+        Party party = player.getTemporaryAttribute("RAID_JOURNAL");
+        if (tab == Tab.RAIDING_JOURNAL && party != null) {
             player.getPacketSender().sendClientScript(1547, "i", party.getMembers().size());
             /* party members information */
             int ind = 0;
-            if (party.getMembers().size() != 0) {
+            if (!party.getMembers().isEmpty()) {
                 for (Player member : party.getMembers()) {
                     String memberInformation = "<col=" + (member == party.getLeader() ? "ffffff" : "9f9f9f") + ">" + member.getName() + "</col>" + "|" +
                             member.getCombat().getLevel() + "|" +
