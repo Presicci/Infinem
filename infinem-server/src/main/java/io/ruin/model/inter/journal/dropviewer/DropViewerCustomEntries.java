@@ -25,6 +25,7 @@ import io.ruin.model.map.object.actions.impl.PyreSite;
 import io.ruin.model.map.object.actions.impl.chests.*;
 import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.construction.mahoganyhomes.MahoganySupplyCrate;
+import io.ruin.model.skills.fishing.FishingTables;
 import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.thieving.PickPocket;
 import io.ruin.model.skills.thieving.Stall;
@@ -196,6 +197,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Wintertodt Crate", WintertodtCrate.TABLE),
             new DropViewerEntry("Callisto", new DropViewerResultPet(Pet.CALLISTO_CUB, 1500), true, CallistoDropTable.REGULAR, CallistoDropTable.UNIQUE),
             new DropViewerEntry("Vet'ion", new DropViewerResultPet(Pet.VETION_JR_PURPLE, 1500), true, VetionDropTable.REGULAR, VetionDropTable.UNIQUE),
-            new DropViewerEntry("Venenatis", new DropViewerResultPet(Pet.VENENATIS_SPIDERLING, 1500), true, VenenatisDropTable.REGULAR, VenenatisDropTable.UNIQUE)
+            new DropViewerEntry("Venenatis", new DropViewerResultPet(Pet.VENENATIS_SPIDERLING, 1500), true, VenenatisDropTable.REGULAR, VenenatisDropTable.UNIQUE),
+            new DropViewerEntry("Fishing Spot (Civitas)", FishingTables.CIVITAS_ILLA_FORTIS)
     ).collect(Collectors.toCollection(ArrayList::new));
 }

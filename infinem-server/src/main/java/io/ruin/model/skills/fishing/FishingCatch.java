@@ -6,6 +6,7 @@ public enum FishingCatch {
     /**
      * Regular
      */
+    CIVITAS_ILLA_FORTIS(Items.BROKEN_GLASS, 1, 7.5, 0.2, 435165),
     SHRIMPS(317, 1, 10.0, 0.2, 435165),
     SARDINE(327, 5, 20.0, 0.15, 528000),
     GIANT_CARP(Items.RAW_GIANT_CARP, 10, 30.0, 0.13, 528000),

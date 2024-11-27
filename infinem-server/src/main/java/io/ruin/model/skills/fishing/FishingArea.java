@@ -817,6 +817,10 @@ public enum FishingArea {
             new Position(1571, 2958, 0),
             new Position(1575, 2954, 0),
             new Position(1575, 2953, 0)
+    ),
+    CIVITAS(
+            new Position(1737, 3101, 0),
+            new Position(1738, 3101, 0)
     )
     ;
 
@@ -969,6 +973,7 @@ public enum FishingArea {
         VARLAMORE_SOUTH_1.add(FishingSpot.NEW_CAGE_HARPOON, 2);
         VARLAMORE_SOUTH_2.add(FishingSpot.NEW_CAGE_HARPOON, 2);
         VARLAMORE_SOUTH_3.add(FishingSpot.NEW_BIG_NET_HARPOON, 2);
+        CIVITAS.add(FishingSpot.CIVITAS_ILLA_FORTIS, 1);
         FishingArea.fishingSpotTimer();
     }
 }

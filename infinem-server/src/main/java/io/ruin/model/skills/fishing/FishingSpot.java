@@ -15,6 +15,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
+import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.MapArea;
@@ -32,8 +33,15 @@ public class FishingSpot {
 
     private FishingCatch[] regularCatches, barehandCatches;
 
+    private LootTable catchTable;
+
     private FishingSpot(FishingTool tool) {
         this.defaultTool = tool;
+    }
+
+    private FishingSpot catchTable(LootTable table) {
+        this.catchTable = table;
+        return this;
     }
 
     private FishingSpot regularCatches(FishingCatch... regularCatches) {
@@ -48,40 +56,45 @@ public class FishingSpot {
 
     private FishingCatch randomCatch(Player player, int level, boolean barehand, FishingTool tool) {
         FishingCatch[] catches = barehand ? barehandCatches : regularCatches;
+        return randomCatch(player, level, tool, catches);
+    }
+
+    private FishingCatch randomCatch(Player player, int level, FishingTool tool, FishingCatch[] catches) {
         for (int i = catches.length - 1; i >= 0; i--) {
-            double roll = Random.get();
             FishingCatch c = catches[i];
-            int levelDifference = level - c.levelReq;
-            if (levelDifference < 0) {
-                /* not high enough level */
-                continue;
-            }
             if (c == FishingCatch.LEAPING_SALMON && (player.getStats().get(StatType.Strength).currentLevel < 30 || player.getStats().get(StatType.Agility).currentLevel < 30)) {
                 continue;
             } else if (c == FishingCatch.LEAPING_STURGEON && (player.getStats().get(StatType.Strength).currentLevel < 45 || player.getStats().get(StatType.Agility).currentLevel < 45)) {
                 continue;
             }
-            double chance = c.baseChance;
-            if (chance >= 1.0) {
-                /* always catch this bad boy */
-                return c;
-            }
-            if (tool == FishingTool.DRAGON_HARPOON || tool == FishingTool.INFERNAL_HARPOON)
-                chance *= 1.20;
-            if (tool == FishingTool.CRYSTAL_HARPOON) {
-                if (CrystalEquipment.HARPOON.hasCharge(player))
-                    chance *= 1.35;
-                else    // No charge, default to dragon bonus
-                    chance *= 1.20;
-            }
-            chance += (double) levelDifference * 0.003;
-            if (roll > Math.min(chance, 0.90)) {
-                /* failed to catch */
-                continue;
-            }
+            if (!rollCatch(player, level, c, tool)) continue;
             return c;
         }
         return null;
+    }
+
+    private boolean rollCatch(Player player, int level, FishingCatch c, FishingTool tool) {
+        double chance = c.baseChance;
+        int levelDifference = level - c.levelReq;
+        double roll = Random.get();
+        if (levelDifference < 0) {
+            /* not high enough level */
+            return false;
+        }
+        if (chance >= 1.0) {
+            /* always catch this bad boy */
+            return true;
+        }
+        if (tool == FishingTool.DRAGON_HARPOON || tool == FishingTool.INFERNAL_HARPOON)
+            chance *= 1.20;
+        if (tool == FishingTool.CRYSTAL_HARPOON) {
+            if (CrystalEquipment.HARPOON.hasCharge(player))
+                chance *= 1.35;
+            else    // No charge, default to dragon bonus
+                chance *= 1.20;
+        }
+        chance += (double) levelDifference * 0.003;
+        return !(roll > Math.min(chance, 0.90));
     }
 
     private int getLevelWithBoost(Player player, Stat fishing) {
@@ -231,34 +244,39 @@ public class FishingSpot {
 
                         if (npc.getId() == INFERNO_EEL)
                             player.sendFilteredMessage("You catch an infernal eel. It hardens as you handle it with your ice gloves.");
-
+                        int id = c.id;
                         int amount = npc.getId() == MINNOWS ? Random.get(10, 26)
-                                : c.id == FishingCatch.KARAMBWANJI.id ? ((fishing.currentLevel / 5) + 1)
+                                : id == FishingCatch.KARAMBWANJI.id ? ((fishing.currentLevel / 5) + 1)
                                 : 1;
-                        player.collectResource(new Item(c.id, amount));
+                        if (catchTable != null) {
+                            Item item = catchTable.rollItem();
+                            id = item.getId();
+                            amount = item.getAmount();
+                        }
+                        player.collectResource(new Item(id, amount));
                         if (RadasBlessing.extraFish(player)) amount += 1;
                         if (tool == FishingTool.CRYSTAL_HARPOON && CrystalEquipment.HARPOON.hasCharge(player))
                             CrystalEquipment.HARPOON.removeCharge(player);
-                        if (tool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(c.id)) {
+                        if (tool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(id)) {
                             player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_HARPOON.removeCharge(player);
                             player.getStats().addXp(StatType.Fishing, c.xp, true);
-                            player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(c.id) / 2, true);
+                            player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(id) / 2, true);
                             player.sendMessage("Your infernal harpoon incinerates the " + c.name() + ".");
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
                             amount *= 2;
-                            if (player.getBank().hasRoomFor(c.id)) {
-                                player.getBank().add(c.id, amount);
-                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
+                            if (player.getBank().hasRoomFor(id)) {
+                                player.getBank().add(id, amount);
+                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
                             } else {
-                                player.getInventory().addOrDrop(c.id, amount);
+                                player.getInventory().addOrDrop(id, amount);
                             }
                             player.getStats().addXp(StatType.Fishing, c.xp * 2, true);
                         } else {
-                            player.getInventory().addOrDrop(c.id, amount);
+                            player.getInventory().addOrDrop(id, amount);
                             player.getStats().addXp(StatType.Fishing, c.xp, true);
                         }
-                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FISHCATCH, ItemDefinition.get(c.id).name, amount, true);
+                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FISHCATCH, ItemDefinition.get(id).name, amount, true);
                         if (npc.getId() != MINNOWS)
                             PlayerCounter.TOTAL_FISH.increment(player, amount);
 
@@ -358,6 +376,7 @@ public class FishingSpot {
     public static final int SACRED_EEL = 6488;
     public static final int SWAMP_NET_BAIT = 1497;
     public static final int HEMENSTER = 4079;
+    public static final int CIVITAS_ILLA_FORTIS = 13329;
 
     static {
         new FishingSpot(FishingTool.KARAMBWAN_VESSEL)
@@ -522,6 +541,13 @@ public class FishingSpot {
         new FishingSpot(FishingTool.SMALL_FISHING_NET)
                 .regularCatches(FishingCatch.SHRIMPS, FishingCatch.KARAMBWANJI)
                 .register(KARAMBWANJI, "net");
+        /*
+         * Civitas illa fortis
+         */
+        new FishingSpot(FishingTool.BIG_FISHING_NET)
+                .regularCatches(FishingCatch.CIVITAS_ILLA_FORTIS)
+                .catchTable(FishingTables.CIVITAS_ILLA_FORTIS)
+                .register(CIVITAS_ILLA_FORTIS, "cast");
     }
 
     private static void moveMinnow(NPC... minnows) {
