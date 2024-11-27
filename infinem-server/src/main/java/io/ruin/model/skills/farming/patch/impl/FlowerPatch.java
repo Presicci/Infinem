@@ -115,11 +115,16 @@ public class FlowerPatch extends Patch {
 
     @Override
     public int calculateProduceAmount() {
-        int amount = Random.get(3, 5);
-        if (getCompost() == 2) { // supercompost bonus
-            amount += Random.get(1, 3);
+        if (plantedCrop == FlowerCrop.LIMPWURT) {
+            int amount = 3;
+            amount += player.getStats().get(StatType.Farming).currentLevel / 10;
+            amount += getCompost();
+            return  amount;
+        } else if (plantedCrop == FlowerCrop.WOAD) {
+            return 3;
+        } else {
+            return 1;
         }
-        return amount;
     }
 
     @Override
