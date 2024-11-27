@@ -80,6 +80,9 @@ public class ShipNPC {
         registerShipNPC(8268, "Port Phasmatys", new Position(3672, 3544, 0));
         ObjectAction.register(32601, "travel", (player, obj) -> ShipNPC.setSail(player, "Slepe", new Position(3661, 3278, 0)));
         ObjectAction.register(32602, "travel", (player, obj) -> ShipNPC.setSail(player, "Port Phasmatys", new Position(3672, 3544, 0)));
+        // Aldarin <-> Sunset Coast
+        registerShipNPC(13984, "Aldarin", new Position(1443, 2976, 0));
+        registerShipNPC(13985, "Sunset Coast", new Position(1494, 2985, 0));
         // Phasmatys <-> Mos Le Harmless
         NPCAction.register(4016, "travel", (player, npc) -> {
             if (npc.getAbsY() > 3184) {
