@@ -328,7 +328,12 @@ public class FishingSpot {
     }
 
     /**
-     * :)
+     * 14036 - Lure/bait
+     * 14037 - Big net/harpoon
+     * 14038 - Small net/bait
+     * 14039 - Cage/harpoon
+     * 14040 - Small net/bait
+     * 14041 - Small net/bait
      */
 
     public static final int NET_BAIT = 1518;            //shrimps,anchovies / sardine,herring
