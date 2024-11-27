@@ -707,7 +707,6 @@ public class ChambersOfXeric {
     }
 
     private void exited(Player player, boolean logout) {
-        party.removeMember(player);
         player.raidsParty = null;
         if (logout) {
             player.getMovement().teleport(1233, 3566, 0);
@@ -719,13 +718,15 @@ public class ChambersOfXeric {
             player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
         }
         player.deathEndListener = null;
-        if (party.getSize() == 0) {
-            destroy();
-        }
-        else {
-            party.refreshAll();
-        }
         confiscateItems(player);
+        if (party != null) {
+            party.removeMember(player);
+            if (party.getSize() == 0) {
+                destroy();
+            } else {
+                party.refreshAll();
+            }
+        }
     }
 
     private static void confiscateItems(Player player) {
