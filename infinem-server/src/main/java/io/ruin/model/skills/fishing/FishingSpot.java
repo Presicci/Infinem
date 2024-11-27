@@ -250,8 +250,10 @@ public class FishingSpot {
                                 : 1;
                         if (catchTable != null) {
                             Item item = catchTable.rollItem();
-                            id = item.getId();
-                            amount = item.getAmount();
+                            if (item != null && item.getId() != -1) {
+                                id = item.getId();
+                                amount = item.getAmount();
+                            }
                         }
                         player.collectResource(new Item(id, amount));
                         if (RadasBlessing.extraFish(player)) amount += 1;
@@ -434,6 +436,7 @@ public class FishingSpot {
          */
         new FishingSpot(FishingTool.BIG_FISHING_NET)
                 .regularCatches(FishingCatch.MACKEREL, FishingCatch.COD, FishingCatch.BASS)
+                .catchTable(FishingTables.BIG_NET)
                 .register(BIG_NET_HARPOON, "big net");
         new FishingSpot(FishingTool.HARPOON)
                 .regularCatches(FishingCatch.SHARK)
@@ -441,6 +444,7 @@ public class FishingSpot {
                 .register(BIG_NET_HARPOON, "harpoon");
         new FishingSpot(FishingTool.BIG_FISHING_NET)
                 .regularCatches(FishingCatch.MACKEREL, FishingCatch.COD, FishingCatch.BASS)
+                .catchTable(FishingTables.BIG_NET)
                 .register(NEW_BIG_NET_HARPOON, "big net");
         new FishingSpot(FishingTool.HARPOON)
                 .regularCatches(FishingCatch.SHARK)

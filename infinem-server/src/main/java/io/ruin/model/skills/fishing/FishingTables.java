@@ -19,4 +19,13 @@ public class FishingTables {
             new LootItem(Items.JADE, 1, 5),
             new LootItem(Items.RED_TOPAZ, 1, 1)
     );
+
+    public static final LootTable BIG_NET = new LootTable().addTable(1,
+            new LootItem(-1, 1, 25), // Keep fish
+            new LootItem(Items.LEATHER_BOOTS, 1, 3),
+            new LootItem(Items.LEATHER_GLOVES, 1, 3),
+            new LootItem(Items.SEAWEED, 1, 3),
+            new LootItem(Items.OYSTER, 1, 3),
+            new LootItem(Items.CASKET, 1, 1)
+    );
 }

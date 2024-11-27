@@ -198,6 +198,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Callisto", new DropViewerResultPet(Pet.CALLISTO_CUB, 1500), true, CallistoDropTable.REGULAR, CallistoDropTable.UNIQUE),
             new DropViewerEntry("Vet'ion", new DropViewerResultPet(Pet.VETION_JR_PURPLE, 1500), true, VetionDropTable.REGULAR, VetionDropTable.UNIQUE),
             new DropViewerEntry("Venenatis", new DropViewerResultPet(Pet.VENENATIS_SPIDERLING, 1500), true, VenenatisDropTable.REGULAR, VenenatisDropTable.UNIQUE),
-            new DropViewerEntry("Fishing Spot (Civitas)", FishingTables.CIVITAS_ILLA_FORTIS)
+            new DropViewerEntry("Fishing Spot (Civitas)", FishingTables.CIVITAS_ILLA_FORTIS),
+            new DropViewerEntry("Big Net Fishing Spot", FishingTables.BIG_NET)
     ).collect(Collectors.toCollection(ArrayList::new));
 }
