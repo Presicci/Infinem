@@ -21081,7 +21081,7 @@ public interface Items {
     public static final int AVAS_ASSEMBLER = 22109;
     public static final int SUPERIOR_DRAGON_BONES = 22124;
     public static final int SUPERIOR_DRAGON_BONES_NOTE = 22125;
-    public static final int WRATH_RUNE = 22208;
+    public static final int WRATH_RUNE = 21880;
     public static final int ANCIENT_MEDALLION = 22299;
     public static final int ANCIENT_MEDALLION_NOTE = 22300;
     public static final int ANCIENT_EFFIGY = 22302;
