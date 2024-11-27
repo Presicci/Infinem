@@ -433,9 +433,9 @@ public class Vetion extends NPCCombat {
 
     private void spawnHellhound(int npcId, Position tile, Entity target) {
         NPC hellhound = new NPC(npcId);
-        hellhound.setIgnoreMulti(true);
         hellhounds.add(hellhound);
         hellhound.spawn(tile);
+        hellhound.setIgnoreMulti(true);
         if (target != null) {
             hellhound.getCombat().setTarget(target);
             hellhound.face(target);
