@@ -1,39 +1,8 @@
 [
   { // Scorpion (14)
-    "ids": [ 3024 ],
-    "handler": "",
-    //Combat Info
-    "hitpoints": 17,
+    "ids": [ 3024, 13001 ],
     "aggressive_level": 28,
-    "max_damage": 2,
-    "attack_style": "STAB",
-    //Slayer Info
-    "slayer_level": 1,
-    "slayer_xp": 17.0,
-    "slayer_tasks": [ "Scorpions" ],
-    //Combat Stats
-    "attack": 11,
-    "strength": 12,
-    "defence": 11,
-    "ranged": 1,
-    "magic": 1,
-    //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
-    "magic_attack": 0,
-    "ranged_attack": 0,
-    //Defensive Stats
-    "stab_defence": 5,
-    "slash_defence": 15,
-    "crush_defence": 15,
-    "magic_defence": 0,
-    "ranged_defence": 5,
-    //Immunites
-    "poison_immunity": false,
-    "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 25,
     //Animations
@@ -48,39 +17,8 @@
   },
   { // Scorpion (37)
     "ids": [ 2480 ],
-    "handler": "",
-    //Combat Info
-    "hitpoints": 37,
     "aggressive_level": 74,
-    "max_damage": 4,
-    "attack_style": "STAB",
-    //Slayer Info
-    "slayer_level": 1,
-    "slayer_xp": 37.0,
-    "slayer_tasks": [ "Scorpions" ],
-    //Combat Stats
-    "attack": 31,
-    "strength": 32,
-    "defence": 31,
-    "ranged": 1,
-    "magic": 1,
-    //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
-    "magic_attack": 0,
-    "ranged_attack": 0,
-    //Defensive Stats
-    "stab_defence": 15,
-    "slash_defence": 15,
-    "crush_defence": 15,
-    "magic_defence": 30,
-    "ranged_defence": 35,
-    //Immunites
-    "poison_immunity": false,
-    "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 25,
     //Animations
@@ -95,39 +33,8 @@
   },
   { // Scorpion (59)
     "ids": [ 2479 ],
-    "handler": "",
-    //Combat Info
-    "hitpoints": 55,
     "aggressive_level": 118,
-    "max_damage": 6,
-    "attack_style": "STAB",
-    //Slayer Info
-    "slayer_level": 1,
-    "slayer_xp": 55.0,
-    "slayer_tasks": [ "Scorpions" ],
-    //Combat Stats
-    "attack": 50,
-    "strength": 52,
-    "defence": 50,
-    "ranged": 1,
-    "magic": 1,
-    //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
-    "magic_attack": 0,
-    "ranged_attack": 0,
-    //Defensive Stats
-    "stab_defence": 5,
-    "slash_defence": 15,
-    "crush_defence": 15,
-    "magic_defence": 0,
-    "ranged_defence": 55,
-    //Immunites
-    "poison_immunity": false,
-    "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 22,
     //Animations
