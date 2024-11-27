@@ -251,19 +251,23 @@ public class World extends EventWorker {
         return getPlayerStream().filter(plr -> plr.getUserId() == userId).findFirst();
     }
 
+    public static Optional<Player> getPlayerByName(String name) {
+        return getPlayerStream().filter(plr -> plr.getName().equalsIgnoreCase(name)).findFirst();
+    }
+
     @Getter
     protected static final Map<String, OwnedObject> ownedObjects = Maps.newConcurrentMap();
 
     public static void registerOwnedObject(OwnedObject object) {
-        ownedObjects.put(object.getOwnerUID() + ":" + object.getIdentifier(), object);
+        ownedObjects.put(object.getOwnerName() + ":" + object.getIdentifier(), object);
     }
 
     public static OwnedObject getOwnedObject(Player owner, String identifier) {
-        return ownedObjects.get(owner.getUserId() + ":" + identifier);
+        return ownedObjects.get(owner.getName() + ":" + identifier);
     }
 
     public static void deregisterOwnedObject(OwnedObject object) {
-        ownedObjects.remove(object.getOwnerUID() + ":" + object.getIdentifier());
+        ownedObjects.remove(object.getOwnerName()  + ":" + object.getIdentifier());
     }
 
     public static void addCannonReclaim(String username, boolean isOrnament) {

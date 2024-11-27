@@ -4,6 +4,7 @@ import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
 import io.ruin.api.utils.Random;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -37,6 +38,7 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
@@ -164,8 +166,8 @@ public class DwarfCannon extends OwnedObject {
         boolean ownerOnline = getOwnerOpt().isPresent();
         Optional<NPC> target = Optional.empty();
         if (ownerOnline && getStage().equals(CannonStage.FIRING)) {
-            /*if (!getOwner().inMulti() && Objects.nonNull(getOwner().getCombat().getTarget())) {
-                Entity combatTarget = getOwner().getCombat().getTarget();
+            /*if (!getOwner().inMulti() && Objects.nonNull(getOwner().getCombat().lastAttacker)) {
+                Entity combatTarget = getOwner().getCombat().lastAttacker;
                 target = Optional.ofNullable(combatTarget.npc);
                 if (target.isPresent()) {
                     if (!cannonDirection.validArea(getPosition(), target.get().getPosition().center(target.get().getSize()))) {
@@ -228,8 +230,8 @@ public class DwarfCannon extends OwnedObject {
         }
         if (needsDestroyed()) {
             getOwnerOpt().ifPresent(player -> player.sendMessage("<col=ff0000>Your cannon has decayed. Speak to Nulodion to get a new one!</col>"));
-            World.addCannonReclaim(getOwner().getName(), isOrnament);
-            new GroundItem(CANNON_BALL, getAmmo()).owner(getOwnerUID()).spawn();
+            World.addCannonReclaim(getOwnerName(), isOrnament);
+            if (getOwner() != null) new GroundItem(CANNON_BALL, getAmmo()).owner(getOwner()).spawn();
             setAmmo(0);
             destroy();
         }

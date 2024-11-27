@@ -19,17 +19,11 @@ public abstract class OwnedObject extends GameObject {
     //Unique identifer for this object.
     private final String identifier;
     //This objects owner uuid.
-    private int ownerUID;
+    private final String ownerName;
 
     public OwnedObject(Player owner, String identifier, int id, Position pos, int type, int direction) {
         super(id, pos, type, direction);
-        this.ownerUID = owner.getUserId();
-        this.identifier = identifier;
-    }
-
-    public OwnedObject(int ownerUID, String identifier, int id, Position pos, int type, int direction) {
-        super(id, pos, type, direction);
-        this.ownerUID = ownerUID;
+        this.ownerName = owner.getName();
         this.identifier = identifier;
     }
 
@@ -41,15 +35,15 @@ public abstract class OwnedObject extends GameObject {
     public abstract void tick();
 
     public boolean isOwner(Player player) {
-        return player.getUserId() == ownerUID;
+        return player.getName().equalsIgnoreCase(ownerName);
     }
 
     public Player getOwner() {
-        return World.getPlayer(ownerUID, true);
+        return World.getPlayer(ownerName);
     }
 
     public Optional<Player> getOwnerOpt() {
-        return World.getPlayerByUid(ownerUID);
+        return World.getPlayerByName(ownerName);
     }
 
 }
