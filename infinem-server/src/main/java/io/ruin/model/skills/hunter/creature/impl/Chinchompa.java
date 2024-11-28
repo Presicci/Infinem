@@ -23,6 +23,7 @@ import java.util.List;
 public class Chinchompa extends Creature {
 
     static {
+        Hunter.registerCreature(new Chinchompa("embertailed jerboa", 13139, 39, 29166, 137.0, 0.4, new int[]{50728, 50729, 50730, 50731}, 30, PlayerCounter.CAUGHT_EMBERTAILED_JERBOA));
         Hunter.registerCreature(new Chinchompa("chinchompa", 2910, 53, 10033, 198.4, 0.55, new int[]{9386, 9387, 9388, 9389}, 30, PlayerCounter.CAUGHT_GREY_CHINCHOMPA));
         Hunter.registerCreature(new Chinchompa("red chinchompa", 2911, 63, 10034, 265, 0.55, new int[]{9390, 9391, 9392, 9393}, 30, PlayerCounter.CAUGHT_RED_CHINCHOMPA));
         Hunter.registerCreature(new Chinchompa("black chinchompa", 2912, 73, 11959, 315.4, 0.6, new int[]{2025, 2026, 2028, 2029}, 30, PlayerCounter.CAUGHT_BLACK_CHINCHOMPA));
