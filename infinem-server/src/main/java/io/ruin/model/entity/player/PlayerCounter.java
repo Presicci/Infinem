@@ -357,6 +357,7 @@ public enum PlayerCounter {
     CAUGHT_BARB_KEBBIT,
     CAUGHT_PRICKLY_KEBBIT,
     CAUGHT_SABRE_KEBBIT,
+    CAUGHT_PYRE_FOX,
 
     /**
      * PVM
