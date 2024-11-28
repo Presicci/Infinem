@@ -27,16 +27,24 @@ public class Kebbit extends Creature {
         Hunter.registerCreature(new Kebbit("barb-tailed kebbit", 1348, 33, 168, new int[] { 20129, 20130 }, 20650, Items.BARBTAIL_HARPOON, 0.55, 30, PlayerCounter.CAUGHT_BARB_KEBBIT));
         Hunter.registerCreature(new Kebbit("prickly kebbit", 1346, 37, 204, new int[] { 19218, 19219 }, 20648, Items.KEBBIT_SPIKE, 0.55, 30, PlayerCounter.CAUGHT_PRICKLY_KEBBIT));
         Hunter.registerCreature(new Kebbit("sabre-toothed kebbit", 1347, 51, 200, new int[] { 19851, 20128 }, 20649, Items.KEBBIT_TEETH, 0.55, 30, PlayerCounter.CAUGHT_SABRE_KEBBIT));
+        Hunter.registerCreature(new Kebbit("pyre fox", 13138, 57, 222, new int[] { 50724, 50725 }, 50726, 29163, 0.88, 30, 6581, 6581, PlayerCounter.CAUGHT_PYRE_FOX));
     }
 
     private final int caughtObject, itemId;
     private final int[] trappingObjects;
+    private final int failAnim, successAnim;
 
     public Kebbit(String creatureName, int npcId, int levelReq, double catchXP, int[] trappingObjects, int caughtObject, int itemId, double baseCatchChance, int respawnTicks, PlayerCounter counter) {
+        this(creatureName, npcId, levelReq, catchXP, trappingObjects, caughtObject, itemId, baseCatchChance, respawnTicks, 5185, 5275, counter);
+    }
+
+    public Kebbit(String creatureName, int npcId, int levelReq, double catchXP, int[] trappingObjects, int caughtObject, int itemId, double baseCatchChance, int respawnTicks, int failAnim, int successAnim, PlayerCounter counter) {
         super(creatureName, npcId, levelReq, catchXP, baseCatchChance, respawnTicks, counter);
         this.trappingObjects = trappingObjects;
         this.caughtObject = caughtObject;
         this.itemId = itemId;
+        this.failAnim = failAnim;
+        this.successAnim = successAnim;
     }
 
     @Override
@@ -46,7 +54,11 @@ public class Kebbit extends Creature {
 
     @Override
     public List<Item> getLoot() {
-        return Arrays.asList(new Item(itemId, 1), new Item(Items.BONES, 1));
+        // Pyre fox
+        if (itemId == 29163) {
+            return Arrays.asList(new Item(itemId), new Item(29110), new Item(Items.BONES));
+        }
+        return Arrays.asList(new Item(itemId), new Item(Items.BONES));
     }
 
     @Override
@@ -75,7 +87,7 @@ public class Kebbit extends Creature {
 
     @Override
     protected void succeedCatch(NPC npc, Trap trap, Event event) throws Pausable {
-        npc.animate(5275);
+        npc.animate(successAnim);
         npc.publicSound(2631);
         npc.publicSound(524);
         trap.getObject().setId(trappingObjects[getDirection(npc, trap)]);
@@ -89,7 +101,7 @@ public class Kebbit extends Creature {
 
     @Override
     protected void failCatch(NPC npc, Trap trap, Event event) throws Pausable {
-        npc.animate(5185);
+        npc.animate(failAnim);
         trap.getObject().setId(20652);
         event.delay(2);
         if (!trap.getOwner().isOnline()) {
