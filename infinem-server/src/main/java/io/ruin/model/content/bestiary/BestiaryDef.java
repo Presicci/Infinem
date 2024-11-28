@@ -394,7 +394,12 @@ public class BestiaryDef {
             "spawn of sarachnis",
             "enormous tentacle",
             "reanimated demon spawn",
-            "growthling"
+            "growthling",
+            "black chinchompa",
+            "carnivorous chinchompa",
+            "chinchompa",
+            "kebbit",
+            "embertailed jerboa"
     };
 
     private static final String[] TRIM = {
