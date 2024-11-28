@@ -43,6 +43,14 @@ public class Consumable {
             player.sendMessage("You eat the egg.");
         });
 
+        // Pyre fox
+        registerEat(29137, 11, player -> {
+            player.sendMessage("You eat the pyre fox.");
+            player.addEvent(e -> {
+                e.delay(7);
+                player.incrementHp(8);
+            });
+        });
         registerEat(Items.STRAWBERRY, 0, player -> {
             int hpLevel = player.getStats().get(StatType.Hitpoints).fixedLevel;
             player.sendMessage("You eat the strawberry.");
