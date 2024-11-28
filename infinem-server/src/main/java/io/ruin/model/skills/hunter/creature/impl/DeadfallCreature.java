@@ -20,25 +20,25 @@ import java.util.List;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 7/5/2023
  */
-public class Kebbit extends Creature {
+public class DeadfallCreature extends Creature {
 
     static {
-        Hunter.registerCreature(new Kebbit("wild kebbit", 1349, 23, 128, new int[] { 20131, 20647 }, 20651, Items.KEBBIT_CLAWS, 0.55, 30, PlayerCounter.CAUGHT_WILD_KEBBIT));
-        Hunter.registerCreature(new Kebbit("barb-tailed kebbit", 1348, 33, 168, new int[] { 20129, 20130 }, 20650, Items.BARBTAIL_HARPOON, 0.55, 30, PlayerCounter.CAUGHT_BARB_KEBBIT));
-        Hunter.registerCreature(new Kebbit("prickly kebbit", 1346, 37, 204, new int[] { 19218, 19219 }, 20648, Items.KEBBIT_SPIKE, 0.55, 30, PlayerCounter.CAUGHT_PRICKLY_KEBBIT));
-        Hunter.registerCreature(new Kebbit("sabre-toothed kebbit", 1347, 51, 200, new int[] { 19851, 20128 }, 20649, Items.KEBBIT_TEETH, 0.55, 30, PlayerCounter.CAUGHT_SABRE_KEBBIT));
-        Hunter.registerCreature(new Kebbit("pyre fox", 13138, 57, 222, new int[] { 50724, 50725 }, 50726, 29163, 0.88, 30, 6581, 6581, PlayerCounter.CAUGHT_PYRE_FOX));
+        Hunter.registerCreature(new DeadfallCreature("wild kebbit", 1349, 23, 128, new int[] { 20131, 20647 }, 20651, Items.KEBBIT_CLAWS, 0.55, 30, PlayerCounter.CAUGHT_WILD_KEBBIT));
+        Hunter.registerCreature(new DeadfallCreature("barb-tailed kebbit", 1348, 33, 168, new int[] { 20129, 20130 }, 20650, Items.BARBTAIL_HARPOON, 0.55, 30, PlayerCounter.CAUGHT_BARB_KEBBIT));
+        Hunter.registerCreature(new DeadfallCreature("prickly kebbit", 1346, 37, 204, new int[] { 19218, 19219 }, 20648, Items.KEBBIT_SPIKE, 0.55, 30, PlayerCounter.CAUGHT_PRICKLY_KEBBIT));
+        Hunter.registerCreature(new DeadfallCreature("sabre-toothed kebbit", 1347, 51, 200, new int[] { 19851, 20128 }, 20649, Items.KEBBIT_TEETH, 0.55, 30, PlayerCounter.CAUGHT_SABRE_KEBBIT));
+        Hunter.registerCreature(new DeadfallCreature("pyre fox", 13138, 57, 222, new int[] { 50724, 50725 }, 50726, 29163, 0.88, 30, 6581, 6581, PlayerCounter.CAUGHT_PYRE_FOX));
     }
 
     private final int caughtObject, itemId;
     private final int[] trappingObjects;
     private final int failAnim, successAnim;
 
-    public Kebbit(String creatureName, int npcId, int levelReq, double catchXP, int[] trappingObjects, int caughtObject, int itemId, double baseCatchChance, int respawnTicks, PlayerCounter counter) {
+    public DeadfallCreature(String creatureName, int npcId, int levelReq, double catchXP, int[] trappingObjects, int caughtObject, int itemId, double baseCatchChance, int respawnTicks, PlayerCounter counter) {
         this(creatureName, npcId, levelReq, catchXP, trappingObjects, caughtObject, itemId, baseCatchChance, respawnTicks, 5185, 5275, counter);
     }
 
-    public Kebbit(String creatureName, int npcId, int levelReq, double catchXP, int[] trappingObjects, int caughtObject, int itemId, double baseCatchChance, int respawnTicks, int failAnim, int successAnim, PlayerCounter counter) {
+    public DeadfallCreature(String creatureName, int npcId, int levelReq, double catchXP, int[] trappingObjects, int caughtObject, int itemId, double baseCatchChance, int respawnTicks, int failAnim, int successAnim, PlayerCounter counter) {
         super(creatureName, npcId, levelReq, catchXP, baseCatchChance, respawnTicks, counter);
         this.trappingObjects = trappingObjects;
         this.caughtObject = caughtObject;

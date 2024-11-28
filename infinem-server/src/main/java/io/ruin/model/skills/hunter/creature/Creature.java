@@ -15,7 +15,7 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.model.skills.RandomEvent;
 import io.ruin.model.skills.hunter.creature.impl.Bird;
-import io.ruin.model.skills.hunter.creature.impl.Chinchompa;
+import io.ruin.model.skills.hunter.creature.impl.BoxTrapCreature;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.hunter.traps.TrapType;
 import io.ruin.model.skills.hunter.traps.impl.BoxTrap;
@@ -232,7 +232,7 @@ public abstract class Creature {
             addLoot(player);
             player.getStats().addXp(StatType.Hunter, getCatchXP(), true);
             player.getTaskManager().doLookupByCategoryAndTrigger(
-                    this instanceof Chinchompa ? TaskCategory.BOXTRAP
+                    this instanceof BoxTrapCreature ? TaskCategory.BOXTRAP
                             : this instanceof Bird ? TaskCategory.BIRDSNARE
                             : TaskCategory.DEADFALL, NPCDefinition.get(npcId).name);
             player.getTaskManager().doLookupByCategory(TaskCategory.HUNTER_CATCH, 1, true);

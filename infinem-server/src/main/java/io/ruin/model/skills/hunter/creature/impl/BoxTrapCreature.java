@@ -1,7 +1,6 @@
 package io.ruin.model.skills.hunter.creature.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -20,20 +19,20 @@ import kilim.Pausable;
 import java.util.Collections;
 import java.util.List;
 
-public class Chinchompa extends Creature {
+public class BoxTrapCreature extends Creature {
 
     static {
-        Hunter.registerCreature(new Chinchompa("embertailed jerboa", 13139, 39, 29166, 137.0, 0.4, new int[]{50728, 50729, 50730, 50731}, 30, PlayerCounter.CAUGHT_EMBERTAILED_JERBOA));
-        Hunter.registerCreature(new Chinchompa("chinchompa", 2910, 53, 10033, 198.4, 0.55, new int[]{9386, 9387, 9388, 9389}, 30, PlayerCounter.CAUGHT_GREY_CHINCHOMPA));
-        Hunter.registerCreature(new Chinchompa("red chinchompa", 2911, 63, 10034, 265, 0.55, new int[]{9390, 9391, 9392, 9393}, 30, PlayerCounter.CAUGHT_RED_CHINCHOMPA));
-        Hunter.registerCreature(new Chinchompa("black chinchompa", 2912, 73, 11959, 315.4, 0.6, new int[]{2025, 2026, 2028, 2029}, 30, PlayerCounter.CAUGHT_BLACK_CHINCHOMPA));
+        Hunter.registerCreature(new BoxTrapCreature("embertailed jerboa", 13139, 39, 29166, 137.0, 0.4, new int[]{50728, 50729, 50730, 50731}, 30, PlayerCounter.CAUGHT_EMBERTAILED_JERBOA));
+        Hunter.registerCreature(new BoxTrapCreature("chinchompa", 2910, 53, 10033, 198.4, 0.55, new int[]{9386, 9387, 9388, 9389}, 30, PlayerCounter.CAUGHT_GREY_CHINCHOMPA));
+        Hunter.registerCreature(new BoxTrapCreature("red chinchompa", 2911, 63, 10034, 265, 0.55, new int[]{9390, 9391, 9392, 9393}, 30, PlayerCounter.CAUGHT_RED_CHINCHOMPA));
+        Hunter.registerCreature(new BoxTrapCreature("black chinchompa", 2912, 73, 11959, 315.4, 0.6, new int[]{2025, 2026, 2028, 2029}, 30, PlayerCounter.CAUGHT_BLACK_CHINCHOMPA));
     }
 
     private final int itemId;
     private final int[] trappingObjects;
     private final List<Item> loot;
 
-    public Chinchompa(String creatureName, int npcId, int levelReq, int itemId, double catchXP, double baseCatchChance, int[] trappingObjects, int respawnTicks, PlayerCounter counter) {
+    public BoxTrapCreature(String creatureName, int npcId, int levelReq, int itemId, double catchXP, double baseCatchChance, int[] trappingObjects, int respawnTicks, PlayerCounter counter) {
         super(creatureName, npcId, levelReq, catchXP, baseCatchChance, respawnTicks, counter);
         this.itemId = itemId;
         this.loot = Collections.singletonList(new Item(itemId, 1));
