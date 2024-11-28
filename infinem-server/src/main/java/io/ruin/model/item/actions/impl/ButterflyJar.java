@@ -1,7 +1,9 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.cache.NpcID;
+import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
@@ -10,6 +12,8 @@ import io.ruin.model.stat.StatType;
 import io.ruin.network.incoming.handlers.FriendsHandler;
 import lombok.AllArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 @AllArgsConstructor
@@ -28,6 +32,10 @@ public enum ButterflyJar {
     }
 
     private void shareRelease(Player player, Item item, Player other) {
+        if (player.getDuel().stage >= 4) {
+            player.sendMessage("You can't use this right now.");
+            return;
+        }
         if (!player.inMulti() || !other.inMulti()) {
             player.sendMessage("Both players need to be in multi-combat for this to work.");
             return;
@@ -36,12 +44,35 @@ public enum ButterflyJar {
             player.sendMessage("You can't use butterflies in the wilderness.");
             return;
         }
-        //TODO check if player is on friend's list
+        List<Player> players = new ArrayList<>();
+        for (Entity target : player.localPlayers()) {
+            if (players.size() >= 3) {
+                break;
+            }
+            if (target.player == null) {
+                continue;
+            }
+            if (target.player == player) {
+                continue;
+            }
+            if (target.player.getPosition().distance(player.getPosition()) > 2) {
+                continue;
+            }
+            if (Config.ACCEPT_AID.get(target.player) == 0) {
+                continue;
+            }
+            if (target.player.getDuel().stage >= 4) {
+                continue;
+            }
+            players.add(target.player);
+        }
         //TODO animation?
         //TODO gfx?
         item.setId(Items.BUTTERFLY_JAR);
         buff.accept(player);
-        buff.accept(other);
+        for (Player p : players) {
+            buff.accept(p);
+        }
     }
 
     static {
