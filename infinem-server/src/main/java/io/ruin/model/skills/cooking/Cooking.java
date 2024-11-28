@@ -7,6 +7,7 @@ import io.ruin.model.content.tasksystem.relics.impl.ProductionMaster;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
@@ -79,6 +80,10 @@ public class Cooking {
     private static void startCooking(Player player, Food food, GameObject obj, int amountToCook, int anim, boolean fire) {
         if (!player.getStats().check(StatType.Cooking, food.levelRequirement, "cook " + food.descriptiveName))
             return;
+        if (!food.requirement.test(player)) {
+            player.dialogue(new MessageDialogue("You don't know how to cook this.<br>" + food.requirementMessage));
+            return;
+        }
         RandomEvent.attemptTrigger(player);
         player.startEvent(e -> {
             int amount = amountToCook;

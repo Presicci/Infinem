@@ -1,10 +1,12 @@
 package io.ruin.model.skills.cooking;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Items;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Predicate;
 
 public enum Food {
     //Raw Fish
@@ -128,6 +130,13 @@ public enum Food {
     public final int levelRequirement, rawID, cookedID, burntID, returnedSecondary, itemOffset, burnLevelFire, burnLevelRange, burnLevelCookingGauntlets;
     public final double experience;
     public final String descriptiveName, itemName, itemNamePlural, rawName;
+    public final Predicate<Player> requirement;
+    public final String requirementMessage;
+
+    Food(int levelRequirement, double experience, int rawID, int cookedID, int burntID, String descriptiveName,
+         String itemNamePlural, int itemOffset, int burnLevelFire, int burnLevelRange, int burnLevelCookingGauntlets, Predicate<Player> requirement, String requirementMessage) {
+        this(levelRequirement, experience, rawID, cookedID, burntID, -1, descriptiveName, itemNamePlural, itemOffset, burnLevelFire, burnLevelRange, burnLevelCookingGauntlets, requirement, requirementMessage);
+    }
 
     Food(int levelRequirement, double experience, int rawID, int cookedID, int burntID, String descriptiveName,
          String itemNamePlural, int itemOffset, int burnLevelFire, int burnLevelRange, int burnLevelCookingGauntlets) {
@@ -136,6 +145,11 @@ public enum Food {
 
     Food(int levelRequirement, double experience, int rawID, int cookedID, int burntID, int returnedSecondary, String descriptiveName,
          String itemNamePlural, int itemOffset, int burnLevelFire, int burnLevelRange, int burnLevelCookingGauntlets) {
+        this(levelRequirement, experience, rawID, cookedID, burntID, returnedSecondary, descriptiveName, itemNamePlural, itemOffset, burnLevelFire, burnLevelRange, burnLevelCookingGauntlets, null, "");
+    }
+
+    Food(int levelRequirement, double experience, int rawID, int cookedID, int burntID, int returnedSecondary, String descriptiveName,
+         String itemNamePlural, int itemOffset, int burnLevelFire, int burnLevelRange, int burnLevelCookingGauntlets, Predicate<Player> requirement, String requirementMessage) {
         this.levelRequirement = levelRequirement;
         this.experience = experience;
         this.rawID = rawID;
@@ -150,6 +164,8 @@ public enum Food {
         this.burnLevelFire = burnLevelFire;
         this.burnLevelRange = burnLevelRange;
         this.burnLevelCookingGauntlets = burnLevelCookingGauntlets;
+        this.requirement = requirement;
+        this.requirementMessage = requirementMessage;
     }
 
     public static final Map<Integer, Double> COOKING_EXPERIENCE = new HashMap<>();
