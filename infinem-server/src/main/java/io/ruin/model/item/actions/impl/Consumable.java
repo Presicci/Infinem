@@ -1236,6 +1236,10 @@ public class Consumable {
     }
 
     private static void restore(Player player, boolean superEffect) {
+        restore(player, 10, 0.30, superEffect);
+    }
+
+    public static void restore(Player player, int flat, double percent, boolean superEffect) {
         for(StatType type : StatType.values()) {
             if(type == StatType.Hitpoints)
                 continue;
@@ -1253,7 +1257,7 @@ public class Consumable {
                     continue;
                 }
                 if(type != StatType.Prayer)
-                    stat.restore(10, 0.30);
+                    stat.restore(flat, percent);
             }
         }
     }

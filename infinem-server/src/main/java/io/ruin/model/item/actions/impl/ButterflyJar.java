@@ -21,7 +21,12 @@ public enum ButterflyJar {
     RUBY_HARVEST(Items.RUBY_HARVEST, player -> player.getStats().get(StatType.Attack).boost(4, 0.15)),
     SAPPHIRE_GLACIALIS(Items.SAPPHIRE_GLACIALIS, player -> player.getStats().get(StatType.Defence).boost(4, 0.15)),
     SNOWY_KNIGHT(Items.SNOWY_KNIGHT, player -> player.incrementHp(15)),
-    BLACK_WARLOCK(Items.BLACK_WARLOCK, player -> player.getStats().get(StatType.Strength).boost(4, 0.15));
+    BLACK_WARLOCK(Items.BLACK_WARLOCK, player -> player.getStats().get(StatType.Strength).boost(4, 0.15)),
+    SUNLIGHT_MOTH(28890, player -> {
+        Consumable.restore(player, 6, 0.20, false);
+        player.incrementHp(8);
+    }),
+    MOONLIGHT_MOTH(28893, player -> player.getStats().get(StatType.Prayer).restore(22));
 
     private final int itemId;
     private final Consumer<Player> buff;
