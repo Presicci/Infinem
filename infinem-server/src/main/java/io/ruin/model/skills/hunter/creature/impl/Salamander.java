@@ -1,5 +1,6 @@
 package io.ruin.model.skills.hunter.creature.impl;
 
+import io.ruin.api.utils.Random;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
@@ -25,18 +26,21 @@ import static io.ruin.model.skills.hunter.Hunter.isOwner;
 
 public class Salamander extends Creature {
 
+    private static void release(Player player, Item item) {
+        item.remove();
+        player.sendMessage("You release the " + (item.getId() == 10149 ? "lizard" : "salamander") + ".");
+    }
+
     static {
         Hunter.registerCreature(new Salamander("swamp lizard", NetTrap.SWAMP, 2906, 10149, 29, 152, 0.5, 20, PlayerCounter.CAUGHT_SWAMP_LIZARD));
         Hunter.registerCreature(new Salamander("orange salamander", NetTrap.DESERT, 2903, 10146, 47, 224, 0.55, 20, PlayerCounter.CAUGHT_ORANGE_SALAMANDER));
         Hunter.registerCreature(new Salamander("red salamander", NetTrap.RED, 2904, 10147, 59, 272, 0.55, 20, PlayerCounter.CAUGHT_RED_SALAMANDER));
         Hunter.registerCreature(new Salamander("black salamander", NetTrap.BLACK, 2905, 10148, 67, 319.2, 0.6, 20, PlayerCounter.CAUGHT_BLACK_SALAMANDER));
+        Hunter.registerCreature(new Salamander("tecu salamander", NetTrap.TECU, 12769, 28831, 79, 344, 0.6, 20, PlayerCounter.CAUGHT_TECU_SALAMANDER));
         for (int i = 10146; i <= 10149; i++) {
-            int finalI = i;
-            ItemAction.registerInventory(i, "release", (player, item) -> {
-                item.remove();
-                player.sendMessage("You release the " + (finalI == 10149 ? "lizard" : "salamander") + ".");
-            });
+            ItemAction.registerInventory(i, "release", Salamander::release);
         }
+        ItemAction.registerInventory(28834, "release", Salamander::release);
     }
 
     public Salamander(String creatureName, NetTrap trapType, int npcId, int itemId, int levelReq, double catchXP, double baseCatchChance, int respawnTicks, PlayerCounter counter) {
@@ -55,6 +59,10 @@ public class Salamander extends Creature {
 
     @Override
     public List<Item> getLoot() {
+        // Tecu salamander
+        if (getNpcId() == 12769) {
+            if (Random.rollDie(1000)) return Collections.singletonList(new Item(28834));
+        }
         return loot;
     }
 

@@ -23,9 +23,10 @@ public class NetTrap implements TrapType { // TODO net trap behavior is likely V
     public static NetTrap DESERT = new NetTrap(47, 8732, 8730, 8974, 8973, 8972, 8734);
     public static NetTrap RED = new NetTrap(59, 8990, 8989, 8987, 8988, 8985, 8986);
     public static NetTrap BLACK = new NetTrap(67, 9000, 8999, 8997, 8998, 8993, 8996);
+    public static NetTrap TECU = new NetTrap(79, 50721, 50720, 50718, 50719, 50716, 50717);
 
     static {
-        for (NetTrap trap : Arrays.asList(SWAMP, DESERT, RED, BLACK)) {
+        for (NetTrap trap : Arrays.asList(SWAMP, DESERT, RED, BLACK, TECU)) {
             ObjectAction.register(trap.defaultTreeId, "set-trap", trap::layTrap);
             Hunter.registerTrap(trap, false);
             ObjectAction.register(trap.getBentTreeId(), "dismantle", (player, obj) -> Salamander.dismantleTrap(player, getNetObject(obj)));
