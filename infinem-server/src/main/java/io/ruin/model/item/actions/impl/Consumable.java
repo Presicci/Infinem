@@ -43,9 +43,25 @@ public class Consumable {
             player.sendMessage("You eat the egg.");
         });
 
+        // Graahk
+        registerEat(29149, 8, player -> {
+            player.sendMessage("You eat the graahk meat.");
+            player.addEvent(e -> {
+                e.delay(7);
+                player.incrementHp(8);
+            });
+        });
+        // Kyatt
+        registerEat(29152, 9, player -> {
+            player.sendMessage("You eat the kyatt meat.");
+            player.addEvent(e -> {
+                e.delay(7);
+                player.incrementHp(8);
+            });
+        });
         // Pyre fox
         registerEat(29137, 11, player -> {
-            player.sendMessage("You eat the pyre fox.");
+            player.sendMessage("You eat the pyre fox meat.");
             player.addEvent(e -> {
                 e.delay(7);
                 player.incrementHp(8);
