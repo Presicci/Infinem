@@ -264,6 +264,6 @@ public abstract class Creature {
                 }
             }
         });
-        player.getInventory().add(getTrapType().getItemId(), 1);
+        if (getTrapType().getItemId() != -1) player.getInventory().add(getTrapType().getItemId(), 1);
     }
 }
