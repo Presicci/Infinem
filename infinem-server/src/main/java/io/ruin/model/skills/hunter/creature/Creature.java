@@ -14,6 +14,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.model.skills.RandomEvent;
+import io.ruin.model.skills.hunter.Hunter;
 import io.ruin.model.skills.hunter.creature.impl.Bird;
 import io.ruin.model.skills.hunter.creature.impl.BoxTrapCreature;
 import io.ruin.model.skills.hunter.traps.Trap;
@@ -246,24 +247,7 @@ public abstract class Creature {
     }
 
     protected void addLoot(Player player) {
-        getLoot().forEach(item -> {
-            player.collectResource(item);
-            if (item.getId() == Items.BONES) {
-                if (!player.getBoneCrusher().handleBury(item)) {
-                    if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
-                        player.getInventory().add(item.note().getId(), item.getAmount());
-                    } else {
-                        player.getInventory().add(item.getId(), item.getAmount());
-                    }
-                }
-            } else {
-                if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) && item.getDef().notedId > 0) {
-                    player.getInventory().add(item.note().getId(), item.getAmount());
-                } else {
-                    player.getInventory().add(item.getId(), item.getAmount());
-                }
-            }
-        });
+        getLoot().forEach(item -> Hunter.processLoot(player, item));
         if (getTrapType().getItemId() != -1) player.getInventory().add(getTrapType().getItemId(), 1);
     }
 }

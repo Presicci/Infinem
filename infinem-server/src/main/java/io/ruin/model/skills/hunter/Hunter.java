@@ -1,8 +1,10 @@
 package io.ruin.model.skills.hunter;
 
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.Tile;
@@ -14,6 +16,7 @@ import io.ruin.model.skills.hunter.creature.Creature;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.hunter.traps.TrapType;
 import io.ruin.model.skills.hunter.traps.impl.DeadfallTrap;
+import io.ruin.model.skills.hunter.traps.impl.PitfallTrap;
 import io.ruin.model.stat.StatType;
 
 public class Hunter {
@@ -163,11 +166,14 @@ public class Hunter {
 
     public static void destroyTrap(GameObject obj) {
         Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
-        if (!obj.isRemoved() && !(trap.getTrapType() instanceof DeadfallTrap))
+        if (!obj.isRemoved() && !(trap.getTrapType() instanceof DeadfallTrap
+                || trap.getTrapType() instanceof PitfallTrap))
             obj.remove();
         if (trap != null) {
-            if (trap.getOwner() != null)
+            if (trap.getOwner() != null) {
+                trap.setVarpbit(trap.getOwner(), 0);
                 trap.getOwner().traps.remove(trap);
+            }
             trap.setRemoved(true);
             obj.removeTemporaryAttribute(AttributeKey.OBJECT_TRAP);
         }
@@ -224,5 +230,24 @@ public class Hunter {
     public static void collapseAll(Player player) {
         player.traps.forEach(trap -> trap.getTrapType().collapse(player, trap, false));
         player.traps.removeIf(trap -> trap.getObject() == null || trap.getObject().isRemoved());
+    }
+
+    public static void processLoot(Player player, Item item) {
+        player.collectResource(item);
+        if (item.getId() == Items.BONES || item.getId() == Items.BIG_BONES) {
+            if (!player.getBoneCrusher().handleBury(item)) {
+                if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
+                    player.getInventory().add(item.note().getId(), item.getAmount());
+                } else {
+                    player.getInventory().add(item.getId(), item.getAmount());
+                }
+            }
+        } else {
+            if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) && item.getDef().notedId > 0) {
+                player.getInventory().add(item.note().getId(), item.getAmount());
+            } else {
+                player.getInventory().add(item.getId(), item.getAmount());
+            }
+        }
     }
 }

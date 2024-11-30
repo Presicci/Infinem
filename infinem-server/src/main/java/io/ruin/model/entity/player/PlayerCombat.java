@@ -9,6 +9,7 @@ import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
+import io.ruin.model.skills.hunter.creature.impl.PitfallCreature;
 import io.ruin.model.skills.magic.spells.arceuus.Resurrection;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
@@ -769,7 +770,7 @@ public class PlayerCombat extends Combat {
 
     @Override
     public boolean allowRetaliate(Entity attacker) {
-        return target == null && player.getMovement().isAtDestination() && Config.AUTO_RETALIATE.get(player) == 0 && !player.isLocked();
+        return target == null && player.getMovement().isAtDestination() && Config.AUTO_RETALIATE.get(player) == 0 && !player.isLocked() && !(attacker.isNpc() && attacker.getCombat() != null && attacker.getCombat() instanceof PitfallCreature);
     }
 
     @Override
