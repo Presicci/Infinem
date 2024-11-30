@@ -2335,5 +2335,32 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Barb-tailed kebbit"
+  },
+  {
+    "name": "Spined larupia",
+    "id": 2908,
+    "x": 2549,
+    "y": 2907,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Spined larupia",
+    "id": 2908,
+    "x": 2543,
+    "y": 2911,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Spined larupia",
+    "id": 2908,
+    "x": 2557,
+    "y": 2897,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
