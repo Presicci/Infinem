@@ -43,11 +43,19 @@ public class Consumable {
             player.sendMessage("You eat the egg.");
         });
 
+        // Larupia
+        registerEat(29146, 6, player -> {
+            player.sendMessage("You eat the larupia meat.");
+            player.addEvent(e -> {
+                e.delay(5);
+                player.incrementHp(8);
+            });
+        });
         // Graahk
         registerEat(29149, 8, player -> {
             player.sendMessage("You eat the graahk meat.");
             player.addEvent(e -> {
-                e.delay(7);
+                e.delay(6);
                 player.incrementHp(8);
             });
         });
