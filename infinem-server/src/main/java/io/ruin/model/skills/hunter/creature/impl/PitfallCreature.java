@@ -103,7 +103,7 @@ public class PitfallCreature extends NPCCombat {
             npc.face(object);
             npc.stepAbs(object.x, object.y, StepType.FORCE_WALK);
             e.delay(2);
-            npc.animate(5234);
+            npc.animate(npc.getCombat().getInfo().death_animation);
             trap.setVarpbit(player, 2);
             player.privateSound(2638);
             e.delay(2);
@@ -139,7 +139,7 @@ public class PitfallCreature extends NPCCombat {
             return;
         }
         player.animate(5236);
-        npc.animate(5227);
+        npc.animate(npc.getCombat().getDefendAnimation());
         player.privateSound(2524);
         npc.getCombat().setTarget(player);
         npc.getCombat().faceTarget();
@@ -151,7 +151,8 @@ public class PitfallCreature extends NPCCombat {
     private enum Creature {
         LARUPIA(2908, 939, 940),
         GRAAHK(2909, 941, 942),
-        KYATT(2907, 937, 938);
+        KYATT(2907, 937, 938),
+        SUNLIGHT_ANTELOPE(13133, 2800, 2801);
 
         private static final List<Creature> values = Collections.unmodifiableList(Arrays.asList(values()));
         private final int npcId;

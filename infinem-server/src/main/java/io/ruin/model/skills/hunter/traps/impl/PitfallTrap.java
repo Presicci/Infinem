@@ -11,7 +11,6 @@ import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.model.skills.hunter.Hunter;
 import io.ruin.model.skills.hunter.creature.impl.PitfallCreature;
 import io.ruin.model.skills.hunter.traps.Trap;
@@ -35,9 +34,10 @@ public class PitfallTrap implements TrapType {
     private static final PitfallTrap LARUPIA = new PitfallTrap(31, 180, new int[] { Items.BIG_BONES, 29122, Items.TATTY_LARUPIA_FUR }, 19259, 19260, 19261, 19262, 19263);
     private static final PitfallTrap GRAAHK = new PitfallTrap(41, 240, new int[] { Items.BIG_BONES, 29119, Items.TATTY_GRAAHK_FUR }, 19264, 19265, 19266, 19267, 19268);
     private static final PitfallTrap KYATT = new PitfallTrap(55, 300, new int[] { Items.BIG_BONES, 29125, Items.TATTY_KYATT_FUR }, 19253, 19254, 19255, 19256, 19257, 19258);
+    private static final PitfallTrap SUNLIGHT_ANTELOPE = new PitfallTrap(72, 380, new int[] { Items.BIG_BONES, 29168, 29177, 29116 }, 51673, 51674, 51675, 51676, 51677);
 
     static {
-        for (PitfallTrap trap : Arrays.asList(LARUPIA, GRAAHK, KYATT)) {
+        for (PitfallTrap trap : Arrays.asList(LARUPIA, GRAAHK, KYATT, SUNLIGHT_ANTELOPE)) {
             for (int objId : trap.objectIds) {
                 ObjectAction.register(objId, 1, trap::jumpTrap);
                 ObjectAction.register(objId, 2, Hunter::dismantleTrap);
@@ -125,17 +125,20 @@ public class PitfallTrap implements TrapType {
     }
 
     private List<Item> rollLoot(Player player) {
-        return Arrays.stream(loot).map(id -> {
+        List<Item> loot = Arrays.stream(this.loot).mapToObj(Item::new).collect(Collectors.toList());
+        if (this == SUNLIGHT_ANTELOPE) {
+            loot.add(new Item(28924, Random.get(2, 6)));
+        }
+        return loot.stream().peek(item -> {
             int hunterLevel = player.getStats().get(StatType.Hunter).currentLevel;
-            if (id == Items.TATTY_LARUPIA_FUR && Random.rollDie(20, hunterLevel / 30)) {
-                return Items.LARUPIA_FUR;
-            } else if (id == Items.TATTY_GRAAHK_FUR && Random.rollDie(20, hunterLevel / 30)) {
-                return Items.GRAAHK_FUR;
-            } else if (id == Items.TATTY_KYATT_FUR && Random.rollDie(20, hunterLevel / 30)) {
-                return Items.KYATT_FUR;
+            if (item.getId() == Items.TATTY_LARUPIA_FUR && Random.rollDie(20, hunterLevel / 30)) {
+                item.setId(Items.LARUPIA_FUR);
+            } else if (item.getId() == Items.TATTY_GRAAHK_FUR && Random.rollDie(20, hunterLevel / 30)) {
+                item.setId(Items.GRAAHK_FUR);
+            } else if (item.getId() == Items.TATTY_KYATT_FUR && Random.rollDie(20, hunterLevel / 30)) {
+                item.setId(Items.KYATT_FUR);
             }
-            return id;
-        }).mapToObj(Item::new).collect(Collectors.toList());
+        }).collect(Collectors.toList());
     }
 
     @Override

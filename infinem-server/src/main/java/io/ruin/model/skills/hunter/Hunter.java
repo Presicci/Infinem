@@ -34,7 +34,7 @@ public class Hunter {
             return false;
         }
         Region region = player.getPosition().getRegion();
-        if (region.id != 15148 && !Tile.allowObjectPlacement(player.getPosition())) {
+        if (region.id != 15148 && !(type instanceof PitfallTrap) && !Tile.allowObjectPlacement(player.getPosition())) {
             player.sendMessage("You can't place a trap here.");
             return false;
         }
