@@ -47,16 +47,16 @@ public class Consumable {
         registerEat(29146, 6, player -> {
             player.sendMessage("You eat the larupia meat.");
             player.addEvent(e -> {
-                e.delay(5);
-                player.incrementHp(8);
+                e.delay(7);
+                player.incrementHp(5);
             });
         });
         // Graahk
         registerEat(29149, 8, player -> {
             player.sendMessage("You eat the graahk meat.");
             player.addEvent(e -> {
-                e.delay(6);
-                player.incrementHp(8);
+                e.delay(7);
+                player.incrementHp(6);
             });
         });
         // Kyatt
@@ -73,6 +73,14 @@ public class Consumable {
             player.addEvent(e -> {
                 e.delay(7);
                 player.incrementHp(8);
+            });
+        });
+        // Sunlight antelope
+        registerEat(29140, 12, player -> {
+            player.sendMessage("You eat the antelope meat.");
+            player.addEvent(e -> {
+                e.delay(7);
+                player.incrementHp(9);
             });
         });
         registerEat(Items.STRAWBERRY, 0, player -> {
