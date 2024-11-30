@@ -93,6 +93,7 @@ public enum Food {
     KYATT(51, 143, 29125, 29152, 29157, "the kyatt meat", "", 3, 86, 86, 83, player -> false, "You must complete 25 hunter rumours to cook this."),
     PYRE_FOX(59, 154, 29110, 29137, 29161, "the pyre fox meat", "", 3, 93, 93, 90, player -> false, "You must complete 25 hunter rumours to cook this."),
     SUNLIGHT_ANTELOPE(68, 175, 29116, 29140, 29159, "the antelope meat", "", 3, 99, 95, 93, player -> false, "You must complete 50 hunter rumours to cook this."),
+    MOONLIGHT_ANTELOPE(92, 220, 29113, 29143, 29159, "the antelope meat", "", 3, 114, 114, 99, player -> false, "You must complete 50 hunter rumours to cook this."),
 
     //Gnome
     HALF_BAKED_BATTA(1, 30.0, Items.RAW_BATTA, Items.HALF_BAKED_BATTA, Items.BURNT_BATTA, "the batta", "", 3, 40, 38, 34),
