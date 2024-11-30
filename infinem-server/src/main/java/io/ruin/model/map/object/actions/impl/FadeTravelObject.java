@@ -9,6 +9,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    ROOST_UP(51643, new Position(1559, 3045), new Position(1556, 3046, 2), 828),
+    ROOST_DOWN(51644, new Position(1556, 3047, 2), new Position(1559, 3046), 827),
     THE_BURROW_EXIT(51642, new Position(1557, 9448), new Position(1558, 3047, 0)),
 
     KUALTI_BARRACKS_DOWN(52641, new Position(1640, 3165), new Position(1640, 9567, 0)),
