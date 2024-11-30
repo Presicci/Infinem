@@ -46,51 +46,35 @@ public class Consumable {
         // Larupia
         registerEat(29146, 6, player -> {
             player.sendMessage("You eat the larupia meat.");
-            player.addEvent(e -> {
-                e.delay(7);
-                player.incrementHp(5);
-            });
+            player.addTickEvent(new TickEvent(TickEventType.HUNTER_MEAT, 7, () -> player.incrementHp(5)));
         });
         // Graahk
         registerEat(29149, 8, player -> {
             player.sendMessage("You eat the graahk meat.");
-            player.addEvent(e -> {
-                e.delay(7);
-                player.incrementHp(6);
-            });
+            player.addTickEvent(new TickEvent(TickEventType.HUNTER_MEAT, 7, () -> player.incrementHp(6)));
         });
         // Kyatt
         registerEat(29152, 9, player -> {
             player.sendMessage("You eat the kyatt meat.");
-            player.addEvent(e -> {
-                e.delay(7);
-                player.incrementHp(8);
-            });
+            player.addTickEvent(new TickEvent(TickEventType.HUNTER_MEAT, 7, () -> player.incrementHp(8)));
         });
         // Pyre fox
         registerEat(29137, 11, player -> {
             player.sendMessage("You eat the pyre fox meat.");
-            player.addEvent(e -> {
-                e.delay(7);
-                player.incrementHp(8);
-            });
+            player.addTickEvent(new TickEvent(TickEventType.HUNTER_MEAT, 7, () -> player.incrementHp(8)));
         });
         // Sunlight antelope
         registerEat(29140, 12, player -> {
             player.sendMessage("You eat the antelope meat.");
-            player.addEvent(e -> {
-                e.delay(7);
-                player.incrementHp(9);
-            });
+            player.addTickEvent(new TickEvent(TickEventType.HUNTER_MEAT, 7, () -> player.incrementHp(9)));
         });
         // Moonlight antelope
         registerEat(29143, 14, player -> {
             player.sendMessage("You eat the antelope meat.");
-            player.addEvent(e -> {
-                e.delay(7);
+            player.addTickEvent(new TickEvent(TickEventType.HUNTER_MEAT, 7, () -> {
                 player.incrementHp(12);
                 player.curePoison(0);
-            });
+            }));
         });
         registerEat(Items.STRAWBERRY, 0, player -> {
             int hpLevel = player.getStats().get(StatType.Hitpoints).fixedLevel;

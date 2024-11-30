@@ -10,5 +10,6 @@ public enum TickEventType {
     DFS_COOLDOWN,
     RANDOM_EVENT,
     PENANCE_QUEEN_POOL,
-    HEAL_GROUP
+    HEAL_GROUP,
+    HUNTER_MEAT
 }
