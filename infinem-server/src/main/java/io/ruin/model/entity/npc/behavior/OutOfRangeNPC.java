@@ -27,6 +27,7 @@ public class OutOfRangeNPC {
             13345,  // Bartender
             13917,  // Bartender
             14020,  // Bartender
+            13121,  // Huntmaster Gilman
     };
 
     private static void addTwoTileWalkException(NPC npc) {
