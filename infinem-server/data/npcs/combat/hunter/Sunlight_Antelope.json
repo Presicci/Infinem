@@ -1,0 +1,16 @@
+[
+  { // Sunlight Antelope (47)
+    "ids": [ 13133 ],
+    "handler": "io.ruin.model.skills.hunter.creature.impl.PitfallCreature",
+    //Combat Info
+    "aggressive_level": 0,
+    //Speeds
+    "death_ticks": 3,
+    "respawn_ticks": 30,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 6376,
+    "defend_animation": 6375,
+    "death_animation": 6377
+  }
+]
