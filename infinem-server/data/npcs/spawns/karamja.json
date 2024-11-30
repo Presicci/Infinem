@@ -655,7 +655,7 @@
     "y": 3006,
     "z": 0,
     "direction": "W",
-    "walkRange": 6,
+    "walkRange": 3,
     "world": "ECO",
     "npcName": "Horned graahk"
   },
@@ -665,7 +665,7 @@
     "y": 3004,
     "z": 0,
     "direction": "W",
-    "walkRange": 6,
+    "walkRange": 3,
     "world": "ECO",
     "npcName": "Horned graahk"
   },
@@ -675,7 +675,7 @@
     "y": 3002,
     "z": 0,
     "direction": "W",
-    "walkRange": 6,
+    "walkRange": 3,
     "world": "ECO",
     "npcName": "Horned graahk"
   },
@@ -685,7 +685,7 @@
     "y": 2998,
     "z": 0,
     "direction": "W",
-    "walkRange": 6,
+    "walkRange": 3,
     "world": "ECO",
     "npcName": "Horned graahk"
   },
