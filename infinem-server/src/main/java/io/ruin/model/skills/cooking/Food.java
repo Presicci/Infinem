@@ -88,9 +88,10 @@ public enum Food {
     FRIED_ONIONS(42, 60, Items.CHOPPED_ONION, Items.FRIED_ONIONS, Items.BURNT_ONION, "the fried onions", "", 3, 77, 77, 72),
     BARLEY_MALT(1, 0.0, Items.BARLEY, Items.BARLEY_MALT, Items.BARLEY_MALT, "the barley malt", "", 3, 1, 1, 1),
     COOKED_OOMLIE_WRAP(50, 30.0, Items.WRAPPED_OOMLIE, Items.COOKED_OOMLIE_WRAP, Items.BURNT_OOMLIE_WRAP, "the oomlie wrap", "", 3, 1, 1, 1),
-    GRAAHK(41, 124, 29119, 29149, 29157, "the graahk", "", 3, 75, 75, 70, player -> false, "You must complete 25 hunter rumours to cook this."),
-    KYATT(51, 143, 29125, 29152, 29157, "the kyatt", "", 3, 86, 86, 83, player -> false, "You must complete 25 hunter rumours to cook this."),
-    PYRE_FOX(59, 154, 29110, 29137, 29161, "the pyre fox", "", 3, 93, 93, 90, player -> false, "You must complete 25 hunter rumours to cook this."),
+    LARUPIA(31, 92, 29122, 29146, 29157, "the larupia meath", "", 3, 75, 75, 70, player -> false, "You must complete 25 hunter rumours to cook this."),
+    GRAAHK(41, 124, 29119, 29149, 29157, "the graahk meat", "", 3, 75, 75, 70, player -> false, "You must complete 25 hunter rumours to cook this."),
+    KYATT(51, 143, 29125, 29152, 29157, "the kyatt meat", "", 3, 86, 86, 83, player -> false, "You must complete 25 hunter rumours to cook this."),
+    PYRE_FOX(59, 154, 29110, 29137, 29161, "the pyre fox meat", "", 3, 93, 93, 90, player -> false, "You must complete 25 hunter rumours to cook this."),
 
     //Gnome
     HALF_BAKED_BATTA(1, 30.0, Items.RAW_BATTA, Items.HALF_BAKED_BATTA, Items.BURNT_BATTA, "the batta", "", 3, 40, 38, 34),
