@@ -16,7 +16,7 @@ import io.ruin.model.stat.StatType;
 public class HunterGuild {
 
     private static boolean check(Player player, boolean message) {
-        if (player.getStats().check(StatType.Hunter, 46)) return true;
+        if (player.getStats().checkFixed(StatType.Hunter, 46)) return true;
         if (message) player.dialogue(new MessageDialogue("You need a hunter level of 46 to use the guild's amenities."));
         return false;
     }
