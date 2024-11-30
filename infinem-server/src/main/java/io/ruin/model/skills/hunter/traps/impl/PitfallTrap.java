@@ -35,9 +35,10 @@ public class PitfallTrap implements TrapType {
     private static final PitfallTrap GRAAHK = new PitfallTrap(41, 240, new int[] { Items.BIG_BONES, 29119, Items.TATTY_GRAAHK_FUR }, 19264, 19265, 19266, 19267, 19268);
     private static final PitfallTrap KYATT = new PitfallTrap(55, 300, new int[] { Items.BIG_BONES, 29125, Items.TATTY_KYATT_FUR }, 19253, 19254, 19255, 19256, 19257, 19258);
     private static final PitfallTrap SUNLIGHT_ANTELOPE = new PitfallTrap(72, 380, new int[] { Items.BIG_BONES, 29168, 29177, 29116 }, 51673, 51674, 51675, 51676, 51677);
+    private static final PitfallTrap MOONLIGHT_ANTELOPE = new PitfallTrap(91, 450, new int[] { Items.BIG_BONES, 29171, 29174, 29113 }, 51678, 51679, 51680, 51681);
 
     static {
-        for (PitfallTrap trap : Arrays.asList(LARUPIA, GRAAHK, KYATT, SUNLIGHT_ANTELOPE)) {
+        for (PitfallTrap trap : Arrays.asList(LARUPIA, GRAAHK, KYATT, SUNLIGHT_ANTELOPE, MOONLIGHT_ANTELOPE)) {
             for (int objId : trap.objectIds) {
                 ObjectAction.register(objId, 1, trap::jumpTrap);
                 ObjectAction.register(objId, 2, Hunter::dismantleTrap);

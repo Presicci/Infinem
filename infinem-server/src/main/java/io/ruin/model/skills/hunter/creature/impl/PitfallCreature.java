@@ -152,7 +152,8 @@ public class PitfallCreature extends NPCCombat {
         LARUPIA(2908, 939, 940),
         GRAAHK(2909, 941, 942),
         KYATT(2907, 937, 938),
-        SUNLIGHT_ANTELOPE(13133, 2800, 2801);
+        SUNLIGHT_ANTELOPE(13133, 2800, 2801),
+        MOONLIGHT_ANTELOPE(13132, 2802, 2803);
 
         private static final List<Creature> values = Collections.unmodifiableList(Arrays.asList(values()));
         private final int npcId;
