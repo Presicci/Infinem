@@ -623,6 +623,14 @@ public class Consumable {
             p.getStats().get(StatType.Defence).drain(2, 0.05);
         });
 
+        // Trapper's tipple
+        registerDrink(29277, 1919, 1, 3, p -> {
+            p.sendMessage("You drink the Trapper's Tipple and feel ready to catch some creatures. You feel less able to fight said creatures.");
+            p.getStats().get(StatType.Hunter).boost(2, 0);
+            p.getStats().get(StatType.Attack).drain(2, 0);
+            p.getStats().get(StatType.Strength).drain(1, 0);
+        });
+
         // Sun-shine
         registerDrink(29421, -1, 1, 3, p -> {
             p.sendFilteredMessage("You drink the Sunshine. It's got quite the kick to it!");
