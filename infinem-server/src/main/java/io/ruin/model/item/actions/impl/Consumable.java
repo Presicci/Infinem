@@ -83,6 +83,15 @@ public class Consumable {
                 player.incrementHp(9);
             });
         });
+        // Moonlight antelope
+        registerEat(29143, 14, player -> {
+            player.sendMessage("You eat the antelope meat.");
+            player.addEvent(e -> {
+                e.delay(7);
+                player.incrementHp(12);
+                player.curePoison(0);
+            });
+        });
         registerEat(Items.STRAWBERRY, 0, player -> {
             int hpLevel = player.getStats().get(StatType.Hitpoints).fixedLevel;
             player.sendMessage("You eat the strawberry.");
