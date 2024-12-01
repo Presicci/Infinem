@@ -75,7 +75,7 @@ public class PitfallCreature extends NPCCombat {
         npc.startEvent(e -> {
             npc.lock();
             npc.face(object);
-            npc.animate(5231, 20);
+            e.delay(1);
             npc.face(px + (dir == Direction.EAST ? 200 : dir == Direction.WEST ? -200 : 0), py + (dir == Direction.NORTH ? 200 : dir == Direction.SOUTH ? -200 : 0));
             mainProjectileStart.translate(0, firstYOffset, 0);
             mainProjectileEnd.translate(0, firstYOffset, 0);
@@ -83,11 +83,13 @@ public class PitfallCreature extends NPCCombat {
             secondProjectileStart.translate(1, secondYOffset, 0);
             secondProjectileEnd.translate(1, secondYOffset, 0);
             secondProj.send(secondProjectileStart, secondProjectileEnd);
-            e.delay(2);
+            npc.setHidden(true);
+            e.delay(1);
             npc.getMovement().teleport(destination);
             List<Trap> attemptedTraps = npc.getTemporaryAttributeOrDefault("ATTEMPTED_TRAPS", new ArrayList<>());
             attemptedTraps.add(trap);
             npc.putTemporaryAttribute("ATTEMPTED_TRAPS", attemptedTraps);
+            npc.setHidden(false);
             npc.unlock();
         });
     }
@@ -162,8 +164,8 @@ public class PitfallCreature extends NPCCombat {
 
         Creature(int npcId, int left, int right) {
             this.npcId = npcId;
-            this.left = new Projectile(left, 0, 0, 53, 69, 5, 0, 0);
-            this.right = new Projectile(right, 0, 0, 53, 69, 5, 0, 0);
+            this.left = new Projectile(left, 0, 0, 0, 16, 5, 0, 0);
+            this.right = new Projectile(right, 0, 0, 0, 16, 5, 0, 0);
         }
     }
 }
