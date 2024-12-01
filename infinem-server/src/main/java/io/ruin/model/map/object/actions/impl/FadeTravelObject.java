@@ -9,6 +9,11 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    CIVITAS_ALTAR_UP_1(50860, new Position(1691, 9492), new Position(1692, 3087, 0)),
+    CIVITAS_ALTAR_UP_2(50860, new Position(1691, 9480), new Position(1692, 3086, 0)),
+    CIVITAS_ALTAR_DOWN_1(50859, new Position(1692, 3088), new Position(1694, 9492, 0)),
+    CIVITAS_ALTAR_DOWN_2(50859, new Position(1692, 3084), new Position(1694, 9481, 0)),
+
     ROOST_UP(51643, new Position(1559, 3045), new Position(1556, 3046, 2), 828),
     ROOST_DOWN(51644, new Position(1556, 3047, 2), new Position(1559, 3046), 827),
     THE_BURROW_EXIT(51642, new Position(1557, 9448), new Position(1558, 3047, 0)),
