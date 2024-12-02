@@ -27,7 +27,7 @@ public enum FairyRing { //todo add favorite option
     /* 'a' combinations */
     MUDSKIPPER_POINT(13, new int[]{0, 0, 3}, new Position(2996, 3114, 0), "Asgarnia: Mudskipper Point", 3),
     ARDOUGNE_ISLANDS(15, new int[]{0, 0, 2}, new Position(2700, 3247, 0), "Islands: South-east of Ardougne", 2),
-    // Varlamore: Avium Savannah
+    AVIUM_SAVANNAH(19, new int[]{0, 3, 0}, new Position(1651, 3010, 0), "Varlamore: Avium Savannah", 12),
     DORGESH_KAAN_CAVE(21, new int[]{0, 3, 3}, new Position(2735, 5221, 0), "Dungeons: Dorgesh-Kaan cave", 15),
     KANDARIN_SLAYER_CAVE(23, new int[]{0, 3, 2}, new Position(2780, 3613, 0), "Kandarin: Slayer cave near Rellekka", 14),
     PENGUIN_ISLANDS(25, new int[]{0, 3, 1}, new Position(2500, 3896, 0), "Islands: Penguins", 13),
@@ -63,6 +63,7 @@ public enum FairyRing { //todo add favorite option
     ARCEUUS_LIBRARY(81, new int[]{2, 0, 1}, new Position(1639, 3868, 0), "Great Kourend: Arceuus Library", 33),
     SINCLAIR_MANSION(87, new int[]{2, 3, 2}, new Position(2705, 3576, 0), "Kandarin: Sinclair Mansion (east)", 46),
     COSMIC_PLANE(91, new int[]{2, 2, 0}, new Position(2075, 4848, 0), "Other Realms: Cosmic Entity's plane", 40),
+    ALDARIN(93, new int[]{2, 2, 3}, new Position(1359, 2941, 0), "Varlamore: Aldarin", 43),
     KARAMJA(95, new int[]{2, 2, 2}, new Position(2801, 3003, 0), "Karamja: Tai Bwo Wannai Village", 42),
     CANIFIS(97, new int[]{2, 2, 1}, new Position(3447, 3470, 0), "Morytania: Canifis", 41),
     ISLAND_DRAYNOR(99, new int[]{2, 1, 0}, new Position(3082, 3206, 0), "Islands: South of Draynor Village", 36),
