@@ -79,6 +79,7 @@ public class WaystoneNetwork {
             player.getUnlockedWaystones().add(Waystone.VARROCK);
             player.getUnlockedWaystones().add(Waystone.FALADOR);
             player.getUnlockedWaystones().add(Waystone.ARDOUGNE);
+            player.getUnlockedWaystones().add(Waystone.CIVITAS_ILLA_FORTIS);
         });
     }
 }
