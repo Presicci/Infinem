@@ -62,6 +62,11 @@ public enum Direction {
         }
     }
 
+    public static Direction getFromObjectDirection(int direction, int offset) {
+        direction = direction + offset > 3 ? direction + offset - 4 : direction + offset < 0 ? direction + offset + 4 : direction + offset;
+        return getFromObjectDirection(direction);
+    }
+
     public static Direction fromDoorDirection(int direction) {
         switch (direction) {
             case 0:
