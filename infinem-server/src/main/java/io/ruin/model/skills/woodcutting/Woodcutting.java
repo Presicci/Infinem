@@ -305,6 +305,7 @@ public class Woodcutting {
         ObjectAction.register(51762, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 51763)); // Varlamore
         ObjectAction.register(51764, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 51765)); // Varlamore
         ObjectAction.register(53188, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 53189)); // Varlamore
+        ObjectAction.register(52823, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 1342)); // Varlamore
         ObjectAction.register(2023, "chop", (player, obj) -> chop(Tree.ACHEY, player, obj, 3371));
         ObjectAction.register(10820, "chop down", (player, obj) -> chop(Tree.OAK, player, obj, 1356));
         ObjectAction.register(10819, "chop down", (player, obj) -> chop(Tree.WILLOW, player, obj, 9711));
