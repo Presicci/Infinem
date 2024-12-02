@@ -25,5 +25,7 @@ public class CamTorum {
 
     static {
         ObjectAction.register(51005, "squeeze-through", CamTorum::squeezeThroughDoor);
+        ObjectAction.register(51005, 1413, 9582, 1, "squeeze-through", (player, obj) -> player.sendMessage("It's locked."));
+        ObjectAction.register(51005, 1465, 9582, 1, "squeeze-through", (player, obj) -> player.sendMessage("It's locked."));
     }
 }
