@@ -22,7 +22,10 @@ public enum CharterPoints {
         PRIF(new Position(2157, 3330, 0), 37),
         CRANDOR(new Position(3853, 3235, 0), 29),
         PORT_PISCARILIUS(new Position(1808, 3679, 0), 39),
-        LANDS_END(new Position(1497, 3403, 0), 42);
+        LANDS_END(new Position(1497, 3403, 0), 42),
+        ALDARIN(new Position(1455, 2968, 0), 48),
+        SUNSET_COAST(new Position(1514, 2971), 51),
+        CIVITAS_ILLA_FORTIS(new Position(1743, 3136), 45);
 
         public final Position pos;
         public final int component;
