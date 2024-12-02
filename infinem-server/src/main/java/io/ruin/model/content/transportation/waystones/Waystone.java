@@ -19,7 +19,8 @@ public enum Waystone {
     PRIFDDINAS(40414, new Position(3266, 6068), new Position(3265, 6068)),
     ARDOUGNE(40410, new Position(2680, 3308), new Position(2681, 3307)),
     BRIMHAVEN(40415, new Position(2804, 3186), new Position(2805, 3185)),
-    CANIFIS(40413, new Position(3494, 3493), new Position(3495, 3492));
+    CANIFIS(40413, new Position(3494, 3493), new Position(3495, 3492)),
+    CIVITAS_ILLA_FORTIS(49994, new Position(1664, 3138), new Position(1666, 3138));
 
     private final int objectId;
     private final Position objectPosition, teleportPostion;
