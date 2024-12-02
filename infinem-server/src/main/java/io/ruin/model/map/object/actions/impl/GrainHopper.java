@@ -12,9 +12,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  */
 public class GrainHopper {
 
-    private static final int[] HOPPERS = { 24961, 24962, 24963, 2586, 36591 };
-    private static final int[] HOPPER_CONTROLS = { 2484, 2607, 24966, 24965, 24964, 36592 };
-    private static final int[] FLOUR_BINS = { 1781, 14960, 37343 };
+    private static final int[] HOPPERS = { 24961, 24962, 24963, 2586, 36591, 52591 };
+    private static final int[] HOPPER_CONTROLS = { 2484, 2607, 24966, 24965, 24964, 36592, 55402 };
+    private static final int[] FLOUR_BINS = { 1781, 14960, 37343, 52999 };
     private static final int HOPPER_CONTROLS_PUSHED = 24967;
 
     private static final int GRAIN = 1947;
