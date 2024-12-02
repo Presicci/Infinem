@@ -9,6 +9,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    CAL_TORUM_ENTRANCE(51375, new Position(1435, 3129), new Position(1440, 9509, 1)),
+    CAL_TORUM_EXIT(51375, new Position(1439, 9507, 1), new Position(1435, 3128)),
+
     CIVITAS_ALTAR_UP_1(50860, new Position(1691, 9492), new Position(1692, 3087, 0)),
     CIVITAS_ALTAR_UP_2(50860, new Position(1691, 9480), new Position(1692, 3086, 0)),
     CIVITAS_ALTAR_DOWN_1(50859, new Position(1692, 3088), new Position(1694, 9492, 0)),
