@@ -114,6 +114,9 @@ public class Stairs {
         // Ectofuntus
         registerStair(16646, 5, 2);
         registerStair(16647, 5, 0);
+        // Cam Torum
+        registerStair(51551, 3, 2);
+        registerStair(51554, 3, 0);
         // Civitas illa fortis
         registerSpiralStair(52628); // Stone spiral up
         registerSpiralStair(52629); // Stone spiral down

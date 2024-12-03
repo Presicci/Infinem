@@ -10,6 +10,30 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    // Cam Torum
+    CAM_TORUM_BLACKSMITH_STAIRS_DOWN_1(51556, new Position(1447, 9590, 1), new Position(1445, 9587)),
+    CAM_TORUM_BLACKSMITH_STAIRS_DOWN_2(51556, new Position(1450, 9590, 1), new Position(1452, 9587)),
+    CAM_TORUM_BLACKSMITH_STAIRS_UP_1(51555, new Position(1445, 9588), new Position(1448, 9590, 1)),
+    CAM_TORUM_BLACKSMITH_STAIRS_UP_2(51555, new Position(1452, 9588), new Position(1449, 9590, 1)),
+    CAM_TORUM_BAR_DOWN(51556, new Position(1431, 9590, 1), new Position(1433, 9587)),
+    CAM_TORUM_BAR_UP(51555, new Position(1433, 9588), new Position(1430, 9590, 1)),
+    CAM_TORUM_GENERAL_DOWN(51556, new Position(1422, 9558, 1), new Position(1420, 9555)),
+    CAM_TORUM_GENERAL_UP(51555, new Position(1420, 9556), new Position(1423, 9558, 1)),
+    CAM_TORUM_BARBER_DOWN_1(51556, new Position(1457, 9556, 1), new Position(1452, 9557)),
+    CAM_TORUM_BARBER_DOWN_2(51556, new Position(1457, 9555, 1), new Position(1452, 9554)),
+    CAM_TORUM_BARBER_UP_1(51555, new Position(1453, 9557), new Position(1458, 9556, 1)),
+    CAM_TORUM_BARBER_UP_2(51555, new Position(1453, 9554), new Position(1458, 9555, 1)),
+    CAM_TORUM_HOUSE_DOWN_1(51556, new Position(1409, 9552, 1), new Position(1410, 9553)),
+    CAM_TORUM_HOUSE_UP_1(51555, new Position(1410, 9551), new Position(1409, 9553, 1)),
+    CAM_TORUM_HOUSE_DOWN_2(51556, new Position(1411, 9572, 1), new Position(1409, 9569)),
+    CAM_TORUM_HOUSE_DOWN_3(51556, new Position(1413, 9572, 1), new Position(1415, 9569, 0)),
+    CAM_TORUM_HOUSE_UP_2(51555, new Position(1409, 9570), new Position(1412, 9572, 1)),
+    CAM_TORUM_HOUSE_UP_3(51555, new Position(1415, 9570), new Position(1412, 9572, 1)),
+    CAM_TORUM_HOUSE_DOWN_4(51556, new Position(1470, 9552, 1), new Position(1471, 9553)),
+    CAM_TORUM_HOUSE_UP_4(51555, new Position(1471, 9551), new Position(1470, 9553, 1)),
+    CAM_TORUM_HOUSE_DOWN_5(51556, new Position(1470, 9571, 1), new Position(1467, 9573)),
+    CAM_TORUM_HOUSE_UP_5(51555, new Position(1468, 9573), new Position(1470, 9570, 1)),
+
     // Arceuus stairs
     ARCEUUS_STAIRS_UP(27853, new Position(1679, 3803), new Position(1685, 3803, 1)),
     ARCEUUS_STAIRS_UP_1(27854, new Position(1679, 3801), new Position(1685, 3802, 1)),
