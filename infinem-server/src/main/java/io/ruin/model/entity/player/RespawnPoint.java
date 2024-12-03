@@ -12,6 +12,7 @@ import lombok.Getter;
  */
 @AllArgsConstructor
 public enum RespawnPoint {
+    CIVITAS_ILLA_FORTIS(0, new Bounds(1673, 3137, 1676, 3140, 0)),
     LUMBRIDGE(0, new Bounds(3221, 3217, 3222, 3220, 0)),
     FALADOR(10_000, new Bounds(2969, 3339, 2972, 3341, 0)),
     CAMELOT(25_000, new Bounds(2756, 3476, 2758, 3479, 0)),

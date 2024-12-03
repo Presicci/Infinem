@@ -85,20 +85,13 @@ public class StarterGuide {
 
     private static void respawnDialogue(Player player, NPC npc) {
         List<Option> options = new ArrayList<>();
-        List<Option> secondOptions = new ArrayList<>();
         RespawnPoint currentRespawn = player.getRespawnPoint();
         for (RespawnPoint respawnPoint : RespawnPoint.values()) {
             if (respawnPoint != currentRespawn && respawnPoint.canChange(player)) {
                 int cost = respawnPoint.getCost();
-                if (options.size() >= 4) {
-                    secondOptions.add(new Option(StringUtils.getFormattedEnumName(respawnPoint) + " (" + (cost > 0 ? ((cost/1000) + "K") : "Free") + ")", () -> moveRespawn(player, npc, respawnPoint)));
-                } else {
-                    options.add(new Option(StringUtils.getFormattedEnumName(respawnPoint) + " (" + (cost > 0 ? ((cost/1000) + "K") : "Free") + ")", () -> moveRespawn(player, npc, respawnPoint)));
-                }
+                options.add(new Option(StringUtils.getFormattedEnumName(respawnPoint) + " (" + (cost > 0 ? ((cost/1000) + "K") : "Free") + ")", () -> moveRespawn(player, npc, respawnPoint)));
             }
         }
-        secondOptions.add(new Option("Back", () -> respawnDialogue(player, npc)));
-        options.add(4, new Option("More...", new OptionsDialogue("Change respawn location?", secondOptions)));
         player.dialogue(new OptionsDialogue("Change respawn location?", options));
     }
 
