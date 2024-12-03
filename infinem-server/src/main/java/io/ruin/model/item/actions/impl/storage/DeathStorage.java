@@ -236,6 +236,9 @@ public class DeathStorage extends ItemContainer {
         IKOD.forLostItem(player, killer, this::add);
         if (!isEmpty()) {
             switch (player.getRespawnPoint()) {
+                case CIVITAS_ILLA_FORTIS:
+                    player.getPacketSender().sendHintIcon(1651, 3137);
+                    break;
                 case EDGEVILLE:
                     player.getPacketSender().sendHintIcon(3093, 3487);
                     break;

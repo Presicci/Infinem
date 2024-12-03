@@ -6,5 +6,6 @@
   {"id": 31675, "x": 2651, "y": 3287, "z": 0, "type": 10, "direction": 2},  // Ardy
   {"id": 31675, "x": 3261, "y": 6068, "z": 0, "type": 10, "direction": 1},  // Prif
   {"id": 31675, "x": 3137, "y": 3636, "z": 0, "type": 10, "direction": 3},  // Ferox
-  {"id": 31675, "x": 1633, "y": 3673, "z": 0, "type": 10, "direction": 3}   // Kourend castle
+  {"id": 31675, "x": 1633, "y": 3673, "z": 0, "type": 10, "direction": 3},  // Kourend castle
+  {"id": 31675, "x": 1651, "y": 3137, "z": 0, "type": 10, "direction": 2}   // Civitas illa Fortis
 ]
