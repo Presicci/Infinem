@@ -683,7 +683,7 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose protected Map<String, Object> attributes = Collections.synchronizedMap(new HashMap<>());
 
-    @Expose @Getter @Setter private RespawnPoint respawnPoint = RespawnPoint.LUMBRIDGE;
+    @Expose @Getter @Setter private RespawnPoint respawnPoint = RespawnPoint.CIVITAS_ILLA_FORTIS;
 
     public Set<String> onlineFriendNames = new HashSet<>();
 }
