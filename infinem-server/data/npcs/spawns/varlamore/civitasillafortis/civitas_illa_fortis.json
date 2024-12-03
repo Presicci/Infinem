@@ -71,7 +71,7 @@
     "direction": "S",
     "walkRange": 2
   },
-  {
+  /*{
     "name": "Furia Tullus",
     "id": 12890,
     "x": 1686,
@@ -88,7 +88,7 @@
     "z": 0,
     "direction": "W",
     "walkRange": 0
-  },
+  },*/
   {
     "name": "Guard",
     "id": 13101,
@@ -147,7 +147,7 @@
     "name": "Citizen",
     "id": 13187,
     "x": 1664,
-    "y": 3138,
+    "y": 3136,
     "z": 0,
     "direction": "S",
     "walkRange": 3
