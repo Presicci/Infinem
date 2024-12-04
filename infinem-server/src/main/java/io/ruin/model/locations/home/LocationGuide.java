@@ -5,8 +5,10 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
+import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 
 /**
@@ -15,7 +17,7 @@ import io.ruin.model.map.Position;
  */
 public class LocationGuide {
 
-    public static NPC GUIDE, WOODSMAN_TUTOR, MELEE_COMBAT_TUTOR, MINING_TUTOR, TURAEL, FISHING_TUTOR, DONATION_MANAGER, VOTE_MANAGER;
+    public static NPC GUIDE, WOODSMAN_TUTOR, MELEE_COMBAT_TUTOR, TURAEL, DONATION_MANAGER, VOTE_MANAGER;
 
     /**
      * Add a hint arrow towards the npc's location,
@@ -62,32 +64,49 @@ public class LocationGuide {
 
     public static void open(Player player) {
         OptionScroll.open(player, "Location Guide",
-                new Option("Bank", () -> locate(player, new Position(3209, 3219))),
+                new Option("Bank", () -> locate(player, new Position(1657, 3132))),
                 new Option("Turael - Slayer", () -> locate(player, TURAEL)),
-                new Option("Grand Exchange", () -> locate(player, new Position(3212, 3223))),
-                new Option("Thieving Market", () -> locate(player, new Position(3296, 3216))),
+                new Option("Grand Exchange", () -> locate(player, new Position(1646, 3114))),
+                new Option("Thieving Market", () -> locate(player, new Position(1680, 3107))),
                 new Option("Vote Manager", () -> locate(player, VOTE_MANAGER)),
                 new Option("Donation Manager", () -> locate(player, DONATION_MANAGER)),
                 new Option("Combat Tutors", () -> locate(player, MELEE_COMBAT_TUTOR)),
                 new Option("Woodsman Tutor", () -> locate(player, WOODSMAN_TUTOR)),
-                new Option("Fishing Tutor", () -> locate(player, FISHING_TUTOR)),
-                new Option("Mining Tutor", () -> locate(player, MINING_TUTOR))
+                new Option("Fishing Tutor", () -> player.dialogue(new NPCDialogue(306,
+                        "You can find the Fishing tutor and lots of shrimp south of Civitas illa Fortis, by the mine."))),
+                new Option("Mine", () -> player.dialogue(new NPCDialogue(306,
+                        "You can find a mine to the south of Civitas illa Fortis.")))
 
         );
     }
 
+    private static final Bounds HOME_BOUNDS = new Bounds(1438, 2867, 1818, 3200, 0);
+
     static {
         NPCAction.register(306, "location guide", (player, npc) -> open(player));
-        SpawnListener.register(3226, npc -> WOODSMAN_TUTOR = npc);
-        SpawnListener.register(306, npc -> GUIDE = npc);
-        SpawnListener.register(3216, npc -> MELEE_COMBAT_TUTOR = npc);
-        SpawnListener.register(3221, npc -> FISHING_TUTOR = npc);
-        SpawnListener.register(3222, npc -> MINING_TUTOR = npc);
-        SpawnListener.register(15000, npc -> VOTE_MANAGER = npc);
-        SpawnListener.register(15001, npc -> DONATION_MANAGER = npc);
+        SpawnListener.register(3226, npc -> {
+            if (!HOME_BOUNDS.inBounds(npc.getPosition())) return;
+            WOODSMAN_TUTOR = npc;
+        });
+        SpawnListener.register(306, npc -> {
+            if (!HOME_BOUNDS.inBounds(npc.getPosition())) return;
+            GUIDE = npc;
+        });
+        SpawnListener.register(3216, npc -> {
+            if (!HOME_BOUNDS.inBounds(npc.getPosition())) return;
+            MELEE_COMBAT_TUTOR = npc;
+        });
+        SpawnListener.register(15000, npc -> {
+            if (!HOME_BOUNDS.inBounds(npc.getPosition())) return;
+            VOTE_MANAGER = npc;
+        });
+        SpawnListener.register(15001, npc -> {
+            if (!HOME_BOUNDS.inBounds(npc.getPosition())) return;
+            DONATION_MANAGER = npc;
+        });
         SpawnListener.register(13618, npc -> {
-            if (npc.getAbsY() < 3196)
-                TURAEL = npc;
+            if (!HOME_BOUNDS.inBounds(npc.getPosition())) return;
+            TURAEL = npc;
         });
     }
 }
