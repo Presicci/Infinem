@@ -9,6 +9,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    WOLF_DEN_ENTRANCE(54692, new Position(1496, 3131), new Position(1486, 9502, 1)),
+    WOLF_DEN_EXIT(54690, new Position(1487, 9501, 1), new Position(1499, 3131)),
+
     CAL_TORUM_ENTRANCE(51375, new Position(1435, 3129), new Position(1440, 9509, 1)),
     CAL_TORUM_EXIT(51375, new Position(1439, 9507, 1), new Position(1435, 3128)),
 
