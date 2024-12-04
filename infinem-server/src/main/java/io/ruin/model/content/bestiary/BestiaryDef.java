@@ -141,6 +141,7 @@ public class BestiaryDef {
                 "manticore", "shockwave colossus" });
         put("barbarian spirit", new String[] { "angry barbarian spirit", "berserk barbarian spirit", "enraged barbarian spirit", "ferocious barbarian spirit" });
         put("bandosian sergeant", new String[] { "sergeant strongstack", "sergeant grimspike", "sergeant steelwill" });
+        put("emissary member", new String[] { "emissary chosen", "emissary ascended", "emissary acolyte" });
     }};
 
     public static Map<String, String> REPLACEMENTS = new HashMap<String,String>() {{
