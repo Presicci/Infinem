@@ -1996,5 +1996,23 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+  {
+    "name": "Infinem Guide",
+    "id": 306,
+    "x": 1675,
+    "y": 3142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Nigel",
+    "id": 6093,
+    "x": 1686,
+    "y": 3142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
