@@ -16,10 +16,10 @@ public class Pickables {
     public enum Node {
         NETTLES(4241, 1181, 5253, 5254, 5255, 5256, 5257, 5258),
         FLAX(1779, 14896),
-        CABBAGE(1965, 1161),
+        CABBAGE(1965, 1161, 51835, 51836),
         WHEAT(1947, 15506, 15507, 15508),
         POTATO(1942, 312),
-        ONION(1957, 3366);
+        ONION(1957, 3366, 51837, 51838);
 
         private final int itemId;
         private final int[] objectIds;
