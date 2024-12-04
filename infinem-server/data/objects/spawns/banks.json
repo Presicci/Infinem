@@ -9,6 +9,7 @@
   {"id": 60004, "x": 3608, "y": 3366, "z": 0, "type": 10, "direction": 1},  // darkmeyer tp
   {"id": 60002, "x": 1396, "y": 2928, "z": 0, "type": 10, "direction": 3},  // aldarin tp
   {"id": 60000, "x": 1646, "y": 3114, "z": 0, "type": 10, "direction": 3},  // civitas tp
+  {"id": 60003, "x": 1449, "y": 9570, "z": 1, "type": 10, "direction": 0},  // cam torum tp
   // Remove loot chests
   {"id": -1, "x": 2451, "y": 3490, "z": 1, "type": 10, "direction": 0},  // Remove grand tree loot chest
   {"id": -1, "x": 3094, "y": 3488, "z": 0, "type": 10, "direction": 0},  // Remove edgeville loot chest
