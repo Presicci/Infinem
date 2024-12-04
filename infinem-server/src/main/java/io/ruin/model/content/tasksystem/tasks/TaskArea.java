@@ -24,7 +24,8 @@ public enum TaskArea {
      MORYTANIA(29, 30, 31, 32),
      TIRANNWN(33, 34, 35, 36),
      WILDERNESS(37, 38, 39, 40),
-     ZEAH(41, 42, 43, 44);
+     ZEAH(41, 42, 43, 44),
+     VARLAMORE(45, 46, 47, 48);
 
      public final String toString;
 
