@@ -2,10 +2,12 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -19,7 +21,8 @@ public class Pickables {
         CABBAGE(1965, 1161, 51835, 51836),
         WHEAT(1947, 15506, 15507, 15508),
         POTATO(1942, 312),
-        ONION(1957, 3366, 51837, 51838);
+        ONION(1957, 3366, 51837, 51838),
+        SWEETCORN(Items.SWEETCORN, 51829);
 
         private final int itemId;
         private final int[] objectIds;
@@ -36,7 +39,7 @@ public class Pickables {
             }
             player.startEvent(event -> {
                 player.lock();
-                player.animate(827);
+                player.animate(this == SWEETCORN ? 832 : 827);
                 event.delay(1);
                 if (this == NETTLES && player.getEquipment().get(Equipment.SLOT_HANDS) == null) {
                     player.sendMessage("Ow! You prick your hand trying to pick the nettles.");
@@ -60,7 +63,7 @@ public class Pickables {
                             player.sendMessage("You can't carry any more " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                             return;
                         }
-                        player.animate(827);
+                        player.animate(this == SWEETCORN ? 832 : 827);
                         event.delay(1);
                         addItem(player);
                         player.sendFilteredMessage("You pick some " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
@@ -86,7 +89,17 @@ public class Pickables {
         }
 
         private void remove(GameObject obj) {
-            obj.removeFor(20);
+            if (this == SWEETCORN) {
+                World.startEvent(event -> {
+                    obj.setId(51831);
+                    event.delay(20);
+                    if (obj.id == 51831) {
+                        obj.setId(obj.originalId);
+                    }
+                });
+            } else {
+                obj.removeFor(20);
+            }
         }
     }
 
