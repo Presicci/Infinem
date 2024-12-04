@@ -63,15 +63,6 @@
     "walkRange": 2
   },
   {
-    "name": "Knight of Varlamore",
-    "id": 13117,
-    "x": 1660,
-    "y": 3149,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Prisoner",
     "id": 13321,
     "x": 1660,
