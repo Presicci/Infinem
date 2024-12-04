@@ -83,7 +83,9 @@ public enum DialogueObject {
     BRINE_RAT_CAVE_CHEST(14197, new Position(2740, 10164),
             new MessageDialogue("An etching on the chest reads 'Titan.' There is nothing here to indicate how the ship got here or what they were searching for.")),
     SHIPWRECK_COVE_CAMPFIRE(55099, new Position(1569, 3314),
-            new MessageDialogue("The flames of the campfire burn through strange magic. You find them quite alluring."))
+            new MessageDialogue("The flames of the campfire burn through strange magic. You find them quite alluring.")),
+    DEATHS_DOMAIN(52570, new Position(1653, 3136),
+            new MessageDialogue("The door is locked and there's a note attached:<br>'No Soliciting'"), new PlayerDialogue("Ehh maybe tomorrow...")),
     ;
 
     DialogueObject(int objectId, Position position, Dialogue... dialogues) {
