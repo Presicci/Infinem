@@ -1,14 +1,5 @@
 [
   {
-    "name": "Infinem Expert",
-    "id": 306,
-    "x": 3238,
-    "y": 3220,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 0
-  },
-  {
     "name": "Turael",
     "id": 13618,
     "x": 3251,
