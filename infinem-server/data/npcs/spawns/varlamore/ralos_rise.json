@@ -359,7 +359,7 @@
     "direction": "S",
     "walkRange": 3
   },
-  {
+  /*{
     "name": "Attala",
     "id": 12861,
     "x": 1435,
@@ -367,7 +367,7 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
-  },
+  },*/
   {
     "name": "Guard",
     "id": 13054,
@@ -386,7 +386,7 @@
     "direction": "S",
     "walkRange": 0
   },
-  {
+  /*{
     "name": "Zuma",
     "id": 12860,
     "x": 1436,
@@ -394,7 +394,7 @@
     "z": 0,
     "direction": "W",
     "walkRange": 0
-  },
+  },*/
   {
     "name": "Mountain goat",
     "id": 4117,
