@@ -1349,7 +1349,8 @@
     "z": 0,
     "respawnSeconds": 60
   },
-  {
+  // Not sure what this item was supposed to be, not a package though
+  /*{
     "itemName": "Package",
     "amount": 4,
     "id": 13187,
@@ -1357,7 +1358,7 @@
     "y": 2987,
     "z": 0,
     "respawnSeconds": 60
-  },
+  },*/
   {
     "itemName": "Fly fishing rod",
     "amount": 0,
