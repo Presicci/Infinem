@@ -778,7 +778,6 @@ public enum FishingArea {
             new Position(1781, 2993, 0),
             new Position(1779, 2994, 0),
             new Position(1774, 2990, 0),
-            new Position(1774, 2989, 0),
             new Position(1776, 2985, 0),
             new Position(1776, 2984, 0),
             new Position(1776, 2983, 0)
