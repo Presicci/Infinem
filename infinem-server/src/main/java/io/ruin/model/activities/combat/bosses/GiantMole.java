@@ -39,7 +39,7 @@ public class GiantMole extends NPCCombat {
     }
 
     private void postDamage(Hit hit) {
-        if (!isDead() && npc.getHp() < npc.getMaxHp() / 2 && Random.rollDie(4)) {
+        if (!isDead() && npc.getHp() < npc.getMaxHp() / 2 && Random.rollDie(7)) {
             burrow();
         }
     }
