@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Orsaga",
+    "id": 13136,
+    "x": 1569,
+    "y": 9457,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Orsaga's chinchompa",
+    "id": 13137,
+    "x": 1570,
+    "y": 9459,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Huntmaster Gilman (Novice)",
+    "id": 13121,
+    "x": 1556,
+    "y": 9464,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Moonlight moth",
+    "id": 12772,
+    "x": 1572,
+    "y": 9446,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Moonlight moth",
+    "id": 12772,
+    "x": 1569,
+    "y": 9443,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Moonlight moth",
+    "id": 12772,
+    "x": 1572,
+    "y": 9442,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Moonlight moth",
+    "id": 12772,
+    "x": 1567,
+    "y": 9438,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Moonlight moth",
+    "id": 12772,
+    "x": 1561,
+    "y": 9440,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Moonlight moth",
+    "id": 12772,
+    "x": 1562,
+    "y": 9434,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Moonlight moth",
+    "id": 12772,
+    "x": 1554,
+    "y": 9434,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Moonlight moth",
+    "id": 12772,
+    "x": 1560,
+    "y": 9429,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Moonlight moth",
+    "id": 12772,
+    "x": 1550,
+    "y": 9442,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Moonlight antelope",
+    "id": 13132,
+    "x": 1557,
+    "y": 9421,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Moonlight antelope",
+    "id": 13132,
+    "x": 1561,
+    "y": 9420,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Moonlight antelope",
+    "id": 13132,
+    "x": 1562,
+    "y": 9417,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Moonlight antelope",
+    "id": 13132,
+    "x": 1557,
+    "y": 9417,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
