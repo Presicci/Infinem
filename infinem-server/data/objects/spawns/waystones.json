@@ -13,5 +13,6 @@
   {"id": 40416, "x": 3146, "y": 3631, "z": 0, "type": 10, "direction": 0},  // Ferox enclave
   {"id": 49994, "x": 1663, "y": 3676, "z": 0, "type": 10, "direction": 0},  // Kourend
   {"id": 40409, "x": 3223, "y": 3426, "z": 0, "type": 10, "direction": 0},  // Varrock
-  {"id": 40410, "x": 2751, "y": 3480, "z": 0, "type": 10, "direction": 0}   // Camelot
+  {"id": 40410, "x": 2751, "y": 3480, "z": 0, "type": 10, "direction": 0},  // Camelot
+  {"id": 49994, "x": 1664, "y": 3138, "z": 0, "type": 10, "direction": 0}   // Civitas illa Fortis
 ]
