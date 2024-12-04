@@ -1,0 +1,24 @@
+{
+  "name": "The Burrow",
+  "currency": "COINS",
+  "npcs": [
+    13121
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    { // Trapper's tipple
+      "itemId": 29277,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 3
+    },
+    { // Stew
+      "itemId": 2003,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 20
+    }
+  ]
+}
