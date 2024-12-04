@@ -245,8 +245,8 @@ public enum PickPocket {
     WEALTHY_CITIZEN(50, 96, 422, 5, 3, "citizen's", PlayerCounter.PICKPOCKETED_WEALTHY_CITIZEN,
             257211,
             28822,
-            46.48,
-            0.64,
+            49.48,
+            0.67,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 85, 85, 79), //Coins
                     new LootItem(29325, 1, 1, 5), //House keys
