@@ -5038,7 +5038,8 @@
   { // Prospering Fortune
     "musicId": 811,
     "regionIds": [
-      6448, 6449, 6704, 6705, 6960, 6961, 7216, 7217
+      6448, 6449, 6704, 6705, 6960, 6961, 7216, 7217,
+      6549, 6804, 7316  // Underground
     ]
   },
   { // The Undying Light
@@ -5058,7 +5059,7 @@
   { // Ready for the Hunt
     "musicId": 781,
     "regionIds": [
-      6191
+      6191, 6291
     ]
   },
   { // Varlamore's Sunset
@@ -5070,13 +5071,15 @@
   { // Peace and Prosperity
     "musicId": 804,
     "regionIds": [
-      5165, 5166, 5421, 5422, 5677, 5678
+      5165, 5166, 5421, 5422, 5677, 5678,
+      5521  // Underground
     ]
   },
   { // Isle of Serenity
     "musicId": 805,
     "regionIds": [
-      5165, 5166, 5421, 5422, 5677, 5678
+      5165, 5166, 5421, 5422, 5677, 5678,
+      5521  // Underground
     ]
   },
   { // Mistrock
@@ -5107,6 +5110,25 @@
     "musicId": 809,
     "regionIds": [
       6450, 6706, 6707
+    ]
+  },
+  { // Under the Mountain
+    "musicId": 784,
+    "regionIds": [
+      5525, 5780, 5781, 6037
+    ]
+  },
+  { // Lost to time
+    "musicId": 785,
+    "regionIds": [
+      5525, 5527, 5528, 5781, 6037, 6039,
+      6294, 6550, 6806  // Ruins of Tapoyauik
+    ]
+  },
+  { // Moons of ruin
+    "musicId": 786,
+    "regionIds": [
+      5526, 5783, 6038
     ]
   }
 ]
