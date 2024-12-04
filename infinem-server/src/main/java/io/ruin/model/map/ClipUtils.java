@@ -621,6 +621,8 @@ public class ClipUtils {
         clearClipping(1785, 3594, 0, 0, 0);
         // Kraken lair
         addClipping(2261, 10016, 0, 1, 0);
+        // Civitas dungeon hub
+        clearClipping(1689, 3140, 0, 1, 1);
     }
 
     public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {

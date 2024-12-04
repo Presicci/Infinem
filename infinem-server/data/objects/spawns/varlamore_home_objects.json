@@ -1,0 +1,12 @@
+[
+  {"id": 55199, "x": 1656, "y": 3131, "z": 0, "type": 10, "direction": 0},   // Bank buffalo
+  {"id": 3644, "x": 1656, "y": 3130, "z": 0, "type": 10, "direction": 0},   // Trough
+  {"id": -1, "x": 1685, "y": 3143, "z": 0, "type": 10, "direction": 0},  // Remove tree
+  {"id": -1, "x": 1689, "y": 3140, "z": 0, "type": 10, "direction": 0},  // Remove tree
+  {"id": -1, "x": 1688, "y": 3143, "z": 0, "type": 10, "direction": 0},  // Remove flower
+  {"id": -1, "x": 1688, "y": 3144, "z": 0, "type": 10, "direction": 0},  // Remove flower
+  {"id": -1, "x": 1690, "y": 3144, "z": 0, "type": 10, "direction": 0},  // Remove flower
+  {"id": -1, "x": 1691, "y": 3143, "z": 0, "type": 10, "direction": 0},  // Remove bush
+  {"id": -1, "x": 1689, "y": 3143, "z": 0, "type": 10, "direction": 0},  // Remove bush
+  {"id": 33037, "x": 1686, "y": 3143, "z": 0, "type": 10, "direction": 0}   // Dungeon hub portal
+]
