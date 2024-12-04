@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1476,
+    "y": 9505,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1475,
+    "y": 9501,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1479,
+    "y": 9499,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1483,
+    "y": 9501,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dire Wolf",
+    "id": 3426,
+    "x": 1482,
+    "y": 9505,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
