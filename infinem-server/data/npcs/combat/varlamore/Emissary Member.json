@@ -1,0 +1,19 @@
+[
+  { // Emissary members
+    "ids": [
+      13744, 13745, 13746, 13747, 13748, 13749, 13750, 13751,  // Ascended
+      13722, 13723, 13724, 13725, 13732, 13733, 13734, 13735, 13736, 13737, 13763, 13765, // Acolyte
+      13738, 13739, 13740, 13741, 13742, 13743, 13764 // Chosen
+    ],
+    //Combat Info
+    "aggressive_level": 152,
+    //Speeds
+    "death_ticks": 2,
+    "respawn_ticks": 30,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 386,
+    "defend_animation": 424,
+    "death_animation": 836
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "ids": [ 13722, 13723, 13724, 13725, 13732, 13733, 13734, 13735, 13736, 13737, 13763, 13765 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 1094951,
+        "items": [
+          { "id": 1325, "min": 1, "max": 1, "weight": 70300 },   //Steel scimitar
+          { "id": 1295, "min": 1, "max": 1, "weight": 15600 },   //Steel longsword
+          { "id": 1269, "min": 1, "max": 1, "weight": 7810 }   //Steel pickaxe
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 1461843,
+        "items": [
+          { "id": 556, "min": 8, "max": 8, "weight": 39100 },   //Air rune
+          { "id": 555, "min": 8, "max": 8, "weight": 39100 },   //Water rune
+          { "id": 562, "min": 6, "max": 6, "weight": 39100 },   //Chaos rune
+          { "id": 558, "min": 2, "max": 2, "weight": 7810 }   //Mind rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 1336918,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 7806286,
+        "items": [
+          { "id": 995, "min": 10, "max": 10, "weight": 211000 },   //Coins
+          { "id": 995, "min": 35, "max": 35, "weight": 203000 },   //Coins
+          { "id": 995, "min": 1, "max": 1, "weight": 102000 },   //Coins
+          { "id": 995, "min": 50, "max": 50, "weight": 85900 },   //Coins
+          { "id": 995, "min": 100, "max": 100, "weight": 23399 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 91255,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 7810 }   //Clue scroll (medium)
+      ]
+      }
+    ]
+  }
+]
