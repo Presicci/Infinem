@@ -1,0 +1,29 @@
+[
+  {
+    "itemName": "Trapper's tipple",
+    "amount": 0,
+    "id": 29277,
+    "x": 1561,
+    "y": 9453,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Trapper's tipple",
+    "amount": 0,
+    "id": 29277,
+    "x": 1554,
+    "y": 9454,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Trapper's tipple",
+    "amount": 0,
+    "id": 29277,
+    "x": 1560,
+    "y": 9459,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
