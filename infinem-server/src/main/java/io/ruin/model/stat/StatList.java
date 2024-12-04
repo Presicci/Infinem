@@ -232,7 +232,7 @@ public class StatList {
             player.getTransmogCollection().addToCollection(type.hoodId, true);
             if (isMaxed()) {
                 player.sendMessage("Congratulations, you've reached the highest possible total level of 2277!");
-                player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a max cape from Mac at home!");
+                player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a max cape from Mac by the lake at home!");
                 Broadcast.SKILL.sendNews(player, Icon.MAX_CAPE, player.getName() + " has just achieved level 99 in every skill!");
                 SkillAchievementEmbedMessage.sendMaxMessage("Maxed!", player.getName() + " has just achieved level 99 in every skill!");
                 player.getTransmogCollection().addToCollection(13342, true);
