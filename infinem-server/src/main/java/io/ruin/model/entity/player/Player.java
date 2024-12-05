@@ -1094,7 +1094,7 @@ public class Player extends PlayerAttributes {
         }
 
         if(position == null)
-            position = new Position(3237, 3220, 0);
+            position = new Position(1675, 3141);
         else
             position.updateFirstChunk();
         lastPosition = position.copy();

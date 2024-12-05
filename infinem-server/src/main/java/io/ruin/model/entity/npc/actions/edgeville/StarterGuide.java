@@ -126,7 +126,7 @@ public class StarterGuide {
 		player.putTemporaryAttribute("TUTORIAL", 1);
 		player.startEvent(event -> {
             player.lock(LockType.FULL_ALLOW_LOGOUT);
-			player.getMovement().teleport(3237, 3220, 0);
+			player.getMovement().teleport(1675, 3141);
 			if (actuallyNew) {
 				player.openInterface(InterfaceType.MAIN, Interface.APPEARANCE_CUSTOMIZATION);
 				while (player.isVisibleInterface(Interface.APPEARANCE_CUSTOMIZATION)) {
