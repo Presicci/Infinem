@@ -80,6 +80,21 @@ public class LocationGuide {
         );
     }
 
+    public static void openPreview(Player player) {
+        OptionScroll.open(player, "Location Guide",
+                new Option("Bank"),
+                new Option("Turael - Slayer"),
+                new Option("Grand Exchange"),
+                new Option("Thieving Market"),
+                new Option("Vote Manager"),
+                new Option("Donation Manager"),
+                new Option("Combat Tutors"),
+                new Option("Woodsman Tutor"),
+                new Option("Fishing Tutor"),
+                new Option("Mine")
+        );
+    }
+
     private static final Bounds HOME_BOUNDS = new Bounds(1438, 2867, 1818, 3200, 0);
 
     static {

@@ -103,8 +103,7 @@ public class StarterGuide {
                                 new NPCDialogue(npc, "I can move your respawn location if you would like. Some have a fee associated with them."),
                                 new ActionDialogue(() -> respawnDialogue(player, npc))
                         ),
-                        new Option("Can I reclaim missing Relic items?", () -> reclaimRelicItems(player, npc)),
-                        new Option("Replay tutorial", () -> introCutscene(npc, player))
+                        new Option("Can I reclaim missing Relic items?", () -> reclaimRelicItems(player, npc))
                 )
         );
     }
@@ -171,21 +170,26 @@ public class StarterGuide {
                 player.getPacketSender().resetHintIcon(true);
                 Broadcast.NEW_PLAYER.sendNews(player.getName() + " has just joined " + World.type.getWorldName() + "!");
             }
-            player.dialogue(new NPCDialogue(guide,
-            "Welcome to " + World.type.getWorldName() + ".<br>" +
-            "Would you like me to show you around Lumbridge?"),
-            new OptionsDialogue("Play the tutorial?", new Option("Yes!", () -> introCutscene(guide, player)), new Option("No, I know what I'm doing!", () -> {
-                player.closeDialogue();
-                player.removeTemporaryAttribute("TUTORIAL");
-                player.logoutListener = null;
-                player.unlock();
-                JournalTab.setTab(player, JournalTab.Tab.TASK);
-                RelicInterface.open(player);
-                player.dialogue(false,
-                        new NPCDialogue(guide, "I'll leave you with a choice. Here you can see Infinem's relics. These are powerful boons that are unlocked by completing tasks. You can pick any tier 1 relic right now."),
-                        new NPCDialogue(guide, "Now, start your adventure!")
-                );
-            })));
+            player.closeDialogue();
+            player.dialogue(
+                    new NPCDialogue(guide, "Welcome to " + World.type.getWorldName() + ".<br>"),
+                    new ActionDialogue(() -> {
+                        LocationGuide.openPreview(player);
+                        player.dialogue(false,
+                                new NPCDialogue(guide, "If at any time you feel lost, I can help you locate areas around the home."),
+                                new ActionDialogue(() -> {
+                                    player.removeTemporaryAttribute("TUTORIAL");
+                                    player.logoutListener = null;
+                                    player.unlock();
+                                    JournalTab.setTab(player, JournalTab.Tab.TASK);
+                                    RelicInterface.open(player);
+                                    player.dialogue(false,
+                                            new NPCDialogue(guide, "I'll leave you with a choice. Here you can see Infinem's relics. These are powerful boons that are unlocked by completing tasks. You can pick any tier 1 relic right now."),
+                                            new NPCDialogue(guide, "Now, start your adventure!")
+                                    );
+                                }));
+                    })
+            );
 		});
 	}
 
