@@ -30,7 +30,7 @@ public class TaskInterface {
         player.getPacketSender().sendAccessMask(657, 27, 0, 16, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(657, 35, 0, 6, AccessMasks.ClickOp1);   // Tier filter dropdown
         player.getPacketSender().sendAccessMask(657, 36, 0, 25, AccessMasks.ClickOp1);  // Type filter dropdown
-        player.getPacketSender().sendAccessMask(657, 37, 0, 12, AccessMasks.ClickOp1);  // Area filter dropdown
+        player.getPacketSender().sendAccessMask(657, 37, 0, 13, AccessMasks.ClickOp1);  // Area filter dropdown
         player.getPacketSender().sendAccessMask(657, 39, 0, 3, AccessMasks.ClickOp1);   // Completed filter dropdown
     }
 
