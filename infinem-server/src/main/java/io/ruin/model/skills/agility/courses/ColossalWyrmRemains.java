@@ -4,6 +4,7 @@ import io.ruin.PersistentData;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -72,10 +73,13 @@ public class ColossalWyrmRemains {
         if (adv) {
             player.getStats().addXp(StatType.Agility, 358, true);
             PersistentData.INSTANCE.colossalWyrmAdvancedLaps++;
+            player.getTaskManager().doLookupByUUID(1123, 1, true);  // Complete 25 Laps of the Advanced Colossal Wyrm Agility Course
         } else {
             player.getStats().addXp(StatType.Agility, 243.7, true);
             PersistentData.INSTANCE.colossalWyrmBasicLaps++;
+            player.getTaskManager().doLookupByUUID(1122, 1, true);  // Complete 10 Laps of the Basic Colossal Wyrm Agility Course
         }
+        player.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
         AgilityPet.rollForPet(player, adv ? 25406 : 28503);
         int laps = adv ? PlayerCounter.COLOSSAL_WYRM_ADVANCED_LAPS.increment(player, 1) : PlayerCounter.COLOSSAL_WYRM_LAPS.increment(player, 1);
         if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
