@@ -181,6 +181,7 @@ public class GrandMuseum {
         private void sendInformationPanel(Player player) {
             player.openInterface(InterfaceType.MAIN, 873);
             player.getPacketSender().sendClientScript(5006, "sisiiiiiii", title, modelId, description, var1, var2, var3, var4, var5, var6, bool1 ? 1 : 0);
+            player.getTaskManager().doLookupByUUID(1116);   // Learn Some of Varlamore's History
         }
     }
 
