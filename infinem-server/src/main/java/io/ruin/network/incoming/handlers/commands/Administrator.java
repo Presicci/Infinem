@@ -2385,9 +2385,17 @@ public class Administrator {
                         id = Integer.parseInt(args[0]);
                     while (id < AnimationDefinition.LOADED.length) {
                         player.animate(id);
-                        player.sendMessage("Sending: " + id);
+                        player.dialogue(new MessageDialogue(id + ""));
+                        int count = 0;
+                        int goal = AnimationDefinition.get(id).getTickDelay();
+                        while (player.isVisibleInterface(Interface.MESSAGE_DIALOGUE)) {
+                            event.delay(1);
+                            if (count++ >= goal) {
+                                count = 0;
+                                player.animate(id);
+                            }
+                        }
                         id++;
-                        event.delay(2);
                         player.resetAnimation();
                         event.delay(1);
                     }
