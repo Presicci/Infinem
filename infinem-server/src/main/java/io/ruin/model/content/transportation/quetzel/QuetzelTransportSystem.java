@@ -75,6 +75,7 @@ public class QuetzelTransportSystem {
             player.animate(11122);
             npc.animate(11123);
             e.delay(2);
+            player.getTaskManager().doLookupByUUID(1118);   // Pet Renu
             player.unlock();
         });
     }
