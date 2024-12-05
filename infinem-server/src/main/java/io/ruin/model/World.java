@@ -85,7 +85,7 @@ public class World extends EventWorker {
 
     public static final int spawnableOffset = 100000;
 
-    public static final Bounds HOME = new Bounds(3221, 3218, 3225, 3219, 0);
+    public static final Bounds HOME = new Bounds(1673, 3137, 1676, 3140, 0);
 
     /**
      * Players
