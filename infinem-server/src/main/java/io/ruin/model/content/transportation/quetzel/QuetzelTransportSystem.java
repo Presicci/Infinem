@@ -49,6 +49,7 @@ public class QuetzelTransportSystem {
     protected static void teleport(Player player, Position destination) {
         Traveling.fadeTravel(player, destination, 5);
         player.privateSound(8501, 3, 55);
+        player.getTaskManager().doLookupByUUID(1117);   // Travel Using the Quetzal Transport System
     }
 
     private static void click(Player player, int slot) {
