@@ -47,6 +47,7 @@ public class Sheep {
             } else {
                 player.sendFilteredMessage("You get some wool.");
                 player.getInventory().add(1737, 1);
+                if (npc.getDef().name.equalsIgnoreCase("alpaca")) player.getTaskManager().doLookupByUUID(1119); // Shear an Alpaca
                 World.startEvent(e -> {
                     int origId = npc.getId();
                     npc.transform(replacement);
