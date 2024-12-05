@@ -42,7 +42,8 @@ public class TaskManager {
             Config.varpbit(16006, true),
             Config.varpbit(16007, true),
             Config.varpbit(16008, true),
-            Config.varpbit(16009, true)
+            Config.varpbit(16009, true),
+            Config.varpbit(16019, true)
     };
 
     private static final Config[] COMPLETED_TASKS = {
