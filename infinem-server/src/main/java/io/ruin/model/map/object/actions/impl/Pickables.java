@@ -68,6 +68,7 @@ public class Pickables {
                         addItem(player);
                         player.sendFilteredMessage("You pick some " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                         player.getStats().addXp(StatType.Farming, 1, false);
+                        if (this == SWEETCORN) player.getTaskManager().doLookupByUUID(1121);    // Pick some Sweetcorn from a Field
                         if(Random.rollDie(6, 1))
                             remove(obj);
                     }
