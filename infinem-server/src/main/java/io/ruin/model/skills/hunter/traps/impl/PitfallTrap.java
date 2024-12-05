@@ -2,6 +2,8 @@ package io.ruin.model.skills.hunter.traps.impl;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.def.NPCDefinition;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
@@ -12,6 +14,8 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.hunter.Hunter;
+import io.ruin.model.skills.hunter.creature.impl.Bird;
+import io.ruin.model.skills.hunter.creature.impl.BoxTrapCreature;
 import io.ruin.model.skills.hunter.creature.impl.PitfallCreature;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.hunter.traps.TrapType;
@@ -31,11 +35,11 @@ import static io.ruin.model.skills.hunter.Hunter.*;
 public class PitfallTrap implements TrapType {
 
     private static final int[] LOGS = { Items.LOGS, Items.OAK_LOGS, Items.WILLOW_LOGS, Items.TEAK_LOGS, Items.MAPLE_LOGS, Items.MAHOGANY_LOGS, Items.ARCTIC_PINE_LOGS, Items.YEW_LOGS, Items.MAGIC_LOGS, Items.REDWOOD_LOGS };
-    private static final PitfallTrap LARUPIA = new PitfallTrap(31, 180, new int[] { Items.BIG_BONES, 29122, Items.TATTY_LARUPIA_FUR }, 19259, 19260, 19261, 19262, 19263);
-    private static final PitfallTrap GRAAHK = new PitfallTrap(41, 240, new int[] { Items.BIG_BONES, 29119, Items.TATTY_GRAAHK_FUR }, 19264, 19265, 19266, 19267, 19268);
-    private static final PitfallTrap KYATT = new PitfallTrap(55, 300, new int[] { Items.BIG_BONES, 29125, Items.TATTY_KYATT_FUR }, 19253, 19254, 19255, 19256, 19257, 19258);
-    private static final PitfallTrap SUNLIGHT_ANTELOPE = new PitfallTrap(72, 380, new int[] { Items.BIG_BONES, 29168, 29177, 29116 }, 51673, 51674, 51675, 51676, 51677);
-    private static final PitfallTrap MOONLIGHT_ANTELOPE = new PitfallTrap(91, 450, new int[] { Items.BIG_BONES, 29171, 29174, 29113 }, 51678, 51679, 51680, 51681);
+    private static final PitfallTrap LARUPIA = new PitfallTrap(31, 180, "larupia", new int[] { Items.BIG_BONES, 29122, Items.TATTY_LARUPIA_FUR }, 19259, 19260, 19261, 19262, 19263);
+    private static final PitfallTrap GRAAHK = new PitfallTrap(41, 240, "graahk", new int[] { Items.BIG_BONES, 29119, Items.TATTY_GRAAHK_FUR }, 19264, 19265, 19266, 19267, 19268);
+    private static final PitfallTrap KYATT = new PitfallTrap(55, 300, "kyatt", new int[] { Items.BIG_BONES, 29125, Items.TATTY_KYATT_FUR }, 19253, 19254, 19255, 19256, 19257, 19258);
+    private static final PitfallTrap SUNLIGHT_ANTELOPE = new PitfallTrap(72, 380, "sunlight antelope", new int[] { Items.BIG_BONES, 29168, 29177, 29116 }, 51673, 51674, 51675, 51676, 51677);
+    private static final PitfallTrap MOONLIGHT_ANTELOPE = new PitfallTrap(91, 450, "moonlight antelope", new int[] { Items.BIG_BONES, 29171, 29174, 29113 }, 51678, 51679, 51680, 51681);
 
     static {
         for (PitfallTrap trap : Arrays.asList(LARUPIA, GRAAHK, KYATT, SUNLIGHT_ANTELOPE, MOONLIGHT_ANTELOPE)) {
@@ -49,11 +53,13 @@ public class PitfallTrap implements TrapType {
 
     private final int levelReq;
     private final double experience;
+    private final String name;
     private final int[] loot, objectIds;
 
-    public PitfallTrap(int levelReq, double experience, int[] loot, int... objectIds) {
+    public PitfallTrap(int levelReq, double experience, String name, int[] loot, int... objectIds) {
         this.levelReq = levelReq;
         this.experience = experience;
+        this.name = name;
         this.loot = loot;
         this.objectIds = objectIds;
     }
@@ -199,6 +205,8 @@ public class PitfallTrap implements TrapType {
             rollLoot(player).forEach(item -> Hunter.processLoot(player, item));
             player.getStats().addXp(StatType.Hunter, experience, true);
             player.getCombat().lastAttacker = null;
+            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.PITFALLTRAP, name);
+            player.getTaskManager().doLookupByCategory(TaskCategory.HUNTER_CATCH, 1, true);
         }
     }
 }
