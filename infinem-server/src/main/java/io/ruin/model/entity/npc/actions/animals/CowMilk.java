@@ -45,6 +45,7 @@ public class CowMilk {
                         player.getInventory().remove(Items.BUCKET, 1);
                         player.getInventory().add(Items.BUCKET_OF_MILK, 1);
                         player.sendMessage("You milk the " + name + ".");
+                        if (id == 52576) player.getTaskManager().doLookupByUUID(1115);  // Milk a Buffalo
                         player.unlock();
                     });
                 } else {
@@ -66,6 +67,7 @@ public class CowMilk {
                         player.getInventory().remove(item);
                         player.getInventory().add(Items.BUCKET_OF_MILK, 1);
                         player.sendMessage("You milk the " + name + ".");
+                        if (id == 52576) player.getTaskManager().doLookupByUUID(1115);  // Milk a Buffalo
                         player.unlock();
                     });
                 } else {
