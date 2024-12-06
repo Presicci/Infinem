@@ -219,7 +219,23 @@ public enum AreaShopItem {
     // a dark disposition
     // the fisher's flute
     // history and hearsay
-    ;
+
+    /*
+     * Varlamore
+     */
+    BASIC_QUETZAL_WHISTLE(29271, TaskArea.VARLAMORE, AreaTaskTier.EASY, 1000),
+    BUTLER_TORSO(29914, TaskArea.VARLAMORE, AreaTaskTier.EASY, 250),
+    BUTLER_LEGS(29915, TaskArea.VARLAMORE, AreaTaskTier.EASY, 250),
+    ENHANCED_QUETZAL_WHISTLE(29273, TaskArea.VARLAMORE, AreaTaskTier.EASY, 5000),
+    EMISSARY_HOOD(29868, TaskArea.VARLAMORE, AreaTaskTier.MEDIUM, 1250),
+    EMISSARY_TOP(29870, TaskArea.VARLAMORE, AreaTaskTier.MEDIUM, 1750),
+    EMISSARY_BOTTOM(29872, TaskArea.VARLAMORE, AreaTaskTier.MEDIUM, 1500),
+    EMISSARY_SANDALS(29874, TaskArea.VARLAMORE, AreaTaskTier.MEDIUM, 1000),
+    RAM_MASK(29929, TaskArea.VARLAMORE, AreaTaskTier.MEDIUM, 2000),
+    WOLF_MASK(29930, TaskArea.VARLAMORE, AreaTaskTier.MEDIUM, 2000),
+    BIRD_MASK(29931, TaskArea.VARLAMORE, AreaTaskTier.MEDIUM, 2000),
+    JAGUAR_MASK(29932, TaskArea.VARLAMORE, AreaTaskTier.MEDIUM, 2000),
+    SNAKE_MASK(29933, TaskArea.VARLAMORE, AreaTaskTier.MEDIUM, 2000);
 
     private final int itemId;
     private final TaskArea area;
