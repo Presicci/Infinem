@@ -27,13 +27,18 @@ public class EstateAgent {
 
     private static final int HOUSE_COST = 10_000;
 
+    private static final int[] AGENTS = {
+            3097,
+            9137,   // Priff
+            13343,  // Varlamore
+    };
+
     static {
-        NPCAction.register(3097, "talk-to", EstateAgent::agentDialogue);
-        NPCAction.register(3097, "relocate", EstateAgent::selectLocation);
-        NPCAction.register(3097, "redecorate", EstateAgent::selectStyle);
-        NPCAction.register(9137, "talk-to", EstateAgent::agentDialogue);
-        NPCAction.register(9137, "relocate", EstateAgent::selectLocation);
-        NPCAction.register(9137, "redecorate", EstateAgent::selectStyle);
+        for (int id : AGENTS) {
+            NPCAction.register(id, "talk-to", EstateAgent::agentDialogue);
+            NPCAction.register(id, "relocate", EstateAgent::selectLocation);
+            NPCAction.register(id, "redecorate", EstateAgent::selectStyle);
+        }
     }
 
     private static void agentDialogue(Player player, NPC npc) {
