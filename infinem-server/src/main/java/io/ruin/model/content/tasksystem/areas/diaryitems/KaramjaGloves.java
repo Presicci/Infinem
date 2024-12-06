@@ -13,11 +13,11 @@ import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 public class KaramjaGloves {
 
     private static void gemMineTeleport(Player player) {
-        ModernTeleport.teleport(player, JewelleryTeleportBounds.SHERLOCK.getBounds());
+        ModernTeleport.teleport(player, JewelleryTeleportBounds.SHILO_GEM_MINE.getBounds());
     }
 
     private static void duradelTeleport(Player player) {
-        ModernTeleport.teleport(player, JewelleryTeleportBounds.SHERLOCK.getBounds());
+        ModernTeleport.teleport(player, JewelleryTeleportBounds.DURADEL.getBounds());
     }
 
     static {
