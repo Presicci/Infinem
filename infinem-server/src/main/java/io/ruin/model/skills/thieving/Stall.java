@@ -346,7 +346,7 @@ public enum Stall {
     private static void rollOutfitPiece(Player player, Stall stall) {
         if (Random.rollDie(Math.max(500, (stall.petOdds / 100) - (player.getStats().get(StatType.Thieving).currentLevel * 10)))) {
             for (int itemId : OUTFIT_PIECES) {
-                if (player.findItem(itemId) == null) {
+                if (!player.hasItem(itemId, true)) {
                     if (player.getInventory().hasRoomFor(itemId) || player.getGameMode().isUltimateIronman()) {
                         player.sendMessage(Color.RED.wrap("<shad=0>You find a rogue piece while thieving!"));
                         player.getInventory().add(itemId);

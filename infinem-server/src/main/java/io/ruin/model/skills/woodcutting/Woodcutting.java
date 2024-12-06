@@ -213,7 +213,7 @@ public class Woodcutting {
     private static void rollOutfitPiece(Player player, Tree tree) {
         if (Random.rollDie(Math.max(500, (tree.petOdds / 100) - (player.getStats().get(StatType.Woodcutting).currentLevel * 10)))) {
             for (int itemId : OUTFIT_PIECES) {
-                if (player.findItem(itemId) == null) {
+                if (!player.hasItem(itemId, true)) {
                     if (player.getInventory().hasRoomFor(itemId) || player.getGameMode().isUltimateIronman()) {
                         player.sendMessage(Color.RED.wrap("<shad=0>You find a lumberjack piece while woodcutting!"));
                         player.getInventory().addOrDrop(itemId, 1);
