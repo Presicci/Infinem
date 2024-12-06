@@ -162,28 +162,7 @@ public class KourendCatacombs {
     }
 
     public static int getNextTotemPiece(Player player) {
-        int base = 0, middle = 0, top = 0;
-        for (Item item : player.getInventory().getItems()) {
-            if (item == null)
-                continue;
-            if (item.getId() == 19679)
-                base += item.getAmount();
-            else if (item.getId() == 19681)
-                middle += item.getAmount();
-            else if (item.getId() == 19683)
-                top += item.getAmount();
-        }
-        for (Item item : player.getBank().getItems()) {
-            if (item == null)
-                continue;
-            if (item.getId() == 19679)
-                base += item.getAmount();
-            else if (item.getId() == 19681)
-                middle += item.getAmount();
-            else if (item.getId() == 19683)
-                top += item.getAmount();
-        }
-
+        int base = player.getItemAmount(19679), middle = player.getItemAmount(19681), top = player.getItemAmount(19683);
         int lowest = Math.min(base, Math.min(middle, top));
         if (lowest == base)
             return 19679;
