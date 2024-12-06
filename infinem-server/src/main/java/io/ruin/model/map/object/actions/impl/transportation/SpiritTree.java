@@ -49,6 +49,7 @@ public class SpiritTree {
         options.add(new Option("Gnome Stronghold", () -> teleport(player, 2462, 3444, 0)));
         options.add(new Option("Battlefield of Khazard", () -> teleport(player, 2555, 3259, 0)));
         options.add(new Option("Grand Exchange", () -> teleport(player, 3184, 3508, 0)));
+        options.add(new Option("Feldip Hills", () -> teleport(player, 2488, 2851, 0)));
         int i = 0;
         for (PatchData farmTree : SPIRIT_TREE_PATCHES) {
             SpiritTreePatch patch = (SpiritTreePatch) player.getFarming().getPatch(farmTree.getObjectId());
