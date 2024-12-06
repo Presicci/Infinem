@@ -90,5 +90,6 @@ public class AreaShop {
         registerAreaVendor(5521, TaskArea.MORYTANIA);       // Le-sabre
         registerAreaVendor(5525, TaskArea.MISTHALIN);       // Toby
         registerAreaVendor(5518, TaskArea.TIRANNWN);        // Elder gnome child
+        registerAreaVendor(13319, TaskArea.VARLAMORE);      // Helvia
     }
 }
