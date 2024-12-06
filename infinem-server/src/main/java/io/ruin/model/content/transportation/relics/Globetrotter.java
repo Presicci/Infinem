@@ -72,7 +72,8 @@ public class Globetrotter {
             new Option("Waterbirth Island", (player) -> teleport(player, MagicTeleportBounds.WATERBIRTH.getBounds())),
             new Option("Weiss", (player) -> teleport(player, BasaltTeleport.WEISS)),
             new Option("West Ardougne", (player) -> teleport(player, MagicTeleportBounds.WEST_ARDOUGNE.getBounds())),
-            new Option("Yanille", (player) -> teleport(player, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds()))
+            new Option("Yanille", (player) -> teleport(player, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds())),
+            new Option("Civitas illa Fortis", (player) -> teleport(player, MagicTeleportBounds.VARLAMORE.getBounds()))
     );
 
     private static void nexus(Player player) {
