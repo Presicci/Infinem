@@ -168,7 +168,6 @@ public abstract class Entity extends TemporaryAttributesHolder {
     protected Position lastPosition;
 
     public void updateLastPosition() {
-        if (isPlayer() && Tile.get(lastPosition) != null) Tile.get(lastPosition).playerLastTile = 0;
         lastPosition.copy(getPosition());
     }
 
