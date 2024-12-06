@@ -23,8 +23,20 @@ public class SpiritTree {
         }
     }
 
-    private static final List<PatchData> SPIRIT_TREE_PATCHES = Arrays.asList(PatchData.PORT_SARIM_SPIRIT_TREE, PatchData.BRIMHAVEN_SPIRIT_TREE, PatchData.ETCETERIA_SPIRIT_TREE, PatchData.ZEAH_SPIRIT_TREE, PatchData.FARMING_GUILD_SPIRIT_TREE);
-    private static final String[] PATCH_NAMES = {"Port Sarim", "Brimhaven", "Etceteria", "Zeah", "Farming Guild"};
+    private static final List<PatchData> SPIRIT_TREE_PATCHES = Arrays.asList(
+            PatchData.PORT_SARIM_SPIRIT_TREE,
+            PatchData.BRIMHAVEN_SPIRIT_TREE,
+            PatchData.ETCETERIA_SPIRIT_TREE,
+            PatchData.ZEAH_SPIRIT_TREE,
+            PatchData.FARMING_GUILD_SPIRIT_TREE
+    );
+    private static final String[] PATCH_NAMES = {
+            "Port Sarim",
+            "Brimhaven",
+            "Etceteria",
+            "Zeah",
+            "Farming Guild"
+    };
 
     private static List<Option> getOptions(Player player) {
         List<Option> options = new ArrayList<>();
