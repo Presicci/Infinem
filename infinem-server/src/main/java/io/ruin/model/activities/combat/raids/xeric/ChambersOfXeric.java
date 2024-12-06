@@ -269,7 +269,7 @@ public class ChambersOfXeric {
     /*
      * Raid generation code
      */
-    private static final ChamberDefinition[] COMBAT_ROOMS = {/*VESPULA,*/ ChamberDefinition.TEKTON, ChamberDefinition.VASA_NISTIRIO, ChamberDefinition.GUARDIANS, ChamberDefinition.SKELETAL_MYSTICS, ChamberDefinition.LIZARDMAN_SHAMANS, ChamberDefinition.MUTTADILES, ChamberDefinition.VANGUARDS}; // order is important here!!
+    private static final ChamberDefinition[] COMBAT_ROOMS = {/*VESPULA,*/ ChamberDefinition.TEKTON, /*ChamberDefinition.VASA_NISTIRIO,*/ ChamberDefinition.GUARDIANS, ChamberDefinition.SKELETAL_MYSTICS, ChamberDefinition.LIZARDMAN_SHAMANS, ChamberDefinition.MUTTADILES, ChamberDefinition.VANGUARDS}; // order is important here!!
     private static final int X_LENGTH = 4;
     private static final int Y_LENGTH = 2;
 
