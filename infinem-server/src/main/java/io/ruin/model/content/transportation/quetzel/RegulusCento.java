@@ -20,16 +20,16 @@ import java.util.List;
 public class RegulusCento {
 
     private static void travel(Player player, Destination destination) {
-        QuetzelTransportSystem.teleport(player, destination.position);
+        QuetzalTransportSystem.teleport(player, destination.position);
     }
 
     private static void customizeRenu(Player player) {
         player.dialogue(new OptionsDialogue("Customize Renu",
-                new Option("Green", () -> QuetzelTransportSystem.RENU.set(player, 2)),
-                new Option("Orange", () -> QuetzelTransportSystem.RENU.set(player, 3)),
-                new Option("Blue", () -> QuetzelTransportSystem.RENU.set(player, 4)),
-                new Option("Cyan", () -> QuetzelTransportSystem.RENU.set(player, 5)),
-                new Option("Green & Orange", () -> QuetzelTransportSystem.RENU.set(player, 6))
+                new Option("Green", () -> QuetzalTransportSystem.RENU.set(player, 2)),
+                new Option("Orange", () -> QuetzalTransportSystem.RENU.set(player, 3)),
+                new Option("Blue", () -> QuetzalTransportSystem.RENU.set(player, 4)),
+                new Option("Cyan", () -> QuetzalTransportSystem.RENU.set(player, 5)),
+                new Option("Green & Orange", () -> QuetzalTransportSystem.RENU.set(player, 6))
         ));
     }
 

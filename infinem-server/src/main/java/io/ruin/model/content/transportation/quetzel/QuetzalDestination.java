@@ -11,7 +11,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum QuetzelDestination {
+public enum QuetzalDestination {
     CIVITAS_ILLA_FORTIS(0, -1, new Position(1697, 3140)),
     TEOMAT(1, -1, new Position(1437, 3171)),
     SUNSET_COAST(2, -1, new Position(1548, 2995)),
@@ -28,7 +28,7 @@ public enum QuetzelDestination {
     private final Position destination;
 
     static {
-        for (QuetzelDestination dest : values()) {
+        for (QuetzalDestination dest : values()) {
             if (dest.varpbit != -1) Config.varpbit(dest.varpbit, false).defaultValue(1);
         }
     }
