@@ -59,6 +59,7 @@ public class FairysFlight {
             new Option("Taverly", (player) -> teleport(player, 2935, 3441, 0)),
             new Option("Tree Gnome Stronghold", (player) -> teleport(player, 2438, 3417, 0)),
             new Option("Tree Gnome Village", (player) -> teleport(player, 2488, 3182, 0)),
+            new Option("Troll Stronghold", (player) -> teleport(player, 2826, 3687, 0)),
             new Option("Underwater", (player) -> teleport(player, 3734, 10271, 1)),
             new Option("Varrock", (player) -> teleport(player, 3230, 3456, 0)),
             new Option("Weiss", (player) -> teleport(player, 2847, 3934, 0)),
