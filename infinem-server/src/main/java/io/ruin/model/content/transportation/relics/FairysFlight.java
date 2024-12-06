@@ -65,7 +65,10 @@ public class FairysFlight {
             new Option("Varrock", (player) -> teleport(player, 3230, 3456, 0)),
             new Option("Weiss", (player) -> teleport(player, 2847, 3934, 0)),
             new Option("White Wolf Mountain", (player) -> teleport(player, 2857, 3433, 0)),
-            new Option("Yanille", (player) -> teleport(player, 2572, 3103, 0))
+            new Option("Yanille", (player) -> teleport(player, 2572, 3103, 0)),
+            new Option("Ortus Farm", (player) -> teleport(player, 1592, 3099, 0)),
+            new Option("Locus Oasis", (player) -> teleport(player, 1683, 2970, 0)),
+            new Option("Aldarin", (player) -> teleport(player, 1365, 2943, 0))
     );
 
     private static void teleports(Player player) {
