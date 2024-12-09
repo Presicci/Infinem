@@ -7,6 +7,7 @@ import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.map.object.actions.impl.locations.prifddinas.PrifCityEntrance;
 import io.ruin.model.skills.farming.patch.PatchData;
 import io.ruin.model.skills.farming.patch.impl.SpiritTreePatch;
 
@@ -17,7 +18,7 @@ import java.util.List;
 public class SpiritTree {
 
     static {
-        for (int id : Arrays.asList(1293, 1294, 1295)) {
+        for (int id : Arrays.asList(1293, 1294, 1295, 37329)) {
             ObjectAction.register(id, 1, (player, obj) -> open(player));
             ObjectAction.register(id, 2, (player, obj) -> open(player));
         }
@@ -50,6 +51,9 @@ public class SpiritTree {
         options.add(new Option("Battlefield of Khazard", () -> teleport(player, 2555, 3259, 0)));
         options.add(new Option("Grand Exchange", () -> teleport(player, 3184, 3508, 0)));
         options.add(new Option("Feldip Hills", () -> teleport(player, 2488, 2851, 0)));
+        if (PrifCityEntrance.prifSkillCheckNoMessage(player)) {
+            options.add(new Option("Prifddinas", () -> teleport(player, 3274, 6123, 0)));
+        }
         int i = 0;
         for (PatchData farmTree : SPIRIT_TREE_PATCHES) {
             SpiritTreePatch patch = (SpiritTreePatch) player.getFarming().getPatch(farmTree.getObjectId());
