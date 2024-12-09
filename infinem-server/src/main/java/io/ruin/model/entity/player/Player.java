@@ -1990,6 +1990,12 @@ public class Player extends PlayerAttributes {
         return true;
     }
 
+    public boolean addTickEventIfLonger(TickEvent event) {
+        tickingEvents.removeIf(e -> e.getDuration() < event.getDuration() && e.getType() == event.getType());
+        tickingEvents.add(event);
+        return true;
+    }
+
     public boolean isTickEventActive(TickEventType event) {
         return tickingEvents.stream().anyMatch(e -> e.getType() == event);
     }

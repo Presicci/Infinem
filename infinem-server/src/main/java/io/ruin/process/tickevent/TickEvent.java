@@ -40,4 +40,8 @@ public class TickEvent {
         }
         return durationTicks;
     }
+
+    public int getDuration() {
+        return durationTicks;
+    }
 }

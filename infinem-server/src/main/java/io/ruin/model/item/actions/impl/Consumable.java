@@ -1047,7 +1047,7 @@ public class Consumable {
         });
         registerPotion(Potion.ANTIDOTE_PLUS, p -> p.curePoison((540 * 1000) / 600));
         registerPotion(Potion.ANTIFIRE, p -> {
-            p.addTickEvent(new TickEvent(
+            p.addTickEventIfLonger(new TickEvent(
                     TickEventType.ANTIFIRE,
                     (360 * 1000) / 600,
                     () -> {
@@ -1061,7 +1061,7 @@ public class Consumable {
             ));
         });
         registerPotion(Potion.SUPER_ANTIFIRE, p -> {
-            p.addTickEvent(new TickEvent(
+            p.addTickEventIfLonger(new TickEvent(
                     TickEventType.ANTIFIRE,
                     (180 * 1000) / 600,
                     () -> {
@@ -1078,7 +1078,7 @@ public class Consumable {
         registerPotion(Potion.STAMINA, p -> {
             p.getMovement().restoreEnergy(20);
             Config.STAMINA_POTION.set(p, 1);
-            p.addTickEvent(new TickEvent(
+            p.addTickEventIfLonger(new TickEvent(
                     TickEventType.STAMINA_POTION,
                     200,
                     () -> {
@@ -1113,7 +1113,7 @@ public class Consumable {
         });
 
         registerPotion(Potion.EXTENDED_ANTIFIRE, p -> {
-            p.addTickEvent(new TickEvent(
+            p.addTickEventIfLonger(new TickEvent(
                     TickEventType.ANTIFIRE,
                     (720 * 1000) / 600,
                     () -> {
@@ -1127,7 +1127,7 @@ public class Consumable {
             ));
         });
         registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> {
-            p.addTickEvent(new TickEvent(
+            p.addTickEventIfLonger(new TickEvent(
                     TickEventType.ANTIFIRE,
                     (360 * 1000) / 600,
                     () -> {
