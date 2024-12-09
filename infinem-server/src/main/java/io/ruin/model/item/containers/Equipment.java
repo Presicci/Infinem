@@ -187,7 +187,7 @@ public class Equipment extends ItemContainer {
             if (name.contains("platebody") || name.contains("chainbody")) {
                 player.privateSound(2239);
             } else if (name.contains("platelegs") || name.contains("plateskirt")) {
-                player.privateSound(2442);
+                player.privateSound(2242);
             } else if (name.contains("chaps") || name.contains("vambraces") || name.contains("d'hide") || name.contains("leather")) {
                 player.privateSound(2241);
             } else if (name.contains("arrow")) {
