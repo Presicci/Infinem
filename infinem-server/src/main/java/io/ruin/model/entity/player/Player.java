@@ -1976,8 +1976,16 @@ public class Player extends PlayerAttributes {
     }
 
     public boolean addTickEvent(TickEvent event) {
+        return addTickEvent(event, false);
+    }
+
+    public boolean addTickEvent(TickEvent event, boolean override) {
         if (event.getType() != TickEventType.GENERIC_UNCHECKABLE_EVENT
-                && isTickEventActive(event.getType())) return false;
+                && isTickEventActive(event.getType())
+                && !override) return false;
+        if (override) {
+            tickingEvents.removeIf(e -> e.getType() == event.getType());
+        }
         tickingEvents.add(event);
         return true;
     }
