@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.actions.ItemAction;
@@ -35,21 +36,14 @@ public class ConstructionSkillCape {
     }
 
     public static void selectTeleport(Player player) {
-        player.dialogue(new OptionsDialogue("Choose Location:",
+        OptionScroll.open(player, "Portal Locations",
                 new Option("Rimmington", () -> ModernTeleport.teleport(player, new Bounds(2953,3223,2955,3225,0))),
                 new Option("Taverley", () -> ModernTeleport.teleport(player, new Bounds(2893,3464,2895,3466,0))),
                 new Option("Pollnivneach", () -> ModernTeleport.teleport(player, new Bounds(3338,3003,3342,3005,0))),
-                new Option("Next", () -> selectTeleport2(player))
-        ));
-    }
-
-    protected static void selectTeleport2(Player player) {
-        player.dialogue(new OptionsDialogue("Choose Location:",
                 new Option("Hosidius", () -> ModernTeleport.teleport(player, new Bounds(1742,3516,1744,3518,0))),
                 new Option("Brimhaven", () -> ModernTeleport.teleport(player, new Bounds(2757,3177,2759,3179,0))),
-                new Option("Yanille", () -> ModernTeleport.teleport(player, new Bounds(2543,3094,2545,3096,0))),
-                new Option("Previous", () -> selectTeleport(player))
-        ));
+                new Option("Yanille", () -> ModernTeleport.teleport(player, new Bounds(2543,3094,2545,3096,0)))
+        );
     }
 
     protected static void teleport(Player player) {
