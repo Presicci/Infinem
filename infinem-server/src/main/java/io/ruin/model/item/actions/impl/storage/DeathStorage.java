@@ -193,7 +193,7 @@ public class DeathStorage extends ItemContainer {
 
     private void update() {
         Config.DEATH_STORAGE_TYPE.set(player, unlocked ? 4 : 3);
-        new Unlock(602, 3).children(0, 50).unlockMultiple(player, 1,8,9);
+        new Unlock(602, 3).children(0, 200).unlockMultiple(player, 1,8,9);
         Item cost = getUnlockCost();
         if (!unlocked && cost != null) {
             player.addEvent(event -> {
