@@ -137,8 +137,8 @@ public class npc_combat extends DataFile {
                     info.light_range_defence = rs.getInt("lightrangedefence");
                     info.ranged_defence = rs.getInt("rangedefence");
                     info.heavy_range_defence = rs.getInt("heavyrangedefence");
-                    info.poison_immunity = rs.getInt("poisonimmunity") == 1;
-                    info.venom_immunity = rs.getInt("venomimmunity") == 1;
+                    //info.poison_immunity = rs.getInt("poisonimmunity") == 1;
+                    //info.venom_immunity = rs.getInt("venomimmunity") == 1;
                     String tagString = rs.getString("tags");
                     if (tagString != null && !tagString.isEmpty()) {
                         String[] tags = tagString.split("(?<!\\\\),");
