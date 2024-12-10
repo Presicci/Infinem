@@ -1047,12 +1047,15 @@ public class Consumable {
         });
         registerPotion(Potion.ANTIDOTE_PLUS, p -> p.curePoison((540 * 1000) / 600));
         registerPotion(Potion.ANTIFIRE, p -> {
+            int ticks = (360 * 1000) / 600;
+            Config.ANTIFIRE.set(p, ticks / 30);
             p.addTickEventIfLonger(new TickEvent(
                     TickEventType.ANTIFIRE,
-                    (360 * 1000) / 600,
+                    ticks,
                     () -> {
                         p.sendMessage("<col=7f007f>Your antifire potion has expired.");
                         p.privateSound(2607, 1, 0);
+                        Config.ANTIFIRE.set(p, 0);
                     },
                     new TickEventRunnable(30, () -> {
                         p.sendMessage("<col=7f007f>Your antifire potion is about to expire.");
@@ -1061,12 +1064,15 @@ public class Consumable {
             ));
         });
         registerPotion(Potion.SUPER_ANTIFIRE, p -> {
+            int ticks = (180 * 1000) / 600;
+            Config.SUPER_ANTIFIRE.set(p, ticks / 30);
             p.addTickEventIfLonger(new TickEvent(
                     TickEventType.ANTIFIRE,
-                    (180 * 1000) / 600,
+                    ticks,
                     () -> {
                         p.sendMessage("<col=7f007f>Your super antifire potion has expired.");
                         p.privateSound(2607, 1, 0);
+                        Config.SUPER_ANTIFIRE.set(p, 0);
                     },
                     new TickEventRunnable(30, () -> {
                         p.sendMessage("<col=7f007f>Your super antifire potion is about to expire.");
@@ -1113,12 +1119,15 @@ public class Consumable {
         });
 
         registerPotion(Potion.EXTENDED_ANTIFIRE, p -> {
+            int ticks = (720 * 1000) / 600;
+            Config.ANTIFIRE.set(p, ticks / 30);
             p.addTickEventIfLonger(new TickEvent(
                     TickEventType.ANTIFIRE,
-                    (720 * 1000) / 600,
+                    ticks,
                     () -> {
                         p.sendMessage("<col=7f007f>Your antifire potion has expired.");
                         p.privateSound(2607, 1, 0);
+                        Config.ANTIFIRE.set(p, 0);
                     },
                     new TickEventRunnable(30, () -> {
                         p.sendMessage("<col=7f007f>Your antifire potion is about to expire.");
@@ -1127,12 +1136,15 @@ public class Consumable {
             ));
         });
         registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> {
+            int ticks = (360 * 1000) / 600;
+            Config.SUPER_ANTIFIRE.set(p, ticks / 30);
             p.addTickEventIfLonger(new TickEvent(
                     TickEventType.ANTIFIRE,
-                    (360 * 1000) / 600,
+                    ticks,
                     () -> {
                         p.sendMessage("<col=7f007f>Your super antifire potion has expired.");
                         p.privateSound(2607, 1, 0);
+                        Config.SUPER_ANTIFIRE.set(p, 0);
                     },
                     new TickEventRunnable(30, () -> {
                         p.sendMessage("<col=7f007f>Your super antifire potion is about to expire.");

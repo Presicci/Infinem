@@ -1991,7 +1991,7 @@ public class Player extends PlayerAttributes {
     }
 
     public boolean addTickEventIfLonger(TickEvent event) {
-        tickingEvents.removeIf(e -> e.getDuration() < event.getDuration() && e.getType() == event.getType());
+        tickingEvents.removeIf(e -> e.getType() == event.getType() && e.getDuration() < event.getDuration());
         tickingEvents.add(event);
         return true;
     }

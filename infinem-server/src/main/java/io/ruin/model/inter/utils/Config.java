@@ -1241,6 +1241,12 @@ public class Config {
     public static final Config ZEALOT_SET_PIECES = varpbit(11794, false);
 
     /**
+     * Potion timers
+     */
+    public static final Config ANTIFIRE = varpbit(3981, true);
+    public static final Config SUPER_ANTIFIRE = varpbit(6101, true);
+
+    /**
      * Separator
      */
 
