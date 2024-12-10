@@ -1,9 +1,8 @@
 package io.ruin.model.stat;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.model.activities.holidays.ChristmasEvent;
 import io.ruin.model.inter.utils.Config;
-import io.ruin.model.item.Items;
-import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.SkillingOutfit;
 import io.ruin.services.discord.impl.SkillAchievementEmbedMessage;
 import io.ruin.utility.Color;
@@ -183,6 +182,9 @@ public class StatList {
             double relicMulti = getRelicMultiplier(type);
             amount *= relicMulti;
         }
+
+        // Christmas gift bag
+        ChristmasEvent.rollExperienceGiftBag(player, type, amount);
 
         double newXp = stat.experience + amount;
         if(newXp > Stat.MAX_XP)

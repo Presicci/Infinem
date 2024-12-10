@@ -219,6 +219,9 @@ public class NPCDrops {
         Wilderness.resourcePackWithBoss(pKiller, npc);
 
         handleRelicResetTabletDrop(killer, pKiller, dropPosition);
+
+        // Christmas event
+        rollGiftDrop(killer, pKiller, dropPosition);
     }
 
     private void handleDrop(Killer killer, Position dropPosition, Player pKiller, Item item) {
@@ -663,5 +666,12 @@ public class NPCDrops {
         if (combatLevel < 50) return;
         int roll = Math.max(2000, 7500 - (combatLevel / 20) * 150);
         if (Random.rollDie(roll)) handleDrop(killer, pos, player, new Item(32041));
+    }
+
+    // Christmas event
+    public void rollGiftDrop(Killer killer, Player player, Position pos) {
+        int combatLevel = npc.getDef().combatLevel;
+        int roll = Math.max(30, 50 - (combatLevel / 5));
+        if (Random.rollDie(roll)) handleDrop(killer, pos, player, new Item(32042));
     }
 }
