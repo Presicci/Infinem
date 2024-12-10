@@ -353,10 +353,10 @@ public class AbyssalSire extends NPCCombat {
         } else if (phase == 1 && npc.getId() != 5888) { // look for stun
             if (npc.getHp() - hit.damage <= npc.getMaxHp() - 75) {
                 stun();
-                hit.attacker.player.sendMessage("The Sire has been disorientated.");
+                if (hit.attacker != null && hit.attacker.isPlayer()) hit.attacker.player.sendMessage("The Sire has been disorientated.");
             } else if (Random.get() <= getStunChance(hit.attackSpell)) {
                 stun();
-                hit.attacker.player.sendMessage("Your Shadow spell disorientates the Sire.");
+                if (hit.attacker != null && hit.attacker.isPlayer()) hit.attacker.player.sendMessage("Your Shadow spell disorientates the Sire.");
             }
         } else if (phase == 2 && npc.getHp() < npc.getMaxHp() / 2) {
             startPhase3();
