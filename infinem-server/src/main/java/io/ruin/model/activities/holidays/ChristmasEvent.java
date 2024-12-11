@@ -54,10 +54,24 @@ public class ChristmasEvent {
         }
     }
 
+    private static final int[] GINGERBREAD_SHIELDS = { 24428, 24430, 24431 };
+
+    private static void transformShield(Player player, Item item) {
+        switch (item.getId()) {
+            case 24428: item.setId(24430); break;
+            case 24430: item.setId(24431); break;
+            case 24431: item.setId(24428); break;
+        }
+    }
+
     static {
         ItemAction.registerInventory(32042, "open", (player, item) -> {
             player.getInventory().remove(32042, 1);
             player.getInventory().addOrDrop(GIFT_TABLE.rollItem());
         });
+        for (int id : GINGERBREAD_SHIELDS) {
+            ItemAction.registerInventory(id, "transform", ChristmasEvent::transformShield);
+            ItemAction.registerEquipment(id, "transform", ChristmasEvent::transformShield);
+        }
     }
 }
