@@ -2519,7 +2519,7 @@
     "y": 3380,
     "z": 0,
     "direction": "S",
-    "walkRange": 30
+    "walkRange": 10
   },
   {
     "name": "Stray dog",
@@ -2528,7 +2528,7 @@
     "y": 3409,
     "z": 0,
     "direction": "S",
-    "walkRange": 25
+    "walkRange": 10
   },
   {
     "name": "Stray dog",
@@ -2537,7 +2537,7 @@
     "y": 3393,
     "z": 0,
     "direction": "S",
-    "walkRange": 20
+    "walkRange": 10
   },
   {
     "name": "Stray dog",
@@ -2546,7 +2546,7 @@
     "y": 3400,
     "z": 0,
     "direction": "S",
-    "walkRange": 20
+    "walkRange": 10
   },
   {
     "name": "Stray dog",
@@ -2555,7 +2555,7 @@
     "y": 3442,
     "z": 0,
     "direction": "S",
-    "walkRange": 15
+    "walkRange": 10
   },
   {
     "name": "The Collector",
