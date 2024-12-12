@@ -84,6 +84,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Elf (Pickpocket)", PickPocket.ELF.lootTable),
             new DropViewerEntry("Elf (Pickpocket, Prif)", PickPocket.ELF_PRIF.lootTable),
             new DropViewerEntry("TzHaar-Hur (Pickpocket)", PickPocket.TZHAAR_HUR.lootTable),
+            new DropViewerEntry("Wealthy Citizen (Pickpocket)", PickPocket.WEALTHY_CITIZEN.lootTable),
             new DropViewerEntry("Vegetable Stall", Stall.VEGETABLE_STALL.lootTable),
             new DropViewerEntry("Baker's Stall", Stall.BAKERS_STALL.lootTable),
             new DropViewerEntry("Crafting Stall", Stall.CRAFTING_STALL.lootTable),
