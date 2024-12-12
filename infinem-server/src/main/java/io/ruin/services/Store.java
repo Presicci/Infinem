@@ -256,24 +256,31 @@ public class Store {
                 break;
             case 25:    // Red partyhat
                 addItem(player, 1038, 1);
+                player.getTransmogCollection().addToCollection(1038);
                 break;
             case 26:    // Yellow partyhat
                 addItem(player, 1040, 1);
+                player.getTransmogCollection().addToCollection(1040);
                 break;
             case 27:    // Blue partyhat
                 addItem(player, 1042, 1);
+                player.getTransmogCollection().addToCollection(1042);
                 break;
             case 28:    // Green partyhat
                 addItem(player, 1044, 1);
+                player.getTransmogCollection().addToCollection(1044);
                 break;
             case 29:    // Purple partyhat
                 addItem(player, 1046, 1);
+                player.getTransmogCollection().addToCollection(1046);
                 break;
             case 30:    // White partyhat
                 addItem(player, 1048, 1);
+                player.getTransmogCollection().addToCollection(1048);
                 break;
             case 31:    // Santa hat
                 addItem(player, 1050, 1);
+                player.getTransmogCollection().addToCollection(1050);
                 break;
         }
         return 0;
