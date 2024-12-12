@@ -249,7 +249,7 @@ public enum PickPocket {
             0.67,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 85, 85, 79), //Coins
-                    new LootItem(29325, 1, 1, 5), //House keys
+                    //new LootItem(29325, 1, 1, 5), //House keys
                     new LootItem(24362, 1, 1, 1) //Clue scroll (easy)
             )),
     BANDIT(53, 79.5, 422, 5, 3, "bandit's", PlayerCounter.PICKPOCKETED_BANDIT,
