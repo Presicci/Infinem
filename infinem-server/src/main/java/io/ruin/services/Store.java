@@ -254,6 +254,27 @@ public class Store {
             case 24:    // Combat relic reset tablet
                 addItem(player, 32041, 1);
                 break;
+            case 25:    // Red partyhat
+                addItem(player, 1038, 1);
+                break;
+            case 26:    // Yellow partyhat
+                addItem(player, 1040, 1);
+                break;
+            case 27:    // Blue partyhat
+                addItem(player, 1042, 1);
+                break;
+            case 28:    // Green partyhat
+                addItem(player, 1044, 1);
+                break;
+            case 29:    // Purple partyhat
+                addItem(player, 1046, 1);
+                break;
+            case 30:    // White partyhat
+                addItem(player, 1048, 1);
+                break;
+            case 31:    // Santa hat
+                addItem(player, 1050, 1);
+                break;
         }
         return 0;
     }
