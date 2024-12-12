@@ -15,7 +15,7 @@ public class FishingTables {
             new LootItem(Items.OLD_BOOT, 1, 100),
             new LootItem(Items.BIG_FISHING_NET, 1, 100),
             new LootItem(Items.CASKET, 1, 100),
-            new LootItem(29325, 1, 50),  // House keys
+            //new LootItem(29325, 1, 50),  // House keys
             new LootItem(Items.JADE, 1, 5),
             new LootItem(Items.RED_TOPAZ, 1, 1)
     );
