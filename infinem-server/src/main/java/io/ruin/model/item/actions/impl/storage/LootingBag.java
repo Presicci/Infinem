@@ -64,6 +64,14 @@ public class LootingBag extends ItemContainer {
             player.sendMessage("Not enough space in your looting bag.");
     }
 
+    public boolean canStore(Item item) {
+        return hasRoomFor(item);
+    }
+
+    public boolean canStore(int id) {
+        return hasRoomFor(id);
+    }
+
     private static int[] LOOTING_BAGS = {
             CLOSED_LOOTING_BAG, OPENED_LOOTING_BAG
     };

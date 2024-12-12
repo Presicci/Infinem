@@ -259,7 +259,7 @@ public class GroundItem {
         } else if (player.getInventory().contains(HerbSack.HERB_SACK)
                 && Arrays.stream(HerbSack.GRIMY_HERBS).anyMatch(i -> i == id)
                 && HerbSack.addToSackFromGround(player, id, amount)) {
-        } else if (!player.getLootingBag().isFull() && player.getInventory().hasId(LootingBag.OPENED_LOOTING_BAG) && player.wildernessLevel > 0) {
+        } else if (player.getLootingBag().canStore(id) && player.getInventory().hasId(LootingBag.OPENED_LOOTING_BAG) && player.wildernessLevel > 0) {
             if (player.getLootingBag().add(id, amount, attributes) == 0) {
                 player.sendMessage("Not enough space in your looting bag.");
                 return;
