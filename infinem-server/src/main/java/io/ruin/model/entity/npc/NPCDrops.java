@@ -14,6 +14,8 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.impl.storage.LootingBag;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.ConditionalNPCLootTable;
+import io.ruin.process.tickevent.TickEvent;
+import io.ruin.process.tickevent.TickEventType;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.cache.def.NPCDefinition;
@@ -670,8 +672,12 @@ public class NPCDrops {
 
     // Christmas event
     public void rollGiftDrop(Killer killer, Player player, Position pos) {
+        if (player.isTickEventActive(TickEventType.GIFT_BAG)) return;
         int combatLevel = npc.getDef().combatLevel;
         int roll = Math.max(30, 50 - (combatLevel / 5));
-        if (Random.rollDie(roll)) handleDrop(killer, pos, player, new Item(32042));
+        if (Random.rollDie(roll)) {
+            player.addTickEvent(new TickEvent(TickEventType.GIFT_BAG, 300));
+            handleDrop(killer, pos, player, new Item(32042));
+        }
     }
 }

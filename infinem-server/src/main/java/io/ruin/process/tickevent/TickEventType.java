@@ -11,5 +11,6 @@ public enum TickEventType {
     RANDOM_EVENT,
     PENANCE_QUEEN_POOL,
     HEAL_GROUP,
-    HUNTER_MEAT
+    HUNTER_MEAT,
+    GIFT_BAG
 }

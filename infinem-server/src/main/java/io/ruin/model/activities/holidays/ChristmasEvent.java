@@ -8,6 +8,8 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.stat.StatType;
+import io.ruin.process.tickevent.TickEvent;
+import io.ruin.process.tickevent.TickEventType;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -45,10 +47,12 @@ public class ChristmasEvent {
     );
 
     public static void rollExperienceGiftBag(Player player, StatType type, double experience) {
+        if (player.isTickEventActive(TickEventType.GIFT_BAG)) return;
         if (type == StatType.Prayer || type == StatType.Attack || type == StatType.Strength || type == StatType.Defence
                 || type == StatType.Ranged || type == StatType.Magic || type == StatType.Hitpoints || type == StatType.Slayer) return;
         int roll = (int) Math.max(30, 60 - (experience / 100));
         if (Random.rollDie(roll)) {
+            player.addTickEvent(new TickEvent(TickEventType.GIFT_BAG, 300));
             player.getInventory().addOrDrop(32042, 1);
             player.sendFilteredMessage("You find a gift bag.");
         }

@@ -3,6 +3,8 @@ package io.ruin.model.activities.combat.gauntlet;
 import io.ruin.model.activities.combat.gauntlet.monsters.GauntletMonster;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.dynamic.DynamicChunk;
+import io.ruin.model.map.dynamic.DynamicMap;
 import io.ruin.utility.Misc;
 import lombok.Getter;
 
@@ -43,8 +45,7 @@ public class GauntletDungeon {
     }
 
     public void generateDungeon() {
-        /*Region.deleteRegion(minimum.getRegion().getId(), 2, 2);
-        Palette palette = new Palette(MAP_SIZE * 2, MAP_SIZE * 2, 4);
+        DynamicMap map = new DynamicMap();
         for (int x = 0; x < MAP_SIZE; x++) {
             for (int y = 0; y < MAP_SIZE; y++) {
                 GauntletRoom room = generateRoom(x, y);
@@ -58,31 +59,29 @@ public class GauntletDungeon {
                 }
                 int paletteRotation = room.getRotation();
                 for (int height = 0; height < 2; height++) {
-                    PaletteTile[][] roomChunks = {
+                    DynamicChunk[][] roomChunks = {
                             {
-                                    new PaletteTile(room.getLocation(), room.getRoom().getX(), room.getRoom().getY(), height, paletteRotation, room.isVisible()),//SW
-                                    new PaletteTile(room.getLocation(), room.getRoom().getX() + 8, room.getRoom().getY(), height, paletteRotation, room.isVisible()), //SE
+                                    new DynamicChunk(room.getRoom().getX(), room.getRoom().getY(), height),//SW
+                                    new DynamicChunk(room.getRoom().getX() + 8, room.getRoom().getY(), height), //SE
                             },
                             {
-                                    new PaletteTile(room.getLocation(), room.getRoom().getX() + 8, room.getRoom().getY() + 8, height, paletteRotation, room.isVisible()), //NE
-                                    new PaletteTile(room.getLocation(), room.getRoom().getX(), room.getRoom().getY() + 8, height, paletteRotation, room.isVisible()) //NW
+                                    new DynamicChunk(room.getRoom().getX() + 8, room.getRoom().getY() + 8, height), //NE
+                                    new DynamicChunk(room.getRoom().getX(), room.getRoom().getY() + 8, height) //NW
                             }
                     };
-                    PaletteTile[][] rotatedObjects = Misc.rotatePaletteClockwise(roomChunks, room.getRotation());
 
                     int tileX = x * ROOM_TILE_SIZE / 8;
                     int tileY = y * ROOM_TILE_SIZE / 8;
-                    room.getTiles().addAll(Stream.of(rotatedObjects).flatMap(Stream::of).collect(Collectors.toList()));
-                    palette.setTile(tileX, tileY, height, rotatedObjects[0][0]);
-                    palette.setTile(tileX + 1, tileY, height, rotatedObjects[0][1]);
-                    palette.setTile(tileX + 1, tileY + 1, height, rotatedObjects[1][0]);
-                    palette.setTile(tileX, tileY + 1, height, rotatedObjects[1][1]);
+                    //room.getTiles().addAll(Stream.of(rotatedObjects).flatMap(Stream::of).collect(Collectors.toList()));
+                    //palette.setTile(tileX, tileY, height, rotatedObjects[0][0]);
+                    //palette.setTile(tileX + 1, tileY, height, rotatedObjects[0][1]);
+                    //palette.setTile(tileX + 1, tileY + 1, height, rotatedObjects[1][0]);
+                    //palette.setTile(tileX, tileY + 1, height, rotatedObjects[1][1]);
 
                 }
 
             }
         }
-        Region.loadPalette(minimum, palette);*/
     }
 
     /**
