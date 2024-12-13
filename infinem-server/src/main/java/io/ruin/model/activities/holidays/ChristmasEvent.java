@@ -47,7 +47,7 @@ public class ChristmasEvent {
     public static void rollExperienceGiftBag(Player player, StatType type, double experience) {
         if (type == StatType.Prayer || type == StatType.Attack || type == StatType.Strength || type == StatType.Defence
                 || type == StatType.Ranged || type == StatType.Magic || type == StatType.Hitpoints || type == StatType.Slayer) return;
-        int roll = (int) Math.max(50, 150 - (experience / 100));
+        int roll = (int) Math.max(30, 60 - (experience / 100));
         if (Random.rollDie(roll)) {
             player.getInventory().addOrDrop(32042, 1);
             player.sendFilteredMessage("You find a gift bag.");
