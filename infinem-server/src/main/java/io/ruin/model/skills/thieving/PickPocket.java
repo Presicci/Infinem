@@ -445,7 +445,7 @@ public enum PickPocket {
             return false;
         }
         if (BotPrevention.isBlocked(player)) {
-            player.sendMessage("You can't pickpocket an NPC while a guard is watching you.");
+            player.sendMessage("You can't pickpocket while a random event is present.");
             return false;
         }
         int maxPouches = (AreaReward.COIN_POUCHES_3.hasReward(player) ? 140 : AreaReward.COIN_POUCHES_2.hasReward(player) ? 84 : AreaReward.COIN_POUCHES_1.hasReward(player) ? 56 : 28)
