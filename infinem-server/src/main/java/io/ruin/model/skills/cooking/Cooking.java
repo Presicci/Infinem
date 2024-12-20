@@ -80,7 +80,7 @@ public class Cooking {
     private static void startCooking(Player player, Food food, GameObject obj, int amountToCook, int anim, boolean fire) {
         if (!player.getStats().check(StatType.Cooking, food.levelRequirement, "cook " + food.descriptiveName))
             return;
-        if (!food.requirement.test(player)) {
+        if (food.requirement != null && !food.requirement.test(player)) {
             player.dialogue(new MessageDialogue("You don't know how to cook this.<br>" + food.requirementMessage));
             return;
         }
