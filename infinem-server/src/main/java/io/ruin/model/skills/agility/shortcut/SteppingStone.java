@@ -104,6 +104,12 @@ public enum SteppingStone {
             Position.of(3372, 2959), Position.of(3373, 2955),
             Position.of(3373, 2957)),
 
+    CHAOS_TEMPLE_STONE72(new RegisterObject[]{
+            new RegisterObject(53237, 3268, 3627) },
+            72, 1, "cross",
+            Position.of(3268, 3629), Position.of(3268, 3625),
+            Position.of(3268, 3627)),
+
     WILDERNESS_LAVADRAG_STONES74(new RegisterObject[]{
             new RegisterObject(14918) },
             74, 1, "cross",
@@ -241,5 +247,7 @@ public enum SteppingStone {
         Tile.getObject(31809, 1981, 8996, 1).skipReachCheck = p -> p.equals(1981, 8994, 1) || p.equals(1981, 8998, 1);
         // Pollnivneach
         Tile.getObject(53241, 3373, 2957, 0).skipReachCheck = p -> p.equals(3373, 2955) || p.equals(3371, 2958) || p.equals(3372, 2959);
+        // Chaos temple
+        Tile.getObject(53237, 3268, 3627, 0).skipReachCheck = p -> p.equals(3268, 3629) || p.equals(3268, 3625);
     }
 }
