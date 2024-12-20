@@ -81,6 +81,7 @@ public class TabInventory {
                 option = 5;
                 break;
         }
+        if (option <= 0) return;
         ItemAction[] actions = def.inventoryActions;
         if(actions != null) {
             ItemAction action = actions[option - 1];
