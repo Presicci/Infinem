@@ -13,6 +13,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -189,6 +190,9 @@ public class AnagramClue extends Clue {
         } else {
             player.openInterface(InterfaceType.MAIN, 203);
             player.getPacketSender().sendString(203, 2, "The anagram reveals<br>who to speak to next:<br>" + clue);
+        }
+        if (clue.equalsIgnoreCase("Baker Climb")) {
+            player.dialogueKeepInterfaces(new MessageDialogue("Brambickle has been spotted closer to Rellekka, by the DKS fairy ring."));
         }
     }
 
