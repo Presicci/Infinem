@@ -170,7 +170,7 @@ public enum SteppingStone {
 
             Position first = posCopy.get(0);
             if(posCopy.size() == 1){
-                if(startPosition.equals(p.getPosition())){
+                if(startPosition.distance(p.getPosition()) < endPosition.distance(p.getPosition())){
                     posCopy.add(endPosition);
                 } else {
                     posCopy.add(startPosition);
@@ -178,7 +178,6 @@ public enum SteppingStone {
             } else if(obj.getPosition().equals(first)){
                 posCopy.add(endPosition);
             } else {
-
                 Collections.reverse(posCopy);
                 posCopy.add(startPosition);
             }
