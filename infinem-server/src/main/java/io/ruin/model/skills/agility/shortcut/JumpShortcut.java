@@ -65,7 +65,9 @@ public enum JumpShortcut {
     FALCONRY1(19222, new Position(2371, 3620), 1, 0, "climb-over",
             new Position(2371, 3622), new Position(2371, 3619)),
     WEISS1(33312, new Position(2851, 3936), 1, 0, "cross",
-            new Position(2852, 3936), new Position(2850, 3936));
+            new Position(2852, 3936), new Position(2850, 3936)),
+    BARROWS_WALL72(53256, new Position(3546, 3282), 72, 1, "jump-across",
+            new Position(3545, 3282), new Position(3547, 3282));
 
     private final int objectId;
     private final Position objectPos;
