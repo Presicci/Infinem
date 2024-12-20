@@ -11,6 +11,7 @@ import io.ruin.model.stat.StatType;
  * Created on 11/24/2023
  */
 public enum InstantMovementShortcut {
+    TAVERLEY_WALL(53255, new Position(2946, 3439), new Position(2943, 3439), 828, 66),
     MYSTERIOUS_PIPE_MAIN(34655, new Position(1316, 10214), new Position(1346, 10232, 0), 827, 88),
     MYSTERIOUS_PIPE_HYDRA(34655, new Position(1346, 10231), new Position(1316, 10213, 0), 827, 88),
     ASGARNIAN_ICE_DUNGEON_ENTER(42506, new Position(3025, 9570), new Position(3035, 9557, 0), 2796, 72),
