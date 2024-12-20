@@ -109,7 +109,7 @@ public class Kraken extends CaveKraken {
                 player.animate(864);    // TODO get a better anim
                 player.graphics(50);
                 e.delay(1);
-                player.getInventory().remove(Items.FISHING_EXPLOSIVE, 1);
+                player.getInventory().remove(6664, 1);
                 FISHING_EXPLOSIVE_PROJECTILE.send(player, kraken.getCentrePosition());
                 e.delay(1);
                 Kraken combat = (Kraken) kraken.getCombat();
