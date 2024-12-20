@@ -98,6 +98,12 @@ public enum SteppingStone {
             Position.of(3212, 3137), Position.of(3214, 3132),
             Position.of(3214, 3135)),
 
+    POLLNIV_STONE71(new RegisterObject[]{
+            new RegisterObject(53241, 3373, 2957) },
+            71, 1, "cross",
+            Position.of(3372, 2959), Position.of(3373, 2955),
+            Position.of(3373, 2957)),
+
     WILDERNESS_LAVADRAG_STONES74(new RegisterObject[]{
             new RegisterObject(14918) },
             74, 1, "cross",
@@ -234,5 +240,7 @@ public enum SteppingStone {
         Tile.getObject(29729, 1612, 3570, 0).skipReachCheck = p -> p.equals(1610, 3570) || p.equals(1614, 3570);
         // Corsair cove
         Tile.getObject(31809, 1981, 8996, 1).skipReachCheck = p -> p.equals(1981, 8994, 1) || p.equals(1981, 8998, 1);
+        // Pollnivneach
+        Tile.getObject(53241, 3373, 2957, 0).skipReachCheck = p -> p.equals(3373, 2955) || p.equals(3371, 2958) || p.equals(3372, 2959);
     }
 }
