@@ -36,7 +36,10 @@ public enum LinearClimbingSpot {
             62, 1, Direction.NORTH),
     FOSSIL_ISLAND_ROPE64(30916, new Position(3779, 3821),
             30917, new Position(3783, 3821),
-            64, 1, Direction.EAST);
+            64, 1, Direction.EAST),
+    SHILO79(53238, new Position(2871, 3007),
+            53240, new Position(2871, 3004),
+            79, 1, Direction.SOUTH);
 
     private final int bottomId;
     private final Position bottomPos;
