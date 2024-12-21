@@ -22,6 +22,10 @@ public enum CreviceShortcut {
     ZANARIS_46(46, 1, new Position(2400, 4404, 0), new Position(2400, 4402, 0), false),
     ZANARIS_66(46, 1, new Position(2409, 4402, 0), new Position(2409, 4400, 0), false),
     HEROES_GUILD(67, 1, new Position(2899, 9902), new Position(2914, 9894), true),
+    WILDERNESS_SLAYER_CAVE_77_1(77, 1, new Position(3334, 10122, 0), new Position(3334, 10118, 0), false),
+    WILDERNESS_SLAYER_CAVE_77_2(77, 1, new Position(3342, 10148, 0), new Position(3342, 10154, 0), false),
+    WILDERNESS_SLAYER_CAVE_77_3(77, 1, new Position(3435, 10116, 0), new Position(3435, 10111, 0), false),
+    WILDERNESS_SLAYER_CAVE_77_4(77, 1, new Position(3434, 10094, 0), new Position(3434, 10090, 0), false),
     IORWERTH_DUNGEON_78(78, 1, new Position(3216, 12441), new Position(3222, 12441), true),
     IORWERTH_DUNGEON_84(84, 1, new Position(3242, 12420), new Position(3232, 12420, 0), true)
     ;
@@ -68,6 +72,14 @@ public enum CreviceShortcut {
         ObjectAction.register(17002, 2409, 4401, 0, "Squeeze-past", CreviceShortcut.ZANARIS_66::squeeze);
         ObjectAction.register(9739, 2899, 9901, 0, "use", CreviceShortcut.HEROES_GUILD::squeeze);
         ObjectAction.register(9740, 2914, 9895, 0, "use", CreviceShortcut.HEROES_GUILD::squeeze);
+        ObjectAction.register(53259, 3334, 10119, 0, "squeeze-through", CreviceShortcut.WILDERNESS_SLAYER_CAVE_77_1::squeeze);
+        ObjectAction.register(53259, 3334, 10121, 0, "squeeze-through", CreviceShortcut.WILDERNESS_SLAYER_CAVE_77_1::squeeze);
+        ObjectAction.register(53259, 3342, 10153, 0, "squeeze-through", CreviceShortcut.WILDERNESS_SLAYER_CAVE_77_2::squeeze);
+        ObjectAction.register(53259, 3342, 10149, 0, "squeeze-through", CreviceShortcut.WILDERNESS_SLAYER_CAVE_77_2::squeeze);
+        ObjectAction.register(53259, 3435, 10112, 0, "squeeze-through", CreviceShortcut.WILDERNESS_SLAYER_CAVE_77_3::squeeze);
+        ObjectAction.register(53259, 3435, 10115, 0, "squeeze-through", CreviceShortcut.WILDERNESS_SLAYER_CAVE_77_3::squeeze);
+        ObjectAction.register(53259, 3434, 10091, 0, "squeeze-through", CreviceShortcut.WILDERNESS_SLAYER_CAVE_77_4::squeeze);
+        ObjectAction.register(53259, 3434, 10093, 0, "squeeze-through", CreviceShortcut.WILDERNESS_SLAYER_CAVE_77_4::squeeze);
         ObjectAction.register(36692, 3221, 12441, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_78::squeeze);
         ObjectAction.register(36693, 3217, 12441, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_78::squeeze);
         ObjectAction.register(36694, 3241, 12420, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_84::squeeze);
