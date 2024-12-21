@@ -40,6 +40,9 @@ public enum LinearClimbingSpot {
     SHILO79(53238, new Position(2871, 3007),
             53240, new Position(2871, 3004),
             79, 1, Direction.SOUTH),
+    CRANDOR(53234, new Position(2832, 3248),
+            53236, new Position(2832, 3251),
+            84, 1, Direction.NORTH),
     WATERBIRTH85(53252, new Position(2547, 3748),
             53254, new Position(2547, 3745),
             85, 1, Direction.SOUTH);
