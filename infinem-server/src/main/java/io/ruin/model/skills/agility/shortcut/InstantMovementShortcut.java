@@ -16,6 +16,8 @@ public enum InstantMovementShortcut {
     SALARIN_THE_TWISTED_67(23563, new Position(2616, 9572), new Position(2614, 9505, 0), 828, 67),
     ASGARNIAN_ICE_DUNGEON_ENTER_72(42506, new Position(3025, 9570), new Position(3035, 9557, 0), 2796, 72),
     ASGARNIAN_ICE_DUNGEON_EXIT_72(42507, new Position(3034, 9558), new Position(3026, 9572, 0), 2796, 72),
+    ASGARNIAN_ICE_DUNGEON_TUNNEL_LADDER_82(53250, new Position(3013, 9549), new Position(3025, 9554), 2796, 82),
+    ASGARNIAN_ICE_DUNGEON_TUNNEL_WYVERN_82(53251, new Position(3023, 9553), new Position(3012, 9550), 2796, 82),
     MYSTERIOUS_PIPE_MAIN_88(34655, new Position(1316, 10214), new Position(1346, 10232, 0), 827, 88),
     MYSTERIOUS_PIPE_HYDRA_88(34655, new Position(1346, 10231), new Position(1316, 10213, 0), 827, 88);
 
