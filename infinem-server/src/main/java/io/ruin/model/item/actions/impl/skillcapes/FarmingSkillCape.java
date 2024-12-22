@@ -29,10 +29,10 @@ public class FarmingSkillCape {
 
     static {
         ItemAction.registerInventory(CAPE, "Teleport", (player, item) -> teleport(player));
-        ItemAction.registerInventory(CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerInventory(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
-        ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
-        ItemAction.registerEquipment(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerEquipment(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
     }
 }
