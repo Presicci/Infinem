@@ -2,6 +2,8 @@ package io.ruin.model.skills;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
+import io.ruin.model.activities.cluescrolls.Clue;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -387,6 +389,9 @@ public enum RandomEvent {
             Item loot = MYSTERY_BOX.rollItem();
             if (loot == null || loot.getId() == -1) {
                 loot = RareDropTable.RARE_DROP_TABLE.rollItem();
+            }
+            if (player.getRelicManager().hasRelic(Relic.TREASURE_HUNTER) && Clue.SCROLL_BOXES.contains(loot.getId())) {
+                loot.setAmount(item.getAmount() * 2);
             }
             player.getInventory().add(loot);
             player.getCollectionLog().collect(loot);
