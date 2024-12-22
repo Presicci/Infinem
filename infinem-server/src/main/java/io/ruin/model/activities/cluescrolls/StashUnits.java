@@ -31,7 +31,7 @@ public class StashUnits {
         MEDIUM(42, 250.0, new Item[] { new Item(Items.OAK_PLANK, 2) }),
         HARD(55, 400.0, new Item[] { new Item(Items.TEAK_PLANK, 2) }),
         ELITE(77, 600.0, new Item[] { new Item(Items.MAHOGANY_PLANK, 2) }),
-        MASTER(88, 1500.0, new Item[] { new Item(Items.MAHOGANY_PLANK, 2), new Item(Items.GOLD_LEAF, 1) });
+        MASTER(88, 1500.0, new Item[] { new Item(Items.MAHOGANY_PLANK, 2), new Item(Items.GOLD_LEAF_2, 1) });
 
         private final int level;
         private final double experience;
