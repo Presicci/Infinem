@@ -50,7 +50,9 @@ public class ArcaneGrimoire {
             player.sendMessage("You can't use the Grimoire in the wilderness.");
             return;
         }
-        Config.MAGIC_BOOK.set(player, player.getAttributeIntOrZero("LAST_SPELLBOOK"));
+        int spellbookIndex = player.getAttributeIntOrZero("LAST_SPELLBOOK");
+        player.putAttribute("LAST_SPELLBOOK", Config.MAGIC_BOOK.get(player));
+        Config.MAGIC_BOOK.set(player, spellbookIndex);
         TabCombat.updateAutocast(player, false);
     }
 
