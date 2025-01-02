@@ -5,6 +5,7 @@ import io.ruin.cache.def.StructDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.map.object.actions.impl.locations.LegendsGuild;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -48,7 +49,7 @@ public enum SlayerCreature {
     GREATER_DEMONS(29, 1, 75, "greater demons"),
     BLACK_DEMONS(30, 1, 80, "black demons"),
     HELLHOUNDS(31, 1, 75, "hellhounds"),
-    SHADOW_WARRIORS(32, 1, 60, "shadow warriors"),
+    SHADOW_WARRIORS(32, 1, 60, "shadow warriors", (p, s) -> LegendsGuild.hasRequirements(p)),
     WEREWOLVES(33, 1, 60, "werewolves"),
     VAMPYRES(34, 1, 35, "vampyres", (p, s) -> s.getNpcId() == Master.MAZCHNA.getNpcId() || s.getNpcId() == Master.VANNAKA.getNpcId() || Config.ACTUAL_VAMPYRE_SLAYER.get(p) != 0),
     DAGANNOTH(35, 1, 75, "dagannoth"),
