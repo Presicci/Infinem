@@ -8,6 +8,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.item.Item;
 import lombok.Getter;
 
 import java.util.HashMap;
@@ -142,7 +143,7 @@ public enum OmniShop {
             player.putTemporaryAttribute(ITEM_KEY, index);
         } else if (option == 10) {
             ItemDefinition def = ItemDefinition.get(itemId);
-            if (def != null) def.examine(player);
+            if (def != null) new Item(itemId).examine(player);
         }
     }
 

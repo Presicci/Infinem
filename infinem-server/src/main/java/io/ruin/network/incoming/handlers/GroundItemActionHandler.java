@@ -3,6 +3,7 @@ package io.ruin.network.incoming.handlers;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Item;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.ground.GroundItemAction;
@@ -74,7 +75,7 @@ public class GroundItemActionHandler implements Incoming {
                             .add("id", id);
                     player.sendFilteredMessage("[GroundItemAction] " + debug.toString());
                 }
-                def.examine(player);
+                new Item(id).examine(player);
             } else {
                 if (player.debug) {
                     player.sendFilteredMessage("[GroundItemAction] Ground item with ID: " + id + " is null.");
