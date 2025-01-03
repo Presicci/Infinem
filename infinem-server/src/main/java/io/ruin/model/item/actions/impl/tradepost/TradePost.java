@@ -168,10 +168,10 @@ public class TradePost {
     }
 
     private void changeInventoryAccess() {
-        player.openResizeableInterface(InterfaceType.INVENTORY, Interface.TRADING_POST_INVENTORY);
-        player.getPacketSender().sendClientScript(149, "IviiiIsssss", Interface.TRADING_POST_INVENTORY << 16, 93, 4, 7, 0, -1,
+        player.openResizeableInterface(InterfaceType.INVENTORY, Interface.GENERIC_INVENTORY_OVERLAY);
+        player.getPacketSender().sendClientScript(149, "IviiiIsssss", Interface.GENERIC_INVENTORY_OVERLAY << 16, 93, 4, 7, 0, -1,
                 "Select", "", "", "", "");
-        player.getPacketSender().sendAccessMask(Interface.TRADING_POST_INVENTORY, 0, 0, 27, 1086);
+        player.getPacketSender().sendAccessMask(Interface.GENERIC_INVENTORY_OVERLAY, 0, 0, 27, 1086);
     }
 
     private void updateMyOffers() {
@@ -579,7 +579,7 @@ public class TradePost {
     }
 
     static {
-        InterfaceHandler.register(Interface.TRADING_POST_INVENTORY, handler -> {
+        InterfaceHandler.register(Interface.GENERIC_INVENTORY_OVERLAY, handler -> {
             handler.actions[0] = new InterfaceAction() {
                 public void handleClick(Player player, int option, int slot, int itemId) {
                     Item item = player.getInventory().get(slot);

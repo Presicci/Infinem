@@ -387,5 +387,5 @@ public class Interface {
 
     public static final int TRADING_POST_MY_OFFERS = 1006;
 
-    public static final int TRADING_POST_INVENTORY = 1007;
+    public static final int GENERIC_INVENTORY_OVERLAY = 1007;
 }
