@@ -168,10 +168,7 @@ public class TradePost {
     }
 
     private void changeInventoryAccess() {
-        player.openResizeableInterface(InterfaceType.INVENTORY, Interface.GENERIC_INVENTORY_OVERLAY);
-        player.getPacketSender().sendClientScript(149, "IviiiIsssss", Interface.GENERIC_INVENTORY_OVERLAY << 16, 93, 4, 7, 0, -1,
-                "Select", "", "", "", "");
-        player.getPacketSender().sendAccessMask(Interface.GENERIC_INVENTORY_OVERLAY, 0, 0, 27, 1086);
+        player.getPacketSender().sendInventoryOverlay("Select");
     }
 
     private void updateMyOffers() {

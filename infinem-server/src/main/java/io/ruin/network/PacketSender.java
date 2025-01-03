@@ -18,12 +18,10 @@ import io.ruin.model.item.Item;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.ground.GroundItem;
-import io.ruin.model.shop.ShopItem;
 import lombok.extern.slf4j.Slf4j;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.function.Function;
@@ -1113,5 +1111,12 @@ public class PacketSender {
     public void sendTickEnd() {
         OutBuffer out = new OutBuffer(1).sendFixedPacket(ServerPacket.SERVER_TICK_END.getPacketId());
         write(out);
+    }
+
+    public void sendInventoryOverlay(String optionOne) {
+        player.openResizeableInterface(InterfaceType.INVENTORY, Interface.GENERIC_INVENTORY_OVERLAY);
+        sendClientScript(149, "IviiiIsssss", Interface.GENERIC_INVENTORY_OVERLAY << 16, 93, 4, 7, 0, -1,
+                optionOne, "", "", "", "");
+        sendAccessMask(Interface.GENERIC_INVENTORY_OVERLAY, 0, 0, 27, 1086);
     }
 }
