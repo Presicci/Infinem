@@ -158,8 +158,8 @@ public class Mining {
                         if (rockData.ordinal() <= Rock.ADAMANT.ordinal()) CelestialRing.removeChargeIfEquipped(player);
 
                         // Ore related task handling
-                        if (rockData == Rock.GRANITE) player.getTaskManager().doLookupByUUID(656, 1, true);    // Mine 30 Chunks of Granite
-                        else player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDefinition.get(id).name);
+                        if (rockData == Rock.GRANITE) player.getTaskManager().doLookupByUUID(656, amount, true);    // Mine 30 Chunks of Granite
+                        else player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDefinition.get(id).name, amount);
 
                         // Reward handling
                         player.collectResource(new Item(id, amount));
