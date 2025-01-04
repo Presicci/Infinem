@@ -51,9 +51,10 @@ public enum FragmentModifier {
     /**
      * Provides the player with a x% chance to cook fish when caught.<br><br>
      */
-    COOK_FISH(FragmentType.Fishing, "#% chance to cook caught fish",
+    COOK_FISH(FragmentType.Fishing, "#% chance to cook caught fish, rewarding cooking experience",
             new FragmentModRange(0.21, 0.4, 75), new FragmentModRange(0.41, 0.6, 60), new FragmentModRange(0.61, 0.7, 40),
-            new FragmentModRange(0.71, 0.8, 20), new FragmentModRange(0.81, 0.9, 10), new FragmentModRange(0.91, 1.0, 5)),
+            new FragmentModRange(0.71, 0.8, 20), new FragmentModRange(0.81, 0.9, 10), new FragmentModRange(0.91, 1.0, 7),
+            new FragmentModRange(1, 1, 5)),
     ;
 
     private final FragmentType[] types;

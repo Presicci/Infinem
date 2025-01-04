@@ -174,12 +174,14 @@ public enum Food {
         this.requirementMessage = requirementMessage;
     }
 
+    public static final Map<Integer, Food> FISH_BY_RAW_ID = new HashMap<>();
     public static final Map<Integer, Double> COOKING_EXPERIENCE = new HashMap<>();
 
     static {
         for (Food food : Food.values()) {
             if (food.ordinal() > 24)    // End of fish
                 break;
+            FISH_BY_RAW_ID.put(food.rawID, food);
             COOKING_EXPERIENCE.put(food.rawID, food.experience);
         }
     }

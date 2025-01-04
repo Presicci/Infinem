@@ -245,8 +245,14 @@ public class FishingSpot {
                             player.sendFilteredMessage("You catch some minnows!");
                         if (npc.getId() == INFERNO_EEL)
                             player.sendFilteredMessage("You catch an infernal eel. It hardens as you handle it with your ice gloves.");
+                        Food cookedFish = null;
 
+                        // ID transforms
                         int id = c.id;
+                        if (player.getRelicFragmentManager().rollChanceModifier(FragmentType.Fishing, FragmentModifier.COOK_FISH) && Food.FISH_BY_RAW_ID.containsKey(c.id)) {
+                            cookedFish = Food.FISH_BY_RAW_ID.get(c.id);
+                            id = cookedFish.cookedID;
+                        }
 
                         // Amount handling
                         int amount = npc.getId() == MINNOWS ? Random.get(10, 26)
@@ -283,9 +289,11 @@ public class FishingSpot {
                                 player.getInventory().addOrDrop(id, amount);
                             }
                             player.getStats().addXp(StatType.Fishing, c.xp * 2, true);
+                            if (cookedFish != null) player.getStats().addXp(StatType.Cooking, cookedFish.experience * 2, true);
                         } else {
                             player.getInventory().addOrDrop(id, amount);
                             player.getStats().addXp(StatType.Fishing, c.xp, true);
+                            if (cookedFish != null) player.getStats().addXp(StatType.Cooking, cookedFish.experience, true);
                         }
 
                         // Counter handling
