@@ -8,6 +8,8 @@ import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.areas.diaryitems.KandarinHeadgear;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifier;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentType;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -146,10 +148,11 @@ public class Woodcutting {
 
                             // Sulliuscep handling
                             Item loot = SULLIUSCEP_LOOT.rollItem();
-                            if (endlessHarvest) {
+                            if (endlessHarvest || player.getRelicFragmentManager().rollChanceModifier(FragmentType.Woodcutting, FragmentModifier.BANK_RESOURCES)) {
                                 if (player.getBank().hasRoomFor(loot.getId())) {
                                     player.getBank().add(loot.getId(), loot.getAmount());
-                                    player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
+                                    if (endlessHarvest) player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
+                                    else player.sendFilteredMessage("You bank the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
                                 } else {
                                     player.getInventory().addOrDrop(loot.getId(), loot.getAmount());
                                 }
@@ -163,10 +166,11 @@ public class Woodcutting {
                         } else if (treeData != Tree.CRYSTAL && treeData.log != -1) {
 
                             // Log handling
-                            if (endlessHarvest) {
+                            if (endlessHarvest || player.getRelicFragmentManager().rollChanceModifier(FragmentType.Woodcutting, FragmentModifier.BANK_RESOURCES)) {
                                 if (player.getBank().hasRoomFor(treeData.log)) {
                                     player.getBank().add(treeData.log, amount);
-                                    player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
+                                    if (endlessHarvest) player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
+                                    else player.sendFilteredMessage("You bank the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
                                 } else {
                                     player.getInventory().addOrDrop(treeData.log, amount);
                                 }

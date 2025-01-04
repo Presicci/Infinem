@@ -5,6 +5,8 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.content.tasksystem.areas.diaryitems.RadasBlessing;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifier;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentType;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -271,10 +273,11 @@ public class FishingSpot {
                             player.getStats().addXp(StatType.Fishing, c.xp, true);
                             player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(id) / 2, true);
                             player.sendMessage("Your infernal harpoon incinerates the " + c.name() + ".");
-                        } else if (endlessHarvest) {
+                        } else if (endlessHarvest || player.getRelicFragmentManager().rollChanceModifier(FragmentType.Fishing, FragmentModifier.BANK_RESOURCES)) {
                             if (player.getBank().hasRoomFor(id)) {
                                 player.getBank().add(id, amount);
-                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
+                                if (endlessHarvest) player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
+                                else player.sendFilteredMessage("You bank the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
                             } else {
                                 player.getInventory().addOrDrop(id, amount);
                             }

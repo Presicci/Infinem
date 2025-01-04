@@ -1,6 +1,7 @@
 package io.ruin.model.content.tasksystem.relics.impl.fragments;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.api.utils.Random;
 import io.ruin.model.item.Item;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
@@ -45,5 +46,11 @@ public class RelicFragmentManager {
         Item fragmentItem = getFragment(type);
         if (fragmentItem == null) return 0;
         return FragmentItem.getModValue(fragmentItem, mod);
+    }
+
+    public boolean rollChanceModifier(FragmentType type, FragmentModifier mod) {
+        Item fragmentItem = getFragment(type);
+        if (fragmentItem == null) return false;
+        return Random.get() < FragmentItem.getModValue(fragmentItem, mod);
     }
 }

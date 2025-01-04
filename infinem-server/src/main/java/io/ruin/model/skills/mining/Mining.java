@@ -6,6 +6,8 @@ import io.ruin.model.World;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifier;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentType;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -128,10 +130,11 @@ public class Mining {
                         gem = GEM_TABLE.rollItem();
 
                         player.collectResource(gem);
-                        if (endlessHarvest) {
+                        if (endlessHarvest || player.getRelicFragmentManager().rollChanceModifier(FragmentType.Mining, FragmentModifier.BANK_RESOURCES)) {
                             if (player.getBank().hasRoomFor(gem)) {
                                 player.getBank().add(gem.getId(), gem.getAmount());
-                                player.sendFilteredMessage("Your Relic banks the " + gem.getDef().name + " you would have gained, giving you a total of " + player.getBank().getAmount(gem.getId()) + ".");
+                                if (endlessHarvest) player.sendFilteredMessage("Your Relic banks the " + gem.getDef().name + " you would have gained, giving you a total of " + player.getBank().getAmount(gem.getId()) + ".");
+                                else player.sendFilteredMessage("You bank the " + gem.getDef().name + " you would have gained, giving you a total of " + player.getBank().getAmount(gem.getId()) + ".");
                             } else {
                                 player.getInventory().addOrDrop(gem.getId(), gem.getAmount());
                             }
@@ -173,10 +176,11 @@ public class Mining {
                             player.incrementNumericAttribute("BAGGED_COAL", amount);
                         } else if (rockData == Rock.ASH_PILE) {
                             player.getInventory().addOrDrop(21622, getAshAmount(player));
-                        } else if (endlessHarvest) {
+                        } else if (endlessHarvest || player.getRelicFragmentManager().rollChanceModifier(FragmentType.Mining, FragmentModifier.BANK_RESOURCES)) {
                             if (player.getBank().hasRoomFor(id)) {
                                 player.getBank().add(id, amount);
-                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
+                                if (endlessHarvest) player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
+                                else player.sendFilteredMessage("You bank the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
                             } else {
                                 player.getInventory().addOrDrop(id, amount);
                             }
