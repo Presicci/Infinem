@@ -1,8 +1,10 @@
 package io.ruin.model.content.tasksystem.relics.impl.fragments;
 
 import io.ruin.api.utils.Random;
+import io.ruin.api.utils.StringUtils;
 import lombok.Getter;
 
+import java.text.DecimalFormat;
 import java.util.stream.Stream;
 
 /**
@@ -14,50 +16,70 @@ public enum FragmentModifier {
     /**
      * Provides the player with a x% experience boost in the skill.<br><br>
      */
-    EXPERIENCE(FragmentType.FISHING,
+    EXPERIENCE(new FragmentType[] {
+                FragmentType.AGILITY, FragmentType.COOKING, FragmentType.CRAFTING, FragmentType.FARMING, FragmentType.FIREMAKING, FragmentType.Fishing,
+                FragmentType.FLETCHING, FragmentType.HERBLORE, FragmentType.HUNTER, FragmentType.MINING, FragmentType.RUNECRAFTING, FragmentType.SMITHING,
+                FragmentType.THIEVING, FragmentType.WOODCUTTING
+            },
+            "#% increased * experience",
             new FragmentModRange(0.21, 0.4, 75), new FragmentModRange(0.41, 0.6, 60), new FragmentModRange(0.61, 0.7, 40),
             new FragmentModRange(0.71, 0.8, 20), new FragmentModRange(0.81, 0.9, 10), new FragmentModRange(0.91, 1.0, 5)),
+    /**
+     * Provides the player with a x% chance to bank resources from gathering. Doesn't work with Endless harvest.<br><br>
+     */
+    BANK_RESOURCES(new FragmentType[]{
+                FragmentType.Fishing, FragmentType.WOODCUTTING, FragmentType.MINING,
+            }, "#% chance to bank gathered resources",
+            new FragmentModRange(0.21, 0.4, 75), new FragmentModRange(0.41, 0.6, 60), new FragmentModRange(0.61, 0.7, 40),
+            new FragmentModRange(0.71, 0.8, 20), new FragmentModRange(0.81, 0.9, 10), new FragmentModRange(0.91, 1.0, 5)),
+    /**
+     * Gathering actions are x ticks faster.<br><br>
+     */
+    TICK_FASTER(new FragmentType[]{
+            FragmentType.Fishing, FragmentType.WOODCUTTING, FragmentType.MINING,
+            }, "# tick(s) faster *",
+            new FragmentModRange(1, 1, 10), new FragmentModRange(2, 2, 2)),
+    /**
+     * Binary mod;<br>
+     * Provides a chance to roll the RDT when gathering.<br><br>
+     */
+    RDT(new FragmentType[]{
+                FragmentType.Fishing, FragmentType.WOODCUTTING, FragmentType.MINING,
+            }, "Provides a chance to roll the Rare Drop Table while *",
+            new FragmentModRange(1, 1, 15)),
     /**
      * Provides the player with a x% chance to cook fish when caught.<br><br>
      */
-    COOK_FISH(FragmentType.FISHING,
+    COOK_FISH(FragmentType.Fishing, "#% chance to cook caught fish",
             new FragmentModRange(0.21, 0.4, 75), new FragmentModRange(0.41, 0.6, 60), new FragmentModRange(0.61, 0.7, 40),
             new FragmentModRange(0.71, 0.8, 20), new FragmentModRange(0.81, 0.9, 10), new FragmentModRange(0.91, 1.0, 5)),
-    /**
-     * Provides the player with a x% chance to bank fish when caught. Doesn't work with Endless harvest.<br><br>
-     */
-    BANK_FISH(FragmentType.FISHING,
-            new FragmentModRange(0.21, 0.4, 75), new FragmentModRange(0.41, 0.6, 60), new FragmentModRange(0.61, 0.7, 40),
-            new FragmentModRange(0.71, 0.8, 20), new FragmentModRange(0.81, 0.9, 10), new FragmentModRange(0.91, 1.0, 5)),
-    /**
-     * Fishing actions are x ticks faster.<br><br>
-     */
-    FASTER_FISHING(FragmentType.FISHING, new FragmentModRange(1, 1, 10), new FragmentModRange(2, 2, 2)),
-    /**
-     * Binary mod;<br>
-     * Provides a chance to roll the RDT when fishing.<br><br>
-     */
-    FISHING_RDT(FragmentType.FISHING, new FragmentModRange(1, 1, 15))
     ;
 
     private final FragmentType[] types;
     private final FragmentModRange[] ranges;
+    private final String description;
     private int totalWeight;
 
-    FragmentModifier(FragmentType type, FragmentModRange... ranges) {
-        this(new FragmentType[] { type }, ranges);
+    FragmentModifier(FragmentType type, String description, FragmentModRange... ranges) {
+        this(new FragmentType[] { type }, description, ranges);
     }
 
-    FragmentModifier(FragmentType[] types, FragmentModRange... ranges) {
+    FragmentModifier(FragmentType[] types, String description, FragmentModRange... ranges) {
         this.types = types;
+        this.description = description;
         this.ranges = ranges;
         for (FragmentModRange range : ranges) {
             this.totalWeight += range.getWeight();
         }
     }
 
+    public String getDescription(FragmentType type, FragmentModRoll roll) {
+        double value = roll.getValue() < 1 ? roll.getValue() * 100 : roll.getValue();
+        return description.replace("#", new DecimalFormat("#").format(value)).replace("*", StringUtils.capitalizeFirst(type.name().toLowerCase())).replace("(s)", (int) value > 1 ? "s" : "");
+    }
+
     public static FragmentModRoll rollFrom(FragmentModifier[] mods) {
-        double totalWeight = Stream.of(values()).mapToDouble(m -> m.getTotalWeight()).sum();
+        double totalWeight = Stream.of(mods).mapToDouble(FragmentModifier::getTotalWeight).sum();
         double random = Random.get() * totalWeight;
         FragmentModifier rolledMod = null;
         FragmentModRange rolledRange = null;
@@ -71,7 +93,7 @@ public enum FragmentModifier {
                 }
             }
         }
-        return rolledMod == null || rolledRange == null
+        return rolledMod == null
                 ? null
                 : new FragmentModRoll(rolledMod, (double) Random.get((int) (rolledRange.getMinValue() * 100), (int) (rolledRange.getMaxValue() * 100)) / 100D);
     }

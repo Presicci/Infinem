@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentItem;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.attributes.AttributeExtensions;
@@ -403,6 +404,9 @@ public class Item {
                 AugmentType type = AugmentType.valueOf(augment);
                 player.sendMessage("This item is augmented with a " + StringUtils.getFormattedEnumName(type) + " augment.");
             }
+        }
+        if (FragmentItem.isFragment(this)) {
+            FragmentItem.examine(player, this);
         }
         if (player.debug) {
             player.sendMessage("Attributes: " + Joiner.on(",").withKeyValueSeparator("=").join(attributes));

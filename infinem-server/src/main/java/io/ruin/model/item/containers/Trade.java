@@ -2,6 +2,7 @@ package io.ruin.model.item.containers;
 
 import io.ruin.Server;
 import io.ruin.api.utils.ServerWrapper;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentItem;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceAction;
@@ -316,6 +317,7 @@ public class Trade extends ItemContainer {
     }
 
     private boolean canTrade(Item item) {
+        if (FragmentItem.isFragment(item)) return true;
         return !item.hasAttributes();
     }
 

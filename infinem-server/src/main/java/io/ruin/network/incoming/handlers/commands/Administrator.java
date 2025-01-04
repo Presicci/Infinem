@@ -43,7 +43,9 @@ import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentType;
 import io.ruin.model.content.tasksystem.relics.impl.fragments.RelicFragment;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.RelicFragmentInterface;
 import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.content.transportation.relics.DungeonHub;
@@ -3330,10 +3332,6 @@ public class Administrator {
                 player.getTransmogCollection().clearCollection();
                 return true;
             }
-            case "rollfragment": {
-                RelicFragment.generate();
-                return true;
-            }
             case "searchmusic": {
                 if (args == null || args.length < 1) {
                     player.sendMessage("Syntax: ::searchmusic [search string]");
@@ -3381,6 +3379,13 @@ public class Administrator {
              */
             case "dumptasks": {
                 SlayerTaskDumper.dump(String.join("_", args));
+                return true;
+            }
+            /**
+             * Relic fragments
+             */
+            case "fragint": {
+                RelicFragmentInterface.open(player);
                 return true;
             }
         }

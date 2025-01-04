@@ -16,6 +16,7 @@ import io.ruin.model.activities.combat.raids.xeric.party.Party;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.WildernessObelisk;
 import io.ruin.model.combat.WildernessRating;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.RelicFragmentManager;
 import io.ruin.model.content.upgrade.UpgradeMachine;
 import io.ruin.model.content.transportation.waystones.Waystone;
 import io.ruin.model.entity.Entity;
@@ -686,4 +687,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Getter @Setter private RespawnPoint respawnPoint = RespawnPoint.CIVITAS_ILLA_FORTIS;
 
     public Set<String> onlineFriendNames = new HashSet<>();
+
+    @Expose @Getter private RelicFragmentManager relicFragmentManager = new RelicFragmentManager();
 }

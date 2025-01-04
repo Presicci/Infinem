@@ -15,6 +15,6 @@ public class FragmentModRoll {
 
     @Override
     public String toString() {
-        return modifier.name() + "_" + value;
+        return modifier.name() + ":" + value;
     }
 }
