@@ -2,6 +2,7 @@ package io.ruin.model.stat;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.model.activities.holidays.ChristmasEvent;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifier;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.skills.SkillingOutfit;
 import io.ruin.services.discord.impl.SkillAchievementEmbedMessage;
@@ -181,6 +182,8 @@ public class StatList {
             amount *= getSkillingOutfitMultiplier(type);
             double relicMulti = getRelicMultiplier(type);
             amount *= relicMulti;
+            // Relic fragment experience multiplier
+            amount *= 1D + player.getRelicFragmentManager().getModifierValue(type, FragmentModifier.EXPERIENCE);
         }
 
         // Christmas gift bag
