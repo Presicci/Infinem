@@ -190,8 +190,8 @@ public class FishingSpot {
             player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
             return;
         }
-
-        if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
+        boolean endlessHarvest = player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST);
+        if (!endlessHarvest && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
             player.sendMessage("Your inventory is too full to hold any fish.");
             return;
         }
@@ -238,16 +238,21 @@ public class FishingSpot {
                     } else {
                         if (bait != null)
                             bait.incrementAmount(-1);
-
                         if (npc.getId() == MINNOWS)
                             player.sendFilteredMessage("You catch some minnows!");
-
                         if (npc.getId() == INFERNO_EEL)
                             player.sendFilteredMessage("You catch an infernal eel. It hardens as you handle it with your ice gloves.");
+
                         int id = c.id;
+
+                        // Amount handling
                         int amount = npc.getId() == MINNOWS ? Random.get(10, 26)
                                 : id == FishingCatch.KARAMBWANJI.id ? ((fishing.currentLevel / 5) + 1)
                                 : 1;
+                        if (RadasBlessing.extraFish(player)) amount += 1;
+                        if (endlessHarvest) amount *= 2;
+
+                        // Catch tables - big net fishing etc.
                         if (catchTable != null) {
                             Item item = catchTable.rollItem();
                             if (item != null && item.getId() != -1) {
@@ -255,8 +260,9 @@ public class FishingSpot {
                                 amount = item.getAmount();
                             }
                         }
+
+                        // Catch handling
                         player.collectResource(new Item(id, amount));
-                        if (RadasBlessing.extraFish(player)) amount += 1;
                         if (tool == FishingTool.CRYSTAL_HARPOON && CrystalEquipment.HARPOON.hasCharge(player))
                             CrystalEquipment.HARPOON.removeCharge(player);
                         if (tool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(id)) {
@@ -265,8 +271,7 @@ public class FishingSpot {
                             player.getStats().addXp(StatType.Fishing, c.xp, true);
                             player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(id) / 2, true);
                             player.sendMessage("Your infernal harpoon incinerates the " + c.name() + ".");
-                        } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
-                            amount *= 2;
+                        } else if (endlessHarvest) {
                             if (player.getBank().hasRoomFor(id)) {
                                 player.getBank().add(id, amount);
                                 player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
@@ -278,16 +283,20 @@ public class FishingSpot {
                             player.getInventory().addOrDrop(id, amount);
                             player.getStats().addXp(StatType.Fishing, c.xp, true);
                         }
-                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FISHCATCH, ItemDefinition.get(id).name, amount, true);
-                        if (npc.getId() != MINNOWS)
-                            PlayerCounter.TOTAL_FISH.increment(player, amount);
 
+                        // Counter handling
+                        if (npc.getId() != MINNOWS) PlayerCounter.TOTAL_FISH.increment(player, amount);
+
+                        // Task handling
+                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FISHCATCH, ItemDefinition.get(id).name, amount, true);
+
+                        // Roll clue bottles
                         FishingClueBottle.roll(player, c, barehand);
 
+                        // Award barbarian fishing experience
                         if (c.barbarianXp > 0) {
                             player.getStats().addXp(StatType.Agility, c.barbarianXp, true);
                             player.getStats().addXp(StatType.Strength, c.barbarianXp, true);
-
                             if (barehand) {
                                 if (c == FishingCatch.BARBARIAN_TUNA)
                                     player.animate(firstBarehandAnim ? 6710 : 6711);
@@ -295,21 +304,24 @@ public class FishingSpot {
                                     player.animate(firstBarehandAnim ? 6707 : 6708);
                                 else if (c == FishingCatch.BARBARIAN_SHARK)
                                     player.animate(firstBarehandAnim ? 6705 : 6706);
-
                                 firstBarehandAnim = !firstBarehandAnim;
                                 animTicks = 8;
                             }
                         }
                     }
+
+                    // Roll pet
                     if (Random.rollDie(c.petOdds - (player.getStats().get(StatType.Fishing).currentLevel * 25)))
                         Pet.HERON.unlock(player);
 
-                    if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
+                    // If inventory is full, reset action
+                    if (!endlessHarvest && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
                         player.sendMessage("Your inventory is too full to hold any more fish.");
                         player.resetAnimation();
                         return;
                     }
 
+                    // Check if still have required bait
                     if (bait != null) {
                         if (defaultTool == FishingTool.BARBARIAN_ROD) {
                             Item findBait = null;
@@ -326,7 +338,6 @@ public class FishingSpot {
                             }
                         } else {
                             Item requiredSecondary = player.getInventory().findItem(bait.getId());
-
                             if (requiredSecondary == null) {
                                 player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
                                 return;

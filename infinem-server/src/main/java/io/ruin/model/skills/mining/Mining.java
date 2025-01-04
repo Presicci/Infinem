@@ -71,7 +71,8 @@ public class Mining {
         }
         if (rockData == Rock.AMETHYST && MapArea.EXCLUSIVE_AMETHYST_MINE.inArea(player) && !AreaReward.ALTERNATE_AMETHYST_MINE.checkReward(player, "mine these rocks."))
             return;
-        if (player.getInventory().isFull()) {
+        boolean endlessHarvest = player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST);
+        if (!endlessHarvest && player.getInventory().isFull()) {
             player.privateSound(2277);
             player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
             return;
@@ -82,13 +83,17 @@ public class Mining {
             int attempts = 1;
             player.sendFilteredMessage("You swing your pick at the rock.");
             player.animate(miningAnimation);
-            while (attempts < 300) {
+            while (attempts < 300) {    // Cap attempts at 300 to prevent afk timers from lasting too long
+
+                // Check if rock is still active
                 if ((rock != null && rock.id == emptyId)
                         || (npc != null && npc.isRemoved())) {
                     player.resetAnimation();
                     return;
                 }
-                if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull()) {
+
+                // Check if inventory is full
+                if (!endlessHarvest && player.getInventory().isFull()) {
                     player.resetAnimation();
                     player.privateSound(2277);
                     player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
@@ -99,7 +104,7 @@ public class Mining {
                 boolean gemRock = false;
                 int itemId = 0;
                 int random = 0;
-                /* If the rock is granite or sandstone, grab a random size */
+                // If the rock is granite or sandstone, grab a random size
                 if (rockData == Rock.GRANITE || rockData == Rock.SANDSTONE) {
                     if (rockData.multiOre != null) {
                         random = Random.get(rockData.multiOre.length - 1);
@@ -108,7 +113,7 @@ public class Mining {
                     rockyOutcrop = true;
                 }
 
-                /* If the rock is a gem rock, grab a random size */
+                // If the rock is a gem rock, grab a random size
                 if (rockData == Rock.GEM_ROCK) {
                     itemId = GEM_ROCK_TABLE.rollItem().getId();
                     gemRock = true;
@@ -117,11 +122,13 @@ public class Mining {
                 Item gem = null;
                 if (canAttempt(attempts, pickaxe) && Random.get(100) <= chance(player, getEffectiveLevel(player), rockData)) {
                     int amount = (isSalt(rockData)) ? getSaltAmount(player) : 1;
+
+                    // Random gem chance roll
                     if (rockData != Rock.GEM_ROCK && Random.rollDie(wearingGlory(player) ? 86 : 256)) {  // 1/256 chance to replace ore with a gem
                         gem = GEM_TABLE.rollItem();
 
                         player.collectResource(gem);
-                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                        if (endlessHarvest) {
                             if (player.getBank().hasRoomFor(gem)) {
                                 player.getBank().add(gem.getId(), gem.getAmount());
                                 player.sendFilteredMessage("Your Relic banks the " + gem.getDef().name + " you would have gained, giving you a total of " + player.getBank().getAmount(gem.getId()) + ".");
@@ -132,25 +139,30 @@ public class Mining {
                             player.getInventory().add(gem);
                         }
                     } else {
+                        // ID transformations
                         int id = rockyOutcrop || gemRock ? itemId : rockData.ore;
                         id = trahaearnMine(player, id); // Turn clay into soft clay, roll for crystal shards
                         if (rockData == Rock.CLAY && BraceletOfClay.test(player)) {
                             if (id == Items.SOFT_CLAY) amount += 1; // If mining in trahaearn mine
                             else id = Items.SOFT_CLAY;
                         }
+
+                        // Amount handling
                         if (Random.rollPercent(getExtraOreChance(player, rockData))) {
                             amount *= 2;
                             player.sendFilteredMessage("You manage to mine an additional ore.");
                         }
-                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST))
-                            amount *= 2;
-                        if (rockData.ordinal() <= Rock.ADAMANT.ordinal())
-                            CelestialRing.removeChargeIfEquipped(player);
+                        if (endlessHarvest) amount *= 2;
+
+                        // Remove celes ring charge regardless of it giving an extra ore
+                        if (rockData.ordinal() <= Rock.ADAMANT.ordinal()) CelestialRing.removeChargeIfEquipped(player);
+
+                        // Ore related task handling
+                        if (rockData == Rock.GRANITE) player.getTaskManager().doLookupByUUID(656, 1, true);    // Mine 30 Chunks of Granite
+                        else player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDefinition.get(id).name);
+
+                        // Reward handling
                         player.collectResource(new Item(id, amount));
-                        if (rockData == Rock.GRANITE)
-                            player.getTaskManager().doLookupByUUID(656, 1, true);    // Mine 30 Chunks of Granite
-                        else
-                            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDefinition.get(id).name);
                         if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1) && InfernalTools.INFERNAL_PICKAXE.hasCharge(player) && infernalPickProc(player, rockData.ore)) {
                             player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_PICKAXE.removeCharge(player);
@@ -161,7 +173,7 @@ public class Mining {
                             player.incrementNumericAttribute("BAGGED_COAL", amount);
                         } else if (rockData == Rock.ASH_PILE) {
                             player.getInventory().addOrDrop(21622, getAshAmount(player));
-                        } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
+                        } else if (endlessHarvest) {
                             if (player.getBank().hasRoomFor(id)) {
                                 player.getBank().add(id, amount);
                                 player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
@@ -173,20 +185,24 @@ public class Mining {
                         }
                     }
 
+                    // Roll pet
                     if (Random.rollDie(rockData.petOdds - (player.getStats().get(StatType.Mining).currentLevel * 25)))
                         Pet.ROCK_GOLEM.unlock(player);
 
+                    // Roll geodes
                     rollGeode(player);
 
-                    /* Rolling for mined minerals */
-                    if (minedMineral(player, rockData))
-                        player.getInventory().addOrDrop(21341, 1);
+                    // Rolling for mined minerals in mining guild
+                    if (minedMineral(player, rockData)) player.getInventory().addOrDrop(21341, 1);
 
+                    // Counter handling
                     counter.increment(player, amount);
+
+                    // Experience handling
                     if (rockData == Rock.GEM_ROCK) {
                         player.getStats().addXp(StatType.Mining, rockData.experience, true);
                     } else if (gem != null) {   // No xp is earned and the ore is not depleted, just go next
-                        if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                        if (!endlessHarvest) {
                             player.sendFilteredMessage("You find an " + gem.getDef().name + ".");
                         }
                         player.getTaskManager().doLookupByUUID(24, 1);  // Obtain a Gem While Mining
@@ -194,10 +210,14 @@ public class Mining {
                     } else {
                         player.getStats().addXp(StatType.Mining, (rockyOutcrop ? rockData.multiExp[random] : rockData.experience * amount), true);
                     }
-                    if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+
+                    // Chat message
+                    if (!endlessHarvest) {
                         player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
                                 (rockData == Rock.GEM_ROCK ? ItemDefinition.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
                     }
+
+                    // Pickaxe related task handling
                     if (pickaxe == Pickaxe.STEEL)
                         player.getTaskManager().doLookupByUUID(23, 1);  // Mine some Ore With a Steel Pickaxe
                     if (pickaxe == Pickaxe.RUNE)
@@ -205,6 +225,8 @@ public class Mining {
                     if (pickaxe == Pickaxe.CRYSTAL) {
                         CrystalEquipment.PICKAXE.removeCharge(player);
                     }
+
+                    // Ping rock depletion
                     if (rockData.depleteTime > 0 && rock != null) {
                         // Mining gloves now have a chance to add 5 health to the rock being mined
                         if (Random.get() < miningGloves(player, rockData)) {

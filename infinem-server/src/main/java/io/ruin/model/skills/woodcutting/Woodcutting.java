@@ -81,7 +81,8 @@ public class Woodcutting {
             player.privateSound(2277);
             return;
         }
-        if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) &&player.getInventory().isFull()) {
+        boolean endlessHarvest = player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST);
+        if (!endlessHarvest &&player.getInventory().isFull()) {
             player.sendMessage("Your inventory is too full to hold any more logs.");
             player.privateSound(2277);
             return;
@@ -103,24 +104,37 @@ public class Woodcutting {
                     player.sendMessage("baseChance=" + treeData.baseChance + ", chance=" + NumberUtils.formatTwoPlaces(chance) + ", xp/tick=" + NumberUtils.formatNumber((long) xpPerTick) + "");
                     player.sendMessage("logsPerHour=" + NumberUtils.formatTwoPlaces(logsPerHour) + ", xpPerHour=" + NumberUtils.formatNumber((long) xpPerHour));
                 }
-                if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getInventory().isFull()) {
+
+                // Check if inventory is full
+                if (!endlessHarvest && player.getInventory().isFull()) {
                     player.sendMessage("Your inventory is too full to hold any more logs.");
                     player.privateSound(2277);
                     player.resetAnimation();
                     return;
                 }
+
+                // Check if tools have charges remaining
                 if (hatchet == Hatchet.CRYSTAL) {
                     if (!CrystalEquipment.AXE.hasCharge(player)) return;
                 }
                 if (hatchet == Hatchet.INFERNAL) {
                     if (!InfernalTools.INFERNAL_AXE.hasCharge(player)) return;
                 }
+
+                // Check if tree is still active
                 if (treeDeadCheck.get()) {
                     player.resetAnimation();
                     return;
                 }
+
                 if (attempts % 4 == 0 && successfullyCutTree(effectiveLevel, treeData, hatchet)) {
+
+                    // Amount handling
                     int amount = 1;
+                    if (treeData == Tree.REGULAR && KandarinHeadgear.hasEquipped(player)) amount += 1;
+                    if (endlessHarvest) amount *= 2;
+
+                    // Log incineration check
                     Burning burning = Burning.get(treeData.log);
                     if (hatchet == Hatchet.INFERNAL && (Random.rollDie(3, 1)) && InfernalTools.INFERNAL_AXE.hasCharge(player) && burning != null) {
                         player.sendFilteredMessage("The infernal axe incinerates some logs.");
@@ -129,8 +143,10 @@ public class Woodcutting {
                         InfernalTools.INFERNAL_AXE.removeCharge(player);
                     } else {
                         if (treeData == Tree.SULLIUSCEP) {
+
+                            // Sulliuscep handling
                             Item loot = SULLIUSCEP_LOOT.rollItem();
-                            if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                            if (endlessHarvest) {
                                 if (player.getBank().hasRoomFor(loot.getId())) {
                                     player.getBank().add(loot.getId(), loot.getAmount());
                                     player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
@@ -141,12 +157,13 @@ public class Woodcutting {
                                 player.sendFilteredMessage("You get " + loot.getDef().descriptiveName + ".");
                                 player.getInventory().add(loot);
                             }
-                            if (loot.getId() == 21626)
-                                player.getTaskManager().doLookupByUUID(352);    // Chop a Sulliuscep Cap
+
+                            // Sulliuscep task handling
+                            if (loot.getId() == 21626) player.getTaskManager().doLookupByUUID(352);    // Chop a Sulliuscep Cap
                         } else if (treeData != Tree.CRYSTAL && treeData.log != -1) {
-                            if (treeData == Tree.REGULAR && KandarinHeadgear.hasEquipped(player)) amount += 1;
-                            if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
-                                amount *= 2;
+
+                            // Log handling
+                            if (endlessHarvest) {
                                 if (player.getBank().hasRoomFor(treeData.log)) {
                                     player.getBank().add(treeData.log, amount);
                                     player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
@@ -157,26 +174,43 @@ public class Woodcutting {
                                 player.sendFilteredMessage("You get some " + treeData.treeName + ".");
                                 player.getInventory().add(treeData.log, amount);
                             }
+
+                            // Axe related task handling
                             if (hatchet == Hatchet.STEEL)
                                 player.getTaskManager().doLookupByUUID(17, 1);  // Chop Some Logs With a Steel Axe
                             if (hatchet == Hatchet.RUNE)
                                 player.getTaskManager().doLookupByUUID(95, 1);  // Chop Some Logs With a Rune Axe
                         }
-                        if (treeData.log != -1) {
-                            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHOPLOG, ItemDefinition.get(treeData.log).name);
-                            player.collectResource(new Item(treeData.log, 1));
-                        }
                     }
+
+                    if (treeData.log != -1) {
+                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHOPLOG, ItemDefinition.get(treeData.log).name);
+                        player.collectResource(new Item(treeData.log, 1));
+                    }
+
+                    // Roll nests
                     rollBirdNest(player, treeData);
                     rollClueNest(player, treeData);
+
+                    // Roll pet
                     rollPet(player, treeData);
+
+                    // Roll lumberjack outfit
                     rollOutfitPiece(player, treeData);
+
+                    // Counter handling
                     treeData.counter.increment(player, amount);
+
+                    // Experience handling
                     double xp = treeData.experience;
                     player.getStats().addXp(StatType.Woodcutting, xp * amount, true);
+
+                    // Remove crystal axe charges
                     if (hatchet == Hatchet.CRYSTAL) {
                         CrystalEquipment.AXE.removeCharge(player);
                     }
+
+                    // Ping tree depletion
                     if (treeData.single
                             || (treeData.fellChance > 0 && Random.get() < treeData.fellChance)
                             || (tree == null && treeDeadAction != null && treeData.fellTime > 0 && Random.rollDie(Math.min(8, treeData.fellTime / 10)))  // Should catch farming trees
