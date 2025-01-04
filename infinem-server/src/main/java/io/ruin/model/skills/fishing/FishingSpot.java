@@ -18,6 +18,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.item.loot.RareDropTable;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.MapArea;
@@ -312,6 +313,9 @@ public class FishingSpot {
                             }
                         }
                     }
+
+                    // Roll RDT if player has fragment with mod
+                    RareDropTable.rollSkillingRareDropTable(player, FragmentType.Fishing, c.levelReq);
 
                     // Roll pet
                     if (Random.rollDie(c.petOdds - (player.getStats().get(StatType.Fishing).currentLevel * 25)))

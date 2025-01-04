@@ -23,6 +23,7 @@ import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfClay;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.item.actions.impl.storage.CoalBag;
+import io.ruin.model.item.loot.RareDropTable;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.containers.Equipment;
@@ -188,6 +189,9 @@ public class Mining {
                             player.getInventory().add(id, amount);
                         }
                     }
+
+                    // Roll RDT if player has fragment with mod
+                    RareDropTable.rollSkillingRareDropTable(player, FragmentType.Mining, rockData.levelReq);
 
                     // Roll pet
                     if (Random.rollDie(rockData.petOdds - (player.getStats().get(StatType.Mining).currentLevel * 25)))

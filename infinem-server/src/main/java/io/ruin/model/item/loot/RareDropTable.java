@@ -3,11 +3,14 @@ package io.ruin.model.item.loot;
 import io.ruin.api.utils.Random;
 import io.ruin.model.content.bestiary.perks.impl.LuckPerk;
 import io.ruin.model.content.bestiary.perks.impl.RespawnPerk;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifier;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentType;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.utility.Color;
 
 import java.util.Optional;
 
@@ -150,5 +153,24 @@ public class RareDropTable {
         Item item = RARE_DROP_TABLE.rollItem();
         player.getTaskManager().doLookupByUUID(905, 1); // Get a Drop from the Rare Drop Table
         return Optional.of(item);
+    }
+
+    public static void rollSkillingRareDropTable(Player player, FragmentType type, int levelRequirement) {
+        if (!player.getRelicFragmentManager().hasModifier(type, FragmentModifier.RDT)) return;
+        int luckTier = getLuckTier(player);
+        int chance = Math.max(ROLL_CHANCE[luckTier] - levelRequirement * 3, 75);   // 1/75 is the lowest the rate can go
+        if (Random.get(chance) != 1) {
+            return;
+        }
+        Item item = RARE_DROP_TABLE.rollItem();
+        player.getTaskManager().doLookupByUUID(905, 1); // Get a Drop from the Rare Drop Table
+        if (player.getBank().hasRoomFor(item.getId(), item.getAmount())) {
+            player.getBank().add(item.getId(), item.getAmount());
+            player.sendMessage(Color.GREEN.wrap("<shad=0>You find " + item.getAmount() + "x " + item.getDef().name + " while " + type + ". " +
+                    (item.getAmount() > 1 ? "They were " : "It was ") + "sent to your bank."));
+        } else {
+            player.getInventory().addOrDrop(item);
+            player.sendMessage(Color.GREEN.wrap("<shad=0>You find " + item.getAmount() + "x " + item.getDef().name + " while " + type + "."));
+        }
     }
 }

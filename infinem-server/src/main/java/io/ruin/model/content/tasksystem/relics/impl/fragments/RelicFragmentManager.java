@@ -53,4 +53,10 @@ public class RelicFragmentManager {
         if (fragmentItem == null) return false;
         return Random.get() < FragmentItem.getModValue(fragmentItem, mod);
     }
+
+    public boolean hasModifier(FragmentType type, FragmentModifier mod) {
+        Item fragmentItem = getFragment(type);
+        if (fragmentItem == null) return false;
+        return FragmentItem.getModValue(fragmentItem, mod) > 0;
+    }
 }

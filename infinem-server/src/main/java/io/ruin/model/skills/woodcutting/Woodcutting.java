@@ -22,6 +22,7 @@ import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.item.loot.RareDropTable;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
 import io.ruin.model.map.MapArea;
@@ -192,6 +193,9 @@ public class Woodcutting {
                         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHOPLOG, ItemDefinition.get(treeData.log).name, amount);
                         player.collectResource(new Item(treeData.log, amount));
                     }
+
+                    // Roll RDT if player has fragment with mod
+                    RareDropTable.rollSkillingRareDropTable(player, FragmentType.Woodcutting, treeData.levelReq);
 
                     // Roll nests
                     rollBirdNest(player, treeData);
