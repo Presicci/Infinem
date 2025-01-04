@@ -139,7 +139,7 @@ public class Woodcutting {
                     if (hatchet == Hatchet.INFERNAL && (Random.rollDie(3, 1)) && InfernalTools.INFERNAL_AXE.hasCharge(player) && burning != null) {
                         player.sendFilteredMessage("The infernal axe incinerates some logs.");
                         player.graphics(580, 50, 0);
-                        player.getStats().addXp(StatType.Firemaking, burning.exp / 2, true);
+                        player.getStats().addXp(StatType.Firemaking, (burning.exp / 2) * amount, true);
                         InfernalTools.INFERNAL_AXE.removeCharge(player);
                     } else {
                         if (treeData == Tree.SULLIUSCEP) {
