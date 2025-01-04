@@ -129,7 +129,8 @@ public class Woodcutting {
                     return;
                 }
 
-                if (attempts % 4 == 0 && successfullyCutTree(effectiveLevel, treeData, hatchet)) {
+                int fragmentTicks = (int) player.getRelicFragmentManager().getModifierValue(StatType.Woodcutting, FragmentModifier.TICK_FASTER);
+                if (attempts % (4 - fragmentTicks) == 0 && successfullyCutTree(effectiveLevel, treeData, hatchet)) {
 
                     // Amount handling
                     int amount = 1;

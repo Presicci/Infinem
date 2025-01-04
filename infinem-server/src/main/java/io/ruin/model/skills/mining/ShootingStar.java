@@ -141,7 +141,7 @@ public enum ShootingStar {
                     player.sendMessage("Your inventory is too full to hold any more stardust.");
                     return;
                 }
-                if (Mining.canAttempt(attempts, pickaxe) && Random.get(100) <= chance(Mining.getEffectiveLevel(player))) {
+                if (Mining.canAttempt(player, attempts, pickaxe) && Random.get(100) <= chance(Mining.getEffectiveLevel(player))) {
                     int stardustQuantity = Random.rollPercent(currentStar.doubleDustChance) ? 2 : 1;
                     if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST))
                         stardustQuantity *= 2;

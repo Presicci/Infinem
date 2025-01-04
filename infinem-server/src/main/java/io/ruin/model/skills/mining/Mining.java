@@ -122,7 +122,7 @@ public class Mining {
                 }
 
                 Item gem = null;
-                if (canAttempt(attempts, pickaxe) && Random.get(100) <= chance(player, getEffectiveLevel(player), rockData)) {
+                if (canAttempt(player, attempts, pickaxe) && Random.get(100) <= chance(player, getEffectiveLevel(player), rockData)) {
                     int amount = (isSalt(rockData)) ? getSaltAmount(player) : 1;
 
                     // Random gem chance roll
@@ -471,9 +471,15 @@ public class Mining {
         }
     }
 
-    public static boolean canAttempt(int cycle, Pickaxe pickaxe) {
+    public static boolean canAttempt(Player player, int cycle, Pickaxe pickaxe) {
         int pickaxeTicks = pickaxe.ticks;
         if (cycle % pickaxeTicks == 0) return true;
+        int fragmentTicks = (int) player.getRelicFragmentManager().getModifierValue(StatType.Mining, FragmentModifier.TICK_FASTER);
+        if (fragmentTicks > 0) {
+            if (pickaxe == Pickaxe.CRYSTAL) return Random.rollDie(4) && cycle % pickaxeTicks - fragmentTicks - 1 == 0;
+            if (pickaxe.ordinal() >= 7) return Random.rollDie(6) && cycle % pickaxeTicks - fragmentTicks - 1 == 0;
+            return cycle % pickaxeTicks - fragmentTicks == 0;
+        }
         if (pickaxe == Pickaxe.CRYSTAL) return Random.rollDie(4) && cycle % pickaxeTicks - 1 == 0;
         return pickaxe.ordinal() >= 7 && Random.rollDie(6) && cycle % pickaxeTicks - 1 == 0;
     }

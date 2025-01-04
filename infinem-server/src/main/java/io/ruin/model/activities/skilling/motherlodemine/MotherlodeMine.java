@@ -289,7 +289,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                         obj.removeTemporaryAttribute(AttributeKey.OBJECT_DEPLETING);
                     });
                 }
-                if (Mining.canAttempt(attempts, pickaxe) && Random.get(100) <= Mining.chance(player, player.getStats().get(StatType.Mining).currentLevel, Rock.PAYDIRT)) {
+                if (Mining.canAttempt(player, attempts, pickaxe) && Random.get(100) <= Mining.chance(player, player.getStats().get(StatType.Mining).currentLevel, Rock.PAYDIRT)) {
                     int amt = player.getRelicManager().hasRelic(Relic.ENDLESS_HARVEST) ? 2 : 1;
                     player.collectResource(new Item(PAY_DIRT, amt));
                     player.getInventory().add(PAY_DIRT, amt);

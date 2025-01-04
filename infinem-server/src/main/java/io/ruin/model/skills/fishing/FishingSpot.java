@@ -351,7 +351,7 @@ public class FishingSpot {
 
                 if (animTicks == 0) {
                     player.animate(barehand ? 6704 : tool.loopAnimationId);
-                    animTicks = 5;
+                    animTicks = 5 - (int) player.getRelicFragmentManager().getModifierValue(StatType.Fishing, FragmentModifier.TICK_FASTER);
                 }
             }
         });
