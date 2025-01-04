@@ -184,8 +184,8 @@ public class Woodcutting {
                     }
 
                     if (treeData.log != -1) {
-                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHOPLOG, ItemDefinition.get(treeData.log).name);
-                        player.collectResource(new Item(treeData.log, 1));
+                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHOPLOG, ItemDefinition.get(treeData.log).name, amount);
+                        player.collectResource(new Item(treeData.log, amount));
                     }
 
                     // Roll nests
