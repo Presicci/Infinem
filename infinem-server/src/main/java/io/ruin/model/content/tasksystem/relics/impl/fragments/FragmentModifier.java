@@ -31,7 +31,8 @@ public enum FragmentModifier {
                 FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
             }, "#% chance to bank gathered resources",
             new FragmentModRange(0.21, 0.4, 75), new FragmentModRange(0.41, 0.6, 60), new FragmentModRange(0.61, 0.7, 40),
-            new FragmentModRange(0.71, 0.8, 20), new FragmentModRange(0.81, 0.9, 10), new FragmentModRange(0.91, 1.0, 5)),
+            new FragmentModRange(0.71, 0.8, 20), new FragmentModRange(0.81, 0.9, 10), new FragmentModRange(0.91, 0.99, 7),
+            new FragmentModRange(1, 1, 5)),
     /**
      * Gathering actions are x ticks faster.<br><br>
      */
