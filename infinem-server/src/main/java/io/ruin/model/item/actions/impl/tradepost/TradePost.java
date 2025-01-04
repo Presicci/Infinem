@@ -577,18 +577,23 @@ public class TradePost {
 
     static {
         InterfaceHandler.register(Interface.GENERIC_INVENTORY_OVERLAY, handler -> {
-            handler.actions[0] = new InterfaceAction() {
-                public void handleClick(Player player, int option, int slot, int itemId) {
-                    Item item = player.getInventory().get(slot);
-                    if (item.hasAttributes()) {
-                        player.sendMessage("You can't offer upgraded items on the Grand Exchange.");
-                        return;
-                    }
-                    if (!player.isVisibleInterface(1006))
-                        player.getTradePost().openMyOffers();
-                    player.getTradePost().promptCreateOffer(itemId);
+            handler.interfaceOverlayAction(Interface.TRADING_POST_MY_OFFERS, 0, (DefaultAction) (player, option, slot, itemId) -> {
+                Item item = player.getInventory().get(slot);
+                if (item.hasAttributes()) {
+                    player.sendMessage("You can't offer upgraded items on the Grand Exchange.");
+                    return;
                 }
-            };
+                player.getTradePost().promptCreateOffer(itemId);
+            });
+            handler.interfaceOverlayAction(Interface.TRADING_POST_VIEW, 0, (DefaultAction) (player, option, slot, itemId) -> {
+                Item item = player.getInventory().get(slot);
+                if (item.hasAttributes()) {
+                    player.sendMessage("You can't offer upgraded items on the Grand Exchange.");
+                    return;
+                }
+                player.getTradePost().openMyOffers();
+                player.getTradePost().promptCreateOffer(itemId);
+            });
         });
 
         InterfaceHandler.register(Interface.TRADING_POST_MY_OFFERS, handler -> {

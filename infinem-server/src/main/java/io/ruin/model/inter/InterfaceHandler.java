@@ -15,6 +15,8 @@ public class InterfaceHandler {
 
     public static final InterfaceHandler EMPTY_HANDLER = new InterfaceHandler();
 
+    public static final Map<Integer, InterfaceHandler> GENERIC_INTERFACE_OVERLAY_ACTIONS = Maps.newConcurrentMap();
+
     public final int id;
 
     public final InterfaceAction[] actions;
@@ -52,6 +54,10 @@ public class InterfaceHandler {
         simpleAction(widgetInfo.getChildId(), action);
     }
 
+    public void interfaceOverlayAction(int companionInterfaceId, int childID, InterfaceAction action) {
+        GENERIC_INTERFACE_OVERLAY_ACTIONS.computeIfAbsent(companionInterfaceId, InterfaceHandler::new).actions[childID] = action;
+    }
+
     public static InterfaceAction getAction(Player player, int interfaceHash) {
         int interfaceId = interfaceHash >> 16;
         int childId = interfaceHash & 0xffff;
@@ -65,6 +71,18 @@ public class InterfaceHandler {
             return null;
         if(!player.isVisibleInterface(interfaceId)) {
             return null;
+        }
+        if (interfaceId == Interface.GENERIC_INVENTORY_OVERLAY) {
+            for (int companionInterfaceId : GENERIC_INTERFACE_OVERLAY_ACTIONS.keySet()) {
+                if (player.isVisibleInterface(companionInterfaceId)) {
+                    InterfaceHandler handler = GENERIC_INTERFACE_OVERLAY_ACTIONS.get(companionInterfaceId);
+                    if(handler == null)
+                        return null;
+                    if(childId < 0 || childId >= handler.actions.length)
+                        return null;
+                    return handler.actions[childId];
+                }
+            }
         }
         InterfaceHandler handler = handlers.get(interfaceId);
         if(handler == null)
