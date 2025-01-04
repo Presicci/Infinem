@@ -17,9 +17,9 @@ public enum FragmentModifier {
      * Provides the player with a x% experience boost in the skill.<br><br>
      */
     EXPERIENCE(new FragmentType[] {
-                FragmentType.AGILITY, FragmentType.COOKING, FragmentType.CRAFTING, FragmentType.FARMING, FragmentType.FIREMAKING, FragmentType.Fishing,
-                FragmentType.FLETCHING, FragmentType.HERBLORE, FragmentType.HUNTER, FragmentType.MINING, FragmentType.RUNECRAFTING, FragmentType.SMITHING,
-                FragmentType.THIEVING, FragmentType.WOODCUTTING
+                FragmentType.Agility, FragmentType.Cooking, FragmentType.Crafting, FragmentType.Farming, FragmentType.Firemaking, FragmentType.Fishing,
+                FragmentType.Fletching, FragmentType.Herblore, FragmentType.Hunter, FragmentType.Mining, FragmentType.Runecrafting, FragmentType.Smithing,
+                FragmentType.Thieving, FragmentType.Woodcutting
             },
             "#% increased * experience",
             new FragmentModRange(0.21, 0.4, 75), new FragmentModRange(0.41, 0.6, 60), new FragmentModRange(0.61, 0.7, 40),
@@ -28,7 +28,7 @@ public enum FragmentModifier {
      * Provides the player with a x% chance to bank resources from gathering. Doesn't work with Endless harvest.<br><br>
      */
     BANK_RESOURCES(new FragmentType[]{
-                FragmentType.Fishing, FragmentType.WOODCUTTING, FragmentType.MINING,
+                FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
             }, "#% chance to bank gathered resources",
             new FragmentModRange(0.21, 0.4, 75), new FragmentModRange(0.41, 0.6, 60), new FragmentModRange(0.61, 0.7, 40),
             new FragmentModRange(0.71, 0.8, 20), new FragmentModRange(0.81, 0.9, 10), new FragmentModRange(0.91, 1.0, 5)),
@@ -36,7 +36,7 @@ public enum FragmentModifier {
      * Gathering actions are x ticks faster.<br><br>
      */
     TICK_FASTER(new FragmentType[]{
-            FragmentType.Fishing, FragmentType.WOODCUTTING, FragmentType.MINING,
+            FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
             }, "# tick(s) faster *",
             new FragmentModRange(1, 1, 10), new FragmentModRange(2, 2, 2)),
     /**
@@ -44,7 +44,7 @@ public enum FragmentModifier {
      * Provides a chance to roll the RDT when gathering.<br><br>
      */
     RDT(new FragmentType[]{
-                FragmentType.Fishing, FragmentType.WOODCUTTING, FragmentType.MINING,
+                FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
             }, "Provides a chance to roll the Rare Drop Table while *",
             new FragmentModRange(1, 1, 15)),
     /**
