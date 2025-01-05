@@ -168,8 +168,13 @@ public class Clue {
                         }
                     }
                     if (Random.rollDie(10 - def.clueType.ordinal())) {
-                        player.getBank().add(2528);
-                        player.sendMessage("Your relic has sent a skill lamp to your bank.");
+                        if (player.getGameMode().isUltimateIronman()) {
+                            player.getInventory().addOrDrop(2528, 1);
+                            player.sendMessage("Your relic has found a skill lamp.");
+                        } else {
+                            player.getBank().add(2528);
+                            player.sendMessage("Your relic has sent a skill lamp to your bank.");
+                        }
                     }
                 }
             }
