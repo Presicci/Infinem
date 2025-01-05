@@ -49,6 +49,15 @@ public enum FragmentModifier {
             }, "Provides a chance to roll the Rare Drop Table while *",
             new FragmentModRange(1, 1, 15)),
     /**
+     * Provides the player with a x% chance to find an experience lamp while gathering.
+     */
+    EXPERIENCE_LAMP(new FragmentType[]{
+                FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
+            }, "#% chance to find an experience lamp while *",
+            new FragmentModRange(0.01, 0.01, 10),
+            new FragmentModRange(0.02, 0.02, 5),
+            new FragmentModRange(0.03, 0.03, 2)),
+    /**
      * Provides the player with a x% chance to cook fish when caught.<br><br>
      */
     COOK_FISH(FragmentType.Fishing, "#% chance to cook caught fish, rewarding cooking experience",

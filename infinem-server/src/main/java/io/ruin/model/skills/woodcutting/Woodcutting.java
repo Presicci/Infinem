@@ -9,6 +9,7 @@ import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.areas.diaryitems.KandarinHeadgear;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifier;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifierEffects;
 import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentType;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
@@ -193,6 +194,10 @@ public class Woodcutting {
                         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHOPLOG, ItemDefinition.get(treeData.log).name, amount);
                         player.collectResource(new Item(treeData.log, amount));
                     }
+
+                    // Roll experience lamps if player has fragment with mod
+                    if (player.getRelicFragmentManager().rollChanceModifier(FragmentType.Woodcutting, FragmentModifier.EXPERIENCE_LAMP))
+                        FragmentModifierEffects.rewardExperienceLamp(player);
 
                     // Roll RDT if player has fragment with mod
                     RareDropTable.rollSkillingRareDropTable(player, FragmentType.Woodcutting, treeData.levelReq);

@@ -6,6 +6,7 @@ import io.ruin.model.World;
 import io.ruin.model.content.tasksystem.areas.diaryitems.RadasBlessing;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifier;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifierEffects;
 import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentType;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
@@ -321,6 +322,10 @@ public class FishingSpot {
                             }
                         }
                     }
+
+                    // Roll experience lamps if player has fragment with mod
+                    if (player.getRelicFragmentManager().rollChanceModifier(FragmentType.Fishing, FragmentModifier.EXPERIENCE_LAMP))
+                        FragmentModifierEffects.rewardExperienceLamp(player);
 
                     // Roll RDT if player has fragment with mod
                     RareDropTable.rollSkillingRareDropTable(player, FragmentType.Fishing, c.levelReq);
