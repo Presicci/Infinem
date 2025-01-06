@@ -39,9 +39,14 @@ public class Traveling {
         player.lock(LockType.FULL_NULLIFY_DAMAGE); //keep lock outside of event!
         player.startEvent(e -> {
             player.getPacketSender().fadeOut();
-            e.delay(ticks - 1);
-            player.getMovement().teleport(x, y, z);
-            e.delay(1);
+            if (ticks == 2) {
+                e.delay(ticks);
+                player.getMovement().teleport(x, y, z);
+            } else {
+                e.delay(ticks - 1);
+                player.getMovement().teleport(x, y, z);
+                e.delay(1);
+            }
             player.getPacketSender().fadeIn();
             player.unlock();
             e.delay(1);
