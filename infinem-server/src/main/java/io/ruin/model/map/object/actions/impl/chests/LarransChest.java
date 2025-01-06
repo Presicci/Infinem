@@ -105,8 +105,8 @@ public class LarransChest {
             player.animate(536);
             Item loot = big ? bigTable.rollItem() : smallTable.rollItem();
             player.getInventory().addOrDrop(loot);
-            player.getTaskManager().doDropLookup(loot);
             player.getCollectionLog().collect(loot);
+            player.getTaskManager().doDropLookup(loot);
             player.sendFilteredMessage("You've opened " + Color.RED.wrap("" + PlayerCounter.LARRANS_CHEST_OPENED.increment(player, 1)) + " larran's chests.");
             player.getTaskManager().doLookupByUUID(864);    // Open One of Larran's Chests
             event.delay(1);
