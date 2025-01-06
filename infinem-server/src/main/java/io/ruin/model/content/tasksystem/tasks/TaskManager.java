@@ -176,6 +176,9 @@ public class TaskManager {
         for (Config config : AREA_POINTS) {
             config.set(player, 0);
         }
+        for (Config config : COMPLETED_TASKS) {
+            config.set(player, 0);
+        }
         this.inProgressTasks = new HashMap<>();
         this.completeTasks = new HashSet<>();
         this.completedCategories = new HashSet<>();
