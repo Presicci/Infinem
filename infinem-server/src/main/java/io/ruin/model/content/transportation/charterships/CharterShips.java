@@ -54,7 +54,7 @@ public class CharterShips {
     }
 
     private static final int[] CREWMEMBERS = {
-        9312, 9324, 9336, 9348, 9360, 9372
+            9299, 9312, 9324, 9336, 9348, 9360, 9372
     };
 
     static {
