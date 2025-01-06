@@ -12,6 +12,15 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
     //DOWN(1, "climb-down", new Position(), new Position(), false),\
+    SOPHANEM_CHURCH_WEST_UP(20353, "climb-up", new Position(3278, 2768), new Position(3279, 2768, 1), true),
+    SOPHANEM_CHURCH_EAST_UP(20353, "climb-up", new Position(3284, 2768), new Position(3283, 2768, 1), true),
+    SOPHANEM_CHURCH_WEST_DOWN(20354, "climb-down", new Position(3278, 2768, 1), new Position(3277, 2768), false),
+    SOPHANEM_CHURCH_EAST_DOWN(20354, "climb-down", new Position(3284, 2768, 1), new Position(3285, 2768), false),
+    SOPHANEM_CHURCH_WEST_UP_2(20356, "climb-up", new Position(3279, 2771, 1), new Position(3279, 2770, 3), true),
+    SOPHANEM_CHURCH_EAST_UP_2(20356, "climb-up", new Position(3283, 2771, 1), new Position(3283, 2770, 3), true),
+    SOPHANEM_CHURCH_WEST_DOWN_2(20357, "climb-down", new Position(3279, 2771, 3), new Position(3279, 2772, 1), false),
+    SOPHANEM_CHURCH_EAST_DOWN_2(20357, "climb-down", new Position(3283, 2771, 3), new Position(3283, 2772, 1), false),
+
     ZEMOUREGALS_BASE_ENTRANCE(50689, 1, new Position(3343, 3515), new Position(3560, 4552), false),
     ZEMOUREGALS_BASE_EXIT(50143, "climb-up", new Position(3559, 4552), new Position(3342, 3515), true),
 
