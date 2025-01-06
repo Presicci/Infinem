@@ -135,7 +135,7 @@ public class CostumeRoom {
             player.sendMessage("Ultimate ironmen can only withdraw complete sets from storage.");
             return;
         }
-        player.getInventory().add(itemId, 1);
+        player.getInventory().add(itemId == 13280 ? 13342 : itemId, 1);
         int newAmount = pieces[pieceIndex].getAmount() - 1;
         if (newAmount == 0) {
             pieces[pieceIndex] = null;
@@ -183,6 +183,7 @@ public class CostumeRoom {
             }
             if (piece.getAmount() > 1) {
                 Item itemCopy = piece.copy();
+                if (itemCopy.getId() == 13280) itemCopy.setId(13342);
                 itemCopy.setAmount(1);
                 player.getInventory().add(itemCopy);
                 stored[index].incrementAmount(-1);
@@ -204,8 +205,9 @@ public class CostumeRoom {
             return;
         CostumeStorage type = null;
         Costume costume = null;
+        int id = item.getId() == 13342 ? 13280 : item.getId();
         for (CostumeStorage cs : CostumeStorage.values()) {
-            costume = cs.getByItem(item.getId());
+            costume = cs.getByItem(id);
             if (costume != null) {
                 type = cs;
                 break;
@@ -246,14 +248,15 @@ public class CostumeRoom {
     private static void handleItemDeposit(Player player, Item item, boolean messages, CostumeStorage type, Costume costume) {
         Map<Costume, Item[]> sets = type.getSets(player);
         Item[] pieces = sets.get(costume);
-        int pieceIndex = costume.getPieceIndex(item.getId());
+        int storedId = item.getId() == 13342 ? 13280 : item.getId();
+        int pieceIndex = costume.getPieceIndex(storedId);
         if (pieces == null) {
             pieces = new Item[costume.pieces.length];
-            pieces[pieceIndex] = new Item(item.getId(), 1);
+            pieces[pieceIndex] = new Item(storedId, 1);
             player.getInventory().remove(item.getId(), 1);
         } else {
             if (pieces[pieceIndex] == null) {
-                pieces[pieceIndex] = new Item(item.getId(), 1);
+                pieces[pieceIndex] = new Item(storedId, 1);
                 player.getInventory().remove(item.getId(), 1);
             } else {
                 if (player.getGameMode().isUltimateIronman()) {
@@ -261,7 +264,7 @@ public class CostumeRoom {
                         player.sendMessage("As an Ultimate ironman you can only store one of each item.");
                     return;
                 }
-                if (pieces[pieceIndex].getId() == item.getId()) {
+                if (pieces[pieceIndex].getId() == storedId) {
                     pieces[pieceIndex].incrementAmount(1);
                     player.getInventory().remove(item.getId(), 1);
                 } else {
@@ -279,7 +282,8 @@ public class CostumeRoom {
     private static void depositSet(Player player, Item item, Buildable b, CostumeStorage type) {
         if (item == null)
             return;
-        Costume costume = type.getByItem(item.getId());
+        int storedId = item.getId() == 13342 ? 13280 : item.getId();
+        Costume costume = type.getByItem(storedId);
         if (costume == null) {
             player.sendMessage("You can't store that item there.");
             return;
@@ -312,19 +316,20 @@ public class CostumeRoom {
         }
         for (int index = 0; index < pieces.length; index++) {
             for (Item piece : costume.pieces[index]) {
-                int id = piece.getId();
+                int id = piece.getId() == 13280 ? 13342 : piece.getId();
+                int storedId = piece.getId();
                 List<Item> items = player.getInventory().collectItemsWithoutAttributes(id);
                 if (items != null && items.size() > 0) {
                     if (pieces[index] == null) {
                         if (player.getGameMode().isUltimateIronman()) {
-                            pieces[index] = new Item(id, 1);
+                            pieces[index] = new Item(storedId, 1);
                             player.getInventory().remove(id, 1);
                         } else {
-                            pieces[index] = new Item(id, items.size());
+                            pieces[index] = new Item(storedId, items.size());
                             player.getInventory().removeAll(items.toArray(new Item[0]));
                         }
                     } else {
-                        if (pieces[index].getId() != id)
+                        if (pieces[index].getId() != storedId)
                             continue;
                         if (player.getGameMode().isUltimateIronman()) {
                             continue;
