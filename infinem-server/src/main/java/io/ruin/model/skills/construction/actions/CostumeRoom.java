@@ -161,7 +161,6 @@ public class CostumeRoom {
         if (storedSets == null)
             throw new IllegalArgumentException();
         Costume costume = type.getCostumes()[slot];
-        player.sendMessage("" + costume);
         Item[] stored = storedSets.get(costume);
         if (stored == null) {
             return;
