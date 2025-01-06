@@ -43,7 +43,9 @@ public class Hunter {
 
     public static int getMaxTraps(Player player) {
         int level = Math.min(99, player.getStats().get(StatType.Hunter).currentLevel);
-        return 1 + (level / 20);
+        int amt = 1 + (level / 20);
+        if (player.wildernessLevel > 0) amt += 1;
+        return amt;
     }
 
     public static void placeItemTrap(Player player, TrapType type, Item item) {
