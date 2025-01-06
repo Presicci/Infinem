@@ -4,6 +4,8 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentModifier;
+import io.ruin.model.content.tasksystem.relics.impl.fragments.FragmentType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
@@ -44,6 +46,11 @@ public enum FishingClueBottle {
         if (RingOfWealth.wearingRingOfWealthImbued(player) && player.wildernessLevel > 0) {
            chance *= 2;
         }
+
+        // Add chance from relic fragments
+        double fragmentModifierChance = 1D + player.getRelicFragmentManager().getModifierValue(FragmentType.Fishing, FragmentModifier.CLUE_BOTTLE);
+        chance *= fragmentModifierChance;
+
         if (Random.get() < chance) {
             player.getInventory().addOrDrop(bottle.bottleId, 1);
             player.sendMessage("You catch a bottle!");
