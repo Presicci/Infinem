@@ -244,9 +244,6 @@ public class NPCDrops {
                 item.setAmount(item.getAmount() * 2);
             }
 
-            // Attempt a task unlock for each item dropped
-            pKiller.getTaskManager().doDropLookup(item);
-
             /*
              * Convert clue scrolls into clue boxes
              */
@@ -359,6 +356,9 @@ public class NPCDrops {
             }
 
             pKiller.getCollectionLog().collect(item);
+
+            // Attempt a task unlock for each item dropped
+            pKiller.getTaskManager().doDropLookup(item);
 
             /*
              * Spawn the item on the ground.
