@@ -29,31 +29,29 @@ public enum FishingClueBottle {
     }
 
     public static void roll(Player player, FishingCatch fish, boolean barehand) {
-        FishingClueBottle bottle = null;
         int fishLevel = fish.levelReq;
-        if (barehand)
-            fishLevel -= 20;
+        if (barehand) fishLevel -= 20;
 
-        for (FishingClueBottle cb : values()) {
-            if (fishLevel >= cb.levelThreshold)
-                bottle = cb;
-        }
-        if (bottle == null)
-            return;
-        double chance = ((100D + player.getStats().get(StatType.Fishing).currentLevel) / fish.petOdds);
+        double baseChance = ((100D + player.getStats().get(StatType.Fishing).currentLevel) / fish.petOdds);
         if (ActivitySpotlight.isActive(ActivitySpotlight.QUADRUPLE_CLUE_BOTTLE_CHANCE))
-            chance *= 4;
+            baseChance *= 4;
         if (RingOfWealth.wearingRingOfWealthImbued(player) && player.wildernessLevel > 0) {
-           chance *= 2;
+            baseChance *= 2;
         }
 
         // Add chance from relic fragments
         double fragmentModifierChance = 1D + player.getRelicFragmentManager().getModifierValue(FragmentType.Fishing, FragmentModifier.CLUE_BOTTLE);
-        chance *= fragmentModifierChance;
+        baseChance *= fragmentModifierChance;
 
-        if (Random.get() < chance) {
-            player.getInventory().addOrDrop(bottle.bottleId, 1);
-            player.sendMessage("You catch a bottle!");
+        for (FishingClueBottle cb : values()) {
+            if (fishLevel >= cb.levelThreshold) {
+                double chance = (int) baseChance * cb.ordinal() + 1;
+                if (Random.get() < chance) {
+                    player.getInventory().addOrDrop(cb.bottleId, 1);
+                    player.sendMessage("You catch a bottle!");
+                    return;
+                }
+            }
         }
     }
 
