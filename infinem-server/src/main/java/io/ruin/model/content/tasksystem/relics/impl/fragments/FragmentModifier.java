@@ -67,6 +67,18 @@ public enum FragmentModifier {
             new FragmentModRange(0.02, 0.02, 5),
             new FragmentModRange(0.03, 0.03, 2)),
     /**
+     * Provies +# invisible boost to skill level.
+     */
+    INVISIBLE_LEVEL(new FragmentType[]{
+                FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
+            }, "+## to invisible * level",
+            new FragmentModRange(2, 3, 40),
+            new FragmentModRange(3, 4, 30),
+            new FragmentModRange(4, 5, 20),
+            new FragmentModRange(5, 6, 15),
+            new FragmentModRange(7, 9, 10),
+            new FragmentModRange(10, 10, 5)),
+    /**
      * ~~~~~~~
      * Agility
      * ~~~~~~~

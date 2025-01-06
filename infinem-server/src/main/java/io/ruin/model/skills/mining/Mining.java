@@ -317,6 +317,8 @@ public class Mining {
         if (player.getPosition().inBounds(MiningGuild.MINERAL_AREA))
             level += 7;
         level += getMiningBoost(player);
+        // Apply fragment +levels
+        level += (int) player.getRelicFragmentManager().getModifierValue(FragmentType.Mining, FragmentModifier.INVISIBLE_LEVEL);
         return level;
     }
 

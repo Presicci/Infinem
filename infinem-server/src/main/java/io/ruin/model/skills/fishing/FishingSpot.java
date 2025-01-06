@@ -105,6 +105,8 @@ public class FishingSpot {
         int level = fishing.currentLevel;
         if (MapArea.FISHING_GUILD.inArea(player))
             level += 7;
+        // Apply fragment +levels
+        level += (int) player.getRelicFragmentManager().getModifierValue(FragmentType.Fishing, FragmentModifier.INVISIBLE_LEVEL);
         return level;
     }
 

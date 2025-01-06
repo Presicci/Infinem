@@ -318,6 +318,8 @@ public class Woodcutting {
             int treePlayers = ForestryTree.getTreePlayers(tree);
             if (treePlayers > 1) base += Math.min(10, treePlayers - 1);
         }
+        // Apply fragment +levels
+        base += (int) player.getRelicFragmentManager().getModifierValue(FragmentType.Woodcutting, FragmentModifier.INVISIBLE_LEVEL);
         return base;
     }
 
