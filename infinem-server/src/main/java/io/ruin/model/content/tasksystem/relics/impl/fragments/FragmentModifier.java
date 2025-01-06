@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 @Getter
 public enum FragmentModifier {
     /**
-     * Provides the player with a x% experience boost in the skill.<br><br>
+     * Provides the player with a x% experience boost in the skill.
      */
     EXPERIENCE(new FragmentType[] {
                 FragmentType.Agility, FragmentType.Cooking, FragmentType.Crafting, FragmentType.Farming, FragmentType.Firemaking, FragmentType.Fishing,
@@ -29,7 +29,7 @@ public enum FragmentModifier {
             new FragmentModRange(0.81, 0.9, 10),
             new FragmentModRange(0.91, 1.0, 5)),
     /**
-     * Provides the player with a x% chance to bank resources from gathering. Doesn't work with Endless harvest.<br><br>
+     * Provides the player with a x% chance to bank resources from gathering. Doesn't work with Endless harvest.
      */
     BANK_RESOURCES(new FragmentType[]{
                 FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
@@ -42,7 +42,7 @@ public enum FragmentModifier {
             new FragmentModRange(0.91, 0.99, 7),
             new FragmentModRange(1, 1, 5)),
     /**
-     * Gathering actions are x ticks faster.<br><br>
+     * Gathering actions are x ticks faster.
      */
     TICK_FASTER(new FragmentType[]{
             FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
@@ -50,8 +50,8 @@ public enum FragmentModifier {
             new FragmentModRange(1, 1, 10),
             new FragmentModRange(2, 2, 2)),
     /**
-     * Binary mod;<br>
-     * Provides a chance to roll the RDT when gathering.<br><br>
+     * Binary mod;
+     * Provides a chance to roll the RDT when gathering.
      */
     RDT(new FragmentType[]{
                 FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
@@ -112,6 +112,12 @@ public enum FragmentModifier {
             new FragmentModRange(0.5, 0.5, 15),
             new FragmentModRange(1.0, 1.0, 10),
             new FragmentModRange(1.5, 1.5, 5)),
+    /**
+     * Binary mod;
+     * Ignore bait requirement.
+     */
+    IGNORE_BAIT(FragmentType.Fishing, "Can fish without bait",
+            new FragmentModRange(1, 1, 10)),
     /**
      * ~~~~~~~~~
      * Fletching

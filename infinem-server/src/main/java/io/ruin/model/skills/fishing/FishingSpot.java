@@ -111,6 +111,7 @@ public class FishingSpot {
     private static final List<Integer> BARBARIAN_BAITS = Arrays.asList(Items.FISH_OFFCUTS, Items.FISHING_BAIT, Items.FEATHER, Items.ROE, Items.CAVIAR);
 
     private void fish(Player player, NPC npc) {
+        boolean skipBait = player.getRelicFragmentManager().hasModifier(FragmentType.Fishing, FragmentModifier.IGNORE_BAIT);
         boolean barehand;
         FishingTool tool = FishingTool.getAlternative(player, defaultTool);
         Stat fishing = player.getStats().get(StatType.Fishing);
@@ -186,11 +187,11 @@ public class FishingSpot {
                     break;
                 }
             }
-            if (secondary == null) {
+            if (secondary == null && !skipBait) {
                 player.sendMessage("You need at least one bait to fish at this spot.");
                 return;
             }
-        } else if ((secondary = player.getInventory().findItem(tool.secondaryId)) == null) {
+        } else if ((secondary = player.getInventory().findItem(tool.secondaryId)) == null && !skipBait) {
             player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
             return;
         }
@@ -207,11 +208,12 @@ public class FishingSpot {
             }
         }
 
+        Item finalSecondary = skipBait ? null : secondary;
+
         /*
          * Start event
          */
         player.animate(barehand ? 6703 : tool.startAnimationId);
-        Item finalSecondary = secondary;
         player.startEvent(event -> {
             int animTicks = 2;
             boolean firstBarehandAnim = true;
