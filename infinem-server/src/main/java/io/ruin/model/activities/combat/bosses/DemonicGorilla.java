@@ -39,7 +39,7 @@ public class DemonicGorilla extends NPCCombat {
 
     @Override
     public void init() {
-        npc.hitListener = new HitListener().preDefend(this::preDefend).postDefend(this::postDefend);
+        npc.hitListener = new HitListener().preDefend(this::preDefend).postDamage(this::postDamage);
         npc.deathEndListener = (entity, killer, killHit) -> restoreDefaults();
     }
 
@@ -61,7 +61,7 @@ public class DemonicGorilla extends NPCCombat {
             hit.block();
     }
 
-    private void postDefend(Hit hit) {
+    private void postDamage(Hit hit) {
         damageTaken += hit.damage;
         if(damageTaken >= DAMAGE_THRESHOLD && hit.attackStyle != null) {
             damageTaken = 0;
