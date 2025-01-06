@@ -46,7 +46,7 @@ public enum FragmentModifier {
      */
     TICK_FASTER(new FragmentType[]{
             FragmentType.Fishing, FragmentType.Woodcutting, FragmentType.Mining,
-            }, "# tick(s) faster *",
+            }, "## tick(s) faster *",
             new FragmentModRange(1, 1, 10),
             new FragmentModRange(2, 2, 2)),
     /**
@@ -105,8 +105,14 @@ public enum FragmentModifier {
     }
 
     public String getDescription(FragmentType type, FragmentModRoll roll) {
-        double value = roll.getValue() < 1 ? roll.getValue() * 100 : roll.getValue();
-        return description.replace("#", new DecimalFormat("#").format(value)).replace("*", StringUtils.capitalizeFirst(type.name().toLowerCase())).replace("(s)", (int) value > 1 ? "s" : "");
+        double value = roll.getValue() * 100;
+        return description
+                // ## denotes a non percentage
+                .replace("##", new DecimalFormat("#").format(roll.getValue()))
+                // # denotes a percentage
+                .replace("#", new DecimalFormat("#").format(value))
+                // * denotes the skill name
+                .replace("*", StringUtils.capitalizeFirst(type.name().toLowerCase())).replace("(s)", (int) value > 1 ? "s" : "");
     }
 
     public static FragmentModRoll rollFrom(FragmentModifier[] mods) {
