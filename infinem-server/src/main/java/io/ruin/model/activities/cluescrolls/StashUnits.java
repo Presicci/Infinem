@@ -168,7 +168,7 @@ public class StashUnits {
 
     private static void search(Player player, EmoteClue.EmoteClueData emoteClueData) {
         List<Item> itemCon = player.getStashUnits().get(emoteClueData);
-        if (itemCon != null && itemCon.size() > 1) {
+        if (itemCon != null && !itemCon.isEmpty()) {
             if (player.getBankPin().requiresVerification(p -> search(p, emoteClueData)))
                 return;
             withdraw(player, emoteClueData, itemCon);
