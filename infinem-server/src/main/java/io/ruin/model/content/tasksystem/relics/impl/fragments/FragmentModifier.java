@@ -67,6 +67,34 @@ public enum FragmentModifier {
             new FragmentModRange(0.02, 0.02, 5),
             new FragmentModRange(0.03, 0.03, 2)),
     /**
+     * ~~~~~~~
+     * Agility
+     * ~~~~~~~
+     */
+    /**
+     * ~~~~~~~
+     * Cooking
+     * ~~~~~~~
+     */
+    /**
+     * ~~~~~~~~
+     * Crafting
+     * ~~~~~~~~
+     */
+    /**
+     * ~~~~~~~
+     * Farming
+     * ~~~~~~~
+     */
+    /**
+     * ~~~~~~~~~~
+     * Firemaking
+     * ~~~~~~~~~~
+     */
+    /**
+     * ~~~~~~~
+     * Fishing
+     * ~~~~~~~
      * Provides the player with a x% chance to cook fish when caught.
      */
     COOK_FISH(FragmentType.Fishing, "#% chance to cook caught fish, rewarding cooking experience",
@@ -84,6 +112,46 @@ public enum FragmentModifier {
             new FragmentModRange(0.5, 0.5, 15),
             new FragmentModRange(1.0, 1.0, 10),
             new FragmentModRange(1.5, 1.5, 5)),
+    /**
+     * ~~~~~~~~~
+     * Fletching
+     * ~~~~~~~~~
+     */
+    /**
+     * ~~~~~~~~
+     * Herblore
+     * ~~~~~~~~
+     */
+    /**
+     * ~~~~~~
+     * Hunter
+     * ~~~~~~
+     */
+    /**
+     * ~~~~~~
+     * Mining
+     * ~~~~~~
+     */
+    /**
+     * ~~~~~~~~~~~~
+     * Runecrafting
+     * ~~~~~~~~~~~~
+     */
+    /**
+     * ~~~~~~~~
+     * Smithing
+     * ~~~~~~~~
+     */
+    /**
+     * ~~~~~~~~
+     * Thieving
+     * ~~~~~~~~
+     */
+    /**
+     * ~~~~~~~~~~~
+     * Woodcutting
+     * ~~~~~~~~~~~
+     */
     ;
 
     private final FragmentType[] types;
