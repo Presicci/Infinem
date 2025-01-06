@@ -2,6 +2,7 @@ package io.ruin.model.content.tasksystem.tasks.impl;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.item.Items;
 import lombok.Getter;
 
@@ -59,5 +60,15 @@ public enum DropAllTask {
         for (int itemId : itemIds) {
             ItemDefinition.get(itemId).custom_values.put("DROPALL_TASK", this);
         }
+    }
+
+    static {
+        LoginListener.register(player -> {
+            for (DropAllTask task : values()) {
+                if (task.hasCompleted(player)) {
+                    player.getTaskManager().doLookupByUUID(task.taskUuid);
+                }
+            }
+        });
     }
 }
