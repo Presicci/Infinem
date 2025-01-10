@@ -62,7 +62,7 @@ public class Store {
                                 paidAmt += handleReward(player, storeId, amt);
                                 claimedItems += amt;
                             }
-                            player.storeAmountSpent += paidAmt;
+                            player.storeAmountSpent += (paidAmt * 2);   // Credit amount doubled for now while server NEEDS money
                             if (claimedItems > 0) {
                                 if (npc != null) {
                                     player.dialogue(new NPCDialogue(npc, "You claimed " + claimedItems + " " + (claimedItems > 1 ? "rewards" : "reward") + ", and " + paidAmt + " credit.<br>You now have " + player.storeAmountSpent + " total donation credit."));
