@@ -36,7 +36,8 @@ public class Regular {
                         "::yell", "::skull", "::prif", "::clear", "::staff", "::claimvotes",
                         "",
                         "<col=800000>Website Commands:</col>",
-                        "::updates", "::store", "::vote", "::guides", "::support", "::forums", "::highscores", "::discord"
+                        "::updates", "::store", "::vote", "::guides", "::support", "::forums", "::highscores", "::discord",
+                        "::donationperks"
                 );
                 return true;
             }
@@ -197,6 +198,7 @@ public class Regular {
             /**
              * Website commands
              */
+            case "donate":
             case "store": {
                 player.openUrl(World.type.getWorldName() + " Store", World.type.getWebsiteUrl() + "/store");
                 return true;
@@ -243,6 +245,12 @@ public class Regular {
                 if (PrifCityEntrance.prifSkillCheckNoNPC(player)) {
                     player.dialogue(new MessageDialogue("You have all Prifddinas requirements. Congratulations!"));
                 }
+                return true;
+            }
+            case "donations":
+            case "perks":
+            case "donationperks": {
+                player.openUrl(World.type.getWorldName() + " Donation Perks", "https://www.infinem.net/forums/viewtopic.php?p=31");
                 return true;
             }
         }
