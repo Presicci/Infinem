@@ -177,6 +177,7 @@ public class DemonicGorilla extends NPCCombat {
         } else {
             return;
         }
+        npc.forceText("Rhaaaaaaa!");
         misses = 0;
     }
 }
