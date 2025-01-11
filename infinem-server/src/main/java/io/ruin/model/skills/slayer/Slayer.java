@@ -19,6 +19,7 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.skills.slayer.konar.KonarTaskLocation;
 import io.ruin.model.stat.StatType;
+import io.ruin.utility.Color;
 
 import java.util.Arrays;
 
@@ -231,6 +232,17 @@ public class Slayer {
             player.sendMessage("<col=7F00FF>You've completed " + spree + " tasks in a row and received " + points + " points; return to a Slayer Master.");
             Config.SLAYER_POINTS.set(player, current + points);
             player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASKCOMPL, 1, true);
+
+            int vipTicketChance = SlayerMaster.getVIPTicketChance(master);
+            if (Random.rollDie(vipTicketChance)) {
+                if (player.getBank().hasRoomFor(32058, 1)) {
+                    player.getBank().add(32058, 1);
+                    player.sendMessage(Color.RED.wrap("<shad=0>For completing your task you are awarded a Slayer VIP ticket. It was sent to your bank."));
+                } else {
+                    player.getInventory().addOrDrop(32058, 1);
+                    player.sendMessage(Color.RED.wrap("<shad=0>For completing your task you are awarded a Slayer VIP ticket."));
+                }
+            }
         }
         SlayerMaster.sendTask(player);
         return am;

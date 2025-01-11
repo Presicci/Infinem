@@ -324,6 +324,25 @@ public class SlayerMaster {
         }
     }
 
+    public static int getVIPTicketChance(int master) {
+        switch (master) {
+            case MAZCHNA_ID:
+                return 45;
+            case VANNAKA_ID:
+                return 40;
+            case CHAELDAR_ID:
+                return 35;
+            case STEVE_ID:
+            case NIEVE_ID:
+            case DURADEL_ID:
+            case KONAR_ID:
+            case KRYSTILIA_ID:
+                return 30;
+            default:
+                return 50;
+        }
+    }
+
     public int getNpcId() {
         return npcId;
     }
