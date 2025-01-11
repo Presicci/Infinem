@@ -8,5 +8,6 @@
   {"id": -1, "x": 1690, "y": 3144, "z": 0, "type": 10, "direction": 0},  // Remove flower
   {"id": -1, "x": 1691, "y": 3143, "z": 0, "type": 10, "direction": 0},  // Remove bush
   {"id": -1, "x": 1689, "y": 3143, "z": 0, "type": 10, "direction": 0},  // Remove bush
-  {"id": 33037, "x": 1686, "y": 3143, "z": 0, "type": 10, "direction": 0}   // Dungeon hub portal
+  {"id": 33037, "x": 1686, "y": 3143, "z": 0, "type": 10, "direction": 0},   // Dungeon hub portal
+  {"id": 39651, "x": 1673, "y": 3134, "z": 0, "type": 10, "direction": 0}   // Pool of refreshment
 ]
