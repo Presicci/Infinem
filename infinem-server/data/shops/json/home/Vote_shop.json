@@ -62,6 +62,12 @@
       "buy_price": -1,
       "sell_price": 3
     },
+    { // Slayer VIP ticket
+      "itemId": 32058,
+      "stock": 10000,
+      "buy_price": -1,
+      "sell_price": 5
+    },
     { // Beginner clue
       "itemId": 24361,
       "stock": 10000,
