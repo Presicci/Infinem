@@ -249,11 +249,11 @@ public class Slayer {
     }
 
     public static int getSkipCost(Player player) {
-        int cost = 30;
+        int cost = 20;
         if (player.isDiamond()) {
-            cost = 20;
+            cost = 0;
         } else if (player.isRuby()) {
-            cost = 25;
+            cost = 10;
         }
         return cost;
     }
