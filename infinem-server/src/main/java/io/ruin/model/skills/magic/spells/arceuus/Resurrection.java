@@ -49,8 +49,10 @@ public class Resurrection extends Spell {
 
     public Resurrection(Thralls thralls) {
         registerClick(thralls.getLevelReq(), thralls.getMageExp(), true, thralls.runes, (player, i) -> {
-            if (!player.getInventory().hasId(25818) && !player.getEquipment().hasId(25818)) {
-                player.sendMessage("You need a book of the dead to spawn a thrall.");
+            if (!player.getInventory().hasId(25818) && !player.getEquipment().hasId(25818) // Book of the dead
+                    && !player.getInventory().hasId(26551) && !player.getEquipment().hasId(26551)   // Arcane grimoire
+            ) {
+                player.sendMessage("You need a book of the dead to resurrect a thrall.");
                 return false;
             }
             if (Stream.of(DwarfCannon.AREA_RESTRICTIONS).anyMatch(bounds -> player.getBounds().intersects(bounds))) {
@@ -58,11 +60,11 @@ public class Resurrection extends Spell {
                 return false;
             }
             if (player.thrallSpawnDelay.isDelayed()) {
-                player.sendMessage("You must wait 10 seconds after spawning a thrall.");
+                player.sendMessage("You must wait 10 seconds after resurrecting a thrall.");
                 return false;
             }
             if (player.getStats().get(StatType.Prayer).currentLevel < thralls.prayerPointCost) {
-                player.sendMessage("You do not have enough prayer points to summon this thrall.");
+                player.sendMessage("You do not have enough prayer points to resurrect this thrall.");
                 return false;
             }
             if (player.thrall != null) {
