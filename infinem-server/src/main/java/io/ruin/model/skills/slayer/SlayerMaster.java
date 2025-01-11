@@ -12,6 +12,7 @@ import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.skills.slayer.konar.KonarTaskLocation;
@@ -89,10 +90,6 @@ public class SlayerMaster {
         return processTask(player, def);
     }
 
-    /**
-     * Not used atm, can use for a slayer select ticket or something
-     * @param player
-     */
     public void sendTaskList(Player player) {
         List<SlayerTaskDef> possibleTasks = new ArrayList<>();
         int slayerLevel = PartnerSlayer.getSlayerLevel(player);
@@ -115,13 +112,19 @@ public class SlayerMaster {
                 possibleTasks.add(task);
             }
         }
+        Master master = Master.MASTERS_BY_ID.getOrDefault(npcId, null);
+        if (master == null) return;
         List<Option> optionList = new ArrayList<>();
         possibleTasks.forEach((def) -> {
             SlayerCreature creature = SlayerCreature.lookup(def.getCreatureUid());
-            optionList.add(new Option(StringUtils.initialCaps(creature.name().toLowerCase().replace("_", " ")), () -> {
-
+            optionList.add(new Option(StringUtils.initialCaps(creature.name().toLowerCase().replace("_", " ")
+                    + (creature.getUid() == 98 ? " (Random Boss)" : "")), () -> {
+                master.assignTask(player, def);
+                player.getInventory().remove(32058, 1);
             }));
         });
+        player.putTemporaryAttribute("TASK_SELECT", 1);
+        OptionScroll.open(player, "Slayer Task Selection", optionList);
     }
 
     private SlayerTaskDef processTask(Player player, SlayerTaskDef def) {

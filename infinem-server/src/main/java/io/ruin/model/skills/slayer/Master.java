@@ -18,6 +18,9 @@ import io.ruin.model.skills.slayer.konar.KonarTaskLocation;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 5/18/2024
@@ -58,9 +61,18 @@ public enum Master {
         SlayerMaster master = SlayerMaster.master(npcId);
         if (master == null)
             return;
+        if (player.getInventory().hasId(32058)) {
+            master.sendTaskList(player);
+            return;
+        }
         SlayerTaskDef def = master.randomTask(player);
         if (def == null)
             return;
+        assignTask(player, def);
+    }
+
+    protected void assignTask(Player player, SlayerTaskDef def) {
+        SlayerMaster master = SlayerMaster.master(npcId);
         int min = def.getMin();
         int max = def.getMax();
         // Handle task extensions
@@ -74,7 +86,7 @@ public enum Master {
             }
         }
         int taskAmt = Random.get(min, max);
-        if (SlayerSkillCape.wearingSlayerCape(player) && Random.rollDie(10)) {
+        if (SlayerSkillCape.wearingSlayerCape(player) && Random.rollDie(10) && !player.hasTemporaryAttribute("TASK_SELECT")) {
             int previous = Slayer.getTask(player);
             SlayerTaskDef altDef = master.getTaskByCreatureUid(previous);
             if (altDef == null) {
@@ -101,6 +113,7 @@ public enum Master {
             return;
         }
         assignTask(player, def, taskAmt);
+        player.removeTemporaryAttribute("TASK_SELECT");
     }
 
     private void assignTask(Player player, SlayerTaskDef def, int amt) {
@@ -341,6 +354,14 @@ public enum Master {
             case 5:
                 SlayerUnlock.openRewards(player);
                 break;
+        }
+    }
+
+    protected static final Map<Integer, Master> MASTERS_BY_ID = new HashMap<>();
+
+    static {
+        for (Master master : values()) {
+            MASTERS_BY_ID.put(master.npcId, master);
         }
     }
 }
