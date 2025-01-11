@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableRangeMap;
 import com.google.common.collect.Range;
 import com.google.common.collect.RangeMap;
 import io.ruin.api.utils.Random;
+import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
@@ -15,6 +16,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.skills.slayer.konar.KonarTaskLocation;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -84,7 +86,45 @@ public class SlayerMaster {
         Range<Integer> range = rangeMap.span();
         int rnd = Random.get(range.upperEndpoint() - 1);
         SlayerTaskDef def = rangeMap.get(rnd);
+        return processTask(player, def);
+    }
 
+    /**
+     * Not used atm, can use for a slayer select ticket or something
+     * @param player
+     */
+    public void sendTaskList(Player player) {
+        List<SlayerTaskDef> possibleTasks = new ArrayList<>();
+        int slayerLevel = PartnerSlayer.getSlayerLevel(player);
+        int combatLevel = PartnerSlayer.getCombatLevel(player);
+        for (SlayerTaskDef task : defs) {
+            if (task != null
+                    && slayerLevel >= SlayerCreature.lookup(task.getCreatureUid()).getReq()
+                    && !SlayerUnlock.isBlocked(player, task.getCreatureUid())) {
+                if (!player.slayerCombatCheck &&
+                        combatLevel < SlayerCreature.lookup(task.getCreatureUid()).getCbreq()) {
+                    continue;
+                }
+                if (SlayerCreature.lookup(task.getCreatureUid()).canAssign != null && !SlayerCreature.lookup(task.getCreatureUid()).canAssign.apply(player, master(npcId))) {
+                    continue;
+                }
+                // Can't get boss tasks with partner
+                if (task.getCreatureUid() == 98 && PartnerSlayer.hasPartner(player)) {
+                    continue;
+                }
+                possibleTasks.add(task);
+            }
+        }
+        List<Option> optionList = new ArrayList<>();
+        possibleTasks.forEach((def) -> {
+            SlayerCreature creature = SlayerCreature.lookup(def.getCreatureUid());
+            optionList.add(new Option(StringUtils.initialCaps(creature.name().toLowerCase().replace("_", " ")), () -> {
+
+            }));
+        });
+    }
+
+    private SlayerTaskDef processTask(Player player, SlayerTaskDef def) {
         // index 98 is a boss task
         if (def.getCreatureUid() == 98) {
             // Krystilia, duradel, nieve and steve can assign boss tasks
