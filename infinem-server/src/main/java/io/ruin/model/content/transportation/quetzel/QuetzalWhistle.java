@@ -31,6 +31,7 @@ public class QuetzalWhistle {
             player.sendMessage("Your Quetzal can only hear this whistle from above ground.");
             return;
         }
+        if (!player.getMovement().checkTeleport(player, 20)) return;
         QuetzalTransportSystem.open(player);
     }
 

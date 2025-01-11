@@ -226,12 +226,7 @@ public class PlayerMovement extends Movement {
     /**
      * Teleporting
      */
-
-    public boolean startTeleport(EventConsumer eventConsumer) {
-        return startTeleport(20, eventConsumer);
-    }
-
-    public boolean startTeleport(int maxWildernessLevel, EventConsumer eventConsumer) {
+    public boolean checkTeleport(Player player, int maxWildernessLevel) {
         if(player.isLocked())
             return false;
         if(player.teleportListener != null && !player.teleportListener.allow(player))
@@ -246,6 +241,15 @@ public class PlayerMovement extends Movement {
             player.sendMessage("You must wait 5 seconds after using a special attack to teleport.");
             return false;
         }
+        return true;
+    }
+
+    public boolean startTeleport(EventConsumer eventConsumer) {
+        return startTeleport(20, eventConsumer);
+    }
+
+    public boolean startTeleport(int maxWildernessLevel, EventConsumer eventConsumer) {
+        if (!checkTeleport(player, maxWildernessLevel)) return false;
         player.resetStun();
         player.resetFreeze();
         player.resetActions(true, true, true); //closes things properly like trade
