@@ -288,7 +288,11 @@ public enum AreaReward {
     /**
      * Zeah
      */
-    NO_MINECART_FEE(TaskArea.ZEAH, AreaTaskTier.MEDIUM, "No charge when using the Lovakengj Minecart Network")
+    INCREASED_ESSENCE_FRAGMENTS(TaskArea.ZEAH, AreaTaskTier.EASY, "25% increased maximum Dark essence fragments stack size"),
+    NO_MINECART_FEE(TaskArea.ZEAH, AreaTaskTier.MEDIUM, "No charge when using the Lovakengj Minecart Network"),
+    INCREASED_ESSENCE_FRAGMENTS_MED(TaskArea.ZEAH, AreaTaskTier.MEDIUM, "50% increased maximum Dark essence fragments stack size"),
+    INCREASED_ESSENCE_FRAGMENTS_HARD(TaskArea.ZEAH, AreaTaskTier.HARD, "75% increased maximum Dark essence fragments stack size"),
+    INCREASED_ESSENCE_FRAGMENTS_ELITE(TaskArea.ZEAH, AreaTaskTier.ELITE, "100% increased maximum Dark essence fragments stack size"),
     ;
 
     private final TaskArea area;

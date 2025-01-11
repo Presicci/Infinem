@@ -1,5 +1,6 @@
 package io.ruin.model.skills.runecrafting;
 
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
@@ -22,6 +23,14 @@ public class DenseEssence {
     private static final int DARK_ESSENCE_FRAGMENTS = 7938;
     private static final int DARK_ESSENCE_BLOCK = 13446;
 
+    private static int getMaxFragments(Player player) {
+        if (AreaReward.INCREASED_ESSENCE_FRAGMENTS_ELITE.hasReward(player)) return 222;
+        if (AreaReward.INCREASED_ESSENCE_FRAGMENTS_HARD.hasReward(player)) return 194;
+        if (AreaReward.INCREASED_ESSENCE_FRAGMENTS_MED.hasReward(player)) return 166;
+        if (AreaReward.INCREASED_ESSENCE_FRAGMENTS.hasReward(player)) return 138;
+        return 111;
+    }
+
     static {
         /**
          * Crafting dark essence block into fragments
@@ -31,7 +40,7 @@ public class DenseEssence {
             if (!player.getInventory().hasId(DARK_ESSENCE_FRAGMENTS)) {
                 player.removeAttribute("DARK_ESS_FRAGMENTS");
                 addFragments = true;
-            } else if (player.getAttributeIntOrZero("DARK_ESS_FRAGMENTS") >= 111) {
+            } else if (player.getAttributeIntOrZero("DARK_ESS_FRAGMENTS") >= getMaxFragments(player)) {
                 player.dialogue(new ItemDialogue().one(DARK_ESSENCE_FRAGMENTS, "Your pile of fragments cannot grow any larger."));
                 return;
             }
