@@ -23,11 +23,7 @@ public class RelicFragment {
         player.dialogue(new MessageDialogue("Fragment mods:<br>" + FragmentItem.getModString(item, false)));
     }
 
-    private static void registerFragmentItem(int itemId, FragmentType type) {
+    public static void registerFragmentItem(int itemId, FragmentType type) {
         ItemAction.registerInventory(itemId, "inspect", (player, item) -> inspect(player, item, type));
-    }
-
-    static {
-        registerFragmentItem(32044, FragmentType.Fishing);
     }
 }

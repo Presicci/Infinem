@@ -83,6 +83,19 @@ public enum FragmentModifier {
      * Agility
      * ~~~~~~~
      */
+    AGILITY_LAP_GOLD(FragmentType.Agility, "## gold rewarded on completing an agility course lap",
+            new FragmentModRange(250, 1000, 30),
+            new FragmentModRange(1250, 3000, 20),
+            new FragmentModRange(5000, 10000, 10),
+            new FragmentModRange(15000, 25000, 5)),
+    MARKS_OF_GRACE(FragmentType.Agility, "+## to found Marks of grace",
+            new FragmentModRange(1, 1, 15),
+            new FragmentModRange(2, 3, 10)),
+    AUTOMATIC_LAPS(FragmentType.Agility, "Navigate +## agility course obstacles automatically after passing an obstacle",
+            new FragmentModRange(1, 1, 25),
+            new FragmentModRange(2, 2, 15),
+            new FragmentModRange(3, 3, 10),
+            new FragmentModRange(4, 4, 5)),
     /**
      * ~~~~~~~
      * Cooking
