@@ -5,6 +5,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.skills.RandomEvent;
+import io.ruin.model.skills.agility.Agility;
 import io.ruin.utility.Color;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
@@ -333,7 +334,7 @@ public class AgilityPyramid {
                     if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                         player.sendFilteredMessage("Your Agility Pyramid lap count is: " + Color.RED.wrap(laps + "") + ".");
                     Config.HIDE_PYRAMID.set(player, 1);
-                    player.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
+                    Agility.completeLap(player);
                 } else {
                     player.sendMessage("You don't have enough inventory space to pick up the pyramid top.");
                 }

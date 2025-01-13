@@ -2,6 +2,7 @@ package io.ruin.model.skills.agility.courses.rooftop;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.model.skills.agility.Agility;
 import io.ruin.utility.Color;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -328,7 +329,7 @@ public class FaladorCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             AgilityPet.rollForPet(p, 26806);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "falador");
-            p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
+            Agility.completeLap(p);
             int laps = PlayerCounter.FALADOR_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 50, MARK_SPAWNS);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))

@@ -2,6 +2,7 @@ package io.ruin.model.skills.agility.courses.rooftop;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.model.skills.agility.Agility;
 import io.ruin.utility.Color;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -166,7 +167,7 @@ public class RellekkaCourse {
             MarkOfGrace.rollMark(p, 80, MARK_SPAWNS);
             AgilityPet.rollForPet(p, 31063);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "rellekka");
-            p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
+            Agility.completeLap(p);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                 p.sendFilteredMessage("Your Rellekka Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
             e.delay(1);

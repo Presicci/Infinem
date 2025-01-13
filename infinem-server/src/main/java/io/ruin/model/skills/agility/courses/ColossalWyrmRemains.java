@@ -22,6 +22,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.shop.omnishop.OmniShop;
+import io.ruin.model.skills.agility.Agility;
 import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Color;
@@ -79,7 +80,7 @@ public class ColossalWyrmRemains {
             PersistentData.INSTANCE.colossalWyrmBasicLaps++;
             player.getTaskManager().doLookupByUUID(1122, 1, true);  // Complete 10 Laps of the Basic Colossal Wyrm Agility Course
         }
-        player.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
+        Agility.completeLap(player);
         AgilityPet.rollForPet(player, adv ? 25406 : 28503);
         int laps = adv ? PlayerCounter.COLOSSAL_WYRM_ADVANCED_LAPS.increment(player, 1) : PlayerCounter.COLOSSAL_WYRM_LAPS.increment(player, 1);
         if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))

@@ -3,6 +3,7 @@ package io.ruin.model.skills.agility.courses.rooftop;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
+import io.ruin.model.skills.agility.Agility;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -254,7 +255,7 @@ public class PollnivneachCourse {
             p.getStats().addXp(StatType.Agility, 540, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "pollnivneach");
-            p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
+            Agility.completeLap(p);
             int laps = PlayerCounter.POLLNIVNEACH_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 70, MARK_SPAWNS);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))

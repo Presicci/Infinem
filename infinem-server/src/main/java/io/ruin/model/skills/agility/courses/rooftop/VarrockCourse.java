@@ -3,6 +3,7 @@ package io.ruin.model.skills.agility.courses.rooftop;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
+import io.ruin.model.skills.agility.Agility;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -260,7 +261,7 @@ public class VarrockCourse {
             p.animate(2588);
             p.getStats().addXp(StatType.Agility, 125.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
-            p.getTaskManager().doLookupByCategory(TaskCategory.AGILITY_LAP, 1, true);
+            Agility.completeLap(p);
             AgilityPet.rollForPet(p, 24410);
             int laps = PlayerCounter.VARROCK_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 30, MARK_SPAWNS);
