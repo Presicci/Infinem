@@ -49,3 +49,5 @@ runelite/http-api/out/
 runelite/http-service/src/main/generated/net/runelite/http/service/xp/XpMapperImpl.java
 
 kronos-launcher/out/
+/data/
+/data/

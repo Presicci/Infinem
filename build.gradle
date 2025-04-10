@@ -116,7 +116,7 @@ task cleanDist(type: Delete) {
     delete "$rootDir/build/collected/"
 }
 task jarAll {
-    def serverProjects = ["infinem-central-server", "infinem-server", "infinem-update-server", "infinem-server-live" ]
+    def serverProjects = ["infinem-central-server", "infinem-server", "infinem-update-server" ]
     serverProjects.each { dependsOn("$it:jar") }
     doLast {
 
@@ -124,7 +124,7 @@ task jarAll {
 }
 
 task mergeDist {
-    def serverProjects = ["infinem-central-server", "infinem-server", "infinem-update-server", "infinem-server-live" ]
+    def serverProjects = ["infinem-central-server", "infinem-server", "infinem-update-server" ]
 
     serverProjects.each { dependsOn("$it:distZip", "$it:collectDist") }
     doLast {
