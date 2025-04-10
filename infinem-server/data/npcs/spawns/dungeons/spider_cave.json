@@ -1,0 +1,402 @@
+[
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3680,
+    "y": 9804,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3677,
+    "y": 9806,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3674,
+    "y": 9810,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3667,
+    "y": 9815,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3670,
+    "y": 9818,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3671,
+    "y": 9817,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11176,
+    "x": 3666,
+    "y": 9818,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11176,
+    "x": 3663,
+    "y": 9825,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3665,
+    "y": 9827,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3663,
+    "y": 9830,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11176,
+    "x": 3663,
+    "y": 9832,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3665,
+    "y": 9835,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11176,
+    "x": 3659,
+    "y": 9841,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3659,
+    "y": 9844,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3673,
+    "y": 9837,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11176,
+    "x": 3675,
+    "y": 9838,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11176,
+    "x": 3674,
+    "y": 9835,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3679,
+    "y": 9834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3680,
+    "y": 9839,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11176,
+    "x": 3681,
+    "y": 9835,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3684,
+    "y": 9834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Araxyte",
+    "id": 11175,
+    "x": 3686,
+    "y": 9836,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+
+
+
+  // Unattackable araxytes
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3677,
+    "y": 9801,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3680,
+    "y": 9799,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3679,
+    "y": 9806,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3676,
+    "y": 9809,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3672,
+    "y": 9812,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3671,
+    "y": 9816,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3675,
+    "y": 9820,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3665,
+    "y": 9816,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3666,
+    "y": 9822,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3662,
+    "y": 9826,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3663,
+    "y": 9831,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3664,
+    "y": 9837,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3662,
+    "y": 9838,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3667,
+    "y": 9838,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3661,
+    "y": 9842,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3673,
+    "y": 9836,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3676,
+    "y": 9839,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3678,
+    "y": 9834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3684,
+    "y": 9834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3685,
+    "y": 9837,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3684,
+    "y": 9838,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3682,
+    "y": 9838,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  }
+]

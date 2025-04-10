@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3655,
+    "y": 3405,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3658,
+    "y": 3406,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3656,
+    "y": 3403,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3660,
+    "y": 3407,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3660,
+    "y": 3410,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3655,
+    "y": 3410,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Araxyte",
+    "id": 11174,
+    "x": 3655,
+    "y": 3408,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
